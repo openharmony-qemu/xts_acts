@@ -59,10 +59,13 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_SCROLL_API_001
-     *tc.name blurMode01
-     *tc.desic test blurMode01 interface when choose callback mode.
+    /**
+     * @tc.name   scroll01
+     * @tc.number SUB_ACE_BASIC_ETS_SCROLL_API_001
+     * @tc.desc   scroll01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scroll01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("scroll01", EVENT_ID_SET_SUITE_KEY)
@@ -73,11 +76,14 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
-   *tc.number SUB_ACE_BASIC_ETS_SCROLL_API_002
-   *tc.name blurMode02
-   *tc.desic test blurMode02 interface when choose callback mode.
-   */
+    /**
+     * @tc.name   scroll02
+     * @tc.number SUB_ACE_BASIC_ETS_SCROLL_API_002
+     * @tc.desc   scroll02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scroll02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("scroll02", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

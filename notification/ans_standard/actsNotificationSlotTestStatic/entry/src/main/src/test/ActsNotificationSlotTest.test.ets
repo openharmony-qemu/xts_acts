@@ -67,9 +67,12 @@ export default function ActsNotificationSlotTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_2000
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_2000
-     * @tc.desc    NotificationSlot of an unknown SlotType
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_2000
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_2000
+     * @tc.desc   NotificationSlot of an unknown SlotType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -93,9 +96,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_2150
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_2150
-     * @tc.desc    NotificationSlot for social communication
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_2150
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_2150
+     * @tc.desc   NotificationSlot for social communication
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_2150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -118,9 +124,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_2300
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_2300
-     * @tc.desc    NotificationSlot for service information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_2300
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_2300
+     * @tc.desc   NotificationSlot for service information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -143,9 +152,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_2450
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_2450
-     * @tc.desc    NotificationSlot for content information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_2450
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_2450
+     * @tc.desc   NotificationSlot for content information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_2450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -168,9 +180,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_2600
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_2600
-     * @tc.desc    NotificationSlot for other purposes
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_2600
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_2600
+     * @tc.desc   NotificationSlot for other purposes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -193,9 +208,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_2750
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_2750
-     * @tc.desc    NotificationSlot of an unknown type
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_2750
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_2750
+     * @tc.desc   NotificationSlot of an unknown type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_2750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -216,9 +234,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_2900
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_2900
-     * @tc.desc    NotificationSlot for social communication
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_2900
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_2900
+     * @tc.desc   NotificationSlot for social communication
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -239,9 +260,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3050
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_3050
-     * @tc.desc    NotificationSlot for service information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3050
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3050
+     * @tc.desc   NotificationSlot for service information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -262,9 +286,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3150
-     * @tc.name  Sub_Notification_Ans_Slot_CreateSlot_Static_3150
-     * @tc.desc  NotificationSlot for content information
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3150
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3150
+     * @tc.desc   NotificationSlot for content information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -285,9 +312,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3300
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_3300
-     * @tc.desc    NotificationSlot for other purposes
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3300
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3300
+     * @tc.desc   NotificationSlot for other purposes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -309,9 +339,12 @@ export default function ActsNotificationSlotTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3450
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_3450
-     * @tc.desc    Get the UNKNOWN_TYPE type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3450
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3450
+     * @tc.desc   Get the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -335,9 +368,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3600
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_3600
-     * @tc.desc    Get the SOCIAL_COMMUNICATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3600
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3600
+     * @tc.desc   Get the SOCIAL_COMMUNICATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -351,7 +387,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_2 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -359,9 +395,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3750
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_3750
-     * @tc.desc    Get the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3750
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3750
+     * @tc.desc   Get the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -375,7 +414,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_3 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -383,9 +422,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3800
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_3800
-     * @tc.desc    Get the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3800
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3800
+     * @tc.desc   Get the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -399,7 +441,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_4 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -407,9 +449,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_3900
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_3900
-     * @tc.desc    Get the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_3900
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3900
+     * @tc.desc   Get the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -423,7 +468,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_5 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -431,65 +476,21 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4000
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4000
-     * @tc.desc    Get the UNKNOWN_TYPE type slot without add
-     */
-    it('Sub_Notification_Ans_Slot_CreateSlot_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_4000'
-        console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_4000 START')
-        notificationManager.getSlot(notificationManager.SlotType.UNKNOWN_TYPE)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
-            console.info(`${TAG} getSlot_6 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
-            done()
-          })
-          .catch((err: BusinessError): void => {
-            console.info(`${TAG} getSlot_6 Promise err: ${err.code}`)
-            expect(false).assertTrue()
-            done()
-          })
-        console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_4000 END')
-      })
-
-
-    /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4100
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4100
-     * @tc.desc    Get the SOCIAL_COMMUNICATION type slot without add
-     */
-    it('Sub_Notification_Ans_Slot_CreateSlot_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_4100'
-        console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_4100 START')
-        await notificationManager.getSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
-            console.info(`${TAG} getSlot_7 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
-            done()
-          })
-          .catch((err: BusinessError): void => {
-            console.info(`${TAG} getSlot_7 Promise err: ${err.code}`)
-            expect(false).assertTrue()
-            done()
-          })
-        console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_4100 END')
-      })
-
-    /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4200
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4200
-     * @tc.desc    Get the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4200
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4200
+     * @tc.desc   Get the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_4200'
         console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_4200 START')
         await notificationManager.getSlot(notificationManager.SlotType.SERVICE_INFORMATION)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot_8 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -501,18 +502,21 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4300
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4300
-     * @tc.desc    Get the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4300
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4300
+     * @tc.desc   Get the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_4300'
         console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_4300 START')
         await notificationManager.getSlot(notificationManager.SlotType.CONTENT_INFORMATION)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot_9 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -524,18 +528,21 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4400
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4400
-     * @tc.desc    Get the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4400
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4400
+     * @tc.desc   Get the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_4400'
         console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_4400 START')
         await notificationManager.getSlot(notificationManager.SlotType.OTHER_TYPES)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot_10 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -547,9 +554,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_1900
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_1900
-     * @tc.desc    Remove the UNKNOWN_TYPE type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_1900
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_1900
+     * @tc.desc   Remove the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -572,9 +582,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2000
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2000
-     * @tc.desc    Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2000
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2000
+     * @tc.desc   Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -597,9 +610,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2100
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2100
-     * @tc.desc    Remove the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2100
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2100
+     * @tc.desc   Remove the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -622,9 +638,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2200
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2200
-     * @tc.desc    Remove the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2200
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2200
+     * @tc.desc   Remove the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -647,9 +666,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2300
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2300
-     * @tc.desc    Remove the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2300
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2300
+     * @tc.desc   Remove the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -672,9 +694,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2400
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2400
-     * @tc.desc    Remove the UNKNOWN_TYPE type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2400
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2400
+     * @tc.desc   Remove the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -694,9 +719,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2500
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2500
-     * @tc.desc    Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2500
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2500
+     * @tc.desc   Remove the SOCIAL_COMMUNICATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -717,9 +745,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2600
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2600
-     * @tc.desc    Remove the SERVICE_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2600
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2600
+     * @tc.desc   Remove the SERVICE_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -740,9 +771,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2700
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2700
-     * @tc.desc    Remove the CONTENT_INFORMATION type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2700
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2700
+     * @tc.desc   Remove the CONTENT_INFORMATION type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -763,9 +797,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2800
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2800
-     * @tc.desc    Remove the OTHER_TYPES type slot without add
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2800
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2800
+     * @tc.desc   Remove the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -786,9 +823,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4500
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4500
-     * @tc.desc    Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4500
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4500
+     * @tc.desc   Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -834,9 +874,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4600
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4600
-     * @tc.desc    Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4600
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4600
+     * @tc.desc   Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -882,9 +925,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4700
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4700
-     * @tc.desc    Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4700
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4700
+     * @tc.desc   Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -930,9 +976,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4800
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4800
-     * @tc.desc    Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4800
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4800
+     * @tc.desc   Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -979,9 +1028,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_4900
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_4900
-     * @tc.desc    Get Remove the OTHER_TYPES type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_4900
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_4900
+     * @tc.desc   Get Remove the OTHER_TYPES type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1028,9 +1080,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5000
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5000
-     * @tc.desc    Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5000
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5000
+     * @tc.desc   Get Remove the UNKNOWN_TYPE type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1048,7 +1103,7 @@ export default function ActsNotificationSlotTest() {
         })
 
         await notificationManager.getSlot(notificationManager.SlotType.UNKNOWN_TYPE)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot UNKNOWN_TYPE success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
@@ -1074,9 +1129,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5100
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5100
-     * @tc.desc    Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5100
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5100
+     * @tc.desc   Get Remove the SOCIAL_COMMUNICATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1094,7 +1152,7 @@ export default function ActsNotificationSlotTest() {
         })
 
         await notificationManager.getSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot SOCIAL_COMMUNICATION success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
@@ -1119,9 +1177,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5200
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5200
-     * @tc.desc    Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5200
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5200
+     * @tc.desc   Get Remove the SERVICE_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1139,7 +1200,7 @@ export default function ActsNotificationSlotTest() {
         })
 
         await notificationManager.getSlot(notificationManager.SlotType.SERVICE_INFORMATION)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot SERVICE_INFORMATION success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
@@ -1165,9 +1226,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5300
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5300
-     * @tc.desc    Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5300
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5300
+     * @tc.desc   Get Remove the CONTENT_INFORMATION type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1185,7 +1249,7 @@ export default function ActsNotificationSlotTest() {
         })
 
         await notificationManager.getSlot(notificationManager.SlotType.CONTENT_INFORMATION)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot CONTENT_INFORMATION success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
@@ -1210,9 +1274,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5400
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5400
-     * @tc.desc    Get Remove the OTHER_TYPES type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5400
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5400
+     * @tc.desc   Get Remove the OTHER_TYPES type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1230,7 +1297,7 @@ export default function ActsNotificationSlotTest() {
         })
 
         await notificationManager.getSlot(notificationManager.SlotType.OTHER_TYPES)
-          .then((NotificationSlot: notificationManager.NotificationSlot) => {
+          .then((NotificationSlot) => {
             console.info(`${TAG} getSlot OTHER_TYPES success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
@@ -1255,9 +1322,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5500
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5500
-     * @tc.desc    Get the Different type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5500
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5500
+     * @tc.desc   Get the Different type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1281,7 +1351,7 @@ export default function ActsNotificationSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlot_21 success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           }
         })
@@ -1289,9 +1359,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5600
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5600
-     * @tc.desc    Remove the Different type slot after add
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5600
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5600
+     * @tc.desc   Remove the Different type slot after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1325,9 +1398,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_2900
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_2900
-     * @tc.desc    Removes all NotificationSlot
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_2900
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_2900
+     * @tc.desc   Removes all NotificationSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1350,9 +1426,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_DeleteSlot_Static_3000
-     * @tc.name    Sub_Notification_Ans_Slot_DeleteSlot_Static_3000
-     * @tc.desc    Removes all NotificationSlot
+     * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_3000
+     * @tc.number Sub_Notification_Ans_Slot_DeleteSlot_Static_3000
+     * @tc.desc   Removes all NotificationSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_DeleteSlot_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1373,14 +1452,16 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_GetSlot_Static_2400
-     * @tc.name    Sub_Notification_Ans_Slot_GetSlot_Static_2400
-     * @tc.desc    Get all NotificationSlot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_2400
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_2400
+     * @tc.desc   Get all NotificationSlot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2400'
-        count = 0;
         console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_2400 START')
         notificationManager.getSlots((err: BusinessError | null,
           NotificationSlot: Array<notificationManager.NotificationSlot>| undefined) => {
@@ -1390,18 +1471,25 @@ export default function ActsNotificationSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlots AsyncCallback success: ${NotificationSlot}`)
-            count++;
-            expect(count).assertEqual(1);
-            done()
+            if(NotificationSlot == undefined){
+              expect(false).assertTrue()
+              done()
+            }else{
+              expect(NotificationSlot.length == 0 ).assertTrue()
+              done()
+            }
           }
         })
         console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_2400 END')
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_GetSlot_Static_2500
-     * @tc.name    Sub_Notification_Ans_Slot_GetSlot_Static_2500
-     * @tc.desc    Get all NotificationSlot without add
+     * @tc.name   Sub_Notification_Ans_Slot_GetSlot_Static_2500
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_2500
+     * @tc.desc   Get all NotificationSlot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1420,10 +1508,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5700
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5700
-     * @tc.desc    Get all slots after add
-     *                 UNKNOWN_TYPE and OTHER_TYPES is same in ANS
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5700
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5700
+     * @tc.desc   Get all slots after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1487,7 +1577,6 @@ export default function ActsNotificationSlotTest() {
             expect(count).assertEqual(1);
           }
         })
-
         await Utils.msSleep(1000)
 
         notificationManager.getSlots((err: BusinessError | null,
@@ -1499,6 +1588,7 @@ export default function ActsNotificationSlotTest() {
           } else {
             console.info(`${TAG} getSlots AsyncCallback success:`)
             if(NotificationSlot !== undefined){
+              expect(NotificationSlot.length > 0).assertTrue()
               for (let i = 0; i < NotificationSlot.length; i++) {
                 console.info(`${TAG} NotificationSlot[${i}].type:` + NotificationSlot[i].notificationType)
                 let num = NotificationSlot[i].notificationType as notificationManager.SlotType
@@ -1523,10 +1613,12 @@ export default function ActsNotificationSlotTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Slot_CreateSlot_Static_5800
-     * @tc.name    Sub_Notification_Ans_Slot_CreateSlot_Static_5800
-     * @tc.desc    Get all slots after add
-     *                 UNKNOWN_TYPE and OTHER_TYPES is same in ANS
+     * @tc.name   Sub_Notification_Ans_Slot_CreateSlot_Static_5800
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_5800
+     * @tc.desc   Get all slots after add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1595,6 +1687,7 @@ export default function ActsNotificationSlotTest() {
 
         await notificationManager.getSlots().then((NotificationSlot: Array<notificationManager.NotificationSlot>) => {
           console.info(`${TAG} getSlots Promise success:`)
+          expect(NotificationSlot.length > 0).assertTrue()
           for (let i = 0; i < NotificationSlot.length; i++) {
             console.info(`${TAG} NotificationSlot[${i}].type:` + NotificationSlot[i].notificationType)
             let num = NotificationSlot[i].notificationType as notificationManager.SlotType
@@ -1617,126 +1710,144 @@ export default function ActsNotificationSlotTest() {
         console.info(TAG + 'Sub_Notification_Ans_Slot_CreateSlot_5800 END')
       })
 
-    
-    /**
-     * @tc.number  SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900
-     * @tc.name    SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900
-     * @tc.desc    Get the OTHER_TYPES type slot without add
-     */
-    // it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     let TAG: string = 'SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900'
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_4900 START')
-    //   await notificationManager.getSlot(notificationManager.SlotType.OTHER_TYPES, undefined).then((NotificationSlot) => {
-    //     console.info(`${TAG} getSlot_49 Promise success: ${NotificationSlot}`)
-    //     expect(NotificationSlot !== null).assertTrue()
-    //     done()
-    //   }).catch((err) => {
-    //     console.info(`${TAG} getSlot_49 Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_4900 END')
-    // })
-    //
 
-    
     /**
-     * @tc.number  SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5000
-     * @tc.name    SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5000
-     * @tc.desc    NotificationSlot of an unknown type
+     * @tc.name   SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900
+     * @tc.number SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900
+     * @tc.desc   Get the OTHER_TYPES type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    // it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   count = 0;
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5000 START')
-    //   await notificationManager.addSlot(notificationManager.SlotType.UNKNOWN_TYPE, undefined).then(() => {
-    //     console.info(`${TAG} addSlot_50 Promise success`)
-    //     count++;
-    //     expect(count).assertEqual(1);
-    //     done()
-    //   }).catch((err) => {
-    //     console.info(`${TAG} addSlot_50 Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5000 END')
-    // })
-    //
+    it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'SUB_NOTIFICATION_ANS_SLOT_TEST_Static_4900'
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_4900 START')
+      await notificationManager.getSlot(notificationManager.SlotType.OTHER_TYPES).then((NotificationSlot) => {
+        console.info(`${TAG} getSlot_49 Promise success: ${NotificationSlot}`)
+        expect(NotificationSlot == null).assertTrue()
+        done()
+      }).catch((err) => {
+        console.info(`${TAG} getSlot_49 Promise err: ${err.code}`)
+        expect(false).assertTrue()
+        done()
+      })
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_4900 END')
+    })
 
-    
+
+
     /**
-     * @tc.number  SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5100
-     * @tc.name    SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5100
-     * @tc.desc    Get all NotificationSlot without add
+     * @tc.name   SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5000
+     * @tc.number SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5000
+     * @tc.desc   NotificationSlot of an unknown type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    // it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5100 START')
-    //   await notificationManager.getSlots(undefined).then((NotificationSlot) => {
-    //     console.info(`${TAG} getSlots_51 Promise success: ${NotificationSlot}`)
-    //     expect(NotificationSlot !== null).assertTrue()
-    //     done()
-    //   }).catch((err) => {
-    //     console.info(`${TAG} getSlots_51 Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5100 END')
-    // })
-    //
+    it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      count = 0;
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5000 START')
+      await notificationManager.addSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
+        console.info(`${TAG} addSlot_50 Promise success`)
+        count++;
+        expect(count).assertEqual(1);
+        done()
+      }).catch((err) => {
+        console.info(`${TAG} addSlot_50 Promise err: ${err.code}`)
+        expect(false).assertTrue()
+        done()
+      })
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5000 END')
+    })
 
-    
-    /**
-     * @tc.number:SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5200
-     * @tc.name:SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5200
-     * @tc.desc:Remove the UNKNOWN_TYPE type slot without add
-      */
-    // it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   count = 0;
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5200 START')
-    //   await notificationManager.removeSlot(notificationManager.SlotType.UNKNOWN_TYPE, undefined).then(() => {
-    //     console.info(`${TAG} removeSlot_52 success`)
-    //     count++;
-    //     expect(count).assertEqual(1);
-    //     done()
-    //   }).catch((err) => {
-    //     console.info(`${TAG} removeSlot_52 err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5200 END')
-    // })
-    //
 
-    
+
     /**
-     * @tc.number:SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5300
-     * @tc.name:SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5300
-     * @tc.desc:Removes all NotificationSlot
+     * @tc.name   SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5100
+     * @tc.number SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5100
+     * @tc.desc   Get all NotificationSlot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    // it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //   count = 0;
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5300 START')
-    //   await notificationManager.removeAllSlots(undefined).then(() => {
-    //     console.info(`${TAG} removeAllSlots_53 Promise success`)
-    //     count++;
-    //     expect(count).assertEqual(1);
-    //     done()
-    //   }).catch((err) => {
-    //     console.info(`${TAG} removeAllSlots_53 Promise err: ${err.code}`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   })
-    //   console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5300 END')
-    // })
-    //
+    it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5100 START')
+      await notificationManager.getSlots().then((NotificationSlot) => {
+        console.info(`${TAG} getSlots_51 Promise success: ${NotificationSlot}`)
+        expect(NotificationSlot !== null).assertTrue()
+        done()
+      }).catch((err) => {
+        console.info(`${TAG} getSlots_51 Promise err: ${err.code}`)
+        expect(false).assertTrue()
+        done()
+      })
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5100 END')
+    })
+
+
+
     /**
-     * @tc.number  SUB_NOTIFICATION_ANS_SLOT_ENUM_TEST_Static_0100
-     * @tc.name    SUB_NOTIFICATION_ANS_SLOT_ENUM_TEST_Static_0100
-     * @tc.desc    SlotType
+     * @tc.name   SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5200
+     * @tc.number SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5200
+     * @tc.desc   Remove the UNKNOWN_TYPE type slot without add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      count = 0;
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5200 START')
+      await notificationManager.removeSlot(notificationManager.SlotType.UNKNOWN_TYPE).then(() => {
+        console.info(`${TAG} removeSlot_52 success`)
+        count++;
+        expect(count).assertEqual(1);
+        done()
+      }).catch((err) => {
+        console.info(`${TAG} removeSlot_52 err: ${err.code}`)
+        expect(false).assertTrue()
+        done()
+      })
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5200 END')
+    })
+
+
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5300
+     * @tc.number SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5300
+     * @tc.desc   Removes all NotificationSlot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_NOTIFICATION_ANS_SLOT_TEST_Static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      count = 0;
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5300 START')
+      await notificationManager.removeAllSlots().then(() => {
+        console.info(`${TAG} removeAllSlots_53 Promise success`)
+        count++;
+        expect(count).assertEqual(1);
+        done()
+      }).catch((err) => {
+        console.info(`${TAG} removeAllSlots_53 Promise err: ${err.code}`)
+        expect(false).assertTrue()
+        done()
+      })
+      console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_5300 END')
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_SLOT_ENUM_TEST_Static_0100
+     * @tc.number SUB_NOTIFICATION_ANS_SLOT_ENUM_TEST_Static_0100
+     * @tc.desc   SlotType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_SLOT_ENUM_TEST_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

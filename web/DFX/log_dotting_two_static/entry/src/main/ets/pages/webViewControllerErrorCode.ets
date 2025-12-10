@@ -17,12 +17,12 @@ import { State } from "@ohos.arkui.stateManagement"
 import { Callback } from '@ohos.base'
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from "../../../hypium/index";
-
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -50,11 +50,12 @@ struct Index {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    console.info("web page valueChangeCallBack");
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.["ACTION"] != null) {
-        this.str = "" + (eventData.data as Record<string , object>)?.["ACTION"];
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
+        let strValue: string = String(data['ACTION']);
+        this.str = strValue;
       }
     }
   }
@@ -108,6 +109,12 @@ struct Index {
               break;
             }
 
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webViewControllerErrorCodeSecond' })
+              console.log('push URL success')
+            }
           }
         })
       }

@@ -36,14 +36,14 @@ export default function buttonOnClickEventTest() {
       await Utils.pushPage(`button/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ONHOVER_EVENT_0100
-    * @tc.name       : testButtonOnHoverEvent001
-    * @tc.desc       : test onHover event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testButtonOnHover001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ONHOVER_EVENT_0100
+     * @tc.desc   test onHover event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButtonOnHover001', Level.LEVEL1, async (done: Function) => {
       await mouseMoveToCommonEvent('OnHoverTestButton')
       await Utils.sleep(2000)

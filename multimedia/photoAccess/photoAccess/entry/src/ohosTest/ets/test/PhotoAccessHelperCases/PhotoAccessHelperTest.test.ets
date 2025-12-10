@@ -976,14 +976,14 @@ export default function PhotoAccessHelperTest() {
       console.info('afterAll case');
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100
-       * @tc.desc      : getPhotoAccessHelper with correct context
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level1
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100
+     * @tc.desc   getPhotoAccessHelper with correct context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100', Level.LEVEL1, async (done: Function) => {
       try {
         let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -997,14 +997,14 @@ export default function PhotoAccessHelperTest() {
       }
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200
-       * @tc.desc      : getAssets with callback fetchOptions.fetchColumns = []
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level1
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200
+     * @tc.desc   getAssets with callback fetchOptions.fetchColumns = []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200', Level.LEVEL1, async (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1018,14 +1018,14 @@ export default function PhotoAccessHelperTest() {
       console.info('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200 excute pass');
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0210
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0210
-       * @tc.desc      : getAssets with promise fetchOptions.fetchColumns = []
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0210
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0210
+     * @tc.desc   getAssets with promise fetchOptions.fetchColumns = []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0210', Level.LEVEL2, async (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1039,42 +1039,42 @@ export default function PhotoAccessHelperTest() {
       console.info('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0210 excute pass');
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300
-       * @tc.desc      : getAssets with callback fetchOptions.fetchColumns = columns, all photoKeys
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300
+     * @tc.desc   getAssets with callback fetchOptions.fetchColumns = columns, all photoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300', Level.LEVEL3, async (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getAssetsForKeysCallback(photoHelper, fetchOptions, 'SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300', done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400
-       * @tc.desc      : getAssets with promise fetchOptions.fetchColumns = columns, all photoKeys
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400
+     * @tc.desc   getAssets with promise fetchOptions.fetchColumns = columns, all photoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400', Level.LEVEL3, async (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getAssetsForKeysPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500
-       * @tc.desc      : getAssets with callback fetchOptions.fetchColumns = [uri,displayName,photoType]
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500
+     * @tc.desc   getAssets with callback fetchOptions.fetchColumns = [uri,displayName,photoType]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500', Level.LEVEL2, async (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1082,112 +1082,112 @@ export default function PhotoAccessHelperTest() {
         'SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500', done)
     })
 
-    /* *
-   * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0510
-   * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0510
-   * @tc.desc      : getAssets with promise fetchOptions.fetchColumns = [uri,displayName,photoType]
-   * @tc.size      : MediumTest
-   * @tc.type      : Function test
-   * @tc.level     : Level4
-   */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0510
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0510
+     * @tc.desc   getAssets with promise fetchOptions.fetchColumns = [uri,displayName,photoType]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0510', Level.LEVEL4, async (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       setArgGetAssetsPromise(photoHelper, [photoKeys.URI, photoKeys.DISPLAY_NAME, photoKeys.PHOTO_TYPE],
         'SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0510', done)
     })
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600
-       * @tc.desc      : createAsset callback with imageType and photoExtensions
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600
+     * @tc.desc   createAsset callback with imageType and photoExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       createAssetWithSuffixesCallback1(photoHelper, imageType, 'jpg', options, photoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700
-       * @tc.desc      : createAsset callback with videoType and videoExtensions
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700
+     * @tc.desc   createAsset callback with videoType and videoExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       createAssetWithSuffixesCallback1(photoHelper, videoType, 'mp4', options, videoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800
-       * @tc.desc      : createAsset callback with imageType and photoExtensions, without options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800
+     * @tc.desc   createAsset callback with imageType and photoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       createAssetWithSuffixesCallback2(photoHelper, imageType, 'jpg', photoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900
-       * @tc.desc      : createAsset callback with videoType and videoExtensions, without options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900
+     * @tc.desc   createAsset callback with videoType and videoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       createAssetWithSuffixesCallback2(photoHelper, videoType, 'mp4', videoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000
-       * @tc.desc      : createAsset promise with imageType and photoExtensions, without options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000
+     * @tc.desc   createAsset promise with imageType and photoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000', Level.LEVEL2, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       createAssetWithSuffixesPromise(photoHelper, imageType, 'jpg', options, photoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100
-       * @tc.desc      : createAsset promise with videoType and videoExtensions, without options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100
+     * @tc.desc   createAsset promise with videoType and videoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100', Level.LEVEL2, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       createAssetWithSuffixesPromise(photoHelper, videoType, 'mp4', options, videoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200
-       * @tc.desc      : createAsset promise with imageType and photoExtensions, with options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200
+     * @tc.desc   createAsset promise with imageType and photoExtensions, with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1197,14 +1197,14 @@ export default function PhotoAccessHelperTest() {
       createAssetWithSuffixesPromise(photoHelper, imageType, 'jpg', withoutOptions, photoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300
-       * @tc.desc      : createAsset promise with videoType and videoExtensions, with options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300
+     * @tc.desc   createAsset promise with videoType and videoExtensions, with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1214,14 +1214,14 @@ export default function PhotoAccessHelperTest() {
       createAssetWithSuffixesPromise(photoHelper, videoType, 'mp4', withoutOptions, videoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400
-       * @tc.desc      : createAsset promise with imageType and photoExtensions, with disallowed options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level4
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400
+     * @tc.desc   createAsset promise with imageType and photoExtensions, with disallowed options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400', Level.LEVEL4, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1231,14 +1231,14 @@ export default function PhotoAccessHelperTest() {
       createAssetWithSuffixesPromise(photoHelper, imageType, 'jpg', optionsErr, photoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500
-       * @tc.desc      : createAsset promise with videoType and videoExtensions, with disallowed options
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500
+     * @tc.desc   createAsset promise with videoType and videoExtensions, with disallowed options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1248,422 +1248,406 @@ export default function PhotoAccessHelperTest() {
       createAssetWithSuffixesPromise(photoHelper, videoType, 'mp4', optionsErr, videoExtensions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600
-       * @tc.desc      : registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(true, true, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700
-       * @tc.desc      : registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(true, true, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800
-       * @tc.desc      : registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(true, false, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900
-       * @tc.desc      : registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(true, false, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000
-       * @tc.desc      : registerChange promise, register photoAsset.uri,unRegister all callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(false, true, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100
-       * @tc.desc      : registerChange promise, register photoAsset.uri,unRegister all callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(false, true, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200
-       * @tc.desc      : registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(false, false, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300
-       * @tc.desc      : registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangePromise(false, false, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400
-       * @tc.desc      : registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(true, true, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500
-       * @tc.desc      : registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(true, true, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600
-       * @tc.desc      : registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(true, false, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700
-       * @tc.desc      : registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(true, false, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800
-       * @tc.desc      : registerChange callback, register photoAsset.uri,unRegister all callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(false, true, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900
-       * @tc.desc      : registerChange callback, register photoAsset.uri,unRegister all callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(false, true, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000
-       * @tc.desc      : registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
-                         forChildUris=true
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(false, false, photoHelper, true, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100
-       * @tc.desc      : registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
-                         forChildUris=false
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       registerChangeCallback(false, false, photoHelper, false, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400
-       * @tc.desc      : photoAsset.get callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400
+     * @tc.desc   photoAsset.get callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getPhotoAssetAttrsCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500
-       * @tc.desc      : photoAsset.get promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500
+     * @tc.desc   photoAsset.get promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getPhotoAssetAttrsPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600
-       * @tc.desc      : photoAsset.get callback, for all photoKeys
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600
+     * @tc.desc   photoAsset.get callback, for all photoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getPhotoAssetForKeysCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700
-       * @tc.desc      : photoAsset.get promise, for all photoKeys
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700
+     * @tc.desc   photoAsset.get promise, for all photoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getPhotoAssetForKeysPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800
-       * @tc.desc      : photoAsset.set(title) callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800
+     * @tc.desc   photoAsset.set(title) callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       setPhotoAssetTitleCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900
-       * @tc.desc      : photoAsset.set(title) promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900
+     * @tc.desc   photoAsset.set(title) promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       setPhotoAssetTitlePromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000
-       * @tc.desc      : photoAsset.commitModify callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level1
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000
+     * @tc.desc   photoAsset.commitModify callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000', Level.LEVEL1, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       commitModifyCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100
-       * @tc.desc      : photoAsset.commitModify promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level1
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100
+     * @tc.desc   photoAsset.commitModify promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100', Level.LEVEL1, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       commitModifyPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200
-       * @tc.desc      : getReadOnlyFd callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200
+     * @tc.desc   getReadOnlyFd callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getReadOnlyFdCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300
-       * @tc.desc      : getReadOnlyFd promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300
+     * @tc.desc   getReadOnlyFd promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getReadOnlyFdPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400
-       * @tc.desc      : getThumbnail callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level1
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400
+     * @tc.desc   getThumbnail callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400', Level.LEVEL1, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getThumbnailCallback(photoHelper, fetchOptions_allocate_file, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4500
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4500
-       * @tc.desc      : getThumbnail callback with sizes
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4500
+     * @tc.desc   getThumbnail callback with sizes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4500', Level.LEVEL4, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getThumbnailCallbackWithSize(photoHelper, fetchOptions_allocate_file, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4600
-       * @tc.desc      : getThumbnail promise with sizes
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4600
+     * @tc.desc   getThumbnail promise with sizes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4600', Level.LEVEL4, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
@@ -1671,182 +1655,182 @@ export default function PhotoAccessHelperTest() {
       getThumbnailPromiseWithSize(photoHelper, fetchOptions_allocate_file, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4700
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4700
-       * @tc.desc      : fetchResult.getCount
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4700
+     * @tc.desc   fetchResult.getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4700', Level.LEVEL2, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getCount(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4800
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4800
-       * @tc.desc      : fetchResult.isAfterLast
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4800
+     * @tc.desc   fetchResult.isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4800', Level.LEVEL2, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       checkIsAfterLast(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4900
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4900
-       * @tc.desc      : fetchResult.close
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4900
+     * @tc.desc   fetchResult.close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4900', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       closeFetchResult(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5000
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5000
-       * @tc.desc      : getFirstObject callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5000
+     * @tc.desc   getFirstObject callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5000', Level.LEVEL2, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getFirstObjectCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5010
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5010
-       * @tc.desc      : getFirstObject promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5010
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5010
+     * @tc.desc   getFirstObject promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5010', Level.LEVEL2, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getFirstObjectPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5100
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5100
-       * @tc.desc      : getNextObject callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5100
+     * @tc.desc   getNextObject callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5100', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getNextObjectCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5200
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5200
-       * @tc.desc      : getNextObject promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5200
+     * @tc.desc   getNextObject promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5200', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getNextObjectPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5300
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5300
-       * @tc.desc      : getLastObject callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5300
+     * @tc.desc   getLastObject callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5300', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getLastObjectCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5400
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5400
-       * @tc.desc      : getLastObject promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5400
+     * @tc.desc   getLastObject promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5400', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getLastObjectPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5500
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5500
-       * @tc.desc      : getObjectByPosition callback -1 0 1
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5500
+     * @tc.desc   getObjectByPosition callback -1 0 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5500', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getObjectByPositionCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5600
-       * @tc.desc      : getObjectByPosition promise -1 0 1
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5600
+     * @tc.desc   getObjectByPosition promise -1 0 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5600', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getObjectByPositionPromise(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5700
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5700
-       * @tc.desc      : getAllObjects callback
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5700
+     * @tc.desc   getAllObjects callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5700', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper
       getAllObjectsCallback(photoHelper, fetchOptions, done)
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5800
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5800
-       * @tc.desc      : getAllObjects promise
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level3
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5800
+     * @tc.desc   getAllObjects promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_5800', Level.LEVEL3, (done: Function) => {
       let getPhotoHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let photoHelper: photoAccessHelper.PhotoAccessHelper = getPhotoHelper

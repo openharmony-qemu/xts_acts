@@ -26,26 +26,26 @@ export default function scrollAccessibilityDescriptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYDESCRIPTION_0100
-     * @tc.name       : testScrollAccessibilityDescription001
-     * @tc.desc       : testing accessibilityDescription for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollAccessibilityDescription001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYDESCRIPTION_0100
+     * @tc.desc   testing accessibilityDescription for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityDescription001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityDescription001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYDESCRIPTION_0200
-     * @tc.name       : testScrollAccessibilityDescription002
-     * @tc.desc       : testing accessibilityDescription for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollAccessibilityDescription002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYDESCRIPTION_0200
+     * @tc.desc   testing accessibilityDescription for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityDescription002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityDescription002()).assertEqual(0)

@@ -72,11 +72,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0100
          * @tc.number SUB_Communication_NFC_secureElement_js_0100
-         * @tc.name Test isConnected
-         * @tc.desc Check whether the SE service is connected.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether the SE service is connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0100', Level.LEVEL0, function () {
             try {
@@ -90,11 +91,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0200
          * @tc.number SUB_Communication_NFC_secureElement_js_0200
-         * @tc.name Test getVersion
-         * @tc.desc Returns the version number of the OMA specification.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Returns the version number of the OMA specification.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0200', Level.LEVEL0, function ()  {
             try {
@@ -108,11 +110,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0300
          * @tc.number SUB_Communication_NFC_secureElement_js_0300
-         * @tc.name Test getName
-         * @tc.desc Returns the name of this reader.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Returns the name of this reader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0300', Level.LEVEL0, function ()  {
             try {
@@ -141,11 +144,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0400
          * @tc.number SUB_Communication_NFC_secureElement_js_0400
-         * @tc.name Test isSecureElementPresent
-         * @tc.desc Indicates whether the corresponding secure element is available.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Indicates whether the corresponding secure element is available.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0400', Level.LEVEL0, async function (done)  {
             try {
@@ -211,11 +215,12 @@ export default function newSEServicetest() {
         })
         
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0500
          * @tc.number SUB_Communication_NFC_secureElement_js_0500
-         * @tc.name Test shutdown
-         * @tc.desc Release all SE resources allocated to the service.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Release all SE resources allocated to the service.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0500', Level.LEVEL0, async function (done)  {
             try {

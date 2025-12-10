@@ -38,6 +38,14 @@ export default function ActsDatePickerTest() {
       }
       done()
     });
+    /**
+     * @tc.name   Stage_DatePicker_Test_0010
+     * @tc.number Stage_DatePicker_Test_0010
+     * @tc.desc   Stage_DatePicker_Test_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Stage_DatePicker_Test_0010', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_DatePicker_Test_0010 START');
       try{

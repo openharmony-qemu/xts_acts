@@ -97,12 +97,12 @@ describe('relationalStoreResultSetTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_RESULTSET_0010
+     * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-	 * @tc.size MediumTest
-	 * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_RESULTSET_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0010 start *************');
@@ -127,14 +127,14 @@ describe('relationalStoreResultSetTest', () => {
         done();
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0010 end *************');
     })
-	/**
-   * @tc.name SUB_DDM_RELATIONALETS_RESULTSET_0020
-   * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8300
-   * @tc.desc resultSet getRow normal test
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 2
-   */
+    /**
+     * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0020
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8300
+     * @tc.desc   resultSet getRow normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_RELATIONALETS_RESULTSET_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0020 start *************');
       let predicates = new dataRdb.RdbPredicates('test');
@@ -158,12 +158,12 @@ describe('relationalStoreResultSetTest', () => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0020 end *************');
     })
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_RESULTSET_0030
+     * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8500
-     * @tc.desc resultSet getRow normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getRow normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_RESULTSET_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0030 start *************');

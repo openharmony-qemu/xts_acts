@@ -40,12 +40,12 @@ export default function TreeSetTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0100
-     * @tc.name       : testConstructor0001
-     * @tc.desc       : Test the function of the interface Constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0100
+     * @tc.desc   Test the function of the interface Constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testConstructor0001";
@@ -61,12 +61,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0200
-     * @tc.name       : testConstructor0002
-     * @tc.desc       : Test the function of the interface Constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0200
+     * @tc.desc   Test the function of the interface Constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testConstructor0002";
@@ -86,12 +86,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0300
-     * @tc.name       : testConstructor0003
-     * @tc.desc       : Test the function of the interface Constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0300
+     * @tc.desc   Test the function of the interface Constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testConstructor0003";
@@ -120,12 +120,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0400
-     * @tc.name       : testConstructor0004
-     * @tc.desc       : Test the function of the interface Constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0400
+     * @tc.desc   Test the function of the interface Constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testConstructor0004";
@@ -153,12 +153,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0500
-     * @tc.name       : testIsEmpty0001
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testIsEmpty0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0500
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsEmpty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testIsEmpty0001";
@@ -173,12 +173,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0600
-     * @tc.name       : testIsEmpty0002
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testIsEmpty0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0600
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsEmpty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testIsEmpty0002";
@@ -194,12 +194,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0700
-     * @tc.name       : testIsEmpty0003
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsEmpty0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0700
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsEmpty0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testIsEmpty0003";
@@ -216,12 +216,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0800
-     * @tc.name       : testHas0001
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0800
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0001";
@@ -236,12 +236,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0900
-     * @tc.name       : testHas0002
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_0900
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0002";
@@ -258,12 +258,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1000
-     * @tc.name       : testHas0003
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1000
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0003";
@@ -278,12 +278,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1100
-     * @tc.name       : testHas0004
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1100
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0004";
@@ -299,12 +299,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1200
-     * @tc.name       : testHas0005
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1200
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0005";
@@ -319,12 +319,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1300
-     * @tc.name       : testHas0006
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1300
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0006";
@@ -342,12 +342,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1400
-     * @tc.name       : testHas0007
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1400
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0007";
@@ -362,12 +362,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1500
-     * @tc.name       : testHas0008
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1500
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0008";
@@ -383,12 +383,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1600
-     * @tc.name       : testHas0009
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1600
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0009";
@@ -404,12 +404,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1700
-     * @tc.name       : testHas0010
-     * @tc.desc       : Test the function of the interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1700
+     * @tc.desc   Test the function of the interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0010";
@@ -441,12 +441,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1800
-     * @tc.name       : testGetFirstValue0001
-     * @tc.desc       : Test the function of the interface getFirstValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetFirstValue0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1800
+     * @tc.desc   Test the function of the interface getFirstValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetFirstValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetFirstValue0001";
@@ -461,12 +461,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1900
-     * @tc.name       : testGetFirstValue0002
-     * @tc.desc       : Test the function of the interface getFirstValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetFirstValue0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_1900
+     * @tc.desc   Test the function of the interface getFirstValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetFirstValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetFirstValue0002";
@@ -481,12 +481,12 @@ export default function TreeSetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2000
-     * @tc.name       : testGetFirstValue0003
-     * @tc.desc       : Test the function of the interface getFirstValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetFirstValue0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2000
+     * @tc.desc   Test the function of the interface getFirstValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetFirstValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetFirstValue0003";
@@ -503,12 +503,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2100
-     * @tc.name       : testGetFirstValue0004
-     * @tc.desc       : Test the function of the interface getFirstValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetFirstValue0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2100
+     * @tc.desc   Test the function of the interface getFirstValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetFirstValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetFirstValue0004";
@@ -529,12 +529,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2200
-     * @tc.name       : testGetLastValue0001
-     * @tc.desc       : Test the function of the interface getLastValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLastValue0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2200
+     * @tc.desc   Test the function of the interface getLastValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLastValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLastValue0001";
@@ -549,12 +549,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2300
-     * @tc.name       : testGetLastValue0002
-     * @tc.desc       : Test the function of the interface getLastValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLastValue0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2300
+     * @tc.desc   Test the function of the interface getLastValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLastValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLastValue0002";
@@ -570,12 +570,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2400
-     * @tc.name       : testGetLastValue0003
-     * @tc.desc       : Test the function of the interface getLastValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLastValue0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2400
+     * @tc.desc   Test the function of the interface getLastValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLastValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLastValue0003";
@@ -592,12 +592,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2500
-     * @tc.name       : testGetLastValue0004
-     * @tc.desc       : Test the function of the interface getLastValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLastValue0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2500
+     * @tc.desc   Test the function of the interface getLastValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLastValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLastValue0004";
@@ -618,12 +618,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2600
-     * @tc.name       : testAdd0001
-     * @tc.desc       : Test the function of the interface add.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2600
+     * @tc.desc   Test the function of the interface add.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testAdd0001";
@@ -640,12 +640,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2700
-     * @tc.name       : testAdd0002
-     * @tc.desc       : Test the function of the interface add.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2700
+     * @tc.desc   Test the function of the interface add.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testAdd0002";
@@ -662,12 +662,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2800
-     * @tc.name       : testAdd0003
-     * @tc.desc       : Test the function of the interface add.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAdd0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2800
+     * @tc.desc   Test the function of the interface add.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testAdd0003";
@@ -684,12 +684,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2900
-     * @tc.name       : testAdd0004
-     * @tc.desc       : Test the function of the interface add.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAdd0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_2900
+     * @tc.desc   Test the function of the interface add.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testAdd0004";
@@ -705,12 +705,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3000
-     * @tc.name       : testAdd0005
-     * @tc.desc       : Test the function of the interface add.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAdd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3000
+     * @tc.desc   Test the function of the interface add.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testAdd0005";
@@ -726,12 +726,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3100
-     * @tc.name       : testAdd0006
-     * @tc.desc       : Test the function of the interface add.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAdd0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3100
+     * @tc.desc   Test the function of the interface add.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testAdd0006";
@@ -748,12 +748,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3200
-     * @tc.name       : testAdd0007
-     * @tc.desc       : Test the function of the interface add.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAdd0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3200
+     * @tc.desc   Test the function of the interface add.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdd0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testAdd0007";
@@ -770,12 +770,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3300
-     * @tc.name       : testRemove0001
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3300
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0001";
@@ -789,12 +789,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3400
-     * @tc.name       : testRemove0002
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3400
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0002";
@@ -809,12 +809,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3500
-     * @tc.name       : testRemove0003
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3500
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0003";
@@ -828,12 +828,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3600
-     * @tc.name       : testRemove0004
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3600
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0004";
@@ -848,12 +848,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3700
-     * @tc.name       : testRemove0005
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3700
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0005";
@@ -867,12 +867,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3800
-     * @tc.name       : testRemove0006
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3800
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0006";
@@ -887,12 +887,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3900
-     * @tc.name       : testRemove0007
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_3900
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0007";
@@ -906,12 +906,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4000
-     * @tc.name       : testRemove0008
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4000
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0008";
@@ -926,12 +926,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4100
-     * @tc.name       : testRemove0009
-     * @tc.desc       : Test the function of the interface remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRemove0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4100
+     * @tc.desc   Test the function of the interface remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRemove0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testRemove0009";
@@ -946,12 +946,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4200
-     * @tc.name       : testGetLowerValue0001
-     * @tc.desc       : Test the function of the interface getLowerValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLowerValue0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4200
+     * @tc.desc   Test the function of the interface getLowerValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLowerValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLowerValue0001";
@@ -965,12 +965,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4300
-     * @tc.name       : testGetLowerValue0002
-     * @tc.desc       : Test the function of the interface getLowerValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLowerValue0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4300
+     * @tc.desc   Test the function of the interface getLowerValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLowerValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLowerValue0002";
@@ -983,12 +983,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4400
-     * @tc.name       : testGetLowerValue0003
-     * @tc.desc       : Test the function of the interface getLowerValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLowerValue0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4400
+     * @tc.desc   Test the function of the interface getLowerValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLowerValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLowerValue0003";
@@ -1001,12 +1001,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4500
-     * @tc.name       : testGetLowerValue0004
-     * @tc.desc       : Test the function of the interface getLowerValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLowerValue0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4500
+     * @tc.desc   Test the function of the interface getLowerValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLowerValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLowerValue0004";
@@ -1020,12 +1020,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4600
-     * @tc.name       : testGetLowerValue0005
-     * @tc.desc       : Test the function of the interface getLowerValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLowerValue0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4600
+     * @tc.desc   Test the function of the interface getLowerValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLowerValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLowerValue0005";
@@ -1039,12 +1039,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4700
-     * @tc.name       : testGetLowerValue0006
-     * @tc.desc       : Test the function of the interface getLowerValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLowerValue0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4700
+     * @tc.desc   Test the function of the interface getLowerValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLowerValue0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLowerValue0006";
@@ -1060,12 +1060,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4800
-     * @tc.name       : testGetLowerValue0007
-     * @tc.desc       : Test the function of the interface getLowerValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetLowerValue0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4800
+     * @tc.desc   Test the function of the interface getLowerValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLowerValue0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetLowerValue0007";
@@ -1085,12 +1085,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4900
-     * @tc.name       : testGetHigherValue0001
-     * @tc.desc       : Test the function of the interface getHigherValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetHigherValue0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4900
+     * @tc.desc   Test the function of the interface getHigherValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHigherValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetHigherValue0001";
@@ -1104,12 +1104,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5000
-     * @tc.name       : testGetHigherValue0002
-     * @tc.desc       : Test the function of the interface getHigherValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetHigherValue0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5000
+     * @tc.desc   Test the function of the interface getHigherValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHigherValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetHigherValue0002";
@@ -1122,12 +1122,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5100
-     * @tc.name       : testGetHigherValue0003
-     * @tc.desc       : Test the function of the interface getHigherValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetHigherValue0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5100
+     * @tc.desc   Test the function of the interface getHigherValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHigherValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetHigherValue0003";
@@ -1140,12 +1140,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5200
-     * @tc.name       : testGetHigherValue0004
-     * @tc.desc       : Test the function of the interface getHigherValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetHigherValue0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5200
+     * @tc.desc   Test the function of the interface getHigherValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHigherValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetHigherValue0004";
@@ -1159,12 +1159,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5300
-     * @tc.name       : testGetHigherValue0005
-     * @tc.desc       : Test the function of the interface getHigherValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetHigherValue0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5300
+     * @tc.desc   Test the function of the interface getHigherValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHigherValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetHigherValue0005";
@@ -1178,12 +1178,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5400
-     * @tc.name       : testGetHigherValue0006
-     * @tc.desc       : Test the function of the interface getHigherValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetHigherValue0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5400
+     * @tc.desc   Test the function of the interface getHigherValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHigherValue0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetHigherValue0006";
@@ -1199,12 +1199,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5500
-     * @tc.name       : testGetHigherValue0007
-     * @tc.desc       : Test the function of the interface getHigherValue.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetHigherValue0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5500
+     * @tc.desc   Test the function of the interface getHigherValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHigherValue0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetHigherValue0007";
@@ -1224,12 +1224,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5600
-     * @tc.name       : testPopFirst0001
-     * @tc.desc       : Test the function of the interface popFirst.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopFirst0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5600
+     * @tc.desc   Test the function of the interface popFirst.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopFirst0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopFirst0001";
@@ -1243,12 +1243,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5700
-     * @tc.name       : testPopFirst0002
-     * @tc.desc       : Test the function of the interface popFirst.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopFirst0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5700
+     * @tc.desc   Test the function of the interface popFirst.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopFirst0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopFirst0002";
@@ -1265,12 +1265,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5800
-     * @tc.name       : testPopFirst0003
-     * @tc.desc       : Test the function of the interface popFirst.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopFirst0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5800
+     * @tc.desc   Test the function of the interface popFirst.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopFirst0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopFirst0003";
@@ -1291,12 +1291,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5900
-     * @tc.name       : testPopFirst0004
-     * @tc.desc       : Test the function of the interface popFirst.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopFirst0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_5900
+     * @tc.desc   Test the function of the interface popFirst.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopFirst0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopFirst0004";
@@ -1312,12 +1312,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6000
-     * @tc.name       : testPopFirst0005
-     * @tc.desc       : Test the function of the interface popFirst.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopFirst0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6000
+     * @tc.desc   Test the function of the interface popFirst.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopFirst0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopFirst0005";
@@ -1334,12 +1334,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6100
-     * @tc.name       : testPopFirst0006
-     * @tc.desc       : Test the function of the interface popFirst.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopFirst0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6100
+     * @tc.desc   Test the function of the interface popFirst.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopFirst0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopFirst0006";
@@ -1360,12 +1360,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6200
-     * @tc.name       : testPopLast0001
-     * @tc.desc       : Test the function of the interface popLast.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopLast0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6200
+     * @tc.desc   Test the function of the interface popLast.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopLast0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopLast0001";
@@ -1379,12 +1379,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6300
-     * @tc.name       : testPopLast0002
-     * @tc.desc       : Test the function of the interface popLast.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopLast0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6300
+     * @tc.desc   Test the function of the interface popLast.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopLast0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopLast0002";
@@ -1401,12 +1401,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6400
-     * @tc.name       : testPopLast0003
-     * @tc.desc       : Test the function of the interface popLast.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopLast0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6400
+     * @tc.desc   Test the function of the interface popLast.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopLast0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopLast0003";
@@ -1427,12 +1427,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6500
-     * @tc.name       : testPopLast0004
-     * @tc.desc       : Test the function of the interface popLast.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopLast0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6500
+     * @tc.desc   Test the function of the interface popLast.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopLast0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopLast0004";
@@ -1448,12 +1448,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6600
-     * @tc.name       : testPopLast0005
-     * @tc.desc       : Test the function of the interface popLast.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopLast0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6600
+     * @tc.desc   Test the function of the interface popLast.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopLast0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopLast0005";
@@ -1470,12 +1470,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6700
-     * @tc.name       : testPopLast0006
-     * @tc.desc       : Test the function of the interface popLast.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPopLast0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6700
+     * @tc.desc   Test the function of the interface popLast.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPopLast0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPopLast0006";
@@ -1496,12 +1496,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6800
-     * @tc.name       : testClear0001
-     * @tc.desc       : Test the function of the interface clear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testClear0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6800
+     * @tc.desc   Test the function of the interface clear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testClear0001";
@@ -1517,12 +1517,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6900
-     * @tc.name       : testClear0002
-     * @tc.desc       : Test the function of the interface clear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testClear0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_6900
+     * @tc.desc   Test the function of the interface clear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testClear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testClear0002";
@@ -1542,12 +1542,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7000
-     * @tc.name       : testClear0003
-     * @tc.desc       : Test the function of the interface clear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testClear0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7000
+     * @tc.desc   Test the function of the interface clear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testClear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testClear0003";
@@ -1575,12 +1575,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7100
-     * @tc.name       : testValues0001
-     * @tc.desc       : Test the function of the interface values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testValues0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7100
+     * @tc.desc   Test the function of the interface values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testValues0001";
@@ -1595,12 +1595,12 @@ export default function TreeSetTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7200
-     * @tc.name       : testValues0002
-     * @tc.desc       : Test the function of the interface values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testValues0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7200
+     * @tc.desc   Test the function of the interface values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testValues0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testValues0002";
@@ -1622,12 +1622,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7300
-     * @tc.name       : testValues0003
-     * @tc.desc       : Test the function of the interface values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testValues0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7300
+     * @tc.desc   Test the function of the interface values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testValues0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testValues0003";
@@ -1651,12 +1651,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7400
-     * @tc.name       : testTreeSetForEach0001
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7400
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0001";
@@ -1673,12 +1673,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7500
-     * @tc.name       : testTreeSetForEach0002
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7500
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0002";
@@ -1702,12 +1702,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7600
-     * @tc.name       : testTreeSetForEach0003
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7600
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0003";
@@ -1735,12 +1735,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7700
-     * @tc.name       : testTreeSetForEach0004
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7700
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0004";
@@ -1766,12 +1766,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7800
-     * @tc.name       : testTreeSetForEach0005
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7800
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0004";
@@ -1793,12 +1793,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7900
-     * @tc.name       : testTreeSetEntries0001
-     * @tc.desc       : Test the function of the interface entries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_7900
+     * @tc.desc   Test the function of the interface entries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetEntries0001";
@@ -1814,12 +1814,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8000
-     * @tc.name       : testTreeSetEntries0002
-     * @tc.desc       : Test the function of the interface entries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetEntries0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8000
+     * @tc.desc   Test the function of the interface entries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetEntries0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetEntries0002";
@@ -1844,12 +1844,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8100
-     * @tc.name       : testTreeSetEntries0003
-     * @tc.desc       : Test the function of the interface entries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetEntries0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8100
+     * @tc.desc   Test the function of the interface entries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetEntries0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetEntries0003";
@@ -1876,12 +1876,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8200
-     * @tc.name       : testTreeSetEntries0004
-     * @tc.desc       : Test the function of the interface entries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetEntries0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8200
+     * @tc.desc   Test the function of the interface entries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetEntries0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetEntries0004";
@@ -1906,12 +1906,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8300
-     * @tc.name       : testTreeSetEntries0005
-     * @tc.desc       : Test the function of the interface entries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetEntries0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8300
+     * @tc.desc   Test the function of the interface entries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetEntries0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetEntries0005";
@@ -1932,12 +1932,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8400
-     * @tc.name       : testTreeSetForEach0006
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8400
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0006";
@@ -1959,12 +1959,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8500
-     * @tc.name       : testTreeSetForEach0007
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8500
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0007";
@@ -1987,12 +1987,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8600
-     * @tc.name       : testTreeSetForEach0008
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8600
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0008";
@@ -2015,12 +2015,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8700
-     * @tc.name       : testTreeSetForEach0009
-     * @tc.desc       : Test the function of the interface forEach.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetForEach0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8700
+     * @tc.desc   Test the function of the interface forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetForEach0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetForEach0009";
@@ -2041,12 +2041,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8800
-     * @tc.name       : testTreeSetComparatorConstruct0001
-     * @tc.desc       : Test the comparator of construct.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetComparatorConstruct0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8800
+     * @tc.desc   Test the comparator of construct.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetComparatorConstruct0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetComparatorConstruct0001";
@@ -2082,12 +2082,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8900
-     * @tc.name       : testTreeSetComparatorConstruct0002
-     * @tc.desc       : Test the comparator of construct.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetComparatorConstruct0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8900
+     * @tc.desc   Test the comparator of construct.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetComparatorConstruct0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetComparatorConstruct0002";
@@ -2123,12 +2123,12 @@ export default function TreeSetTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_9000
-     * @tc.name       : testTreeSetComparatorConstruct0003
-     * @tc.desc       : Test the comparator of construct.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTreeSetComparatorConstruct0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_9000
+     * @tc.desc   Test the comparator of construct.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTreeSetComparatorConstruct0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testTreeSetComparatorConstruct0003";

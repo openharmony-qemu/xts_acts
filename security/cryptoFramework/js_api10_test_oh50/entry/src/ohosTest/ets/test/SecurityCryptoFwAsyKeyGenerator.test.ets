@@ -41,12 +41,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0100
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0100
-     * @tc.name Test Generator Asymmetric Key algName with RSA. Sync style. Process success
-     * @tc.desc algorithm is RSA
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -74,12 +74,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0200
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0200
-     * @tc.name Test Generator Asymmetric Key algName with ECC. Sync style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -103,12 +103,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0201
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0201
-     * @tc.name Test Generator Asymmetric Key algName with ECC. Sync style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -132,12 +132,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0202
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0202
-     * @tc.name Test Generator Asymmetric Key algName with ECC. Sync style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -161,12 +161,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0300
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0300
-     * @tc.name Test Generator Asymmetric Key algName with DSA. Sync style. Process success
-     * @tc.desc algorithm is DSA
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is DSA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -190,12 +190,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0301
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0301
-     * @tc.name Test Generator Asymmetric Key algName with DSA. Sync style. Process success
-     * @tc.desc algorithm is DSA
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is DSA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0301", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -219,12 +219,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0400
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0400
-     * @tc.name Test Generator Asymmetric Key algName with SM2. Sync style. Process success
-     * @tc.desc algorithm is SM2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -248,12 +248,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0500
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0500
-     * @tc.name Test Generator Asymmetric Key algName with 25519. Sync style. Process success
-     * @tc.desc algorithm is 25519
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is 25519
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -277,12 +277,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0600
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0600
-     * @tc.name Test Generator Asymmetric Key algName with DH. Sync style. Process success
-     * @tc.desc algorithm is DH
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is DH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -306,12 +306,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0601
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0601
-     * @tc.name Test Generator Asymmetric Key algName with DH. Sync style. Process success
-     * @tc.desc algorithm is DH
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is DH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0601", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -335,12 +335,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0602
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0602
-     * @tc.name Test Generator Asymmetric Key algName with DH. Sync style. Process success
-     * @tc.desc algorithm is DH
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is DH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0602", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -364,12 +364,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0700
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0700
-     * @tc.name Test Generator Asymmetric Key algName with SM2 Spec. Sync style. Process success
-     * @tc.desc algorithm is SM2 Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM2 Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let sm2KeyPairSpec = asyKeySyncUtils.genSM2KeyPairSpec();
@@ -390,12 +390,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800
-     * @tc.name Test Generator Asymmetric Key algName with RSA Spec. Sync style. Process success
-     * @tc.desc algorithm is RSA Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -421,12 +421,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0900
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0900
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
-     * @tc.desc algorithm is ECC Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -452,12 +452,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1000
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1000
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
-     * @tc.desc algorithm is ECC Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -486,12 +486,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1100
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1100
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
-     * @tc.desc algorithm is ECC Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -515,12 +515,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1200
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1200
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
-     * @tc.desc algorithm is ECC Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -544,12 +544,12 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1300
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1300
-     * @tc.name Test Generator Asymmetric Key algName with ECC Spec. Sync style. Process success
-     * @tc.desc algorithm is ECC Spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC Spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

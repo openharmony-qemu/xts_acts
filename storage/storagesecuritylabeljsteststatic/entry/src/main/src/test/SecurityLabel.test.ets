@@ -36,13 +36,12 @@ let s4: securityLabel.DataLevel = "s4";
     hilog.info(domain, tag, '%{public}s', 'security_label start');
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_000
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0100
-     * @tc.name securitylabel_test_set_security_label_sync_static_000
-     * @tc.desc Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_000 start');
@@ -62,13 +61,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_001
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0200
-     * @tc.name securitylabel_test_set_security_label_sync_static_001
-     * @tc.desc Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s1.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_001 start');
@@ -88,13 +86,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_002
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0300
-     * @tc.name securitylabel_test_set_security_label_sync_static_002
-     * @tc.desc Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s2.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_002 start');
@@ -114,13 +111,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_003
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0400
-     * @tc.name securitylabel_test_set_security_label_sync_static_003
-     * @tc.desc Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s3.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_003 start');
@@ -140,13 +136,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_004
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0500
-     * @tc.name securitylabel_test_set_security_label_sync_static_004
-     * @tc.desc Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s4.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label s4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_004 start');
@@ -166,13 +161,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_005
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0600
-     * @tc.name securitylabel_test_set_security_label_sync_static_005
-     * @tc.desc Test the setSecurityLabelSync() interface, when the path does not exist.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the setSecurityLabelSync() interface, when the path does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_005 start');
@@ -186,13 +180,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_006
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0700
-     * @tc.name securitylabel_test_set_security_label_sync_static_006
-     * @tc.desc Test the setSecurityLabelSync() interface, return false when the securitylabel is lower than before.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the setSecurityLabelSync() interface, return false when the securitylabel is lower than before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_006 start');
@@ -212,14 +205,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_000
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0000
-     * @tc.name securitylabel_test_set_security_label_async_static_000
-     * @tc.desc Test that the setSecurityLabel() interface callback to set the data label.
-     * Test the getSecurityLabel() interface callback to get the data label.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test that the setSecurityLabel() interface callback to set the data label.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_000 start');
@@ -242,14 +233,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_001
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0100
-     * @tc.name securitylabel_test_set_security_label_async_static_001
-     * @tc.desc Test that the setSecurityLabel() interface callback to set the data label.
-     * Test the getSecurityLabel() interface promises to get the data label.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test that the setSecurityLabel() interface callback to set the data label.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_001 start');
@@ -271,14 +260,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_002
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0200
-     * @tc.name securitylabel_test_set_security_label_async_static_002
-     * @tc.desc Test that the setSecurityLabel() interface promises to set the data label.
-     * Test the getSecurityLabel() interface callback to get the data label.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test that the setSecurityLabel() interface promises to set the data label.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_002 start');
@@ -300,14 +287,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_003
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0300
-     * @tc.name securitylabel_test_set_security_label_async_static_003
-     * @tc.desc Test that the setSecurityLabel() interface promises to set the data label.
-     * Test the getSecurityLabel() interface promises to get the data label.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test that the setSecurityLabel() interface promises to set the data label.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_003 start');
@@ -328,14 +313,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_004
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0400
-     * @tc.name securitylabel_test_set_security_label_async_static_004
-     * @tc.desc Test that the setSecurityLabel() interface promises to set the data label.
-     * Test the getSecurityLabel() interface promises to get the data label.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test that the setSecurityLabel() interface promises to set the data label.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_004 start');
@@ -356,13 +339,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_006
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0600
-     * @tc.name securitylabel_test_set_security_label_async_static_006
-     * @tc.desc Test setSecurityLabel() interfaces, return false when the path is invalid.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test setSecurityLabel() interfaces, return false when the path is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_006 start');
@@ -377,13 +359,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_007
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0700
-     * @tc.name securitylabel_test_set_security_label_async_static_007
-     * @tc.desc Test setSecurityLabel() interfaces, return false when the path is invalid.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test setSecurityLabel() interfaces, return false when the path is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_007 start');
@@ -402,13 +383,12 @@ let s4: securityLabel.DataLevel = "s4";
     });
 
     /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_008
      * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0800
-     * @tc.name securitylabel_test_set_security_label_async_static_008
-     * @tc.desc Test setSecurityLabel() interfaces, return false when the securitylabel is lower than before.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test setSecurityLabel() interfaces, return false when the securitylabel is lower than before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('securitylabel_test_set_security_label_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_008 start');

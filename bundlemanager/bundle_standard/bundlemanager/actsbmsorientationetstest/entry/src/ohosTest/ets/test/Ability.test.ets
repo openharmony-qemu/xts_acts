@@ -25,12 +25,12 @@ const BUNDLE = 'Acts_OrientationTest_';
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     /**
-     * @tc.number     : Acts_OrientationTest_001
-     * @tc.name       : Query the orientation of the provided HAP
-     * @tc.desc       : Query if the orientation value is FOLLOW_RECENT.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   Acts_OrientationTest_001
+     * @tc.number Acts_OrientationTest_001
+     * @tc.desc   Query if the orientation value is FOLLOW_RECENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_OrientationTest_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       hilog.info(DOMAIN, TAG, BUNDLE + '001 begin');
@@ -54,14 +54,14 @@ export default function abilityTest() {
     })
 
 
-     /*
-     * @tc.number      Sub_Bms_Framework_shortcutManager_100
-     * @tc.name        Sub_Bms_Framework_shortcutManager_100
-     * @tc.desc        test getAllShortcutInfoForSelf return value is []
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
-     */
+      /**
+       * @tc.name   Sub_Bms_Framework_shortcutManager_100
+       * @tc.number Sub_Bms_Framework_shortcutManager_100
+       * @tc.desc   test getAllShortcutInfoForSelf return value is []
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('Sub_Bms_Framework_shortcutManager_100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
         console.info('Sub_Bms_Framework_shortcutManager_100 begin');
         await shortcutManager.getAllShortcutInfoForSelf()

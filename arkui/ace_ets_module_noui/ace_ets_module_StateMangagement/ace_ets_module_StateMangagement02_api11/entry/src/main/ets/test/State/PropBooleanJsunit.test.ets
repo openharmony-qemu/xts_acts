@@ -54,6 +54,14 @@ export default function PropBooleanJsunit() {
       }
       done();
     });
+    /**
+     * @tc.name   PropBooleanJsunit_0100
+     * @tc.number PropBooleanJsunit_0100
+     * @tc.desc   PropBooleanJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropBooleanJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropBooleanJsunit_0100 START');
@@ -65,6 +73,14 @@ export default function PropBooleanJsunit() {
       console.info('[PropBooleanJsunit_0100] END');
       done();
     });
+    /**
+     * @tc.name   PropBooleanJsunit_0200
+     * @tc.number PropBooleanJsunit_0200
+     * @tc.desc   PropBooleanJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropBooleanJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropBooleanJsunit_0200 START');
@@ -81,6 +97,14 @@ export default function PropBooleanJsunit() {
       console.info('[PropBooleanJsunit_0200] END');
       done();
     });
+    /**
+     * @tc.name   PropBooleanJsunit_0300
+     * @tc.number PropBooleanJsunit_0300
+     * @tc.desc   PropBooleanJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropBooleanJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropBooleanJsunit_0300 START');
@@ -92,6 +116,14 @@ export default function PropBooleanJsunit() {
       console.info('[PropBooleanJsunit_0300] END');
       done();
     });
+    /**
+     * @tc.name   PropBooleanJsunit_0400
+     * @tc.number PropBooleanJsunit_0400
+     * @tc.desc   PropBooleanJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropBooleanJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropBooleanJsunit_0400 START');

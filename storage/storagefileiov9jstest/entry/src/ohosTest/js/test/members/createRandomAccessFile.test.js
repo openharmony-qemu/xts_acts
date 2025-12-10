@@ -40,14 +40,12 @@ export default function fileIOCreateRandomAccessFile() {
 describe('fileIO_create_randomAccessFile', function () {
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_000
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0000
-     * @tc.name fileIO_create_randomaccessfile_sync_000
-     * @tc.desc Test createRandomAccessFileSync() interface.
-     * Create RandomAccessFile object to access file based on file path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_000');
@@ -65,14 +63,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_001
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0100
-     * @tc.name fileIO_create_randomaccessfile_sync_001
-     * @tc.desc Test createRandomAccessFileSync() interface. filePointer = 5.
-     * Create RandomAccessFile object to access file from filePointer location.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. filePointer = 5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_001');
@@ -92,14 +88,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_002
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0200
-     * @tc.name fileIO_create_randomaccessfile_sync_002
-     * @tc.desc Test createRandomAccessFileSync() interface.
-     * Create RandomAccessFile object based on file descriptor to access file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_002');
@@ -118,14 +112,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_003
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0300
-     * @tc.name fileIO_create_randomaccessfile_sync_003
-     * @tc.desc Test createRandomAccessFileSync() interface. filePointer = 1.
-     * Create RandomAccessFile object based on file descriptor to access file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. filePointer = 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_003');
@@ -146,13 +138,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_004
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0400
-     * @tc.name fileIO_create_randomaccessfile_sync_004
-     * @tc.desc Test createRandomAccessFileSync() interface. No such file or directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. No such file or directory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_sync_004', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_004');
@@ -167,13 +158,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_005
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0500
-     * @tc.name fileIO_create_randomaccessfile_sync_005
-     * @tc.desc Test createRandomAccessFileSync() interface. Invalid fd.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. Invalid fd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_sync_005', Level.LEVEL3, async function () {
         try {
@@ -186,13 +176,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_006
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0600
-     * @tc.name fileIO_create_randomaccessfile_sync_006
-     * @tc.desc Test createRandomAccessFileSync() interface. Invalid fp.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. Invalid fp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_sync_006', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_006');
@@ -211,13 +200,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_007
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0700
-     * @tc.name fileIO_create_randomaccessfile_sync_007
-     * @tc.desc Test createRandomAccessFileSync() interface. Missing Parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. Missing Parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_sync_007', Level.LEVEL3, async function () {
 
@@ -231,14 +219,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_008
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0800
-     * @tc.name fileIO_create_randomaccessfile_sync_008
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE.
-     * Create RandomAccessFile object to access file based on file path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_008');
@@ -256,13 +242,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_009
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_0900
-     * @tc.name fileIO_create_randomaccessfile_sync_009
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=-1. Invalid Mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=-1. Invalid Mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_sync_009', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_009');
@@ -279,14 +264,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_010
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1000
-     * @tc.name fileIO_create_randomaccessfile_sync_010
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.TRUNC | fileIO.OpenMode.READ_WRITE.
-     * If the file exists and the file is opened for write-only or read-write, trim its length to zero.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.TRUNC | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_010');
@@ -305,14 +288,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_011
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1100
-     * @tc.name fileIO_create_randomaccessfile_sync_011
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.APPEND | fileIO.OpenMode.READ_WRITE.
-     * Open as append, subsequent writes will append to the end of the file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.APPEND | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_011');
@@ -335,13 +316,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_012
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1200
-     * @tc.name fileIO_create_randomaccessfile_sync_012
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Not a directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Not a directory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_sync_012', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_012');
@@ -358,14 +338,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_013
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1300
-     * @tc.name fileIO_create_randomaccessfile_sync_013
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.NOFOLLOW | fileIO.OpenMode.READ_WRITE.
-     * Create RandomAccessFile object to access file based on file path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.NOFOLLOW | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_013');
@@ -383,14 +361,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_014
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1400
-     * @tc.name fileIO_create_randomaccessfile_sync_014
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.SYNC | fileIO.OpenMode.READ_WRITE.
-     * Create RandomAccessFile object to access file based on file path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.SYNC | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_014');
@@ -408,13 +384,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_015
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1500
-     * @tc.name fileIO_create_randomaccessfile_sync_015
-     * @tc.desc Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Invalid filepath.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Invalid filepath.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_sync_015', Level.LEVEL3, async function () {
        let dpath = await nextFileName('fileIO_create_randomaccessfile_sync_015') + 'd';
@@ -431,13 +406,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_016
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1600
-     * @tc.name fileIO_create_randomaccessfile_sync_016
-     * @tc.desc Test createRandomAccessFileSync() interface. RandomAccessFileOptions
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. RandomAccessFileOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_016');
@@ -466,13 +440,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_017
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1700
-     * @tc.name fileIO_create_randomaccessfile_sync_017
-     * @tc.desc Test createRandomAccessFileSync() interface. RandomAccessFileOptions
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. RandomAccessFileOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_017');
@@ -503,13 +476,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_018
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1800
-     * @tc.name fileIO_create_randomaccessfile_sync_018
-     * @tc.desc Test createRandomAccessFileSync() interface. RandomAccessFileOptions
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. RandomAccessFileOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_018');
@@ -540,14 +512,13 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
      /**
-     * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1900
-     * @tc.name fileIO_create_randomaccessfile_sync_019
-     * @tc.desc Test createRandomAccessFileSync() interface. Invalid argument
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
-     */
+      * @tc.name   fileIO_create_randomaccessfile_sync_019
+      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_1900
+      * @tc.desc   Test createRandomAccessFileSync() interface. Invalid argument
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('fileIO_create_randomaccessfile_sync_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_019');
         initReadfile(fpath);
@@ -563,13 +534,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_sync_020
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_SYNC_2000
-     * @tc.name fileIO_create_randomaccessfile_sync_020
-     * @tc.desc Test createRandomAccessFileSync() interface. Invalid argument
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. Invalid argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_sync_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_sync_020');
@@ -586,14 +556,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_000
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0000
-     * @tc.name fileIO_create_randomaccessfile_async_000
-     * @tc.desc Test createRandomAccessFile() interface. return in promise mode.
-     * Create RandomAccessFile object to access file based on file path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. return in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_000');
@@ -612,14 +580,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_001
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0100
-     * @tc.name fileIO_create_randomaccessfile_async_001
-     * @tc.desc Test createRandomAccessFile() interface. filePointer = 10. return in callback mode.
-     * Create RandomAccessFile object to access file based on file path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. filePointer = 10. return in callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_001');
@@ -640,14 +606,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_002
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0200
-     * @tc.name fileIO_create_randomaccessfile_async_002
-     * @tc.desc Test createRandomAccessFile() interface.
-     * Create RandomAccessFile object based on file descriptor to access file. return in callback mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_002');
@@ -668,14 +632,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_003
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0300
-     * @tc.name fileIO_create_randomaccessfile_async_003
-     * @tc.desc Test createRandomAccessFile() interface. filePointer = 1.
-     * Create RandomAccessFile object based on file descriptor to access file. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. filePointer = 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_003');
@@ -697,13 +659,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_004
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0400
-     * @tc.name fileIO_create_randomaccessfile_async_004
-     * @tc.desc Test createRandomAccessFile() interface. No such file or directory. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. No such file or directory. return in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_async_004', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_004');
@@ -719,13 +680,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_005
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0500
-     * @tc.name fileIO_create_randomaccessfile_async_005
-     * @tc.desc Test createRandomAccessFile() interface. Invalid fd. return in callback mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. Invalid fd. return in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_async_005', Level.LEVEL3, async function (done) {
         try {
@@ -740,13 +700,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_006
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0600
-     * @tc.name fileIO_create_randomaccessfile_async_006
-     * @tc.desc Test createRandomAccessFile() interface. Invalid fp. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. Invalid fp. return in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_async_006', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_006');
@@ -767,13 +726,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_007
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0700
-     * @tc.name fileIO_create_randomaccessfile_async_007
-     * @tc.desc Test createRandomAccessFile() interface. Missing Parameter. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. Missing Parameter. return in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_007');
@@ -793,14 +751,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_008
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0800
-     * @tc.name fileIO_create_randomaccessfile_async_008
-     * @tc.desc Test createRandomAccessFile() interface. flags=fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
-     * Create RandomAccessFile object to access file based on file path. return in callback mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_008');
@@ -820,13 +776,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_009
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_0900
-     * @tc.name fileIO_create_randomaccessfile_async_009
-     * @tc.desc Test createRandomAccessFile() interface. flags=-1. Invalid Mode. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=-1. Invalid Mode. return in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_async_009', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_009');
@@ -844,14 +799,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_010
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1000
-     * @tc.name fileIO_create_randomaccessfile_async_010
-     * @tc.desc Test createRandomAccessFile() interface. flags=fileIO.OpenMode.TRUNC | fileIO.OpenMode.READ_WRITE.
-     * If the file exists and the file is opened for write-only or read-write, trim its length to zero. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=fileIO.OpenMode.TRUNC | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_010');
@@ -871,14 +824,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_011
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1100
-     * @tc.name fileIO_create_randomaccessfile_async_011
-     * @tc.desc Test createRandomAccessFile() interface. flags=fileIO.OpenMode.APPEND | fileIO.OpenMode.READ_WRITE.
-     * Open as append, subsequent writes will append to the end of the file. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=fileIO.OpenMode.APPEND | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_011');
@@ -902,13 +853,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_012
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1200
-     * @tc.name fileIO_create_randomaccessfile_async_012
-     * @tc.desc Test createRandomAccessFile() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Not a directory. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Not a directory. return in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_async_012', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_012');
@@ -925,14 +875,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_013
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1300
-     * @tc.name fileIO_create_randomaccessfile_async_013
-     * @tc.desc Test createRandomAccessFile() interface. flags=fileIO.OpenMode.NOFOLLOW | fileIO.OpenMode.READ_WRITE.
-     * Create RandomAccessFile object to access file based on file path. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=fileIO.OpenMode.NOFOLLOW | fileIO.OpenMode.READ_WRITE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_013');
@@ -951,14 +899,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_014
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1400
-     * @tc.name fileIO_create_randomaccessfile_async_014
-     * @tc.desc Test createRandomAccessFile() interface. flags=fileIO.OpenMode.SYNC.
-     * Create RandomAccessFile object to access file based on file path. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=fileIO.OpenMode.SYNC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_014');
@@ -977,13 +923,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_015
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1500
-     * @tc.name fileIO_create_randomaccessfile_async_015
-     * @tc.desc Test createRandomAccessFile() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Invalid filepath. return in promise mode
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFile() interface. flags=fileIO.OpenMode.DIR | fileIO.OpenMode.READ_WRITE. Invalid filepath. return in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_create_randomaccessfile_async_015', Level.LEVEL3, async function (done) {
        let dpath = await nextFileName('fileIO_create_randomaccessfile_async_015') + 'd';
@@ -1000,14 +945,13 @@ describe('fileIO_create_randomAccessFile', function () {
    });
 
      /**
-     * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1600
-     * @tc.name fileIO_create_randomaccessfile_async_016
-     * @tc.desc Test createRandomAccessFileSync() interface. RandomAccessFileOptions
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
-     */
+      * @tc.name   fileIO_create_randomaccessfile_async_016
+      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1600
+      * @tc.desc   Test createRandomAccessFileSync() interface. RandomAccessFileOptions
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('fileIO_create_randomaccessfile_async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_016');
         initReadfile(fpath);
@@ -1037,13 +981,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_create_randomaccessfile_async_018
      * @tc.number SUB_STORAGE_FILEIO_CREATE_RANDOMACCESSFILE_ASYNC_1800
-     * @tc.name fileIO_create_randomaccessfile_async_018
-     * @tc.desc Test createRandomAccessFileSync() interface. RandomAccessFileOptions
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. RandomAccessFileOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_create_randomaccessfile_async_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_create_randomaccessfile_async_018');
@@ -1074,13 +1017,12 @@ describe('fileIO_create_randomAccessFile', function () {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_multithreaded_replication_000
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_MULTITHREADED_REPLICATION_0000
-     * @tc.name fileIO_randomaccessfile_multithreaded_replication_000
-     * @tc.desc Test createRandomAccessFileSync() interface. Test multi-threaded replication.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createRandomAccessFileSync() interface. Test multi-threaded replication.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_multithreaded_replication_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         let srcpath = await nextFileName('fileIO_randomaccessfile_multithreaded_replication_000');

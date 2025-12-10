@@ -71,12 +71,12 @@ export default function checkAttrTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ASSET_CHECK_ATTR_001
-     * @tc.name      : checkAttr_image_001
-     * @tc.desc      : Check image uri displayName photoType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   checkAttr_image_001
+     * @tc.number PHOTO_ASSET_CHECK_ATTR_001
+     * @tc.desc   Check image uri displayName photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('checkAttr_image_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'checkAttr_image_001';
@@ -86,12 +86,12 @@ export default function checkAttrTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_CHECK_ATTR_002
-     * @tc.name      : checkAttr_video_001
-     * @tc.desc      : Check video uri displayName photoType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   checkAttr_video_001
+     * @tc.number PHOTO_ASSET_CHECK_ATTR_002
+     * @tc.desc   Check video uri displayName photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('checkAttr_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'checkAttr_video_001';

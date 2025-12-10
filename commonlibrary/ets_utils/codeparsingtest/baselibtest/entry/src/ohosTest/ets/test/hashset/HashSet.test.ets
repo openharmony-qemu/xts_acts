@@ -37,12 +37,12 @@ export default function HasSetTest() {
   })
   describe('hasSetTest', () => {
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0100
-     * @tc.name      : testHashSetLength0001
-     * @tc.desc      : Testing HashSet length is 0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testHashSetLength0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0100
+     * @tc.desc   Testing HashSet length is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHashSetLength0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testHashSetLength0001';
@@ -56,12 +56,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0200
-     * @tc.name      : testHashSetLength0002
-     * @tc.desc      : Testing HashSet has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testHashSetLength0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0200
+     * @tc.desc   Testing HashSet has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHashSetLength0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testHashSetLength0002';
@@ -76,12 +76,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0300
-     * @tc.name      : testHashSetLength0003
-     * @tc.desc      : Testing HashSet remove->add->clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testHashSetLength0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0300
+     * @tc.desc   Testing HashSet remove->add->clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHashSetLength0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testHashSetLength0003';
@@ -98,12 +98,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0400
-     * @tc.name      : testHashSetLength0004
-     * @tc.desc      : Testing HashSet add duplicate data length result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testHashSetLength0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_0400
+     * @tc.desc   Testing HashSet add duplicate data length result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHashSetLength0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testHashSetLength0004';
@@ -119,12 +119,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CONSTRUCTOR_0100
-     * @tc.name      : testHashSetConstructor0001
-     * @tc.desc      : Testing HashSet constructor add sample data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testHashSetConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CONSTRUCTOR_0100
+     * @tc.desc   Testing HashSet constructor add sample data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHashSetConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testHashSetConstructor0001';
@@ -139,12 +139,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CONSTRUCTOR_0200
-     * @tc.name      : testConstructor0002
-     * @tc.desc      : Testing HashSet constructor add custom type data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CONSTRUCTOR_0200
+     * @tc.desc   Testing HashSet constructor add custom type data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetConstructor0002';
@@ -167,12 +167,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0100
-     * @tc.name      : testHashSetIsEmpty0001
-     * @tc.desc      : Testing HashSet empty data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetIsEmpty0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0100
+     * @tc.desc   Testing HashSet empty data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetIsEmpty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetIsEmpty0001';
@@ -186,12 +186,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0200
-     * @tc.name      : testHashSetIsEmpty0002
-     * @tc.desc      : Testing HashSet has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetIsEmpty0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0200
+     * @tc.desc   Testing HashSet has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetIsEmpty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetIsEmpty0002';
@@ -206,12 +206,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0300
-     * @tc.name      : testHashSetIsEmpty0003
-     * @tc.desc      : Testing HashSet has data and remove
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetIsEmpty0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0300
+     * @tc.desc   Testing HashSet has data and remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetIsEmpty0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetIsEmpty0003';
@@ -227,12 +227,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0400
-     * @tc.name      : testHashSetIsEmpty0004
-     * @tc.desc      : Testing HashSet has data and clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetIsEmpty0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_IS_EMPTY_0400
+     * @tc.desc   Testing HashSet has data and clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetIsEmpty0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetIsEmpty0004';
@@ -248,12 +248,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0100
-     * @tc.name      : testHashSetHas0001
-     * @tc.desc      : Testing HashSet is empty and check if "" has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0100
+     * @tc.desc   Testing HashSet is empty and check if "" has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetHas0001';
@@ -267,12 +267,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0200
-     * @tc.name      : testHashSetHas0002
-     * @tc.desc      : Testing HashSet is empty and check if null has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0200
+     * @tc.desc   Testing HashSet is empty and check if null has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetHas0002';
@@ -286,12 +286,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0300
-     * @tc.name      : testHashSetHas0003
-     * @tc.desc      : Testing HashSet is empty and check if undefined has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0300
+     * @tc.desc   Testing HashSet is empty and check if undefined has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetHas0003';
@@ -305,12 +305,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0400
-     * @tc.name      : testHashSetHas0004
-     * @tc.desc      : Testing HashSet is empty and check if value has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetHas0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0400
+     * @tc.desc   Testing HashSet is empty and check if value has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetHas0004';
@@ -324,12 +324,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0500
-     * @tc.name      : testHashSetHas0005
-     * @tc.desc      : Testing HashSet has 1 and check if 1 has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetHas0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0500
+     * @tc.desc   Testing HashSet has 1 and check if 1 has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetHas0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetHas0005';
@@ -344,12 +344,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0600
-     * @tc.name      : testHashSetHas0006
-     * @tc.desc      : Testing HashSet has 1 and check if 2 has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetHas0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0600
+     * @tc.desc   Testing HashSet has 1 and check if 2 has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetHas0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetHas0006';
@@ -364,12 +364,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0700
-     * @tc.name      : testHashSetHas0007
-     * @tc.desc      : Testing HashSet remove->add->clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetHas0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0700
+     * @tc.desc   Testing HashSet remove->add->clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetHas0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetHas0007';
@@ -386,12 +386,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0100
-     * @tc.name      : testHashSetAdd0001
-     * @tc.desc      : Testing HashSet data "" check length =1 and has ""
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0100
+     * @tc.desc   Testing HashSet data "" check length =1 and has ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetAdd0001';
@@ -407,12 +407,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0200
-     * @tc.name      : testHashSetAdd0002
-     * @tc.desc      : Testing HashSet data "a" check length =1 and has "a"
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0200
+     * @tc.desc   Testing HashSet data "a" check length =1 and has "a"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetAdd0002';
@@ -428,12 +428,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0300
-     * @tc.name      : testHashSetAdd0003
-     * @tc.desc      : Testing HashSet data null check length =1 and has null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetAdd0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0300
+     * @tc.desc   Testing HashSet data null check length =1 and has null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetAdd0003';
@@ -449,12 +449,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0400
-     * @tc.name      : testHashSetAdd0004
-     * @tc.desc      : Testing HashSet data undefined check length =1 and has undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetAdd0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0400
+     * @tc.desc   Testing HashSet data undefined check length =1 and has undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetAdd0004';
@@ -470,12 +470,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0500
-     * @tc.name      : testHashSetAdd0005
-     * @tc.desc      : Testing HashSet data string length is 2048 check length =1 and has string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetAdd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0500
+     * @tc.desc   Testing HashSet data string length is 2048 check length =1 and has string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetAdd0005';
@@ -492,12 +492,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0600
-     * @tc.name      : testHashSetAdd0006
-     * @tc.desc      : Testing HashSet data has 1000 check length =1 and has 1000 data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetAdd0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0600
+     * @tc.desc   Testing HashSet data has 1000 check length =1 and has 1000 data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetAdd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetAdd0006';
@@ -517,12 +517,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0700
-     * @tc.name      : testHashSetAdd0007
-     * @tc.desc      : Testing HashSet remove->add->clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetAdd0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0700
+     * @tc.desc   Testing HashSet remove->add->clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetAdd0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetAdd0007';
@@ -540,12 +540,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0100
-     * @tc.name      : testHashSetRemove0001
-     * @tc.desc      : Testing HashSet is empty and remove value is ""
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetRemove0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0100
+     * @tc.desc   Testing HashSet is empty and remove value is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetRemove0001';
@@ -559,12 +559,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0200
-     * @tc.name      : testHashSetRemove0002
-     * @tc.desc      : Testing HashSet is empty and remove value is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetRemove0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0200
+     * @tc.desc   Testing HashSet is empty and remove value is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetRemove0002';
@@ -578,12 +578,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0300
-     * @tc.name      : testHashSetRemove0003
-     * @tc.desc      : Testing HashSet is empty and remove value is undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetRemove0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0300
+     * @tc.desc   Testing HashSet is empty and remove value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetRemove0003';
@@ -597,12 +597,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0400
-     * @tc.name      : testHashSetRemove0004
-     * @tc.desc      : Testing HashSet is empty and remove value is "a"
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetRemove0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0400
+     * @tc.desc   Testing HashSet is empty and remove value is "a"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetRemove0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetRemove0004';
@@ -616,12 +616,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0500
-     * @tc.name      : testHashSetRemove0005
-     * @tc.desc      : Testing HashSet has 1 and remove value is 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetRemove0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0500
+     * @tc.desc   Testing HashSet has 1 and remove value is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetRemove0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetRemove0005';
@@ -636,12 +636,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0600
-     * @tc.name      : testHashSetRemove0006
-     * @tc.desc      : Testing HashSet has 1 and remove value is 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetRemove0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0600
+     * @tc.desc   Testing HashSet has 1 and remove value is 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetRemove0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetRemove0006';
@@ -656,12 +656,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0700
-     * @tc.name      : testHashSetRemove0007
-     * @tc.desc      : Testing HashSet remove->add->clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetRemove0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0700
+     * @tc.desc   Testing HashSet remove->add->clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetRemove0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetRemove0007';
@@ -678,12 +678,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CLEAR_0100
-     * @tc.name      : testHashSetClear0001
-     * @tc.desc      : Testing HashSet is empty clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetClear0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CLEAR_0100
+     * @tc.desc   Testing HashSet is empty clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetClear0001';
@@ -698,12 +698,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CLEAR_0200
-     * @tc.name      : testHashSetClear0002
-     * @tc.desc      : Testing HashSet has data clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetClear0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CLEAR_0200
+     * @tc.desc   Testing HashSet has data clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetClear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetClear0002';
@@ -719,12 +719,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CLEAR_0300
-     * @tc.name      : testHashSetClear0003
-     * @tc.desc      : Testing HashSet has data clear and add
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetClear0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CLEAR_0300
+     * @tc.desc   Testing HashSet has data clear and add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetClear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetClear0003';
@@ -741,12 +741,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_VALUES_0100
-     * @tc.name      : testHashSetValues0001
-     * @tc.desc      : Testing HashSet is empty get values
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetValues0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_VALUES_0100
+     * @tc.desc   Testing HashSet is empty get values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetValues0001';
@@ -762,12 +762,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_VALUES_0200
-     * @tc.name      : testHashSetValues0002
-     * @tc.desc      : Testing HashSet has data get values while check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetValues0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_VALUES_0200
+     * @tc.desc   Testing HashSet has data get values while check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetValues0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetValues0002';
@@ -793,12 +793,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0100
-     * @tc.name      : testHashSetForEach0001
-     * @tc.desc      : Testing HashSet is empty and foreach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0100
+     * @tc.desc   Testing HashSet is empty and foreach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetForEach0001';
@@ -814,12 +814,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0200
-     * @tc.name      : testHashSetForEach0002
-     * @tc.desc      : Testing HashSet has data check everyOne and length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetForEach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0200
+     * @tc.desc   Testing HashSet has data check everyOne and length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetForEach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetForEach0002';
@@ -841,12 +841,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0300
-     * @tc.name      : testHashSetForEach0003
-     * @tc.desc      : Testing HashSet has data and add check length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetForEach0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0300
+     * @tc.desc   Testing HashSet has data and add check length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetForEach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetForEach0003';
@@ -864,12 +864,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0400
-     * @tc.name      : testHashSetForEach0004
-     * @tc.desc      : Testing HashSet has data and clear check length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetForEach0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0400
+     * @tc.desc   Testing HashSet has data and clear check length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetForEach0004';
@@ -887,12 +887,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0500
-     * @tc.name      : testHashSetForEach0005
-     * @tc.desc      : Testing HashSet has data and ArgThis
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetForEach0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0500
+     * @tc.desc   Testing HashSet has data and ArgThis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetForEach0005';
@@ -914,12 +914,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0600
-     * @tc.name      : testHashSetForEach0006
-     * @tc.desc      : Testing HashSet has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetForEach0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0600
+     * @tc.desc   Testing HashSet has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetForEach0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetForEach0006';
@@ -937,12 +937,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0100
-     * @tc.name      : testHashSetEntries0001
-     * @tc.desc      : Testing HashSet is empty get entries length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0100
+     * @tc.desc   Testing HashSet is empty get entries length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetEntries0001';
@@ -961,12 +961,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0200
-     * @tc.name      : testHashSetEntries0002
-     * @tc.desc      : Testing HashSet has data check everyOne and length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetEntries0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0200
+     * @tc.desc   Testing HashSet has data check everyOne and length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetEntries0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetEntries0002';
@@ -993,12 +993,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0300
-     * @tc.name      : testHashSetEntries0003
-     * @tc.desc      : Testing HashSet has data add and check length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetEntries0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0300
+     * @tc.desc   Testing HashSet has data add and check length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetEntries0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetEntries0003';
@@ -1019,12 +1019,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0400
-     * @tc.name      : testHashSetEntries0004
-     * @tc.desc      : Testing HashSet has data clear and check length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetEntries0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ENTRIES_0400
+     * @tc.desc   Testing HashSet has data clear and check length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetEntries0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetEntries0003';
@@ -1045,12 +1045,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_SYMBOL_ITERATOR_0100
-     * @tc.name      : testHashSetSymbolIterator0001
-     * @tc.desc      : Testing HashSet is empty while loop check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetSymbolIterator0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_SYMBOL_ITERATOR_0100
+     * @tc.desc   Testing HashSet is empty while loop check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetSymbolIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetSymbolIterator0001';
@@ -1069,12 +1069,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_SYMBOL_ITERATOR_0200
-     * @tc.name      : testHashSetSymbolIterator0002
-     * @tc.desc      : Testing HashSet has data while loop check value and length
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetSymbolIterator0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_SYMBOL_ITERATOR_0200
+     * @tc.desc   Testing HashSet has data while loop check value and length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetSymbolIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetSymbolIterator0002';
@@ -1101,12 +1101,12 @@ export default function HasSetTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CUSTOM_0100
-     * @tc.name      : testHashSetCustom0001
-     * @tc.desc      : Testing HashSet has data check custom value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testHashSetCustom0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CUSTOM_0100
+     * @tc.desc   Testing HashSet has data check custom value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashSetCustom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testHashSetCustom0001';

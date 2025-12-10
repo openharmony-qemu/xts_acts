@@ -624,12 +624,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_CREATE_0100
-     * @tc.name      : sub_multimedia_image_packerndk_create
-     * @tc.desc      : 1.packingtestndk create
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_CREATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_CREATE_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_CREATE_0100', Level.LEVEL0, async (done: Function) => {
 
@@ -637,27 +637,24 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_INIT_NATIVE_0100
-     * @tc.name      : sub_multimedia_image_packerndk_native_init
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packingtestndk native init
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_INIT_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_INIT_NATIVE_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_INIT_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
       await nativeInitTest(done, "SUB_MULTIMEDIA_IMAGE_PACKERNDK_INIT_NATIVE_0100");
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_DATA_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_jpg_data
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *                 3.packing image source to array buffer-jpeg
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_DATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_DATA_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_DATA_0100', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource = await createTestImageSource("test.png");
@@ -670,14 +667,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_into_jpg_file
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source into a writtable file-jpeg
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100', Level.LEVEL0, async (done: Function) => {
       let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100");
@@ -699,14 +694,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_DATA_0200
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_webp_data
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-webp
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_DATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_DATA_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_DATA_0200', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -720,14 +713,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_FILE_0200
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_into_webp_file
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source into a writtable file-webp
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_FILE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_FILE_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_FILE_0200', Level.LEVEL0, async (done: Function) => {
       let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_WEBP_FILE_0200");
@@ -750,14 +741,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_DATA_0300
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_png_data
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-png
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_DATA_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_DATA_0300
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_DATA_0300', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -771,14 +760,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_FILE_0300
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_into_png_file
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source into a writtable file-png
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_FILE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_FILE_0300
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_FILE_0300', Level.LEVEL0, async (done: Function) => {
       let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_PNG_FILE_0300");
@@ -801,13 +788,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_DATA_0400
-     * @tc.name      : sub_multimedia_image_packerndk_pack_pixelmap_to_jpg_data
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixelmap to array buffer-jpg
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_DATA_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_DATA_0400
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_DATA_0400', Level.LEVEL0, async (done: Function) => {
       let source = await createTestPixelMap();
@@ -819,13 +805,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_FILE_0400
-     * @tc.name      : sub_multimedia_image_packerndk_pack_pixelmap_into_jpg_file
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixelmap into a writtable file-jpg
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_FILE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_FILE_0400
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_FILE_0400', Level.LEVEL0, async (done: Function) => {
       let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_JPG_FILE_0400");
@@ -847,13 +832,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_DATA_0500
-     * @tc.name      : sub_multimedia_image_packerndk_pack_pixelmap_to_webp_data
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixelmap to array buffer-webp
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_DATA_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_DATA_0500
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_DATA_0500', Level.LEVEL0, async (done: Function) => {
       let source = await createTestPixelMap();
@@ -865,13 +849,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_FILE_0500
-     * @tc.name      : sub_multimedia_image_packerndk_pack_pixelmap_into_webp_file
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixelmap into a writtable file-webp
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_FILE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_FILE_0500
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_FILE_0500', Level.LEVEL0, async (done: Function) => {
       let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_WEBP_FILE_0500");
@@ -895,13 +878,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_DATA_0600
-     * @tc.name      : sub_multimedia_image_packerndk_pack_pixelmap_to_png_data
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixelmap to array buffer-png
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_DATA_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_DATA_0600
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_DATA_0600', Level.LEVEL0, async (done: Function) => {
       let source: PixelMap  = await createTestPixelMap();
@@ -913,13 +895,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_FILE_0600
-     * @tc.name      : sub_multimedia_image_packerndk_pack_pixelmap_into_png_file
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixelmap into a writtable file-png
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_FILE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_FILE_0600
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_FILE_0600', Level.LEVEL0, async (done: Function) => {
       let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_PIXEL_MAP_TO_PNG_FILE_0600");
@@ -942,27 +923,24 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100
-     * @tc.name      : sub_multimedia_image_packerndk_native_release
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packingtestndk native release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
       await releaseTest(done, "SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100");
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_data_err_001
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-format: "image/txt"
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0100', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -975,14 +953,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0200
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_data_err_002
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-quality: 101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0200', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -995,14 +971,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0300
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_data_err_003
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-no quality
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0300
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0300', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -1015,14 +989,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0400
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_data_err_004
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-no format
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0400
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_DATA_ERR_0400', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -1036,13 +1008,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_imagesource_into_file_err_001
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing imagesource into a writtable file-format: "image/txt"
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0100', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -1060,13 +1031,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0200
-     * @tc.name      : sub_multimedia_image_packerndk_pack_imagesource_into_file_err_002
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing imagesource into a writtable file-quality: 101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0200', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -1085,13 +1055,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0300
-     * @tc.name      : sub_multimedia_image_packerndk_pack_imagesource_into_file_err_003
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing imagesource into a writtable file-no quality
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0300
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0300', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -1109,13 +1078,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0400
-     * @tc.name      : sub_multimedia_image_packerndk_pack_imagesource_into_file_err_004
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing imagesource into a writtable file-no format
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0400
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_FILE_ERR_0400', Level.LEVEL0, async (done: Function) => {
       let source: image.ImageSource  = await createTestImageSource("test.png");
@@ -1134,13 +1102,12 @@ export default function ImagePackingNDKTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0100
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface uses many PixelMaps
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0100
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1159,13 +1126,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0200
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface uses PixelMap
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0200
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1184,13 +1150,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0300
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface configuration delaytimes
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0300
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1208,13 +1173,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0400
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface configuration loop
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0400
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1233,13 +1197,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0500
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface no disposalTypes and no loopCount
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0500
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1257,13 +1220,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0600
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface frameCount less than PixelMapList
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0600
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1282,13 +1244,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0700
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface frameCount more than PixelMapList
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0700
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1307,13 +1268,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0800
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface delayTimeList less than PixelMapList
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0800
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1332,13 +1292,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0900
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface delayTimeList more than PixelMapList
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0900
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1357,13 +1316,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1000
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface disposalTypes less than PixelMapList
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1000
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1382,13 +1340,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1100
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface disposalTypes more than PixelMapList
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1100
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1407,13 +1364,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1200
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface passed wrong frameCount
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1200
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1432,13 +1388,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1300
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface passed wrong delayTimeList
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1300
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1457,13 +1412,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1400
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface passed wrong disposalTypes
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1400
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1482,13 +1436,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1500
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface passed wrong loopCount
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1500
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1507,13 +1460,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1600
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface passed wrong loopCount
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1600
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILEMULTIFRAMES_1600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1531,14 +1483,12 @@ export default function ImagePackingNDKTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_IMAGEPACKER_0100
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface wrong parameter imagepacker
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFramesError
-     *                 mode = BAD_PARAMETER_IMAGEPACKER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_IMAGEPACKER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_IMAGEPACKER_0100
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_IMAGEPACKER_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1558,14 +1508,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PACKINGOPTIONS_0200
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface wrong parameter packingoptions
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFramesError
-     *                 mode = BAD_PARAMETER_PACKINGOPTIONS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PACKINGOPTIONS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PACKINGOPTIONS_0200
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PACKINGOPTIONS_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1585,14 +1533,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PIXELMAPS_0300
-     * @tc.name      : test the oH_ImagePacker_PackToFileMultiFrames interface wrong parameter pixelmaps
-     * @tc.desc      : 1.getWriteFd
-     *                 2.JsPackToFileMultiFramesError
-     *                 mode = BAD_PARAMETER_PIXELMAPS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PIXELMAPS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PIXELMAPS_0300
+     * @tc.desc   1.getWriteFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTOFILE_BAD_PARAMETER_PIXELMAPS_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1612,12 +1558,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0100
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface uses many PixelMaps
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0100
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1636,12 +1582,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0200
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface uses PixelMap
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0200
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1660,12 +1606,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0300
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface configuration delaytimes
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0300
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1683,12 +1629,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0400
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface configuration loop
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0400
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1707,12 +1653,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0500
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface no disposalTypes and noloop
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0500
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1730,12 +1676,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0600
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface frameCount less than PixelMapList
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0600
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1754,12 +1700,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0700
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface frameCount more than PixelMapList
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0700
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0700', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1778,12 +1724,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0800
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface delayTimeList less than PixelMapList
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0800
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0800', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1802,12 +1748,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0900
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface delayTimeList more than PixelMapList
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0900
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_0900', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1826,12 +1772,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1000
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface disposalTypes less than PixelMapList
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1000
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1000', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1850,12 +1796,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1100
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface disposalTypes more than PixelMapList
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1100
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_1100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1874,12 +1820,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1200
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface passed wrong frameCount
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1200
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1898,12 +1844,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1300
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface passed wrong delayTimeList
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1300
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1922,12 +1868,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1400
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface passed wrong disposalTypes
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1400
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1946,13 +1892,13 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-    * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1500
-    * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface passed wrong loopCount
-    * @tc.desc      : 1.JsPackToDataMultiFrames
-    * @tc.size      : MEDIUM
-    * @tc.type      : Functional
-    * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1500
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1500', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
         console.info("This device does not support GIF encoding.")
@@ -1970,12 +1916,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1600
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface passed wrong loopCount
-     * @tc.desc      : 1.JsPackToDataMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1600
+     * @tc.desc   1.JsPackToDataMultiFrames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATAMULTIFRAMES_ERROR_1600', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1994,13 +1940,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_IMAGEPACKER_0100
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface wrong parameter imagepacker
-     * @tc.desc      : 1.testPackToDataForSequenceNdkError
-     *                 mode = BAD_PARAMETER_IMAGEPACKER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_IMAGEPACKER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_IMAGEPACKER_0100
+     * @tc.desc   1.testPackToDataForSequenceNdkError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_IMAGEPACKER_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2020,14 +1965,13 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-    * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PACKINGOPTIONS_0200
-    * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface wrong parameter packingoptions
-    * @tc.desc      : 1.testPackToDataForSequenceNdkBadParameter
-    *                 mode = BAD_PARAMETER_PACKINGOPTIONS
-    * @tc.size      : MEDIUM
-    * @tc.type      : Functional
-    * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PACKINGOPTIONS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PACKINGOPTIONS_0200
+     * @tc.desc   1.testPackToDataForSequenceNdkBadParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PACKINGOPTIONS_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
         console.info("This device does not support GIF encoding.")
@@ -2046,13 +1990,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PIXELMAPS_0300
-     * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface wrong parameter pixelmaps
-     * @tc.desc      : 1.testPackToDataForSequenceNdkBadParameter
-     *                 mode = BAD_PARAMETER_PIXELMAPS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PIXELMAPS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PIXELMAPS_0300
+     * @tc.desc   1.testPackToDataForSequenceNdkBadParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_PIXELMAPS_0300', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2072,14 +2015,13 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-    * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_OUTDATA_0400
-    * @tc.name      : test the oH_ImagePacker_PackToDataMultiFrames interface uses many outData
-    * @tc.desc      : 1.testPackToDataForSequenceNdkBadParameter
-    *                 mode = BAD_PARAMETER_OUTDATA
-    * @tc.size      : MEDIUM
-    * @tc.type      : Functional
-    * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_OUTDATA_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_OUTDATA_0400
+     * @tc.desc   1.testPackToDataForSequenceNdkBadParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACKTODATA_BAD_PARAMETER_OUTDATA_0400', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
         console.info("This device does not support GIF encoding.")
@@ -2098,13 +2040,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0100
-     * @tc.name      : test pack gif imageSource to file
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing imageSource into a writtable file-gif
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2122,13 +2063,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0200
-     * @tc.name      : test pack gif pixel map to file
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixel map into a writtable file-gif
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2146,13 +2086,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0100
-     * @tc.name      : test pack gif imageSource to buffer
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing imageSource into a buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2170,13 +2109,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0200
-     * @tc.name      : test pack gif pixel map to buffer
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixel map into a buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2194,14 +2132,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_gif_to_file_err_001
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-format: "moving_test.gif"
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2221,14 +2157,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0200
-     * @tc.name      : sub_multimedia_image_packerndk_pack_gif_to_file_err_002
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source to array buffer-format: "moving_test.gif"
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_FILE_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2248,13 +2182,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_gif_to_data_err_001
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing imageSource into a buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0100
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2274,13 +2207,12 @@ export default function ImagePackingNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0200
-     * @tc.name      : sub_multimedia_image_packerndk_pack_gif_to_data_err_002
-     * @tc.desc      : 1.packingtestndk create
-     *                 2.packing pixel map into a buffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0200
+     * @tc.desc   1.packingtestndk create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_GIF_TO_DATA_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {

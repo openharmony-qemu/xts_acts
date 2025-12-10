@@ -65,14 +65,14 @@ export default function webViewControllerDownloadTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBVIEWCONTROLLER_SETDOWNLOADDELEGATE_GROUP_0100
-    * @tc.name        : testSetDownloadDelegateGroup001
-    * @tc.desc        : test setDownloadDelegate
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testSetDownloadDelegateGroup001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETDOWNLOADDELEGATE_GROUP_0100
+     * @tc.desc   test setDownloadDelegate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetDownloadDelegateGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testSetDownloadDelegate001", 130080)
       Utils.registerBaseEvent("testSetDownloadDelegate001", true, 130090,
@@ -82,14 +82,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBVIEWCONTROLLER_STARTDOWNLOAD_GROUP_0100
-    * @tc.name        : testStartDownloadGroup001
-    * @tc.desc        : test startDownload
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testStartDownloadGroup001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STARTDOWNLOAD_GROUP_0100
+     * @tc.desc   test startDownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStartDownloadGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testStartDownload001", 130080)
       Utils.registerBaseEvent("testStartDownload001", true, 130100,
@@ -99,14 +99,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0100
-    * @tc.name        : testWebDownloadStateGroup001
-    * @tc.desc        : test WebDownloadState.IN_PROGRESS
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0100
+     * @tc.desc   test WebDownloadState.IN_PROGRESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadStateGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebDownloadState001", 130080)
       Utils.registerBaseEvent("testWebDownloadState001", webView.WebDownloadState.IN_PROGRESS, 130110,
@@ -116,14 +116,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0200
-    * @tc.name        : testWebDownloadStateGroup002
-    * @tc.desc        : test WebDownloadState.COMPLETED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0200
+     * @tc.desc   test WebDownloadState.COMPLETED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadStateGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebDownloadState002", 130080)
       Utils.registerBaseEvent("testWebDownloadState002", webView.WebDownloadState.COMPLETED, 130120,
@@ -133,14 +133,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0300
-    * @tc.name        : testWebDownloadStateGroup003
-    * @tc.desc        : test WebDownloadState.CANCELED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup003
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0300
+     * @tc.desc   test WebDownloadState.CANCELED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadStateGroup003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebDownloadState003", 130080)
       Utils.registerBaseEvent("testWebDownloadState003", webView.WebDownloadState.CANCELED, 130130,
@@ -150,14 +150,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0400
-    * @tc.name        : testWebDownloadStateGroup004
-    * @tc.desc        : test WebDownloadState.INTERRUPTED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup004
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0400
+     * @tc.desc   test WebDownloadState.INTERRUPTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadStateGroup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebDownloadState004", 130080)
       Utils.registerBaseEvent("testWebDownloadState004", webView.WebDownloadState.INTERRUPTED, 130140,
@@ -167,14 +167,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADSTATE_GROUP_0500
-    * @tc.name        : testWebDownloadStateGroup005
-    * @tc.desc        : test WebDownloadState.PENDING
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadStateGroup005
+     * @tc.number SUB_WEB_WEBDOWNLOADSTATE_GROUP_0500
+     * @tc.desc   test WebDownloadState.PENDING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadStateGroup005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebDownloadState005", 130080)
       Utils.registerBaseEvent("testWebDownloadState005", webView.WebDownloadState.PENDING, 130150,
@@ -185,14 +185,14 @@ export default function webViewControllerDownloadTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0100
-    * @tc.name        : testGetGuidGroup001
-    * @tc.desc        : test WebDownloadItem.getGuid
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetGuidGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetGuidGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetGuid001", 130080)
       Utils.registerBaseEvent("testGetGuid001", true, 130160,
@@ -202,14 +202,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0200
-    * @tc.name        : testGetGuidGroup002
-    * @tc.desc        : test WebDownloadItem.getGuid when download two files
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetGuidGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETGUID_GROUP_0200
+     * @tc.desc   test WebDownloadItem.getGuid when download two files
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetGuidGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetGuid002", 130080)
       Utils.registerBaseEvent("testGetGuid002", true, 130170,
@@ -219,14 +219,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETCURRENTSPEED_GROUP_0100
-    * @tc.name        : testGetCurrentSpeedGroup001
-    * @tc.desc        : test WebDownloadItem.getCurrentSpeed
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetCurrentSpeedGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETCURRENTSPEED_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getCurrentSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetCurrentSpeedGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetCurrentSpeed001", 130080)
       Utils.registerBaseEvent("testGetCurrentSpeed001", true, 130180,
@@ -236,14 +236,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0100
-    * @tc.name        : testGetPercentCompleteGroup001
-    * @tc.desc        : test WebDownloadItem.getPercentComplete
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetPercentCompleteGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getPercentComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetPercentCompleteGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetPercentComplete001", 130080)
       Utils.registerBaseEvent("testGetPercentComplete001", true, 130190,
@@ -253,14 +253,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0200
-    * @tc.name        : testGetPercentCompleteGroup002
-    * @tc.desc        : test WebDownloadItem.getPercentComplete when download finish
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetPercentCompleteGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETPERCENTCOMPLETE_GROUP_0200
+     * @tc.desc   test WebDownloadItem.getPercentComplete when download finish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetPercentCompleteGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetPercentComplete002", 130080)
       Utils.registerBaseEvent("testGetPercentComplete002", true, 130200,
@@ -270,14 +270,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETTOTALBYTES_GROUP_0100
-    * @tc.name        : testGetTotalBytesGroup001
-    * @tc.desc        : test WebDownloadItem.getTotalBytes
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetTotalBytesGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETTOTALBYTES_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getTotalBytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetTotalBytesGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetTotalBytes001", 130080)
       Utils.registerBaseEvent("testGetTotalBytes001", true, 130210,
@@ -287,14 +287,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMETHOD_GROUP_0100
-    * @tc.name        : testGetMethodGroup001
-    * @tc.desc        : test WebDownloadItem.getMethod
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetMethodGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMETHOD_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getMethod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetMethodGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetMethod001", 130080)
       Utils.registerBaseEvent("testGetMethod001", true, 130220,
@@ -304,14 +304,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0100
-    * @tc.name        : testGetMimeTypeGroup001
-    * @tc.desc        : test WebDownloadItem.getMimeType image/png
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetMimeTypeGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getMimeType image/png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetMimeTypeGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetMimeType001", 130080)
       Utils.registerBaseEvent("testGetMimeType001", true, 130230,
@@ -321,14 +321,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0200
-    * @tc.name        : testGetMimeTypeGroup002
-    * @tc.desc        : test WebDownloadItem.getMimeType video/mp4
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetMimeTypeGroup002
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0200
+     * @tc.desc   test WebDownloadItem.getMimeType video/mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetMimeTypeGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetMimeType002", 130080)
       Utils.registerBaseEvent("testGetMimeType002", true, 130240,
@@ -338,14 +338,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0300
-    * @tc.name        : testGetMimeTypeGroup003
-    * @tc.desc        : test WebDownloadItem.getMimeType application/x-msdownload
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetMimeTypeGroup003
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETMIMETYPE_GROUP_0300
+     * @tc.desc   test WebDownloadItem.getMimeType application/x-msdownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetMimeTypeGroup003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetMimeType003", 130080)
       Utils.registerBaseEvent("testGetMimeType003", true, 130250,
@@ -355,14 +355,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETURL_GROUP_0100
-    * @tc.name        : testGetUrlGroup001
-    * @tc.desc        : test WebDownloadItem.getUrl
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetUrlGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETURL_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetUrlGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetUrl001", 130080)
       Utils.registerBaseEvent("testGetUrl001", true, 130260,
@@ -372,14 +372,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETSUGGESTEDFILENAME_GROUP_0100
-    * @tc.name        : testGetSuggestedFileNameGroup001
-    * @tc.desc        : test WebDownloadItem.getSuggestedFileName
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetSuggestedFileNameGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETSUGGESTEDFILENAME_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getSuggestedFileName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetSuggestedFileNameGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetSuggestedFileName001", 130080)
       Utils.registerBaseEvent("testGetSuggestedFileName001", true, 130270,
@@ -389,14 +389,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETRECEIVEDBYTES_GROUP_0100
-    * @tc.name        : testGetReceivedBytesGroup001
-    * @tc.desc        : test WebDownloadItem.getReceivedBytes
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetReceivedBytesGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETRECEIVEDBYTES_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getReceivedBytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetReceivedBytesGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetReceivedBytes001", 130080)
       Utils.registerBaseEvent("testGetReceivedBytes001", true, 130280,
@@ -406,14 +406,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_GETFULLPATH_GROUP_0100
-    * @tc.name        : testGetFullPathGroup001
-    * @tc.desc        : test WebDownloadItem.getFullPath
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testGetFullPathGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETFULLPATH_GROUP_0100
+     * @tc.desc   test WebDownloadItem.getFullPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetFullPathGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetFullPath001", 130080)
       Utils.registerBaseEvent("testGetFullPath001", true, 130290,
@@ -423,14 +423,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_SERIALIZE_GROUP_0100
-    * @tc.name        : testSerializeGroup001
-    * @tc.desc        : test WebDownloadItem.serialize
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testSerializeGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_SERIALIZE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.serialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSerializeGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSerialize001", 130080)
       Utils.registerBaseEvent("testSerialize001", true, 130300,
@@ -440,14 +440,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADITEM_DESERIALIZE_GROUP_0100
-    * @tc.name        : testDeserializeGroup001
-    * @tc.desc        : test WebDownloadItem.deserialize
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDeserializeGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_DESERIALIZE_GROUP_0100
+     * @tc.desc   test WebDownloadItem.deserialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeserializeGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeserialize001", 130080)
       Utils.registerBaseEvent("testDeserialize001", true, 130310,
@@ -458,14 +458,14 @@ export default function webViewControllerDownloadTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADDELEGATE_ONBEFOREDOWNLOAD_GROUP_0100
-    * @tc.name        : testOnBeforeDownloadGroup001
-    * @tc.desc        : test WebDownloadDelegate.onBeforeDownload
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnBeforeDownloadGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADDELEGATE_ONBEFOREDOWNLOAD_GROUP_0100
+     * @tc.desc   test WebDownloadDelegate.onBeforeDownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnBeforeDownloadGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnBeforeDownload001", 130080)
       Utils.registerBaseEvent("testOnBeforeDownload001", true, 130320,
@@ -475,14 +475,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADUPDATED_GROUP_0100
-    * @tc.name        : testOnDownloadUpdatedGroup001
-    * @tc.desc        : test WebDownloadDelegate.onDownloadUpdated
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnDownloadUpdatedGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADUPDATED_GROUP_0100
+     * @tc.desc   test WebDownloadDelegate.onDownloadUpdated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnDownloadUpdatedGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnDownloadUpdated001", 130080)
       Utils.registerBaseEvent("testOnDownloadUpdated001", true, 130330,
@@ -492,14 +492,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADFINISH_GROUP_0100
-    * @tc.name        : testOnDownloadFinishGroup001
-    * @tc.desc        : test WebDownloadDelegate.onDownloadFinish
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnDownloadFinishGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADDELEGATE_ONDOWNLOADFINISH_GROUP_0100
+     * @tc.desc   test WebDownloadDelegate.onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnDownloadFinishGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnDownloadFinish001", 130080)
       Utils.registerBaseEvent("testOnDownloadFinish001", true, 130340,
@@ -509,14 +509,14 @@ export default function webViewControllerDownloadTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADMANAGER_SETDOWNLOADDELEGATE_GROUP_0100
-    * @tc.name        : testWebDownloadManagerSetDownloadDelegateGroup001
-    * @tc.desc        : test WebDownloadManager.setDownloadDelegate
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadManagerSetDownloadDelegateGroup001
+     * @tc.number SUB_WEB_WEBDOWNLOADMANAGER_SETDOWNLOADDELEGATE_GROUP_0100
+     * @tc.desc   test WebDownloadManager.setDownloadDelegate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadManagerSetDownloadDelegateGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebDownloadManagerSetDownloadDelegate001", 130080)
       Utils.registerBaseEvent("testWebDownloadManagerSetDownloadDelegate001", true, 130350,

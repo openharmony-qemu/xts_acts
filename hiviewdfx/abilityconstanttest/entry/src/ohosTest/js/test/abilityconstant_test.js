@@ -30,10 +30,13 @@ let ability_test = new AbilityTest();
 export default function ActsAbilityConstantTest() {
 describe("ActsAbilityConstantTest", function () {
     /**
-    * @tc.number: DFX_DFR_AbilityConstant_Interface_0100
-    * @tc.name: onSaveState接口测试
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AbilityConstant_Interface_0100
+     * @tc.number DFX_DFR_AbilityConstant_Interface_0100
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AbilityConstant_Interface_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AbilityConstant_Interface_0100 start-------------------------");
         try{
@@ -55,10 +58,13 @@ describe("ActsAbilityConstantTest", function () {
     })
 
     /**
-    * @tc.number: DFX_DFR_AbilityConstant_Interface_0200
-    * @tc.name: 检验AbilityConstant属性返回值是否符合预期
-    * @tc.desc: appRecovery interface test.
-    */
+     * @tc.name   DFX_DFR_AbilityConstant_Interface_0200
+     * @tc.number DFX_DFR_AbilityConstant_Interface_0200
+     * @tc.desc   appRecovery interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("DFX_DFR_AbilityConstant_Interface_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info("-------------------------DFX_DFR_AbilityConstant_Interface_0200 start-------------------------");
         try{

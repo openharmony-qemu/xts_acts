@@ -45,9 +45,12 @@ export default function TabsAp1() {
     });
 
     /**
+     * @tc.name   TabsAp1_0100
      * @tc.number TabsAp1_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   TabsAp1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsAp1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('TabsAp1_0100 START');

@@ -19,7 +19,7 @@ import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import web_webview from '@ohos.web.webview';
-import  { BusinessError } from '@ohos.base';
+import  { BusinessError, RecordData } from '@ohos.base';
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import common from '@ohos.app.ability.common';
 import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
@@ -46,8 +46,8 @@ struct WebCameraApiNoCrash {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , object>)?.['ACTION'];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
+        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
       }
     }
   }

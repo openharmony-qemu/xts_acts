@@ -20,13 +20,13 @@ import bundle from '@ohos.bundle.bundleManager';
 export default function abilityTest() {
 
   describe('ActsAbilityTest', () => {
-    /*
-     * @tc.number: SUB_BMS_APPINFO_SYNC_SELF_0013
-     * @tc.name  : GetBundleInfoForSelfSyncSkill
-     * @tc.desc  : Test getBundleInfoForSelfSync with Skill
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 2
+    /**
+     * @tc.name   getBundleInfoForSelfSyncSkill
+     * @tc.number SUB_BMS_APPINFO_SYNC_SELF_0013
+     * @tc.desc   Test getBundleInfoForSelfSync with Skill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfSyncSkill', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_SKILL

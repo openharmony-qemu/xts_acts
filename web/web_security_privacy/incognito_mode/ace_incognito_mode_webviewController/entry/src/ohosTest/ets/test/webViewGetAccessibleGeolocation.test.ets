@@ -53,20 +53,26 @@ export default function webViewGetAccessibleGeolocation() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWGETACCGEO_API_0100
-     *tc.name testGetAccessibleGeolocationFalse
-     *tc.desc test interface of getaccessiblegeolocation with allow and retain all False
+    /**
+     * @tc.name   testGetAccessibleGeolocationFalse
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWGETACCGEO_API_0100
+     * @tc.desc   test interface of getaccessiblegeolocation with allow and retain all False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitGetAccessAllowAndRetainAllFalse", 160550);
       Utils.registerEvent("testGetAccessibleGeolocationFalse",false,160560,done);
       sendEventByKey('webViewGetAccessibleGeolocation',10,'');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWGETACCGEO_API_0200
-     *tc.name testGetAccessibleGeolocationTrue
-     *tc.desc test interface of getaccessiblegeolocation with allow and retain all true
+    /**
+     * @tc.name   testGetAccessibleGeolocationTrue
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWGETACCGEO_API_0200
+     * @tc.desc   test interface of getaccessiblegeolocation with allow and retain all true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitGetAccessAllowAndRetainAllTrue", 160550);

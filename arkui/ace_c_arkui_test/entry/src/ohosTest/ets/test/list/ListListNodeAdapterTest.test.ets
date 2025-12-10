@@ -21,37 +21,37 @@ export default function listListNodeAdapterTest() {
 
   describe('ListListNodeAdapterTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NODE_ADAPTER_0001
-     * @tc.name       : testListListNodeAdapter001
-     * @tc.desc       : testing adapter for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListListNodeAdapter001
+     * @tc.number SUB_ARKUI_CAPI_LIST_NODE_ADAPTER_0001
+     * @tc.desc   testing adapter for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListListNodeAdapter001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListListNodeAdapter001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NODE_ADAPTER_0002
-     * @tc.name       : testListListNodeAdapter002
-     * @tc.desc       : testing adapter for list with nullptr value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListListNodeAdapter002
+     * @tc.number SUB_ARKUI_CAPI_LIST_NODE_ADAPTER_0002
+     * @tc.desc   testing adapter for list with nullptr value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListListNodeAdapter002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListListNodeAdapter002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_NODE_ADAPTER_0003
-     * @tc.name       : testListListNodeAdapter003
-     * @tc.desc       : testing adapter for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListListNodeAdapter003
+     * @tc.number SUB_ARKUI_CAPI_LIST_NODE_ADAPTER_0003
+     * @tc.desc   testing adapter for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListListNodeAdapter003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListListNodeAdapter003()).assertEqual(0)

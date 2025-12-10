@@ -31,12 +31,12 @@ export default function exceptionsTest() {
     }
 
     /**
-     * @tc.number    SUB_ANI_EXISTUNHANDLEDERROR_0100
-     * @tc.name      test_ExistUnhandledError_0001
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   test_ExistUnhandledError_0001
+     * @tc.number SUB_ANI_EXISTUNHANDLEDERROR_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_ExistUnhandledError_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function exceptionsTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_RESETEROR_0100
-     * @tc.name      test_ResetError_0001
-     * @tc.desc      MediumTest
-     * @tc.size      Function
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   test_ResetError_0001
+     * @tc.number SUB_ANI_RESETEROR_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_ResetError_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

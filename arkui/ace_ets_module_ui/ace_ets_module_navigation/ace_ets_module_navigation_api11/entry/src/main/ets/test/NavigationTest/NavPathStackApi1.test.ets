@@ -47,11 +47,13 @@ export default function NavPathStackApi1() {
       console.info("NavPathStackApi1 after each called");
     });
 
-    /*
-     * @tc.number      NavPathStackApi1_001
-     * @tc.name        NavPathStackApi1_001
-     * @tc.desc        Navigation pushDestination test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   NavPathStackApi1_001
+     * @tc.number NavPathStackApi1_001
+     * @tc.desc   Navigation pushDestination test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathStackApi1_001',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[NavPathStackApi1_001] START');

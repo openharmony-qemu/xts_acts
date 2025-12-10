@@ -39,12 +39,12 @@ export default function webViewRegisterScrollCallbackTest() {
 
 
     /**
+     * @tc.name   SUB_ACE_WEB_testRegisterScrollCallback
      * @tc.number SUB_ACE_WEB_TESTREGISTERSCROLLCALLBACK
-     * @tc.name TESTREGISTERSCROLLCALLBACK
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_WEB_testRegisterScrollCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('testRegisterScrollCallbackString', EVENT_ID_SET_SUITE_KEY);

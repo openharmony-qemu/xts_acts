@@ -43,12 +43,12 @@ export default function listNestedScrollJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_listNestedScroll01
      * @tc.number ArkUI_Stage_listNestedScroll01
-     * @tc.name Test the properties of components
-     * @tc.desc Set nestedScrol values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set nestedScrol values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_listNestedScroll01', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_listNestedScroll01] START');

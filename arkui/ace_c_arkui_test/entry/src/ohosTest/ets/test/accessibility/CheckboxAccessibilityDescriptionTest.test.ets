@@ -26,26 +26,26 @@ export default function checkboxAccessibilityDescriptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_ACCESSIBILITYDESCRIPTION_0100
-     * @tc.name       : testCheckboxAccessibilityDescription001
-     * @tc.desc       : testing accessibilityDescription for Checkbox with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCheckboxAccessibilityDescription001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_ACCESSIBILITYDESCRIPTION_0100
+     * @tc.desc   testing accessibilityDescription for Checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxAccessibilityDescription001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxAccessibilityDescription001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_ACCESSIBILITYDESCRIPTION_0200
-     * @tc.name       : testCheckboxAccessibilityDescription002
-     * @tc.desc       : testing accessibilityDescription for Checkbox with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCheckboxAccessibilityDescription002
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_ACCESSIBILITYDESCRIPTION_0200
+     * @tc.desc   testing accessibilityDescription for Checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxAccessibilityDescription002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxAccessibilityDescription002()).assertEqual(0)

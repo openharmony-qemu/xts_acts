@@ -36,13 +36,13 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
 
 export default function telephony_data_NopTest() {
   describe('telephony_data_NopTest', () => {
-    /*
-     * @tc.number:SUB_telephony_data_nop0100
-     * @tc.name: testTelephonyDataNop0100
-     * @tc.desc:Using the isCellularDataEnabled (callback) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testTelephonyDataNop0100
+     * @tc.number SUB_telephony_data_nop0100
+     * @tc.desc   Using the isCellularDataEnabled (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyDataNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('--------telephony_data_nop001----before----');
@@ -64,13 +64,13 @@ export default function telephony_data_NopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_telephony_data_nop002
-     * @tc.name: testTelephonyDataNop0200
-     * @tc.desc:Using the isCellularDataEnabled (callback) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testTelephonyDataNop0200
+     * @tc.number SUB_telephony_data_nop002
+     * @tc.desc   Using the isCellularDataEnabled (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyDataNop0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('--------telephony_data_nop002----before----');
@@ -94,13 +94,13 @@ export default function telephony_data_NopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_telephony_data_nop003
-     * @tc.name: testTelephonyDataNop0300
-     * @tc.desc:Using the isCellularDataRoamingEnabled (then) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testTelephonyDataNop0300
+     * @tc.number SUB_telephony_data_nop003
+     * @tc.desc   Using the isCellularDataRoamingEnabled (then) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyDataNop0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('--------telephony_data_nop003----before----');
@@ -122,13 +122,13 @@ export default function telephony_data_NopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_telephony_data_nop004
-     * @tc.name: testTelephonyDataNop0400
-     * @tc.desc:Using the isCellularDataRoamingEnabled (callback) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testTelephonyDataNop0400
+     * @tc.number SUB_telephony_data_nop004
+     * @tc.desc   Using the isCellularDataRoamingEnabled (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyDataNop0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('--------telephony_data_nop004----before----');
@@ -152,13 +152,13 @@ export default function telephony_data_NopTest() {
       }
     });
     
-   /*
-     * @tc.number:SUB_Telephony_Data_GetActiveApnName_NoP_0100
-     * @tc.name: testTelephonyDataGetActiveApnNameNoP0100
-     * @tc.desc: Using the getActiveApnName method without permission
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   testTelephonyDataGetActiveApnNameNoP0100
+     * @tc.number SUB_Telephony_Data_GetActiveApnName_NoP_0100
+     * @tc.desc   Using the getActiveApnName method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testTelephonyDataGetActiveApnNameNoP0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testTelephonyDataGetActiveApnNameNoP0100";

@@ -41,12 +41,12 @@ export default function getCameraManagerTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_CAMERA_GET_CAMERA_MANAGER_001
-     * @tc.name      : getCameraManager_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getCameraManager_001
+     * @tc.number CAMERA_CAMERA_GET_CAMERA_MANAGER_001
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getCameraManager_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getCameraManager_001';
@@ -57,12 +57,12 @@ export default function getCameraManagerTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_CAMERA_GET_CAMERA_MANAGER_001
-     * @tc.name      : getCameraManager_002
-     * @tc.desc      : context-null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getCameraManager_002
+     * @tc.number CAMERA_CAMERA_GET_CAMERA_MANAGER_001
+     * @tc.desc   context-null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getCameraManager_002', Level.LEVEL0, (done: Function) => {
       const testName = 'getCameraManager_002';
@@ -80,12 +80,12 @@ export default function getCameraManagerTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_CAMERA_GET_CAMERA_MANAGER_001
-     * @tc.name      : getCameraManager_003
-     * @tc.desc      : context-undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getCameraManager_003
+     * @tc.number CAMERA_CAMERA_GET_CAMERA_MANAGER_001
+     * @tc.desc   context-undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getCameraManager_003', Level.LEVEL0, (done: Function) => {
       const testName = 'getCameraManager_003';

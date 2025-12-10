@@ -15,11 +15,13 @@
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 let emitKey = "emitJsBridgeLastJsProxyCallingFrameUrl"
 
@@ -43,7 +45,7 @@ export default function webViewApiOne() {
         } catch (err) {
             console.error('push webViewJsBridgeLastJsProxyCallingFrameUrl page error:' + err);
         }
-        await waitForComponent("webViewJsBridgeLastJsProxyCallingFrameUrl");
+        await driver.waitForComponent(ON.id("webViewApiOneButton"), 10000);
         done()
     });
     
@@ -57,21 +59,21 @@ export default function webViewApiOne() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_GROUP_0200
-    * @tc.name        : testJsBridgeGetLastJavascriptProxyCallingFrameUrlGroup
-    * @tc.desc        : test GetLastJavascriptProxyCallingFrameUrl
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testJsBridgeGetLastJavascriptProxyCallingFrameUrlGroup
+     * @tc.number SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_GROUP_0200
+     * @tc.desc   test GetLastJavascriptProxyCallingFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJsBridgeGetLastJavascriptProxyCallingFrameUrlGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitJsBridgeGetLastJavascriptProxyCallingFrameUrl", 172290)
       Utils.registerBaseEvent("testJsBridgeGetLastJavascriptProxyCallingFrameUrl", "success", 172300,
         done, (backData: emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('webViewJsBridgeLastJsProxyCallingFrameUrl', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webViewApiOneButton');
     })
   })
 }

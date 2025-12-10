@@ -50,12 +50,12 @@ export default function OnNewParamRouter() {
 
 
     /**
-     * @tc.number    OnNewParamRouter_0100
-     * @tc.name      OnNewParamRouter_0100
-     * @tc.desc      Test Router OnNewParam by pushUrl router.RouterMode.Single
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   OnNewParamRouter_0100
+     * @tc.number OnNewParamRouter_0100
+     * @tc.desc   Test Router OnNewParam by pushUrl router.RouterMode.Single
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OnNewParamRouter_0100', Level.LEVEL2, async (done: Function) => {
       console.info('OnNewParamRouter_0100 START');
@@ -95,10 +95,12 @@ export default function OnNewParamRouter() {
     });
 
     /**
-     * @tc.number    OnNewParamRouter_0200
-     * @tc.name      OnNewParamRouter_0200
-     * @tc.desc      Test Router OnNewParam by replaceUrl router.RouterMode.Single
-     * @tc.level     Level 2
+     * @tc.name   OnNewParamRouter_0200
+     * @tc.number OnNewParamRouter_0200
+     * @tc.desc   Test Router OnNewParam by replaceUrl router.RouterMode.Single
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OnNewParamRouter_0200', Level.LEVEL2, async (done: Function) => {
       console.info('OnNewParamRouter_0200 START');
@@ -138,10 +140,12 @@ export default function OnNewParamRouter() {
     });
 
     /**
-     * @tc.number    OnNewParamRouter_0300
-     * @tc.name      OnNewParamRouter_0300
-     * @tc.desc      Test Router OnNewParam by pushNamedRoute router.RouterMode.Single
-     * @tc.level     Level 2
+     * @tc.name   OnNewParamRouter_0300
+     * @tc.number OnNewParamRouter_0300
+     * @tc.desc   Test Router OnNewParam by pushNamedRoute router.RouterMode.Single
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OnNewParamRouter_0300', Level.LEVEL2, async (done: Function) => {
       console.info('OnNewParamRouter_0300 START');

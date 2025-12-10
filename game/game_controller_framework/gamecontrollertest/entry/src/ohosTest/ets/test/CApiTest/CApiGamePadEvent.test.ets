@@ -19,12 +19,12 @@ import { SyscapChecker } from './SyscapChecker.test';
 export default function CApiGamePadEventTest() {
   describe('CApiGamePadEventTest', () => {
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetDeviceId01
      * @tc.number OH_GamePad_ButtonEvent_GetDeviceId01
-     * @tc.name OH_GamePad_ButtonEvent_GetDeviceId01
-     * @tc.desc GetDeviceId success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetDeviceId success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetDeviceId01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -34,12 +34,12 @@ export default function CApiGamePadEventTest() {
       expect(ret).assertEqual(0);
     });
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetDeviceId02
      * @tc.number OH_GamePad_ButtonEvent_GetDeviceId02
-     * @tc.name OH_GamePad_ButtonEvent_GetDeviceId02
-     * @tc.desc GetDeviceId failed when buttonEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetDeviceId failed when buttonEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetDeviceId02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -50,12 +50,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetDeviceId03
      * @tc.number OH_GamePad_ButtonEvent_GetDeviceId03
-     * @tc.name OH_GamePad_ButtonEvent_GetDeviceId03
-     * @tc.desc GetDeviceId failed when deviceId is nullptr
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetDeviceId failed when deviceId is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetDeviceId03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -66,12 +66,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonAction01
      * @tc.number OH_GamePad_ButtonEvent_GetButtonAction01
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonAction01
-     * @tc.desc GetButtonAction success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonAction success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetButtonAction01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -82,12 +82,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonAction02
      * @tc.number OH_GamePad_ButtonEvent_GetButtonAction02
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonAction02
-     * @tc.desc GetButtonAction failed when buttonEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonAction failed when buttonEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetButtonAction02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -98,12 +98,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonCode01
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCode01
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonCode01
-     * @tc.desc GetButtonCode success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonCode success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetButtonCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -114,12 +114,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonCode02
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCode02
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonCode02
-     * @tc.desc GetButtonCode failed when buttonEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonCode failed when buttonEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetButtonCode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -130,12 +130,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonCodeName01
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName01
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonCodeName01
-     * @tc.desc GetButtonCodeName success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonCodeName success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetButtonCodeName01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -146,12 +146,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonCodeName02
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName02
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonCodeName02
-     * @tc.desc GetButtonCodeName failed when buttonEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonCodeName failed when buttonEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetButtonCodeName02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -162,12 +162,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetButtonCodeName03
      * @tc.number OH_GamePad_ButtonEvent_GetButtonCodeName03
-     * @tc.name OH_GamePad_ButtonEvent_GetButtonCodeName03
-     * @tc.desc GetButtonCodeName failed when codeName is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonCodeName failed when codeName is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetButtonCodeName03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -178,12 +178,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButtons_GetCount01
      * @tc.number OH_GamePad_PressedButtons_GetCount01
-     * @tc.name OH_GamePad_PressedButtons_GetCount01
-     * @tc.desc PressedButtons_GetCount success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   PressedButtons_GetCount success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButtons_GetCount01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -194,12 +194,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButtons_GetCount02
      * @tc.number OH_GamePad_PressedButtons_GetCount02
-     * @tc.name OH_GamePad_PressedButtons_GetCount02
-     * @tc.desc PressedButtons_GetCount failed when buttonEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   PressedButtons_GetCount failed when buttonEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButtons_GetCount02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -210,12 +210,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo01
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo01
-     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo01
-     * @tc.desc GetButtonInfo success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonInfo success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButtons_GetButtonInfo01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -226,12 +226,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo02
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo02
-     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo02
-     * @tc.desc GetButtonInfo failed when buttonEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonInfo failed when buttonEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButtons_GetButtonInfo02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -242,12 +242,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo03
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo03
-     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo03
-     * @tc.desc GetButtonInfo failed when index is more than count
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonInfo failed when index is more than count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButtons_GetButtonInfo03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -258,12 +258,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButtons_GetButtonInfo04
      * @tc.number OH_GamePad_PressedButtons_GetButtonInfo04
-     * @tc.name OH_GamePad_PressedButtons_GetButtonInfo04
-     * @tc.desc GetButtonInfo failed when index is less than 0
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetButtonInfo failed when index is less than 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButtons_GetButtonInfo04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -274,12 +274,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_DestroyPressedButton01
      * @tc.number OH_GamePad_DestroyPressedButton01
-     * @tc.name OH_GamePad_DestroyPressedButton01
-     * @tc.desc DestroyPressedButton success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   DestroyPressedButton success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_DestroyPressedButton01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -290,12 +290,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_DestroyPressedButton02
      * @tc.number OH_GamePad_DestroyPressedButton02
-     * @tc.name OH_GamePad_DestroyPressedButton02
-     * @tc.desc DestroyPressedButton failed when pressedButton is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   DestroyPressedButton failed when pressedButton is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_DestroyPressedButton02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -306,12 +306,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButton_GetButtonCode01
      * @tc.number OH_GamePad_PressedButton_GetButtonCode01
-     * @tc.name OH_GamePad_PressedButton_GetButtonCode01
-     * @tc.desc PressedButton_GetButtonCode success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   PressedButton_GetButtonCode success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButton_GetButtonCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -322,12 +322,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButton_GetButtonCode02
      * @tc.number OH_GamePad_PressedButton_GetButtonCode02
-     * @tc.name OH_GamePad_PressedButton_GetButtonCode02
-     * @tc.desc PressedButton_GetButtonCode failed when pressedButton is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   PressedButton_GetButtonCode failed when pressedButton is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButton_GetButtonCode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -338,12 +338,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_PressedButton_GetButtonCodeName01
      * @tc.number OH_GamePad_PressedButton_GetButtonCodeName01
-     * @tc.name OH_GamePad_PressedButton_GetButtonCodeName01
-     * @tc.desc PressedButton_GetButtonCodeName success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   PressedButton_GetButtonCodeName success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButton_GetButtonCodeName01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -355,12 +355,12 @@ export default function CApiGamePadEventTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_PressedButton_GetButtonCodeName02
      * @tc.number OH_GamePad_PressedButton_GetButtonCodeName02
-     * @tc.name OH_GamePad_PressedButton_GetButtonCodeName02
-     * @tc.desc PressedButton_GetButtonCodeName failed when pressedButton is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   PressedButton_GetButtonCodeName failed when pressedButton is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButton_GetButtonCodeName02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -372,12 +372,12 @@ export default function CApiGamePadEventTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_PressedButton_GetButtonCodeName03
      * @tc.number OH_GamePad_PressedButton_GetButtonCodeName03
-     * @tc.name OH_GamePad_PressedButton_GetButtonCodeName03
-     * @tc.desc PressedButton_GetButtonCodeName failed when codeName is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   PressedButton_GetButtonCodeName failed when codeName is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_PressedButton_GetButtonCodeName03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -389,12 +389,12 @@ export default function CApiGamePadEventTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetActionTime01
      * @tc.number OH_GamePad_ButtonEvent_GetActionTime01
-     * @tc.name OH_GamePad_ButtonEvent_GetActionTime01
-     * @tc.desc ButtonEvent_GetActionTime success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   ButtonEvent_GetActionTime success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetActionTime01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -405,12 +405,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_ButtonEvent_GetActionTime02
      * @tc.number OH_GamePad_ButtonEvent_GetActionTime02
-     * @tc.name OH_GamePad_ButtonEvent_GetActionTime02
-     * @tc.desc ButtonEvent_GetActionTime failed when buttonEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   ButtonEvent_GetActionTime failed when buttonEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonEvent_GetActionTime02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -421,12 +421,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetDeviceId01
      * @tc.number OH_GamePad_AxisEvent_GetDeviceId01
-     * @tc.name OH_GamePad_AxisEvent_GetDeviceId01
-     * @tc.desc GetDeviceId success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetDeviceId success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetDeviceId01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -437,12 +437,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetDeviceId02
      * @tc.number OH_GamePad_AxisEvent_GetDeviceId02
-     * @tc.name OH_GamePad_AxisEvent_GetDeviceId02
-     * @tc.desc GetDeviceId failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetDeviceId failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetDeviceId02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -453,12 +453,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetDeviceId03
      * @tc.number OH_GamePad_AxisEvent_GetDeviceId03
-     * @tc.name OH_GamePad_AxisEvent_GetDeviceId03
-     * @tc.desc GetDeviceId failed when deviceId is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   GetDeviceId failed when deviceId is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetDeviceId03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -469,12 +469,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetAxisSourceType01
      * @tc.number OH_GamePad_AxisEvent_GetAxisSourceType01
-     * @tc.name OH_GamePad_AxisEvent_GetAxisSourceType01
-     * @tc.desc AxisEvent_GetAxisSourceType sucess
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetAxisSourceType sucess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetAxisSourceType01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -485,12 +485,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetAxisSourceType02
      * @tc.number OH_GamePad_AxisEvent_GetAxisSourceType02
-     * @tc.name OH_GamePad_AxisEvent_GetAxisSourceType02
-     * @tc.desc AxisEvent_GetAxisSourceType failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetAxisSourceType failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetAxisSourceType02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -501,12 +501,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetXAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetXAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetXAxisValue01
-     * @tc.desc AxisEvent_GetXAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetXAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetXAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -517,12 +517,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetXAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetXAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetXAxisValue02
-     * @tc.desc AxisEvent_GetXAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetXAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetXAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -533,12 +533,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetYAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetYAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetYAxisValue01
-     * @tc.desc AxisEvent_GetYAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetYAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetYAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -549,12 +549,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetYAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetYAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetYAxisValue02
-     * @tc.desc AxisEvent_GetYAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetYAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetYAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -565,12 +565,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetZAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetZAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetZAxisValue01
-     * @tc.desc AxisEvent_GetZAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetZAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetZAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -581,12 +581,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetZAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetZAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetZAxisValue02
-     * @tc.desc AxisEvent_GetZAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetZAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetZAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -597,12 +597,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetRZAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetRZAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetRZAxisValue01
-     * @tc.desc AxisEvent_GetRZAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetRZAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetRZAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -613,12 +613,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetRZAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetRZAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetRZAxisValue02
-     * @tc.desc AxisEvent_GetRZAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetRZAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetRZAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -629,12 +629,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetHatXAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetHatXAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetHatXAxisValue01
-     * @tc.desc AxisEvent_GetHatXAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetHatXAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetHatXAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -645,12 +645,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetHatXAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetHatXAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetHatXAxisValue02
-     * @tc.desc AxisEvent_GetHatXAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetHatXAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetHatXAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -661,12 +661,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetHatYAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetHatYAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetHatYAxisValue01
-     * @tc.desc AxisEvent_GetHatYAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetHatYAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetHatYAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -677,12 +677,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetHatYAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetHatYAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetHatYAxisValue02
-     * @tc.desc AxisEvent_GetHatYAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetHatYAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetHatYAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -693,12 +693,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetBrakeAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetBrakeAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetBrakeAxisValue01
-     * @tc.desc AxisEvent_GetBrakeAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetBrakeAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetBrakeAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -709,12 +709,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetBrakeAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetBrakeAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetBrakeAxisValue02
-     * @tc.desc AxisEvent_GetBrakeAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetBrakeAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetBrakeAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -725,12 +725,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetGasAxisValue01
      * @tc.number OH_GamePad_AxisEvent_GetGasAxisValue01
-     * @tc.name OH_GamePad_AxisEvent_GetGasAxisValue01
-     * @tc.desc AxisEvent_GetGasAxisValue success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetGasAxisValue success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetGasAxisValue01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -741,12 +741,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetGasAxisValue02
      * @tc.number OH_GamePad_AxisEvent_GetGasAxisValue02
-     * @tc.name OH_GamePad_AxisEvent_GetGasAxisValue02
-     * @tc.desc AxisEvent_GetGasAxisValue failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetGasAxisValue failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetGasAxisValue02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -757,12 +757,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetActionTime01
      * @tc.number OH_GamePad_AxisEvent_GetActionTime01
-     * @tc.name OH_GamePad_AxisEvent_GetActionTime01
-     * @tc.desc AxisEvent_GetActionTime success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetActionTime success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetActionTime01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -773,12 +773,12 @@ export default function CApiGamePadEventTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_AxisEvent_GetActionTime02
      * @tc.number OH_GamePad_AxisEvent_GetActionTime02
-     * @tc.name OH_GamePad_AxisEvent_GetActionTime02
-     * @tc.desc AxisEvent_GetActionTime failed when axisEvent is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   AxisEvent_GetActionTime failed when axisEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_AxisEvent_GetActionTime02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {

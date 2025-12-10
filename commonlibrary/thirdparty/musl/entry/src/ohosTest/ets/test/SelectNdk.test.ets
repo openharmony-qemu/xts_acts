@@ -24,12 +24,12 @@ export default function selectNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SELECT_SELECT_0100
-     * @tc.name       : testMuslSelectSelect001
-     * @tc.desc       : test select
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSelectSelect001
+     * @tc.number SUB_THIRDPARTY_MUSL_SELECT_SELECT_0100
+     * @tc.desc   test select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSelectSelect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let testParam = 0
@@ -39,12 +39,12 @@ export default function selectNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SELECT_SELECT_0200
-     * @tc.name       : testMuslSelectSelect002
-     * @tc.desc       : test select
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSelectSelect002
+     * @tc.number SUB_THIRDPARTY_MUSL_SELECT_SELECT_0200
+     * @tc.desc   test select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSelectSelect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = select.select(1);

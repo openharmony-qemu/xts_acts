@@ -26,40 +26,40 @@ export default function checkboxSelectTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_SELECT_0100
-    * @tc.name       : testCheckboxSelect001
-    * @tc.desc       : testing select for checkbox with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxSelect001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_SELECT_0100
+     * @tc.desc   testing select for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxSelect001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxSelect001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_SELECT_0200
-    * @tc.name       : testCheckboxSelect002
-    * @tc.desc       : testing select for checkbox with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxSelect002
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_SELECT_0200
+     * @tc.desc   testing select for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxSelect002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxSelect002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_SELECT_0300
-    * @tc.name       : testCheckboxSelect003
-    * @tc.desc       : testing select for checkbox with default value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxSelect003
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_SELECT_0300
+     * @tc.desc   testing select for checkbox with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxSelect003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxSelect003()).assertEqual(0)
       done()

@@ -79,8 +79,9 @@ export default class StartAbility extends EmbeddableUIAbility {
   }
 
   onForeground() {
-    this.context.terminateSelf(()=>{
-    });
+    setTimeout(() => { 
+      this.context.terminateSelf(); 
+    }, 1500);
   }
 
 

@@ -20,12 +20,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
   describe('ActsNeuralNetworkTensorTypeTest1', () => {
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0100
-     * @tc.desc    : Test OH_NN_ADD_ACTIVATIONTYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0100
+     * @tc.desc   Test OH_NN_ADD_ACTIVATIONTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -42,12 +42,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0200
-     * @tc.desc    : Test OH_NN_AVG_POOL_KERNEL_SIZE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0200
+     * @tc.desc   Test OH_NN_AVG_POOL_KERNEL_SIZE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0300
-     * @tc.desc    : Test OH_NN_AVG_POOL_STRIDE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0300
+     * @tc.desc   Test OH_NN_AVG_POOL_STRIDE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0400
-     * @tc.desc    : Test OH_NN_AVG_POOL_PAD_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0400
+     * @tc.desc   Test OH_NN_AVG_POOL_PAD_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0500
-     * @tc.desc    : Test OH_NN_AVG_POOL_PAD.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0500
+     * @tc.desc   Test OH_NN_AVG_POOL_PAD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -130,12 +130,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0600
-     * @tc.desc    : Test OH_NN_AVG_POOL_ACTIVATION_TYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0600
+     * @tc.desc   Test OH_NN_AVG_POOL_ACTIVATION_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -152,12 +152,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0700
-     * @tc.desc    : Test OH_NN_BATCH_NORM_EPSILON.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0700
+     * @tc.desc   Test OH_NN_BATCH_NORM_EPSILON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -174,12 +174,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0800
-     * @tc.desc    : Test OH_NN_BATCH_TO_SPACE_ND_BLOCKSIZE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0800
+     * @tc.desc   Test OH_NN_BATCH_TO_SPACE_ND_BLOCKSIZE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -196,12 +196,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_0900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType0900
-     * @tc.desc    : Test OH_NN_BATCH_TO_SPACE_ND_CROPS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType0900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_0900
+     * @tc.desc   Test OH_NN_BATCH_TO_SPACE_ND_CROPS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -218,12 +218,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1000
-     * @tc.desc    : Test OH_NN_CONCAT_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1000
+     * @tc.desc   Test OH_NN_CONCAT_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -240,12 +240,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1100
-     * @tc.desc    : Test OH_NN_CONV2D_STRIDES.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1100
+     * @tc.desc   Test OH_NN_CONV2D_STRIDES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -262,12 +262,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1200
-     * @tc.desc    : Test OH_NN_CONV2D_PAD.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1200
+     * @tc.desc   Test OH_NN_CONV2D_PAD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -284,12 +284,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1300
-     * @tc.desc    : Test OH_NN_CONV2D_DILATION.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1300
+     * @tc.desc   Test OH_NN_CONV2D_DILATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -306,12 +306,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1400
-     * @tc.desc    : Test OH_NN_CONV2D_PAD_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1400
+     * @tc.desc   Test OH_NN_CONV2D_PAD_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -328,12 +328,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1500
-     * @tc.desc    : Test OH_NN_CONV2D_ACTIVATION_TYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1500
+     * @tc.desc   Test OH_NN_CONV2D_ACTIVATION_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -350,12 +350,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1600
-     * @tc.desc    : Test OH_NN_CONV2D_GROUP.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1600
+     * @tc.desc   Test OH_NN_CONV2D_GROUP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -372,12 +372,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1700
-     * @tc.desc    : Test OH_NN_CONV2D_TRANSPOSE_STRIDES.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1700
+     * @tc.desc   Test OH_NN_CONV2D_TRANSPOSE_STRIDES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -394,12 +394,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1800
-     * @tc.desc    : Test OH_NN_CONV2D_TRANSPOSE_PAD.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1800
+     * @tc.desc   Test OH_NN_CONV2D_TRANSPOSE_PAD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -416,12 +416,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_1900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType1900
-     * @tc.desc    : Test OH_NN_CONV2D_TRANSPOSE_DILATION.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType1900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_1900
+     * @tc.desc   Test OH_NN_CONV2D_TRANSPOSE_DILATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -438,12 +438,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2000
-     * @tc.desc    : Test OH_NN_CONV2D_TRANSPOSE_OUTPUT_PADDINGS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2000
+     * @tc.desc   Test OH_NN_CONV2D_TRANSPOSE_OUTPUT_PADDINGS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -460,12 +460,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2100
-     * @tc.desc    : Test OH_NN_CONV2D_TRANSPOSE_PAD_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2100
+     * @tc.desc   Test OH_NN_CONV2D_TRANSPOSE_PAD_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -482,12 +482,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2200
-     * @tc.desc    : Test OH_NN_CONV2D_TRANSPOSE_ACTIVATION_TYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2200
+     * @tc.desc   Test OH_NN_CONV2D_TRANSPOSE_ACTIVATION_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -504,12 +504,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2300
-     * @tc.desc    : Test OH_NN_CONV2D_TRANSPOSE_GROUP.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2300
+     * @tc.desc   Test OH_NN_CONV2D_TRANSPOSE_GROUP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -526,12 +526,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2400
-     * @tc.desc    : Test OH_NN_DEPTHWISE_CONV2D_NATIVE_STRIDES.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2400
+     * @tc.desc   Test OH_NN_DEPTHWISE_CONV2D_NATIVE_STRIDES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -548,12 +548,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2500
-     * @tc.desc    : Test OH_NN_DEPTHWISE_CONV2D_NATIVE_PAD.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2500
+     * @tc.desc   Test OH_NN_DEPTHWISE_CONV2D_NATIVE_PAD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -570,12 +570,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2600
-     * @tc.desc    : Test OH_NN_DEPTHWISE_CONV2D_NATIVE_DILATION.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2600
+     * @tc.desc   Test OH_NN_DEPTHWISE_CONV2D_NATIVE_DILATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -592,12 +592,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2700
-     * @tc.desc    : Test OH_NN_DEPTHWISE_CONV2D_NATIVE_PAD_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2700
+     * @tc.desc   Test OH_NN_DEPTHWISE_CONV2D_NATIVE_PAD_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -614,12 +614,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2800
-     * @tc.desc    : Test OH_NN_DEPTHWISE_CONV2D_NATIVE_ACTIVATION_TYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2800
+     * @tc.desc   Test OH_NN_DEPTHWISE_CONV2D_NATIVE_ACTIVATION_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -636,12 +636,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_2900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType2900
-     * @tc.desc    : Test OH_NN_DIV_ACTIVATIONTYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType2900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_2900
+     * @tc.desc   Test OH_NN_DIV_ACTIVATIONTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -658,12 +658,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3000
-     * @tc.desc    : Test OH_NN_ELTWISE_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3000
+     * @tc.desc   Test OH_NN_ELTWISE_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -680,12 +680,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3100
-     * @tc.desc    : Test OH_NN_FULL_CONNECTION_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3100
+     * @tc.desc   Test OH_NN_FULL_CONNECTION_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -702,12 +702,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3200
-     * @tc.desc    : Test OH_NN_FULL_CONNECTION_ACTIVATIONTYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3200
+     * @tc.desc   Test OH_NN_FULL_CONNECTION_ACTIVATIONTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -724,12 +724,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3300
-     * @tc.desc    : Test OH_NN_MATMUL_TRANSPOSE_A.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3300
+     * @tc.desc   Test OH_NN_MATMUL_TRANSPOSE_A.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -746,12 +746,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3400
-     * @tc.desc    : Test OH_NN_MATMUL_TRANSPOSE_B.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3400
+     * @tc.desc   Test OH_NN_MATMUL_TRANSPOSE_B.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -768,12 +768,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3500
-     * @tc.desc    : Test OH_NN_MATMUL_ACTIVATION_TYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3500
+     * @tc.desc   Test OH_NN_MATMUL_ACTIVATION_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -790,12 +790,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3600
-     * @tc.desc    : Test OH_NN_MAX_POOL_KERNEL_SIZE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3600
+     * @tc.desc   Test OH_NN_MAX_POOL_KERNEL_SIZE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -812,12 +812,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3700
-     * @tc.desc    : Test OH_NN_MAX_POOL_STRIDE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3700
+     * @tc.desc   Test OH_NN_MAX_POOL_STRIDE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -834,12 +834,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3800
-     * @tc.desc    : Test OH_NN_MAX_POOL_PAD_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3800
+     * @tc.desc   Test OH_NN_MAX_POOL_PAD_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -856,12 +856,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_3900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType3900
-     * @tc.desc    : Test OH_NN_MAX_POOL_PAD.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType3900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_3900
+     * @tc.desc   Test OH_NN_MAX_POOL_PAD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -878,12 +878,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4000
-     * @tc.desc    : Test OH_NN_MAX_POOL_ACTIVATION_TYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4000
+     * @tc.desc   Test OH_NN_MAX_POOL_ACTIVATION_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -900,12 +900,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4100
-     * @tc.desc    : Test OH_NN_MUL_ACTIVATION_TYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4100
+     * @tc.desc   Test OH_NN_MUL_ACTIVATION_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -922,12 +922,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4200
-     * @tc.desc    : Test OH_NN_ONE_HOT_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4200
+     * @tc.desc   Test OH_NN_ONE_HOT_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -944,12 +944,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4300
-     * @tc.desc    : Test OH_NN_PAD_CONSTANT_VALUE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4300
+     * @tc.desc   Test OH_NN_PAD_CONSTANT_VALUE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -966,12 +966,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4400
-     * @tc.desc    : Test OH_NN_SCALE_ACTIVATIONTYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4400
+     * @tc.desc   Test OH_NN_SCALE_ACTIVATIONTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -988,12 +988,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4500
-     * @tc.desc    : Test OH_NN_SCALE_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4500
+     * @tc.desc   Test OH_NN_SCALE_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1010,12 +1010,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4600
-     * @tc.desc    : Test OH_NN_SOFTMAX_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4600
+     * @tc.desc   Test OH_NN_SOFTMAX_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1032,12 +1032,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4700
-     * @tc.desc    : Test OH_NN_SPACE_TO_BATCH_ND_BLOCK_SHAPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4700
+     * @tc.desc   Test OH_NN_SPACE_TO_BATCH_ND_BLOCK_SHAPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1054,12 +1054,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4800
-     * @tc.desc    : Test OH_NN_SPACE_TO_BATCH_ND_PADDINGS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4800
+     * @tc.desc   Test OH_NN_SPACE_TO_BATCH_ND_PADDINGS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1076,12 +1076,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_4900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType4900
-     * @tc.desc    : Test OH_NN_SPLIT_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType4900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_4900
+     * @tc.desc   Test OH_NN_SPLIT_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1098,12 +1098,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5000
-     * @tc.desc    : Test OH_NN_SPLIT_OUTPUT_NUM.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5000
+     * @tc.desc   Test OH_NN_SPLIT_OUTPUT_NUM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1120,12 +1120,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5100
-     * @tc.desc    : Test OH_NN_SPLIT_SIZE_SPLITS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5100
+     * @tc.desc   Test OH_NN_SPLIT_SIZE_SPLITS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1142,12 +1142,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5200
-     * @tc.desc    : Test OH_NN_SQUEEZE_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5200
+     * @tc.desc   Test OH_NN_SQUEEZE_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1164,12 +1164,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5300
-     * @tc.desc    : Test OH_NN_STACK_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5300
+     * @tc.desc   Test OH_NN_STACK_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1186,12 +1186,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5400
-     * @tc.desc    : Test OH_NN_STRIDED_SLICE_BEGIN_MASK.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5400
+     * @tc.desc   Test OH_NN_STRIDED_SLICE_BEGIN_MASK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1208,12 +1208,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5500
-     * @tc.desc    : Test OH_NN_STRIDED_SLICE_END_MASK.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5500
+     * @tc.desc   Test OH_NN_STRIDED_SLICE_END_MASK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1230,12 +1230,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5600
-     * @tc.desc    : Test OH_NN_STRIDED_SLICE_ELLIPSIS_MASK.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5600
+     * @tc.desc   Test OH_NN_STRIDED_SLICE_ELLIPSIS_MASK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1252,12 +1252,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5700
-     * @tc.desc    : Test OH_NN_STRIDED_SLICE_NEW_AXIS_MASK.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5700
+     * @tc.desc   Test OH_NN_STRIDED_SLICE_NEW_AXIS_MASK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1274,12 +1274,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5800
-     * @tc.desc    : Test OH_NN_STRIDED_SLICE_SHRINK_AXIS_MASK.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5800
+     * @tc.desc   Test OH_NN_STRIDED_SLICE_SHRINK_AXIS_MASK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1296,12 +1296,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_5900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType5900
-     * @tc.desc    : Test OH_NN_SUB_ACTIVATIONTYPE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType5900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_5900
+     * @tc.desc   Test OH_NN_SUB_ACTIVATIONTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1318,12 +1318,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6000
-     * @tc.desc    : Test OH_NN_REDUCE_MEAN_KEEP_DIMS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6000
+     * @tc.desc   Test OH_NN_REDUCE_MEAN_KEEP_DIMS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1340,12 +1340,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6100
-     * @tc.desc    : Test OH_NN_RESIZE_BILINEAR_NEW_HEIGHT.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6100
+     * @tc.desc   Test OH_NN_RESIZE_BILINEAR_NEW_HEIGHT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1362,12 +1362,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6200
-     * @tc.desc    : Test OH_NN_RESIZE_BILINEAR_NEW_WIDTH.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6200
+     * @tc.desc   Test OH_NN_RESIZE_BILINEAR_NEW_WIDTH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1384,12 +1384,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6300
-     * @tc.desc    : Test OH_NN_RESIZE_BILINEAR_PRESERVE_ASPECT_RATIO.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6300
+     * @tc.desc   Test OH_NN_RESIZE_BILINEAR_PRESERVE_ASPECT_RATIO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1406,12 +1406,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6400
-     * @tc.desc    : Test OH_NN_RESIZE_BILINEAR_COORDINATE_TRANSFORM_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6400
+     * @tc.desc   Test OH_NN_RESIZE_BILINEAR_COORDINATE_TRANSFORM_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1428,12 +1428,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6500
-     * @tc.desc    : Test OH_NN_RESIZE_BILINEAR_EXCLUDE_OUTSIDE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6500
+     * @tc.desc   Test OH_NN_RESIZE_BILINEAR_EXCLUDE_OUTSIDE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1450,12 +1450,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6600
-     * @tc.desc    : Test OH_NN_LAYER_NORM_BEGIN_NORM_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6600
+     * @tc.desc   Test OH_NN_LAYER_NORM_BEGIN_NORM_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1472,12 +1472,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6700
-     * @tc.desc    : Test OH_NN_LAYER_NORM_EPSILON.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6700
+     * @tc.desc   Test OH_NN_LAYER_NORM_EPSILON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1494,12 +1494,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6800
-     * @tc.desc    : Test OH_NN_LAYER_NORM_BEGIN_PARAM_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6800
+     * @tc.desc   Test OH_NN_LAYER_NORM_BEGIN_PARAM_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1516,12 +1516,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_6900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType6900
-     * @tc.desc    : Test OH_NN_LAYER_NORM_ELEMENTWISE_AFFINE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType6900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_6900
+     * @tc.desc   Test OH_NN_LAYER_NORM_ELEMENTWISE_AFFINE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1538,12 +1538,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7000
-     * @tc.desc    : Test OH_NN_REDUCE_PROD_KEEP_DIMS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7000
+     * @tc.desc   Test OH_NN_REDUCE_PROD_KEEP_DIMS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1560,12 +1560,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7100
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7100
-     * @tc.desc    : Test OH_NN_REDUCE_ALL_KEEP_DIMS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7100
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7100
+     * @tc.desc   Test OH_NN_REDUCE_ALL_KEEP_DIMS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1582,12 +1582,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7200
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7200
-     * @tc.desc    : Test OH_NN_QUANT_DTYPE_CAST_SRC_T.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7200
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7200
+     * @tc.desc   Test OH_NN_QUANT_DTYPE_CAST_SRC_T.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1604,12 +1604,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7300
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7300
-     * @tc.desc    : Test OH_NN_QUANT_DTYPE_CAST_DST_T.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7300
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7300
+     * @tc.desc   Test OH_NN_QUANT_DTYPE_CAST_DST_T.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1626,12 +1626,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7400
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7400
-     * @tc.desc    : Test OH_NN_TOP_K_SORTED.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7400
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7400
+     * @tc.desc   Test OH_NN_TOP_K_SORTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1648,12 +1648,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7500
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7500
-     * @tc.desc    : Test OH_NN_ARG_MAX_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7500
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7500
+     * @tc.desc   Test OH_NN_ARG_MAX_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1670,12 +1670,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7600
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7600
-     * @tc.desc    : Test OH_NN_ARG_MAX_KEEPDIMS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7600
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7600
+     * @tc.desc   Test OH_NN_ARG_MAX_KEEPDIMS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1692,12 +1692,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7700
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7700
-     * @tc.desc    : Test OH_NN_UNSQUEEZE_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7700
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7700
+     * @tc.desc   Test OH_NN_UNSQUEEZE_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1714,12 +1714,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7800
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7800
-     * @tc.desc    : Test OH_NN_UNSTACK_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7800
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7800
+     * @tc.desc   Test OH_NN_UNSTACK_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1736,12 +1736,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_7900
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType7900
-     * @tc.desc    : Test OH_NN_FLATTEN_AXIS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType7900
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_7900
+     * @tc.desc   Test OH_NN_FLATTEN_AXIS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1758,12 +1758,12 @@ export default function ActsNeuralNetworkTensorTypeTest1() {
       })
 
     /**
-     * @tc.number  : SUB_NeuralNetworkRuntime_OhNnTensorType_8000
-     * @tc.name    : testNeuralNetworkRuntimeOhNnTensorType8000
-     * @tc.desc    : Test OH_NN_DEPTH_TO_SPACE_BLOCK_SIZE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNeuralNetworkRuntimeOhNnTensorType8000
+     * @tc.number SUB_NeuralNetworkRuntime_OhNnTensorType_8000
+     * @tc.desc   Test OH_NN_DEPTH_TO_SPACE_BLOCK_SIZE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNeuralNetworkRuntimeOhNnTensorType8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

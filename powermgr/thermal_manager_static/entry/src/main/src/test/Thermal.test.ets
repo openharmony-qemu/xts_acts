@@ -27,12 +27,12 @@ export default function ThermalTest() {
   describe("ThermalTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
+     * @tc.name   testThermalTest_static_0100
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0010
-     * @tc.name testThermalTest_static_0100
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -53,12 +53,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0200
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0020
-     * @tc.name testThermalTest_static_0200
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -77,12 +77,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0300
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0030
-     * @tc.name testThermalTest_static_0300
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testThermalTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -102,12 +102,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0400
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0040
-     * @tc.name testThermalTest_static_0400
-     * @tc.desc Get device thermalLevel COOL
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel COOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0500
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0050
-     * @tc.name testThermalTest_static_0500
-     * @tc.desc Get device thermalLevel NORMAL
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -150,12 +150,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0600
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0060
-     * @tc.name testThermalTest_static_0600
-     * @tc.desc Get device thermalLevel WARM
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel WARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -174,12 +174,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0700
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0070
-     * @tc.name testThermalTest_static_0700
-     * @tc.desc Get device thermalLevel HOT
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel HOT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -198,12 +198,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0800
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0080
-     * @tc.name testThermalTest_static_0800
-     * @tc.desc Get device thermalLevel OVERHEATED
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel OVERHEATED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -222,12 +222,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_0900
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0090
-     * @tc.name testThermalTest_static_0900
-     * @tc.desc Get device thermalLevel WARNING
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel WARNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -246,12 +246,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_1000
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0100
-     * @tc.name testThermalTest_static_1000
-     * @tc.desc Get device thermalLevel EMERGENCY
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel EMERGENCY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -270,12 +270,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   testThermalTest_static_1100
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0110
-     * @tc.name testThermalTest_static_1100
-     * @tc.desc Get device thermalLevel ESCAPE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel ESCAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testThermalTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

@@ -27,12 +27,12 @@ export default function createVideoAssetRequest() {
   describe("createVideoAssetRequest", (): void => {
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CREATE_VIDEO_ASSET_REQUEST_STATIC_0000
-      * @tc.name    create_video_asset_request_static_000
-      * @tc.desc    create video asset request with invalid fileUri
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   create_video_asset_request_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_VIDEO_ASSET_REQUEST_STATIC_0000
+     * @tc.desc   create video asset request with invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("create_video_asset_request_static_000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

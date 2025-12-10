@@ -26,65 +26,65 @@ export default function gridCachedCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0100
-     * @tc.name       : testGridCachedCount001
-     * @tc.desc       : testing cachedCount for grid with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridCachedCount001
+     * @tc.number SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0100
+     * @tc.desc   testing cachedCount for grid with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridCachedCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridCachedCount001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0200
-     * @tc.name       : testGridCachedCount002
-     * @tc.desc       : testing cachedCount for grid with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridCachedCount002
+     * @tc.number SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0200
+     * @tc.desc   testing cachedCount for grid with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridCachedCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridCachedCount002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0300
-     * @tc.name       : testGridCachedCount003
-     * @tc.desc       : testing cachedCount for grid with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridCachedCount003
+     * @tc.number SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0300
+     * @tc.desc   testing cachedCount for grid with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridCachedCount003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridCachedCount003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0400
-     * @tc.name       : testGridCachedCount004
-     * @tc.desc       : testing cachedCount for grid with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridCachedCount004
+     * @tc.number SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0400
+     * @tc.desc   testing cachedCount for grid with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridCachedCount004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridCachedCount004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0500
-     * @tc.name       : testGridCachedCount005
-     * @tc.desc       : testing cachedCount for grid with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridCachedCount005
+     * @tc.number SUB_ARKUI_CAPI_GRID_CACHEDCOUNT_0500
+     * @tc.desc   testing cachedCount for grid with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridCachedCount005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridCachedCount005()).assertEqual(0)

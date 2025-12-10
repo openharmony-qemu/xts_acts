@@ -45,13 +45,13 @@ export default function listScrollBarColorTest() {
 
   describe('ListScrollBarColorTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_COLOR_0001
-     * @tc.name       : testListScrollBarColor001
-     * @tc.desc       : testing scrollbarcolr for list with yellow value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarColor001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_COLOR_0001
+     * @tc.desc   testing scrollbarcolr for list with yellow value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarColor001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollBarColor001Test`);
@@ -67,13 +67,13 @@ export default function listScrollBarColorTest() {
       expect(obj.$attrs.scrollBarColor).assertEqual(Color.Yellow.toString().toUpperCase())
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_COLOR_0002
-     * @tc.name       : testListScrollBarColor002
-     * @tc.desc       : testing scrollbarcolr for list with red value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarColor002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_COLOR_0002
+     * @tc.desc   testing scrollbarcolr for list with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarColor002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollBarColor002Test`);
@@ -89,13 +89,13 @@ export default function listScrollBarColorTest() {
       expect(obj.$attrs.scrollBarColor).assertEqual(Color.Red.toString().toUpperCase())
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_COLOR_0003
-     * @tc.name       : testListScrollBarColor003
-     * @tc.desc       : testing scrollbarcolr for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBarColor003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_COLOR_0003
+     * @tc.desc   testing scrollbarcolr for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBarColor003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollBarColor003Test`);

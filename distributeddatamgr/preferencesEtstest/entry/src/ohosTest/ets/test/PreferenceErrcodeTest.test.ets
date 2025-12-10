@@ -50,12 +50,12 @@ export default function preferencesErrcodeTest() {
 
 
     /**
-     * @tc.name testPreferenceClearErrTest0100
+     * @tc.name   testPreferenceClearErrTest0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsErrApiCallbackTest_0100
-     * @tc.desc mPreference.clear()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   mPreference.clear()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferenceClearErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testPreferenceClearErrTest0100 begin.");
@@ -76,12 +76,12 @@ export default function preferencesErrcodeTest() {
       }
     });
     /**
-     * @tc.name testPreferenceOnErrTest0100
+     * @tc.name   testPreferenceOnErrTest0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsErrApiCallbackTest_0200
-     * @tc.desc mPreference.On() interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   mPreference.On() interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferenceOnErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let observer = (key: string) => {
@@ -104,12 +104,12 @@ export default function preferencesErrcodeTest() {
       }
     });
     /**
-     * @tc.name testPreferenceOffErrTest0100
+     * @tc.name   testPreferenceOffErrTest0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsErrApiCallbackTest_0300
-     * @tc.desc mPreference.Off() interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   mPreference.Off() interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferenceOffErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await mPreferences.clear();

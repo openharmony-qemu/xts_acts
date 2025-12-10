@@ -44,6 +44,14 @@ export default function polylineJsunit() {
       console.info("polyline after each called");
     });
 
+    /**
+     * @tc.name   testPolyline001
+     * @tc.number testPolyline001
+     * @tc.desc   testPolyline001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPolyline001', Level.LEVEL0, async (done: Function) => {
       console.info('[testPolyline001] START');
       await Utils.sleep(4000);

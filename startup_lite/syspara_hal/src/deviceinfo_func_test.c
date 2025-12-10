@@ -26,13 +26,6 @@
 
 static const char *g_defSysParam = "data of sys param ***...";
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow
- * and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is parameter
- * @param        : test suit name is DeviceInfoFuncTestSuite
- */
 LITE_TEST_SUIT(startup, deviceinfo, DeviceInfoFuncTestSuite);
 
 /**
@@ -55,9 +48,12 @@ static BOOL DeviceInfoFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.name      : testGetDeviceTypeFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0100
- * @tc.desc      : test obtaining device info DeviceType is not null.
+ * @tc.name   testGetDeviceTypeFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0100
+ * @tc.desc   test obtaining device info DeviceType is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetDeviceTypeFun001,
@@ -69,10 +65,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetDeviceTypeFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0200
- * @tc.desc      : test obtaining device info DeviceType that less than 32
- * characters.
+ * @tc.name   testGetDeviceTypeFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0200
+ * @tc.desc   test obtaining device info DeviceType that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetDeviceTypeFun002,
@@ -88,9 +86,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetManufactureFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0300
- * @tc.desc      : test obtaining device info Manufacture is not null.
+ * @tc.name   testGetManufactureFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0300
+ * @tc.desc   test obtaining device info Manufacture is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetManufactureFun001,
@@ -102,10 +103,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetManufactureFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0400
- * @tc.desc      : test obtaining device info Manufacture that less than 32
- * characters.
+ * @tc.name   testGetManufactureFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0400
+ * @tc.desc   test obtaining device info Manufacture that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetManufactureFun002,
@@ -121,9 +124,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBrandFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0500
- * @tc.desc      : test obtaining device info Brand is not null.
+ * @tc.name   testGetBrandFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0500
+ * @tc.desc   test obtaining device info Brand is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBrandFun001,
@@ -135,10 +141,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBrandFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0600
- * @tc.desc      : test obtaining device info Brand that less than 32
- * characters.
+ * @tc.name   testGetBrandFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0600
+ * @tc.desc   test obtaining device info Brand that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBrandFun002,
@@ -154,9 +162,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetMarketNameFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0700
- * @tc.desc      : test obtaining device info MarketName is not null.
+ * @tc.name   testGetMarketNameFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0700
+ * @tc.desc   test obtaining device info MarketName is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetMarketNameFun001,
@@ -168,10 +179,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetMarketNameFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0800
- * @tc.desc      : test obtaining device info MarketName that less than 32
- * characters.
+ * @tc.name   testGetMarketNameFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0800
+ * @tc.desc   test obtaining device info MarketName that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetMarketNameFun002,
@@ -187,9 +200,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetProductSeriesFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_0900
- * @tc.desc      : test obtaining device info ProductSeries is not null.
+ * @tc.name   testGetProductSeriesFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_0900
+ * @tc.desc   test obtaining device info ProductSeries is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetProductSeriesFun001,
@@ -201,10 +217,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetProductSeriesFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1000
- * @tc.desc      : test obtaining device info ProductSeries that less than 32
- * characters.
+ * @tc.name   testGetProductSeriesFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1000
+ * @tc.desc   test obtaining device info ProductSeries that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetProductSeriesFun002,
@@ -220,9 +238,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetProductModelFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1100
- * @tc.desc      : test obtaining device info ProductModel is not null.
+ * @tc.name   testGetProductModelFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1100
+ * @tc.desc   test obtaining device info ProductModel is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetProductModelFun001,
@@ -234,10 +255,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetProductModelFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1200
- * @tc.desc      : test obtaining device info ProductModel that less than 32
- * characters.
+ * @tc.name   testGetProductModelFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1200
+ * @tc.desc   test obtaining device info ProductModel that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetProductModelFun002,
@@ -253,9 +276,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetHardwareModel001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1300
- * @tc.desc      : test obtaining device info HardwareModel is not null.
+ * @tc.name   testGetHardwareModel001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1300
+ * @tc.desc   test obtaining device info HardwareModel is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetHardwareModel001,
@@ -267,10 +293,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetHardwareModel002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1400
- * @tc.desc      : test obtaining device info HardwareModel that less than 32
- * characters.
+ * @tc.name   testGetHardwareModel002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1400
+ * @tc.desc   test obtaining device info HardwareModel that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetHardwareModel002,
@@ -286,9 +314,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSerialFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1500
- * @tc.desc      : test obtaining device info Serial is not null.
+ * @tc.name   testGetSerialFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1500
+ * @tc.desc   test obtaining device info Serial is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSerialFun001,
@@ -300,10 +331,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSerialFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1600
- * @tc.desc      : test obtaining device info Serial that less than 64
- * characters.
+ * @tc.name   testGetSerialFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1600
+ * @tc.desc   test obtaining device info Serial that less than 64
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSerialFun002,
@@ -319,9 +352,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetOSFullNameFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1700
- * @tc.desc      : test obtaining device info OSFullName is not null.
+ * @tc.name   testGetOSFullNameFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1700
+ * @tc.desc   test obtaining device info OSFullName is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetOSFullNameFun001,
@@ -333,10 +369,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetOSFullNameFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1800
- * @tc.desc      : test obtaining device info OSFullName that less than 64
- * characters.
+ * @tc.name   testGetOSFullNameFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1800
+ * @tc.desc   test obtaining device info OSFullName that less than 64
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetOSFullNameFun002,
@@ -352,9 +390,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetDisplayVersionFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_1900
- * @tc.desc      : test obtaining device info DisplayVersion is not null.
+ * @tc.name   testGetDisplayVersionFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_1900
+ * @tc.desc   test obtaining device info DisplayVersion is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetDisplayVersionFun001,
@@ -366,10 +407,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetDisplayVersionFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2000
- * @tc.desc      : test obtaining device info DisplayVersion that less than 64
- * characters.
+ * @tc.name   testGetDisplayVersionFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2000
+ * @tc.desc   test obtaining device info DisplayVersion that less than 64
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetDisplayVersionFun002,
@@ -385,9 +428,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBootloaderVersionFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2100
- * @tc.desc      : test obtaining device info BootloaderVersion is not null.
+ * @tc.name   testGetBootloaderVersionFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2100
+ * @tc.desc   test obtaining device info BootloaderVersion is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBootloaderVersionFun001,
@@ -399,10 +445,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBootloaderVersionFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2200
- * @tc.desc      : test obtaining device info BootloaderVersion that less
- * than 64 characters.
+ * @tc.name   testGetBootloaderVersionFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2200
+ * @tc.desc   test obtaining device info BootloaderVersion that less
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBootloaderVersionFun002,
@@ -418,9 +466,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSecurityPatchTagFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2300
- * @tc.desc      : test obtaining device info SecurityPatchTag is not null.
+ * @tc.name   testGetSecurityPatchTagFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2300
+ * @tc.desc   test obtaining device info SecurityPatchTag is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSecurityPatchTagFun001,
@@ -432,10 +483,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSecurityPatchTagFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2400
- * @tc.desc      : test obtaining device info SecurityPatchTag that less
- * than 64 characters.
+ * @tc.name   testGetSecurityPatchTagFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2400
+ * @tc.desc   test obtaining device info SecurityPatchTag that less
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSecurityPatchTagFun002,
@@ -451,10 +504,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSecurityPatchTagFun003
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2500
- * @tc.desc      : test obtaining device info SecurityPatchTag which format is
- * yy-mm-dd
+ * @tc.name   testGetSecurityPatchTagFun003
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2500
+ * @tc.desc   test obtaining device info SecurityPatchTag which format is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSecurityPatchTagFun003,
@@ -487,9 +542,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetAbiListFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2600
- * @tc.desc      : test obtaining device info AbiList is not null.
+ * @tc.name   testGetAbiListFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2600
+ * @tc.desc   test obtaining device info AbiList is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetAbiListFun001,
@@ -501,10 +559,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetAbiListFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2700
- * @tc.desc      : test obtaining device info AbiList that less than 64
- * characters.
+ * @tc.name   testGetAbiListFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2700
+ * @tc.desc   test obtaining device info AbiList that less than 64
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetAbiListFun002,
@@ -520,9 +580,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSdkApiVersionFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2800
- * @tc.desc      : test obtaining device info SdkApiVersion is not null.
+ * @tc.name   testGetSdkApiVersionFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2800
+ * @tc.desc   test obtaining device info SdkApiVersion is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSdkApiVersionFun001,
@@ -534,9 +597,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetFirstApiVersionFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_2900
- * @tc.desc      : test obtaining device info FirstApiVersion is not null.
+ * @tc.name   testGetFirstApiVersionFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_2900
+ * @tc.desc   test obtaining device info FirstApiVersion is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetFirstApiVersionFun001,
@@ -548,9 +614,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetIncrementalVersionFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3000
- * @tc.desc      : test obtaining device info IncrementalVersion is not null.
+ * @tc.name   testGetIncrementalVersionFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3000
+ * @tc.desc   test obtaining device info IncrementalVersion is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetIncrementalVersionFun001,
@@ -562,9 +631,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetVersionIdFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3100
- * @tc.desc      : test obtaining device info VersionId is not null.
+ * @tc.name   testGetVersionIdFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3100
+ * @tc.desc   test obtaining device info VersionId is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetVersionIdFun001,
@@ -576,10 +648,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetVersionIdFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3200
- * @tc.desc      : test obtaining device info VersionId that less than 127
- * characters.
+ * @tc.name   testGetVersionIdFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3200
+ * @tc.desc   test obtaining device info VersionId that less than 127
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetVersionIdFun002,
@@ -595,9 +669,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildTypeFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3300
- * @tc.desc      : test obtaining device info BuildType is not null.
+ * @tc.name   testGetBuildTypeFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3300
+ * @tc.desc   test obtaining device info BuildType is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildTypeFun001,
@@ -609,10 +686,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildTypeFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3400
- * @tc.desc      : test obtaining device info BuildType that less than 32
- * characters.
+ * @tc.name   testGetBuildTypeFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3400
+ * @tc.desc   test obtaining device info BuildType that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildTypeFun002,
@@ -628,9 +707,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildUserFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3500
- * @tc.desc      : test obtaining device info BuildUser is not null.
+ * @tc.name   testGetBuildUserFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3500
+ * @tc.desc   test obtaining device info BuildUser is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildUserFun001,
@@ -642,10 +724,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildUserFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3600
- * @tc.desc      : test obtaining device info BuildUser that less than 32
- * characters.
+ * @tc.name   testGetBuildUserFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3600
+ * @tc.desc   test obtaining device info BuildUser that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildUserFun002,
@@ -661,9 +745,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildHostFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3700
- * @tc.desc      : test obtaining device info BuildHost is not null.
+ * @tc.name   testGetBuildHostFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3700
+ * @tc.desc   test obtaining device info BuildHost is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildHostFun001,
@@ -675,10 +762,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildHostFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3800
- * @tc.desc      : test obtaining device info BuildHost that less than 32
- * characters.
+ * @tc.name   testGetBuildHostFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3800
+ * @tc.desc   test obtaining device info BuildHost that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildHostFun002,
@@ -694,9 +783,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildTimeFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_3900
- * @tc.desc      : test obtaining device info BuildTime is not null.
+ * @tc.name   testGetBuildTimeFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_3900
+ * @tc.desc   test obtaining device info BuildTime is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildTimeFun001,
@@ -708,10 +800,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildTimeFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_4000
- * @tc.desc      : test obtaining device info BuildTime that less than 32
- * characters.
+ * @tc.name   testGetBuildTimeFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_4000
+ * @tc.desc   test obtaining device info BuildTime that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildTimeFun002,
@@ -727,9 +821,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSoftwareModelFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_4100
- * @tc.desc      : test obtaining device info SoftwareModel is not null.
+ * @tc.name   testGetSoftwareModelFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_4100
+ * @tc.desc   test obtaining device info SoftwareModel is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSoftwareModelFun001,
@@ -741,10 +838,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetSoftwareModelFun002
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_4200
- * @tc.desc      : test obtaining device info SoftwareModel that less than 32
- * characters.
+ * @tc.name   testGetSoftwareModelFun002
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_4200
+ * @tc.desc   test obtaining device info SoftwareModel that less than 32
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetSoftwareModelFun002,
@@ -760,9 +859,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetBuildRootHashFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_4500
- * @tc.desc      : test obtaining device info BuildRootHash is not null.
+ * @tc.name   testGetBuildRootHashFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_4500
+ * @tc.desc   test obtaining device info BuildRootHash is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetBuildRootHashFun001,
@@ -774,9 +876,12 @@ LITE_TEST_CASE(DeviceInfoFuncTestSuite,
 };
 
 /**
- * @tc.name      : testGetHardwareProfileFun001
- * @tc.number    : SUB_STARTUP_MINI_DEVICEINFO_FUN_4600
- * @tc.desc      : test obtaining device info HardwareProfile is not null.
+ * @tc.name   testGetHardwareProfileFun001
+ * @tc.number SUB_STARTUP_MINI_DEVICEINFO_FUN_4600
+ * @tc.desc   test obtaining device info HardwareProfile is not null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DeviceInfoFuncTestSuite,
                testGetHardwareProfileFun001,

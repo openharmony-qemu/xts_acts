@@ -19,12 +19,12 @@ import { SyscapChecker } from './SyscapChecker.test';
 export default function CApiGamePadTest() {
   describe('CApiGamePadTest', () => {
     /**
+     * @tc.name   OH_GamePad_LeftShoulder_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_LeftShoulder_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_LeftShoulder_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftShoulder_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -36,12 +36,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftShoulder_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_LeftShoulder_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_LeftShoulder_RegisterButtonInputMonitor02
-     * @tc.desc register failed, callback null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register failed, callback null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftShoulder_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -53,12 +53,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -70,12 +70,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightShoulder_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_RightShoulder_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_RightShoulder_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightShoulder_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -87,12 +87,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightShoulder_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_RightShoulder_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_RightShoulder_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightShoulder_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -104,12 +104,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightShoulder_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_RightShoulder_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_RightShoulder_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightShoulder_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -121,12 +121,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftTrigger_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_LeftTrigger_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_LeftTrigger_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftTrigger_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -138,12 +138,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftTrigger_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_LeftTrigger_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_LeftTrigger_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftTrigger_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -155,12 +155,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftTrigger_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -172,12 +172,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftTrigger_RegisterAxisInputMonitor01
      * @tc.number OH_GamePad_LeftTrigger_RegisterAxisInputMonitor01
-     * @tc.name OH_GamePad_LeftTrigger_RegisterAxisInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftTrigger_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -189,12 +189,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftTrigger_RegisterAxisInputMonitor02
      * @tc.number OH_GamePad_LeftTrigger_RegisterAxisInputMonitor02
-     * @tc.name OH_GamePad_LeftTrigger_RegisterAxisInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftTrigger_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -206,12 +206,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor01
      * @tc.number OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor01
-     * @tc.name OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftTrigger_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -223,12 +223,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightTrigger_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_RightTrigger_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_RightTrigger_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightTrigger_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -240,12 +240,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightTrigger_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_RightTrigger_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_RightTrigger_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightTrigger_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -257,12 +257,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightTrigger_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_RightTrigger_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_RightTrigger_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightTrigger_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -274,12 +274,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightTrigger_RegisterAxisInputMonitor01
      * @tc.number OH_GamePad_RightTrigger_RegisterAxisInputMonitor01
-     * @tc.name OH_GamePad_RightTrigger_RegisterAxisInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightTrigger_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -291,12 +291,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightTrigger_RegisterAxisInputMonitor02
      * @tc.number OH_GamePad_RightTrigger_RegisterAxisInputMonitor02
-     * @tc.name OH_GamePad_RightTrigger_RegisterAxisInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightTrigger_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -308,12 +308,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightTrigger_UnregisterAxisInputMonitor01
      * @tc.number OH_GamePad_RightTrigger_UnregisterAxisInputMonitor01
-     * @tc.name OH_GamePad_RightTrigger_UnregisterAxisInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightTrigger_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -325,12 +325,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonMenu_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonMenu_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonMenu_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonMenu_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -342,12 +342,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonMenu_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_ButtonMenu_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_ButtonMenu_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonMenu_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -359,12 +359,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -376,12 +376,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonHome_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonHome_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonHome_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonHome_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -393,12 +393,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonHome_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_ButtonHome_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_ButtonHome_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonHome_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -410,12 +410,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonHome_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonHome_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonHome_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonHome_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -427,12 +427,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonA_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonA_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonA_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonA_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -444,12 +444,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonA_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_ButtonA_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_ButtonA_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonA_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -461,12 +461,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonA_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonA_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonA_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonA_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -478,12 +478,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonB_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonB_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonB_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonB_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -495,12 +495,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonB_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_ButtonB_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_ButtonB_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonB_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -512,12 +512,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonB_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonB_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonB_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonB_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -529,12 +529,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonX_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonX_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonX_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonX_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -546,12 +546,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonX_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_ButtonX_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_ButtonX_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonX_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -563,12 +563,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonX_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonX_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonX_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonX_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -580,12 +580,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonY_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonY_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonY_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonY_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -597,12 +597,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonY_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_ButtonY_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_ButtonY_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonY_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -614,12 +614,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonY_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonY_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonY_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonY_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -631,12 +631,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonC_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonC_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonC_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonC_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -648,12 +648,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonC_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_ButtonC_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_ButtonC_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonC_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -665,12 +665,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_ButtonC_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_ButtonC_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_ButtonC_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_ButtonC_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -682,12 +682,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -699,12 +699,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_LeftButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -716,12 +716,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_LeftButton_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -733,12 +733,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -750,12 +750,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_RightButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -767,12 +767,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_RightButton_UnregisterButtonInputMonitor01',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
@@ -784,12 +784,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -801,12 +801,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_UpButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -818,12 +818,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_UpButton_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -835,12 +835,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -852,12 +852,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_DownButton_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -869,12 +869,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_DownButton_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -886,12 +886,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_RegisterAxisInputMonitor01
      * @tc.number OH_GamePad_Dpad_RegisterAxisInputMonitor01
-     * @tc.name OH_GamePad_Dpad_RegisterAxisInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -902,12 +902,12 @@ export default function CApiGamePadTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_RegisterAxisInputMonitor02
      * @tc.number OH_GamePad_Dpad_RegisterAxisInputMonitor02
-     * @tc.name OH_GamePad_Dpad_RegisterAxisInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -918,12 +918,12 @@ export default function CApiGamePadTest() {
     });
 
     /**
+     * @tc.name   OH_GamePad_Dpad_UnregisterAxisInputMonitor01
      * @tc.number OH_GamePad_Dpad_UnregisterAxisInputMonitor01
-     * @tc.name OH_GamePad_Dpad_UnregisterAxisInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_Dpad_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -935,12 +935,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -952,12 +952,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftThumbstick_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -969,12 +969,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftThumbstick_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -986,12 +986,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor01
      * @tc.number OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor01
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1003,12 +1003,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor02
      * @tc.number OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor02
-     * @tc.name OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1020,12 +1020,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor01
      * @tc.number OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor01
-     * @tc.name OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1037,12 +1037,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightThumbstick_RegisterButtonInputMonitor01
      * @tc.number OH_GamePad_RightThumbstick_RegisterButtonInputMonitor01
-     * @tc.name OH_GamePad_RightThumbstick_RegisterButtonInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightThumbstick_RegisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1054,12 +1054,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightThumbstick_RegisterButtonInputMonitor02
      * @tc.number OH_GamePad_RightThumbstick_RegisterButtonInputMonitor02
-     * @tc.name OH_GamePad_RightThumbstick_RegisterButtonInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightThumbstick_RegisterButtonInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1071,12 +1071,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor01
      * @tc.number OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor01
-     * @tc.name OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightThumbstick_UnregisterButtonInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1088,12 +1088,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightThumbstick_RegisterAxisInputMonitor01
      * @tc.number OH_GamePad_RightThumbstick_RegisterAxisInputMonitor01
-     * @tc.name OH_GamePad_RightThumbstick_RegisterAxisInputMonitor01
-     * @tc.desc register success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   register success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightThumbstick_RegisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1105,12 +1105,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightThumbstick_RegisterAxisInputMonitor02
      * @tc.number OH_GamePad_RightThumbstick_RegisterAxisInputMonitor02
-     * @tc.name OH_GamePad_RightThumbstick_RegisterAxisInputMonitor02
-     * @tc.desc when callback is null, register failed
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   when callback is null, register failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightThumbstick_RegisterAxisInputMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -1122,12 +1122,12 @@ export default function CApiGamePadTest() {
       });
 
     /**
+     * @tc.name   OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor01
      * @tc.number OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor01
-     * @tc.name OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor01
-     * @tc.desc unregister success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   unregister success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GamePad_RightThumbstick_UnregisterAxisInputMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {

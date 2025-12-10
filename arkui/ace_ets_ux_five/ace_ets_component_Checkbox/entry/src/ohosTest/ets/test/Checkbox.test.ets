@@ -38,15 +38,15 @@ export default function CheckboxTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0110
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   ArkUX_CheckBox_Visual_0110
+     * @tc.number ArkUX_CheckBox_Visual_0110
+     * @tc.desc   ArkUX_CheckBox_Visual_0110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_CheckBox_Visual_0110', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_CheckBox_Visual_0110 START');
       setTimeout(() => {
@@ -66,15 +66,15 @@ export default function CheckboxTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0120
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   ArkUX_CheckBox_Visual_0120
+     * @tc.number ArkUX_CheckBox_Visual_0120
+     * @tc.desc   ArkUX_CheckBox_Visual_0120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_CheckBox_Visual_0120', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_CheckBox_Visual_0120 START');
       setTimeout(() => {
@@ -94,15 +94,15 @@ export default function CheckboxTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0130
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   ArkUX_CheckBox_Visual_0130
+     * @tc.number ArkUX_CheckBox_Visual_0130
+     * @tc.desc   ArkUX_CheckBox_Visual_0130
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_CheckBox_Visual_0130', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_CheckBox_Visual_0130 START');
       setTimeout(() => {

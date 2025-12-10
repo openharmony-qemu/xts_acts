@@ -135,12 +135,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     }
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0100
-     * @tc.name     : testHasRightParamEx001
-     * @tc.desc     : Negative test: Param is null string
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testHasRightParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0100
+     * @tc.desc   Negative test: Param is null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHasRightParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testHasRightParamEx001 begin');
@@ -159,12 +159,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0200
-     * @tc.name     : testHasRightParamEx002
-     * @tc.desc     : Negative test: Param add number '123'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testHasRightParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0200
+     * @tc.desc   Negative test: Param add number '123'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHasRightParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testHasRightParamEx002 begin');
@@ -187,12 +187,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0300
-     * @tc.name     : testRequestRightParamEx001
-     * @tc.desc     : Negative test: Param is null string
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testRequestRightParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0300
+     * @tc.desc   Negative test: Param is null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRequestRightParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
         console.info(TAG, 'usb testRequestRightParamEx001 begin');
@@ -211,12 +211,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0400
-     * @tc.name     : testRequestRightParamEx002
-     * @tc.desc     : Negative test: Param add number 'abc'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testRequestRightParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0400
+     * @tc.desc   Negative test: Param add number 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRequestRightParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
         console.info(TAG, 'usb testRequestRightParamEx002 begin');
@@ -239,12 +239,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0500
-     * @tc.name     : testRemoveRightParamEx001
-     * @tc.desc     : Negative test: Param is null string
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testRemoveRightParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0500
+     * @tc.desc   Negative test: Param is null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRemoveRightParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testRemoveRightParamEx001 begin');
@@ -263,12 +263,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0600
-     * @tc.name     : testRemoveRightParamEx002
-     * @tc.desc     : Negative test: Param add letter 'abc'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testRemoveRightParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0600
+     * @tc.desc   Negative test: Param add letter 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRemoveRightParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testRemoveRightParamEx002 begin');
@@ -291,12 +291,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0700
-     * @tc.name     : testRemoveRightParamEx003
-     * @tc.desc     : Negative test: Param add special characters '@#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testRemoveRightParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0700
+     * @tc.desc   Negative test: Param add special characters '@#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRemoveRightParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testRemoveRightParamEx003 begin');
@@ -319,12 +319,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0800
-     * @tc.name     : testRemoveRightParamEx004
-     * @tc.desc     : Negative test: Param add number '123'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testRemoveRightParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0800
+     * @tc.desc   Negative test: Param add number '123'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRemoveRightParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testRemoveRightParamEx004 begin');
@@ -347,12 +347,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0900
-     * @tc.name     : testConnectDeviceParamEx001
-     * @tc.desc     : Negative test: Param add number '123'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0900
+     * @tc.desc   Negative test: Param add number '123'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx001 begin');
@@ -374,12 +374,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1000
-     * @tc.name     : testConnectDeviceParamEx002
-     * @tc.desc     : Negative test: Param add letter 'abc'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1000
+     * @tc.desc   Negative test: Param add letter 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx002 begin');
@@ -400,12 +400,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1100
-     * @tc.name     : testConnectDeviceParamEx003
-     * @tc.desc     : Negative test: Param add special characters '@#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1100
+     * @tc.desc   Negative test: Param add special characters '@#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx003 begin');
@@ -426,12 +426,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1200
-     * @tc.name     : testConnectDeviceParamEx004
-     * @tc.desc     : Negative test: devices name is null string ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1200
+     * @tc.desc   Negative test: devices name is null string ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx004 begin');
@@ -451,12 +451,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1300
-     * @tc.name     : testConnectDeviceParamEx005
-     * @tc.desc     : Negative test: devices serial is null string ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx005
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1300
+     * @tc.desc   Negative test: devices serial is null string ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx005 begin');
@@ -476,12 +476,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1400
-     * @tc.name     : testConnectDeviceParamEx006
-     * @tc.desc     : Negative test: devices serial add letter abc
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx006
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1400
+     * @tc.desc   Negative test: devices serial add letter abc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx006 begin');
@@ -502,12 +502,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1500
-     * @tc.name     : testConnectDeviceParamEx007
-     * @tc.desc     : Negative test: devices serial add number 123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx007
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1500
+     * @tc.desc   Negative test: devices serial add number 123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx007 begin');
@@ -528,12 +528,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1600
-     * @tc.name     : testConnectDeviceParamEx008
-     * @tc.desc     : Negative test: devices serial add special characters '@#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx008
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1600
+     * @tc.desc   Negative test: devices serial add special characters '@#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx008 begin');
@@ -554,12 +554,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1700
-     * @tc.name     : testConnectDeviceParamEx009
-     * @tc.desc     : Negative test: devices manufacturerName add special characters '@#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx009
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1700
+     * @tc.desc   Negative test: devices manufacturerName add special characters '@#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx009 begin');
@@ -580,12 +580,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1800
-     * @tc.name     : testConnectDeviceParamEx010
-     * @tc.desc     : Negative test: devices manufacturerName add special characters 'abc'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx010
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1800
+     * @tc.desc   Negative test: devices manufacturerName add special characters 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx010 begin');
@@ -606,12 +606,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_1900
-     * @tc.name     : testConnectDeviceParamEx011
-     * @tc.desc     : Negative test: devices manufacturerName add special characters '123'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx011
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_1900
+     * @tc.desc   Negative test: devices manufacturerName add special characters '123'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx011 begin');
@@ -632,12 +632,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2000
-     * @tc.name     : testConnectDeviceParamEx012
-     * @tc.desc     : Negative test: devices manufacturerName add special characters ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx012
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2000
+     * @tc.desc   Negative test: devices manufacturerName add special characters ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx012 begin');
@@ -657,12 +657,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
     
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2100
-     * @tc.name     : testConnectDeviceParamEx013
-     * @tc.desc     : Negative test: devices productName add special characters '@#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx013
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2100
+     * @tc.desc   Negative test: devices productName add special characters '@#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx013 begin');
@@ -683,12 +683,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2200
-     * @tc.name     : testConnectDeviceParamEx014
-     * @tc.desc     : Negative test: devices productName add special characters 'abc'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx014
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2200
+     * @tc.desc   Negative test: devices productName add special characters 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx014 begin');
@@ -709,12 +709,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2300
-     * @tc.name     : testConnectDeviceParamEx015
-     * @tc.desc     : Negative test: devices productName add special characters '123'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx015
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2300
+     * @tc.desc   Negative test: devices productName add special characters '123'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx015 begin');
@@ -735,12 +735,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2400
-     * @tc.name     : testConnectDeviceParamEx016
-     * @tc.desc     : Negative test: devices productName is null string ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx016
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2400
+     * @tc.desc   Negative test: devices productName is null string ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx016 begin');
@@ -760,12 +760,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2500
-     * @tc.name     : testConnectDeviceParamEx017
-     * @tc.desc     : Negative test: devices version add special characters '@#'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx017
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2500
+     * @tc.desc   Negative test: devices version add special characters '@#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx017 begin');
@@ -786,12 +786,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2600
-     * @tc.name     : testConnectDeviceParamEx018
-     * @tc.desc     : Negative test: devices version add special characters 'abc'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx018
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2600
+     * @tc.desc   Negative test: devices version add special characters 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx018 begin');
@@ -812,12 +812,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2700
-     * @tc.name     : testConnectDeviceParamEx019
-     * @tc.desc     : Negative test: devices version add special characters '123'
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx019
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2700
+     * @tc.desc   Negative test: devices version add special characters '123'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx019 begin');
@@ -838,12 +838,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2800
-     * @tc.name     : testConnectDeviceParamEx020
-     * @tc.desc     : Negative test: devices version is null string ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx020
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2800
+     * @tc.desc   Negative test: devices version is null string ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx020 begin');
@@ -863,12 +863,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_2900
-     * @tc.name     : testConnectDeviceParamEx021
-     * @tc.desc     : Negative test: devices vendorId is add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx021
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_2900
+     * @tc.desc   Negative test: devices vendorId is add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx021 begin');
@@ -889,12 +889,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3000
-     * @tc.name     : testConnectDeviceParamEx022
-     * @tc.desc     : Negative test: devices productId is add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx022
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3000
+     * @tc.desc   Negative test: devices productId is add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx022 begin');
@@ -915,12 +915,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3100
-     * @tc.name     : testConnectDeviceParamEx023
-     * @tc.desc     : Negative test: devices clazz is add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx023
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3100
+     * @tc.desc   Negative test: devices clazz is add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx023 begin');
@@ -941,12 +941,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3200
-     * @tc.name     : testConnectDeviceParamEx024
-     * @tc.desc     : Negative test: devices subClass is add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx024
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3200
+     * @tc.desc   Negative test: devices subClass is add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx024 begin');
@@ -967,12 +967,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3300
-     * @tc.name     : testConnectDeviceParamEx025
-     * @tc.desc     : Negative test: devices protocol is add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx025
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3300
+     * @tc.desc   Negative test: devices protocol is add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx025 begin');
@@ -993,12 +993,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3400
-     * @tc.name     : testConnectDeviceParamEx026
-     * @tc.desc     : Negative test: devices busNum is add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx026
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3400
+     * @tc.desc   Negative test: devices busNum is add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx026 begin');
@@ -1019,12 +1019,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3500
-     * @tc.name     : testConnectDeviceParamEx027
-     * @tc.desc     : Negative test: devices devAddress is add number 10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testConnectDeviceParamEx027
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3500
+     * @tc.desc   Negative test: devices devAddress is add number 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDeviceParamEx027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testConnectDeviceParamEx027 begin');
@@ -1045,12 +1045,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3600
-     * @tc.name     : testClosePipeParamEx001
-     * @tc.desc     : Negative test: pipe busNum add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClosePipeParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3600
+     * @tc.desc   Negative test: pipe busNum add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClosePipeParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClosePipeParamEx001 begin');
@@ -1072,12 +1072,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3700
-     * @tc.name     : testClosePipeParamEx002
-     * @tc.desc     : Negative test: pipe devAddress add number 10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClosePipeParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3700
+     * @tc.desc   Negative test: pipe devAddress add number 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClosePipeParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClosePipeParamEx002 begin');
@@ -1100,12 +1100,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3800
-     * @tc.name     : testGetRawDescriptorParamEx001
-     * @tc.desc     : Negative test: pipe busNum add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetRawDescriptorParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3800
+     * @tc.desc   Negative test: pipe busNum add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetRawDescriptorParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetRawDescriptorParamEx001 begin');
@@ -1128,12 +1128,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_3900
-     * @tc.name     : testGetRawDescriptorParamEx002
-     * @tc.desc     : Negative test: pipe devAddress add number 10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetRawDescriptorParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_3900
+     * @tc.desc   Negative test: pipe devAddress add number 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetRawDescriptorParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetRawDescriptorParamEx002 begin');
@@ -1156,12 +1156,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4000
-     * @tc.name     : testGetRawDescriptorParamEx003
-     * @tc.desc     : Negative test: pipe busNum -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetRawDescriptorParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4000
+     * @tc.desc   Negative test: pipe busNum -23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetRawDescriptorParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetRawDescriptorParamEx003 begin');
@@ -1183,12 +1183,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4100
-     * @tc.name     : testGetRawDescriptorParamEx004
-     * @tc.desc     : Negative test: pipe devAddress -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetRawDescriptorParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4100
+     * @tc.desc   Negative test: pipe devAddress -23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetRawDescriptorParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetRawDescriptorParamEx004 begin');
@@ -1210,12 +1210,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4200
-     * @tc.name     : testGetRawDescriptorParamEx005
-     * @tc.desc     : Negative test: pipe busNum -23, devAddress -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetRawDescriptorParamEx005
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4200
+     * @tc.desc   Negative test: pipe busNum -23, devAddress -23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetRawDescriptorParamEx005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetRawDescriptorParamEx005 begin');
@@ -1238,12 +1238,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4300
-     * @tc.name     : testGetFileDescriptorParamEx001
-     * @tc.desc     : Negative test: pipe busNum add number 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetFileDescriptorParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4300
+     * @tc.desc   Negative test: pipe busNum add number 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetFileDescriptorParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetFileDescriptorParamEx001 begin');
@@ -1266,12 +1266,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4400
-     * @tc.name     : testGetFileDescriptorParamEx002
-     * @tc.desc     : Negative test: pipe devAddress add number 10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetFileDescriptorParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4400
+     * @tc.desc   Negative test: pipe devAddress add number 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetFileDescriptorParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetFileDescriptorParamEx002 begin');
@@ -1294,12 +1294,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4500
-     * @tc.name     : testGetFileDescriptorParamEx003
-     * @tc.desc     : Negative test: pipe busNum -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetFileDescriptorParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4500
+     * @tc.desc   Negative test: pipe busNum -23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetFileDescriptorParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetFileDescriptorParamEx003 begin');
@@ -1321,12 +1321,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4600
-     * @tc.name     : testGetFileDescriptorParamEx004
-     * @tc.desc     : Negative test: pipe devAddress -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetFileDescriptorParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4600
+     * @tc.desc   Negative test: pipe devAddress -23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetFileDescriptorParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetFileDescriptorParamEx004 begin');
@@ -1348,12 +1348,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4700
-     * @tc.name     : testGetFileDescriptorParamEx005
-     * @tc.desc     : Negative test: pipe busNum -23, devAddress -23
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testGetFileDescriptorParamEx005
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4700
+     * @tc.desc   Negative test: pipe busNum -23, devAddress -23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetFileDescriptorParamEx005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testGetFileDescriptorParamEx005 begin');
@@ -1376,12 +1376,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4800
-     * @tc.name     : testClaimInterfaceParamEx001
-     * @tc.desc     : Negative test: interfaces id add 123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4800
+     * @tc.desc   Negative test: interfaces id add 123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx001 begin');
@@ -1404,12 +1404,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_4900
-     * @tc.name     : testClaimInterfaceParamEx002
-     * @tc.desc     : Negative test: interfaces id -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_4900
+     * @tc.desc   Negative test: interfaces id -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx002 begin');
@@ -1432,12 +1432,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5000
-     * @tc.name     : testClaimInterfaceParamEx003
-     * @tc.desc     : Negative test: pipe busNum add 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5000
+     * @tc.desc   Negative test: pipe busNum add 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx003 begin');
@@ -1460,12 +1460,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5100
-     * @tc.name     : testClaimInterfaceParamEx004
-     * @tc.desc     : Negative test: pipe busNum -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5100
+     * @tc.desc   Negative test: pipe busNum -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx004 begin');
@@ -1488,12 +1488,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5200
-     * @tc.name     : testClaimInterfaceParamEx005
-     * @tc.desc     : Negative test: pipe devAddress add 10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx005
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5200
+     * @tc.desc   Negative test: pipe devAddress add 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx005 begin');
@@ -1516,12 +1516,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5300
-     * @tc.name     : testClaimInterfaceParamEx006
-     * @tc.desc     : Negative test: pipe devAddress -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx006
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5300
+     * @tc.desc   Negative test: pipe devAddress -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx006 begin');
@@ -1544,12 +1544,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5400
-     * @tc.name     : testClaimInterfaceParamEx007
-     * @tc.desc     : Negative test: pipe devAddress -1, busNum -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx007
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5400
+     * @tc.desc   Negative test: pipe devAddress -1, busNum -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx007 begin');
@@ -1573,12 +1573,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5500
-     * @tc.name     : testClaimInterfaceParamEx008
-     * @tc.desc     : Negative test: interfaces protocol add 100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx008
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5500
+     * @tc.desc   Negative test: interfaces protocol add 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx008 begin');
@@ -1601,12 +1601,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5600
-     * @tc.name     : testClaimInterfaceParamEx009
-     * @tc.desc     : Negative test: interfaces clazz add 100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx009
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5600
+     * @tc.desc   Negative test: interfaces clazz add 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx009 begin');
@@ -1629,12 +1629,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5700
-     * @tc.name     : testClaimInterfaceParamEx010
-     * @tc.desc     : Negative test: interfaces name add 123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx010
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5700
+     * @tc.desc   Negative test: interfaces name add 123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx010 begin');
@@ -1657,12 +1657,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5800
-     * @tc.name     : testClaimInterfaceParamEx011
-     * @tc.desc     : Negative test: interfaces name add @#
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx011
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5800
+     * @tc.desc   Negative test: interfaces name add @#
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx011 begin');
@@ -1685,12 +1685,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_5900
-     * @tc.name     : testClaimInterfaceParamEx012
-     * @tc.desc     : Negative test: interfaces name add abc
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx012
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_5900
+     * @tc.desc   Negative test: interfaces name add abc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx012 begin');
@@ -1713,12 +1713,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6000
-     * @tc.name     : testClaimInterfaceParamEx013
-     * @tc.desc     : Negative test: interfaces name is ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx013
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6000
+     * @tc.desc   Negative test: interfaces name is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx013 begin');
@@ -1741,12 +1741,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6100
-     * @tc.name     : testClaimInterfaceParamEx014
-     * @tc.desc     : Negative test: interfaces alternateSetting add 100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx014
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6100
+     * @tc.desc   Negative test: interfaces alternateSetting add 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx014 begin');
@@ -1769,12 +1769,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6200
-     * @tc.name     : testClaimInterfaceParamEx015
-     * @tc.desc     : Negative test: interfaces subClass add 100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testClaimInterfaceParamEx015
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6200
+     * @tc.desc   Negative test: interfaces subClass add 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClaimInterfaceParamEx015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testClaimInterfaceParamEx015 begin');
@@ -1797,12 +1797,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6300
-     * @tc.name     : testSetConfigurationParamEx001
-     * @tc.desc     : Negative test: configs id add 100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6300
+     * @tc.desc   Negative test: configs id add 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx001 begin');
@@ -1825,12 +1825,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6400
-     * @tc.name     : testSetConfigurationParamEx002
-     * @tc.desc     : Negative test: configs id is -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6400
+     * @tc.desc   Negative test: configs id is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx002 begin');
@@ -1853,12 +1853,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamExCon_6300
-     * @tc.name     : testSetConfigurationParam801Err002
-     * @tc.desc     : Negative test: configs id add 100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParam801Err002
+     * @tc.number SUB_USB_HostManager_JS_ParamExCon_6300
+     * @tc.desc   Negative test: configs id add 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParam801Err002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParam801Err002 begin');
@@ -1881,12 +1881,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6500
-     * @tc.name     : testSetConfigurationParamEx003
-     * @tc.desc     : Negative test: configs name is ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6500
+     * @tc.desc   Negative test: configs name is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx003 begin');
@@ -1909,12 +1909,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6600
-     * @tc.name     : testSetConfigurationParamEx004
-     * @tc.desc     : Negative test: configs name add "123"
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6600
+     * @tc.desc   Negative test: configs name add "123"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx004 begin');
@@ -1937,12 +1937,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6700
-     * @tc.name     : testSetConfigurationParamEx005
-     * @tc.desc     : Negative test: configs name add "abc"
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx005
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6700
+     * @tc.desc   Negative test: configs name add "abc"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx005 begin');
@@ -1965,12 +1965,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6800
-     * @tc.name     : testSetConfigurationParamEx006
-     * @tc.desc     : Negative test: configs name add "@#"
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx006
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6800
+     * @tc.desc   Negative test: configs name add "@#"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx006 begin');
@@ -1993,12 +1993,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_6900
-     * @tc.name     : testSetConfigurationParamEx007
-     * @tc.desc     : Negative test: configs maxPower add 100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx007
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_6900
+     * @tc.desc   Negative test: configs maxPower add 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx007 begin');
@@ -2021,12 +2021,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7000
-     * @tc.name     : testSetConfigurationParamEx008
-     * @tc.desc     : Negative test: configs isRemoteWakeup is true
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx008
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7000
+     * @tc.desc   Negative test: configs isRemoteWakeup is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx008 begin');
@@ -2049,12 +2049,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7100
-     * @tc.name     : testSetConfigurationParamEx009
-     * @tc.desc     : Negative test: configs isRemoteWakeup is false
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx009
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7100
+     * @tc.desc   Negative test: configs isRemoteWakeup is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx009 begin');
@@ -2077,12 +2077,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7200
-     * @tc.name     : testSetConfigurationParamEx010
-     * @tc.desc     : Negative test: configs isSelfPowered is true
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx010
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7200
+     * @tc.desc   Negative test: configs isSelfPowered is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx010 begin');
@@ -2105,12 +2105,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7300
-     * @tc.name     : testSetConfigurationParamEx011
-     * @tc.desc     : Negative test: configs isSelfPowered is false
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetConfigurationParamEx011
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7300
+     * @tc.desc   Negative test: configs isSelfPowered is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetConfigurationParamEx011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetConfigurationParamEx011 begin');
@@ -2133,12 +2133,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7400
-     * @tc.name     : testSetInterfaceParamEx001
-     * @tc.desc     : Negative test: pipe busNum add 1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7400
+     * @tc.desc   Negative test: pipe busNum add 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx001 begin');
@@ -2164,12 +2164,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7500
-     * @tc.name     : testSetInterfaceParamEx002
-     * @tc.desc     : Negative test: pipe devAddress add 10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7500
+     * @tc.desc   Negative test: pipe devAddress add 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx002 begin');
@@ -2195,12 +2195,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7600
-     * @tc.name     : testSetInterfaceParamEx003
-     * @tc.desc     : Negative test: pipe busNum is -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7600
+     * @tc.desc   Negative test: pipe busNum is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx003 begin');
@@ -2226,12 +2226,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7700
-     * @tc.name     : testSetInterfaceParamEx004
-     * @tc.desc     : Negative test: pipe devAddress is -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7700
+     * @tc.desc   Negative test: pipe devAddress is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx004 begin');
@@ -2257,12 +2257,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7800
-     * @tc.name     : testSetInterfaceParamEx005
-     * @tc.desc     : Negative test: pipe devAddress -1, busNum -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx005
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7800
+     * @tc.desc   Negative test: pipe devAddress -1, busNum -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx005 begin');
@@ -2289,12 +2289,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_7900
-     * @tc.name     : testSetInterfaceParamEx006
-     * @tc.desc     : Negative test: interface id +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx006
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_7900
+     * @tc.desc   Negative test: interface id +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx006 begin');
@@ -2322,12 +2322,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8000
-     * @tc.name     : testSetInterfaceParamEx007
-     * @tc.desc     : Negative test: interface id -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx007
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8000
+     * @tc.desc   Negative test: interface id -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx007 begin');
@@ -2355,12 +2355,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8100
-     * @tc.name     : testSetInterfaceParamEx008
-     * @tc.desc     : Negative test: interface protocol +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx008
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8100
+     * @tc.desc   Negative test: interface protocol +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx008 begin');
@@ -2388,12 +2388,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8200
-     * @tc.name     : testSetInterfaceParamEx009
-     * @tc.desc     : Negative test: interface protocol +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx009
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8200
+     * @tc.desc   Negative test: interface protocol +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx009 begin');
@@ -2421,12 +2421,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8300
-     * @tc.name     : testSetInterfaceParamEx010
-     * @tc.desc     : Negative test: interface clazz +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx010
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8300
+     * @tc.desc   Negative test: interface clazz +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx010 begin');
@@ -2454,12 +2454,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8400
-     * @tc.name     : testSetInterfaceParamEx011
-     * @tc.desc     : Negative test: interface subClass +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx011
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8400
+     * @tc.desc   Negative test: interface subClass +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx011 begin');
@@ -2487,12 +2487,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8500
-     * @tc.name     : testSetInterfaceParamEx012
-     * @tc.desc     : Negative test: interface alternateSetting +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx012
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8500
+     * @tc.desc   Negative test: interface alternateSetting +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx012 begin');
@@ -2520,12 +2520,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8600
-     * @tc.name     : testSetInterfaceParamEx013
-     * @tc.desc     : Negative test: interface name ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx013
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8600
+     * @tc.desc   Negative test: interface name ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx013 begin');
@@ -2553,12 +2553,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8700
-     * @tc.name     : testSetInterfaceParamEx014
-     * @tc.desc     : Negative test: interface name +@#
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx014
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8700
+     * @tc.desc   Negative test: interface name +@#
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx014 begin');
@@ -2586,12 +2586,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8800
-     * @tc.name     : testSetInterfaceParamEx015
-     * @tc.desc     : Negative test: interface name +123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx015
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8800
+     * @tc.desc   Negative test: interface name +123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx015 begin');
@@ -2619,12 +2619,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_8900
-     * @tc.name     : testSetInterfaceParamEx016
-     * @tc.desc     : Negative test: interface name +abc
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testSetInterfaceParamEx016
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_8900
+     * @tc.desc   Negative test: interface name +abc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetInterfaceParamEx016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testSetInterfaceParamEx016 begin');
@@ -2652,12 +2652,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9000
-     * @tc.name     : testReleaseInterfaceParamEx001
-     * @tc.desc     : Negative test: pipe busNum +1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx001
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9000
+     * @tc.desc   Negative test: pipe busNum +1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx001 begin');
@@ -2683,12 +2683,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamExRel_0100
-     * @tc.name     : testReleaseInterfaceParam801Err001
-     * @tc.desc     : Negative test: pipe busNum +1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx801Err001
+     * @tc.number SUB_USB_HostManager_JS_ParamExRel_0100
+     * @tc.desc   Negative test: pipe busNum +1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx801Err001 begin');
@@ -2714,12 +2714,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9100
-     * @tc.name     : testReleaseInterfaceParamEx002
-     * @tc.desc     : Negative test: pipe devAddress +10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx002
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9100
+     * @tc.desc   Negative test: pipe devAddress +10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx002 begin');
@@ -2745,12 +2745,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9200
-     * @tc.name     : testReleaseInterfaceParamEx003
-     * @tc.desc     : Negative test: pipe busNum -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx003
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9200
+     * @tc.desc   Negative test: pipe busNum -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx003 begin');
@@ -2776,12 +2776,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9300
-     * @tc.name     : testReleaseInterfaceParamEx004
-     * @tc.desc     : Negative test: pipe devAddress +10000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx004
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9300
+     * @tc.desc   Negative test: pipe devAddress +10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx004 begin');
@@ -2807,12 +2807,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9400
-     * @tc.name     : testReleaseInterfaceParamEx005
-     * @tc.desc     : Negative test: interface id +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx005
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9400
+     * @tc.desc   Negative test: interface id +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx005 begin');
@@ -2840,12 +2840,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9500
-     * @tc.name     : testReleaseInterfaceParamEx006
-     * @tc.desc     : Negative test: interface id -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx006
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9500
+     * @tc.desc   Negative test: interface id -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx006 begin');
@@ -2873,12 +2873,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9600
-     * @tc.name     : testReleaseInterfaceParamEx007
-     * @tc.desc     : Negative test: interface name ""
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx007
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9600
+     * @tc.desc   Negative test: interface name ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx007 begin');
@@ -2903,12 +2903,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9700
-     * @tc.name     : testReleaseInterfaceParamEx008
-     * @tc.desc     : Negative test: interface name +123
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx008
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9700
+     * @tc.desc   Negative test: interface name +123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx008 begin');
@@ -2933,12 +2933,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9800
-     * @tc.name     : testReleaseInterfaceParamEx009
-     * @tc.desc     : Negative test: interface name +abc
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx009
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9800
+     * @tc.desc   Negative test: interface name +abc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx009 begin');
@@ -2963,12 +2963,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_9900
-     * @tc.name     : testReleaseInterfaceParamEx010
-     * @tc.desc     : Negative test: interface name +@#
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx010
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_9900
+     * @tc.desc   Negative test: interface name +@#
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx010 begin');
@@ -2993,12 +2993,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0110
-     * @tc.name     : testReleaseInterfaceParamEx011
-     * @tc.desc     : Negative test: interface clazz +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx011
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0110
+     * @tc.desc   Negative test: interface clazz +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx011 begin');
@@ -3023,12 +3023,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0120
-     * @tc.name     : testReleaseInterfaceParamEx012
-     * @tc.desc     : Negative test: interface protocol +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx012
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0120
+     * @tc.desc   Negative test: interface protocol +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx012 begin');
@@ -3053,12 +3053,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0130
-     * @tc.name     : testReleaseInterfaceParamEx013
-     * @tc.desc     : Negative test: interface subClass +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx013
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0130
+     * @tc.desc   Negative test: interface subClass +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx013 begin');
@@ -3083,12 +3083,12 @@ describe('UsbApiParamExceJsunitTest', function () {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_ParamEx_0140
-     * @tc.name     : testReleaseInterfaceParamEx014
-     * @tc.desc     : Negative test: interface alternateSetting +100
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testReleaseInterfaceParamEx014
+     * @tc.number SUB_USB_HostManager_JS_ParamEx_0140
+     * @tc.desc   Negative test: interface alternateSetting +100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReleaseInterfaceParamEx014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, 'usb testReleaseInterfaceParamEx014 begin');

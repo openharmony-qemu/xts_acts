@@ -1,0 +1,29 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/Grid/gridRebound",
+        "MainAbility/pages/Grid/alignItemsGrid",
+        "MainAbility/pages/Grid/GridFlingCallback",
+        "MainAbility/pages/Grid/GridScrollEdgeCallback",
+        "MainAbility/pages/Grid/gridAniTrue",
+        "MainAbility/pages/Grid/irregularAniGrid",
+        "MainAbility/pages/Grid/repeatAniGrid",
+        "MainAbility/pages/Grid/gridNode",
+        "MainAbility/pages/Grid/gridItemNode",
+        "MainAbility/pages/Grid/nodeTypeGrid",
+        "MainAbility/pages/Grid/cachedShowGrid",
+        "MainAbility/pages/Grid/setGridEvent",
+        "MainAbility/pages/LazyVGridLayout/LazyVGridLayout",
+        "MainAbility/pages/Grid/barMarginGrid",
+        "MainAbility/pages/Grid/canOverGrid",
+        "MainAbility/pages/Grid/gridStopDrag",
+        "MainAbility/pages/Grid/syncLoadGrid",
+        "MainAbility/pages/Grid/ModifierDraggingFling",
+        "MainAbility/pages/Grid/gridDraggingFling",
+        "MainAbility/pages/Grid/gridScrollbarColor",
+        "MainAbility/pages/Grid/GridFillPolicy",
+        "MainAbility/pages/Grid/GridContentSize",
+        "MainAbility/pages/Grid/gridOffsetRes",
+        "MainAbility/pages/Grid/gridContentOffset"
+    ]
+}

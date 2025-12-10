@@ -60,12 +60,12 @@ export default function MediaAssetChangeRequestGetAssetsTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_ASSETS_001
-     * @tc.name      : MediaAssetChangeRequest_getAsset_promise_001
-     * @tc.desc      : getAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getAsset_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_ASSETS_001
+     * @tc.desc   getAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_getAsset_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getAsset_promise_001';
@@ -76,12 +76,12 @@ export default function MediaAssetChangeRequestGetAssetsTest() {
     })*/
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_ASSETS_002
-     * @tc.name      : MediaAssetChangeRequest_getAsset_promise_002
-     * @tc.desc      : getAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getAsset_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_ASSETS_002
+     * @tc.desc   getAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_getAsset_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getAsset_promise_002';

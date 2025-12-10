@@ -48,12 +48,12 @@ export default function RichEditor3() {
       console.info("RichEditor3 after each called");
     });
     /**
-     * @tc.number RichEditor3_0100
      * @tc.name   RichEditor3_0100
+     * @tc.number RichEditor3_0100
      * @tc.desc   Test onIMEInputComplete callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor3_0100', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -75,12 +75,12 @@ export default function RichEditor3() {
     });
 
     /**
-     * @tc.number RichEditor3_0200
      * @tc.name   RichEditor3_0200
+     * @tc.number RichEditor3_0200
      * @tc.desc   Test getSPans callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor3_0200', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -108,12 +108,12 @@ export default function RichEditor3() {
     });
 
     /**
-     * @tc.number RichEditor3_0300
      * @tc.name   RichEditor3_0300
+     * @tc.number RichEditor3_0300
      * @tc.desc   Test onSelect callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor3_0300', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -151,12 +151,12 @@ export default function RichEditor3() {
     });
 
     /**
-     * @tc.number RichEditor3_0400
      * @tc.name   RichEditor3_0400
+     * @tc.number RichEditor3_0400
      * @tc.desc   Test getSelection callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor3_0400', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -200,12 +200,12 @@ export default function RichEditor3() {
     });
 
     /**
-     * @tc.number RichEditor3_0500
      * @tc.name   RichEditor3_0500
+     * @tc.number RichEditor3_0500
      * @tc.desc   Test aboutToDelete callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditor3_0500', Level.LEVEL2, async (done: Function) => {
       // Test stop

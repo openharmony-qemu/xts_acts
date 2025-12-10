@@ -49,12 +49,12 @@ export default function searchMaxFontSize() {
     })
 
     /**
+     * @tc.name   searchMaxFontSize0100
      * @tc.number searchMaxFontSize0100
-     * @tc.name   Test the maxFontSize property of the search component
      * @tc.desc   set the maxFontSize property value is  21
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchMaxFontSize0100',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'searchMaxFontSize0100';

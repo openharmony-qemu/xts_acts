@@ -12,3 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+export const testNodeSwiperItemFillpolocy001: () => number;
+export const testImageDrawable001: () => number;
+export const testImageDrawable002: () => number;
+export const testImageDrawable003: () => number;
+export const testImageDrawable004: () => number;

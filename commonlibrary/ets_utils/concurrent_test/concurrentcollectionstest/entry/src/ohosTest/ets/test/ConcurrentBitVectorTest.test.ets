@@ -90,12 +90,12 @@ export default function BitVectorTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0100
-     * @tc.name      : test_concurrent_collections_bitvector_001
-     * @tc.desc      : test_concurrent_collections_bitvector_001 - test BitVector push method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_001
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0100
+     * @tc.desc   test_concurrent_collections_bitvector_001 - test BitVector push method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -124,12 +124,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0200
-     * @tc.name      : test_concurrent_collections_bitvector_002
-     * @tc.desc      : test_concurrent_collections_bitvector_002 - test BitVector pop method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_002
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0200
+     * @tc.desc   test_concurrent_collections_bitvector_002 - test BitVector pop method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -161,12 +161,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0300
-     * @tc.name      : test_concurrent_collections_bitvector_003
-     * @tc.desc      : test_concurrent_collections_bitvector_003 - test BitVector has method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_003
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0300
+     * @tc.desc   test_concurrent_collections_bitvector_003 - test BitVector has method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -195,12 +195,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0400
-     * @tc.name      : test_concurrent_collections_bitvector_004
-     * @tc.desc      : test_concurrent_collections_bitvector_004 - test BitVector setBitsByRange method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_004
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0400
+     * @tc.desc   test_concurrent_collections_bitvector_004 - test BitVector setBitsByRange method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -229,12 +229,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0500
-     * @tc.name      : test_concurrent_collections_bitvector_005
-     * @tc.desc      : test_concurrent_collections_bitvector_005 - test BitVector setAllBits method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_005
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0500
+     * @tc.desc   test_concurrent_collections_bitvector_005 - test BitVector setAllBits method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -263,12 +263,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0600
-     * @tc.name      : test_concurrent_collections_bitvector_006
-     * @tc.desc      : test_concurrent_collections_bitvector_006 - test BitVector getBitsByRange method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_006
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0600
+     * @tc.desc   test_concurrent_collections_bitvector_006 - test BitVector getBitsByRange method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0700
-     * @tc.name      : test_concurrent_collections_bitvector_007
-     * @tc.desc      : test_concurrent_collections_bitvector_007 - test BitVector resize method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_007
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0700
+     * @tc.desc   test_concurrent_collections_bitvector_007 - test BitVector resize method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -331,12 +331,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0800
-     * @tc.name      : test_concurrent_collections_bitvector_008
-     * @tc.desc      : test_concurrent_collections_bitvector_008 - test BitVector getBitCountByRange method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_008
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0800
+     * @tc.desc   test_concurrent_collections_bitvector_008 - test BitVector getBitCountByRange method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -365,12 +365,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_0900
-     * @tc.name      : test_concurrent_collections_bitvector_009
-     * @tc.desc      : test_concurrent_collections_bitvector_009 - test BitVector getIndexOf method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_009
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_0900
+     * @tc.desc   test_concurrent_collections_bitvector_009 - test BitVector getIndexOf method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -399,12 +399,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_1000
-     * @tc.name      : test_concurrent_collections_bitvector_010
-     * @tc.desc      : test_concurrent_collections_bitvector_010 - test BitVector getLastIndexOf method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_010
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_1000
+     * @tc.desc   test_concurrent_collections_bitvector_010 - test BitVector getLastIndexOf method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -433,12 +433,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_1100
-     * @tc.name      : test_concurrent_collections_bitvector_011
-     * @tc.desc      : test_concurrent_collections_bitvector_011 - test BitVector index access method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_011
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_1100
+     * @tc.desc   test_concurrent_collections_bitvector_011 - test BitVector index access method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -467,12 +467,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_1200
-     * @tc.name      : test_concurrent_collections_bitvector_012
-     * @tc.desc      : test_concurrent_collections_bitvector_012 - test BitVector flipBitByIndex method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_012
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_1200
+     * @tc.desc   test_concurrent_collections_bitvector_012 - test BitVector flipBitByIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -501,12 +501,12 @@ export default function BitVectorTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BITVECTOR_TEST_1300
-     * @tc.name      : test_concurrent_collections_bitvector_013
-     * @tc.desc      : test_concurrent_collections_bitvector_013 - test BitVector flipBitsByRange and values method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_collections_bitvector_013
+     * @tc.number SUB_CONCURRENT_BITVECTOR_TEST_1300
+     * @tc.desc   test_concurrent_collections_bitvector_013 - test BitVector flipBitsByRange and values method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_collections_bitvector_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

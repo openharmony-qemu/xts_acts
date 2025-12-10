@@ -44,12 +44,12 @@ export default function syncLoadGroup() {
     });
 
     /**
-     * @tc.number    syncLoadGroup_001
-     * @tc.name      syncLoadGroup_0100
-     * @tc.desc      Asynchronous loading of ListItemGroup components.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   syncLoadGroup_0100
+     * @tc.number syncLoadGroup_001
+     * @tc.desc   Asynchronous loading of ListItemGroup components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('syncLoadGroup_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[syncLoadGroup_0100] START');
@@ -68,12 +68,12 @@ export default function syncLoadGroup() {
     });
 
     /**
-     * @tc.number    syncLoadGroup_002
-     * @tc.name      syncLoadGroup_0200
-     * @tc.desc      Synchronize loading of ListItemGroup components.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   syncLoadGroup_0200
+     * @tc.number syncLoadGroup_002
+     * @tc.desc   Synchronize loading of ListItemGroup components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('syncLoadGroup_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[syncLoadGroup_0200] START');

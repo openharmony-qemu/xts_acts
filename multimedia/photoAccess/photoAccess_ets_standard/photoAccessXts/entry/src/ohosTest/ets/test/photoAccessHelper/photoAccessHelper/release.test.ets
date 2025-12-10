@@ -71,12 +71,12 @@ export default function releaseTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_RELEASE_001
-     * @tc.name      : release_callback_test_001
-     * @tc.desc      : callback, release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_callback_test_001
+     * @tc.number PHOTO_ACCESS_HELPER_RELEASE_001
+     * @tc.desc   callback, release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_callback_test_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_callback_test_001';
@@ -85,12 +85,12 @@ export default function releaseTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_RELEASE_002
-     * @tc.name      : release_promise_test_001
-     * @tc.desc      : promise, release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_promise_test_001
+     * @tc.number PHOTO_ACCESS_HELPER_RELEASE_002
+     * @tc.desc   promise, release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_promise_test_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_promise_test_001';

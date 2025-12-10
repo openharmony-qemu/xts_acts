@@ -62,12 +62,12 @@ export default function windowInterfaceOptionalParameterTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0360
-     * @tc.name      : testDisplay_off_change_Deregister_All_Listeners
-     * @tc.desc      : Enable monitoring of screen status changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testDisplay_off_change_Deregister_All_Listeners
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0360
+     * @tc.desc   Enable monitoring of screen status changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testDisplay_off_change_Deregister_All_Listeners', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testDisplay_off_change_Deregister_All_Listeners';
@@ -148,12 +148,12 @@ export default function windowInterfaceOptionalParameterTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0370
-     * @tc.name      : testDisplay_off_change_Deregister_FirstCall_Listeners
-     * @tc.desc      : Enable monitoring of screen status changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testDisplay_off_change_Deregister_FirstCall_Listeners
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0370
+     * @tc.desc   Enable monitoring of screen status changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testDisplay_off_change_Deregister_FirstCall_Listeners', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testDisplay_off_change_Deregister_FirstCall_Listeners';

@@ -40,6 +40,14 @@ export default function LineResourceTest() {
       done();
     });
     
+    /**
+     * @tc.name   LineResourceTest_0100
+     * @tc.number LineResourceTest_0100
+     * @tc.desc   LineResourceTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('LineResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[LineResourceTest_0100] START');
       await CommonFunc.sleep(1000);

@@ -50,12 +50,12 @@ export default function getSupportedPhotoFormatsTest() {
     });
 
     /**
-     * @tc.number    : GET_SUPPOTTED_PHOTO_FORMATS_0000
-     * @tc.name      : get_supported_photo_formats_000
-     * @tc.desc      : get supported photo formats
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_supported_photo_formats_000
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_0000
+     * @tc.desc   get supported photo formats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_supported_photo_formats_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'get_supported_photo_formats_000';
@@ -74,12 +74,12 @@ export default function getSupportedPhotoFormatsTest() {
     })
 
     /**
-     * @tc.number    : GET_SUPPOTTED_PHOTO_FORMATS_1000
-     * @tc.name      : get_supported_photo_formats_001
-     * @tc.desc      : get supported photo formats
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_supported_photo_formats_001
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_1000
+     * @tc.desc   get supported photo formats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_supported_photo_formats_001', Level.LEVEL0, async (done: Function) => {
       let testNum = 'get_supported_photo_formats_001';
@@ -98,12 +98,12 @@ export default function getSupportedPhotoFormatsTest() {
     })
 
     /**
-     * @tc.number    : GET_SUPPOTTED_PHOTO_FORMATS_2000
-     * @tc.name      : get_supported_photo_formats_002
-     * @tc.desc      : get supported photo formats
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_supported_photo_formats_002
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_2000
+     * @tc.desc   get supported photo formats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_supported_photo_formats_002', Level.LEVEL0, async (done: Function) => {
       let testNum = 'get_supported_photo_formats_002';
@@ -122,12 +122,12 @@ export default function getSupportedPhotoFormatsTest() {
     })
 
     /**
-     * @tc.number    : GET_SUPPOTTED_PHOTO_FORMATS_3000
-     * @tc.name      : get_supported_photo_formats_003
-     * @tc.desc      : get supported photo formats
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_supported_photo_formats_003
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_3000
+     * @tc.desc   get supported photo formats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_supported_photo_formats_003', Level.LEVEL0, async (done: Function) => {
       let testNum = 'get_supported_photo_formats_003';
@@ -146,12 +146,12 @@ export default function getSupportedPhotoFormatsTest() {
     })
 
     /**
-     * @tc.number    : GET_SUPPOTTED_PHOTO_FORMATS_4000
-     * @tc.name      : get_supported_photo_formats_004
-     * @tc.desc      : get supported photo formats, photoType error, error code 14000011
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_supported_photo_formats_004
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_4000
+     * @tc.desc   get supported photo formats, photoType error, error code 14000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_supported_photo_formats_004', Level.LEVEL2, async (done: Function) => {
       let testNum = 'get_supported_photo_formats_004';
@@ -167,12 +167,12 @@ export default function getSupportedPhotoFormatsTest() {
     })
 
     /**
-     * @tc.number    : GET_SUPPOTTED_PHOTO_FORMATS_5000
-     * @tc.name      : get_supported_photo_formats_005
-     * @tc.desc      : get supported photo formats, photoType undefined, error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_supported_photo_formats_005
+     * @tc.number GET_SUPPOTTED_PHOTO_FORMATS_5000
+     * @tc.desc   get supported photo formats, photoType undefined, error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_supported_photo_formats_005', Level.LEVEL2, async (done: Function) => {
       let testNum = 'get_supported_photo_formats_005';

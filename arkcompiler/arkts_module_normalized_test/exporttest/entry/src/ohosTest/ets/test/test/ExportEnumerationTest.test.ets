@@ -48,12 +48,12 @@ export default function exportEnumerationTest() {
     })
 
     /**
+     * @tc.name   exportEnumerationTest0100
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0100
-     * @tc.name exportEnumerationTest0100
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('exportEnumerationTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result = DefaultOrderStatus.Pending;
@@ -62,12 +62,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0101
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0101
-     * @tc.name exportEnumerationTest0101
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = DefaultObjOrderStatus.OrderStatus.Pending;
@@ -76,12 +76,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0102
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0102
-     * @tc.name exportEnumerationTest0102
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = DefaultObjOrderStatus1.OrderStatus.Pending;
@@ -90,12 +90,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0103
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0103
-     * @tc.name exportEnumerationTest0103
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = EnumOrderStatus.Pending;
@@ -104,12 +104,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0104
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0104
-     * @tc.name exportEnumerationTest0104
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = OrderStatus1.Pending;
@@ -118,12 +118,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0105
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0105
-     * @tc.name exportEnumerationTest0105
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = OrderStatus2.Pending;
@@ -132,12 +132,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0106
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0106
-     * @tc.name exportEnumerationTest0106
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = OrderStatus3.Pending;
@@ -146,12 +146,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0107
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0107
-     * @tc.name exportEnumerationTest0107
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = EnumOrderStatus4.Pending;
@@ -160,12 +160,12 @@ export default function exportEnumerationTest() {
     });
 
     /**
+     * @tc.name   exportEnumerationTest0108
      * @tc.number SUB_EXPORT_ENUMERATION_TEST_0108
-     * @tc.name exportEnumerationTest0108
-     * @tc.desc Test find method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportEnumerationTest0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result = OrderStatus5.EnumOrderStatus.Pending;

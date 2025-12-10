@@ -45,12 +45,12 @@ export default function getOpacityJsunit() {
     });
     
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_getOpacityJsunit_001
-     * @tc.name      getOpacityJsunit
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   getOpacityJsunit_001
+     * @tc.number SUB_ACE_RICHEDITOR_getOpacityJsunit_001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getOpacityJsunit_001', Level.LEVEL2, async (done: Function) => {
       console.info('[getOpacityJsunit_001] START');

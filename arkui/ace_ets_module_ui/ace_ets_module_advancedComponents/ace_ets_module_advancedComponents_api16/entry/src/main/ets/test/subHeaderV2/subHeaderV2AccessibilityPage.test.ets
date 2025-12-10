@@ -50,12 +50,12 @@ export default function subHeaderV2AccessibilityPageTest() {
     })
 
     /**
-     * @tc.number subHeaderV2AccessibilityPageTest
      * @tc.name   subHeaderV2AccessibilityPage_0100
+     * @tc.number subHeaderV2AccessibilityPageTest
      * @tc.desc   Test subHeaderV2AccessibilityPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('subHeaderV2AccessibilityPage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderV2AccessibilityPage_0100] START');

@@ -41,12 +41,12 @@ export default function menuFontsizeModifierTest() {
       done();
     });
     /**
+     * @tc.name   ArkUX_Modifier_Menu_FontSize_1001
      * @tc.number ArkUX_Modifier_Menu_FontSize_1001
-     * @tc.name Test the properties of components
-     * @tc.desc OnChange callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   OnChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Modifier_Menu_FontSize_1001', Level.LEVEL2, async (done: Function) => {
         console.info('ArkUX_Modifier_Menu_FontSize_1001 START');
@@ -66,12 +66,12 @@ export default function menuFontsizeModifierTest() {
       });
   
       /**
+       * @tc.name   ArkUX_Modifier_Menu_FontSize_1002
        * @tc.number ArkUX_Modifier_Menu_FontSize_1002
-       * @tc.name Test the properties of components
-       * @tc.desc OnChange callback
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level 0
+       * @tc.desc   OnChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('ArkUX_Modifier_Menu_FontSize_1002', Level.LEVEL2, async (done: Function) => {
         console.info('ArkUX_Modifier_Menu_FontSize_1002 START');
@@ -94,12 +94,12 @@ export default function menuFontsizeModifierTest() {
       });
   
       /**
+       * @tc.name   ArkUX_Modifier_Menu_FontSize_1003
        * @tc.number ArkUX_Modifier_Menu_FontSize_1003
-       * @tc.name Test the properties of components
-       * @tc.desc OnChange callback
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level 0
+       * @tc.desc   OnChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('ArkUX_Modifier_Menu_FontSize_1003', Level.LEVEL2, async (done: Function) => {
         console.info('ArkUX_Modifier_Menu_FontSize_1003 START');

@@ -136,12 +136,12 @@ export default function PhotoAccessHelperAssetsTest() {
     });
 
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_001
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_001
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_001
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_001
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_001';
@@ -153,12 +153,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_002
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_002
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_002
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_002
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_002';
@@ -170,12 +170,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_003
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_003
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_003
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_003
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_003';
@@ -187,12 +187,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_004
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_004
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_004
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_004
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_004';
@@ -204,12 +204,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_005
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_005
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_005
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_005
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_005';
@@ -221,12 +221,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_006
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_006
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_006
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_006
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_006';
@@ -238,12 +238,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_007
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_007
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_007
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_007
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_007';
@@ -255,12 +255,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_008
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_008
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_008
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_008
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_008';
@@ -272,12 +272,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_009
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_009
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_009
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_009
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_009';
@@ -289,12 +289,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_addAssets_error_0010
-     * @tc.name      mediaAlbumChangeRequest_addAssets_error_0010
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_error_0010
+     * @tc.number mediaAlbumChangeRequest_addAssets_error_0010
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_error_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_error_0010';
@@ -306,12 +306,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_001
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_001
-     * @tc.desc      removeAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_001
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_001
+     * @tc.desc   removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_001';
@@ -323,12 +323,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_002
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_002
-     * @tc.desc      removeAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_002
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_002
+     * @tc.desc   removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_002';
@@ -341,12 +341,12 @@ export default function PhotoAccessHelperAssetsTest() {
     })
 
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_003
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_003
-     * @tc.desc      removeAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_003
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_003
+     * @tc.desc   removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_003';
@@ -358,12 +358,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_004
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_004
-     * @tc.desc      removeAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_004
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_004
+     * @tc.desc   removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_004';
@@ -375,12 +375,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_005
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_005
-     * @tc.desc      removeAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_005
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_005
+     * @tc.desc   removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_005';
@@ -392,12 +392,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_006
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_006
-     * @tc.desc      removeAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_006
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_006
+     * @tc.desc   removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_006';
@@ -409,12 +409,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_007
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_007
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_007
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_007
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_007';
@@ -426,12 +426,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_008
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_008
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_008
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_008
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_008';
@@ -443,12 +443,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_009
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_009
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_009
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_009
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_009';
@@ -460,12 +460,12 @@ export default function PhotoAccessHelperAssetsTest() {
       done();
     })
     /**
-     * @tc.number    mediaAlbumChangeRequest_removeAssets_error_0010
-     * @tc.name      mediaAlbumChangeRequest_removeAssets_error_0010
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_error_0010
+     * @tc.number mediaAlbumChangeRequest_removeAssets_error_0010
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_error_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_error_0010';

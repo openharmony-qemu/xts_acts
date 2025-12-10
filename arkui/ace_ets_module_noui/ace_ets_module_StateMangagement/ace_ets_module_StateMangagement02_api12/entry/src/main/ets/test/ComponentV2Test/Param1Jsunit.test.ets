@@ -46,12 +46,12 @@ export default function Param1Jsunit() {
     });
 
     /**
-     * @tc.number    Param1Jsunit_001
-     * @tc.name      Param1Jsunit_001
-     * @tc.desc      @Param has no local initial value
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   Param1Jsunit_001
+     * @tc.number Param1Jsunit_001
+     * @tc.desc   @Param has no local initial value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Param1Jsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Param1Jsunit_001] START');
@@ -71,12 +71,12 @@ export default function Param1Jsunit() {
     });
 
     /**
-     * @tc.number    Param1Jsunit_002
-     * @tc.name      Param1Jsunit_002
-     * @tc.desc      @Param has no local initial value, click to modify
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   Param1Jsunit_002
+     * @tc.number Param1Jsunit_002
+     * @tc.desc   @Param has no local initial value, click to modify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Param1Jsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[Param1Jsunit_002] START');

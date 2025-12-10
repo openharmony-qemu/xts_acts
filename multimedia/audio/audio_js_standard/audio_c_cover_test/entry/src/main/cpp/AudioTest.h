@@ -82,6 +82,12 @@ napi_value AudioRendererSetDefaultOutputDeviceSuccess(napi_env env, napi_callbac
 napi_value AudioRendererGetAudioTimestampInfoInvalidParam(napi_env env, napi_callback_info info);
 napi_value AudioRendererSetLoudnessGainInvalidParam(napi_env env, napi_callback_info info);
 napi_value AudioRendererSetLoudnessGainSuccess(napi_env env, napi_callback_info info);
+napi_value AudioRendererSetLoudnessGainSuccess_001(napi_env env, napi_callback_info info);
+napi_value AudioRendererSetLoudnessGainSuccess_002(napi_env env, napi_callback_info info);
+napi_value AudioRendererSetLoudnessGainSuccess_003(napi_env env, napi_callback_info info);
+napi_value AudioRendererSetLoudnessGainSuccess_004(napi_env env, napi_callback_info info);
+napi_value AudioRendererSetLoudnessGainSuccess_005(napi_env env, napi_callback_info info);
+napi_value AudioRendererSetLoudnessGainSuccess_006(napi_env env, napi_callback_info info);
 napi_value AudioRendererGetLoudnessGainInvalidParam(napi_env env, napi_callback_info info);
 napi_value AudioRendererGetLoudnessGainSuccess(napi_env env, napi_callback_info info);
 napi_value AudioStreamSetSampleFormatInvalidParam(napi_env env, napi_callback_info info);

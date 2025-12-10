@@ -45,9 +45,12 @@ export default function OnlyRowsTemplate5() {
     });
 
     /**
-     * @tc.number    SUB_ACE_GRID_OnlyRowsTemplate5_0500
-     * @tc.name      testGrid
-     * @tc.desc      GridItem sets rowStart to a negative number
+     * @tc.name   SUB_ACE_GRID_OnlyRowsTemplate5_0500
+     * @tc.number SUB_ACE_GRID_OnlyRowsTemplate5_0500
+     * @tc.desc   GridItem sets rowStart to a negative number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_OnlyRowsTemplate5_0500',  Level.LEVEL0, async  (done:Function) => {
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate5_0500] START');

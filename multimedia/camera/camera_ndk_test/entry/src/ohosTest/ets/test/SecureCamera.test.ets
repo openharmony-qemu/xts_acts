@@ -329,12 +329,12 @@ export default function SecureCameraTest() {
     })
     
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0100
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0100
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0100', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -359,12 +359,12 @@ export default function SecureCameraTest() {
       console.info(TAG+"testOHCaptureSessionAddSecureOutput0100 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0400
-     * @tc.name       : testOHCaptureSessionAddSecureOutput0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_AddSecureOutput in normal condition, create preview output in preconfig.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionAddSecureOutput0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionAddSecureOutput0400
+     * @tc.desc   Test OH_CaptureSession_AddSecureOutput in normal condition, create preview output in preconfig.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionAddSecureOutput0400', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -389,12 +389,12 @@ export default function SecureCameraTest() {
       console.info(TAG+"testOHCaptureSessionAddSecureOutput0400 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0100
-     * @tc.name       : testOHCameraInputOpenSecureCamera0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraInput_OpenSecureCamera in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputOpenSecureCamera0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0100
+     * @tc.desc   Test OH_CameraInput_OpenSecureCamera in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputOpenSecureCamera0100', Level.LEVEL0, () => {
       let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.SET_CAMERA_FRONT_FOR_SECURE_PHOTO);
@@ -417,12 +417,12 @@ export default function SecureCameraTest() {
       console.info(TAG+"testOHCameraInputOpenSecureCamera0100 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0400
-     * @tc.name       : testOHCameraInputOpenSecureCamera0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraInput_OpenSecureCamera in abnormal condition, scene mode is normal photo.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputOpenSecureCamera0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0400
+     * @tc.desc   Test OH_CameraInput_OpenSecureCamera in abnormal condition, scene mode is normal photo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputOpenSecureCamera0400', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -442,12 +442,12 @@ export default function SecureCameraTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0500
-     * @tc.name       : testOHCameraInputOpenSecureCamera0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraInput_OpenSecureCamera in abnormal condition, scene mode is normal video.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputOpenSecureCamera0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpenSecureCamera0500
+     * @tc.desc   Test OH_CameraInput_OpenSecureCamera in abnormal condition, scene mode is normal video.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputOpenSecureCamera0500', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();

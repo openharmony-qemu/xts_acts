@@ -53,28 +53,28 @@ export default function webViewZoomRatio() {
 
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ZOOMRATIO_0100
-    * @tc.name       : textZoomRatio001
-    * @tc.desc       : test ZoomRatio
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   textZoomRatio001
+     * @tc.number SUB_WEB_ZOOMRATIO_0100
+     * @tc.desc   test ZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textZoomRatio001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitZoomRatio", 153270)
       Utils.registerEvent("textZoomRatio001", true, 153280, done);
       sendEventByKey('WebViewZoomRatioTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ZOOMATIO_0100
-    * @tc.name       : testZoomAtio001
-    * @tc.desc       : test ZoomAtio
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testZoomAtio001
+     * @tc.number SUB_WEB_ZOOMATIO_0100
+     * @tc.desc   test ZoomAtio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testZoomAtio001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitZoomAtio", 153270)
       Utils.registerEvent("testZoomAtio001", true, 153290, done);

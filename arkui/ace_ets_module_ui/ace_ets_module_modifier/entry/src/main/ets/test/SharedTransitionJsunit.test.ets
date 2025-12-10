@@ -45,12 +45,12 @@ export default function sharedTransitionJsunit() {
     });
 
     /**
+     * @tc.name   sharedTransitionTest_0100
      * @tc.number sharedTransitionTest_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set sharedTransition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set sharedTransition values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sharedTransitionTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0100 START');

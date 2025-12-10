@@ -23,10 +23,13 @@ export default function webSocketJsunit() {
   describe('webSocketTest', () => {
     console.log("************* webSocket Test start*************");
     let ws: webSocket.WebSocket;
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_createWebSocket_0100
-     * @tc.name      : createWebSocket
-     * @tc.desc      : Creates a web socket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_createWebSocket_0100
+     * @tc.number Telephony_WebSocket_WebSocket_createWebSocket_0100
+     * @tc.desc   Creates a web socket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_createWebSocket_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_createWebSocket_0100 Test start*************");
@@ -40,10 +43,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_createWebSocket_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocketRequestOptions_header_0100
-     * @tc.name      : webSocketRequestOptions.header
-     * @tc.desc      : webSocketRequestOptions.header
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocketRequestOptions_header_0100
+     * @tc.number Telephony_WebSocket_WebSocketRequestOptions_header_0100
+     * @tc.desc   webSocketRequestOptions.header
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocketRequestOptions_header_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocketRequestOptions_header_0100 Test start*************");
@@ -54,10 +60,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocketRequestOptions_header_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocketCloseOptions_code_0100
-     * @tc.name      : webSocketCloseOptions.code
-     * @tc.desc      : webSocketCloseOptions.code
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocketCloseOptions_code_0100
+     * @tc.number Telephony_WebSocket_WebSocketCloseOptions_code_0100
+     * @tc.desc   webSocketCloseOptions.code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocketCloseOptions_code_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocketCloseOptions_code_0100 Test start*************");
@@ -69,10 +78,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocketCloseOptions_code_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocketCloseOptions_reason_0100
-     * @tc.name      : webSocketCloseOptions.reason
-     * @tc.desc      : webSocketCloseOptions.reason
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocketCloseOptions_reason_0100
+     * @tc.number Telephony_WebSocket_WebSocketCloseOptions_reason_0100
+     * @tc.desc   webSocketCloseOptions.reason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocketCloseOptions_reason_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocketCloseOptions_reason_0100 Test start*************");
@@ -84,10 +96,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocketCloseOptions_reason_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_connect_0100
-     * @tc.name      : connect
-     * @tc.desc      : Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_connect_0100
+     * @tc.number Telephony_WebSocket_WebSocket_connect_0100
+     * @tc.desc   Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_connect_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0100 Test start*************");
@@ -110,10 +125,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_connect_0200
-     * @tc.name      : connect
-     * @tc.desc      : Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_connect_0200
+     * @tc.number Telephony_WebSocket_WebSocket_connect_0200
+     * @tc.desc   Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_connect_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0200 Test start*************");
@@ -139,10 +157,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_connect_0300
-     * @tc.name      : connect
-     * @tc.desc      : Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_connect_0300
+     * @tc.number Telephony_WebSocket_WebSocket_connect_0300
+     * @tc.desc   Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_connect_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0300 Test start*************");
@@ -164,10 +185,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_connect_0400
-     * @tc.name      : connect
-     * @tc.desc      : Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_connect_0400
+     * @tc.number Telephony_WebSocket_WebSocket_connect_0400
+     * @tc.desc   Initiates a WebSocket request to establish a WebSocket connection to a given URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_connect_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0400 Test start*************");
@@ -186,10 +210,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_connect_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_send_0100
-     * @tc.name      : send
-     * @tc.desc      : Sends data through a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_send_0100
+     * @tc.number Telephony_WebSocket_WebSocket_send_0100
+     * @tc.desc   Sends data through a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_send_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_send_0100 Test start*************");
@@ -212,10 +239,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_send_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_send_0200
-     * @tc.name      : send
-     * @tc.desc      : Sends data through a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_send_0200
+     * @tc.number Telephony_WebSocket_WebSocket_send_0200
+     * @tc.desc   Sends data through a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_send_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_send_0200 Test start*************");
@@ -234,10 +264,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_send_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_close_0100
-     * @tc.name      : close
-     * @tc.desc      : Closes a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_close_0100
+     * @tc.number Telephony_WebSocket_WebSocket_close_0100
+     * @tc.desc   Closes a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_close_0100 Test start*************");
@@ -260,10 +293,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_close_0200
-     * @tc.name      : close
-     * @tc.desc      : Closes a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_close_0200
+     * @tc.number Telephony_WebSocket_WebSocket_close_0200
+     * @tc.desc   Closes a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_close_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_close_0200 Test start*************");
@@ -290,10 +326,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_close_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_close_0300
-     * @tc.name      : close
-     * @tc.desc      : Closes a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_close_0300
+     * @tc.number Telephony_WebSocket_WebSocket_close_0300
+     * @tc.desc   Closes a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_close_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_close_0300 Test start*************");
@@ -316,10 +355,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_close_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_on_open_0100
-     * @tc.name      : on
-     * @tc.desc      : Enables listening for the open events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_on_open_0100
+     * @tc.number Telephony_WebSocket_WebSocket_on_open_0100
+     * @tc.desc   Enables listening for the open events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_on_open_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_on_open_0100 Test start*************");
@@ -345,10 +387,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_on_open_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_open_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the open events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_open_0100
+     * @tc.number Telephony_WebSocket_WebSocket_off_open_0100
+     * @tc.desc   Cancels listening for the open events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_open_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_open_0100 Test start*************");
@@ -371,10 +416,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_off_open_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_open_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the open events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_open_0200
+     * @tc.number Telephony_WebSocket_WebSocket_off_open_0200
+     * @tc.desc   Cancels listening for the open events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_open_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_open_0200 Test start*************");
@@ -388,10 +436,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_off_open_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_on_message_0100
-     * @tc.name      : on
-     * @tc.desc      : Enables listening for the message events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_on_message_0100
+     * @tc.number Telephony_WebSocket_WebSocket_on_message_0100
+     * @tc.desc   Enables listening for the message events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_on_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_on_message_0100 Test start*************");
@@ -414,10 +465,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_on_message_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_message_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the message events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_message_0100
+     * @tc.number Telephony_WebSocket_WebSocket_off_message_0100
+     * @tc.desc   Cancels listening for the message events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_message_0100 Test start*************");
@@ -440,10 +494,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_off_message_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_message_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the message events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_message_0200
+     * @tc.number Telephony_WebSocket_WebSocket_off_message_0200
+     * @tc.desc   Cancels listening for the message events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_message_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_message_0200 Test start*************");
@@ -457,10 +514,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_off_message_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_on_close_0100
-     * @tc.name      : on
-     * @tc.desc      : Enables listening for the close events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_on_close_0100
+     * @tc.number Telephony_WebSocket_WebSocket_on_close_0100
+     * @tc.desc   Enables listening for the close events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_on_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_on_close_0100 Test start*************");
@@ -483,10 +543,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_on_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_close_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the close events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_close_0100
+     * @tc.number Telephony_WebSocket_WebSocket_off_close_0100
+     * @tc.desc   Cancels listening for the close events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_close_0100 Test start*************");
@@ -509,10 +572,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_off_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_close_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the close events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_close_0200
+     * @tc.number Telephony_WebSocket_WebSocket_off_close_0200
+     * @tc.desc   Cancels listening for the close events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_close_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_close_0200 Test start*************");
@@ -526,10 +592,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_off_close_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_on_error_0100
-     * @tc.name      : on
-     * @tc.desc      : Enables listening for the error events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_on_error_0100
+     * @tc.number Telephony_WebSocket_WebSocket_on_error_0100
+     * @tc.desc   Enables listening for the error events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_on_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_on_error_0100 Test start*************");
@@ -547,10 +616,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_on_error_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_error_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the error events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_error_0100
+     * @tc.number Telephony_WebSocket_WebSocket_off_error_0100
+     * @tc.desc   Cancels listening for the error events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_error_0100 Test start*************");
@@ -568,10 +640,13 @@ export default function webSocketJsunit() {
       console.log("************* Telephony_WebSocket_WebSocket_off_error_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_WebSocket_WebSocket_off_error_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for the error events of a WebSocket connection.
+    /**
+     * @tc.name   Telephony_WebSocket_WebSocket_off_error_0200
+     * @tc.number Telephony_WebSocket_WebSocket_off_error_0200
+     * @tc.desc   Cancels listening for the error events of a WebSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_WebSocket_WebSocket_off_error_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("************* Telephony_WebSocket_WebSocket_off_error_0200 Test start*************");

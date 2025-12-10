@@ -43,6 +43,14 @@ export default function ToggleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ToggleJsunit_0100
+     * @tc.number ToggleJsunit_0100
+     * @tc.desc   ToggleJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ToggleJsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of Toggle component
       console.info('[ToggleJsunit_0100] START');
@@ -70,6 +78,14 @@ export default function ToggleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ToggleJsunit_0200
+     * @tc.number ToggleJsunit_0200
+     * @tc.desc   ToggleJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ToggleJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Verify switch function of Toggle component
       console.info('[ToggleJsunit_0200] START');      
@@ -94,6 +110,14 @@ export default function ToggleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ToggleJsunit_0300
+     * @tc.number ToggleJsunit_0300
+     * @tc.desc   ToggleJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ToggleJsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Verify checkbox function of Toggle component
       console.info('[ToggleJsunit_0300] START');
@@ -116,6 +140,14 @@ export default function ToggleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ToggleJsunit_0400
+     * @tc.number ToggleJsunit_0400
+     * @tc.desc   ToggleJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ToggleJsunit_0400', Level.LEVEL2, async (done: Function) => {
       // Verify button function of Toggle component
       console.info('[ToggleJsunit_0400] START');
@@ -137,6 +169,14 @@ export default function ToggleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ToggleJsunit_0500
+     * @tc.number ToggleJsunit_0500
+     * @tc.desc   ToggleJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ToggleJsunit_0500', Level.LEVEL2, async (done: Function) => {
       // Modify the attribute of Toggle component
       console.info('[ToggleJsunit_0500] START');
@@ -170,6 +210,14 @@ export default function ToggleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ToggleJsunit_0600
+     * @tc.number ToggleJsunit_0600
+     * @tc.desc   ToggleJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ToggleJsunit_0600', Level.LEVEL2, async (done: Function) => {
       // Illegal modification of properties of Toggle component
       console.info('[ToggleJsunit_0600] START');

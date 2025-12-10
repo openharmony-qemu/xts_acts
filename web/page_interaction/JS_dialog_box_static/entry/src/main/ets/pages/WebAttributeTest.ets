@@ -33,16 +33,22 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import webview from '@ohos.web.webview';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
+import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import { Driver, PointerMatrix } from '@ohos.UiTest';
 import cert from '@ohos.security.cert';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
+class StringFields {
+  private str: string = '';
+}
+
 @Entry
 @Component
 struct WebAttributeTest {
+  stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   @State str: string = ""
   @State initialScale: number = 100
@@ -77,26 +83,20 @@ struct WebAttributeTest {
   @State testConsole: boolean = false
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION value: ' + data['ACTION']);
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
-        this.str = strValue;
-        console.info('this.str has been updated to: ' + this.str);
+        this.stringObj.str = strValue;
       }
     }
   }
@@ -114,8 +114,8 @@ struct WebAttributeTest {
             console.log("onBlur==>")
           })
           .onClick((e: ClickEvent) => {
-            console.info("key==>" + this.str)
-            switch (this.str) {
+            console.info("key==>" +this.stringObj.str)
+            switch (this.stringObj.str) {
               case "emitOnAlert001": {
                 try {
                   this.controller.loadUrl("resource://rawfile/alert.html");
@@ -156,6 +156,27 @@ struct WebAttributeTest {
                 }
                 break;
               }
+
+              case "emitJsResultHandleCancel001": {
+                try {
+                  this.handleCancel = true
+                  this.controller.loadUrl("resource://rawfile/confirm.html");
+                  this.controller.runJavaScript("confirmTest()", (error, result) => {
+                    if (error) {
+                      console.info('confirmTest() return error: ' + error)
+                    }
+                    if (result) {
+                      console.info('confirmTest() return result: ' + result)
+                      Utils.emitEvent(result, 70021)
+                    }
+                  })
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
               case 'SwitchNextPageStatic' : {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();

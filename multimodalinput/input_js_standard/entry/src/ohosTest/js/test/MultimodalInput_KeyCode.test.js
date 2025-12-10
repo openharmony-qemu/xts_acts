@@ -18,6 +18,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function MultimodalInput_KeyCode_test() {
   describe('MultimodalInput_KeyCode_test', function () {
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0010
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0010
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -26,6 +34,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0020
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0020
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0020 enter`);
 
@@ -34,6 +50,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0020 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0030
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0030
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0030 enter`);
 
@@ -42,6 +66,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0030 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0040
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0040
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0040 enter`);
 
@@ -50,6 +82,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0040 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0050
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0050
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0050 enter`);
 
@@ -58,6 +98,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0050 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0060
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0060
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0060 enter`);
 
@@ -66,6 +114,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0060 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0070
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0070
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0070 enter`);
 
@@ -74,6 +130,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0070 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0080
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0080
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0080 enter`);
 
@@ -82,6 +146,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0080 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0090
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0090
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0090
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0090 enter`);
 
@@ -90,6 +162,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0090 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0100
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0100
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0100 enter`);
 
@@ -98,6 +178,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0100 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0110
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0110
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0110 enter`);
 
@@ -106,6 +194,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0110 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0120
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0120
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0120 enter`);
 
@@ -114,6 +210,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0120 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0130
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0130
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0130
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0130 enter`);
 
@@ -122,6 +226,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0130 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0140
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0140
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0140
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0140 enter`);
 
@@ -130,6 +242,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0140 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0150
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0150
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0150 enter`);
 
@@ -138,6 +258,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0150 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0160
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0160
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0160
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0160 enter`);
 
@@ -146,6 +274,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0160 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0170
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0170
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0170
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0170 enter`);
 
@@ -154,6 +290,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0170 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0180
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0180
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0180 enter`);
 
@@ -162,6 +306,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0180 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0190
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0190
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0190
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0190 enter`);
 
@@ -170,6 +322,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0190 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0200
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0200
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0200 enter`);
 
@@ -178,6 +338,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0200 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0210
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0210
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0210
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0210 enter`);
 
@@ -186,6 +354,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0210 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0220
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0220
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0220
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0220 enter`);
 
@@ -194,6 +370,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0220 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0230
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0230
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0230
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0230 enter`);
 
@@ -202,6 +386,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0230 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0240
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0240
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0240
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0240 enter`);
 
@@ -210,6 +402,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0240 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0250
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0250
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0250
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -219,6 +419,14 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0260
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0260
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0260
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -227,6 +435,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0270
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0270
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -235,6 +451,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0280
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0280
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0280
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -243,6 +467,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0290
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0290
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0290
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -251,6 +483,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0300
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0300
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -259,6 +499,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0310
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0310
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0310
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -267,6 +515,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0320
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0320
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0320
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -275,6 +531,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0330
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0330
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0330
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -283,6 +547,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0340
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0340
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0340
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -291,6 +563,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0350
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0350
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0350
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -299,6 +579,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0360
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0360
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0360
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -307,6 +595,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0370
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0370
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0370
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -315,6 +611,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0380
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0380
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0380
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -323,6 +627,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0390
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0390
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0390
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -331,6 +643,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0400
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0400
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -339,6 +659,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0410
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0410
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0410
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -347,6 +675,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0420
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0420
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0420
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -355,6 +691,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0430
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0430
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0430
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -363,6 +707,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0440
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0440
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0440
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -371,6 +723,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0450
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0450
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0450
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -379,6 +739,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0460
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0460
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0460
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -387,6 +755,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0470
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0470
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0470
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0470', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -395,6 +771,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0480
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0480
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0480
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -403,6 +787,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0490
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0490
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0490
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0490', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -411,6 +803,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0500
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0500
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -419,6 +819,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0510
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0510
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0510
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -427,6 +835,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0520
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0520
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0520
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -435,6 +851,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0530
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0530
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0530
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0530', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -443,6 +867,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0540
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0540
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0540
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -451,6 +883,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0550
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0550
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0550
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -459,6 +899,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0560
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0560
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0560
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -467,6 +915,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0570
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0570
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0570
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -475,6 +931,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0580
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0580
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0580
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -483,6 +947,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0590
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0590
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0590
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0590', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -491,6 +963,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0600
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0600
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -499,6 +979,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0610
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0610
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0610
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -507,6 +995,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0620
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0620
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0620
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0620', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -515,6 +1011,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0630
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0630
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0630
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0630', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -523,6 +1027,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0640
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0640
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0640
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -531,6 +1043,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0650
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0650
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0650
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -539,6 +1059,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0660
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0660
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0660
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0660', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -547,6 +1075,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0670
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0670
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0670
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0670', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -555,6 +1091,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0680
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0680
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0680
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0680', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -563,6 +1107,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0690
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0690
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0690
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0690', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -571,6 +1123,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0700
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0700
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -579,6 +1139,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0710
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0710
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0710
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -587,6 +1155,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0720
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0720
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0720
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -595,6 +1171,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0730
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0730
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0730
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0730', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -603,6 +1187,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0740
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0740
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0740
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -611,6 +1203,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0750
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0750
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0750
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -619,6 +1219,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0760
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0760
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0760
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0760', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -627,6 +1235,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0770
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0770
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0770
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0770', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -635,6 +1251,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0780
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0780
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0780
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0780', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -643,6 +1267,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0790
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0790
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0790
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0790', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -651,6 +1283,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0800
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0800
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -659,6 +1299,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0810
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0810
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0810
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -667,6 +1315,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0820
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0820
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0820
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0820', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -675,6 +1331,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0830
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0830
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0830
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0830', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -683,6 +1347,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0840
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0840
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0840
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0840', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -691,6 +1363,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0850
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0850
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0850
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -699,6 +1379,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0860
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0860
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0860
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0860', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -707,6 +1395,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0870
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0870
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0870
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0870', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -715,6 +1411,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0880
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0880
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0880
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0880', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -723,6 +1427,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0890
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0890
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0890
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -731,6 +1443,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0900
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0900
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -739,6 +1459,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0910
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0910
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0910
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -747,6 +1475,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0920
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0920
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0920
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -755,6 +1491,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0930
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0930
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0930
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -763,6 +1507,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0940
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0940
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0940
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -771,6 +1523,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0950
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0950
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0950
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -779,6 +1539,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0960
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0960
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0960
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -787,6 +1555,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0970
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0970
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0970
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -795,6 +1571,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0980
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0980
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0980
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -803,6 +1587,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0990
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0990
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0990
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 enter`);
 
@@ -811,6 +1603,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_0010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_1000
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_1000
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_1000 enter`);
 
@@ -819,6 +1619,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_1000 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_101
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_101
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_101 enter`);
 
@@ -827,6 +1635,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_101 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_102
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_102
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_102 enter`);
 
@@ -835,6 +1651,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_102 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_103
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_103
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_103 enter`);
 
@@ -843,6 +1667,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_103 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_104
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_104
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_104 enter`);
 
@@ -851,6 +1683,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_104 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_105
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_105
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_105 enter`);
 
@@ -859,6 +1699,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_105 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_106
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_106
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_106
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_106 enter`);
 
@@ -867,6 +1715,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_106 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_107
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_107
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_107
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_107 enter`);
 
@@ -875,6 +1731,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_107 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_108
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_108
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_108
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_108 enter`);
 
@@ -883,6 +1747,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_108 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_109
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_109
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_109
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_109 enter`);
 
@@ -891,6 +1763,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_109 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_110
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_110
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_110 enter`);
 
@@ -899,6 +1779,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_110 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_111
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_111
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_111
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_111 enter`);
 
@@ -907,6 +1795,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_111 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_112
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_112
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_112
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_112 enter`);
 
@@ -915,6 +1811,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_112 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_113
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_113
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_113
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_113 enter`);
 
@@ -923,6 +1827,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_113 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_114
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_114
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_114
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_114 enter`);
 
@@ -931,6 +1843,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_114 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_115
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_115
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_115
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_115 enter`);
 
@@ -939,6 +1859,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_115 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_116
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_116
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_116
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_116 enter`);
 
@@ -947,6 +1875,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_116 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_117
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_117
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_117
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_117 enter`);
 
@@ -955,6 +1891,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_117 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_118
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_118
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_118
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_118 enter`);
 
@@ -963,6 +1907,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_118 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_119
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_119
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_119
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_119 enter`);
 
@@ -971,6 +1923,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_119 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_120
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_120
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_120 enter`);
 
@@ -979,6 +1939,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_120 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_121
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_121
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_121
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_121 enter`);
 
@@ -987,6 +1955,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_121 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_122
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_122
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_122
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_122 enter`);
 
@@ -995,6 +1971,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_122 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_123
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_123
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_123 enter`);
 
@@ -1003,6 +1987,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_123 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_124
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_124
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_124
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_124 enter`);
 
@@ -1011,6 +2003,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_124 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_125
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_125
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_125
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_125 enter`);
 
@@ -1019,6 +2019,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_125 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_126
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_126
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_126
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_126 enter`);
 
@@ -1027,6 +2035,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_126 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_127
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_127
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_127
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_127 enter`);
 
@@ -1035,6 +2051,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_127 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_128
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_128
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_128 enter`);
 
@@ -1043,6 +2067,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_128 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_129
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_129
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_129 enter`);
 
@@ -1051,6 +2083,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_129 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_130
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_130
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_130
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_130 enter`);
 
@@ -1059,6 +2099,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_130 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_131
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_131
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_131
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_131 enter`);
 
@@ -1067,6 +2115,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_131 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_132
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_132
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_132
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_132 enter`);
 
@@ -1075,6 +2131,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_132 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_133
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_133
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_133
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_133 enter`);
 
@@ -1083,6 +2147,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_133 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_134
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_134
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_134
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_134 enter`);
 
@@ -1091,6 +2163,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_134 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_135
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_135
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_135
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_135 enter`);
 
@@ -1099,6 +2179,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_135 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_136
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_136
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_136
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_136 enter`);
 
@@ -1107,6 +2195,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_136 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_137
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_137
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_137
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_137 enter`);
 
@@ -1115,6 +2211,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_137 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_138
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_138
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_138
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_138 enter`);
 
@@ -1123,6 +2227,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_138 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_139
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_139
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_139
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_139 enter`);
 
@@ -1131,6 +2243,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_139 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_140
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_140
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_140
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_140 enter`);
 
@@ -1139,6 +2259,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_140 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_141
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_141
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_141
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_141 enter`);
 
@@ -1147,6 +2275,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_141 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_142
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_142
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_142
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_142 enter`);
 
@@ -1155,6 +2291,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_142 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_143
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_143
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_143
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_143 enter`);
 
@@ -1163,6 +2307,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_143 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_144
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_144
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_144
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_144 enter`);
 
@@ -1171,6 +2323,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_144 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_145
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_145
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_145
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_145 enter`);
 
@@ -1179,6 +2339,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_145 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_146
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_146
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_146
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_146 enter`);
 
@@ -1187,6 +2355,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_146 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_147
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_147
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_147
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_147 enter`);
 
@@ -1195,6 +2371,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_147 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_148
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_148
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_148
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_148 enter`);
 
@@ -1203,6 +2387,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_148 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_149
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_149
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_149
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_149 enter`);
 
@@ -1211,6 +2403,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_149 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_150
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_150
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_150 enter`);
 
@@ -1219,6 +2419,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_150 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_151
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_151
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_151
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_151 enter`);
 
@@ -1227,6 +2435,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_151 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_152
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_152
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_152
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_152 enter`);
 
@@ -1235,6 +2451,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_152 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_153
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_153
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_153
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_153 enter`);
 
@@ -1243,6 +2467,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_153 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_154
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_154
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_154
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_154 enter`);
 
@@ -1251,6 +2483,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_154 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_155
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_155
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_155
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_155 enter`);
 
@@ -1259,6 +2499,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_155 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_156
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_156
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_156
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_156 enter`);
 
@@ -1267,6 +2515,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_156 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_157
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_157
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_157
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_157 enter`);
 
@@ -1275,6 +2531,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_157 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_158
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_158
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_158
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_158 enter`);
 
@@ -1283,6 +2547,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_158 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_159
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_159
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_159
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_159 enter`);
 
@@ -1291,6 +2563,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_159 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_160
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_160
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_160
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_160 enter`);
 
@@ -1299,6 +2579,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_160 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_161
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_161
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_161
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_161 enter`);
 
@@ -1307,6 +2595,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_161 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_162
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_162
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_162
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_162 enter`);
 
@@ -1315,6 +2611,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_162 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_163
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_163
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_163
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_163 enter`);
 
@@ -1323,6 +2627,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_163 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_164
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_164
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_164
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_164 enter`);
 
@@ -1331,6 +2643,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_164 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_165
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_165
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_165
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_165 enter`);
 
@@ -1339,6 +2659,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_165 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_166
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_166
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_166
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_166 enter`);
 
@@ -1347,6 +2675,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_166 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_167
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_167
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_167
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_167 enter`);
 
@@ -1355,6 +2691,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_167 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_168
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_168
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_168
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_168 enter`);
 
@@ -1363,6 +2707,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_168 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_169
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_169
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_169
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_169 enter`);
 
@@ -1371,6 +2723,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_169 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_170
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_170
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_170
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_170 enter`);
 
@@ -1379,6 +2739,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_170 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_171
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_171
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_171
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_171 enter`);
 
@@ -1387,6 +2755,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_171 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_172
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_172
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_172
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_172 enter`);
 
@@ -1395,6 +2771,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_172 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_173
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_173
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_173
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_173 enter`);
 
@@ -1403,6 +2787,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_173 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_174
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_174
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_174
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_174 enter`);
 
@@ -1411,6 +2803,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_174 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_175
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_175
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_175
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_175 enter`);
 
@@ -1419,6 +2819,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_175 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_178
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_178
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_178
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_178 enter`);
 
@@ -1427,6 +2835,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_178 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_179
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_179
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_179
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_179 enter`);
 
@@ -1435,6 +2851,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_179 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_180
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_180
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_180 enter`);
 
@@ -1443,6 +2867,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_180 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_181
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_181
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_181
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_181 enter`);
 
@@ -1451,6 +2883,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_181 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_182
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_182
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_182
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_182 enter`);
 
@@ -1459,6 +2899,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_182 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_183
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_183
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_183
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_183 enter`);
 
@@ -1467,6 +2915,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_183 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_184
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_184
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_184
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_184 enter`);
 
@@ -1475,6 +2931,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_184 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_186
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_186
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_186
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_186 enter`);
 
@@ -1483,6 +2947,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_186 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_188
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_188
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_188
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_188 enter`);
 
@@ -1491,6 +2963,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_188 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_189
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_189
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_189
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_189 enter`);
 
@@ -1499,6 +2979,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_189 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_190
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_190
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_190
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_190 enter`);
 
@@ -1507,6 +2995,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_190 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_192
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_192
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_192
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_192 enter`);
 
@@ -1515,6 +3011,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_192 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_193
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_193
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_193
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_193 enter`);
 
@@ -1523,6 +3027,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_193 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_194
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_194
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_194
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_194 enter`);
 
@@ -1531,6 +3043,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_194 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_195
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_195
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_195
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_195 enter`);
 
@@ -1539,6 +3059,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_195 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_197
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_197
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_197
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_197 enter`);
 
@@ -1547,6 +3075,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_197 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_198
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_198
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_198
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_198 enter`);
 
@@ -1555,6 +3091,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_198 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_199
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_199
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_199
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_199 enter`);
 
@@ -1563,6 +3107,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_199 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_200
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_200
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_200 enter`);
 
@@ -1571,6 +3123,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_200 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_201
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_201
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_201 enter`);
 
@@ -1579,6 +3139,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_201 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_203
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_203
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_203
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_203 enter`);
 
@@ -1587,6 +3155,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_203 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_205
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_205
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_205
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_205 enter`);
 
@@ -1595,6 +3171,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_205 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_206
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_206
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_206
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_206 enter`);
 
@@ -1603,6 +3187,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_206 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_207
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_207
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_207
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_207 enter`);
 
@@ -1611,6 +3203,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_207 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_208
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_208
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_208
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_208 enter`);
 
@@ -1619,6 +3219,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_208 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_209
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_209
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_209
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_209 enter`);
 
@@ -1627,6 +3235,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_209 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_210
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_210
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_210
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_210 enter`);
 
@@ -1635,6 +3251,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_210 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_211
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_211
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_211
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_211 enter`);
 
@@ -1643,6 +3267,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_211 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_212
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_212
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_212
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_212 enter`);
 
@@ -1651,6 +3283,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_212 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_213
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_213
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_213
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_213 enter`);
 
@@ -1659,6 +3299,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_213 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_214
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_214
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_214
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_214 enter`);
 
@@ -1667,6 +3315,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_214 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_215
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_215
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_215
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_215 enter`);
 
@@ -1675,6 +3331,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_215 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_216
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_216
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_216
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_216 enter`);
 
@@ -1683,6 +3347,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_216 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_217
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_217
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_217
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_217 enter`);
 
@@ -1691,6 +3363,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_217 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_218
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_218
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_218
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_218 enter`);
 
@@ -1699,6 +3379,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_218 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_219
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_219
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_219
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_219 enter`);
 
@@ -1707,6 +3395,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_219 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_221
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_221
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_221
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_221 enter`);
 
@@ -1715,6 +3411,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_221 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_222
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_222
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_222
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_222 enter`);
 
@@ -1723,6 +3427,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_222 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_223
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_223
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_223
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_223 enter`);
 
@@ -1731,6 +3443,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_223 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_224
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_224
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_224
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_224 enter`);
 
@@ -1739,6 +3459,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_224 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_226
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_226
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_226
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_226 enter`);
 
@@ -1747,6 +3475,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_226 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_227
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_227
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_227
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_227 enter`);
 
@@ -1755,6 +3491,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_227 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_228
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_228
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_228
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_228 enter`);
 
@@ -1763,6 +3507,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_228 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_230
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_230
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_230
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_230 enter`);
 
@@ -1771,6 +3523,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_230 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_231
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_231
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_231
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_231 enter`);
 
@@ -1779,6 +3539,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_231 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_232
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_232
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_232
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_232 enter`);
 
@@ -1787,6 +3555,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_232 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_233
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_233
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_233
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_233 enter`);
 
@@ -1795,6 +3571,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_233 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_234
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_234
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_234
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_234 enter`);
 
@@ -1803,6 +3587,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_234 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_235
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_235
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_235
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_235 enter`);
 
@@ -1811,6 +3603,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_235 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_236
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_236
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_236
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_236 enter`);
 
@@ -1819,6 +3619,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_236 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_237
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_237
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_237
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_237 enter`);
 
@@ -1827,6 +3635,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_237 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_238
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_238
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_238
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_238 enter`);
 
@@ -1835,6 +3651,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_238 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_239
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_239
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_239
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_239 enter`);
 
@@ -1843,6 +3667,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_239 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_240
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_240
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_240
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_240 enter`);
 
@@ -1851,6 +3683,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_240 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_241
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_241
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_241
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_241 enter`);
 
@@ -1859,6 +3699,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_241 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_242
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_242
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_242
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_242 enter`);
 
@@ -1867,6 +3715,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_242 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_243
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_243
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_243
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_243 enter`);
 
@@ -1875,6 +3731,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_243 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_245
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_245
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_245
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_245 enter`);
 
@@ -1883,6 +3747,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_245 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_246
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_246
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_246
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_246 enter`);
 
@@ -1891,6 +3763,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_246 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_247
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_247
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_247
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_247 enter`);
 
@@ -1899,6 +3779,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_247 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_248
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_248
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_248
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_248 enter`);
 
@@ -1907,6 +3795,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_248 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_249
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_249
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_249
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_249 enter`);
 
@@ -1915,6 +3811,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_249 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_250
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_250
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_250
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_250 enter`);
 
@@ -1923,6 +3827,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_250 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_251
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_251
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_251
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_251 enter`);
 
@@ -1931,6 +3843,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_251 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_252
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_252
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_252
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_252 enter`);
 
@@ -1939,6 +3859,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_252 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_253
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_253
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_253
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_253 enter`);
 
@@ -1947,6 +3875,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_253 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_255
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_255
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_255
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_255 enter`);
 
@@ -1955,6 +3891,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_255 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_256
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_256
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_256 enter`);
 
@@ -1963,6 +3907,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_256 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_257
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_257
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_257 enter`);
 
@@ -1971,6 +3923,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_257 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_258
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_258
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_258
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_258 enter`);
 
@@ -1979,6 +3939,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_258 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_259
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_259
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_259
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_259 enter`);
 
@@ -1987,6 +3955,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_259 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_260
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_260
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_260
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_260 enter`);
 
@@ -1995,6 +3971,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_260 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_261
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_261
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_261
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_261 enter`);
 
@@ -2003,6 +3987,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_261 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_262
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_262
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_262
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_262 enter`);
 
@@ -2011,6 +4003,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_262 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_263
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_263
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_263
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_263 enter`);
 
@@ -2019,6 +4019,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_263 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_264
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_264
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_264
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_264 enter`);
 
@@ -2027,6 +4035,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_264 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_265
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_265
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_265
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_265 enter`);
 
@@ -2035,6 +4051,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_265 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_266
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_266
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_266
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_266 enter`);
 
@@ -2043,6 +4067,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_266 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_267
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_267
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_267
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_267 enter`);
 
@@ -2051,6 +4083,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_267 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_268
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_268
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_268
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_268 enter`);
 
@@ -2059,6 +4099,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_268 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_269
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_269
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_269
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_269 enter`);
 
@@ -2067,6 +4115,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_269 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_270
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_270
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_270 enter`);
 
@@ -2075,6 +4131,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_270 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_271
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_271
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_271
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_271 enter`);
 
@@ -2083,6 +4147,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_271 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_272
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_272
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_272
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_272 enter`);
 
@@ -2091,6 +4163,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_272 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_273
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_273
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_273
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_273 enter`);
 
@@ -2099,6 +4179,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_273 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_274
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_274
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_274
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_274 enter`);
 
@@ -2107,6 +4195,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_274 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_275
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_275
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_275
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_275 enter`);
 
@@ -2115,6 +4211,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_275 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_276
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_276
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_276
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_276 enter`);
 
@@ -2123,6 +4227,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_276 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_277
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_277
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_277
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_277 enter`);
 
@@ -2131,6 +4243,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_277 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_278
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_278
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_278
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_278 enter`);
 
@@ -2139,6 +4259,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_278 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_279
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_279
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_279
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_279 enter`);
 
@@ -2147,6 +4275,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_279 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_280
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_280
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_280
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_280 enter`);
 
@@ -2155,6 +4291,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_280 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_282
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_282
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_282
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_282 enter`);
 
@@ -2163,6 +4307,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_282 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_283
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_283
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_283
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_283 enter`);
 
@@ -2171,6 +4323,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_283 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_284
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_284
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_284
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_284 enter`);
 
@@ -2179,6 +4339,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_284 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_285
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_285
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_285
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_285 enter`);
 
@@ -2187,6 +4355,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_285 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_286
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_286
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_286
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_286 enter`);
 
@@ -2195,6 +4371,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_286 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_287
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_287
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_287
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_287 enter`);
 
@@ -2203,6 +4387,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_287 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_288
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_288
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_288
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_288 enter`);
 
@@ -2211,6 +4403,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_288 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_289
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_289
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_289
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_289 enter`);
 
@@ -2219,6 +4419,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_289 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_290
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_290
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_290
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_290 enter`);
 
@@ -2227,6 +4435,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_290 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_293
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_293
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_293
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_293 enter`);
 
@@ -2235,6 +4451,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_293 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_294
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_294
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_294
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_294 enter`);
 
@@ -2243,6 +4467,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_294 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_295
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_295
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_295
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_295 enter`);
 
@@ -2251,6 +4483,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_295 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_296
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_296
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_296
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_296 enter`);
 
@@ -2259,6 +4499,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_296 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_298
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_298
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_298
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_298 enter`);
 
@@ -2267,6 +4515,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_298 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_299
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_299
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_299
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_299 enter`);
 
@@ -2275,6 +4531,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_299 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_300
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_300
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_300 enter`);
 
@@ -2283,6 +4547,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_300 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_301
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_301
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_301
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_301 enter`);
 
@@ -2291,6 +4563,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_301 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_302
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_302
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_302
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_302 enter`);
 
@@ -2299,6 +4579,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_302 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_303
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_303
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_303
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_303 enter`);
 
@@ -2307,6 +4595,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_303 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_304
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_304
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_304
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_304 enter`);
 
@@ -2315,6 +4611,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_304 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_305
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_305
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_305
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_305 enter`);
 
@@ -2323,6 +4627,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_305 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_306
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_306
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_306
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_306 enter`);
 
@@ -2331,6 +4643,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_306 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_307
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_307
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_307
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_307 enter`);
 
@@ -2339,6 +4659,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_307 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_308
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_308
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_308
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_308 enter`);
 
@@ -2347,6 +4675,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_308 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_309
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_309
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_309
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_309 enter`);
 
@@ -2355,6 +4691,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_309 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_310
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_310
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_310
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_310 enter`);
 
@@ -2363,6 +4707,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_310 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_311
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_311
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_311
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_311 enter`);
 
@@ -2371,6 +4723,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_311 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_312
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_312
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_312
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_312 enter`);
 
@@ -2379,6 +4739,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_312 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_313
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_313
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_313
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_313 enter`);
 
@@ -2387,6 +4755,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_313 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_315
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_315
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_315
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_315 enter`);
 
@@ -2395,6 +4771,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_315 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_316
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_316
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_316
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_316 enter`);
 
@@ -2403,6 +4787,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_316 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_317
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_317
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_317
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_317 enter`);
 
@@ -2411,6 +4803,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_317 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_318
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_318
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_318
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_318 enter`);
 
@@ -2419,6 +4819,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_318 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_319
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_319
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_319
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_319', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_319 enter`);
 
@@ -2427,6 +4835,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_319 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_320
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_320
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_320
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_320 enter`);
 
@@ -2435,6 +4851,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_320 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_321
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_321
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_321
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_321', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_321 enter`);
 
@@ -2443,6 +4867,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_321 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_322
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_322
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_322
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_322', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_322 enter`);
 
@@ -2451,6 +4883,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_322 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_323
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_323
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_323
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_323', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_323 enter`);
 
@@ -2459,6 +4899,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_323 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_324
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_324
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_324
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_324', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_324 enter`);
 
@@ -2467,6 +4915,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_324 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_325
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_325
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_325
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_325', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_325 enter`);
 
@@ -2475,6 +4931,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_325 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_326
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_326
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_326
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_326', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_326 enter`);
 
@@ -2483,6 +4947,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_326 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_327
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_327
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_327
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_327', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_327 enter`);
 
@@ -2491,6 +4963,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_327 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_328
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_328
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_328
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_328', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_328 enter`);
 
@@ -2499,6 +4979,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_328 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_329
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_329
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_329
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_329', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_329 enter`);
 
@@ -2507,6 +4995,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_329 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_330
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_330
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_330
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_330 enter`);
 
@@ -2515,6 +5011,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_330 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_331
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_331
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_331
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_331', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_331 enter`);
 
@@ -2523,6 +5027,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_331 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_332
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_332
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_332
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_332', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_332 enter`);
 
@@ -2531,6 +5043,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_332 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_333
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_333
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_333
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_333', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_333 enter`);
 
@@ -2539,6 +5059,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_333 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_334
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_334
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_334
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_334', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_334 enter`);
 
@@ -2547,6 +5075,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_334 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_335
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_335
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_335
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_335', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_335 enter`);
 
@@ -2555,6 +5091,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_335 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_336
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_336
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_336
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_336', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_336 enter`);
 
@@ -2563,6 +5107,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_336 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_337
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_337
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_337
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_337', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_337 enter`);
 
@@ -2571,6 +5123,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_337 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_338
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_338
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_338
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_338', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_338 enter`);
 
@@ -2579,6 +5139,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_338 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_339
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_339
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_339
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_339', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_339 enter`);
 
@@ -2587,6 +5155,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_339 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_340
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_340
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_340
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_340 enter`);
 
@@ -2595,6 +5171,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_340 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_341
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_341
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_341
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_341', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_341 enter`);
 
@@ -2603,6 +5187,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_341 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_342
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_342
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_342
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_342', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_342 enter`);
 
@@ -2611,6 +5203,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_342 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_343
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_343
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_343
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_343', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_343 enter`);
 
@@ -2619,6 +5219,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_343 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_344
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_344
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_344
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_344 enter`);
 
@@ -2627,6 +5235,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_344 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_345
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_345
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_345
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_345', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_345 enter`);
 
@@ -2635,6 +5251,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_345 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_346
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_346
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_346
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_346', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_346 enter`);
 
@@ -2643,6 +5267,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_346 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_347
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_347
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_347
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_347 enter`);
 
@@ -2651,6 +5283,14 @@ export default function MultimodalInput_KeyCode_test() {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_347 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_348
+     * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_348
+     * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_348
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_KeyCode_test_SUB_MMI_KeyCodeTest_348 enter`);
 

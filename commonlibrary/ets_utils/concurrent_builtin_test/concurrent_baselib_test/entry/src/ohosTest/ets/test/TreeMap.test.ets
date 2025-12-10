@@ -55,12 +55,12 @@ export default function TreeMapTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
-     * @tc.name      : testTreeMapConstructorDefault
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTreeMapConstructorDefault
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTreeMapConstructorDefault', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -89,12 +89,12 @@ export default function TreeMapTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0200
-     * @tc.name      : testTreeMapConstructorWithComparator
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTreeMapConstructorWithComparator
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTreeMapConstructorWithComparator', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -123,12 +123,12 @@ export default function TreeMapTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0300
-     * @tc.name      : testTreeMapIsEmpty
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTreeMapIsEmpty
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTreeMapIsEmpty', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -157,12 +157,12 @@ export default function TreeMapTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0400
-     * @tc.name      : testTreeMapHasKey
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTreeMapHasKey
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTreeMapHasKey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -191,12 +191,12 @@ export default function TreeMapTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0500
-     * @tc.name      : testTreeMapGetFirstKey
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTreeMapGetFirstKey
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTreeMapGetFirstKey', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -225,12 +225,12 @@ export default function TreeMapTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0600
-     * @tc.name      : testTreeMapForEach
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTreeMapForEach
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTreeMapForEach', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

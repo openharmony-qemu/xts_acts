@@ -76,12 +76,12 @@ export default function SensorOnOff_ErrCode_Test() {
     let TAG  = '';
 
     /**
-     * @tc.number:SensorOnOff_ErrCode_Test_0001
-     * @tc.name:SensorOnOff_ErrCode_Test_0001
-     * @tc.desc:test get sensor data by wrong sensor id.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorOnOff_ErrCode_Test_0001
+     * @tc.number SensorOnOff_ErrCode_Test_0001
+     * @tc.desc   test get sensor data by wrong sensor id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_ErrCode_Test_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0001';
@@ -110,12 +110,12 @@ export default function SensorOnOff_ErrCode_Test() {
     })
 
     /**
-     * @tc.number:SensorOnOff_ErrCode_Test_0002
-     * @tc.name: SensorOnOff_ErrCode_Test_0002
-     * @tc.desc: Verification results of the incorrect parameters of the test interface.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   SensorOnOff_ErrCode_Test_0002
+     * @tc.number SensorOnOff_ErrCode_Test_0002
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_ErrCode_Test_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0002';
@@ -143,14 +143,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0003
-    * @tc.name: SensorOnOff_ErrCode_Test_0003
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0003
+     * @tc.number SensorOnOff_ErrCode_Test_0003
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0003';
       try{
@@ -177,14 +177,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0004
-    * @tc.name: SensorOnOff_ErrCode_Test_0004
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0004
+     * @tc.number SensorOnOff_ErrCode_Test_0004
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0004';
       try{
@@ -211,14 +211,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0005
-    * @tc.name: SensorOnOff_ErrCode_Test_0005
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0005
+     * @tc.number SensorOnOff_ErrCode_Test_0005
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0005';
       try{
@@ -245,14 +245,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0006
-    * @tc.name: SensorOnOff_ErrCode_Test_0006
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0006
+     * @tc.number SensorOnOff_ErrCode_Test_0006
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0006';
       try{
@@ -279,14 +279,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0007
-    * @tc.name: SensorOnOff_ErrCode_Test_0007
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0007
+     * @tc.number SensorOnOff_ErrCode_Test_0007
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0007';
       try{
@@ -313,14 +313,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0008
-    * @tc.name: SensorOnOff_ErrCode_Test_0008
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0008
+     * @tc.number SensorOnOff_ErrCode_Test_0008
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0008';
       try{
@@ -347,14 +347,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0009
-    * @tc.name: SensorOnOff_ErrCode_Test_0009
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0009
+     * @tc.number SensorOnOff_ErrCode_Test_0009
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0009';
       try{
@@ -381,14 +381,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0010
-    * @tc.name: SensorOnOff_ErrCode_Test_0010
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0010
+     * @tc.number SensorOnOff_ErrCode_Test_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0010';
       try{
@@ -415,14 +415,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0011
-    * @tc.name: SensorOnOff_ErrCode_Test_0011
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0011
+     * @tc.number SensorOnOff_ErrCode_Test_0011
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0011';
       try{
@@ -449,14 +449,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0012
-    * @tc.name: SensorOnOff_ErrCode_Test_0012
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0012
+     * @tc.number SensorOnOff_ErrCode_Test_0012
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0012';
       try{
@@ -483,14 +483,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0013
-    * @tc.name: SensorOnOff_ErrCode_Test_0013
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0013
+     * @tc.number SensorOnOff_ErrCode_Test_0013
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0013';
       try{
@@ -517,14 +517,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0014
-    * @tc.name: SensorOnOff_ErrCode_Test_0014
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0014
+     * @tc.number SensorOnOff_ErrCode_Test_0014
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0014';
       try{
@@ -551,14 +551,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0015
-    * @tc.name: SensorOnOff_ErrCode_Test_0015
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0015
+     * @tc.number SensorOnOff_ErrCode_Test_0015
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0015';
       try{
@@ -585,14 +585,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0016
-    * @tc.name: SensorOnOff_ErrCode_Test_0016
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0016
+     * @tc.number SensorOnOff_ErrCode_Test_0016
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0016';
       try{
@@ -619,14 +619,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0017
-    * @tc.name: SensorOnOff_ErrCode_Test_0017
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0017
+     * @tc.number SensorOnOff_ErrCode_Test_0017
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0017';
       try{
@@ -653,14 +653,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0018
-    * @tc.name: SensorOnOff_ErrCode_Test_0018
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0018
+     * @tc.number SensorOnOff_ErrCode_Test_0018
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0018';
       try{
@@ -687,14 +687,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0019
-    * @tc.name: SensorOnOff_ErrCode_Test_0019
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0019
+     * @tc.number SensorOnOff_ErrCode_Test_0019
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0019';
       try{
@@ -721,14 +721,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0020
-    * @tc.name: SensorOnOff_ErrCode_Test_0020
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0020
+     * @tc.number SensorOnOff_ErrCode_Test_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0020';
       try{
@@ -755,14 +755,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0021
-    * @tc.name: SensorOnOff_ErrCode_Test_0021
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0021
+     * @tc.number SensorOnOff_ErrCode_Test_0021
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0021';
       try{
@@ -789,14 +789,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0022
-    * @tc.name: SensorOnOff_ErrCode_Test_0022
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0022
+     * @tc.number SensorOnOff_ErrCode_Test_0022
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0022';
       try{
@@ -823,14 +823,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0024
-    * @tc.name: SensorOnOff_ErrCode_Test_0024
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0024
+     * @tc.number SensorOnOff_ErrCode_Test_0024
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0024';
       try{
@@ -857,14 +857,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0025
-    * @tc.name: SensorOnOff_ErrCode_Test_0025
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0025
+     * @tc.number SensorOnOff_ErrCode_Test_0025
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0025';
       try{
@@ -891,14 +891,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0026
-    * @tc.name: SensorOnOff_ErrCode_Test_0026
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0026
+     * @tc.number SensorOnOff_ErrCode_Test_0026
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0026';
       try{
@@ -925,14 +925,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0027
-    * @tc.name: SensorOnOff_ErrCode_Test_0027
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0027
+     * @tc.number SensorOnOff_ErrCode_Test_0027
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0027';
       try{
@@ -959,14 +959,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0028
-    * @tc.name: SensorOnOff_ErrCode_Test_0028
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0028
+     * @tc.number SensorOnOff_ErrCode_Test_0028
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0028';
       try{
@@ -993,14 +993,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0030
-    * @tc.name: SensorOnOff_ErrCode_Test_0030
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0030
+     * @tc.number SensorOnOff_ErrCode_Test_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0030';
       try{
@@ -1027,14 +1027,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0031
-    * @tc.name: SensorOnOff_ErrCode_Test_0031
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0031
+     * @tc.number SensorOnOff_ErrCode_Test_0031
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0031';
       try{
@@ -1061,14 +1061,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0032
-    * @tc.name: SensorOnOff_ErrCode_Test_0032
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0032
+     * @tc.number SensorOnOff_ErrCode_Test_0032
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0032';
       try{
@@ -1095,14 +1095,14 @@ export default function SensorOnOff_ErrCode_Test() {
       }
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0033
-    * @tc.name: SensorOnOff_ErrCode_Test_0033
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0033
+     * @tc.number SensorOnOff_ErrCode_Test_0033
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       TAG = 'SensorOnOff_ErrCode_Test_0033';
       try{

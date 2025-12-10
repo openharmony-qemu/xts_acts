@@ -50,12 +50,12 @@ export default function BuiltinsNullLiteralTest() {
     })
 
     /**
-     * @tc.number    : SUB_NULL_LITERAL_TEST_0100
-     * @tc.name      : BuiltinsNullLiteralTest0900
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsNullLiteralTest0900
+     * @tc.number SUB_NULL_LITERAL_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsNullLiteralTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

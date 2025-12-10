@@ -46,12 +46,12 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0001
+         * @tc.name   testRdbStoreUpdate0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0100
-         * @tc.desc resultSet Update test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreUpdate0001 start *************");
@@ -118,12 +118,12 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0002
+         * @tc.name   testRdbStoreUpdate0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0200
-         * @tc.desc resultSet Update test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreUpdate0002 start *************");
@@ -178,12 +178,12 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0003
+         * @tc.name   testRdbStoreUpdate0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0300
-         * @tc.desc resultSet Update test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreUpdate0003 start *************");
@@ -225,12 +225,12 @@ export default function rdbStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0004
+         * @tc.name   testRdbStoreUpdate0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBUpdateJsAPITest_0400
-         * @tc.desc resultSet Update test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreUpdate0004 start *************");

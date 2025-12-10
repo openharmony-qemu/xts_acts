@@ -50,10 +50,12 @@ export default function SimpleAnimatorOptionsPage() {
 
 
     /**
-     * @tc.number    SimpleAnimatorOptionsPage_0100
-     * @tc.name      SimpleAnimatorOptionsPage_0100
-     * @tc.desc      Test SimpleAnimatorOptions FillMode
-     * @tc.level     Level 0
+     * @tc.name   SimpleAnimatorOptionsPage_0100
+     * @tc.number SimpleAnimatorOptionsPage_0100
+     * @tc.desc   Test SimpleAnimatorOptions FillMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SimpleAnimatorOptionsPage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('SimpleAnimatorOptionsPage_0100 START');
@@ -96,10 +98,12 @@ export default function SimpleAnimatorOptionsPage() {
     });
 
     /**
-     * @tc.number    SimpleAnimatorOptionsPage_0200
-     * @tc.name      SimpleAnimatorOptionsPage_0200
-     * @tc.desc      Test SimpleAnimatorOptions delay
-     * @tc.level     Level 0
+     * @tc.name   SimpleAnimatorOptionsPage_0200
+     * @tc.number SimpleAnimatorOptionsPage_0200
+     * @tc.desc   Test SimpleAnimatorOptions delay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SimpleAnimatorOptionsPage_0200', Level.LEVEL0, async (done: Function) => {
       console.info('SimpleAnimatorOptionsPage_0200 START');
@@ -131,10 +135,12 @@ export default function SimpleAnimatorOptionsPage() {
     });
 
     /**
-     * @tc.number    SimpleAnimatorOptionsPage_0300
-     * @tc.name      SimpleAnimatorOptionsPage_0100
-     * @tc.desc      Test SimpleAnimatorOptions iterations
-     * @tc.level     Level 0
+     * @tc.name   SimpleAnimatorOptionsPage_0300
+     * @tc.number SimpleAnimatorOptionsPage_0300
+     * @tc.desc   Test SimpleAnimatorOptions iterations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SimpleAnimatorOptionsPage_0300', Level.LEVEL0, async (done: Function) => {
       console.info('SimpleAnimatorOptionsPage_0300 START');
@@ -166,10 +172,12 @@ export default function SimpleAnimatorOptionsPage() {
     });
 
     /**
-     * @tc.number    SimpleAnimatorOptionsPage_0400
-     * @tc.name      SimpleAnimatorOptionsPage_0400
-     * @tc.desc      Test SimpleAnimatorOptions direction
-     * @tc.level     Level 0
+     * @tc.name   SimpleAnimatorOptionsPage_0400
+     * @tc.number SimpleAnimatorOptionsPage_0400
+     * @tc.desc   Test SimpleAnimatorOptions direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SimpleAnimatorOptionsPage_0400', Level.LEVEL0, async (done: Function) => {
       console.info('SimpleAnimatorOptionsPage_0400 START');

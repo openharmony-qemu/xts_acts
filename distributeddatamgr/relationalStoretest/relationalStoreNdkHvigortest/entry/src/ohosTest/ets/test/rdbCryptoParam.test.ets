@@ -33,12 +33,12 @@ export default function rdbCryptoParamNdkTest() {
     })
 
     /**
+     * @tc.name   OH_Rdb_DestroyCryptoParam0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_DestroyCryptoParam_0100
-     * @tc.name OH_Rdb_DestroyCryptoParam0100
-     * @tc.desc OH_Rdb_DestroyCryptoParam0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_DestroyCryptoParam0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_DestroyCryptoParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_DestroyCryptoParam0100();
@@ -49,12 +49,12 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
+     * @tc.name   OH_Rdb_CreateCryptoParam0200
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0300
-     * @tc.name OH_Rdb_CreateCryptoParam0200
-     * @tc.desc OH_Rdb_CreateCryptoParam0200
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_CreateCryptoParam0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_CreateCryptoParam0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_CreateCryptoParam0200();
@@ -65,12 +65,12 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
+     * @tc.name   OH_Rdb_CreateCryptoParam0300
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0400
-     * @tc.name OH_Rdb_CreateCryptoParam0300
-     * @tc.desc OH_Rdb_CreateCryptoParam0300
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_CreateCryptoParam0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_CreateCryptoParam0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_CreateCryptoParam0300();
@@ -81,12 +81,12 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
+     * @tc.name   OH_Rdb_CreateCryptoParam0400
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0500
-     * @tc.name OH_Rdb_CreateCryptoParam0400
-     * @tc.desc OH_Rdb_CreateCryptoParam0400
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_CreateCryptoParam0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_CreateCryptoParam0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_CreateCryptoParam0400();
@@ -97,12 +97,12 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
+     * @tc.name   OH_Rdb_CreateCryptoParam0500
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0600
-     * @tc.name OH_Rdb_CreateCryptoParam0500
-     * @tc.desc OH_Rdb_CreateCryptoParam0500
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_CreateCryptoParam0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_CreateCryptoParam0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_CreateCryptoParam0500();
@@ -113,12 +113,12 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
+     * @tc.name   OH_Rdb_CreateCryptoParam0600
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0700
-     * @tc.name OH_Rdb_CreateCryptoParam0600
-     * @tc.desc OH_Rdb_CreateCryptoParam0600
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_CreateCryptoParam0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_CreateCryptoParam0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_CreateCryptoParam0600();
@@ -129,12 +129,12 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
+     * @tc.name   OH_Rdb_CreateCryptoParam0700
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0800
-     * @tc.name OH_Rdb_CreateCryptoParam0700
-     * @tc.desc OH_Rdb_CreateCryptoParam0700
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_CreateCryptoParam0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_CreateCryptoParam0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_CreateCryptoParam0700();

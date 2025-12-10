@@ -50,12 +50,12 @@ export default function toolBarItemState() {
     })
 
     /**
-     * @tc.number toolBarItemState
      * @tc.name   toolBarItemState_0100
+     * @tc.number toolBarItemState
      * @tc.desc   Test toolBarItemState
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('toolBarItemState_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[toolBarItemState_0100] START');

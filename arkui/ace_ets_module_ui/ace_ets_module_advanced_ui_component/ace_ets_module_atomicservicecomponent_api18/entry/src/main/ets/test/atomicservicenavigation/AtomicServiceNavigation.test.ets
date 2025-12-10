@@ -53,12 +53,12 @@ export default function atomicservicenavigationTest() {
     });
 
     /**
+     * @tc.name   atomicservicenavigationTest_0100
      * @tc.number atomicservicenavigation
-     * @tc.name atomicservicenavigationTest_0100
-     * @tc.desc Test atomicservicenavigation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test atomicservicenavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('atomicservicenavigationTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[atomicservicenavigationTest_0100] START');

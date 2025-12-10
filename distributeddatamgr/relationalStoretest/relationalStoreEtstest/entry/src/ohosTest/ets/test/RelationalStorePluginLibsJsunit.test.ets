@@ -51,12 +51,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0001
+     * @tc.name   testPluginLibs0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0100
-     * @tc.desc Test pluginLibs are empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test pluginLibs are empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0001 start *************");
@@ -71,12 +71,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0002
+     * @tc.name   testPluginLibs0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0200
-     * @tc.desc Test pluginLib is current path
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test pluginLib is current path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0002 start *************");
@@ -92,12 +92,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0003
+     * @tc.name   testPluginLibs0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0300
-     * @tc.desc Test pluginLib is no exist
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test pluginLib is no exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0003 start *************");
@@ -113,12 +113,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0004
+     * @tc.name   testPluginLibs0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0400
-     * @tc.desc Test pluginLib as other app path
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test pluginLib as other app path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0004 start *************");
@@ -134,12 +134,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0005
+     * @tc.name   testPluginLibs0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0500
-     * @tc.desc Test pluginLib as current app dir
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test pluginLib as current app dir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0005 start *************");
@@ -157,12 +157,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0006
+     * @tc.name   testPluginLibs0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0600
-     * @tc.desc Test plugin libs count exceeds 16
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test plugin libs count exceeds 16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0006 start *************");
@@ -179,12 +179,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0007
+     * @tc.name   testPluginLibs0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0700
-     * @tc.desc Test plugin libs count exceeds 16
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test plugin libs count exceeds 16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0007 start *************");
@@ -200,12 +200,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0008
+     * @tc.name   testPluginLibs0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0800
-     * @tc.desc Test plugin libs count exceeds 16
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test plugin libs count exceeds 16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0008 start *************");
@@ -221,12 +221,12 @@ describe('rdbStorePluginLibsTest', function () {
     })
 
     /**
-     * @tc.name testPluginLibs0009
+     * @tc.name   testPluginLibs0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_0900
-     * @tc.desc Test plugin libs count exceeds 16
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test plugin libs count exceeds 16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         console.log(TAG + "************* testPluginLibs0008 start *************");
@@ -239,13 +239,13 @@ describe('rdbStorePluginLibsTest', function () {
         }
         console.log(TAG + "*************  testPluginLibs0009 end  *************");
     })
-   /**
-     * @tc.name testPluginLibs0010
+    /**
+     * @tc.name   testPluginLibs0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_1000
-     * @tc.desc Test pluginLib as current app dir
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test pluginLib as current app dir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
         console.log(TAG + "************* testPluginLibs0010 start *************");
@@ -272,12 +272,12 @@ describe('rdbStorePluginLibsTest', function () {
         console.log(TAG + "*************  testPluginLibs0010 end  *************");
     })
     /**
-     * @tc.name testPluginLibs0011
+     * @tc.name   testPluginLibs0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PluginLibsEtsAPITest_1100
-     * @tc.desc Test pluginLib as current app dir
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test pluginLib as current app dir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPluginLibs0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
         console.log(TAG + "************* testPluginLibs0011 start *************");

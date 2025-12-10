@@ -86,12 +86,14 @@ export default function textInputApi1() {
         done();
       }
     });
-    /* *
-        * @tc.number: SUB_ACE_TextArea_onSubmit_001
-        * @tc.name  : textInputApi1_001
-        * @tc.desc  : onSubmit event test
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   textInputApi1_001
+     * @tc.number SUB_ACE_TextArea_onSubmit_001
+     * @tc.desc   onSubmit event test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textInputApi1_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textInputApi1_001] START');

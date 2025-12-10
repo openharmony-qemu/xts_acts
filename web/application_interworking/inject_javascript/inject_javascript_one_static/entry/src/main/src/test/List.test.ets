@@ -12,7 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import webJavaScriptOnDocumentStartTest from './WebJavaScriptOnDocumentStartTest.test'
+import webJsunitTwo from './WebJsunitTwo.test'
 import webViewMetaViewportFalse from './webViewMetaViewportFalse.test'
 export default function testsuite() {
+    webJavaScriptOnDocumentStartTest();
+    webJsunitTwo();
     webViewMetaViewportFalse();
 }

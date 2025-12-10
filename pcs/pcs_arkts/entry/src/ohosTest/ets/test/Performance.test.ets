@@ -38,13 +38,13 @@ export default function performanceTest() {
       await driver.delayMs(2000)
       done()
     })
-    /*
-     * @tc.number: STD-PERFORMANCE-0100
-     * @tc.name: testShorttermTask0100
-     * @tc.desc: 【STD-PERFORMANCE-0100】为保障系统性能和能效，必须支持长时任务、短时任务管理机制
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testShorttermTask0100
+     * @tc.number STD-PERFORMANCE-0100
+     * @tc.desc   【STD-PERFORMANCE-0100】为保障系统性能和能效，必须支持长时任务、短时任务管理机制
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShorttermTask0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let id: number
@@ -66,13 +66,13 @@ export default function performanceTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-PERFORMANCE-0100
-     * @tc.name: testLongtermTask0100
-     * @tc.desc: 【STD-PERFORMANCE-0100】为保障系统性能和能效，必须支持长时任务、短时任务管理机制
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testLongtermTask0100
+     * @tc.number STD-PERFORMANCE-0100
+     * @tc.desc   【STD-PERFORMANCE-0100】为保障系统性能和能效，必须支持长时任务、短时任务管理机制
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLongtermTask0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'EntryAbility', abilityContext)).assertTrue()

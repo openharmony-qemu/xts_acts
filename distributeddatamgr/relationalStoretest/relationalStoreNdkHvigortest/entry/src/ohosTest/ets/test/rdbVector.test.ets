@@ -39,12 +39,12 @@ export default function rdbVectorNdktest() {
 
 
     /**
+     * @tc.name   OH_Cursor_GetFloatVectorCount0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Cursor_GetFloatVectorCount0100
-     * @tc.name OH_Cursor_GetFloatVectorCount0100
-     * @tc.desc OH_Cursor_GetFloatVectorCount0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Cursor_GetFloatVectorCount0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Cursor_GetFloatVectorCount0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testrdb.OH_Cursor_GetFloatVectorCount0100();

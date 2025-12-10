@@ -73,12 +73,12 @@ export default function ArrayFilterTest() {
     })
 
     /**
+     * @tc.name   ArrayFilterTest001
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0100
-     * @tc.name ArrayFilterTest001
-     * @tc.desc Filter numbers greater than 10, verify new array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter numbers greater than 10, verify new array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [12, 5, 8, 130, 44];
@@ -91,12 +91,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest002
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0200
-     * @tc.name ArrayFilterTest002
-     * @tc.desc Filter strings with length > 5, verify new array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter strings with length > 5, verify new array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ["spray", "elite", "exuberant", "destruction", "present"];
@@ -107,12 +107,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest003
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0300
-     * @tc.name ArrayFilterTest003
-     * @tc.desc No elements pass test, return empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   No elements pass test, return empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, 2, 3];
@@ -124,12 +124,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest004
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0400
-     * @tc.name ArrayFilterTest004
-     * @tc.desc Filter empty array, return empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter empty array, return empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [];
@@ -144,12 +144,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest005
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0500
-     * @tc.name ArrayFilterTest005
-     * @tc.desc Callback receives all three parameters (element, index, array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Callback receives all three parameters (element, index, array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI{
@@ -172,12 +172,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest006
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0600
-     * @tc.name ArrayFilterTest006
-     * @tc.desc Filter single-element array, element passes test
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter single-element array, element passes test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ['only-element'];
@@ -188,12 +188,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest007
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0700
-     * @tc.name ArrayFilterTest007
-     * @tc.desc Filter single-element array, element fails test
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter single-element array, element fails test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ['only-element'];
@@ -204,12 +204,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest008
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0800
-     * @tc.name ArrayFilterTest008
-     * @tc.desc Filter array with null and undefined elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with null and undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [null, undefined, 1, 'a'];
@@ -221,12 +221,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest009
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0900
-     * @tc.name ArrayFilterTest009
-     * @tc.desc Filter array with boolean elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with boolean elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [true, false, true, false];
@@ -237,12 +237,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest010
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1000
-     * @tc.name ArrayFilterTest010
-     * @tc.desc Filter array of objects by property value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array of objects by property value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI{
@@ -261,36 +261,36 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest011
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1100
-     * @tc.name ArrayFilterTest011
-     * @tc.desc Use thisArg to bind this in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use thisArg to bind this in callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayFilterTest011()).assertDeepEquals([3, 4]);
     });
 
     /**
+     * @tc.name   ArrayFilterTest012
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1200
-     * @tc.name ArrayFilterTest012
-     * @tc.desc No thisArg: this is undefined in strict mode callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   No thisArg: this is undefined in strict mode callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayFilterTest012()).assertEqual(undefined);
     });
 
     /**
+     * @tc.name   ArrayFilterTest013
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1300
-     * @tc.name ArrayFilterTest013
-     * @tc.desc Filter sparse array: empty slots are skipped
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter sparse array: empty slots are skipped
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, , 3, , 5];
@@ -307,12 +307,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest014
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1400
-     * @tc.name ArrayFilterTest014
-     * @tc.desc Filter non-array object (class array) via call()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter non-array object (class array) via call()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayFilterTest014() as string[];
@@ -322,12 +322,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest016
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1600
-     * @tc.name ArrayFilterTest016
-     * @tc.desc Callback uses index parameter to filter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Callback uses index parameter to filter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [10, 20, 30, 40];
@@ -337,12 +337,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest017
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1700
-     * @tc.name ArrayFilterTest017
-     * @tc.desc Callback uses original array parameter to filter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Callback uses original array parameter to filter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [5, 1, 3, 7, 2];
@@ -352,12 +352,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest018
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1800
-     * @tc.name ArrayFilterTest018
-     * @tc.desc Filter array with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1n, 2n, 10n, 5n];
@@ -369,12 +369,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest019
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_1900
-     * @tc.name ArrayFilterTest019
-     * @tc.desc Filter array with Symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayFilterTest019();
@@ -384,24 +384,24 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest020
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2000
-     * @tc.name ArrayFilterTest020
-     * @tc.desc thisArg is primitive value (converted to object)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   thisArg is primitive value (converted to object)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayFilterTest020()).assertDeepEquals([6]);
     });
 
     /**
+     * @tc.name   ArrayFilterTest021
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2100
-     * @tc.name ArrayFilterTest021
-     * @tc.desc Callback throws error during iteration, traversal interrupts
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback throws error during iteration, traversal interrupts
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4];
@@ -428,12 +428,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest022
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2200
-     * @tc.name ArrayFilterTest022
-     * @tc.desc Filter array and modify original array during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array and modify original array during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -450,12 +450,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest023
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2300
-     * @tc.name ArrayFilterTest023
-     * @tc.desc Filter large array (1000 elements), verify completeness
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter large array (1000 elements), verify completeness
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest023', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const arr: number[] = [];
@@ -475,12 +475,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest024
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2400
-     * @tc.name ArrayFilterTest024
-     * @tc.desc Callback is arrow function (ignores thisArg)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is arrow function (ignores thisArg)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest024();
@@ -491,12 +491,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest025
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2500
-     * @tc.name ArrayFilterTest025
-     * @tc.desc Filter array with function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with function elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const func1 = () => 'a';
@@ -510,12 +510,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest026
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2600
-     * @tc.name ArrayFilterTest026
-     * @tc.desc Filter array with nested objects, modify object in callback (shallow copy)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with nested objects, modify object in callback (shallow copy)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -532,12 +532,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest027
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2700
-     * @tc.name ArrayFilterTest027
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is non-function (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2];
@@ -553,12 +553,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest028
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2800
-     * @tc.name ArrayFilterTest028
-     * @tc.desc Filter non-array object without length (returns empty array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter non-array object without length (returns empty array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest028() as string[];
@@ -568,12 +568,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest029
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_2900
-     * @tc.name ArrayFilterTest029
-     * @tc.desc Filter array with circular reference object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with circular reference object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -596,12 +596,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest030
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3000
-     * @tc.name ArrayFilterTest030
-     * @tc.desc Comprehensive test: mixed types + thisArg + sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + thisArg + sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest030();
@@ -611,12 +611,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest031
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3100
-     * @tc.name ArrayFilterTest031
-     * @tc.desc Filter array with NaN values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with NaN values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, NaN, 3, NaN, 5];
@@ -627,12 +627,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest032
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3200
-     * @tc.name ArrayFilterTest032
-     * @tc.desc Filter array with negative numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [-5, 3, -2, 8, -1];
@@ -643,12 +643,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest033
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3300
-     * @tc.name ArrayFilterTest033
-     * @tc.desc Filter array of arrays by length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array of arrays by length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [[1], [1, 2], [1, 2, 3], []];
@@ -659,12 +659,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest034
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3400
-     * @tc.name ArrayFilterTest034
-     * @tc.desc Filter array with mixed case strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with mixed case strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ["Apple", "banana", "Cherry", "date"];
@@ -675,12 +675,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest035
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3500
-     * @tc.name ArrayFilterTest035
-     * @tc.desc Filter array with zero values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with zero values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [0, 1, 0, 2, 0, 3];
@@ -691,12 +691,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest036
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3600
-     * @tc.name ArrayFilterTest036
-     * @tc.desc Filter array with RegExp elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with RegExp elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [/abc/, /def/, /abc/];
@@ -708,12 +708,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest037
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3700
-     * @tc.name ArrayFilterTest037
-     * @tc.desc Filter array using callback with complex condition
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array using callback with complex condition
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -724,24 +724,24 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest038
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3800
-     * @tc.name ArrayFilterTest038
-     * @tc.desc Filter array with dynamic thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with dynamic thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayFilterTest038()).assertDeepEquals([20, 30]);
     });
 
     /**
+     * @tc.name   ArrayFilterTest039
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_3900
-     * @tc.name ArrayFilterTest039
-     * @tc.desc Filter array using index in complex condition
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array using index in complex condition
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3, 4, 5, 6];
@@ -752,12 +752,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest040
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4000
-     * @tc.name ArrayFilterTest040
-     * @tc.desc Filter array and check reference equality
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array and check reference equality
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -776,12 +776,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest041
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4100
-     * @tc.name ArrayFilterTest041
-     * @tc.desc Filter array with Date objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const date1 = new Date(2023, 0, 1);
@@ -796,12 +796,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest042
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4200
-     * @tc.name ArrayFilterTest042
-     * @tc.desc Filter array using original array in callback logic
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array using original array in callback logic
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [5, 3, 8, 1, 9];
@@ -813,12 +813,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest043
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4300
-     * @tc.name ArrayFilterTest043
-     * @tc.desc Filter array with generator function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with generator function elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayFilterTest043();
@@ -830,12 +830,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest044
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4400
-     * @tc.name ArrayFilterTest044
-     * @tc.desc Filter array with promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const p1 = Promise.resolve(true);
@@ -849,36 +849,36 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest045
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4500
-     * @tc.name ArrayFilterTest045
-     * @tc.desc Filter array using thisArg with dynamic properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array using thisArg with dynamic properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayFilterTest045()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   ArrayFilterTest046
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4600
-     * @tc.name ArrayFilterTest046
-     * @tc.desc Filter array and modify thisArg during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array and modify thisArg during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayFilterTest046()).assertDeepEquals([5]);
     });
 
     /**
+     * @tc.name   ArrayFilterTest047
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4700
-     * @tc.name ArrayFilterTest047
-     * @tc.desc Filter array and delete elements during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array and delete elements during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4, 5];
@@ -889,12 +889,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest048
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4800
-     * @tc.name ArrayFilterTest048
-     * @tc.desc Filter array with very large numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with very large numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1e20, 1e10, 1e30, 1e5];
@@ -904,12 +904,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest049
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_4900
-     * @tc.name ArrayFilterTest049
-     * @tc.desc Filter array with typed array elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with typed array elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -924,12 +924,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest050
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5000
-     * @tc.name ArrayFilterTest050
-     * @tc.desc Filter array with WeakMap and Map objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with WeakMap and Map objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -944,12 +944,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest051
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5100
-     * @tc.name ArrayFilterTest051
-     * @tc.desc Filter array with frozen objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -967,24 +967,24 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest052
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5200
-     * @tc.name ArrayFilterTest052
-     * @tc.desc Filter array with non-writable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with non-writable properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayFilterTest052()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   ArrayFilterTest053
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5300
-     * @tc.name ArrayFilterTest053
-     * @tc.desc Filter array with getter properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with getter properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class Base{
@@ -1001,12 +1001,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest054
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5400
-     * @tc.name ArrayFilterTest054
-     * @tc.desc Filter array using async callback (demonstrates non-waiting behavior)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array using async callback (demonstrates non-waiting behavior)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4, 5];
@@ -1023,12 +1023,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest055
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5500
-     * @tc.name ArrayFilterTest055
-     * @tc.desc Filter array with proxy objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with proxy objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1046,12 +1046,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest056
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5600
-     * @tc.name ArrayFilterTest056
-     * @tc.desc Filter array with Error objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with Error objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const err1 = new Error('Error 1');
@@ -1065,12 +1065,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest057
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5700
-     * @tc.name ArrayFilterTest057
-     * @tc.desc Filter array using callback that modifies itself
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array using callback that modifies itself
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4, 5];
@@ -1087,12 +1087,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest058
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5800
-     * @tc.name ArrayFilterTest058
-     * @tc.desc Filter array with Symbol properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with Symbol properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayFilterTest058();
@@ -1101,12 +1101,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest059
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_5900
-     * @tc.name ArrayFilterTest059
-     * @tc.desc Filter array with objects having configurable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with objects having configurable properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest059();
@@ -1116,12 +1116,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest060
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6000
-     * @tc.name ArrayFilterTest060
-     * @tc.desc Filter array with elements that are arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with elements that are arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [[1, 2], [3], [], [4, 5, 6]];
@@ -1131,12 +1131,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest061
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6100
-     * @tc.name ArrayFilterTest061
-     * @tc.desc Filter array with elements that are sets
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are sets
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set1 = new Set([1, 2, 3]);
@@ -1150,12 +1150,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest062
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6200
-     * @tc.name ArrayFilterTest062
-     * @tc.desc Filter array with elements that are maps
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are maps
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const map1 = new Map<string, number>().set('a', 1);
@@ -1169,12 +1169,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest063
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6300
-     * @tc.name ArrayFilterTest063
-     * @tc.desc Filter array using callback that returns different types of truthy values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array using callback that returns different types of truthy values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{}
@@ -1196,12 +1196,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest064
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6400
-     * @tc.name ArrayFilterTest064
-     * @tc.desc Filter array with Infinity and -Infinity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with Infinity and -Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [Infinity, 5, -Infinity, 10, Infinity];
@@ -1211,12 +1211,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest065
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6500
-     * @tc.name ArrayFilterTest065
-     * @tc.desc Filter array with elements that are class instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are class instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       class MyClass {
@@ -1235,12 +1235,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest066
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6600
-     * @tc.name ArrayFilterTest066
-     * @tc.desc Filter array with elements that are regular expressions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are regular expressions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [/abc/g, /def/, /abc/, /ghi/i];
@@ -1250,12 +1250,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest067
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6700
-     * @tc.name ArrayFilterTest067
-     * @tc.desc Filter array and check for same reference in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array and check for same reference in nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1278,12 +1278,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest068
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6800
-     * @tc.name ArrayFilterTest068
-     * @tc.desc Filter array with elements added after filter starts
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements added after filter starts
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3];
@@ -1303,12 +1303,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest069
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_6900
-     * @tc.name ArrayFilterTest069
-     * @tc.desc Filter array with elements removed before processing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements removed before processing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4, 5];
@@ -1327,12 +1327,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest070
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7000
-     * @tc.name ArrayFilterTest070
-     * @tc.desc Filter array with element values changed during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with element values changed during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2, 3, 4, 5];
@@ -1348,12 +1348,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest071
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7100
-     * @tc.name ArrayFilterTest071
-     * @tc.desc Filter array with empty strings and whitespace strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with empty strings and whitespace strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ["", "   ", "hello", "  world  ", "  "];
@@ -1363,12 +1363,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest072
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7200
-     * @tc.name ArrayFilterTest072
-     * @tc.desc Filter array with numbers and numeric strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with numbers and numeric strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [10, "20", 30, "40", 50];
@@ -1378,12 +1378,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest073
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7300
-     * @tc.name ArrayFilterTest073
-     * @tc.desc Filter array of objects with nested properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array of objects with nested properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI{
@@ -1405,12 +1405,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest074
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7400
-     * @tc.name ArrayFilterTest074
-     * @tc.desc Filter array with elements that are functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const func1 = () => 5;
@@ -1424,12 +1424,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest075
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7500
-     * @tc.name ArrayFilterTest075
-     * @tc.desc Filter array with boolean values and truthy/falsy values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with boolean values and truthy/falsy values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI{}
@@ -1440,12 +1440,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest076
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7600
-     * @tc.name ArrayFilterTest076
-     * @tc.desc Filter array using callback that uses both index and element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array using callback that uses both index and element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [5, 2, 7, 1, 8];
@@ -1455,24 +1455,24 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest077
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7700
-     * @tc.name ArrayFilterTest077
-     * @tc.desc Filter array using thisArg that's an array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array using thisArg that's an array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayFilterTest077()).assertDeepEquals([2, 4]);
     });
 
     /**
+     * @tc.name   ArrayFilterTest079
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_7900
-     * @tc.name ArrayFilterTest079
-     * @tc.desc Filter array with elements that are buffers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are buffers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const buf1 = buffer.from('test1');
@@ -1486,12 +1486,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest080
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_8000
-     * @tc.name ArrayFilterTest080
-     * @tc.desc Filter array with elements that are weak sets
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are weak sets
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -1514,12 +1514,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest081
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_8100
-     * @tc.name ArrayFilterTest081
-     * @tc.desc Filter array with negative indexes in sparse array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with negative indexes in sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, , 3, , 5];
@@ -1534,12 +1534,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest082
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_8200
-     * @tc.name ArrayFilterTest082
-     * @tc.desc Filter array with non-consecutive indexes
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with non-consecutive indexes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr: string[] = [];
@@ -1554,12 +1554,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest083
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_8300
-     * @tc.name ArrayFilterTest083
-     * @tc.desc Filter array with elements that are promises (values after resolution)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are promises (values after resolution)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const p1 = Promise.resolve(10);
@@ -1574,12 +1574,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest084
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_8400
-     * @tc.name ArrayFilterTest084
-     * @tc.desc Filter array with elements that are generators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are generators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest084();
@@ -1589,12 +1589,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest085
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_8500
-     * @tc.name ArrayFilterTest085
-     * @tc.desc Filter array with elements that are iterators
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are iterators
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr1 = [1, 2, 3];
@@ -1616,12 +1616,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest089
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_8900
-     * @tc.name ArrayFilterTest089
-     * @tc.desc Filter array with elements that are error objects with specific messages
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are error objects with specific messages
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const err1 = new Error('Not found');
@@ -1635,12 +1635,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest090
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9000
-     * @tc.name ArrayFilterTest090
-     * @tc.desc Filter array with elements that are dates in a specific range
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are dates in a specific range
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const start = new Date(2023, 0, 1);
@@ -1658,12 +1658,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest091
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9100
-     * @tc.name ArrayFilterTest091
-     * @tc.desc Filter array with elements that are maps containing specific keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are maps containing specific keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const map1 = new Map<string, string|number>().set('id', 1).set('name', 'test1');
@@ -1677,12 +1677,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest092
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9200
-     * @tc.name ArrayFilterTest092
-     * @tc.desc Filter array with elements that are sets containing specific values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are sets containing specific values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set1 = new Set([1, 2, 3]);
@@ -1696,12 +1696,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest093
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9300
-     * @tc.name ArrayFilterTest093
-     * @tc.desc Filter array with elements that are objects with specific own properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with specific own properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayFilterTest093();
@@ -1711,12 +1711,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest094
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9400
-     * @tc.name ArrayFilterTest094
-     * @tc.desc Filter array with elements that are objects with specific prototype
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are objects with specific prototype
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest094();
@@ -1727,12 +1727,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest095
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9500
-     * @tc.name ArrayFilterTest095
-     * @tc.desc Filter array with elements that are typed arrays of specific type
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are typed arrays of specific type
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -1748,12 +1748,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest096
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9600
-     * @tc.name ArrayFilterTest096
-     * @tc.desc Filter array with elements that are arrays with specific sum
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are arrays with specific sum
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [
@@ -1772,12 +1772,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest097
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9700
-     * @tc.name ArrayFilterTest097
-     * @tc.desc Filter array with elements that are strings matching a regex
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are strings matching a regex
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = ["apple", "banana", "apricot", "cherry", "pineapple"];
@@ -1787,12 +1787,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest098
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9800
-     * @tc.name ArrayFilterTest098
-     * @tc.desc Filter array with elements that are numbers with specific digit count
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are numbers with specific digit count
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [5, 12, 345, 67, 8901, 23];
@@ -1802,12 +1802,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest099
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_9900
-     * @tc.name ArrayFilterTest099
-     * @tc.desc Filter array with elements that are objects with nested arrays meeting criteria
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with nested arrays meeting criteria
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -1827,12 +1827,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest100
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10000
-     * @tc.name ArrayFilterTest100
-     * @tc.desc Filter array with elements that are functions with specific return values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are functions with specific return values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const func1 = () => 10;
@@ -1847,12 +1847,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest101
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10100
-     * @tc.name ArrayFilterTest101
-     * @tc.desc Filter array with elements that are objects with computed properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with computed properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayFilterTest101();
@@ -1861,12 +1861,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest102
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10200
-     * @tc.name ArrayFilterTest102
-     * @tc.desc Filter array with elements that are symbols with specific descriptions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are symbols with specific descriptions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = ArrayFilterTest102();
@@ -1877,12 +1877,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest103
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10300
-     * @tc.name ArrayFilterTest103
-     * @tc.desc Filter array with elements that are bigints within a range
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are bigints within a range
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [10n, 25n, 5n, 30n, 15n];
@@ -1892,12 +1892,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest104
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10400
-     * @tc.name ArrayFilterTest104
-     * @tc.desc Filter array with elements that are objects with specific method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with specific method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -1925,12 +1925,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest105
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10500
-     * @tc.name ArrayFilterTest105
-     * @tc.desc Filter array with elements that are objects with method returning true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with method returning true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -1960,12 +1960,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest106
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10600
-     * @tc.name ArrayFilterTest106
-     * @tc.desc Filter array with elements that are arrays containing specific element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are arrays containing specific element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [
@@ -1981,12 +1981,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest107
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10700
-     * @tc.name ArrayFilterTest107
-     * @tc.desc Filter array with elements that are strings with specific character count
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with elements that are strings with specific character count
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ["a", "bb", "ccc", "dddd", "eeeee"];
@@ -1996,12 +1996,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest108
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10800
-     * @tc.name ArrayFilterTest108
-     * @tc.desc Filter array with elements that are numbers that are primes
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are numbers that are primes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const isPrime = (num: number) => {
@@ -2019,12 +2019,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest109
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_10900
-     * @tc.name ArrayFilterTest109
-     * @tc.desc Filter array with elements that are objects with nested objects meeting criteria
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with nested objects meeting criteria
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -2048,12 +2048,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest110
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11000
-     * @tc.name ArrayFilterTest110
-     * @tc.desc Filter array with elements that are functions with specific parameter count
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are functions with specific parameter count
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const func1 = (a: number, b: number) => a + b;
@@ -2068,12 +2068,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest111
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11100
-     * @tc.name ArrayFilterTest111
-     * @tc.desc Filter array with elements that are objects with specific property descriptors
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are objects with specific property descriptors
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest111();
@@ -2084,12 +2084,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest112
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11200
-     * @tc.name ArrayFilterTest112
-     * @tc.desc Filter array with elements that are objects with non-enumerable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are objects with non-enumerable properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest112();
@@ -2100,12 +2100,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest113
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11300
-     * @tc.name ArrayFilterTest113
-     * @tc.desc Filter array with elements that are objects with symbols as properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are objects with symbols as properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayFilterTest113();
@@ -2116,12 +2116,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest114
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11400
-     * @tc.name ArrayFilterTest114
-     * @tc.desc Filter array with elements that are arrays with unique elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are arrays with unique elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const hasUniqueElements = (arr: number[]) => new Set(arr).size === arr.length;
@@ -2139,12 +2139,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest115
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11500
-     * @tc.name ArrayFilterTest115
-     * @tc.desc Filter array with elements that are objects with specific property values using thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with specific property values using thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -2168,12 +2168,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest116
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11600
-     * @tc.name ArrayFilterTest116
-     * @tc.desc Filter array with elements that are strings with specific substring
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Filter array with elements that are strings with specific substring
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayFilterTest116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ["hello", "world", "helloworld", "test", "shell"];
@@ -2183,12 +2183,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest117
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11700
-     * @tc.name ArrayFilterTest117
-     * @tc.desc Filter array with elements that are numbers that are even and greater than average
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are numbers that are even and greater than average
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -2200,12 +2200,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest118
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11800
-     * @tc.name ArrayFilterTest118
-     * @tc.desc Filter array with elements that are objects with dates in the past
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with dates in the past
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -2225,12 +2225,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest119
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_11900
-     * @tc.name ArrayFilterTest119
-     * @tc.desc Filter array with elements that are maps with specific key-value pairs
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are maps with specific key-value pairs
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const map1 = new Map<string, string | boolean>().set('type', 'user').set('active', true);
@@ -2245,12 +2245,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest120
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12000
-     * @tc.name ArrayFilterTest120
-     * @tc.desc Filter array with elements that are sets with size within range
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are sets with size within range
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set1 = new Set([1, 2]);
@@ -2265,12 +2265,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest121
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12100
-     * @tc.name ArrayFilterTest121
-     * @tc.desc Filter array with elements that are arrays with all elements meeting criteria
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are arrays with all elements meeting criteria
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [
@@ -2286,12 +2286,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest122
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12200
-     * @tc.name ArrayFilterTest122
-     * @tc.desc Filter array with elements that are objects with any property meeting criteria
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with any property meeting criteria
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -2311,12 +2311,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest123
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12300
-     * @tc.name ArrayFilterTest123
-     * @tc.desc Filter array with elements that are strings matching any of multiple regex patterns
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are strings matching any of multiple regex patterns
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const patterns = [/^app/, /test$/];
@@ -2328,12 +2328,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest124
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12400
-     * @tc.name ArrayFilterTest124
-     * @tc.desc Filter array with elements that are numbers that are perfect squares
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are numbers that are perfect squares
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const isPerfectSquare = (num: number) => {
@@ -2348,12 +2348,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest125
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12500
-     * @tc.name ArrayFilterTest125
-     * @tc.desc Filter array with elements that are objects with nested arrays containing specific element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with nested arrays containing specific element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -2373,12 +2373,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest126
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12600
-     * @tc.name ArrayFilterTest126
-     * @tc.desc Filter array with elements that are functions returning promises that resolve to true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Filter array with elements that are functions returning promises that resolve to true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayFilterTest126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const func1 = () => Promise.resolve(true);
@@ -2399,12 +2399,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest127
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12700
-     * @tc.name ArrayFilterTest127
-     * @tc.desc Filter array with elements that are objects with properties of specific type
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with properties of specific type
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -2425,12 +2425,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest128
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12800
-     * @tc.name ArrayFilterTest128
-     * @tc.desc Filter array with elements that are arrays with at least one element meeting criteria
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are arrays with at least one element meeting criteria
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [
@@ -2446,12 +2446,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest129
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_12900
-     * @tc.name ArrayFilterTest129
-     * @tc.desc Filter array with elements that are objects with computed property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are objects with computed property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -2471,12 +2471,12 @@ export default function ArrayFilterTest() {
     });
 
     /**
+     * @tc.name   ArrayFilterTest130
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_13000
-     * @tc.name ArrayFilterTest130
-     * @tc.desc Filter array with elements that are strings with specific case and content
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter array with elements that are strings with specific case and content
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayFilterTest130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = ["Apple", "BANANA", "cherry", "Date", "elderberry"];

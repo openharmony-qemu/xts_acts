@@ -103,12 +103,12 @@ export default function NapiSendableTaskTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0100
-     * @tc.name      : testNapiSendableTask0001
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0100
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0001';
@@ -131,12 +131,12 @@ export default function NapiSendableTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0200
-     * @tc.name      : testNapiSendableTask0002
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0200
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0002';
@@ -159,12 +159,12 @@ export default function NapiSendableTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0300
-     * @tc.name      : testNapiSendableTask0003
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0300
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0003';
@@ -187,12 +187,12 @@ export default function NapiSendableTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0400
-     * @tc.name      : testNapiSendableTask0004
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0400
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0004';
@@ -215,12 +215,12 @@ export default function NapiSendableTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0500
-     * @tc.name      : testNapiSendableTask0005
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0500
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0005';
@@ -243,12 +243,12 @@ export default function NapiSendableTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0600
-     * @tc.name      : testNapiSendableTask0006
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0600
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0006';
@@ -271,12 +271,12 @@ export default function NapiSendableTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0700
-     * @tc.name      : testNapiSendableTask0007
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0700
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0007';
@@ -299,12 +299,12 @@ export default function NapiSendableTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0800
-     * @tc.name      : testNapiSendableTask0008
-     * @tc.desc      : NapiTaskTest NapiIsSendable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSendableTask0008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SENDABLE_TASK_0800
+     * @tc.desc   NapiTaskTest NapiIsSendable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSendableTask0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSendableTask0008';

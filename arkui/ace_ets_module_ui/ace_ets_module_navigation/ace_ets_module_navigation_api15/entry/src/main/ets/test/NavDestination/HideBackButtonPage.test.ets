@@ -49,10 +49,12 @@ export default function HideBackButtonPage() {
 
 
     /**
-     * @tc.number    HideBackButtonPage_0100
-     * @tc.name      HideBackButtonPage_0100
-     * @tc.desc      Test HideBackButtonPage set hideBackButton is false
-     * @tc.level     Level 2
+     * @tc.name   HideBackButtonPage_0100
+     * @tc.number HideBackButtonPage_0100
+     * @tc.desc   Test HideBackButtonPage set hideBackButton is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HideBackButtonPage_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('HideBackButtonPage_0100 START');
@@ -74,10 +76,12 @@ export default function HideBackButtonPage() {
     });
 
     /**
-     * @tc.number    HideBackButtonPage_0200
-     * @tc.name      HideBackButtonPage_0200
-     * @tc.desc      Test HideBackButtonPage set hideBackButton is true
-     * @tc.level     Level 2
+     * @tc.name   HideBackButtonPage_0200
+     * @tc.number HideBackButtonPage_0200
+     * @tc.desc   Test HideBackButtonPage set hideBackButton is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HideBackButtonPage_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('HideBackButtonPage_0200 START');
@@ -103,10 +107,12 @@ export default function HideBackButtonPage() {
 
 
     /**
-     * @tc.number    HideBackButtonPage_0300
-     * @tc.name      HideBackButtonPage_0300
-     * @tc.desc      Test HideBackButtonPage set hideBackButton is null
-     * @tc.level     Level 2
+     * @tc.name   HideBackButtonPage_0300
+     * @tc.number HideBackButtonPage_0300
+     * @tc.desc   Test HideBackButtonPage set hideBackButton is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HideBackButtonPage_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('HideBackButtonPage_0300 START');
@@ -131,10 +137,12 @@ export default function HideBackButtonPage() {
     });
 
     /**
-     * @tc.number    HideBackButtonPage_0400
-     * @tc.name      HideBackButtonPage_0400
-     * @tc.desc      Test HideBackButtonPage set hideBackButton is undefined
-     * @tc.level     Level 2
+     * @tc.name   HideBackButtonPage_0400
+     * @tc.number HideBackButtonPage_0400
+     * @tc.desc   Test HideBackButtonPage set hideBackButton is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HideBackButtonPage_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('HideBackButtonPage_0400 START');

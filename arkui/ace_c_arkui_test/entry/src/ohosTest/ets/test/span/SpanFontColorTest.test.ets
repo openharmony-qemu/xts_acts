@@ -26,39 +26,39 @@ export default function spanFontColorTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTCOLOR_0100
-     * @tc.name: testSpanFontColor001
-     * @tc.desc: testing fontColor for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontColor001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTCOLOR_0100
+     * @tc.desc   testing fontColor for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTCOLOR_0200
-     * @tc.name: testSpanFontColor002
-     * @tc.desc: testing fontColor for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontColor002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTCOLOR_0200
+     * @tc.desc   testing fontColor for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTCOLOR_0300
-     * @tc.name: testSpanFontColor003
-     * @tc.desc: testing fontColor for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontColor003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTCOLOR_0300
+     * @tc.desc   testing fontColor for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontColor003()).assertEqual(0)

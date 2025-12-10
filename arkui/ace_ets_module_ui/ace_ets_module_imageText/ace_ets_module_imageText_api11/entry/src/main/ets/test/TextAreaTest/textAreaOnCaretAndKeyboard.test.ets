@@ -45,14 +45,14 @@ export default function textAreaOnCaretAndKeyboardTest() {
       console.info("textAreaOnCaretAndKeyboard after each called");
     });
 
-    /* *
-       * @tc.number: SUB_ACE_UI_TEAT_AREA_CARET_POSITION_0100
-       * @tc.name  : textAreaOnCaretAndKeyboard001
-       * @tc.desc  : input content and check caret position
-       * @tc.level : Level 1
-       * @tc.type : Function
-       * @tc.size : MediumTest
-       */
+    /**
+     * @tc.name   textAreaOnCaretAndKeyboard001
+     * @tc.number SUB_ACE_UI_TEAT_AREA_CARET_POSITION_0100
+     * @tc.desc   input content and check caret position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaOnCaretAndKeyboard001', Level.LEVEL1, async () => {
       console.info('textAreaOnCaretAndKeyboard001 START');
       let driver: Driver = Driver.create();
@@ -85,14 +85,14 @@ export default function textAreaOnCaretAndKeyboardTest() {
       expect(obj2.$attrs.caretPosition).assertEqual('8');
     });
 
-    /* *
-       * @tc.number: SUB_ACE_UI_TEAT_AREA_CARET_POSITION_0200
-       * @tc.name  : textAreaOnCaretAndKeyboard002
-       * @tc.desc  : set -1 and check caret position
-       * @tc.level : Level 1
-       * @tc.type : Function
-       * @tc.size : MediumTest
-       */
+    /**
+     * @tc.name   textAreaOnCaretAndKeyboard002
+     * @tc.number SUB_ACE_UI_TEAT_AREA_CARET_POSITION_0200
+     * @tc.desc   set -1 and check caret position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaOnCaretAndKeyboard002', Level.LEVEL1, async () => {
       console.info('textAreaOnCaretAndKeyboard002 START');
       let driver = Driver.create();

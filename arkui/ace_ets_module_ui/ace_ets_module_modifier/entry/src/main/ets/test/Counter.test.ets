@@ -42,12 +42,12 @@ export default function counterJsunit() {
     });
 
     /**
+     * @tc.name   testCounter01
      * @tc.number testCounter01
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableInc values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableInc values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCounter01', Level.LEVEL0, async (done: Function) => {
       console.info('[testCounter01] START');
@@ -59,12 +59,12 @@ export default function counterJsunit() {
     });
 
     /**
+     * @tc.name   testCounter02
      * @tc.number testCounter02
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableDec values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableDec values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCounter02', Level.LEVEL0, async (done: Function) => {
       console.info('[testCounter02] START');
@@ -76,12 +76,12 @@ export default function counterJsunit() {
     });
 
     /**
+     * @tc.name   testCounter03
      * @tc.number testCounter03
-     * @tc.name Test the properties of components
-     * @tc.desc Change enableDec values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change enableDec values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCounter03', Level.LEVEL0, async (done: Function) => {
       console.info('testCounter03 START');

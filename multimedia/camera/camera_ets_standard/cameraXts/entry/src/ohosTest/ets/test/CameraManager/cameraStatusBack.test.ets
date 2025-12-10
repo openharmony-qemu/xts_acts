@@ -93,12 +93,12 @@ export default function cameraStatusBackTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_STATUS_LISTEN_BACK_001
-     * @tc.name      : cameraStatus_listen_back_001
-     * @tc.desc      : No abnormal scenarios-on('cameraStatus')
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   cameraStatus_listen_back_001
+     * @tc.number CAMERA_MANAGER_STATUS_LISTEN_BACK_001
+     * @tc.desc   No abnormal scenarios-on('cameraStatus')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cameraStatus_listen_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'cameraStatus_listen_back_001';
@@ -113,12 +113,12 @@ export default function cameraStatusBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_STATUS_LISTEN_BACK_002
-     * @tc.name      : cameraStatus_listen_back_002
-     * @tc.desc      : No abnormal scenarios-off('cameraStatus')
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   cameraStatus_listen_back_002
+     * @tc.number CAMERA_MANAGER_STATUS_LISTEN_BACK_002
+     * @tc.desc   No abnormal scenarios-off('cameraStatus')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cameraStatus_listen_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'cameraStatus_listen_back_002';

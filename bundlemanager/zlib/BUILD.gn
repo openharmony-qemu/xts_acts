@@ -21,6 +21,7 @@ group("zlib") {
       "actsgzipdecompressiontest:ActsGzipDecompressionTest",
       "actszipfileandunzipfiletest:actszipfileandunzipfiletest",
       "actsziptest:ActsZipTest",
+      "actszipteststatic:ActsZipStaticTest",
       "actszlibchecksumtest:ActsChecksumTest",
       "actszlibinterfacetest:ActsZlibInterfaceTest",
       "actszlibndktest:ActsZlibNdkTest",

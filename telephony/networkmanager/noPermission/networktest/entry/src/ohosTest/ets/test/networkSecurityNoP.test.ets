@@ -14,12 +14,12 @@ export default function networkSecurityNoP() {
   describe('networkSecurityNoPTest',  () => {
 
     /**
-     * @tc.number : SUB_Telephony_networkSecurity_Nop_0100
-     * @tc.name   : testTelephonyNetworkSecurityNop0100
-     * @tc.desc   : isCleartextPermitted No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetworkSecurityNop0100
+     * @tc.number SUB_Telephony_networkSecurity_Nop_0100
+     * @tc.desc   isCleartextPermitted No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetworkSecurityNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0700';
@@ -37,12 +37,12 @@ export default function networkSecurityNoP() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_networkSecurity_Nop_0200
-     * @tc.name   : testTelephonyNetworkSecurityNop0200
-     * @tc.desc   : isCleartextPermittedByHostName No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetworkSecurityNop0200
+     * @tc.number SUB_Telephony_networkSecurity_Nop_0200
+     * @tc.desc   isCleartextPermittedByHostName No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetworkSecurityNop0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetworkSecurityNop0200';

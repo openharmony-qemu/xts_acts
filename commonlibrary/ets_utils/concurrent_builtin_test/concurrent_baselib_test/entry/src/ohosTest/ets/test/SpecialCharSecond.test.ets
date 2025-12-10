@@ -63,12 +63,12 @@ export default function SpecialCharSecondTest() {
     })
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0100
-     * @tc.name      : testAsyncLockRequestSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAsyncLockRequestSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockRequestSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -97,12 +97,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0200
-     * @tc.name      : testAsyncLockQuerySpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAsyncLockQuerySpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockQuerySpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -131,12 +131,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0300
-     * @tc.name      : testXmlSerializerConstructorSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlSerializerConstructorSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSerializerConstructorSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -165,12 +165,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0400
-     * @tc.name      : testXmlSetAttributesSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlSetAttributesSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetAttributesSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -200,12 +200,12 @@ export default function SpecialCharSecondTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0600
-     * @tc.name      : testXmlAddEmptyElementSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlAddEmptyElementSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlAddEmptyElementSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -234,12 +234,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0700
-     * @tc.name      : testXmlStartElementSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlStartElementSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlStartElementSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -268,12 +268,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0900
-     * @tc.name      : testXmlSetCommentSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlSetCommentSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_0900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetCommentSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -302,12 +302,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1000
-     * @tc.name      : testXmlSetCDATASpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlSetCDATASpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetCDATASpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -336,12 +336,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1100
-     * @tc.name      : testXmlSetTextSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlSetTextSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetTextSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -370,12 +370,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1200
-     * @tc.name      : testXmlSetDocTypeSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlSetDocTypeSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetDocTypeSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -404,12 +404,12 @@ export default function SpecialCharSecondTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1400
-     * @tc.name      : testXmlPullParserConstructorSpecial
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlPullParserConstructorSpecial
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SPECIALCHAR_SECOND_1400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlPullParserConstructorSpecial', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -37,13 +37,13 @@ export default function DeviceStatusMetadataBindingTest() {
       console.info('msdp metadataBinding test afterEach called')
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
-     * @tc.desc       : metadataBinding callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
+     * @tc.desc   metadataBinding callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0100 is start---------------")
@@ -58,13 +58,13 @@ export default function DeviceStatusMetadataBindingTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
-     * @tc.desc       : metadataBinding callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
+     * @tc.desc   metadataBinding callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0200 is start---------------")
@@ -80,13 +80,13 @@ export default function DeviceStatusMetadataBindingTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
-     * @tc.desc       : metadataBinding callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
+     * @tc.desc   metadataBinding callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0300 is start---------------")
@@ -102,13 +102,13 @@ export default function DeviceStatusMetadataBindingTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
-     * @tc.desc       : metadataBinding callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
+     * @tc.desc   metadataBinding callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0400 is start---------------")
@@ -124,13 +124,13 @@ export default function DeviceStatusMetadataBindingTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
-     * @tc.desc       : metadataBinding callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
+     * @tc.desc   metadataBinding callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0500 is start---------------")
@@ -147,13 +147,13 @@ export default function DeviceStatusMetadataBindingTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
-     * @tc.desc       : metadataBinding callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
+     * @tc.desc   metadataBinding callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0600 is start---------------")
@@ -170,13 +170,13 @@ export default function DeviceStatusMetadataBindingTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
-     * @tc.desc       : metadataBinding callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
+     * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
+     * @tc.desc   metadataBinding callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0700 is start---------------")

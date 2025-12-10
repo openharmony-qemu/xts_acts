@@ -23,13 +23,13 @@ export default function imageSpanOnClickTest() {
 
     let PAGE_TAG = 'ImageSpanOnClickTest';
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_SPAN_ON_CLICK_0100
-     * @tc.name       : testImageSpanOnClick001
-     * @tc.desc       : test imageSpan onClick with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSpanOnClick001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_SPAN_ON_CLICK_0100
+     * @tc.desc   test imageSpan onClick with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanOnClick001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`imagespan/${PAGE_TAG}`);

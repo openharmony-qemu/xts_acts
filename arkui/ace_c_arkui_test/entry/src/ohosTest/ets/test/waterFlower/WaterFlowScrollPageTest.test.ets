@@ -22,13 +22,13 @@ export default function waterFlowScrollPageTest() {
 
   describe('WaterFlowScrollPageTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_PAGE_0100
-     * @tc.name       : testWaterFlowScrollPage001
-     * @tc.desc       : testing scroll edge for list with {0 0} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowScrollPage001
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_PAGE_0100
+     * @tc.desc   testing scroll edge for list with {0 0} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowScrollPage001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowScrollPageTest`);
@@ -44,13 +44,13 @@ export default function waterFlowScrollPageTest() {
       expect(state2Data[state2Data.length-1] == 15).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_PAGE_0200
-     * @tc.name       : testWaterFlowScrollPage002
-     * @tc.desc       : testing scroll edge for list with {1 1} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowScrollPage002
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_PAGE_0200
+     * @tc.desc   testing scroll edge for list with {1 1} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowScrollPage002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowScrollPageTest`);

@@ -22,14 +22,14 @@ export default function abilityTest() {
 
     describe("caniusetest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        /*
-         * @tc.number: SUB_GLOBAL_CANIUSE_STATIC_0100
-         * @tc.name: SUB_GLOBAL_CANIUSE_STATIC
-         * @tc.desc:  Check canIUs
-         * @tc.level: LEVEL1
-         * @tc.size: MEDIUMTEST
-         * @tc.type: FUNCTION
-        */
+        /**
+         * @tc.name   SUB_GLOBAL_CANIUSE_STATIC_0100
+         * @tc.number SUB_GLOBAL_CANIUSE_STATIC_0100
+         * @tc.desc   Check canIUs
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_GLOBAL_CANIUSE_STATIC_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'SUB_GLOBAL_CANIUSE_STATIC_0100 start');
             try{

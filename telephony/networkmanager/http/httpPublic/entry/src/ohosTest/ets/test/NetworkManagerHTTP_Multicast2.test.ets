@@ -100,12 +100,12 @@ export default function NetworkManagerMulticastHTTP2Test() {
   })
   describe("NetworkManagerMulticastHTTP2Test", () => {
     /**
-     * @tc.number: SUB_NetworkMgr_Http_Multipart_Xts_Promise_0100
-     * @tc.name: testNetworkMgrHttpMultipartXtsPromise0100
-     * @tc.desc: Test request property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpMultipartXtsPromise0100
+     * @tc.number SUB_NetworkMgr_Http_Multipart_Xts_Promise_0100
+     * @tc.desc   Test request property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpMultipartXtsPromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = "testNetworkMgrHttpMultipartXtsPromise0100";
@@ -130,12 +130,12 @@ export default function NetworkManagerMulticastHTTP2Test() {
       }
     })
     /**
-     * @tc.number: SUB_NetworkMgr_Http_Multipart_Xts_Promise_0200
-     * @tc.name: testNetworkMgrHttpMultipartXtsPromise0200
-     * @tc.desc: Test request property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpMultipartXtsPromise0200
+     * @tc.number SUB_NetworkMgr_Http_Multipart_Xts_Promise_0200
+     * @tc.desc   Test request property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpMultipartXtsPromise0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = "testNetworkMgrHttpMultipartXtsPromise0200";
@@ -160,12 +160,12 @@ export default function NetworkManagerMulticastHTTP2Test() {
       }
     })
     /**
-     * @tc.number: SUB_NetworkMgr_Http_Multipart_Xts_Promise_0300
-     * @tc.name: testNetworkMgrHttpMultipartXtsPromise0300
-     * @tc.desc: Test request property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpMultipartXtsPromise0300
+     * @tc.number SUB_NetworkMgr_Http_Multipart_Xts_Promise_0300
+     * @tc.desc   Test request property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpMultipartXtsPromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = "testNetworkMgrHttpMultipartXtsPromise0300";

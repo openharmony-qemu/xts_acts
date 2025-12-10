@@ -21,854 +21,1139 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
 let BleScanner:bluetooth.BleScanner;
+let gattServer: bluetooth.GattServer;
+let device:bluetooth.GattClientDevice;
 
 function sleep(delay : number) : Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay))
 }
 
-    async function openPhone() {   
-        try{
-            let drivers = Driver.create();
-            console.info('[bluetooth_js] bt driver create:'+ drivers);            
-            await drivers.delayMs(1000);
-            await drivers.wakeUpDisplay();
-            await drivers.delayMs(5000);
-            await drivers.swipe(1500, 1000, 1500, 100);
-            await drivers.delayMs(10000);
-        } catch (error) {
-            console.info('[bluetooth_js] driver error info:'+ error);
-        }
+async function openPhone() {
+    try{
+        let drivers = Driver.create();
+        console.info('[bluetooth_js] bt driver create:'+ drivers);
+        await drivers.delayMs(1000);
+        await drivers.wakeUpDisplay();
+        await drivers.delayMs(5000);
+        await drivers.swipe(1500, 1000, 1500, 100);
+        await drivers.delayMs(10000);
+    } catch (error) {
+        console.info('[bluetooth_js] driver error info:'+ error);
     }
-
-    async function tryToEnableBt() {
-        let sta = btAccess.getState();
-        switch(sta){
-            case 0:
-                btAccess.enableBluetooth();
-                await clickRequestPermission(OPEN_BT_TEXT);
-                await sleep(10000);
-                let sta1 = btAccess.getState();
-                console.info('[bluetooth_js] bt turn off:'+ JSON.stringify(sta1));
-                break;
-            case 1:
-                console.info('[bluetooth_js] bt turning on:'+ JSON.stringify(sta));
-                await sleep(3000);
-                break;
-            case 2:
-                console.info('[bluetooth_js] bt turn on:'+ JSON.stringify(sta));
-                break;
-            case 3:
-                btAccess.enableBluetooth();
-                await clickRequestPermission(OPEN_BT_TEXT);
-                await sleep(10000);
-                let sta2 = btAccess.getState();
-                console.info('[bluetooth_js] bt turning off:'+ JSON.stringify(sta2));
-                break;
-            default:
-                console.info('[bluetooth_js] enable success');
-        }
-    }
-
-    async function clickRequestPermission(text:string) {
-        console.info('[bluetooth_js] clickRequestPermission start');
-        let PERMISSION_TEXT:string = "允许";
-        let driver = Driver.create();
-        await driver.delayMs(3000);
-        try {
-            let button = await driver.findComponent(ON.text(text));
-            await button.click();
-            await driver.delayMs(3000);
-            console.info('[bluetooth_js] clickRequestPermission end');
-        } catch (err) {
-            console.info('[bluetooth_js] clickRequestPermission failed. ' + err);
-        }
-        try {
-            let button1 = await driver.findComponent(ON.text(PERMISSION_TEXT));
-            await button1.click();
-            await driver.delayMs(3000);
-            console.info('[bluetooth_js] click PERMISSION_TEXT end');
-        } catch (err) {
-            console.info('[bluetooth_js] click PERMISSION_TEXT failed. ' + err);
-        }
-    }
-
-    
-    function onReceiveEvent00(data : Array<bluetooth.ScanResult>) {   
-            console.info('BLE scan device find result = '+ JSON.stringify(data));
-            if (data.length > 0) {expect(data.length > 0).assertTrue();}
-            if (data.length == 0) {expect(data.length == 0).assertTrue();}
-        }
-    function onReceiveEvent(data : Array<bluetooth.ScanResult>) {   
-            console.info('bluetooth device find = '+ JSON.stringify(data));
-        }
-    function onReceiveEvent1(data : Array<bluetooth.ScanResult>) {  
-            console.info('[bluetooth_js] BLEscan device result1 '+JSON.stringify(data));
-        }
-    function onReceiveEvent2(data : Array<bluetooth.ScanResult>)  
-        {
-            console.info('[bluetooth_js] BLEscan device result2'+JSON.stringify(data));
-        }
-    function onReceiveEvent3(data : Array<bluetooth.ScanResult>)   
-        {
-            console.info('[bluetooth_js] BLEscan device result3'+JSON.stringify(data));
-         }
-    function onReceiveEvent4(data : Array<bluetooth.ScanResult>)    
-        {
-            console.info('[bluetooth_js] BLEscan device result4'+JSON.stringify(data));
-         }
-    function onReceiveEvent5(data : Array<bluetooth.ScanResult>)  
-        {
-            console.info('[bluetooth_js] BLEscan device result5'+JSON.stringify(data));
-        }
-    function onReceiveEvent6(data : Array<bluetooth.ScanResult>) 
-        {
-            console.info('[bluetooth_js] BLEscan device result6'+JSON.stringify(data));
-        }
-    function onReceiveEvent7(data : Array<bluetooth.ScanResult>)
-        {
-            console.info('[bluetooth_js] BLEscan device result7'+JSON.stringify(data));
-        }
-    function onReceiveEvent8(data : Array<bluetooth.ScanResult>)        
-        {
-            console.info('[bluetooth_js] BLEscan device result9'+JSON.stringify(data));
-        }
-    function onReceiveEvent9(data : Array<bluetooth.ScanResult>)    
-        {
-            console.info('[bluetooth_js] BLEscan device result10'+JSON.stringify(data));
-        }
-    function onReceiveEvent10(data : Array<bluetooth.ScanResult>)     
-        {
-            console.info('[bluetooth_js] BLEscan device result12'+JSON.stringify(data));
-        }
-    function onReceiveEvents(data : bluetooth.ScanReport)
-        {
-            console.info('[bluetooth_js] bleScanner startScan device result: ' + JSON.stringify(data));
-            console.info('[bluetooth_js] reportType result: ' + JSON.stringify(data[0].reportType));
-            console.info('[bluetooth_js] scanResult result: ' + JSON.stringify(data[0].scanResult));
-            console.info('[bluetooth_js] deviceId result: ' + JSON.stringify(data[0].scanResult[0].deviceId));
-            console.info('[bluetooth_js] rssi result: ' + JSON.stringify(data[0].scanResult[0].rssi));
-            console.info('[bluetooth_js] data result: ' + JSON.stringify(data[0].scanResult[0].data));
-            console.info('[bluetooth_js] deviceName result: ' + JSON.stringify(data[0].scanResult[0].deviceName));
-            console.info('[bluetooth_js] connectable result: ' + JSON.stringify(data[0].scanResult[0].connectable));
-        }
-    
-
-export default function bluetoothBleTest() {
-describe('bluetoothBleTest', () => {
-
-    beforeAll(async (done : Function) => {
-        await clickRequestPermission(PERMISSION_TEXT);
-        await openPhone();
-        console.info('beforeAll called')
-        BleScanner = bluetooth.createBleScanner();
-        console.info('createBleScanner result:' + JSON.stringify(BleScanner));
-        expect(true).assertEqual(BleScanner != null);
-        done();
-    })
-    beforeEach(async (done : Function) =>{
-        console.info('beforeEach called')
-        await tryToEnableBt()
-        done();
-    })
-    afterEach(() => {
-        console.info('afterEach called')
-    })
-    afterAll(() => {
-        console.info('afterAll called')
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
-     * @tc.name test startBLEScan
-     * @tc.desc Test startBLEScan api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent00);
-            bluetooth.startBLEScan(
-                [{
-                    deviceId:"00:11:22:33:44:55",
-                    name:"test",
-                    serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
-                }],
-                {
-                    interval: 500,
-                    dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
-                    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-                    phyType: bluetooth.PhyType.PHY_LE_1M
-                }
-            );
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            if (err.code == 801) {
-                console.info('[bluetooth_js]startBLEScan is not support');
-                expect(true).assertTrue();
-            } else {
-                expect(Number(err.code)).assertEqual(2900099);
-            }
-        }
-        bluetooth.off("BLEDeviceFind", onReceiveEvent00);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
-     * @tc.name test stopBLEScan
-     * @tc.desc Test stopBLEScan api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            if (err.code == 801) {
-                console.info('[bluetooth_js]stopBLEScan is not support');
-                expect(true).assertTrue();
-            } else {
-                expect(Number(err.code)).assertEqual(2900099);
-            }  
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
-     * @tc.name test on-BLEDeviceFind
-     * @tc.desc Test on-BLEDeviceFind api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on('BLEDeviceFind', onReceiveEvent);
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
-     * @tc.name test off-BLEDeviceFind
-     * @tc.desc Test off-BLEDeviceFind api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        bluetooth.on('BLEDeviceFind', onReceiveEvent);
-        try {
-            bluetooth.off('BLEDeviceFind', onReceiveEvent);
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind",onReceiveEvent1);
-            bluetooth.startBLEScan(null);
-            await sleep(1000);
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent1);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent2);
-            bluetooth.startBLEScan([{deviceId:"00:11:22:33:44:55"}]);
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off2');
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent2);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-         try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent3);
-            bluetooth.startBLEScan([{name:"blue_test"}]);
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off3');
-            bluetooth.stopBLEScan();
-         } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent3);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-         try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent4);
-            bluetooth.startBLEScan([{serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"}]);
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off4');
-            bluetooth.stopBLEScan();
-         } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent4);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent5);
-            bluetooth.startBLEScan(
-                [{}],
-            {
-                    interval: 100,
-                    dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
-                    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-                }
-            );
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off5');
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent5);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            let ScanOptions : bluetooth.ScanOptions=  {
-                interval: 100,
-                dutyMode: bluetooth.ScanDuty.SCAN_MODE_BALANCED,
-                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-            };
-            bluetooth.on("BLEDeviceFind", onReceiveEvent6);
-            bluetooth.startBLEScan([{}],ScanOptions);
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off6');
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent6);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent7);
-            bluetooth.startBLEScan(
-                [{}],
-            {
-                    interval: 100,
-                    dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_LATENCY,
-                    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-                }
-            );
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off7');
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent7);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent8);
-            bluetooth.startBLEScan(
-                [{}],
-            {
-                    interval: 0,
-                    dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_LATENCY,
-                    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-                }
-            );
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off7');
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent8);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent9);
-            bluetooth.startBLEScan(
-                [{}],
-            {
-                    interval: 500,
-                    dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
-                    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-                }
-            );
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off10');
-            bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent9);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.on("BLEDeviceFind", onReceiveEvent10);
-        bluetooth.startBLEScan(
-            [{}],
-           {
-               interval: 500,
-               dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_LATENCY,
-               matchMode: bluetooth.MatchMode.MATCH_MODE_STICKY,
-            }
-        );
-        await sleep(1000);
-        console.info('[bluetooth_js] BLE scan off12');
-        bluetooth.stopBLEScan();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(2900099);
-        }
-        bluetooth.off('BLEDeviceFind', onReceiveEvent10);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
-     * @tc.name test constant PhyType
-     * @tc.desc Test constant PhyType api12
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
-        console.info("[bluetooth_js]PHY_LE_1M : " + JSON.stringify(PHY_LE_1M));
-        expect(true).assertEqual(PHY_LE_1M == 1);
-
-        let PHY_LE_ALL_SUPPORTED = bluetooth.PhyType.PHY_LE_ALL_SUPPORTED;
-        console.info("[bluetooth_js]PHY_LE_ALL_SUPPORTED : " + JSON.stringify(PHY_LE_ALL_SUPPORTED));
-        expect(true).assertEqual(PHY_LE_ALL_SUPPORTED == 255);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
-     * @tc.name test constant PhyType
-     * @tc.desc Test constant PhyType api12
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
-        console.info("[bluetooth_js]PHY_LE_1M : " + JSON.stringify(PHY_LE_1M));
-        expect(true).assertEqual(PHY_LE_1M == 1);
-
-        let PHY_LE_ALL_SUPPORTED = bluetooth.PhyType.PHY_LE_ALL_SUPPORTED;
-        console.info("[bluetooth_js]PHY_LE_ALL_SUPPORTED : " + JSON.stringify(PHY_LE_ALL_SUPPORTED));
-        expect(true).assertEqual(PHY_LE_ALL_SUPPORTED == 255);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
-     * @tc.name test startBLEScan
-     * @tc.desc Test startBLEScan api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            bluetooth.startBLEScan(null, null);
-            expect().assertFail();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(401);
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
-     * @tc.name testCreateBleScanner
-     * @tc.desc Test createBleScanner
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            let testBleScanner:bluetooth.BleScanner = bluetooth.createBleScanner();
-            console.info("[bluetooth_js]createBleScanner result: " + JSON.stringify(testBleScanner));
-            expect(true).assertEqual(testBleScanner != null);
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
-     * @tc.name testStartScan
-     * @tc.desc Test startScan
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let arrayBuffer = new ArrayBuffer(8);
-        let scanFilter: bluetooth.ScanFilter = {
-            deviceId: "00:11:22:33:44:55",
-            name: "testStartScan",
-            serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
-            serviceUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-            serviceSolicitationUuid: "00001888-0000-1000-8000-00805F9B34FB",
-            serviceSolicitationUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-            serviceData: arrayBuffer,
-            serviceDataMask: arrayBuffer,
-            manufactureId: 4567,
-            manufactureData: arrayBuffer,
-            manufactureDataMask: arrayBuffer
-        };
-
-        try {
-            BleScanner.on("BLEDeviceFind", onReceiveEvents);
-            await BleScanner.startScan([scanFilter]).then(() => {
-                console.info('[bluetooth_js] bleScanner startScan success');
-            });
-            await sleep(500);
-            await BleScanner.stopScan().then(() => {
-                console.info('[bluetooth_js] bleScanner stopScan success');
-            });
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            BleScanner.off("BLEDeviceFind", onReceiveEvents);
-            if (err.code == 801 || err.code == 2900009) {
-                console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-                expect(true).assertTrue();
-            } else {
-                expect().assertFail();
-            }
-        }
-        BleScanner.off("BLEDeviceFind", onReceiveEvents);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
-     * @tc.name testStopScan
-     * @tc.desc Test stopScan
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let scanOptions: bluetooth.ScanOptions = {
-            interval: 500,
-            dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
-            matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-            phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
-            reportMode: bluetooth.ScanReportMode.NORMAL
-        };
-
-        try {
-            await BleScanner.startScan([{}], scanOptions).then(() => {
-                console.info('[bluetooth_js] bleScanner startScan success');
-            });
-            await sleep(500);
-            await BleScanner.stopScan().then(() => {
-                console.info('[bluetooth_js] bleScanner stopScan success');
-            });
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            if (err.code == 801 || err.code == 2900009) {
-                console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-                expect(true).assertTrue();
-            } else {
-                expect().assertFail();
-            }
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
-     * @tc.name testStartScan
-     * @tc.desc Test startScan 401
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            await BleScanner.startScan(null, null).then(() => {
-                console.info('[bluetooth_js] bleScanner startScan success');
-            });
-            expect().assertFail();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(401);
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
-     * @tc.name testStartScan
-     * @tc.desc Test startScan again
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let arrayBuffer = new ArrayBuffer(8);
-        let scanFilter: bluetooth.ScanFilter = {
-            deviceId: "00:11:22:33:44:55",
-            name: "testStartScan",
-            serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
-            serviceUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-            serviceSolicitationUuid: "00001888-0000-1000-8000-00805F9B34FB",
-            serviceSolicitationUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-            serviceData: arrayBuffer,
-            serviceDataMask: arrayBuffer,
-            manufactureId: 4567,
-            manufactureData: arrayBuffer,
-            manufactureDataMask: arrayBuffer
-        };
-
-        try {
-            await BleScanner.startScan([scanFilter]).then(() => {
-                console.info('[bluetooth_js] bleScanner startScan success');
-            });
-            await sleep(500);
-            await BleScanner.startScan([scanFilter]).then(() => {
-                console.info('[bluetooth_js] bleScanner startScan success');
-            });
-            expect().assertFail();
-        } catch (err) {
-            console.error("errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
-                console.info("BleScanner.startScan is not support.");
-                expect(true).assertTrue();
-            } else {
-                expect(Number(err.code)).assertEqual(2902050);
-            }
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
-     * @tc.name testScanReportType
-     * @tc.desc Test ScanReportType
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let ON_FOUND = bluetooth.ScanReportType.ON_FOUND;
-        console.info("[bluetooth_js]ScanReportType ON_FOUND: " + JSON.stringify(ON_FOUND));
-        expect(ON_FOUND).assertEqual(1);
-
-        let ON_LOST = bluetooth.ScanReportType.ON_LOST;
-        console.info("[bluetooth_js]ScanReportType ON_LOST: " + JSON.stringify(ON_LOST));
-        expect(ON_LOST).assertEqual(2);
-
-        let ON_BATCH = bluetooth.ScanReportType.ON_BATCH;
-        console.info("[bluetooth_js]ScanReportType ON_BATCH: " + JSON.stringify(ON_BATCH));
-        expect(ON_BATCH).assertEqual(3);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
-     * @tc.name testScanReportMode
-     * @tc.desc Test ScanReportMode
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let NORMAL = bluetooth.ScanReportMode.NORMAL;
-        console.info("[bluetooth_js]ScanReportMode NORMAL: " + JSON.stringify(NORMAL));
-        expect(NORMAL).assertEqual(1);
-
-        let FENCE_SENSITIVITY_LOW = bluetooth.ScanReportMode.FENCE_SENSITIVITY_LOW;
-        console.info("[bluetooth_js]ScanReportMode FENCE_SENSITIVITY_LOW: " + JSON.stringify(FENCE_SENSITIVITY_LOW));
-        expect(FENCE_SENSITIVITY_LOW).assertEqual(10);
-
-        let FENCE_SENSITIVITY_HIGH = bluetooth.ScanReportMode.FENCE_SENSITIVITY_HIGH;
-        console.info("[bluetooth_js]ScanReportMode FENCE_SENSITIVITY_HIGH: " + JSON.stringify(FENCE_SENSITIVITY_HIGH));
-        expect(FENCE_SENSITIVITY_HIGH).assertEqual(11);
-
-        let BATCH = bluetooth.ScanReportMode.BATCH;
-        console.info("[bluetooth_js]ScanReportMode BATCH: " + JSON.stringify(BATCH));
-        expect(BATCH).assertEqual(2);
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
-     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
-     * @tc.desc Test getConnectedBLEDevices api21
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
-        try {
-            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT);
-            console.info("[bluetooth_js]getConnectedBLEDevices GATT: " + JSON.stringify(devices));
-        } catch (err) {
-            console.error("getConnectedBLEDevices GATT errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
-                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
-                expect(Number(err.code) == 801).assertTrue();
-            } else {
-                expect(Number(err.code)).assertEqual(2900099);
-            }
-        }
-
-        try {
-            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_CLIENT);
-            console.info("[bluetooth_js]getConnectedBLEDevices GATT_CLIENT: " + JSON.stringify(devices));
-        } catch (err) {
-            console.error("getConnectedBLEDevices GATT_CLIENT errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
-                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
-                expect(Number(err.code) == 801).assertTrue();
-            } else {
-                expect(Number(err.code)).assertEqual(2900099);
-            }
-        }
-
-        try {
-            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_SERVER);
-            console.info("[bluetooth_js]getConnectedBLEDevices GATT_SERVER: " + JSON.stringify(devices));
-        } catch (err) {
-            console.error("getConnectedBLEDevices GATT_SERVER errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
-                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
-                expect(Number(err.code) == 801).assertTrue();
-            } else {
-                expect(Number(err.code)).assertEqual(2900099);
-            }
-        }
-        done();
-    })
-
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
-     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
-     * @tc.desc Test BleProfile api21
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
-        let BleProfileGATT = bluetooth.BleProfile.GATT;
-        console.info("[bluetooth_js]GATT: " + JSON.stringify(BleProfileGATT));
-        expect(BleProfileGATT).assertEqual(1);
-
-        let BleProfileGATT_CLIENT = bluetooth.BleProfile.GATT_CLIENT;
-        console.info("[bluetooth_js]GATT_CLIENT: " + JSON.stringify(BleProfileGATT_CLIENT));
-        expect(BleProfileGATT_CLIENT).assertEqual(2);
-
-        let BleProfileGATT_SERVER = bluetooth.BleProfile.GATT_SERVER;
-        console.info("[bluetooth_js]GATT_SERVER: " + JSON.stringify(BleProfileGATT_SERVER));
-        expect(BleProfileGATT_SERVER).assertEqual(3);
-        done();
-    })
-})
 }
 
+async function tryToEnableBt() {
+    let sta = btAccess.getState();
+    switch(sta){
+        case 0:
+            btAccess.enableBluetooth();
+            await clickRequestPermission(OPEN_BT_TEXT);
+            await sleep(10000);
+            let sta1 = btAccess.getState();
+            console.info('[bluetooth_js] bt turn off:'+ JSON.stringify(sta1));
+            break;
+        case 1:
+            console.info('[bluetooth_js] bt turning on:'+ JSON.stringify(sta));
+            await sleep(3000);
+            break;
+        case 2:
+            console.info('[bluetooth_js] bt turn on:'+ JSON.stringify(sta));
+            break;
+        case 3:
+            btAccess.enableBluetooth();
+            await clickRequestPermission(OPEN_BT_TEXT);
+            await sleep(10000);
+            let sta2 = btAccess.getState();
+            console.info('[bluetooth_js] bt turning off:'+ JSON.stringify(sta2));
+            break;
+        default:
+            console.info('[bluetooth_js] enable success');
+    }
+}
+
+async function clickRequestPermission(text:string) {
+    console.info('[bluetooth_js] clickRequestPermission start');
+    let PERMISSION_TEXT:string = "允许";
+    let driver = Driver.create();
+    await driver.delayMs(3000);
+    try {
+        let button = await driver.findComponent(ON.text(text));
+        await button.click();
+        await driver.delayMs(3000);
+        console.info('[bluetooth_js] clickRequestPermission end');
+    } catch (err) {
+        console.info('[bluetooth_js] clickRequestPermission failed. ' + err);
+    }
+    try {
+        let button1 = await driver.findComponent(ON.text(PERMISSION_TEXT));
+        await button1.click();
+        await driver.delayMs(3000);
+        console.info('[bluetooth_js] click PERMISSION_TEXT end');
+    } catch (err) {
+        console.info('[bluetooth_js] click PERMISSION_TEXT failed. ' + err);
+    }
+}
+
+function onReceiveEvent(data : Array<bluetooth.ScanResult>)
+{
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+    try{
+        console.info('[bluetooth_js]ScanResult Property advertiseFlags is :' + JSON.stringify(data[0].advertiseFlags))
+        console.info('[bluetooth_js]ScanResult Property manufacturerDataMap is :' + JSON.stringify(data[0].manufacturerDataMap))
+        console.info('[bluetooth_js]ScanResult Property serviceDataMap is :' + JSON.stringify(data[0].serviceDataMap))
+        console.info('[bluetooth_js]ScanResult Property serviceUuids is :' + JSON.stringify(data[0].serviceUuids))
+        console.info('[bluetooth_js]ScanResult Property txPowerLevel is :' + JSON.stringify(data[0].txPowerLevel))
+        console.info('[bluetooth_js]ScanResult Property advertisingDataMap is :' + JSON.stringify(data[0].advertisingDataMap))
+    } catch(error){
+        console.error("[bt_arkts]ScanResult Property is Optional");
+    }
+}
+
+function onReceiveEvent_void()
+{
+    console.info('[bluetooth_js] BLEscan device result_viod');
+}
+
+function onReceiveEvents(data : bluetooth.ScanReport)
+{
+    console.info('[bluetooth_js] bleScanner startScan device result: ' + JSON.stringify(data));
+    console.info('[bluetooth_js] reportType result: ' + JSON.stringify(data[0].reportType));
+    console.info('[bluetooth_js] scanResult result: ' + JSON.stringify(data[0].scanResult));
+    console.info('[bluetooth_js] deviceId result: ' + JSON.stringify(data[0].scanResult[0].deviceId));
+    console.info('[bluetooth_js] rssi result: ' + JSON.stringify(data[0].scanResult[0].rssi));
+    console.info('[bluetooth_js] data result: ' + JSON.stringify(data[0].scanResult[0].data));
+    console.info('[bluetooth_js] deviceName result: ' + JSON.stringify(data[0].scanResult[0].deviceName));
+    console.info('[bluetooth_js] connectable result: ' + JSON.stringify(data[0].scanResult[0].connectable));
+}
+
+export default function bluetoothBleTest() {
+    describe('bluetoothBleTest', () => {
+
+        beforeAll(async (done : Function) => {
+            await clickRequestPermission(PERMISSION_TEXT);
+            await openPhone();
+            console.info('beforeAll called')
+            BleScanner = bluetooth.createBleScanner();
+            console.info('createBleScanner result:' + JSON.stringify(BleScanner));
+            expect(true).assertEqual(BleScanner != null);
+            gattServer = bluetooth.createGattServer();
+            console.info('bluetooth ble create gattServer result:' + JSON.stringify(gattServer));
+            device = bluetooth.createGattClientDevice('00:11:22:33:44:55');
+            console.info('createGattClientDevice result:' + JSON.stringify(device));
+            done();
+        })
+        beforeEach(async (done : Function) =>{
+            console.info('beforeEach called')
+            await tryToEnableBt()
+            done();
+        })
+        afterEach(() => {
+            console.info('afterEach called')
+        })
+        afterAll(() => {
+            console.info('afterAll called')
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }],
+                    {
+                        interval: 500,
+                        dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                        matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                        phyType: bluetooth.PhyType.PHY_LE_1M
+                    }
+                );
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            bluetooth.off("BLEDeviceFind", onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
+         * @tc.desc   Test stopBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]stopBLEScan is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
+         * @tc.desc   Test on-BLEDeviceFind api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on('BLEDeviceFind', onReceiveEvent);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
+         * @tc.desc   Test off-BLEDeviceFind api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            bluetooth.on('BLEDeviceFind', onReceiveEvent);
+            try {
+                bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind",onReceiveEvent);
+                bluetooth.startBLEScan(null);
+                await sleep(1000);
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan([{deviceId:"00:11:22:33:44:55"}]);
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off2');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan([{name:"blue_test"}]);
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off3');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan([{serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"}]);
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off4');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{}],
+                    {
+                        interval: 100,
+                        dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                        matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    }
+                );
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off5');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let ScanOptions : bluetooth.ScanOptions=  {
+                    interval: 100,
+                    dutyMode: bluetooth.ScanDuty.SCAN_MODE_BALANCED,
+                    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                };
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan([{}],ScanOptions);
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off6');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{}],
+                    {
+                        interval: 100,
+                        dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_LATENCY,
+                        matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    }
+                );
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off7');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{}],
+                    {
+                        interval: 0,
+                        dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_LATENCY,
+                        matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    }
+                );
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off7');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{}],
+                    {
+                        interval: 500,
+                        dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                        matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                    }
+                );
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off10');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
+         * @tc.desc   Test ClassicStartBLEScan api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{}],
+                    {
+                        interval: 500,
+                        dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_LATENCY,
+                        matchMode: bluetooth.MatchMode.MATCH_MODE_STICKY,
+                    }
+                );
+                await sleep(1000);
+                console.info('[bluetooth_js] BLE scan off12');
+                bluetooth.stopBLEScan();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+            bluetooth.off('BLEDeviceFind', onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
+         * @tc.desc   Test constant PhyType api12
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
+            console.info("[bluetooth_js]PHY_LE_1M : " + JSON.stringify(PHY_LE_1M));
+            expect(true).assertEqual(PHY_LE_1M == 1);
+
+            let PHY_LE_ALL_SUPPORTED = bluetooth.PhyType.PHY_LE_ALL_SUPPORTED;
+            console.info("[bluetooth_js]PHY_LE_ALL_SUPPORTED : " + JSON.stringify(PHY_LE_ALL_SUPPORTED));
+            expect(true).assertEqual(PHY_LE_ALL_SUPPORTED == 255);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
+         * @tc.desc   Test constant PhyType api12
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
+            console.info("[bluetooth_js]PHY_LE_1M : " + JSON.stringify(PHY_LE_1M));
+            expect(true).assertEqual(PHY_LE_1M == 1);
+
+            let PHY_LE_ALL_SUPPORTED = bluetooth.PhyType.PHY_LE_ALL_SUPPORTED;
+            console.info("[bluetooth_js]PHY_LE_ALL_SUPPORTED : " + JSON.stringify(PHY_LE_ALL_SUPPORTED));
+            expect(true).assertEqual(PHY_LE_ALL_SUPPORTED == 255);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                bluetooth.startBLEScan(null, null);
+                expect().assertFail();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
+         * @tc.desc   Test createBleScanner
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let testBleScanner:bluetooth.BleScanner = bluetooth.createBleScanner();
+                console.info("[bluetooth_js]createBleScanner result: " + JSON.stringify(testBleScanner));
+                expect(true).assertEqual(testBleScanner != null);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
+         * @tc.desc   Test startScan
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let arrayBuffer = new ArrayBuffer(8);
+            let scanFilter: bluetooth.ScanFilter = {
+                deviceId: "00:11:22:33:44:55",
+                name: "testStartScan",
+                serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                serviceUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+                serviceSolicitationUuid: "00001888-0000-1000-8000-00805F9B34FB",
+                serviceSolicitationUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+                serviceData: arrayBuffer,
+                serviceDataMask: arrayBuffer,
+                manufactureId: 4567,
+                manufactureData: arrayBuffer,
+                manufactureDataMask: arrayBuffer
+            };
+
+            try {
+                BleScanner.on("BLEDeviceFind", onReceiveEvents);
+                await BleScanner.startScan([scanFilter]).then(() => {
+                    console.info('[bluetooth_js] bleScanner startScan success');
+                });
+                await sleep(500);
+                await BleScanner.stopScan().then(() => {
+                    console.info('[bluetooth_js] bleScanner stopScan success');
+                });
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                BleScanner.off("BLEDeviceFind", onReceiveEvents);
+                if (err.code == 801 || err.code == 2900009) {
+                    console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
+                    expect(true).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            BleScanner.off("BLEDeviceFind", onReceiveEvents);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
+         * @tc.desc   Test stopScan
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.NORMAL
+            };
+
+            try {
+                await BleScanner.startScan([{}], scanOptions).then(() => {
+                    console.info('[bluetooth_js] bleScanner startScan success');
+                });
+                await sleep(500);
+                await BleScanner.stopScan().then(() => {
+                    console.info('[bluetooth_js] bleScanner stopScan success');
+                });
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 || err.code == 2900009) {
+                    console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
+                    expect(true).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
+         * @tc.desc   Test startScan 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await BleScanner.startScan(null, null).then(() => {
+                    console.info('[bluetooth_js] bleScanner startScan success');
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
+         * @tc.desc   Test startScan again
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let arrayBuffer = new ArrayBuffer(8);
+            let scanFilter: bluetooth.ScanFilter = {
+                deviceId: "00:11:22:33:44:55",
+                name: "testStartScan",
+                serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                serviceUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+                serviceSolicitationUuid: "00001888-0000-1000-8000-00805F9B34FB",
+                serviceSolicitationUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+                serviceData: arrayBuffer,
+                serviceDataMask: arrayBuffer,
+                manufactureId: 4567,
+                manufactureData: arrayBuffer,
+                manufactureDataMask: arrayBuffer
+            };
+
+            try {
+                await BleScanner.startScan([scanFilter]).then(() => {
+                    console.info('[bluetooth_js] bleScanner startScan success');
+                });
+                await sleep(500);
+                await BleScanner.startScan([scanFilter]).then(() => {
+                    console.info('[bluetooth_js] bleScanner startScan success');
+                });
+                expect().assertFail();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("BleScanner.startScan is not support.");
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2902050);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
+         * @tc.desc   Test ScanReportType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let ON_FOUND = bluetooth.ScanReportType.ON_FOUND;
+            console.info("[bluetooth_js]ScanReportType ON_FOUND: " + JSON.stringify(ON_FOUND));
+            expect(ON_FOUND).assertEqual(1);
+
+            let ON_LOST = bluetooth.ScanReportType.ON_LOST;
+            console.info("[bluetooth_js]ScanReportType ON_LOST: " + JSON.stringify(ON_LOST));
+            expect(ON_LOST).assertEqual(2);
+
+            let ON_BATCH = bluetooth.ScanReportType.ON_BATCH;
+            console.info("[bluetooth_js]ScanReportType ON_BATCH: " + JSON.stringify(ON_BATCH));
+            expect(ON_BATCH).assertEqual(3);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
+         * @tc.desc   Test ScanReportMode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let NORMAL = bluetooth.ScanReportMode.NORMAL;
+            console.info("[bluetooth_js]ScanReportMode NORMAL: " + JSON.stringify(NORMAL));
+            expect(NORMAL).assertEqual(1);
+
+            let FENCE_SENSITIVITY_LOW = bluetooth.ScanReportMode.FENCE_SENSITIVITY_LOW;
+            console.info("[bluetooth_js]ScanReportMode FENCE_SENSITIVITY_LOW: " + JSON.stringify(FENCE_SENSITIVITY_LOW));
+            expect(FENCE_SENSITIVITY_LOW).assertEqual(10);
+
+            let FENCE_SENSITIVITY_HIGH = bluetooth.ScanReportMode.FENCE_SENSITIVITY_HIGH;
+            console.info("[bluetooth_js]ScanReportMode FENCE_SENSITIVITY_HIGH: " + JSON.stringify(FENCE_SENSITIVITY_HIGH));
+            expect(FENCE_SENSITIVITY_HIGH).assertEqual(11);
+
+            let BATCH = bluetooth.ScanReportMode.BATCH;
+            console.info("[bluetooth_js]ScanReportMode BATCH: " + JSON.stringify(BATCH));
+            expect(BATCH).assertEqual(2);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
+         * @tc.desc   Test getConnectedBLEDevices api21
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+            try {
+                let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT);
+                console.info("[bluetooth_js]getConnectedBLEDevices GATT: " + JSON.stringify(devices));
+            } catch (err) {
+                console.error("getConnectedBLEDevices GATT errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+
+            try {
+                let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_CLIENT);
+                console.info("[bluetooth_js]getConnectedBLEDevices GATT_CLIENT: " + JSON.stringify(devices));
+            } catch (err) {
+                console.error("getConnectedBLEDevices GATT_CLIENT errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+
+            try {
+                let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_SERVER);
+                console.info("[bluetooth_js]getConnectedBLEDevices GATT_SERVER: " + JSON.stringify(devices));
+            } catch (err) {
+                console.error("getConnectedBLEDevices GATT_SERVER errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
+         * @tc.desc   Test BleProfile api21
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+            let BleProfileGATT = bluetooth.BleProfile.GATT;
+            console.info("[bluetooth_js]GATT: " + JSON.stringify(BleProfileGATT));
+            expect(BleProfileGATT).assertEqual(1);
+
+            let BleProfileGATT_CLIENT = bluetooth.BleProfile.GATT_CLIENT;
+            console.info("[bluetooth_js]GATT_CLIENT: " + JSON.stringify(BleProfileGATT_CLIENT));
+            expect(BleProfileGATT_CLIENT).assertEqual(2);
+
+            let BleProfileGATT_SERVER = bluetooth.BleProfile.GATT_SERVER;
+            console.info("[bluetooth_js]GATT_SERVER: " + JSON.stringify(BleProfileGATT_SERVER));
+            expect(BleProfileGATT_SERVER).assertEqual(3);
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100
+         * @tc.desc 20251113API22用例覆盖 ConnectionParam Enumvalue 3-1.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let value1 = bluetooth.ConnectionParam.LOW_POWER;
+                console.info('[bt_arkts]get LOW_POWER is ' + JSON.stringify(value1));
+                expect(value1).assertEqual(1);
+                let value2 = bluetooth.ConnectionParam.BALANCED;
+                console.info('[bt_arkts]get BALANCED is ' + JSON.stringify(value2));
+                expect(value2).assertEqual(2);
+                let value3 = bluetooth.ConnectionParam.HIGH;
+                console.info('[bt_arkts]get HIGH is ' + JSON.stringify(value3));
+                expect(value3).assertEqual(3);
+            } catch (err) {
+                console.error(`[bt_arkts]get ConnectionParam enumvalue ,code is ${err.code},message is ${err.message}`);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
+         * @tc.desc 20251113API22用例覆盖 on_serviceChange/off_serviceChange 1-1.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                device.on('serviceChange',onReceiveEvent_void);
+                console.info('[bt_arkts]return_on value type is null，device on success')
+                device.off('serviceChange',onReceiveEvent_void);
+                console.info('[bt_arkts]return_off value type is null，device off success')
+            } catch (error) {
+                console.error(`[bt_arkts]service change is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts]is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100
+         * @tc.desc 20251113API22用例覆盖 updateConnectionParam 1-3 .
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                await device.updateConnectionParam(bluetooth.ConnectionParam.LOW_POWER);
+                console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
+            } catch (error) {
+                console.error(`[bt_arkts]device updateConnectionParam is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts] device updateConnectionParam is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(2901003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200
+         * @tc.desc 20251113API22用例覆盖 updateConnectionParam 2-3 .
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                await device.updateConnectionParam(bluetooth.ConnectionParam.BALANCED);
+                console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
+            } catch (error) {
+                console.error(`[bt_arkts]device updateConnectionParam is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts] device updateConnectionParam is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] device updateConnectionParam error is 2900099');
+                    expect(Number(error.code)).assertEqual(2901003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300
+         * @tc.desc 20251113API22用例覆盖 updateConnectionParam GATT未连接.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                await device.updateConnectionParam(bluetooth.ConnectionParam.HIGH);
+                console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
+            } catch (error) {
+                console.error(`[bt_arkts]device updateConnectionParam is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts] device updateConnectionParam is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(2901003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100
+         * @tc.desc 20251113API22用例覆盖 GattServer-getService 2901008 Gatt service is not found.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let serviceUuid = '00001888-0000-1000-8000-00805f9b34fb';
+                let returu_gattservice: bluetooth.GattService = gattServer.getService(serviceUuid);
+                console.info('[bt_arkts]gattServer getService get return_values is' + JSON.stringify(returu_gattservice));
+                let return_serviceUuid = returu_gattservice.serviceUuid;
+                console.info('[bt_arkts]get method attribute_serviceUuid' + JSON.stringify(return_serviceUuid));
+                let isprimary = returu_gattservice.isPrimary;
+                console.info('[bt_arkts]get method attribute_isPrimary' + JSON.stringify(isprimary));
+                let characteristics = returu_gattservice.characteristics;
+                console.info('[bt_arkts]get method attribute_characteristics' + JSON.stringify(characteristics));
+                let includeServices = returu_gattservice.includeServices;
+                console.info('[bt_arkts]get method attribute_includeServices' + JSON.stringify(includeServices));
+                console.info('[bt_arkts]get method all attribute is success');
+            } catch (error) {
+                console.error(`[bt_arkts]getservice failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts]SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100 getservice is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts]error is 2901008');
+                    expect(Number(error.code)).assertEqual(2901008);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200
+         * @tc.desc 20251113API22用例覆盖 GattServer-getService input is error.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let returu_gattservice: bluetooth.GattService = gattServer.getService(null);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] gattServer getService input is null, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100
+         * @tc.desc 20251113API22用例覆盖 GattServer-getServices.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let return_list: bluetooth.GattService[] = gattServer.getServices();
+                console.info('[bt_arkts] return_list is' + JSON.stringify(return_list));
+                console.info('[bt_arkts] return_list length is ' + return_list.length);
+                if (return_list.length > 0) {
+                    console.info('[bt_arkts]return_result is >0' + JSON.stringify(return_list[0]));
+                } else {
+                    console.info('[bt_arkts]return_result is' + JSON.stringify(return_list));
+                }
+            } catch (error) {
+                console.error(`[bt_arkts]getservices failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts]getservices is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100
+         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let return_status: bluetooth.ProfileConnectionState = gattServer.getConnectedState('01:02:00:02:03:01');
+                console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+                expect(return_status).assertEqual(0);
+            } catch (error) {
+                console.error(`[bt_arkts]server ProfileConnectionState 0100 is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts]getConnectedState is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect(Number(error.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200
+         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState 401.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let return_status: bluetooth.ProfileConnectionState = gattServer.getConnectedState('01');
+                console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+                expect(return_status).assertEqual(0);
+            } catch (error) {
+                console.error(`[bt_arkts]server ProfileConnectionState 0300 is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts]getConnectedState is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server getConnectedState input is error');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100
+         * @tc.desc 20251113API22用例覆盖GattClientDevice-getConnectedState.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let return_status=device.getConnectedState();
+                console.info('[bt_arkts] client ProfileConnectionState 0100 is' + JSON.stringify(return_status))
+                expect(return_status).assertEqual(0);
+            } catch (error) {
+                console.error(`[bt_arkts]getConnectedState status is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts]getConnectedState is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts]error code is 2900009');
+                    expect(Number(error.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+    })
+}

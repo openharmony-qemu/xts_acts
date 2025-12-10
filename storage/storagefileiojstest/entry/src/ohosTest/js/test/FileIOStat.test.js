@@ -28,9 +28,12 @@ export default function fileIOTestStat() {
 describe('fileIOTestStat', function () {
 
   /**
+   * @tc.name   fileio_test_stat_stat_sync_000
    * @tc.number SUB_STORAGE_FileIO_statSync_0000
-   * @tc.name fileio_test_stat_stat_sync_000
-   * @tc.desc Function of API, statSync. Gets information about the file in the specified path.
+   * @tc.desc   Function of API, statSync. Gets information about the file in the specified path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_stat_sync_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_stat_sync_000');
@@ -47,9 +50,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_stat_sync_001
    * @tc.number SUB_STORAGE_FileIO_statSync_0100
-   * @tc.name fileio_test_stat_stat_sync_001
-   * @tc.desc Function of API, statSync. The specified file does not exist.
+   * @tc.desc   Function of API, statSync. The specified file does not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_stat_sync_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_stat_sync_001');
@@ -64,9 +70,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_stat_sync_002
    * @tc.number SUB_STORAGE_FileIO_statSync_0200
-   * @tc.name fileio_test_stat_stat_sync_002
-   * @tc.desc Function of API, statSync. The parameter is the directory path.
+   * @tc.desc   Function of API, statSync. The parameter is the directory path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_stat_sync_002', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_stat_stat_sync_002') + 'd';
@@ -83,9 +92,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_stat_sync_003
    * @tc.number SUB_STORAGE_FileIO_statSync_0300
-   * @tc.name fileio_test_stat_stat_sync_003
-   * @tc.desc Function of API, statSync. The file path is greater than 4096.
+   * @tc.desc   Function of API, statSync. The file path is greater than 4096.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_stat_sync_003', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_stat_stat_sync_003');
@@ -109,9 +121,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_dev_000
    * @tc.number SUB_STORAGE_FileIO_Stat_dev_0000
-   * @tc.name fileio_test_stat_dev_000
-   * @tc.desc Function of API. Get the device number used by the file.
+   * @tc.desc   Function of API. Get the device number used by the file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_dev_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_dev_000');
@@ -128,9 +143,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_ino_000
    * @tc.number SUB_STORAGE_FileIO_Stat_ino_0000
-   * @tc.name fileio_test_stat_ino_000
-   * @tc.desc Function of API. Get inode bigint.
+   * @tc.desc   Function of API. Get inode bigint.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_ino_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_ino_000');
@@ -147,9 +165,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_mode_000
    * @tc.number SUB_STORAGE_FileIO_Stat_mode_0000
-   * @tc.name fileio_test_stat_mode_000
-   * @tc.desc Function of API. Get file type and access rights.
+   * @tc.desc   Function of API. Get file type and access rights.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_mode_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_mode_000');
@@ -166,9 +187,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_nlink_000
    * @tc.number SUB_STORAGE_FileIO_Stat_nlink_0000
-   * @tc.name fileio_test_stat_nlink_000
-   * @tc.desc Function of API. Gets the number of hard connections to the file.
+   * @tc.desc   Function of API. Gets the number of hard connections to the file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_nlink_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_nlink_000');
@@ -185,9 +209,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_uid_000
    * @tc.number SUB_STORAGE_FileIO_Stat_uid_0000
-   * @tc.name fileio_test_stat_uid_000
-   * @tc.desc Function of API. Get file owner user ID.
+   * @tc.desc   Function of API. Get file owner user ID.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_uid_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_uid_000');
@@ -204,9 +231,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_gid_000
    * @tc.number SUB_STORAGE_FileIO_Stat_gid_0000
-   * @tc.name fileio_test_stat_gid_000
-   * @tc.desc Function of API. Get group ID.
+   * @tc.desc   Function of API. Get group ID.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_gid_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_gid_000');
@@ -223,9 +253,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_rdev_000
    * @tc.number SUB_STORAGE_FileIO_Stat_rdev_0000
-   * @tc.name fileio_test_stat_rdev_000
-   * @tc.desc Function of API. Get the device number of the device file.
+   * @tc.desc   Function of API. Get the device number of the device file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_rdev_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_rdev_000');
@@ -242,9 +275,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_size_000
    * @tc.number SUB_STORAGE_FileIO_stat_size_0000
-   * @tc.name fileio_test_stat_size_000
-   * @tc.desc Function of API. Gets the file capacity in bytes.
+   * @tc.desc   Function of API. Gets the file capacity in bytes.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_size_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_size_000');
@@ -261,9 +297,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_blocks_000
    * @tc.number SUB_STORAGE_FileIO_Stat_blocks_0000
-   * @tc.name fileio_test_stat_blocks_000
-   * @tc.desc Function of API. Gets the disk block occupied by the file.
+   * @tc.desc   Function of API. Gets the disk block occupied by the file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_blocks_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_blocks_000');
@@ -280,9 +319,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_atime_000
    * @tc.number SUB_STORAGE_FileIO_stat_atime_0000
-   * @tc.name fileio_test_stat_atime_000
-   * @tc.desc Function of API. Gets the time when a file was last accessed.
+   * @tc.desc   Function of API. Gets the time when a file was last accessed.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_atime_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_atime_000');
@@ -299,9 +341,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_mtime_000
    * @tc.number SUB_STORAGE_FileIO_Stat_mtime_0000
-   * @tc.name fileio_test_stat_mtime_000
-   * @tc.desc Function of API. Gets the time when a file was last modified
+   * @tc.desc   Function of API. Gets the time when a file was last modified
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_mtime_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_mtime_000');
@@ -318,9 +363,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_ctime_000
    * @tc.number SUB_STORAGE_FileIO_Stat_ctime_0000
-   * @tc.name fileio_test_stat_ctime_000
-   * @tc.desc Function of API. Gets the time when a file last changed state
+   * @tc.desc   Function of API. Gets the time when a file last changed state
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_ctime_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_ctime_000');
@@ -337,9 +385,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_block_device_000
    * @tc.number SUB_STORAGE_FileIO_Stat_isBlockDevice_0000
-   * @tc.name fileio_test_stat_is_block_device_000
-   * @tc.desc Function of API, isBlockDevice. Determine whether it is a block device. The return value is Boolean.
+   * @tc.desc   Function of API, isBlockDevice. Determine whether it is a block device. The return value is Boolean.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_block_device_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_block_device_000');
@@ -356,9 +407,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_block_device_001
    * @tc.number SUB_STORAGE_FileIO_Stat_isBlockDevice_0100
-   * @tc.name fileio_test_stat_is_block_device_001
-   * @tc.desc Function of API, isBlockDevice. Determine whether it is a block device. The return value is false.
+   * @tc.desc   Function of API, isBlockDevice. Determine whether it is a block device. The return value is false.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_block_device_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_block_device_001');
@@ -375,9 +429,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_block_device_002
    * @tc.number SUB_STORAGE_FileIO_Stat_isBlockDevice_0200
-   * @tc.name fileio_test_stat_is_block_device_002
-   * @tc.desc Function of API, isBlockDevice. The parameter is - 1
+   * @tc.desc   Function of API, isBlockDevice. The parameter is - 1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_block_device_002', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_block_device_002');
@@ -395,10 +452,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_character_device_000
    * @tc.number SUB_STORAGE_FileIO_stat_isCharacterDevice_0000
-   * @tc.name fileio_test_stat_is_character_device_000
-   * @tc.desc Function of API, isCharacterDevice.
-   * Determine whether it is a character device. The return value is Boolean.
+   * @tc.desc   Function of API, isCharacterDevice.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_character_device_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_character_device_000');
@@ -415,10 +474,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_character_device_001
    * @tc.number SUB_STORAGE_FileIO_Stat_isCharacterDevice_0100
-   * @tc.name fileio_test_stat_is_character_device_001
-   * @tc.desc Function of API, isCharacterDevice.
-   * Determine whether it is a character device. The return value is false.
+   * @tc.desc   Function of API, isCharacterDevice.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_character_device_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_character_device_001');
@@ -435,9 +496,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_character_device_002
    * @tc.number SUB_STORAGE_FileIO_Stat_isCharacterDevice_0200
-   * @tc.name fileio_test_stat_is_character_device_002
-   * @tc.desc Function of API, isCharacterDevice. The parameter is - 1
+   * @tc.desc   Function of API, isCharacterDevice. The parameter is - 1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_character_device_002', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_character_device_002');
@@ -455,9 +519,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_directory_000
    * @tc.number SUB_STORAGE_FileIO_Stat_isDirectory_0000
-   * @tc.name fileio_test_stat_is_directory_000
-   * @tc.desc Function of API, isDirectory. Determine whether it is a directory. The return value is Boolean.
+   * @tc.desc   Function of API, isDirectory. Determine whether it is a directory. The return value is Boolean.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_directory_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_directory_000');
@@ -474,9 +541,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_directory_001
    * @tc.number SUB_STORAGE_FileIO_Stat_isDirectory_0100
-   * @tc.name fileio_test_stat_is_directory_001
-   * @tc.desc Function of API, isDirectory. Determine whether it is a directory. The return value is false.
+   * @tc.desc   Function of API, isDirectory. Determine whether it is a directory. The return value is false.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_directory_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_directory_001');
@@ -493,9 +563,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_directory_002
    * @tc.number SUB_STORAGE_FileIO_Stat_isDirectory_0200
-   * @tc.name fileio_test_stat_is_directory_002
-   * @tc.desc Function of API, isDirectory. Determine whether it is a directory. The return value is true.
+   * @tc.desc   Function of API, isDirectory. Determine whether it is a directory. The return value is true.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_directory_002', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_stat_is_directory_002') + 'd'
@@ -512,9 +585,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_directory_003
    * @tc.number SUB_STORAGE_FileIO_Stat_isDirectory_0300
-   * @tc.name fileio_test_stat_is_directory_003
-   * @tc.desc Function of API, isDirectory. The parameter is - 1
+   * @tc.desc   Function of API, isDirectory. The parameter is - 1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_directory_003', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_stat_is_directory_003') + 'd'
@@ -532,9 +608,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_fifo_000
    * @tc.number SUB_STORAGE_FileIO_stat_isFifo_0000
-   * @tc.name fileio_test_stat_is_fifo_000
-   * @tc.desc Function of API, isFIFO. Determine whether it is a fifo. The return value is Boolean.
+   * @tc.desc   Function of API, isFIFO. Determine whether it is a fifo. The return value is Boolean.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_fifo_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_fifo_000');
@@ -551,9 +630,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_fifo_001
    * @tc.number SUB_STORAGE_FileIO_Stat_isFifo_0100
-   * @tc.name fileio_test_stat_is_fifo_001
-   * @tc.desc Function of API, isFIFO. Determine whether it is a fifo. The return value is false.
+   * @tc.desc   Function of API, isFIFO. Determine whether it is a fifo. The return value is false.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_fifo_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_fifo_001');
@@ -570,9 +652,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_fifo_002
    * @tc.number SUB_STORAGE_FileIO_Stat_isFifo_0200
-   * @tc.name fileio_test_stat_is_fifo_002
-   * @tc.desc Function of API, isFIFO. The parameter is - 1
+   * @tc.desc   Function of API, isFIFO. The parameter is - 1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_fifo_002', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_fifo_002');
@@ -590,9 +675,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_file_000
    * @tc.number SUB_STORAGE_FileIO_Stat_isFile_0000
-   * @tc.name fileio_test_stat_is_file_000
-   * @tc.desc Function of API, isFile. Determine whether it is a file. The return value is Boolean.
+   * @tc.desc   Function of API, isFile. Determine whether it is a file. The return value is Boolean.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_file_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_file_000');
@@ -609,9 +697,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_file_001
    * @tc.number SUB_STORAGE_FileIO_Stat_isFile_0100
-   * @tc.name fileio_test_stat_is_file_001
-   * @tc.desc Function of API, isFile. Determine whether it is a file. The return value is true.
+   * @tc.desc   Function of API, isFile. Determine whether it is a file. The return value is true.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_file_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_file_001');
@@ -629,9 +720,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_file_002
    * @tc.number SUB_STORAGE_FileIO_Stat_isFile_0200
-   * @tc.name fileio_test_stat_is_file_002
-   * @tc.desc Function of API, isFile. Determine whether it is a file. The return value is false.
+   * @tc.desc   Function of API, isFile. Determine whether it is a file. The return value is false.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_file_002', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_stat_is_file_002');
@@ -648,9 +742,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_file_003
    * @tc.number SUB_STORAGE_FileIO_Stat_isFile_0300
-   * @tc.name fileio_test_stat_is_file_003
-   * @tc.desc Function of API, isFile. The parameter is - 1
+   * @tc.desc   Function of API, isFile. The parameter is - 1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_file_003', Level.LEVEL1, async function () {
     let dpath = await nextFileName('fileio_test_stat_is_file_003');
@@ -668,9 +765,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_socket_000
    * @tc.number SUB_STORAGE_FileIO_Stat_isSocket_0000
-   * @tc.name fileio_test_stat_is_socket_000
-   * @tc.desc Function of API, isSocket. Determine whether it is a socket. The return value is Boolean.
+   * @tc.desc   Function of API, isSocket. Determine whether it is a socket. The return value is Boolean.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_socket_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_socket_000');
@@ -687,9 +787,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_socket_001
    * @tc.number SUB_STORAGE_FileIO_Stat_isSocket_0100
-   * @tc.name fileio_test_stat_is_socket_001
-   * @tc.desc Function of API, isSocket. Determine whether it is a socket. The return value is false.
+   * @tc.desc   Function of API, isSocket. Determine whether it is a socket. The return value is false.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_socket_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_socket_001');
@@ -706,9 +809,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_socket_002
    * @tc.number SUB_STORAGE_FileIO_Stat_isSocket_0200
-   * @tc.name fileio_test_stat_is_socket_002
-   * @tc.desc Function of API, isSocket. The parameter is - 1
+   * @tc.desc   Function of API, isSocket. The parameter is - 1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_socket_002', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_socket_002');
@@ -726,9 +832,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_symbolic_link_000
    * @tc.number SUB_STORAGE_FileIO_Stat_isSymbolicLink_0000
-   * @tc.name fileio_test_stat_is_symbolic_link_000
-   * @tc.desc Function of API, isSymbolicLink. Determine whether it is a symbolic link. The return value is Boolean.
+   * @tc.desc   Function of API, isSymbolicLink. Determine whether it is a symbolic link. The return value is Boolean.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_symbolic_link_000', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_symbolic_link_000');
@@ -745,9 +854,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_symbolic_link_001
    * @tc.number SUB_STORAGE_FileIO_Stat_isSymbolicLink_0100
-   * @tc.name fileio_test_stat_is_symbolic_link_001
-   * @tc.desc Function of API, isSymbolicLink. Determine whether it is a symbolic link. The return value is false.
+   * @tc.desc   Function of API, isSymbolicLink. Determine whether it is a symbolic link. The return value is false.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_symbolic_link_001', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_symbolic_link_001');
@@ -764,9 +876,12 @@ describe('fileIOTestStat', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stat_is_symbolic_link_002
    * @tc.number SUB_STORAGE_FileIO_Stat_isSymbolicLink_0200
-   * @tc.name fileio_test_stat_is_symbolic_link_002
-   * @tc.desc Function of API, isSymbolicLink. The parameter is - 1
+   * @tc.desc   Function of API, isSymbolicLink. The parameter is - 1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('fileio_test_stat_is_symbolic_link_002', Level.LEVEL1, async function () {
     let fpath = await nextFileName('fileio_test_stat_is_symbolic_link_002');

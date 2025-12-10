@@ -81,9 +81,12 @@ export default function webgl1_program() {
         }
 
         /**
+         * @tc.name   webgl_test_createProgram
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0001
-         * @tc.name webgl_test_createProgram
-         * @tc.desc Test createProgram.
+         * @tc.desc   Test createProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_createProgram', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_createProgram] createProgram");
@@ -109,9 +112,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_deleteProgram
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0002
-         * @tc.name webgl_test_deleteProgram
-         * @tc.desc Test deleteProgram.
+         * @tc.desc   Test deleteProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteProgram', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteProgram] deleteProgram");
@@ -130,9 +136,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_deleteProgram_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0003
-         * @tc.name webgl_test_deleteProgram_1
-         * @tc.desc Test deleteProgram.
+         * @tc.desc   Test deleteProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteProgram_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteProgram_1] deleteProgram");
@@ -147,9 +156,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_deleteProgram_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0004
-         * @tc.name webgl_test_deleteProgram_2
-         * @tc.desc Test deleteProgram.
+         * @tc.desc   Test deleteProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_deleteProgram_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteProgram_2] deleteProgram");
@@ -171,9 +183,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_isProgram
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0005
-         * @tc.name webgl_test_isProgram
-         * @tc.desc Test isProgram.
+         * @tc.desc   Test isProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isProgram', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isProgram] isProgram");
@@ -190,9 +205,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_isProgram_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0006
-         * @tc.name webgl_test_isProgram_1
-         * @tc.desc Test isProgram.
+         * @tc.desc   Test isProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isProgram_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isProgram_1] isProgram");
@@ -207,9 +225,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_isProgram_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0007
-         * @tc.name webgl_test_isProgram_2
-         * @tc.desc Test isProgram.
+         * @tc.desc   Test isProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isProgram_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isProgram_2] isProgram");
@@ -223,9 +244,12 @@ export default function webgl1_program() {
         })
 
         /**
+         * @tc.name   webgl_test_linkProgram
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0008
-         * @tc.name webgl_test_linkProgram
-         * @tc.desc Test linkProgram.
+         * @tc.desc   Test linkProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_linkProgram', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_linkProgram] linkProgram");
@@ -262,9 +286,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_getProgramParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0009
-         * @tc.name webgl_test_getProgramParameter
-         * @tc.desc Test getProgramParameter.
+         * @tc.desc   Test getProgramParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getProgramParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -297,9 +324,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_getProgramParameter_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0010
-         * @tc.name webgl_test_getProgramParameter_1
-         * @tc.desc Test getProgramParameter.
+         * @tc.desc   Test getProgramParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getProgramParameter_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -313,9 +343,12 @@ export default function webgl1_program() {
         })
 
         /**
+         * @tc.name   webgl_test_validateProgram
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0011
-         * @tc.name webgl_test_validateProgram
-         * @tc.desc Test validateProgram.
+         * @tc.desc   Test validateProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_validateProgram', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_validateProgram] validateProgram");
@@ -367,9 +400,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_useProgram
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0012
-         * @tc.name webgl_test_useProgram
-         * @tc.desc Test useProgram.
+         * @tc.desc   Test useProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_useProgram', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_useProgram] useProgram");
@@ -407,9 +443,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_useProgram_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0013
-         * @tc.name webgl_test_useProgram_1
-         * @tc.desc Test useProgram.
+         * @tc.desc   Test useProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_useProgram_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_useProgram_1] useProgram");
@@ -423,9 +462,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_useProgram_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0014
-         * @tc.name webgl_test_useProgram_2
-         * @tc.desc Test useProgram.
+         * @tc.desc   Test useProgram.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_useProgram_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_useProgram_2] useProgram");
@@ -438,9 +480,12 @@ export default function webgl1_program() {
         })
 
         /**
+         * @tc.name   webgl_test_getProgramInfoLog
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0015
-         * @tc.name webgl_test_getProgramInfoLog
-         * @tc.desc Test getProgramInfoLog.
+         * @tc.desc   Test getProgramInfoLog.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getProgramInfoLog', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getProgramInfoLog] getProgramInfoLog");
@@ -463,9 +508,12 @@ export default function webgl1_program() {
 
 
         /**
+         * @tc.name   webgl_test_getProgramInfoLog_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_PROGRAM_0016
-         * @tc.name webgl_test_getProgramInfoLog_2
-         * @tc.desc Test getProgramInfoLog.
+         * @tc.desc   Test getProgramInfoLog.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getProgramInfoLog_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {

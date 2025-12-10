@@ -167,10 +167,12 @@ static void InitCommonTestParamsAndDoImport(struct HksImportWrappedKeyTestParams
 }
 
 /**
- * @tc.name: HuksImportWrappedX25519Test.Security_HUKS_NAPI_Wrapped_0100
- * @tc.desc: Test import wrapped aes256-gcm-no_padding key including generate&export x25519 key, generate kek,
- * agree, encrypt, of which generate kek, agree, encrypt should done by caller self.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Wrapped_0100
+ * @tc.number Security_HUKS_NAPI_Wrapped_0100
+ * @tc.desc   Test import wrapped aes256-gcm-no_padding key including generate&export x25519 key, generate kek,
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksImportWrappedX25519Test, Security_HUKS_NAPI_Wrapped_0100, TestSize.Level0)
 {

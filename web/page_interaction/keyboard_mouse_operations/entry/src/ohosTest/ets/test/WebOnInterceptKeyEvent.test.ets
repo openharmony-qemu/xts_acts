@@ -57,28 +57,28 @@ export default function webOnInterceptKeyEvent() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONINTERCEPTKEYEVENT_0200
-    * @tc.name        : testOnInterceptKeyEvent002
-    * @tc.desc        : test onInterceptKeyEvent when return true
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnInterceptKeyEvent002
+     * @tc.number SUB_WEB_ONINTERCEPTKEYEVENT_0200
+     * @tc.desc   test onInterceptKeyEvent when return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnInterceptKeyEvent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnInterceptKeyEvent002", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("emitOnInterceptKeyEvent002", 2047, 175210, done);
       Utils.waitAndClickComponent(driver, "WebOnInterceptKeyEventTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONINTERCEPTKEYEVENT_0300
-    * @tc.name        : testOnInterceptKeyEvent003
-    * @tc.desc        : test onInterceptKeyEvent when return false
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnInterceptKeyEvent003
+     * @tc.number SUB_WEB_ONINTERCEPTKEYEVENT_0300
+     * @tc.desc   test onInterceptKeyEvent when return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnInterceptKeyEvent003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnInterceptKeyEvent003", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testOnInterceptKeyEvent003", 2047, 175220, done);

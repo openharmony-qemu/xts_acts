@@ -1,23 +1,25 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the 'License');
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an 'AS IS' BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import emitter from '@ohos.events.emitter';
-import { expect } from "../../../hypium/index";
-import { Driver, ON, On } from '@ohos.UiTest';
 
-export default class Utils {
-  static async msSleep(count: int): Promise<int> {
+import events_emitter from '@ohos.events.emitter';
+import { expect } from "../../../hypium/index";
+import { RecordData } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
+
+export default class Utils{
+  static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
@@ -26,77 +28,61 @@ export default class Utils {
   }
 
   static async clickComponent(id: string) {
-    console.info('11111');
     let driver = Driver.create();
-    console.info('22222');
     let component = await driver.findComponent(ON.id(id));
-    console.info('33333');
     component?.click();
-    console.info('44444');
   }
 
-  static async longClickComponent(id: string) {
-    let driver = Driver.create();
-    let component = await driver.findComponent(ON.id(id));
-    component?.longClick();
-  }
-
-  static async emitEvent(actualValue: boolean | string | Int | object, eventId: Int) {
+  static async emitEvent(actualValue: boolean | string | number | object, eventId: Long) {
     try {
-      console.info("Entry emitEvent, actualValue = " + actualValue);
-      const tempData: Record<string, boolean | string | Int | object> = {
-        "ACTION": actualValue
-      };
-      let backData: emitter.EventData = {
+      let tempData: Record<string, RecordData> = {};
+      tempData['ACTION'] = actualValue;
+      let backData: events_emitter.EventData = {
         data: tempData
       }
 
-      let backEvent: emitter.InnerEvent = {
+      let backEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW
       }
-      const actionValue = (backData.data as Record<string, boolean | string | Int | object>)["ACTION"];
-      console.info("webFlag start to emit action state, ackData.data[\"ACTION\"] = " + String(actionValue));
-      emitter.emit(backEvent, backData);
+      events_emitter.emit(backEvent, backData);
+      console.info('Utils sleep start');
       await Utils.msSleep(2000)
+      console.info('Finish emit, Utils sleep over');
     } catch (err) {
-      console.info("webFlag emit action state err: " + JSON.stringify(err));
+      console.info('webFlag emit action state err: ' + JSON.stringify(err));
     }
   }
 
-  static registerBaseEvent(testCaseName: string, expected: Object, eventId: Int,
-    done: () => void, expectFunction: (backData: emitter.EventData, expected: Object) => void) {
+  static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
+    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) {
     console.info(`[${testCaseName}] START`);
     try {
-      let callBack = (backData: emitter.EventData) => {
+      let callBack = (backData: events_emitter.EventData) => {
         try {
           console.info(`${testCaseName} get result is:` + JSON.stringify(backData));
           expectFunction(backData, expected);
-          console.info(`[${testCaseName}] END`);
         } catch (err) {
           console.info(`[${testCaseName}] err:` + JSON.stringify(err));
         }
         done()
       }
-      let innerEvent: emitter.InnerEvent = {
+      let innerEvent: events_emitter.InnerEvent = {
         eventId: eventId,
-        priority: emitter.EventPriority.LOW
+        priority: events_emitter.EventPriority.LOW
       }
-      emitter.on(innerEvent, callBack)
-      console.info("Finish registerBaseEvent, innerEvent.eventId=" + innerEvent.eventId + ",innerEvent.priority=" +
-      innerEvent.priority);
+      events_emitter.on(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Int, done: () => void) {
-    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done,
-      (backData: emitter.EventData, expected: Object) => {
-        const data = backData?.data as Record<string, boolean | string | Int | object>;
-        const action = data['ACTION'];
-        console.info(`Begin to assert [${action}] Equal [${expected}]`);
-        expect(action).assertEqual(expected);
-      });
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
+      const data = backData?.data as Record<string, RecordData>;
+      const action = data['ACTION'];
+      console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
+      expect(action).assertEqual(expected);
+    });
   }
 }

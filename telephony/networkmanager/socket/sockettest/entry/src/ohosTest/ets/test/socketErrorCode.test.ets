@@ -196,14 +196,14 @@ let connOptErr: socket.TLSConnectOptions = {
 export default function SocketErrorCodeTest01() {
   describe('SocketErrorCodeTest01', () => {
 
-    /*
-    * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_GetLocalAddress_0100
-    * @tc.name  :  testNetworkMgrSocketUDPSocketGetLocalAddress0100
-    * @tc.desc  :  UDP GetLocalAddress Bad file descriptor.
-    * @tc.size  :  MediumTest
-    * @tc.type  :  Function
-    * @tc.level :  Level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetLocalAddress0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetLocalAddress_0100
+     * @tc.desc   UDP GetLocalAddress Bad file descriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketUDPSocketGetLocalAddress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketGetLocalAddress0100';
       console.info(`${caseName} test start`);
@@ -227,12 +227,12 @@ export default function SocketErrorCodeTest01() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Socket_UDPSocket_Send_Err_0100
-     * @tc.name   : testNetworkMgrSocketUDPSocketSendErr0100
-     * @tc.desc   : UDPSocket send bad file descriptor.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrSocketUDPSocketSendErr0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_Err_0100
+     * @tc.desc   UDPSocket send bad file descriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketUDPSocketSendErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrSocketUDPSocketSendErr0100';
@@ -277,12 +277,12 @@ export default function SocketErrorCodeTest01() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Socket_UDPSocket_Send_Err_0200
-     * @tc.name   : testNetworkMgrSocketUDPSocketSendErr0200
-     * @tc.desc   : UDPSocket send Bad file descriptor.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrSocketUDPSocketSendErr0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_Err_0200
+     * @tc.desc   UDPSocket send Bad file descriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketUDPSocketSendErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrSocketUDPSocketSendErr0200';
@@ -327,14 +327,14 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_Error_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListenError0100
-     * @tc.desc  :  TLSSocketServer listen(callback) cannot assign requested address.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
-     * */
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListenError0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_Error_0100
+     * @tc.desc   TLSSocketServer listen(callback) cannot assign requested address.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketTLSSocketServerListenError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListenError0100';
       console.info(`${caseName} test start`);
@@ -361,14 +361,14 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_Error_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListenError0200
-     * @tc.desc  :  TLSSocketServer listen(promise) cannot assign requested address.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
-     * */
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListenError0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_Error_0200
+     * @tc.desc   TLSSocketServer listen(promise) cannot assign requested address.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketTLSSocketServerListenError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListenError0200';
       console.info(`${caseName} test start`);
@@ -392,14 +392,14 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_Error_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0100
-     * @tc.desc  :  TLSSocketServer SetExtraOptions(callback) parameter error.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
-     * */
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_Error_0100
+     * @tc.desc   TLSSocketServer SetExtraOptions(callback) parameter error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0100';
       console.info(`${caseName} test start`);
@@ -432,14 +432,14 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_Error_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0200
-     * @tc.desc  :  TLSSocketServer SetExtraOptions(promise) parameter error.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
-     * */
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_Error_0200
+     * @tc.desc   TLSSocketServer SetExtraOptions(promise) parameter error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptionsError0200';
       console.info(`${caseName} test start`);
@@ -469,14 +469,14 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-    * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OffConnect_Error_0100
-    * @tc.name  :  testNetworkMgrSocketTLSSocketServerOffConnectError0100
-    * @tc.desc  :  TLSSocketServer off(connect) parameter error.
-    * @tc.size  :  MediumTest
-    * @tc.type  :  Function
-    * @tc.level :  Level 3
-    * */
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOffConnectError0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OffConnect_Error_0100
+     * @tc.desc   TLSSocketServer off(connect) parameter error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketTLSSocketServerOffConnectError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOffConnectError0100';
       console.info(`${caseName} test start`);
@@ -491,14 +491,14 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-    * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OnConnect_Error_0100
-    * @tc.name  :  testNetworkMgrSocketTLSSocketServerOnConnectError0100
-    * @tc.desc  :  TLSSocketServer on(error) parameter error.
-    * @tc.size  :  MediumTest
-    * @tc.type  :  Function
-    * @tc.level :  Level 3
-    * */
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOnConnectError0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OnConnect_Error_0100
+     * @tc.desc   TLSSocketServer on(error) parameter error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketTLSSocketServerOnConnectError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOnConnectError0100';
       console.info(`${caseName} test start`);
@@ -513,14 +513,14 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-    * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OffConnect_Error_0200
-    * @tc.name  :  testNetworkMgrSocketTLSSocketServerOffConnectError0200
-    * @tc.desc  :  TLSSocketServer off(error) parameter error.
-    * @tc.size  :  MediumTest
-    * @tc.type  :  Function
-    * @tc.level :  Level 3
-    * */
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOffConnectError0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OffConnect_Error_0200
+     * @tc.desc   TLSSocketServer off(error) parameter error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrSocketTLSSocketServerOffConnectError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOffConnectError0200';
       console.info(`${caseName} test start`);
@@ -535,13 +535,13 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1900
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions1900
-     * @tc.desc  :  GetLocalAddress(callback) Parameter error.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions1900
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_1900
+     * @tc.desc   GetLocalAddress(callback) Parameter error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions1900';
@@ -580,13 +580,13 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_12000
-     * @tc.name  :  testNetworkMgrSocketTLSSocketSetExtraOptions2000
-     * @tc.desc  :  GetLocalAddress(promise) Parameter error.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketSetExtraOptions2000
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SetExtraOptions_12000
+     * @tc.desc   GetLocalAddress(promise) Parameter error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketSetExtraOptions2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketSetExtraOptions2000';
@@ -622,13 +622,13 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocket_GetSocketFd_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketGetSocketFd0100
-     * @tc.desc  :  TLSSocket GetSocketFd success.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetSocketFd_0100
+     * @tc.desc   TLSSocket GetSocketFd success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketGetSocketFd0100';
@@ -652,13 +652,13 @@ export default function SocketErrorCodeTest01() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocketServer_SetExtraOptions_0100
-     * @tc.name  :  testLocalSocketServerSetExtraOptions0100
-     * @tc.desc  :  test LocalSocketServer SetExtraOptions(promise) 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketServerSetExtraOptions0100
+     * @tc.number SUB_LocalSocketServer_SetExtraOptions_0100
+     * @tc.desc   test LocalSocketServer SetExtraOptions(promise) 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketServerSetExtraOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketServerSetExtraOptions0100';
@@ -683,13 +683,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocketServer_On_0100
-     * @tc.name  :  testLocalSocketServerOn0100
-     * @tc.desc  :  test LocalSocketServer On(connect) 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketServerOn0100
+     * @tc.number SUB_LocalSocketServer_On_0100
+     * @tc.desc   test LocalSocketServer On(connect) 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketServerOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketServerOn0100';
@@ -705,13 +705,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocketServer_On_0200
-     * @tc.name  :  testLocalSocketServerOn0200
-     * @tc.desc  :  test LocalSocketServer On(error) 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketServerOn0200
+     * @tc.number SUB_LocalSocketServer_On_0200
+     * @tc.desc   test LocalSocketServer On(error) 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketServerOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketServerOn0200';
@@ -727,13 +727,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocketServer_Off_0100
-     * @tc.name  :  testLocalSocketServerOff0100
-     * @tc.desc  :  test LocalSocketServer Off(connect) 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketServerOff0100
+     * @tc.number SUB_LocalSocketServer_Off_0100
+     * @tc.desc   test LocalSocketServer Off(connect) 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketServerOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketServerOff0100';
@@ -749,13 +749,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocketServer_Off_0200
-     * @tc.name  :  testLocalSocketServerOff0200
-     * @tc.desc  :  test LocalSocketServer Off(connect) 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketServerOff0200
+     * @tc.number SUB_LocalSocketServer_Off_0200
+     * @tc.desc   test LocalSocketServer Off(connect) 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketServerOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketServerOff0200';
@@ -771,13 +771,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocket_Connect_0100
-     * @tc.name  :  testLocalSocketConnect0100
-     * @tc.desc  :  test LocalSocket Connect 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketConnect0100
+     * @tc.number SUB_LocalSocket_Connect_0100
+     * @tc.desc   test LocalSocket Connect 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketConnect0100';
@@ -800,13 +800,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocket_Send_0100
-     * @tc.name  :  testLocalSocketSend0100
-     * @tc.desc  :  test LocalSocket Send 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketSend0100
+     * @tc.number SUB_LocalSocket_Send_0100
+     * @tc.desc   test LocalSocket Send 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketSend0100';
@@ -829,13 +829,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocket_On_0100
-     * @tc.name  :  testLocalSocketOn0100
-     * @tc.desc  :  test LocalSocket On 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketOn0100
+     * @tc.number SUB_LocalSocket_On_0100
+     * @tc.desc   test LocalSocket On 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketOn0100';
@@ -852,13 +852,13 @@ export default function SocketErrorCodeTest01() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_LocalSocket_Off_0100
-     * @tc.name  :  testLocalSocketOff0100
-     * @tc.desc  :  test LocalSocket On 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketOff0100
+     * @tc.number SUB_LocalSocket_Off_0100
+     * @tc.desc   test LocalSocket On 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketOff0100';
@@ -874,13 +874,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocket_Off_0200
-     * @tc.name  :  testLocalSocketOff0200
-     * @tc.desc  :  test LocalSocket On 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketOff0200
+     * @tc.number SUB_LocalSocket_Off_0200
+     * @tc.desc   test LocalSocket On 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketOff0200';
@@ -896,13 +896,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocket_Off_0300
-     * @tc.name  :  testLocalSocketOff0300
-     * @tc.desc  :  test LocalSocket Off 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketOff0300
+     * @tc.number SUB_LocalSocket_Off_0300
+     * @tc.desc   test LocalSocket Off 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketOff0300';
@@ -918,13 +918,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocket_Off_0400
-     * @tc.name  :  testLocalSocketOff0400
-     * @tc.desc  :  test LocalSocket Off 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketOff0400
+     * @tc.number SUB_LocalSocket_Off_0400
+     * @tc.desc   test LocalSocket Off 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketOff0400';
@@ -940,13 +940,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocketServer_Listen_0100
-     * @tc.name  :  testLocalSocketServerListen0100
-     * @tc.desc  :  test LocalSocketServer listen 401 function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketServerListen0100
+     * @tc.number SUB_LocalSocketServer_Listen_0100
+     * @tc.desc   test LocalSocketServer listen 401 function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketServerListen0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketServerListen0100';
@@ -970,13 +970,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_LocalSocketServer_GetState_0100
-     * @tc.name  :  testLocalSocketServerGetState0100
-     * @tc.desc  :  test LocalSocketServer getState function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testLocalSocketServerGetState0100
+     * @tc.number SUB_LocalSocketServer_GetState_0100
+     * @tc.desc   test LocalSocketServer getState function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLocalSocketServerGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testLocalSocketServerListen0100';
@@ -1011,13 +1011,13 @@ export default function SocketErrorCodeTest01() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0100
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0100
-     * @tc.desc  : Cancel multiple subscriptions to the TCP Socket Connection shutdown event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0100
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0100
+     * @tc.desc   Cancel multiple subscriptions to the TCP Socket Connection shutdown event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSocketErrorCodeTCPSocketServer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0100';
@@ -1067,13 +1067,13 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
-    /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0200
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0200
-     * @tc.desc  : Test TCPSocketConnection send 401 event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0200
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0200
+     * @tc.desc   Test TCPSocketConnection send 401 event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSocketErrorCodeTCPSocketServer0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0200';
@@ -1102,13 +1102,13 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
-    /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0300
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0300
-     * @tc.desc  : Test TCPSocketConnection onMessage 401 event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0300
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0300
+     * @tc.desc   Test TCPSocketConnection onMessage 401 event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSocketErrorCodeTCPSocketServer0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0300';
@@ -1128,13 +1128,13 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
-    /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0400
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0400
-     * @tc.desc  : Test TCPSocketConnection offMessage 401 event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0400
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0400
+     * @tc.desc   Test TCPSocketConnection offMessage 401 event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSocketErrorCodeTCPSocketServer0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0400';
@@ -1154,13 +1154,13 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
-    /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0500
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0500
-     * @tc.desc  : Test TCPSocketConnection onError 401 event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0500
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0500
+     * @tc.desc   Test TCPSocketConnection onError 401 event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSocketErrorCodeTCPSocketServer0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0500';
@@ -1180,13 +1180,13 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
-    /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0600
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0600
-     * @tc.desc  : Test TCPSocketConnection offError 401 event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0600
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0600
+     * @tc.desc   Test TCPSocketConnection offError 401 event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSocketErrorCodeTCPSocketServer0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0600';
@@ -1206,13 +1206,13 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
-    /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0700
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0700
-     * @tc.desc  : Test TCPSocketConnection onClose 401 event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0700
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0700
+     * @tc.desc   Test TCPSocketConnection onClose 401 event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSocketErrorCodeTCPSocketServer0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0700';
@@ -1232,14 +1232,14 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
-     /* *
-     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0800
-     * @tc.name  : testSocketErrorCodeTCPSocketServer0800
-     * @tc.desc  : Test TCPSocketConnection offClose 401 event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
-     */
+     /**
+      * @tc.name   testSocketErrorCodeTCPSocketServer0800
+      * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0800
+      * @tc.desc   Test TCPSocketConnection offClose 401 event
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testSocketErrorCodeTCPSocketServer0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSocketErrorCodeTCPSocketServer0800';
       let server = socket.constructTCPSocketServerInstance();

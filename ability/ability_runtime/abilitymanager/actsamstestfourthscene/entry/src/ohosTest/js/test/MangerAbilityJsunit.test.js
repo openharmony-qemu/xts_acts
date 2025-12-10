@@ -27,11 +27,14 @@ export default function ActsAmsTestFourthScene() {
             }
         }
 
-        /*
-        * @tc.number    : Acts_Ams_test_1700
-        * @tc.name      : getProcessRunningInfos : Get All Running Processes Info
-        * @tc.desc      : Get All Running Processes Info(by Promise)
-        */
+        /**
+         * @tc.name   Acts_Ams_test_1700
+         * @tc.number Acts_Ams_test_1700
+         * @tc.desc   Get All Running Processes Info(by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Acts_Ams_test_1700', Level.LEVEL0, async function (done) {
             console.info("sleep begin");
             sleep(2000);

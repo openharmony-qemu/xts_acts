@@ -26,13 +26,13 @@ export default function textPickerRangeTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testTextPicker001
-     * @tc.desc       : testing TextPicker
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPicker001
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0100
+     * @tc.desc   testing TextPicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPicker001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'testTextPickerRange';
@@ -45,13 +45,13 @@ export default function textPickerRangeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0200
-     * @tc.name       : testTextPicker002
-     * @tc.desc       : testing TextPicker
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPicker002
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0200
+     * @tc.desc   testing TextPicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPicker002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'testTextPickerRange';

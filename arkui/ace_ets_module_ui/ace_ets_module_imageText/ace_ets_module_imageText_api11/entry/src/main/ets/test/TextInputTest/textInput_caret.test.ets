@@ -43,12 +43,14 @@ export default function textInput_caret() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0320
-      * @tc.name  : textInput_caret_001
-      * @tc.desc  : Use mouse click to get CaretOffset
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   textInput_caret_001
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0320
+     * @tc.desc   Use mouse click to get CaretOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textInput_caret_001', Level.LEVEL3, async (done: Function) => {
 
       console.info('[textInput_caret_001] START');

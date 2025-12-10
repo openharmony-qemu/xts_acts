@@ -37,12 +37,12 @@ export default function ActsInputmethodFourTest() {
       await delegator.executeShellCommand('ime -s com.acts.actsinputmethodtest');
     })
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_SELECT_ALL_17800
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_SELECT_ALL_17800
-     * @tc.name SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_SELECT_ALL_17800
-     * @tc.desc test IME_EXTEND_ACTION_SELECT_ALL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_EXTEND_ACTION_SELECT_ALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_SELECT_ALL_17800', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -86,12 +86,12 @@ export default function ActsInputmethodFourTest() {
     });
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_CUT_17900
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_CUT_17900
-     * @tc.name SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_CUT_17900
-     * @tc.desc test IME_EXTEND_ACTION_CUT
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_EXTEND_ACTION_CUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_CUT_17900', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -135,12 +135,12 @@ export default function ActsInputmethodFourTest() {
     });
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000
-     * @tc.name SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000
-     * @tc.desc test IME_EXTEND_ACTION_COPY
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_EXTEND_ACTION_COPY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_COPY_18000', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -184,12 +184,12 @@ export default function ActsInputmethodFourTest() {
     });
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_PASTE_18100
      * @tc.number SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_PASTE_18100
-     * @tc.name SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_PASTE_18100
-     * @tc.desc test IME_EXTEND_ACTION_PASTE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_EXTEND_ACTION_PASTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_PASTE_18100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {

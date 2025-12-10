@@ -42,12 +42,12 @@ export default function hyperLinkJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_hyperLink_attrs_0100
      * @tc.number ArkUX_Stage_hyperLink_attrs_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set color values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_hyperLink_attrs_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_hyperLink_attrs_0100 START');
@@ -62,12 +62,12 @@ export default function hyperLinkJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_hyperLink_attrs_0101
      * @tc.number ArkUX_Stage_hyperLink_attrs_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Change color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change color values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_hyperLink_attrs_0101', Level.LEVEL0, async (done: Function) => {
 

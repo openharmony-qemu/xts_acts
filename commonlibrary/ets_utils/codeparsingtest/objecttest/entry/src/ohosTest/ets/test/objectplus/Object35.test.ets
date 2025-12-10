@@ -132,12 +132,12 @@ export default function Object35Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Object35Test001
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0100
-     * @tc.name Object35Test001
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn01_TestProtoLiteralPoint();
@@ -145,24 +145,24 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test002
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0200
-     * @tc.name Object35Test002
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn02_TestProtoSetterModify();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object35Test003
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0300
-     * @tc.name Object35Test003
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn03_TestProtoNullPrototypeObj();
@@ -170,12 +170,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test004
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0400
-     * @tc.name Object35Test004
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn04_TestProtoNonExtensibleObj();
@@ -183,12 +183,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test005
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0500
-     * @tc.name Object35Test005
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn05_TestProtoInvalidValueAssign();
@@ -196,12 +196,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test006
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0600
-     * @tc.name Object35Test006
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn06_TestProtoConstructorInstance();
@@ -209,12 +209,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test007
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0700
-     * @tc.name Object35Test007
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn07_TestProtoInheritProperty();
@@ -222,12 +222,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test008
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0800
-     * @tc.name Object35Test008
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn08_TestProtoDynamicChainUpdate();
@@ -235,12 +235,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test009
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_0900
-     * @tc.name Object35Test009
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn09_TestProtoArrayInstance();
@@ -248,12 +248,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test010
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1000
-     * @tc.name Object35Test010
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn10_TestProtoDateInstance();
@@ -261,12 +261,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test011
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1100
-     * @tc.name Object35Test011
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn11_TestProtoFrozenObject();
@@ -274,12 +274,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test012
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1200
-     * @tc.name Object35Test012
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn12_TestProtoSealedObject();
@@ -287,12 +287,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test013
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1300
-     * @tc.name Object35Test013
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn13_TestProtoAssignNull();
@@ -300,12 +300,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test014
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1400
-     * @tc.name Object35Test014
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn14_TestProtoFunctionInstance();
@@ -313,12 +313,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test015
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1500
-     * @tc.name Object35Test015
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn15_TestProtoArrowFunction();
@@ -326,12 +326,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test016
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1600
-     * @tc.name Object35Test016
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn16_TestProtoClassInstance();
@@ -339,12 +339,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test017
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1700
-     * @tc.name Object35Test017
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn17_TestProtoClassInheritance();
@@ -352,12 +352,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test018
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1800
-     * @tc.name Object35Test018
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn18_TestProtoObjectPrototype();
@@ -365,12 +365,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test019
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_1900
-     * @tc.name Object35Test019
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn19_TestProtoVsGetPrototypeOf();
@@ -378,24 +378,24 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test020
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2000
-     * @tc.name Object35Test020
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn20_TestProtoVsSetPrototypeOf();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object35Test021
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2100
-     * @tc.name Object35Test021
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn21_TestProtoTypedArrayInstance();
@@ -403,12 +403,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test022
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2200
-     * @tc.name Object35Test022
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn22_TestProtoMapInstance();
@@ -416,12 +416,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test023
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2300
-     * @tc.name Object35Test023
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn23_TestProtoSetInstance();
@@ -429,12 +429,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test024
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2400
-     * @tc.name Object35Test024
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn24_TestProtoPromiseInstance();
@@ -442,12 +442,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test025
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2500
-     * @tc.name Object35Test025
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn25_TestProtoErrorInstance();
@@ -455,12 +455,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test026
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2600
-     * @tc.name Object35Test026
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn26_TestProtoOwnPropPriority();
@@ -468,12 +468,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test027
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2700
-     * @tc.name Object35Test027
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn27_TestProtoAssignPlainObject();
@@ -481,12 +481,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test028
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2800
-     * @tc.name Object35Test028
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn28_TestProtoTypedArrayPrototype();
@@ -494,12 +494,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test029
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_2900
-     * @tc.name Object35Test029
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn29_TestProtoFunctionPrototype();
@@ -507,12 +507,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test030
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3000
-     * @tc.name Object35Test030
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn30_TestProtoNonConfigurableProto();
@@ -520,12 +520,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test031
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3100
-     * @tc.name Object35Test031
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn31_TestProtoArrayPrototype();
@@ -533,12 +533,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test032
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3200
-     * @tc.name Object35Test032
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn32_TestProtoCircularReference();
@@ -546,12 +546,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test033
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3300
-     * @tc.name Object35Test033
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn33_TestProtoSymbolInstance();
@@ -559,12 +559,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test034
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3400
-     * @tc.name Object35Test034
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn34_TestProtoBigIntInstance();
@@ -572,12 +572,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test035
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3500
-     * @tc.name Object35Test035
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn35_TestProtoNonExistentProp();
@@ -585,12 +585,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test036
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3600
-     * @tc.name Object35Test036
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn36_TestProtoClassStaticMethod();
@@ -598,12 +598,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test037
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3700
-     * @tc.name Object35Test037
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn37_TestProtoProxyInstance();
@@ -611,12 +611,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test038
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3800
-     * @tc.name Object35Test038
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn38_TestProtoVsInOperator();
@@ -624,12 +624,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test039
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_3900
-     * @tc.name Object35Test039
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn39_TestProtoVsHasOwnProperty();
@@ -637,24 +637,24 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test040
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4000
-     * @tc.name Object35Test040
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn40_TestProtoDatePrototype();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object35Test041
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4100
-     * @tc.name Object35Test041
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn41_TestProtoAssignFunction();
@@ -662,12 +662,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test043
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4300
-     * @tc.name Object35Test043
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn43_TestProtoVsObjectKeys();
@@ -675,12 +675,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test044
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4400
-     * @tc.name Object35Test044
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn44_TestProtoAssignArrayPrototype();
@@ -688,24 +688,24 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test045
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4500
-     * @tc.name Object35Test045
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn45_TestProtoStrictMode();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object35Test046
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4600
-     * @tc.name Object35Test046
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn46_TestProtoErrorSubclassInstance();
@@ -713,12 +713,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test047
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4700
-     * @tc.name Object35Test047
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn47_TestProtoNullNoObjectMethods();
@@ -726,12 +726,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test048
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4800
-     * @tc.name Object35Test048
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn48_TestProtoVsGetOwnPropertyNames();
@@ -739,12 +739,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test049
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_4900
-     * @tc.name Object35Test049
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn49_TestProtoClassPrivateField();
@@ -752,12 +752,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test050
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5000
-     * @tc.name Object35Test050
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -769,12 +769,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test051
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5100
-     * @tc.name Object35Test051
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn51_TestProtoRegExpInstance();
@@ -782,12 +782,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test052
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5200
-     * @tc.name Object35Test052
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn52_TestProtoVsObjectValues();
@@ -795,12 +795,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test053
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5300
-     * @tc.name Object35Test053
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn53_TestProtoVsObjectEntries();
@@ -808,12 +808,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test054
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5400
-     * @tc.name Object35Test054
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -824,12 +824,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test055
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5500
-     * @tc.name Object35Test055
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('Object35Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //   let res = Fn55_TestProtoInClassGetterSetter();
@@ -837,12 +837,12 @@ export default function Object35Test() {
     // });
 
     /**
+     * @tc.name   Object35Test056
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5600
-     * @tc.name Object35Test056
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn56_TestProtoAssignSymbolPrototype();
@@ -850,12 +850,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test057
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5700
-     * @tc.name Object35Test057
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn57_TestProtoVsInstanceof();
@@ -863,12 +863,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test058
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5800
-     * @tc.name Object35Test058
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn58_TestProtoAssignPromisePrototype();
@@ -876,12 +876,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test059
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_5900
-     * @tc.name Object35Test059
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn59_TestProtoProxyTargetPrototype();
@@ -889,12 +889,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test060
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6000
-     * @tc.name Object35Test060
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -905,12 +905,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test061
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6100
-     * @tc.name Object35Test061
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -921,12 +921,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test062
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6200
-     * @tc.name Object35Test062
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -937,12 +937,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test063
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6300
-     * @tc.name Object35Test063
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -953,12 +953,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test064
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6400
-     * @tc.name Object35Test064
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn64_TestProtoWeakMapInstance();
@@ -966,12 +966,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test065
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6500
-     * @tc.name Object35Test065
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -981,12 +981,12 @@ export default function Object35Test() {
       }
     });
     /**
+     * @tc.name   Object35Test066
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6600
-     * @tc.name Object35Test066
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn66_TestProtoWeakSetInstance();
@@ -994,12 +994,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test067
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6700
-     * @tc.name Object35Test067
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn67_TestProtoVsObjectCreate();
@@ -1007,12 +1007,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test068
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6800
-     * @tc.name Object35Test068
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn68_TestProtoNestedObject();
@@ -1020,12 +1020,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test069
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_6900
-     * @tc.name Object35Test069
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn69_TestProtoAssignArrayBufferPrototype();
@@ -1033,12 +1033,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test070
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_7000
-     * @tc.name Object35Test070
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn70_TestProtoArrayBufferInstance();
@@ -1046,12 +1046,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test071
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_7100
-     * @tc.name Object35Test071
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1063,12 +1063,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test072
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_7200
-     * @tc.name Object35Test072
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn72_TestProtoDataViewInstance();
@@ -1076,12 +1076,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test073
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_7300
-     * @tc.name Object35Test073
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn73_TestProtoVsIsPrototypeOf();
@@ -1089,12 +1089,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test076
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_7600
-     * @tc.name Object35Test076
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn76_TestProtoInAsyncFunction();
@@ -1102,12 +1102,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test082
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_8200
-     * @tc.name Object35Test082
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn82_TestProtoInClassStaticBlock();
@@ -1115,12 +1115,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test087
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_8700
-     * @tc.name Object35Test087
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn87_TestProtoVsReflectGetPrototypeOf();
@@ -1128,12 +1128,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test088
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_8800
-     * @tc.name Object35Test088
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn88_TestProtoVsReflectSetPrototypeOf();
@@ -1141,12 +1141,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test093
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_9300
-     * @tc.name Object35Test093
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn93_TestProtoInGeneratorFunction();
@@ -1154,12 +1154,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test094
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_9400
-     * @tc.name Object35Test094
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1171,12 +1171,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test095
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_9500
-     * @tc.name Object35Test095
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn95_TestProtoIntlDateTimeFormatInstance();
@@ -1184,12 +1184,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test096
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_9600
-     * @tc.name Object35Test096
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1200,12 +1200,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test097
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_9700
-     * @tc.name Object35Test097
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn97_TestProtoIntlNumberFormatInstance();
@@ -1213,12 +1213,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test098
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_9800
-     * @tc.name Object35Test098
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn98_TestProtoVsObjectPrototypeIsPrototypeOf();
@@ -1226,12 +1226,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test101
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_10100
-     * @tc.name Object35Test101
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn101_TestProtoClassSuperPrototype();
@@ -1239,12 +1239,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test106
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_10600
-     * @tc.name Object35Test106
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn106_TestProtoProxyTrapModify();
@@ -1252,12 +1252,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test107
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_10700
-     * @tc.name Object35Test107
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn107_TestProtoAssignMathObject();
@@ -1265,12 +1265,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test108
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_10800
-     * @tc.name Object35Test108
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn108_TestProtoVsObjectKeysExtendedProto();
@@ -1278,12 +1278,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test109
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_10900
-     * @tc.name Object35Test109
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn109_TestProtoAssignJSONObject();
@@ -1291,12 +1291,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test110
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_11000
-     * @tc.name Object35Test110
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn110_TestProtoNestedProxy();
@@ -1304,12 +1304,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test111
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_11100
-     * @tc.name Object35Test111
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn111_TestProtoAssignAtomicsObject();
@@ -1317,12 +1317,12 @@ export default function Object35Test() {
     });
 
     /**
+     * @tc.name   Object35Test112
      * @tc.number SUB_BUILTINS_OBJECT35_TEST_11200
-     * @tc.name Object35Test112
-     * @tc.desc test object __proto__
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object __proto__
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object35Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn112_TestProtoVsGetOwnPropertyDescriptors();

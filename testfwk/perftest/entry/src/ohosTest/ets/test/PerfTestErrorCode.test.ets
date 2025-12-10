@@ -25,10 +25,13 @@ export default function perfTestErrorTest() {
     //  await sleep(200);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_001
-     * @tc.name: test_PerfTest_create_32400003
-     * @tc.desc: create 32400003 test.
+    /**
+     * @tc.name   test_PerfTest_create_32400003
+     * @tc.number perfTestErrorTest_001
+     * @tc.desc   create 32400003 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_create_32400003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_create_32400003 start`);
@@ -88,10 +91,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_create_32400003 end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_002
-     * @tc.name: test_PerfTest_create_32400007
-     * @tc.desc: create 32400007 test.
+    /**
+     * @tc.name   test_PerfTest_create_32400007
+     * @tc.number perfTestErrorTest_002
+     * @tc.desc   create 32400007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_create_32400007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_create_32400007 start`);
@@ -116,14 +122,17 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_create_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_create_32400007 end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_003
-     * @tc.name: test_PerfTest_run_32400007
-     * @tc.desc: create 32400007 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400007
+     * @tc.number perfTestErrorTest_003
+     * @tc.desc   create 32400007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_run_32400007 start`);
@@ -148,14 +157,17 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_run_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_run_32400007 end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_004
-     * @tc.name: test_PerfTest_run_32400005_bundleName
-     * @tc.desc: run 32400005 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400005_bundleName
+     * @tc.number perfTestErrorTest_004
+     * @tc.desc   run 32400005 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400005_bundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400005_bundleName start`);
@@ -186,10 +198,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400005_bundleName end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_005
-     * @tc.name: test_PerfTest_run_32400004_actionCode
-     * @tc.desc: run 32400004 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400004_actionCode
+     * @tc.number perfTestErrorTest_005
+     * @tc.desc   run 32400004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400004_actionCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400004_actionCode start`);
@@ -218,10 +233,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400004_actionCode end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_006
-     * @tc.name: test_PerfTest_run_32400004_resetCode
-     * @tc.desc: run 32400004 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400004_resetCode
+     * @tc.number perfTestErrorTest_006
+     * @tc.desc   run 32400004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400004_resetCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400004_resetCode start`);
@@ -250,10 +268,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400004_resetCode end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_007
-     * @tc.name: test_PerfTest_run_32400004_actionCodeError
-     * @tc.desc: run 32400004 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400004_actionCodeError
+     * @tc.number perfTestErrorTest_007
+     * @tc.desc   run 32400004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400004_actionCodeError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400004_actionCodeError start`);
@@ -284,10 +305,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeError end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_008
-     * @tc.name: test_PerfTest_run_32400004_resetCodeError
-     * @tc.desc: run 32400004 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400004_resetCodeError
+     * @tc.number perfTestErrorTest_008
+     * @tc.desc   run 32400004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400004_resetCodeError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400004_resetCodeError start`);
@@ -319,10 +343,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400002_resetCodeError end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_009
-     * @tc.name: test_PerfTest_run_32400004_actionCodeTimeOut
-     * @tc.desc: run 32400004 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400004_actionCodeTimeOut
+     * @tc.number perfTestErrorTest_009
+     * @tc.desc   run 32400004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400004_actionCodeTimeOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400004_actionCodeTimeOut start`);
@@ -354,10 +381,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_010
-     * @tc.name: test_PerfTest_run_32400004_resetCodeTimeOut
-     * @tc.desc: run 32400004 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400004_resetCodeTimeOut
+     * @tc.number perfTestErrorTest_010
+     * @tc.desc   run 32400004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400004_resetCodeTimeOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400004_resetCodeTimeOut start`);
@@ -389,10 +419,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_011
-     * @tc.name: test_PerfTest_run_32400002_afterDestroy
-     * @tc.desc: run 32400002 test.
+    /**
+     * @tc.name   test_PerfTest_run_32400002_afterDestroy
+     * @tc.number perfTestErrorTest_011
+     * @tc.desc   run 32400002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_run_32400002_afterDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`test_PerfTest_run_32400002_afterDestroy start`);
@@ -424,10 +457,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_run_32400002_afterDestroy end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_012
-     * @tc.name: test_PerfTest_getMeasureResult_32400007
-     * @tc.desc: getMeasureResult 32400007 test.
+    /**
+     * @tc.name   test_PerfTest_getMeasureResult_32400007
+     * @tc.number perfTestErrorTest_012
+     * @tc.desc   getMeasureResult 32400007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_getMeasureResult_32400007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007 start`);
@@ -452,14 +488,17 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007 end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_013
-     * @tc.name: test_PerfTest_getMeasureResult_32400006_noRun
-     * @tc.desc: getMeasureResult 32400006 test.
+    /**
+     * @tc.name   test_PerfTest_getMeasureResult_32400006_noRun
+     * @tc.number perfTestErrorTest_013
+     * @tc.desc   getMeasureResult 32400006 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_getMeasureResult_32400006_noRun', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {0
       console.log(`test_PerfTest_getMeasureResult_32400006_noRun start`);
@@ -490,10 +529,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400006_noRun end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_014
-     * @tc.name: test_PerfTest_getMeasureResult_32400003
-     * @tc.desc: getMeasureResult 32400003 test.
+    /**
+     * @tc.name   test_PerfTest_getMeasureResult_32400003
+     * @tc.number perfTestErrorTest_014
+     * @tc.desc   getMeasureResult 32400003 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_getMeasureResult_32400003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 start`);
@@ -552,10 +594,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400003 end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_015
-     * @tc.name: test_PerfTest_getMeasureResult_32400002
-     * @tc.desc: getMeasureResult 32400002 test.
+    /**
+     * @tc.name   test_PerfTest_getMeasureResult_32400002
+     * @tc.number perfTestErrorTest_015
+     * @tc.desc   getMeasureResult 32400002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_getMeasureResult_32400002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400002 start`);
@@ -589,10 +634,13 @@ export default function perfTestErrorTest() {
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400002 end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_016
-     * @tc.name: test_PerfTest_destroy_32400007
-     * @tc.desc: destroy 32400007 test.
+    /**
+     * @tc.name   test_PerfTest_destroy_32400007
+     * @tc.number perfTestErrorTest_016
+     * @tc.desc   destroy 32400007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_destroy_32400007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_destroy_32400007 start`);
@@ -617,14 +665,17 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_destroy_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_destroy_32400007 end`);
     })
 
-    /*
-     * @tc.number: perfTestErrorTest_017
-     * @tc.name: test_PerfTest_destroy_32400002
-     * @tc.desc: destroy 32400002 test.
+    /**
+     * @tc.name   test_PerfTest_destroy_32400002
+     * @tc.number perfTestErrorTest_017
+     * @tc.desc   destroy 32400002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_PerfTest_destroy_32400002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PerfTest_destroy_32400002 start`);

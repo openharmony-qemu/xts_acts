@@ -43,12 +43,12 @@ export default function TextPickerDialogCallback() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_ARKUI_TEXT_PICKER_DIALOG_CALLBACK_0100
-     * @tc.name      : test textPicker dialog callback function
-     * @tc.desc      : onWillAppear,onDidAppear,onWillDisappear,onDidDisappear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : level 0
+     * @tc.name   TextPickerDialogCallback_0100
+     * @tc.number SUB_ACE_ARKUI_TEXT_PICKER_DIALOG_CALLBACK_0100
+     * @tc.desc   onWillAppear,onDidAppear,onWillDisappear,onDidDisappear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogCallback_0100', Level.LEVEL0, async (done: Function) => {
       let driver1 = Driver.create();

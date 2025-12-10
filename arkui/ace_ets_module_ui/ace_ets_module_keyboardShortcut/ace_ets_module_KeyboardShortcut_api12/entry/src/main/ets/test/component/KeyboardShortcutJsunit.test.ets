@@ -46,14 +46,14 @@ export default function KeyboardShortcutJsunit() {
       done()
     });
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_0158
-    * @tc.name       : ArkUI_KeyboardShortcut_0158
-    * @tc.desc       : test prefetchResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUI_KeyboardShortcut_0158
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_0158
+     * @tc.desc   test prefetchResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_KeyboardShortcut_0158', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_KeyboardShortcut_0158'
       console.info(`${SUITE} ${CASE} START`);
@@ -73,14 +73,14 @@ export default function KeyboardShortcutJsunit() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_0159
-    * @tc.name       : ArkUI_KeyboardShortcut_0159
-    * @tc.desc       : test prefetchResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUI_KeyboardShortcut_0159
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_0159
+     * @tc.desc   test prefetchResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_KeyboardShortcut_0159', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_KeyboardShortcut_0159'
       console.info(`${SUITE} ${CASE} START`);

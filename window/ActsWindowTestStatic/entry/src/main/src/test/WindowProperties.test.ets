@@ -24,10 +24,53 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import Want from '@ohos.app.ability.Want';
+import bundleManager from '@ohos.bundle.bundleManager';
+import StartOptions from '@ohos.app.ability.StartOptions'
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
+    return new Promise<window.WindowStage>((resolve, reject) => {
+        let want: Want = {
+            bundleName: "com.example.actswindowtest.static",
+            abilityName: 'StartAbility'
+        };
+        if (options) {
+            context.startAbility(want, options).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        } else {
+            context.startAbility(want).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        }
+        await Utils.msSleep(1000)
+        let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+        resolve(windowStageStart);
+    })
+}
+async function terminateAbility(caseName: string) {
+    let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+    try {
+        if (pageContext !== null && pageContext !== undefined) {
+            hilog.info(domain, tag,`${caseName} terminateSelf begin`);
+        }
+        pageContext.terminateSelf().then(() => {
+            hilog.info(domain, tag,`${caseName} terminateSelf success`);
+        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+        });
+    } catch (e: BusinessError) {
+        hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+    }
+    await Utils.msSleep(1000)
+}
 export default function WindowPropertiesTest() {
 
     describe("WindowPropertiesTest", (): void => {
@@ -63,12 +106,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number       testSetWindowPrivacyModePromiseErrCode1300002_0100
-         * @tc.name         testSetWindowPrivacyModePromiseErrCode1300002_static_0100
-         * @tc.desc         testSetWindowPrivacyModePromiseErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowPrivacyModePromiseErrCode1300002_static_0100
+         * @tc.number testSetWindowPrivacyModePromiseErrCode1300002_0100
+         * @tc.desc   testSetWindowPrivacyModePromiseErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowPrivacyModePromiseErrCode1300002_static_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName :string = "testSetWindowPrivacyModePromiseErrCode1300002_static_0100";
@@ -94,12 +137,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number       testSetWindowPrivacyModeCallbackErrCode1300002_0100
-         * @tc.name         testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
-         * @tc.desc         testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
+         * @tc.number testSetWindowPrivacyModeCallbackErrCode1300002_0100
+         * @tc.desc   testSetWindowPrivacyModeCallbackErrCode1300002_static_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowPrivacyModeCallbackErrCode1300002_static_0200', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName :string = "testSetWindowPrivacyModeCallbackErrCode1300002_static_0200";
@@ -128,12 +171,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2910
-         * @tc.name        testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc        Check whether the current window supports the wide color gamut mode
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2910
+         * @tc.desc   Check whether the current window supports the wide color gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100';
@@ -164,12 +207,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2920
-         * @tc.name        testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100
-         * @tc.desc        Check whether the current window supports the wide color gamut mode
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2920
+         * @tc.desc   Check whether the current window supports the wide color gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testIsWindowSupportWideGamut_WindowStateAbnormal_Promise_static_0100';
@@ -197,12 +240,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2940
-         * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2940
+         * @tc.desc   Set the current window to wide gamut mode or default gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testSetWindowColorSpace_WindowStateAbnormal_Callback_static_0100';
@@ -233,12 +276,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
-         * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
-         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
+         * @tc.desc   Set the current window to wide gamut mode or default gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200';
@@ -265,12 +308,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2960
-         * @tc.name        testSetWindowBackgroundColor_WindowStateAbnormal_static_0100
-         * @tc.desc        Set the background color of the window
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testSetWindowBackgroundColor_WindowStateAbnormal_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2960
+         * @tc.desc   Set the background color of the window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBackgroundColor_WindowStateAbnormal_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testSetWindowBackgroundColor_WindowStateAbnormal_static_0100';
@@ -293,12 +336,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3010
-         * @tc.name        testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100
-         * @tc.desc        Set whether the screen is steady on
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3010
+         * @tc.desc   Set whether the screen is steady on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0100';
@@ -329,12 +372,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1740
-         * @tc.name        testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200
-         * @tc.desc        Set whether the screen is steady on
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level4
+         * @tc.name   testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1740
+         * @tc.desc   Set whether the screen is steady on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let caseName: string = 'testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200';
@@ -361,13 +404,13 @@ export default function WindowPropertiesTest() {
                 done();
             }
         })
-/**
-         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
-         * @tc.name        test_getWindowProperties_mainWindow_static_0100
-         * @tc.desc        test_getWindowProperties_mainWindow_static_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+        /**
+         * @tc.name   test_getWindowProperties_mainWindow_static_0100
+         * @tc.number SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
+         * @tc.desc   test_getWindowProperties_mainWindow_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('test_getWindowProperties_mainWindow_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_getWindowProperties_mainWindow_static_0100';
@@ -411,12 +454,12 @@ export default function WindowPropertiesTest() {
         });
 
         /**
-         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0200
-         * @tc.name        test_getWindowProperties_mainWindow_static_0200
-         * @tc.desc        test_getWindowProperties_mainWindow_static_0200
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level4
+         * @tc.name   test_getWindowProperties_mainWindow_static_0200
+         * @tc.number SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0200
+         * @tc.desc   test_getWindowProperties_mainWindow_static_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
          */
         it('test_getWindowProperties_mainWindow_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_getWindowProperties_mainWindow_static_0200';
@@ -441,12 +484,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number       testOnDisplayIdChangeErrCode1300002_0100
-         * @tc.name         testOnDisplayIdChangeErrCode1300002_static_0100
-         * @tc.desc         testOnDisplayIdChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOnDisplayIdChangeErrCode1300002_static_0100
+         * @tc.number testOnDisplayIdChangeErrCode1300002_0100
+         * @tc.desc   testOnDisplayIdChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnDisplayIdChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidHideErrCode1300002_static_0100";
@@ -459,7 +502,7 @@ export default function WindowPropertiesTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('displayIdChange', (id) => {
+                tempWnd.onDisplayIdChange((id) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -481,12 +524,12 @@ export default function WindowPropertiesTest() {
 
 
         /**
-         * @tc.number       testOffDisplayIdChangeErrCode1300002_0100
-         * @tc.name         testOffDisplayIdChangeErrCode1300002_static_0100
-         * @tc.desc         testOffDisplayIdChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOffDisplayIdChangeErrCode1300002_static_0100
+         * @tc.number testOffDisplayIdChangeErrCode1300002_0100
+         * @tc.desc   testOffDisplayIdChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOffDisplayIdChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffDisplayIdChangeErrCode1300002_static_0100";
@@ -499,7 +542,7 @@ export default function WindowPropertiesTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('displayIdChange', (id) => {
+                tempWnd.offDisplayIdChange((id) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -519,12 +562,12 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number       testOnWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.name         testOnWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.desc         testOnWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.number testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.desc   testOnWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnWindowVisibilityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOnWindowVisibilityChangeErrCode1300002_static_0100";
@@ -538,7 +581,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("windowVisibilityChange", (res: boolean) => {
+                        subWin!.onWindowVisibilityChange((res: boolean) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
@@ -557,12 +600,12 @@ export default function WindowPropertiesTest() {
             
         })
         /**
-         * @tc.number       testOffWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.name         testOffWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.desc         testOffWindowVisibilityChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.number testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.desc   testOffWindowVisibilityChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOffWindowVisibilityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOffWindowVisibilityChangeErrCode1300002_static_0100";
@@ -576,7 +619,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("windowVisibilityChange", (res: boolean) => {
+                        subWin!.offWindowVisibilityChange((res: boolean) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
@@ -595,12 +638,12 @@ export default function WindowPropertiesTest() {
 
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
-         * @tc.name        testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100
-         * @tc.desc        Enable this window to listen for status change events
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
+         * @tc.desc   Enable this window to listen for status change events
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowOffWindowVisibilityChange_UnregisteredOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done: () => void): Promise<void> => {
@@ -614,7 +657,7 @@ export default function WindowPropertiesTest() {
                         expect(!!win).assertTrue();
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                         try {
-                            (win as window.Window).off('windowVisibilityChange');
+                            (win as window.Window).offWindowVisibilityChange();
                             await (win as window.Window).destroyWindow();
                             expect(true).assertTrue();
                             done();
@@ -635,12 +678,12 @@ export default function WindowPropertiesTest() {
                 
             });
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
-         * @tc.name        testWindowOffWindowVisibilityChange_RepeatOff_static_0200
-         * @tc.desc        Enable this window to listen for status change events
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
+         * @tc.name   testWindowOffWindowVisibilityChange_RepeatOff_static_0200
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
+         * @tc.desc   Enable this window to listen for status change events
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowOffWindowVisibilityChange_RepeatOff_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testWindowOffWindowVisibilityChange_RepeatOff_static_0200';
@@ -653,7 +696,7 @@ export default function WindowPropertiesTest() {
                     expect(!!win).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     try {
-                        (win as window.Window).on('windowVisibilityChange', (flag:boolean) => {
+                        (win as window.Window).onWindowVisibilityChange((flag:boolean) => {
                             hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
                         });
                     } catch (exception:BusinessError) {
@@ -669,7 +712,7 @@ export default function WindowPropertiesTest() {
                         }
                     }
                     try {
-                        (win as window.Window).off('windowVisibilityChange');
+                        (win as window.Window).offWindowVisibilityChange();
                     } catch (exception:BusinessError) {
                         if (exception!.code != 801) {
                             hilog.error(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -683,7 +726,7 @@ export default function WindowPropertiesTest() {
                         }
                     }
                     try {
-                        (win as window.Window).off('windowVisibilityChange');
+                        (win as window.Window).offWindowVisibilityChange();
                         await (win as window.Window).destroyWindow();
                         done();
                     } catch (exception:BusinessError) {
@@ -702,12 +745,12 @@ export default function WindowPropertiesTest() {
             
         });
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
-         * @tc.name        testWindowVisibilityChange_on_Function_Callback_static_0100
-         * @tc.desc        window type windowVisibilityChange
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testWindowVisibilityChange_on_Function_Callback_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
+         * @tc.desc   window type windowVisibilityChange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testWindowVisibilityChange_on_Function_Callback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "testWindowVisibilityChange_on_Function_Callback_static_0100";
@@ -715,11 +758,11 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage.getMainWindow();
-                windowClass.on('windowVisibilityChange', (flag:boolean) => {
+                windowClass.onWindowVisibilityChange((flag:boolean) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
                 });
                 expect(true).assertTrue();
-                windowClass.off('windowVisibilityChange');
+                windowClass.offWindowVisibilityChange();
                 done();
             } catch (error:BusinessError) {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -736,12 +779,12 @@ export default function WindowPropertiesTest() {
             }
         });
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
-         * @tc.name        testWindowVisibilityChange_off_Function_Callback_static_0200
-         * @tc.desc        window type windowVisibilityChange
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testWindowVisibilityChange_off_Function_Callback_static_0200
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
+         * @tc.desc   window type windowVisibilityChange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testWindowVisibilityChange_off_Function_Callback_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "testWindowVisibilityChange_off_Function_Callback_static_0200";
@@ -749,7 +792,7 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage.getMainWindow();
-                windowClass.off('windowVisibilityChange');
+                windowClass.offWindowVisibilityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed');
                 expect(true).assertTrue();
                 done();
@@ -768,12 +811,12 @@ export default function WindowPropertiesTest() {
             }
         });
         /**
-         * @tc.number       testOnSystemDensityChangeErrCode1300002_0100
-         * @tc.name         testOnSystemDensityChangeErrCode1300002_static_0100
-         * @tc.desc         testOnSystemDensityChangeErrCode1300002_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOnSystemDensityChangeErrCode1300002_static_0100
+         * @tc.number testOnSystemDensityChangeErrCode1300002_0100
+         * @tc.desc   testOnSystemDensityChangeErrCode1300002_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOnSystemDensityChangeErrCode1300002_static_0100";
@@ -787,7 +830,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("systemDensityChange", (res: number) => {
+                        subWin!.onSystemDensityChange((res: number) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling on systemDensityChange.');
                         expect(false).assertTrue();
@@ -806,12 +849,12 @@ export default function WindowPropertiesTest() {
             
         })
         /**
-         * @tc.number       testOffSystemDensityChangeErrCode1300002_0100
-         * @tc.name         testOffSystemDensityChangeErrCode1300002_static_0100
-         * @tc.desc         testOffSystemDensityChangeErrCode1300002_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOffSystemDensityChangeErrCode1300002_static_0100
+         * @tc.number testOffSystemDensityChangeErrCode1300002_0100
+         * @tc.desc   testOffSystemDensityChangeErrCode1300002_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOffSystemDensityChangeErrCode1300002_static_0100', Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName:string = "testOffSystemDensityChangeErrCode1300002_static_0100";
@@ -825,7 +868,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("systemDensityChange", (res: number) => {
+                        subWin!.offSystemDensityChange((res: number) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
                         expect(false).assertTrue();
@@ -845,12 +888,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
-         * @tc.name        testOnSetCustomDensity1_static_0100
-         * @tc.desc        off systemDensityChange event
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
+         * @tc.name   testOnSetCustomDensity1_static_0100
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
+         * @tc.desc   off systemDensityChange event
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnSetCustomDensity1_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testOnSetCustomDensity1_static_0100';
@@ -869,10 +912,10 @@ export default function WindowPropertiesTest() {
                 expect(density).assertEqual(2);
             }
             try {
-                windowClass.on("systemDensityChange", callback1);
-                windowClass.on("systemDensityChange", callback2);
+                windowClass.onSystemDensityChange(callback1);
+                windowClass.onSystemDensityChange(callback2);
                 hilog.info(0x0000, '[ANI]', msgStr +`Succeeded on systemDensityChange twice.`);
-                windowClass.off("systemDensityChange");
+                windowClass.offSystemDensityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + `off all systemDensityChange success`);
             } catch (exception:BusinessError) {
                 hilog.error(0x0000, '[ANI]', msgStr +`Failed to on systemDensityChange. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -891,12 +934,12 @@ export default function WindowPropertiesTest() {
         
 
         /**
-         * @tc.number       testSetWindowFocusableErrCode1300002_0100
-         * @tc.name         testSetWindowFocusableErrCode1300002_static_0100
-         * @tc.desc         testSetWindowFocusableErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowFocusableErrCode1300002_static_0100
+         * @tc.number testSetWindowFocusableErrCode1300002_0100
+         * @tc.desc   testSetWindowFocusableErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowFocusableErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowFocusableErrCode1300002_static_0100";
@@ -928,12 +971,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number       testSetWindowFocusablePromiseErrCode1300002_0100
-         * @tc.name         testSetWindowFocusablePromiseErrCode1300002_static_0100
-         * @tc.desc         testSetWindowFocusablePromiseErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowFocusablePromiseErrCode1300002_static_0100
+         * @tc.number testSetWindowFocusablePromiseErrCode1300002_0100
+         * @tc.desc   testSetWindowFocusablePromiseErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowFocusablePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowFocusablePromiseErrCode1300002_static_0100";
@@ -961,12 +1004,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number       testSetWindowTouchableErrCode1300002_0100
-         * @tc.name         testSetWindowTouchableErrCode1300002_static_0100
-         * @tc.desc         testSetWindowTouchableErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowTouchableErrCode1300002_static_0100
+         * @tc.number testSetWindowTouchableErrCode1300002_0100
+         * @tc.desc   testSetWindowTouchableErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowTouchableErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowTouchableErrCode1300002_static_0100";
@@ -998,12 +1041,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number       testSetWindowTouchablePromiseErrCode1300002_0100
-         * @tc.name         testSetWindowTouchablePromiseErrCode1300002_static_0100
-         * @tc.desc         testSetWindowTouchablePromiseErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSetWindowTouchablePromiseErrCode1300002_static_0100
+         * @tc.number testSetWindowTouchablePromiseErrCode1300002_0100
+         * @tc.desc   testSetWindowTouchablePromiseErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowTouchablePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetWindowTouchablePromiseErrCode1300002_static_0100";
@@ -1032,12 +1075,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number       testSnapshotErrCode1300002_0100
-         * @tc.name         testSnapshotErrCode1300002_static_0100
-         * @tc.desc         testSnapshotErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSnapshotErrCode1300002_static_0100
+         * @tc.number testSnapshotErrCode1300002_0100
+         * @tc.desc   testSnapshotErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSnapshotErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSnapshotErrCode1300002_static_0100";
@@ -1078,12 +1121,12 @@ export default function WindowPropertiesTest() {
 
 
         /**
-         * @tc.number       testSnapshotPromiseErrCode1300002_0100
-         * @tc.name         testSnapshotPromiseErrCode1300002_static_0100
-         * @tc.desc         testSnapshotPromiseErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testSnapshotPromiseErrCode1300002_static_0100
+         * @tc.number testSnapshotPromiseErrCode1300002_0100
+         * @tc.desc   testSnapshotPromiseErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSnapshotPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSnapshotPromiseErrCode1300002_static_0100";
@@ -1114,12 +1157,12 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
-         * @tc.name        testStatusBarContentColor_static_0100
-         * @tc.desc        test_statusBarContentColor_static_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   testStatusBarContentColor_static_0100
+         * @tc.number SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
+         * @tc.desc   test_statusBarContentColor_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testStatusBarContentColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_statusBarContentColor_static_0100';
@@ -1137,6 +1180,243 @@ export default function WindowPropertiesTest() {
                     `Failed to call statusBarContentColor. Cause code: ${exception!.code}, message: ${exception!.message}`);
                 expect(false).assertTrue();
                 done()
+            }
+        });
+
+        /**
+         * @tc.name   testSetCustomDensityErrCode401_Static_0100
+         * @tc.number testSetCustomDensityErrCode401_Static_0100
+         * @tc.desc   testSetCustomDensityErrCode401_Static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetCustomDensityErrCode401_Static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testSetCustomDensityErrCode401_Static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                windowStage.setCustomDensity(10.0)
+                hilog.info(domain, tag,msgStr + 'Succeeded in calling setCustomDensity.');
+                expect(false).assertTrue();
+                hilog.info(domain, tag,msgStr + 'end.');
+                done()
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
+                expect(e.message!=null).assertTrue();
+                if(e.code == 801){
+                    done();
+                }else{
+                    expect(e.code).assertEqual(401);
+                    hilog.info(domain, tag,msgStr + 'end.');
+                    done()
+                }
+
+            }
+        })
+
+
+        /**
+         * @tc.name   testSetCustomDensityParamCheck1_Static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_Static_0300
+         * @tc.desc   有效左边界校验
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testSetCustomDensityParamCheck1_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_testSetCustomDensityParamCheck1_Static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            try {
+                windowStage.setCustomDensity(0.5);
+                hilog.info(domain, tag,msgStr + `setCustomDensity 0.5 success`);
+                done();
+            } catch (exception:BusinessError) {
+                hilog.error(domain, tag,msgStr +
+                    `Failed to getWindowDensityInfo. Cause code: ${exception.code}, message: ${exception.message}`);
+                if (exception.code == 801) {
+                    hilog.info(domain, tag,msgStr + `Current device not support API:setCustomDensity`);
+                    expect(exception.message!=null).assertTrue();
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.name   testSetCustomDensityParamCheck2_Static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_Static_0400
+         * @tc.desc   effective right boundary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testSetCustomDensityParamCheck2_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_testSetCustomDensityParamCheck2_Static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            try {
+                windowStage.setCustomDensity(4.0);
+                hilog.info(domain, tag,msgStr + `setCustomDensity 4.0 success`);
+                done();
+            } catch (exception:BusinessError) {
+                hilog.error(domain, tag,msgStr +
+                    `Failed to getWindowDensityInfo. Cause code: ${exception.code}, message: ${exception.message}`);
+                if (exception.code == 801) {
+                    hilog.info(domain, tag,msgStr + `Current device not support API:setCustomDensity`);
+                    expect(exception.message!=null).assertTrue();
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.name   testSetCustomDensityParamCheck5_Static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_Static_0500
+         * @tc.desc   testGetWindowDensityInfo with aruguments null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetCustomDensityParamCheck5_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_testSetCustomDensityParamCheck5_Static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            try {
+                windowStage.setCustomDensity(-2);
+                hilog.info(domain, tag,msgStr + `setCustomDensity null`);
+                expect(false).assertTrue();
+                done();
+            } catch (exception:BusinessError) {
+                hilog.error(domain, tag,msgStr +
+                    `Failed to getWindowDensityInfo. Cause code: ${exception.code}, message: ${exception.message}`);
+                if (exception.code == 801) {
+                    hilog.info(domain, tag,msgStr + `Current device not support API:setCustomDensity`);
+                    expect(exception.message!=null).assertTrue();
+                    done();
+                } else {
+                    expect(exception.code).assertEqual(401);
+                    expect(exception.message!=null).assertTrue();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.name   testSetDefaultDensityEnabledTrue_Static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_Static_6300
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetDefaultDensityEnabledTrue_Static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string= 'TestSetDefaultDensityEnabledTrue_Static';
+            try {
+                windowStage.setDefaultDensityEnabled(true);
+                hilog.info(domain, tag,`${caseName} Succeeded in setting default density enabled`)
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,`Failed to set default density enabled. Cause code: ${exception.code}, message: ${exception.message}`);
+                if (exception.code === 801) {
+                    hilog.info(domain, tag,`${caseName} The current device not support to setDefaultDensityEnabled`)
+                    expect(exception.message!=null).assertTrue();
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
+        /**
+         * @tc.name   testSetDefaultDensityEnabledFalse_Static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_Static_6400
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetDefaultDensityEnabledFalse_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string= 'TestSetDefaultDensityEnabledFalse_Static';
+            try {
+                windowStage.setDefaultDensityEnabled(false);
+                hilog.info(domain, tag,`${caseName} Succeeded in setting default density enabled`)
+                done();
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,`Failed to set default density enabled. Cause code: ${exception.code}, message: ${exception.message}`);
+                if (exception.code === 801) {
+                    hilog.info(domain, tag,`${caseName} The current device not support to setDefaultDensityEnabled`)
+                    expect(exception.message!=null).assertTrue();
+                    done();
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
+        /**
+         * @tc.name   testSetWindowContainerColorwithUnsupportedSubwindow_Static
+         * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_SUBWINDOW_Static
+         * @tc.desc   验证不支持的子窗调用setwindowcontainercolor接口抛1300004错误码
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testSetWindowContainerColorwithUnsupportedSubwindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowContainerColorwithUnsupportedSubwindow_Static ';
+            hilog.info(domain, tag,caseName + 'begin');
+            let subWindowClass:window.Window = await windowStage.createSubWindow('testSetWindowContainerColorwithUnsupportedSubwindow');
+            await Utils.msSleep(200)
+            try {
+                subWindowClass.setWindowContainerColor("#0099FF","#00000000");
+                hilog.info(domain, tag,caseName + 'success. ');
+                await subWindowClass.destroyWindow()
+                expect(false).assertTrue()
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                await subWindowClass.destroyWindow();
+                expect(err.message!=null).assertTrue();
+                if (err.code == 801) {
+                    done()
+                } else {
+                    expect(err.code).assertEqual(1300004);
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.name   testSetWindowContainerColorwithDestroyedMainWindow_Static
+         * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW_Static
+         * @tc.desc   验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testSetWindowContainerColorwithDestroyedMainWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowContainerColorwithDestroyedMainWindow_Static ';
+            hilog.info(domain, tag,caseName + 'begin');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await Utils.msSleep(200)
+            let windowClass:window.Window = windowStageStart.getMainWindowSync();
+            await terminateAbility(caseName)
+            try {
+                windowClass.setWindowContainerColor("#0099FF","#00000000");
+                hilog.info(domain, tag,caseName + 'success. ');
+                expect(false).assertTrue()
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300002);
+                expect(err.message!=null).assertTrue();
+                done();
             }
         });
 

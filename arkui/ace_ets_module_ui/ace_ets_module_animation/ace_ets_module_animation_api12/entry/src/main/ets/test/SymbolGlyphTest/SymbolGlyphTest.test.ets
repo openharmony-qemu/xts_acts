@@ -57,12 +57,12 @@ export default function SymbolGlyphTest() {
       console.info("SymbolGlyphTest after each called");
     });
     /**
+     * @tc.name   SymbolGlyphTest_001
      * @tc.number SymbolGlyphTest
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SymbolGlyphTest_001", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_001] START");
@@ -74,6 +74,14 @@ export default function SymbolGlyphTest() {
       console.info("[SymbolGlyphTest_001] END");
       done();
     });
+    /**
+     * @tc.name   SymbolGlyphTest_002
+     * @tc.number SymbolGlyphTest_002
+     * @tc.desc   SymbolGlyphTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SymbolGlyphTest_002", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_002] START");
       await CommonFunc.sleep(1000);
@@ -84,6 +92,14 @@ export default function SymbolGlyphTest() {
       console.info("[SymbolGlyphTest_002] END");
       done();
     });
+    /**
+     * @tc.name   SymbolGlyphTest_003
+     * @tc.number SymbolGlyphTest_003
+     * @tc.desc   SymbolGlyphTest_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SymbolGlyphTest_003", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_003] START");
       await CommonFunc.sleep(1000);
@@ -94,6 +110,14 @@ export default function SymbolGlyphTest() {
       console.info("[SymbolGlyphTest_003] END");
       done();
     });
+    /**
+     * @tc.name   SymbolGlyphTest_004
+     * @tc.number SymbolGlyphTest_004
+     * @tc.desc   SymbolGlyphTest_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SymbolGlyphTest_004", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_004] START");
       await CommonFunc.sleep(1000);

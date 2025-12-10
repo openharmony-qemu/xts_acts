@@ -40,12 +40,12 @@ export default function columnJsunit() {
     });
 
     /**
+     * @tc.name   columnTest_0001
      * @tc.number columnTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc set justifyContent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set justifyContent values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('columnTest_0001', Level.LEVEL0, async (done: Function) => {
 
@@ -60,12 +60,12 @@ export default function columnJsunit() {
     });
 
     /**
+     * @tc.name   columnTest_0002
      * @tc.number columnTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc set alignItems values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set alignItems values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('columnTest_0002', Level.LEVEL0, async (done: Function) => {
 
@@ -81,12 +81,12 @@ export default function columnJsunit() {
     });
 
     /**
+     * @tc.name   columnTest_0003
      * @tc.number columnTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Change justifyContent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change justifyContent values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('columnTest_0003', Level.LEVEL0, async (done: Function) => {
 

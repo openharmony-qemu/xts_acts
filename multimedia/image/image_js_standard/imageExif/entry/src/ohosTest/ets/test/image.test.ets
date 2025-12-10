@@ -65,15 +65,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0100
-     * @tc.name      : getImageProperty(BitsPerSample)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(BitsPerSample)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif1.jpg');
@@ -98,15 +95,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0200
-     * @tc.name      : getImageProperty(Orientation)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(Orientation)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -131,15 +125,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0300
-     * @tc.name      : getImageProperty(ImageLength)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(ImageLength)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -164,15 +155,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0400
-     * @tc.name      : getImageProperty(ImageWidth)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(ImageWidth)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -197,15 +185,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0500
-     * @tc.name      : getImageProperty(GPSLatitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLatitude)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -230,15 +215,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0600
-     * @tc.name      : getImageProperty(GPSLongitude)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLongitude)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -263,15 +245,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0700
-     * @tc.name      : getImageProperty(GPSLatitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLatitudeRef)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -296,15 +275,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0800
-     * @tc.name      : getImageProperty(GPSLongitudeRef)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLongitudeRef)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -329,15 +305,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0900
-     * @tc.name      : getImageProperty(DateTimeOriginal)-promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(DateTimeOriginal)
-     *                 4.The return value is not empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROMISE_0900', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -362,14 +335,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0100
-     * @tc.name      : getImageProperty(BitsPerSample)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(BitsPerSample)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif1.jpg');
@@ -394,14 +365,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0200
-     * @tc.name      : getImageProperty(Orientation)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(Orientation)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -426,14 +395,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0300
-     * @tc.name      : getImageProperty(ImageLength)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(ImageLength)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -458,14 +425,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0400
-     * @tc.name      : getImageProperty(ImageWidth)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(ImageWidth)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -490,14 +455,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0500
-     * @tc.name      : getImageProperty(GPSLatitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(GPSLatitude)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -522,14 +485,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0600
-     * @tc.name      : getImageProperty(GPSLongitude)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(GPSLongitude)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -554,14 +515,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0700
-     * @tc.name      : getImageProperty(GPSLatitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(GPSLatitudeRef)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -586,14 +545,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0800
-     * @tc.name      : getImageProperty(GPSLongitudeRef)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(GPSLongitudeRef)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -618,14 +575,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0900
-     * @tc.name      : getImageProperty(DateTimeOriginal)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.call getImageProperty(DateTimeOriginal)
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_CALLBACK_0900', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -650,15 +605,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0100
-     * @tc.name      : getImageProperty(BitsPerSample,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(BitsPerSample,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif1.jpg');
@@ -686,15 +638,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0200
-     * @tc.name      : getImageProperty(Orientation,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(Orientation,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -722,15 +671,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0300
-     * @tc.name      : getImageProperty(ImageLength,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(ImageLength,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -758,15 +704,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0400
-     * @tc.name      : getImageProperty(ImageWidth,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(ImageWidth,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -794,15 +737,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0500
-     * @tc.name      : getImageProperty(GPSLatitude,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLatitude,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -830,15 +770,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0600
-     * @tc.name      : getImageProperty(GPSLongitude,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLongitude,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -866,15 +803,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0700
-     * @tc.name      : getImageProperty(GPSLatitudeRef,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLatitudeRef,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -902,15 +836,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0800
-     * @tc.name      : getImageProperty(GPSLongitudeRef,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(GPSLongitudeRef,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');
@@ -938,15 +869,12 @@ export default function imageExif() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0900
-     * @tc.name      : getImageProperty(DateTimeOriginal,property)-callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set property
-     *                 3.call getImageProperty(DateTimeOriginal,property)
-     *                 4.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_EXIF_GETIMAGEPROPERTY_PROPERTY_CALLBACK_0900', Level.LEVEL0, async (done: Function) => {
       await getFd('test_exif.jpg');

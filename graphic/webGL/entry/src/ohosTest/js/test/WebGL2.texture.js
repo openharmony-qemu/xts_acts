@@ -106,9 +106,12 @@ export default function webgl2_texture() {
             gl.deleteProgram(p.program);
         }
         /**
+         * @tc.name   webgl2_test_texStorage2D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0001
-         * @tc.name webgl2_test_texStorage2D
-         * @tc.desc Test texStorage2D.
+         * @tc.desc   Test texStorage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage2D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage2D] texStorage2D");
@@ -130,9 +133,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage2D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0002
-         * @tc.name webgl2_test_texStorage2D_1
-         * @tc.desc Test texStorage2D.
+         * @tc.desc   Test texStorage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage2D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage2D_1] texStorage2D");
@@ -147,9 +153,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage2D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0003
-         * @tc.name webgl2_test_texStorage2D_2
-         * @tc.desc Test texStorage2D.
+         * @tc.desc   Test texStorage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage2D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage2D_2] texStorage2D");
@@ -164,9 +173,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage2D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0004
-         * @tc.name webgl2_test_texStorage2D_3
-         * @tc.desc Test texStorage2D.
+         * @tc.desc   Test texStorage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage2D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage2D_3] texStorage2D");
@@ -181,9 +193,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage2D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0005
-         * @tc.name webgl2_test_texStorage2D_4
-         * @tc.desc Test texStorage2D.
+         * @tc.desc   Test texStorage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage2D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage2D_4] texStorage2D");
@@ -198,9 +213,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage2D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0006
-         * @tc.name webgl2_test_texStorage2D_5
-         * @tc.desc Test texStorage2D.
+         * @tc.desc   Test texStorage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage2D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage2D_2] texStorage2D");
@@ -295,9 +313,12 @@ export default function webgl2_texture() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_texStorage3D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0007
-         * @tc.name webgl2_test_texStorage3D
-         * @tc.desc Test texStorage3D.
+         * @tc.desc   Test texStorage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage3D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage3D] texStorage3D");
@@ -314,9 +335,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage3D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0008
-         * @tc.name webgl2_test_texStorage3D_1
-         * @tc.desc Test texStorage3D.
+         * @tc.desc   Test texStorage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage3D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage3D_1] texStorage3D");
@@ -328,9 +352,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage3D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0009
-         * @tc.name webgl2_test_texStorage3D_2
-         * @tc.desc Test texStorage3D.
+         * @tc.desc   Test texStorage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage3D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage3D_2] texStorage3D");
@@ -342,9 +369,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage3D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0010
-         * @tc.name webgl2_test_texStorage3D_3
-         * @tc.desc Test texStorage3D.
+         * @tc.desc   Test texStorage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage3D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage3D_3] texStorage3D");
@@ -356,9 +386,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage3D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0011
-         * @tc.name webgl2_test_texStorage3D_4
-         * @tc.desc Test texStorage3D.
+         * @tc.desc   Test texStorage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage3D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage3D_4] texStorage3D");
@@ -370,9 +403,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texStorage3D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0012
-         * @tc.name webgl2_test_texStorage3D_5
-         * @tc.desc Test texStorage3D.
+         * @tc.desc   Test texStorage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texStorage3D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texStorage3D_5] texStorage3D");
@@ -460,9 +496,12 @@ export default function webgl2_texture() {
             gl.deleteProgram(p.program);
         }
         /**
+         * @tc.name   webgl2_test_texImage3D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0013
-         * @tc.name webgl2_test_texImage3D
-         * @tc.desc Test texImage3D.
+         * @tc.desc   Test texImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage3D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage3D] texImage3D");
@@ -479,9 +518,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage3D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0014
-         * @tc.name webgl2_test_texImage3D_1
-         * @tc.desc Test texImage3D.
+         * @tc.desc   Test texImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage3D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage3D_1] texImage3D");
@@ -494,9 +536,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage3D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0015
-         * @tc.name webgl2_test_texImage3D_2
-         * @tc.desc Test texImage3D.
+         * @tc.desc   Test texImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage3D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage3D_2] texImage3D");
@@ -509,9 +554,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage3D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0016
-         * @tc.name webgl2_test_texImage3D_3
-         * @tc.desc Test texImage3D.
+         * @tc.desc   Test texImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage3D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage3D_3] texImage3D");
@@ -524,9 +572,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage3D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0017
-         * @tc.name webgl2_test_texImage3D_4
-         * @tc.desc Test texImage3D.
+         * @tc.desc   Test texImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage3D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage3D_4] texImage3D");
@@ -539,9 +590,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage3D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0018
-         * @tc.name webgl2_test_texImage3D_5
-         * @tc.desc Test texImage3D.
+         * @tc.desc   Test texImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage3D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage3D_5] texImage3D");
@@ -640,9 +694,12 @@ export default function webgl2_texture() {
             gl.deleteProgram(p.program);
         }
         /**
+         * @tc.name   webgl2_test_texSubImage3D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0019
-         * @tc.name webgl2_test_texSubImage3D
-         * @tc.desc Test texSubImage3D.
+         * @tc.desc   Test texSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage3D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage3D] texSubImage3D");
@@ -660,9 +717,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage3D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0020
-         * @tc.name webgl2_test_texSubImage3D_1
-         * @tc.desc Test texSubImage3D.
+         * @tc.desc   Test texSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage3D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage3D_1] texSubImage3D");
@@ -676,9 +736,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage3D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0021
-         * @tc.name webgl2_test_texSubImage3D_2
-         * @tc.desc Test texSubImage3D.
+         * @tc.desc   Test texSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage3D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage3D_2] texSubImage3D");
@@ -692,9 +755,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage3D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0022
-         * @tc.name webgl2_test_texSubImage3D_3
-         * @tc.desc Test texSubImage3D.
+         * @tc.desc   Test texSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage3D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage3D_3] texSubImage3D");
@@ -708,9 +774,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage3D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0023
-         * @tc.name webgl2_test_texSubImage3D_4
-         * @tc.desc Test texSubImage3D.
+         * @tc.desc   Test texSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage3D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage3D_4] texSubImage3D");
@@ -724,9 +793,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage3D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0024
-         * @tc.name webgl2_test_texSubImage3D_5
-         * @tc.desc Test texSubImage3D.
+         * @tc.desc   Test texSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage3D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage3D_5] texSubImage3D");
@@ -877,9 +949,12 @@ export default function webgl2_texture() {
             checkError(gl);
         }
         /**
+         * @tc.name   webgl2_test_copyTexSubImage3D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0025
-         * @tc.name webgl2_test_copyTexSubImage3D
-         * @tc.desc Test copyTexSubImage3D.
+         * @tc.desc   Test copyTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyTexSubImage3D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_copyTexSubImage3D] copyTexSubImage3D");
@@ -903,9 +978,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyTexSubImage3D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0026
-         * @tc.name webgl2_test_copyTexSubImage3D_1
-         * @tc.desc Test copyTexSubImage3D.
+         * @tc.desc   Test copyTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyTexSubImage3D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -926,9 +1004,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyTexSubImage3D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0027
-         * @tc.name webgl2_test_copyTexSubImage3D_2
-         * @tc.desc Test copyTexSubImage3D.
+         * @tc.desc   Test copyTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyTexSubImage3D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -949,9 +1030,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyTexSubImage3D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0028
-         * @tc.name webgl2_test_copyTexSubImage3D_3
-         * @tc.desc Test copyTexSubImage3D.
+         * @tc.desc   Test copyTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyTexSubImage3D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -982,9 +1066,12 @@ export default function webgl2_texture() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_compressedTexImage3D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0029
-         * @tc.name webgl2_test_compressedTexImage3D
-         * @tc.desc Test compressedTexImage3D.
+         * @tc.desc   Test compressedTexImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage3D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1000,9 +1087,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage3D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0030
-         * @tc.name webgl2_test_compressedTexImage3D_1
-         * @tc.desc Test compressedTexImage3D.
+         * @tc.desc   Test compressedTexImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage3D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1014,9 +1104,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage3D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0031
-         * @tc.name webgl2_test_compressedTexImage3D_2
-         * @tc.desc Test compressedTexImage3D.
+         * @tc.desc   Test compressedTexImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage3D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1028,9 +1121,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage3D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0032
-         * @tc.name webgl2_test_compressedTexImage3D_3
-         * @tc.desc Test compressedTexImage3D.
+         * @tc.desc   Test compressedTexImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage3D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1054,9 +1150,12 @@ export default function webgl2_texture() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage3D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0033
-         * @tc.name webgl2_test_compressedTexSubImage3D
-         * @tc.desc Test compressedTexSubImage3D.
+         * @tc.desc   Test compressedTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage3D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1072,9 +1171,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage3D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0034
-         * @tc.name webgl2_test_compressedTexSubImage3D_1
-         * @tc.desc Test compressedTexSubImage3D.
+         * @tc.desc   Test compressedTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage3D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1087,9 +1189,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage3D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0035
-         * @tc.name webgl2_test_compressedTexSubImage3D_2
-         * @tc.desc Test compressedTexSubImage3D.
+         * @tc.desc   Test compressedTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage3D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1102,9 +1207,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage3D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0036
-         * @tc.name webgl2_test_compressedTexSubImage3D_3
-         * @tc.desc Test compressedTexSubImage3D.
+         * @tc.desc   Test compressedTexSubImage3D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage3D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1194,9 +1302,12 @@ export default function webgl2_texture() {
             gl.deleteProgram(program);
         }
         /**
+         * @tc.name   webgl2_test_texImage2D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0037
-         * @tc.name webgl2_test_texImage2D
-         * @tc.desc Test texImage2D.
+         * @tc.desc   Test texImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage2D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage2D] texImage2D");
@@ -1212,9 +1323,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage2D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0038
-         * @tc.name webgl2_test_texImage2D_1
-         * @tc.desc Test texImage2D.
+         * @tc.desc   Test texImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage2D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage2D_1] texImage2D");
@@ -1226,9 +1340,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage2D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0039
-         * @tc.name webgl2_test_texImage2D_2
-         * @tc.desc Test texImage2D.
+         * @tc.desc   Test texImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage2D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage2D_2] texImage2D");
@@ -1240,9 +1357,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage2D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0040
-         * @tc.name webgl2_test_texImage2D_3
-         * @tc.desc Test texImage2D.
+         * @tc.desc   Test texImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage2D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage2D_3] texImage2D");
@@ -1254,9 +1374,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage2D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0041
-         * @tc.name webgl2_test_texImage2D_4
-         * @tc.desc Test texImage2D.
+         * @tc.desc   Test texImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage2D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage2D_4] texImage2D");
@@ -1268,9 +1391,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage2D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0042
-         * @tc.name webgl2_test_texImage2D_5
-         * @tc.desc Test texImage2D.
+         * @tc.desc   Test texImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage2D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage2D_5] texImage2D");
@@ -1282,9 +1408,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texImage2D_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0043
-         * @tc.name webgl2_test_texImage2D_6
-         * @tc.desc Test texImage2D.
+         * @tc.desc   Test texImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texImage2D_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texImage2D_6] texImage2D");
@@ -1374,9 +1503,12 @@ export default function webgl2_texture() {
             gl.deleteProgram(program);
         }
         /**
+         * @tc.name   webgl2_test_texSubImage2D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0044
-         * @tc.name webgl2_test_texSubImage2D
-         * @tc.desc Test texSubImage2D.
+         * @tc.desc   Test texSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage2D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage2D] texSubImage2D");
@@ -1393,9 +1525,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage2D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0045
-         * @tc.name webgl2_test_texSubImage2D_1
-         * @tc.desc Test texSubImage2D.
+         * @tc.desc   Test texSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage2D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage2D_1] texSubImage2D");
@@ -1408,9 +1543,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage2D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0046
-         * @tc.name webgl2_test_texSubImage2D_2
-         * @tc.desc Test texSubImage2D.
+         * @tc.desc   Test texSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage2D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage2D_2] texSubImage2D");
@@ -1423,9 +1561,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage2D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0047
-         * @tc.name webgl2_test_texSubImage2D_3
-         * @tc.desc Test texSubImage2D.
+         * @tc.desc   Test texSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage2D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage2D_3] texSubImage2D");
@@ -1438,9 +1579,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage2D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0048
-         * @tc.name webgl2_test_texSubImage2D_4
-         * @tc.desc Test texSubImage2D.
+         * @tc.desc   Test texSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage2D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage2D_4] texSubImage2D");
@@ -1453,9 +1597,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage2D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0049
-         * @tc.name webgl2_test_texSubImage2D_5
-         * @tc.desc Test texSubImage2D.
+         * @tc.desc   Test texSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage2D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage2D_5] texSubImage2D");
@@ -1468,9 +1615,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_texSubImage2D_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0050
-         * @tc.name webgl2_test_texSubImage2D_6
-         * @tc.desc Test texSubImage2D.
+         * @tc.desc   Test texSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_texSubImage2D_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_texSubImage2D_6] texSubImage2D");
@@ -1492,9 +1642,12 @@ export default function webgl2_texture() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_compressedTexImage2D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0051
-         * @tc.name webgl2_test_compressedTexImage2D
-         * @tc.desc Test compressedTexImage2D.
+         * @tc.desc   Test compressedTexImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage2D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1509,9 +1662,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage2D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0052
-         * @tc.name webgl2_test_compressedTexImage2D_1
-         * @tc.desc Test compressedTexImage2D.
+         * @tc.desc   Test compressedTexImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage2D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1524,9 +1680,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage2D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0053
-         * @tc.name webgl2_test_compressedTexImage2D_2
-         * @tc.desc Test compressedTexImage2D.
+         * @tc.desc   Test compressedTexImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage2D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1539,9 +1698,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage2D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0054
-         * @tc.name webgl2_test_compressedTexImage2D_3
-         * @tc.desc Test compressedTexImage2D.
+         * @tc.desc   Test compressedTexImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage2D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1554,9 +1716,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage2D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0055
-         * @tc.name webgl2_test_compressedTexImage2D_4
-         * @tc.desc Test compressedTexImage2D.
+         * @tc.desc   Test compressedTexImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage2D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1569,9 +1734,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage2D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0056
-         * @tc.name webgl2_test_compressedTexImage2D_5
-         * @tc.desc Test compressedTexImage2D.
+         * @tc.desc   Test compressedTexImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage2D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1584,9 +1752,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexImage2D_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0057
-         * @tc.name webgl2_test_compressedTexImage2D_6
-         * @tc.desc Test compressedTexImage2D.
+         * @tc.desc   Test compressedTexImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexImage2D_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1609,9 +1780,12 @@ export default function webgl2_texture() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage2D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0058
-         * @tc.name webgl2_test_compressedTexSubImage2D
-         * @tc.desc Test compressedTexSubImage2D.
+         * @tc.desc   Test compressedTexSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage2D', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1627,9 +1801,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage2D_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0059
-         * @tc.name webgl2_test_compressedTexSubImage2D_1
-         * @tc.desc Test compressedTexSubImage2D.
+         * @tc.desc   Test compressedTexSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage2D_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1642,9 +1819,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage2D_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0060
-         * @tc.name webgl2_test_compressedTexSubImage2D_2
-         * @tc.desc Test compressedTexSubImage2D.
+         * @tc.desc   Test compressedTexSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage2D_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1657,9 +1837,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage2D_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0061
-         * @tc.name webgl2_test_compressedTexSubImage2D_3
-         * @tc.desc Test compressedTexSubImage2D.
+         * @tc.desc   Test compressedTexSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage2D_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1672,9 +1855,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage2D_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0062
-         * @tc.name webgl2_test_compressedTexSubImage2D_4
-         * @tc.desc Test compressedTexSubImage2D.
+         * @tc.desc   Test compressedTexSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage2D_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1687,9 +1873,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage2D_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0063
-         * @tc.name webgl2_test_compressedTexSubImage2D_5
-         * @tc.desc Test compressedTexSubImage2D.
+         * @tc.desc   Test compressedTexSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage2D_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1702,9 +1891,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_compressedTexSubImage2D_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0064
-         * @tc.name webgl2_test_compressedTexSubImage2D_6
-         * @tc.desc Test compressedTexSubImage2D.
+         * @tc.desc   Test compressedTexSubImage2D.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_compressedTexSubImage2D_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1717,9 +1909,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_readPixels
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0065
-         * @tc.name webgl2_test_readPixels
-         * @tc.desc Test readPixels.
+         * @tc.desc   Test readPixels.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_readPixels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_readPixels] readPixels");
@@ -1785,9 +1980,12 @@ export default function webgl2_texture() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_readPixels_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0066
-         * @tc.name webgl2_test_readPixels_2
-         * @tc.desc Test readPixels.
+         * @tc.desc   Test readPixels.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_readPixels_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_readPixels_2] readPixels");

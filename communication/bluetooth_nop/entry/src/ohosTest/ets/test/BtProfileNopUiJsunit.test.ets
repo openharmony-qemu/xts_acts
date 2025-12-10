@@ -46,12 +46,12 @@ export default function btProfileNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: testGetConnectionStateNop
-     * @tc.name: testGetConnectionState
-     * @tc.desc: test getConnectionState without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetConnectionStateNop
+     * @tc.number testGetConnectionStateNop
+     * @tc.desc   test getConnectionState without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetConnectionStateNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -66,12 +66,12 @@ export default function btProfileNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetConnectedDevicesNop
-     * @tc.name: testGetConnectedDevices
-     * @tc.desc: test getConnectedDevices without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetConnectedDevicesNop
+     * @tc.number testGetConnectedDevicesNop
+     * @tc.desc   test getConnectedDevices without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetConnectedDevicesNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -86,12 +86,12 @@ export default function btProfileNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetPlayingStateNop
-     * @tc.name: testGetPlayingState
-     * @tc.desc: test getPlayingState without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetPlayingStateNop
+     * @tc.number testGetPlayingStateNop
+     * @tc.desc   test getPlayingState without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetPlayingStateNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {

@@ -39,12 +39,12 @@ export default function ActsUrlParameterTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0100
-     * @tc.name: testUrlParameter001
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0100
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter001';
@@ -58,12 +58,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0200
-     * @tc.name: testUrlParameter002
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0200
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter002';
@@ -77,12 +77,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0300
-     * @tc.name: testUrlParameter003
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0300
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter003';
@@ -96,12 +96,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0400
-     * @tc.name: testUrlParameter004
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0400
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter004';
@@ -115,12 +115,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0500
-     * @tc.name: testUrlParameter005
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0500
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter005';
@@ -134,12 +134,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0600
-     * @tc.name: testUrlParameter006
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0600
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter006';
@@ -153,12 +153,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0700
-     * @tc.name: testUrlParameter007
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0700
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter007';
@@ -172,12 +172,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0800
-     * @tc.name: testUrlParameter008
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0800
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter008';
@@ -191,12 +191,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0900
-     * @tc.name: testUrlParameter009
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0900
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter009';
@@ -210,13 +210,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1000
-     * @tc.name: testUrlParameter010
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1000
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter010';
@@ -230,12 +229,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1100
-     * @tc.name: testUrlParameter011
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1100
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter011';
@@ -249,12 +248,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1200
-     * @tc.name: testUrlParameter012
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1200
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter012';
@@ -268,12 +267,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1300
-     * @tc.name: testUrlParameter013
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1300
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter013';
@@ -287,12 +286,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1400
-     * @tc.name: testUrlParameter014
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1400
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter014';
@@ -306,12 +305,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1500
-     * @tc.name: testUrlParameter015
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1500
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter015';
@@ -325,12 +324,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1600
-     * @tc.name: testUrlParameter016
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1600
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter016';
@@ -344,12 +343,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1700
-     * @tc.name: testUrlParameter017
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1700
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter017';
@@ -363,12 +362,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1800
-     * @tc.name: testUrlParameter018
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1800
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter018';
@@ -382,12 +381,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1900
-     * @tc.name: testUrlParameter019
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1900
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter019';
@@ -401,12 +400,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2000
-     * @tc.name: testUrlParameter020
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2000
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter020';
@@ -420,12 +419,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2100
-     * @tc.name: testUrlParameter021
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2100
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter021';
@@ -440,12 +439,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2200
-     * @tc.name: testUrlParameter022
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2200
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter022';
@@ -459,12 +458,12 @@ export default function ActsUrlParameterTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2300
-     * @tc.name: testUrlParameter023
-     * @tc.desc: The test parameter is empty
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlParameter023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2300
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlParameter023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter023';
@@ -477,14 +476,14 @@ export default function ActsUrlParameterTest() {
       }
       done();
     });
-    /*
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2400
-    * @tc.name: testUrlParameter024
-    * @tc.desc: The test parameter is empty
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testUrlParameter024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2400
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testUrlParameter024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter024';
       try {
@@ -496,14 +495,14 @@ export default function ActsUrlParameterTest() {
       }
       done();
     });
-    /*
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2500
-    * @tc.name: testUrlParameter025
-    * @tc.desc: The test parameter is empty
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testUrlParameter025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2500
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testUrlParameter025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUrlParameter025';
       try {

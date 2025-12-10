@@ -76,9 +76,12 @@ export default function inputMethodTest() {
         );
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_showTextInput_Async_static_0100
          * @tc.number SUB_Misc_inputMethod_showTextInput_Async_static_0100
-         * @tc.name SUB_Misc_inputMethod_showTextInput_Async_static_0100
-         * @tc.desc Async mode calls the showTextInput interface without input parameters
+         * @tc.desc   Async mode calls the showTextInput interface without input parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_showTextInput_Async_static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Async_static_0100';
@@ -101,9 +104,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_showTextInput_Async_static_0400
          * @tc.number SUB_Misc_inputMethod_showTextInput_Async_static_0400
-         * @tc.name SUB_Misc_inputMethod_showTextInput_Async_static_0400
-         * @tc.desc Do not bind the input method keyboard, and call the showTextInput interface in Async mode
+         * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Async mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_showTextInput_Async_static_0400', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Async_static_0400';
@@ -138,9 +144,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_showTextInput_Promise_static_0100
          * @tc.number SUB_Misc_inputMethod_showTextInput_Promise_static_0100
-         * @tc.name SUB_Misc_inputMethod_showTextInput_Promise_static_0100
-         * @tc.desc Promise mode calls the showTextInput interface without input parameters
+         * @tc.desc   Promise mode calls the showTextInput interface without input parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_showTextInput_Promise_static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Promise_static_0100';
@@ -157,9 +166,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_showTextInput_Promise_static_0400
          * @tc.number SUB_Misc_inputMethod_showTextInput_Promise_static_0400
-         * @tc.name SUB_Misc_inputMethod_showTextInput_Promise_static_0400
-         * @tc.desc Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
+         * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_showTextInput_Promise_static_0400', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Promise_static_0400';
@@ -187,9 +199,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_hideTextInput_Async_static_0100
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Async_static_0100
-         * @tc.name SUB_Misc_inputMethod_hideTextInput_Async_static_0100
-         * @tc.desc Async mode calls the hideTextInput interface without input parameters
+         * @tc.desc   Async mode calls the hideTextInput interface without input parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_hideTextInput_Async_static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_hideTextInput_Async_static_0100';
@@ -213,9 +228,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_hideTextInput_Async_static_0400
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Async_static_0400
-         * @tc.name SUB_Misc_inputMethod_hideTextInput_Async_static_0400
-         * @tc.desc The input method keyboard is not bound, and the hideTextInput interface is called in Async mode
+         * @tc.desc   The input method keyboard is not bound, and the hideTextInput interface is called in Async mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_hideTextInput_Async_static_0400', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_hideTextInput_Async_static_0400';
@@ -252,9 +270,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_hideTextInput_Promise_static_0100
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Promise_static_0100
-         * @tc.name SUB_Misc_inputMethod_hideTextInput_Promise_static_0100
-         * @tc.desc Promise mode calls the hideTextInput interface without input parameters
+         * @tc.desc   Promise mode calls the hideTextInput interface without input parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_hideTextInput_Promise_static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_hideTextInput_Promise_static_0100';
@@ -279,9 +300,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_hideTextInput_Promise_static_0400
          * @tc.number SUB_Misc_inputMethod_hideTextInput_Promise_static_0400
-         * @tc.name SUB_Misc_inputMethod_hideTextInput_Promise_static_0400
-         * @tc.desc The input method keyboard is not bound, and the hideTextInput interface is called in Promise mode
+         * @tc.desc   The input method keyboard is not bound, and the hideTextInput interface is called in Promise mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_hideTextInput_Promise_static_0400', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_hideTextInput_Promise_static_0400';
@@ -309,9 +333,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_detach_Async_static_0100
          * @tc.number SUB_Misc_inputMethod_detach_Async_static_0100
-         * @tc.name SUB_Misc_inputMethod_detach_Async_static_0100
-         * @tc.desc Async mode calls the detach interface without input parameters
+         * @tc.desc   Async mode calls the detach interface without input parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_detach_Async_static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_detach_Async_static_0100';
@@ -335,9 +362,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_detach_Promise_static_0100
          * @tc.number SUB_Misc_inputMethod_detach_Promise_static_0100
-         * @tc.name SUB_Misc_inputMethod_detach_Promise_static_0100
-         * @tc.desc Promise mode calls the detach interface without input parameters
+         * @tc.desc   Promise mode calls the detach interface without input parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_detach_Promise_static_0100', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_detach_Promise_static_0100';
@@ -356,9 +386,12 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @tc.name   SUB_Misc_inputMethod_showTextInput_Promise_static_0101
          * @tc.number SUB_Misc_inputMethod_showTextInput_Promise_static_0101
-         * @tc.name SUB_Misc_inputMethod_showTextInput_Promise_static_0101
-         * @tc.desc Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
+         * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Misc_inputMethod_showTextInput_Promise_static_0101', Level.LEVEL2, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Promise_static_0101';

@@ -59,11 +59,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0100
-         * @tc.name: Call waitAbilityStageMonitor in the form of callback, and enter the monitor
-         * @tc.desc: Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-         * @tc.level: 1
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0100
+     * @tc.number SUB_AA_AbilityStageMonitor_0100
+     * @tc.desc   Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0100', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStage_0100 begin")
 
@@ -105,11 +107,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0200
-         * @tc.name: Call waitAbilityStageMonitor in the form of a promise, and enter the monitor
-         * @tc.desc: Verify that the promise form of waitAbilityStageMonitor can get the abilityStage instance
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0200
+     * @tc.number SUB_AA_AbilityStageMonitor_0200
+     * @tc.desc   Verify that the promise form of waitAbilityStageMonitor can get the abilityStage instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0200', Level.LEVEL0, async (done:Function) => {
       console.log("SUB_AA_AbilityStage_0200 begin")
 
@@ -150,11 +154,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0300
-         * @tc.name: Call waitAbilityStageMonitor in the form of callBack, enter the monitor, timeout
-         * @tc.desc: Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0300
+     * @tc.number SUB_AA_AbilityStageMonitor_0300
+     * @tc.desc   Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0300', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_0300 begin")
 
@@ -196,11 +202,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0400
-         * @tc.name: Call waitAbilityStageMonitor in the form of promise, input monitor, timeout
-         * @tc.desc: Verify that the promise form of waitAbilityStageMonitor can get the abilityStage instance
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0400
+     * @tc.number SUB_AA_AbilityStageMonitor_0400
+     * @tc.desc   Verify that the promise form of waitAbilityStageMonitor can get the abilityStage instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0400', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_0400 begin")
 
@@ -243,12 +251,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0500
-         * @tc.name: Call waitAbilityStageMonitor, the moduleName in the parameter monitor does not exist
-         * @tc.desc: Verify that the moduleName passed in by waitAbilityStageMonitor
-         * does not exist and throw an exception
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0500
+     * @tc.number SUB_AA_AbilityStageMonitor_0500
+     * @tc.desc   Verify that the moduleName passed in by waitAbilityStageMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0500', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_0500 begin")
 
@@ -288,12 +297,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0600
-         * @tc.name: Call waitAbilityStageMonitor, the srcEntrance in the parameter monitor does not exist
-         * @tc.desc: Verify that the srcEntrance passed in by waitAbilityStageMonitor
-         * does not exist and throw an exception
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0600
+     * @tc.number SUB_AA_AbilityStageMonitor_0600
+     * @tc.desc   Verify that the srcEntrance passed in by waitAbilityStageMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0600', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_0600 begin")
 
@@ -330,13 +340,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0700
-         * @tc.name: Call the promise form of addAbilityStageMonitor to add monitoring,
-         * and call the promise form of removeAbilityStageMonitor to cancel monitoring
-         * @tc.desc: Verify that addAbilityStageMonitor can add monitoring,
-         * verify that removeAbilityStageMonitor can cancel monitoring
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0700
+     * @tc.number SUB_AA_AbilityStageMonitor_0700
+     * @tc.desc   Verify that addAbilityStageMonitor can add monitoring,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0700', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_0700 begin")
 
@@ -386,13 +396,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0800
-         * @tc.name: Call the callback form of addAbilityStageMonitor to add monitoring,
-         * and call the callback form of removeAbilityStageMonitor to cancel monitoring
-         * @tc.desc: Verify that addAbilityStageMonitor can add monitoring,
-         * verify that removeAbilityStageMonitor can cancel monitoring
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0800
+     * @tc.number SUB_AA_AbilityStageMonitor_0800
+     * @tc.desc   Verify that addAbilityStageMonitor can add monitoring,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0800', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_0800 begin")
 
@@ -451,12 +461,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_0900
-         * @tc.name: Call waitAbilityStageMonitor, input monitor, timeout is 3 seconds
-         * @tc.desc: Verify that waitAbilityStageMonitor is
-         * created after listening for less than 3 seconds
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_0900
+     * @tc.number SUB_AA_AbilityStageMonitor_0900
+     * @tc.desc   Verify that waitAbilityStageMonitor is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_0900', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_0900 begin")
 
@@ -498,14 +509,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitor_1000
-         * @tc.name: Call the promise form of addAbilityStageMonitor to add monitoring,
-         * call the promise form of removeAbilityStageMonitor to cancel monitoring,
-         * and the moduleName in the parameter monitor does not exist
-         * @tc.desc: Verify that addAbilityStageMonitor can add monitoring,
-         * verify that removeAbilityStageMonitor can cancel monitoring
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitor_1000
+     * @tc.number SUB_AA_AbilityStageMonitor_1000
+     * @tc.desc   Verify that addAbilityStageMonitor can add monitoring,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitor_1000', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_1000 begin")
 
@@ -545,13 +555,13 @@ export default function abilityStageMonitorTest() {
     })
 
     /**
-         * @tc.number: SUB_AA_AbilityStageMonitorSync_0100
-         * @tc.name:  Call the synchronous method of addAbilityStageMonitorSync to add monitoring,
-         * call the ynchronous method of removeAbilityStageMonitorSync to cancel monitoring,
-         * @tc.desc: Verify that addAbilityStageMonitorSync can add monitoring,
-         * verify that removeAbilityStageMonitorSync can cancel monitoring
-         * @tc.level: 3
-         */
+     * @tc.name   SUB_AA_AbilityStageMonitorSync_0100
+     * @tc.number SUB_AA_AbilityStageMonitorSync_0100
+     * @tc.desc   Verify that addAbilityStageMonitorSync can add monitoring,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AbilityStageMonitorSync_0100', Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStageMonitor_1000 begin")
       console.info("SUB_AA_AbilityStageMonitorSync_0100 wait abilityStage");

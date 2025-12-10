@@ -53,12 +53,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0100
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0100
-     * @tc.name builtinsmMultipleGenericsRestraintTest0100
-     * @tc.desc test Get the first parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get the first parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -86,12 +86,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0200
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0200
-     * @tc.name builtinsmMultipleGenericsRestraintTest0200
-     * @tc.desc test Get the second parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get the second parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -119,12 +119,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0300
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0300
-     * @tc.name builtinsmMultipleGenericsRestraintTest0300
-     * @tc.desc test Convert the first parameter to a string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Convert the first parameter to a string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -151,12 +151,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0400
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0400
-     * @tc.name builtinsmMultipleGenericsRestraintTest0400
-     * @tc.desc test Convert the first parameter to a number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Convert the first parameter to a number
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -184,12 +184,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0500
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0500
-     * @tc.name builtinsmMultipleGenericsRestraintTest0500
-     * @tc.desc test Gets the length of the first parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Gets the length of the first parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -220,12 +220,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0600
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0600
-     * @tc.name builtinsmMultipleGenericsRestraintTest0600
-     * @tc.desc test Check if the first parameter is true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Check if the first parameter is true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -253,12 +253,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0700
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0700
-     * @tc.name builtinsmMultipleGenericsRestraintTest0700
-     * @tc.desc test Check if the second parameter is true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Check if the second parameter is true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -286,12 +286,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0800
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0800
-     * @tc.name builtinsmMultipleGenericsRestraintTest0800
-     * @tc.desc test Combine two parameters as a string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Combine two parameters as a string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -319,12 +319,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest0900
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_0900
-     * @tc.name builtinsmMultipleGenericsRestraintTest0900
-     * @tc.desc test Toggles the Boolean value of the second parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Toggles the Boolean value of the second parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -352,12 +352,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1000
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1000
-     * @tc.name builtinsmMultipleGenericsRestraintTest1000
-     * @tc.desc test There are multiple types of parameters,all with default values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test There are multiple types of parameters,all with default values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -388,12 +388,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1100
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1100
-     * @tc.name builtinsmMultipleGenericsRestraintTest1100
-     * @tc.desc test The front ones have default values,and the later ones don't
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The front ones have default values,and the later ones don't
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -424,12 +424,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1200
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1200
-     * @tc.name builtinsmMultipleGenericsRestraintTest1200
-     * @tc.desc test Convert the second parameter to lowercase
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Convert the second parameter to lowercase
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -460,12 +460,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1300
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1300
-     * @tc.name builtinsmMultipleGenericsRestraintTest1300
-     * @tc.desc test Whether it is a string or not
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Whether it is a string or not
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -499,12 +499,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1400
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1400
-     * @tc.name builtinsmMultipleGenericsRestraintTest1400
-     * @tc.desc test Get the data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get the data
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -542,12 +542,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1500
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1500
-     * @tc.name builtinsmMultipleGenericsRestraintTest1500
-     * @tc.desc test Get the first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get the first element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -587,12 +587,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1600
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1600
-     * @tc.name builtinsmMultipleGenericsRestraintTest1600
-     * @tc.desc test Get the first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get the first element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -632,12 +632,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1700
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1700
-     * @tc.name builtinsmMultipleGenericsRestraintTest1700
-     * @tc.desc test Get elements by index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get elements by index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -674,12 +674,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1800
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1800
-     * @tc.name builtinsmMultipleGenericsRestraintTest1800
-     * @tc.desc test Get an array of property values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get an array of property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -725,12 +725,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest1900
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_1900
-     * @tc.name builtinsmMultipleGenericsRestraintTest1900
-     * @tc.desc test Get an array of property values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Get an array of property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -797,12 +797,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2000
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2000
-     * @tc.name builtinsmMultipleGenericsRestraintTest2000
-     * @tc.desc test Bubbling sorting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Bubbling sorting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -846,12 +846,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2100
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2100
-     * @tc.name builtinsmMultipleGenericsRestraintTest2100
-     * @tc.desc test Insert sorting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Insert sorting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -890,12 +890,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2200
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2200
-     * @tc.name builtinsmMultipleGenericsRestraintTest2200
-     * @tc.desc test Select Sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Select Sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -938,12 +938,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2300
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2300
-     * @tc.name builtinsmMultipleGenericsRestraintTest2300
-     * @tc.desc test Quick sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Quick sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1004,12 +1004,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2400
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2400
-     * @tc.name builtinsmMultipleGenericsRestraintTest2400
-     * @tc.desc test Merge sorting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Merge sorting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1062,12 +1062,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2500
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2500
-     * @tc.name builtinsmMultipleGenericsRestraintTest2500
-     * @tc.desc test Binary search
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Binary search
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1111,12 +1111,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2600
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2600
-     * @tc.name builtinsmMultipleGenericsRestraintTest2600
-     * @tc.desc test Calculate the maximum value of the array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Calculate the maximum value of the array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1142,12 +1142,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2700
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2700
-     * @tc.name builtinsmMultipleGenericsRestraintTest2700
-     * @tc.desc test Calculate the minimum value of the array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Calculate the minimum value of the array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1173,12 +1173,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2800
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2800
-     * @tc.name builtinsmMultipleGenericsRestraintTest2800
-     * @tc.desc test Hill sorted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Hill sorted
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1223,12 +1223,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest2900
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_2900
-     * @tc.name builtinsmMultipleGenericsRestraintTest2900
-     * @tc.desc test Heap sorting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Heap sorting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1287,12 +1287,12 @@ export default function builtinsmMultipleGenericsRestraintTest() {
       })
 
     /**
+     * @tc.name   builtinsmMultipleGenericsRestraintTest3000
      * @tc.number SUB_BUILTINS_MULTIPLE_GENERICS_RESTRAINT_TEST_3000
-     * @tc.name builtinsmMultipleGenericsRestraintTest3000
-     * @tc.desc test Cardinality sorting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Cardinality sorting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsmMultipleGenericsRestraintTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {

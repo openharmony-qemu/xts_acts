@@ -17,10 +17,12 @@ import { afterEach, beforeEach,beforeAll, describe, it, expect , TestType, Size,
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
+import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 let emitKey = "";
 
@@ -43,7 +45,7 @@ export default function WebSafeLoadOneTest() {
         } catch (err) {
           console.error("push webSafeLoadOne page error:" + err);
         }
-        await waitForComponent("webcomponent");
+        await driver.waitForComponent(ON.id("webSafeLoadButton"), 10000);
         done()
       });
 
@@ -57,35 +59,44 @@ export default function WebSafeLoadOneTest() {
       console.info("web beforeEach start");
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_057                                                                                                                                                
-     *tc.name SetHttpDnsSuccessAuto                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   SetHttpDnsSuccessAuto
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_057
+     * @tc.desc   SetHttpDnsSuccessAuto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetHttpDnsSuccessAuto', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetHttpDnsSuccessAuto", 160790);
       Utils.registerEvent("SetHttpDnsSuccessAuto", "Example Domain", 160800, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_058                                                                                                                                             
-     *tc.name SetHttpDnsSuccessOff                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   SetHttpDnsSuccessOff
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_058
+     * @tc.desc   SetHttpDnsSuccessOff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetHttpDnsSuccessOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetHttpDnsSuccessOff", 160790);
       Utils.registerEvent("SetHttpDnsSuccessOff", "Example Domain", 160810, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
     })
-    /* 
-      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_061                                                                                                                                                              
-      *tc.name getCustomUserAgent                                                                                                                                                                                                                
-      *tc.desic Save current page
-      */
+    /**
+     * @tc.name   GetCustomUserAgent
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_061
+     * @tc.desc   GetCustomUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GetCustomUserAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetCustomUserAgent", 160790);
       Utils.registerEvent("GetCustomUserAgent", "userAgent", 160820, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
     })
   })
 }

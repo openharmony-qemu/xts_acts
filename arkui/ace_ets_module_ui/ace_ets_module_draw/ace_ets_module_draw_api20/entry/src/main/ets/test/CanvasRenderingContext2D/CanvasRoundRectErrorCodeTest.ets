@@ -41,12 +41,12 @@ export default function CanvasRoundRectErrorCodeTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      CanvasRoundRectErrorCodeTest_0100
-     * @tc.desc      Error Code 103701
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   CanvasRoundRectErrorCodeTest_0100
+     * @tc.number CanvasRoundRectErrorCodeTest_0100
+     * @tc.desc   Error Code 103701
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CanvasRoundRectErrorCodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[CanvasRoundRectErrorCodeTest_0100] START');

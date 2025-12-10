@@ -61,6 +61,14 @@ static size_t getDeviceNum(unordered_map<uint64_t, shared_ptr<Device>> map)
     return num;
 }
 
+/**
+ * @tc.name   BusExtensionRegisterTest
+ * @tc.number BusExtensionRegisterTest
+ * @tc.desc   BusExtensionRegisterTest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, BusExtensionRegisterTest, Function | MediumTest | Level1)
 {
     BusExtensionCore &core = BusExtensionCore::GetInstance();
@@ -69,6 +77,14 @@ HWTEST_F(DeviceManagerTest, BusExtensionRegisterTest, Function | MediumTest | Le
     ASSERT_NE(core.busExtensions_[BusType::BUS_TYPE_USB], nullptr);
 }
 
+/**
+ * @tc.name   InitTest
+ * @tc.number InitTest
+ * @tc.desc   InitTest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, InitTest, TestSize.Level1)
 {
     DriverPkgManager::GetInstance().Init();
@@ -77,6 +93,14 @@ HWTEST_F(DeviceManagerTest, InitTest, TestSize.Level1)
 }
 
 // test OnDeviceAdd and OnDeviceRemove
+/**
+ * @tc.name   OnDeviceAddRemoveTest001
+ * @tc.number OnDeviceAddRemoveTest001
+ * @tc.desc   OnDeviceAddRemoveTest001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest001, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -94,6 +118,14 @@ HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest001, Function | MediumTest | Le
 }
 
 // test adding device repeatedly
+/**
+ * @tc.name   OnDeviceAddRemoveTest002
+ * @tc.number OnDeviceAddRemoveTest002
+ * @tc.desc   OnDeviceAddRemoveTest002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest002, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -114,6 +146,14 @@ HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest002, Function | MediumTest | Le
     ASSERT_EQ(ret, EDM_OK);
 }
 
+/**
+ * @tc.name   OnDeviceAddRemoveTest003
+ * @tc.number OnDeviceAddRemoveTest003
+ * @tc.desc   OnDeviceAddRemoveTest003
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest003, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -138,6 +178,14 @@ HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest003, Function | MediumTest | Le
     ASSERT_EQ(getDeviceNum(extMgr.deviceMap_[BusType::BUS_TYPE_TEST]), 0);
 }
 
+/**
+ * @tc.name   QueryDeviceTest
+ * @tc.number QueryDeviceTest
+ * @tc.desc   QueryDeviceTest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, QueryDeviceTest, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -162,6 +210,14 @@ HWTEST_F(DeviceManagerTest, QueryDeviceTest, Function | MediumTest | Level1)
     ASSERT_EQ(getDeviceNum(extMgr.deviceMap_[BusType::BUS_TYPE_TEST]), 0);
 }
 
+/**
+ * @tc.name   GetBusExtensionByNameTest
+ * @tc.number GetBusExtensionByNameTest
+ * @tc.desc   GetBusExtensionByNameTest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, GetBusExtensionByNameTest, Function | MediumTest | Level1)
 {
     BusExtensionCore &core = BusExtensionCore::GetInstance();
@@ -209,6 +265,14 @@ public:
     };
 };
 
+/**
+ * @tc.name   ConnectDeviceTest
+ * @tc.number ConnectDeviceTest
+ * @tc.desc   ConnectDeviceTest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, ConnectDeviceTest, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -256,6 +320,14 @@ HWTEST_F(DeviceManagerTest, ConnectDeviceTest, Function | MediumTest | Level1)
     ASSERT_EQ(iter->second.isBound, true);
 }
 
+/**
+ * @tc.name   ConnectDeviceTest1
+ * @tc.number ConnectDeviceTest1
+ * @tc.desc   ConnectDeviceTest1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, ConnectDeviceTest1, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -283,6 +355,14 @@ HWTEST_F(DeviceManagerTest, ConnectDeviceTest1, Function | MediumTest | Level1)
     ASSERT_NE(ret, EDM_ERR_SERVICE_NOT_ALLOW_ACCESS);
 }
 
+/**
+ * @tc.name   ConnectDeviceTest2
+ * @tc.number ConnectDeviceTest2
+ * @tc.desc   ConnectDeviceTest2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, ConnectDeviceTest2, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -310,6 +390,14 @@ HWTEST_F(DeviceManagerTest, ConnectDeviceTest2, Function | MediumTest | Level1)
     ASSERT_NE(ret, EDM_ERR_NO_PERM);
 }
 
+/**
+ * @tc.name   DisConnectDeviceTest
+ * @tc.number DisConnectDeviceTest
+ * @tc.desc   DisConnectDeviceTest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, DisConnectDeviceTest, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();
@@ -364,6 +452,14 @@ HWTEST_F(DeviceManagerTest, DisConnectDeviceTest, Function | MediumTest | Level1
     ASSERT_EQ(device->boundCallerInfos_.size(), 0);
 }
 
+/**
+ * @tc.name   DisConnectDeviceTest1
+ * @tc.number DisConnectDeviceTest1
+ * @tc.desc   DisConnectDeviceTest1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DeviceManagerTest, DisConnectDeviceTest1, Function | MediumTest | Level1)
 {
     ExtDeviceManager &extMgr = ExtDeviceManager::GetInstance();

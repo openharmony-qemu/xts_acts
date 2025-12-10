@@ -47,12 +47,12 @@ export default function GetFrameNodeMethodNullTest() {
     });
 
     /**
-     * @tc.number    GetFrameNodeMethodNullTest_0100
-     * @tc.name      GetFrameNodeMethodNullTest_0100
-     * @tc.desc      frameNode method null test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetFrameNodeMethodNullTest_0100
+     * @tc.number GetFrameNodeMethodNullTest_0100
+     * @tc.desc   frameNode method null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFrameNodeMethodNullTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GetFrameNodeMethodNullTest_0100 START');
@@ -79,12 +79,12 @@ export default function GetFrameNodeMethodNullTest() {
     });
 
     /**
-     * @tc.number    GetFrameNodeMethodNullTest_0200
-     * @tc.name      GetFrameNodeMethodNullTest_0200
-     * @tc.desc      frameNode method null test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetFrameNodeMethodNullTest_0200
+     * @tc.number GetFrameNodeMethodNullTest_0200
+     * @tc.desc   frameNode method null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFrameNodeMethodNullTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('GetFrameNodeMethodNullTest_0200 START');
@@ -102,12 +102,12 @@ export default function GetFrameNodeMethodNullTest() {
     });
 
     /**
-     * @tc.number    GetFrameNodeMethodNullTest_0300
-     * @tc.name      GetFrameNodeMethodNullTest_0300
-     * @tc.desc      frameNode method null test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetFrameNodeMethodNullTest_0300
+     * @tc.number GetFrameNodeMethodNullTest_0300
+     * @tc.desc   frameNode method null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFrameNodeMethodNullTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('GetFrameNodeMethodNullTest_0300 START');
@@ -125,12 +125,12 @@ export default function GetFrameNodeMethodNullTest() {
     });
 
     /**
-     * @tc.number    GetFrameNodeMethodNullTest_0400
-     * @tc.name      GetFrameNodeMethodNullTest_0400
-     * @tc.desc      frameNode method null test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetFrameNodeMethodNullTest_0400
+     * @tc.number GetFrameNodeMethodNullTest_0400
+     * @tc.desc   frameNode method null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFrameNodeMethodNullTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('GetFrameNodeMethodNullTest_0400 START');
@@ -148,12 +148,12 @@ export default function GetFrameNodeMethodNullTest() {
     });
 
     /**
-     * @tc.number    GetFrameNodeMethodNullTest_0500
-     * @tc.name      GetFrameNodeMethodNullTest_0500
-     * @tc.desc      frameNode method null test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetFrameNodeMethodNullTest_0500
+     * @tc.number GetFrameNodeMethodNullTest_0500
+     * @tc.desc   frameNode method null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFrameNodeMethodNullTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('GetFrameNodeMethodNullTest_0500 START');
@@ -169,12 +169,12 @@ export default function GetFrameNodeMethodNullTest() {
     });
 
     /**
-     * @tc.number    GetFrameNodeMethodNullTest_0600
-     * @tc.name      GetFrameNodeMethodNullTest_0600
-     * @tc.desc      frameNode method null test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetFrameNodeMethodNullTest_0600
+     * @tc.number GetFrameNodeMethodNullTest_0600
+     * @tc.desc   frameNode method null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetFrameNodeMethodNullTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('GetFrameNodeMethodNullTest_0600 START');

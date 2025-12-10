@@ -256,12 +256,12 @@ export default function cameraManagerTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_MANAGER_PROMISE_0100
-     * @tc.name      : Create camera manager instance promise api
-     * @tc.desc      : Create camera manager instance promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_MANAGER_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_MANAGER_PROMISE_0100
+     * @tc.desc   Create camera manager instance promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_MANAGER_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_MANAGER_PROMISE_0100--------------");
@@ -273,12 +273,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERAS_PROMISE_0100
-     * @tc.name      : Get camera from cameramanager to get array of camera promise api
-     * @tc.desc      : Get camera from cameramanager to get array of camera promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERAS_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERAS_PROMISE_0100
+     * @tc.desc   Get camera from cameramanager to get array of camera promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERAS_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERAS_PROMISE_0100--------------");
@@ -336,12 +336,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_SCENE_MODE_0100
-     * @tc.name      : Get camera from cameramanager to get array of camera promise api
-     * @tc.desc      : Get camera from cameramanager to get array of camera promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_SCENE_MODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_SCENE_MODE_0100
+     * @tc.desc   Get camera from cameramanager to get array of camera promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_SCENE_MODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_SCENE_MODE_0100--------------");
@@ -378,12 +378,12 @@ export default function cameraManagerTest() {
 
     /*GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_TC*/
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_BY_MODE_CALLBACK_0100
-     * @tc.name      : Get supported preview formats from camera-0 camerainput async api
-     * @tc.desc      : Get supported preview formats from camera-0 camerainput async api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_BY_MODE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_BY_MODE_CALLBACK_0100
+     * @tc.desc   Get supported preview formats from camera-0 camerainput async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_BY_MODE_CALLBACK_0100', Level.LEVEL2,
       async (done: Function) => {
@@ -437,12 +437,12 @@ export default function cameraManagerTest() {
       })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_PROMISE_0100
-     * @tc.name      : Create CaptureSession instance promise api
-     * @tc.desc      : Create Capturesession instance promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_MODE_SESSION_PROMISE_BY_MODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_PROMISE_0100
+     * @tc.desc   Create Capturesession instance promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_MODE_SESSION_PROMISE_BY_MODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CREATE_MODE_SESSION_PROMISE_BY_MODE_0100 to operate");
@@ -471,12 +471,12 @@ export default function cameraManagerTest() {
 
     /*GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_TC*/
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_CALLBACK_0100
-     * @tc.name      : Get supported preview formats from camera-0 camerainput async api
-     * @tc.desc      : Get supported preview formats from camera-0 camerainput async api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_CALLBACK_0100
+     * @tc.desc   Get supported preview formats from camera-0 camerainput async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_CALLBACK_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_CALLBACK_0100--------------");
@@ -525,12 +525,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_PROMISE_0100
-     * @tc.name      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.desc      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_PROMISE_0100
+     * @tc.desc   Get supported preview formats from camera-0 camerainput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_CAMERA_OUTPUT_CAPABILITY_PROMISE_0100--------------");
@@ -578,12 +578,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PREVIEW_PROFILES_0100
-     * @tc.name      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.desc      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_PROFILES_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_PROFILES_0100
+     * @tc.desc   Get supported preview formats from camera-0 camerainput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_PROFILES_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_PROFILES_0100--------------");
@@ -619,12 +619,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_PROFILES_0100
-     * @tc.name      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.desc      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_PROFILES_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_PROFILES_0100
+     * @tc.desc   Get supported preview formats from camera-0 camerainput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_PROFILES_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_PROFILES_0100--------------");
@@ -659,12 +659,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_VIDEO_PROFILES_0100
-     * @tc.name      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.desc      : Get supported preview formats from camera-0 camerainput promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_PROFILES_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_PROFILES_0100
+     * @tc.desc   Get supported preview formats from camera-0 camerainput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_PROFILES_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_PROFILES_0100--------------");
@@ -704,12 +704,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_0100
-     * @tc.name      : Create camerainput from camera-0 cameraId promise api
-     * @tc.desc      : Create camerainput from camera-0 cameraId promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_0100
+     * @tc.desc   Create camerainput from camera-0 cameraId promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_0100--------------");
@@ -735,12 +735,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_BY_POSITION_AND_TYPE_PROMISE_0100
-     * @tc.name      : Create camerainput from camera-0 cameraposition back & cameratype unspecified promise api
-     * @tc.desc      : Create camerainput from camera-0 cameraposition back & cameratype unspecified promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_BY_POSITION_AND_TYPE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_BY_POSITION_AND_TYPE_PROMISE_0100
+     * @tc.desc   Create camerainput from camera-0 cameraposition back & cameratype unspecified promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_BY_POSITION_AND_TYPE_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_BY_POSITION_AND_TYPE_PROMISE_0100--------------");
@@ -769,12 +769,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PREVIEW_OUTPUT_PROMISE_0100
-     * @tc.name      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.desc      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.desc   Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PREVIEW_OUTPUT_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PREVIEW_OUTPUT_PROMISE_0100--------------");
@@ -810,12 +810,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PHOTO_OUTPUT_PROMISE_0100
-     * @tc.name      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.desc      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PHOTO_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PHOTO_OUTPUT_PROMISE_0100
+     * @tc.desc   Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PHOTO_OUTPUT_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_PHOTO_OUTPUT_PROMISE_0100--------------");
@@ -849,12 +849,12 @@ export default function cameraManagerTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_VIDEO_OUTPUT_PROMISE_0100
-     * @tc.name      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.desc      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_VIDEO_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_VIDEO_OUTPUT_PROMISE_0100
+     * @tc.desc   Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_VIDEO_OUTPUT_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -901,12 +901,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_METADATA_OUTPUT_PROMISE_0100
-     * @tc.name      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.desc      : Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_METADATA_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_METADATA_OUTPUT_PROMISE_0100
+     * @tc.desc   Create camerainput from camera-0 cameraposition front & cameratype unspecified async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_METADATA_OUTPUT_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_METADATA_OUTPUT_PROMISE_0100--------------");
@@ -939,12 +939,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_PROMISE_0100
-     * @tc.name      : Create CaptureSession instance promise api
-     * @tc.desc      : Create Capturesession instance promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_PROMISE_0100
+     * @tc.desc   Create Capturesession instance promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_PROMISE_0100 to operate");
@@ -960,12 +960,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_IS_CAMERA_MUTED_0100
-     * @tc.name      : Get camera mute
-     * @tc.desc      : Get camera mute
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_IS_CAMERA_MUTED_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_IS_CAMERA_MUTED_0100
+     * @tc.desc   Get camera mute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_IS_CAMERA_MUTED_0100', Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_IS_CAMERA_MUTED_0100--------------");
@@ -985,12 +985,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_0100
-     * @tc.name      : camera manager on cameraStatus api
-     * @tc.desc      : camera manager on cameraStatus api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_0100
+     * @tc.desc   camera manager on cameraStatus api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ON_CAMERASTATUS_0100--------------");
@@ -1029,13 +1029,13 @@ export default function cameraManagerTest() {
     })
 
     /**
-      * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_FOLD_STATUS_0100
-      * @tc.name      : camera manager on fold status api
-      * @tc.desc      : camera manager on fold status api
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 1
-    */
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_FOLD_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_FOLD_STATUS_0100
+     * @tc.desc   camera manager on fold status api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_CAMERA_ON_FOLD_STATUS_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ON_FOLD_STATUS_0100--------------");
       if (isEmpty(mCameraManager)) {
@@ -1060,12 +1060,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_HOST_DEVICE_TYPE_0100
-     * @tc.name      : test Host Device Type enum UNKNOWN_TYPE
-     * @tc.desc      : test Host Device Type enum UNKNOWN_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_HOST_DEVICE_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_HOST_DEVICE_TYPE_0100
+     * @tc.desc   test Host Device Type enum UNKNOWN_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_HOST_DEVICE_TYPE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_HOST_DEVICE_TYPE_0100--------------");
@@ -1087,12 +1087,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ORIENTATION_0100
-     * @tc.name      : test camera Orientation api
-     * @tc.desc      : test camera Orientation api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ORIENTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ORIENTATION_0100
+     * @tc.desc   test camera Orientation api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ORIENTATION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ORIENTATION_0100--------------");
@@ -1115,12 +1115,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100
-     * @tc.desc      : test getCameraDevice api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100
+     * @tc.desc   test getCameraDevice api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_0100--------------");

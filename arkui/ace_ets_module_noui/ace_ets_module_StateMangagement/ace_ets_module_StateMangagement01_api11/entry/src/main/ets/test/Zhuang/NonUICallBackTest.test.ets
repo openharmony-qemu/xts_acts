@@ -47,12 +47,12 @@ export default function NonUICallBackTest() {
     });
 
     /**
+     * @tc.name   NonUICallBackTest_001
      * @tc.number NonUICallBackTest_001
-     * @tc.name NonUICallBackTest_001
-     * @tc.desc Persistently store UI related data
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonUICallBackTest_001', Level.LEVEL2, async (done: Function) => {
       console.info('[NonUICallBackTest_001] START');
@@ -65,12 +65,12 @@ export default function NonUICallBackTest() {
     });
 
     /**
+     * @tc.name   NonUICallBackTest_002
      * @tc.number NonUICallBackTest_002
-     * @tc.name NonUICallBackTest_002
-     * @tc.desc Persistently store UI related data
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonUICallBackTest_002', Level.LEVEL2, async (done: Function) => {
       console.info('[NonUICallBackTest_002] START');
@@ -88,12 +88,12 @@ export default function NonUICallBackTest() {
     });
 
     /**
+     * @tc.name   NonUICallBackTest_003
      * @tc.number NonUICallBackTest_003
-     * @tc.name NonUICallBackTest_003
-     * @tc.desc Persistently store UI related data
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonUICallBackTest_003', Level.LEVEL2, async (done: Function) => {
       console.info('[NonUICallBackTest_003] START');
@@ -111,12 +111,12 @@ export default function NonUICallBackTest() {
     });
 
     /**
+     * @tc.name   NonUICallBackTest_004
      * @tc.number NonUICallBackTest_004
-     * @tc.name NonUICallBackTest_004
-     * @tc.desc Persistently store UI related data
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonUICallBackTest_004', Level.LEVEL2, async (done: Function) => {
       console.info('[NonUICallBackTest_004] START');

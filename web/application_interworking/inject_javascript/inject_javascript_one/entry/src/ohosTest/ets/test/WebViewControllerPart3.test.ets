@@ -15,11 +15,13 @@
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webViewControllerPart3Test() {
 
@@ -41,7 +43,7 @@ export default function webViewControllerPart3Test() {
       } catch (err) {
         console.error('push WebViewControllerPart3 page error: ' + err);
       }
-      await waitForComponent("WebViewControllerTestButton");
+      await driver.waitForComponent(ON.id("WebViewControllerTestButton"), 10000);
       done()
     });
 
@@ -54,46 +56,46 @@ export default function webViewControllerPart3Test() {
       console.info('WebViewControllerPart3 beforeEach start');
       done();
     })
-   /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTPROXY_0100
-    * @tc.name       : testJavaScriptProxy001
-    * @tc.desc       : test javaScriptProxy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testJavaScriptProxy001
+     * @tc.number SUB_WEB_JAVASCRIPTPROXY_0100
+     * @tc.desc   test javaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("javaScriptProxy", 172310)
       Utils.registerEvent("testJavaScriptProxy001", true, 172320, done);
-      sendEventByKey('WebViewControllerTestButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REGISTERJAVASCRIPTPROXY_0100
-    * @tc.name       : testRegisterJavaScriptProxy001
-    * @tc.desc       : test registerJavaScriptProxy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRegisterJavaScriptProxy001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REGISTERJAVASCRIPTPROXY_0100
+     * @tc.desc   test registerJavaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRegisterJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRegisterJavaScriptProxy001", 172310)
       Utils.registerEvent("testRegisterJavaScriptProxy001", "backToEts", 172330, done);
-      sendEventByKey('WebViewControllerTestButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_DELETEJAVASCRIPTREGISTER_0100
-    * @tc.name       : testDeleteJavaScriptRegister001
-    * @tc.desc       : test deleteJavaScriptRegister
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDeleteJavaScriptRegister001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_DELETEJAVASCRIPTREGISTER_0100
+     * @tc.desc   test deleteJavaScriptRegister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeleteJavaScriptRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeleteJavaScriptRegister001", 172310)
       Utils.registerEvent("testDeleteJavaScriptRegister001", true, 172340, done);
-      sendEventByKey('WebViewControllerTestButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
   })
 }

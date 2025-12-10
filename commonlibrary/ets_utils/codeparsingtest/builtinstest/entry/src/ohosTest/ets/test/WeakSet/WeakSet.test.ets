@@ -17,12 +17,12 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 export default function WeakSetTest() {
   describe('weakSetTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0100
-     * @tc.name       : testWeakSet0001
-     * @tc.desc       : A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWeakSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0100
+     * @tc.desc   A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeakSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testWeakSet0001";
@@ -36,12 +36,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0200
-     * @tc.name       : testWeakSet0002
-     * @tc.desc       : A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0200
+     * @tc.desc   A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSet0002";
@@ -56,12 +56,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0300
-     * @tc.name       : testWeakSet0003
-     * @tc.desc       : A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0300
+     * @tc.desc   A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSet0003";
@@ -75,12 +75,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0400
-     * @tc.name       : testWeakSet0004
-     * @tc.desc       : A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0400
+     * @tc.desc   A WeakSet is a collection of garbage-collectable values, including objects and non-registered symbols.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSet0004";
@@ -94,12 +94,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0500
-     * @tc.name       : testWeakSetPrototypeAdd0001
-     * @tc.desc       : The add() method of WeakSet instances appends a new object to the end of this WeakSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0500
+     * @tc.desc   The add() method of WeakSet instances appends a new object to the end of this WeakSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeAdd0001";
@@ -117,12 +117,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0600
-     * @tc.name       : testWeakSetPrototypeAdd0002
-     * @tc.desc       : The add() method of WeakSet instances appends a new object to the end of this WeakSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0600
+     * @tc.desc   The add() method of WeakSet instances appends a new object to the end of this WeakSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeAdd0002";
@@ -147,12 +147,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0700
-     * @tc.name       : testWeakSetPrototypeAdd0003
-     * @tc.desc       : The add() method of WeakSet instances appends a new object to the end of this WeakSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeAdd0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0700
+     * @tc.desc   The add() method of WeakSet instances appends a new object to the end of this WeakSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeAdd0003";
@@ -177,12 +177,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0800
-     * @tc.name       : testWeakSetPrototypeAdd0004
-     * @tc.desc       : The add() method of WeakSet instances appends a new object to the end of this WeakSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeAdd0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0800
+     * @tc.desc   The add() method of WeakSet instances appends a new object to the end of this WeakSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeAdd0004";
@@ -197,12 +197,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0900
-     * @tc.name       : testWeakSetPrototypeAdd0005
-     * @tc.desc       : The add() method of WeakSet instances appends a new object to the end of this WeakSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeAdd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_0900
+     * @tc.desc   The add() method of WeakSet instances appends a new object to the end of this WeakSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeAdd0005";
@@ -217,12 +217,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1000
-     * @tc.name       : testWeakSetPrototypeHas0001
-     * @tc.desc       : The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1000
+     * @tc.desc   The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeHas0001";
@@ -240,12 +240,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1100
-     * @tc.name       : testWeakSetPrototypeHas0002
-     * @tc.desc       : The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1100
+     * @tc.desc   The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeHas0002";
@@ -270,12 +270,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1200
-     * @tc.name       : testWeakSetPrototypeHas0003
-     * @tc.desc       : The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1200
+     * @tc.desc   The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeHas0003";
@@ -301,12 +301,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1300
-     * @tc.name       : testWeakSetPrototypeHas0004
-     * @tc.desc       : The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakSetPrototypeHas0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1300
+     * @tc.desc   The has() method of WeakSet instances returns a boolean indicating whether an object exists in this WeakSet or not.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakSetPrototypeHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeHas0004";
@@ -327,6 +327,14 @@ export default function WeakSetTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
+    /**
+     * @tc.name   testWeakSetPrototypeHas0005
+     * @tc.number testWeakSetPrototypeHas0005
+     * @tc.desc   testWeakSetPrototypeHas0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeakSetPrototypeHas0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakSetPrototypeHas0005";
       try {
@@ -340,12 +348,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1500
-     * @tc.name       : testPrototypeHas0001
-     * @tc.desc       : Test the function of the interface prototype.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1500
+     * @tc.desc   Test the function of the interface prototype.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrototypeHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeHas0001";
@@ -364,12 +372,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1600
-     * @tc.name       : testPrototypeHas0002
-     * @tc.desc       : Test the function of the interface prototype.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1600
+     * @tc.desc   Test the function of the interface prototype.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrototypeHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeHas0002";
@@ -395,12 +403,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1700
-     * @tc.name       : testPrototypeHas0003
-     * @tc.desc       : Test the function of the interface prototype.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1700
+     * @tc.desc   Test the function of the interface prototype.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrototypeHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeHas0003";
@@ -427,12 +435,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1800
-     * @tc.name       : testPrototypeHas0004
-     * @tc.desc       : Test the function of the interface prototype.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeHas0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1800
+     * @tc.desc   Test the function of the interface prototype.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrototypeHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeHas0004";
@@ -449,12 +457,12 @@ export default function WeakSetTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1900
-     * @tc.name       : testPrototypeHas0005
-     * @tc.desc       : Test the function of the interface prototype.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPrototypeHas0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_SET_1900
+     * @tc.desc   Test the function of the interface prototype.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPrototypeHas0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testPrototypeHas0005";

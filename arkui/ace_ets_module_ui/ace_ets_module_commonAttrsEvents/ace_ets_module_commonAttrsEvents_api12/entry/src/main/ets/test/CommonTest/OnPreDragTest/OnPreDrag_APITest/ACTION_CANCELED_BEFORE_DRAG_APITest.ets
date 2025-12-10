@@ -40,12 +40,12 @@ export default function ACTION_CANCELED_BEFORE_DRAG_APITest() {
       done();
     });
     /**
-     * @tc.number    ACTION_CANCELED_BEFORE_DRAG
-     * @tc.name      ACTION_CANCELED_BEFORE_DRAG_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ACTION_CANCELED_BEFORE_DRAG_APITest_0100
+     * @tc.number ACTION_CANCELED_BEFORE_DRAG
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ACTION_CANCELED_BEFORE_DRAG_APITest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ACTION_CANCELED_BEFORE_DRAG_APITest_0100 START');

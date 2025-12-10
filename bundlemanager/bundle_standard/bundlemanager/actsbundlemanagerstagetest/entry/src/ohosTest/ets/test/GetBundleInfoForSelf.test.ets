@@ -31,10 +31,13 @@ const PARAM_ERROR_CODE = 401;
 
 export default function getBundleInfoForSelf() {
   describe('getBundleInfoForSelf', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5560
-     * @tc.name: getBundleInfoForSelfPro
-     * @tc.desc: Test getBundleInfoForSelf with default flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5560
+     * @tc.desc   Test getBundleInfoForSelf with default flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).then(data => {
@@ -62,10 +65,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5580
-     * @tc.name: getBundleInfoForSelfCal
-     * @tc.desc: Test getBundleInfoForSelf with default flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5580
+     * @tc.desc   Test getBundleInfoForSelf with default flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, (err, data) => {
@@ -89,10 +95,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5600
-     * @tc.name: getBundleInfoForSelfApplicationPro
-     * @tc.desc: Test getBundleInfoForSelf with application flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfApplicationPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5600
+     * @tc.desc   Test getBundleInfoForSelf with application flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfApplicationPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION).then(data => {
@@ -144,10 +153,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5620
-     * @tc.name: getBundleInfoForSelfApplicationCal
-     * @tc.desc: Test getBundleInfoForSelf with application flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfApplicationCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5620
+     * @tc.desc   Test getBundleInfoForSelf with application flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfApplicationCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION, (err, data) => {
@@ -189,10 +201,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: SUB_BMS_APPINFO_QUERY_1121
-     * @tc.name: getBundleInfoForSelfMetadata
-     * @tc.desc: Test getBundleInfoForSelf with application and metadata flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfMetadata
+     * @tc.number SUB_BMS_APPINFO_QUERY_1121
+     * @tc.desc   Test getBundleInfoForSelf with application and metadata flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfMetadata', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION
@@ -215,10 +230,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5640
-     * @tc.name: getBundleInfoForSelfModulePro
-     * @tc.desc: Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfModulePro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5640
+     * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfModulePro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE).then(data => {
@@ -251,10 +269,38 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5660
-     * @tc.name: getBundleInfoForSelfModuleCal
-     * @tc.desc: Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfEntryModuleInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5641
+     * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getBundleInfoForSelfEntryModuleInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+      await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ENTRY_MODULE).then(data => {
+        console.info("ModulePro" + JSON.stringify(data));
+        checkCommonBundleInfo(data);
+        expect(data.appInfo).assertEqual(null);
+        expect(data.hapModulesInfo.length).assertEqual(0);
+        expect(data.reqPermissionDetails.length).assertEqual(0);
+        expect(data.permissionGrantStates.length).assertEqual(0);
+        expect(data.signatureInfo).assertEqual(null);
+        done();
+      }).catch((err: BusinessError) => {
+        console.info("getBundleInfoForSelf fail" + JSON.stringify(err));
+        expect(err).assertFail();
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   getBundleInfoForSelfModuleCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5660
+     * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfModuleCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE, (err, data) => {
@@ -284,10 +330,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5680
-     * @tc.name: getBundleInfoForSelfAbilityPro
-     * @tc.desc: Test getBundleInfoForSelf with ability flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfAbilityPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5680
+     * @tc.desc   Test getBundleInfoForSelf with ability flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfAbilityPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(
@@ -386,10 +435,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5700
-     * @tc.name: getBundleInfoForSelfAbilityCal
-     * @tc.desc: Test getBundleInfoForSelf with ability flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfAbilityCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5700
+     * @tc.desc   Test getBundleInfoForSelf with ability flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfAbilityCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(
@@ -482,10 +534,13 @@ export default function getBundleInfoForSelf() {
         })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5720
-     * @tc.name: getBundleInfoForSelfExtensionPro
-     * @tc.desc: Test getBundleInfoForSelf with extensionAbility flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfExtensionPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5720
+     * @tc.desc   Test getBundleInfoForSelf with extensionAbility flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfExtensionPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(
@@ -497,7 +552,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo).assertEqual(null);
         expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
         let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-        expect(extensionList.length).assertEqual(29);
+        expect(extensionList.length).assertEqual(30);
         let count = 0;
         for (let i = 0;i < extensionList.length; i++) {
           switch (extensionList[i].name) {
@@ -668,10 +723,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.NOTIFICATION_SUBSCRIBER)
               count = count + 30
               break;
+            case 'crypto':
+              console.info("crypto" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
+              count = count + 35
+              break;
           }
           console.info("count" + JSON.stringify(count));
         }
-        expect(count).assertEqual(430);
+        expect(count).assertEqual(465);
         expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);
@@ -684,10 +744,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5740
-     * @tc.name: getBundleInfoForSelfExtensionCal
-     * @tc.desc: Test getBundleInfoForSelf with extensionAbility flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfExtensionCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5740
+     * @tc.desc   Test getBundleInfoForSelf with extensionAbility flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfExtensionCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(
@@ -699,7 +762,7 @@ export default function getBundleInfoForSelf() {
           expect(data.appInfo).assertEqual(null);
           expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
           let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-          expect(extensionList.length).assertEqual(29);
+          expect(extensionList.length).assertEqual(30);
           let count = 0;
           for (let i = 0;i < extensionList.length; i++) {
             switch (extensionList[i].name) {
@@ -870,10 +933,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.NOTIFICATION_SUBSCRIBER)
               count = count + 30
               break;
+            case 'crypto':
+              console.info("crypto" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
+              count = count + 35
+              break;
             }
             console.info("count" + JSON.stringify(count));
           }
-          expect(count).assertEqual(430);
+          expect(count).assertEqual(465);
           expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
           expect(data.reqPermissionDetails.length).assertEqual(0);
           expect(data.permissionGrantStates.length).assertEqual(0);
@@ -887,10 +955,13 @@ export default function getBundleInfoForSelf() {
         })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5760
-     * @tc.name: getBundleInfoForSelfPermissionPro
-     * @tc.desc: Test getBundleInfoForSelf with permission flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfPermissionPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5760
+     * @tc.desc   Test getBundleInfoForSelf with permission flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfPermissionPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(
@@ -926,10 +997,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5780
-     * @tc.name: getBundleInfoForSelfPermissionCal
-     * @tc.desc: Test getBundleInfoForSelf with permission flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfPermissionCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5780
+     * @tc.desc   Test getBundleInfoForSelf with permission flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfPermissionCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(
@@ -961,10 +1035,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5800
-     * @tc.name: getBundleInfoForSelfMetaPro
-     * @tc.desc: Test getBundleInfoForSelf with metadata flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfMetaPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5800
+     * @tc.desc   Test getBundleInfoForSelf with metadata flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfMetaPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(
@@ -993,10 +1070,13 @@ export default function getBundleInfoForSelf() {
         })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5820
-     * @tc.name: getBundleInfoForSelfMetaCal
-     * @tc.desc: Test getBundleInfoForSelf with metadata flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfMetaCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5820
+     * @tc.desc   Test getBundleInfoForSelf with metadata flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfMetaCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(
@@ -1021,10 +1101,13 @@ export default function getBundleInfoForSelf() {
         })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5840
-     * @tc.name: getBundleInfoForSelfSigPro
-     * @tc.desc: Test getBundleInfoForSelf with signatureInfo flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfSigPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5840
+     * @tc.desc   Test getBundleInfoForSelf with signatureInfo flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSigPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(
@@ -1046,10 +1129,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5860
-     * @tc.name: getBundleInfoForSelfSigCal
-     * @tc.desc: Test getBundleInfoForSelf with signatureInfo flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfSigCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5860
+     * @tc.desc   Test getBundleInfoForSelf with signatureInfo flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSigCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(
@@ -1068,10 +1154,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5880
-     * @tc.name: getBundleInfoForSelfDisPro
-     * @tc.desc: Test getBundleInfoForSelf with disable flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfDisPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5880
+     * @tc.desc   Test getBundleInfoForSelf with disable flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfDisPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_DISABLE).then(data => {
@@ -1090,10 +1179,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5900
-     * @tc.name: getBundleInfoForSelfDisCal
-     * @tc.desc: Test getBundleInfoForSelf with disable flag(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfDisCal
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5900
+     * @tc.desc   Test getBundleInfoForSelf with disable flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfDisCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       bundle.getBundleInfoForSelf(
@@ -1110,10 +1202,13 @@ export default function getBundleInfoForSelf() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_4560
-     * @tc.name: getBundleInfoForSelfParamErrPro
-     * @tc.desc: Test getBundleInfoForSelf with error param(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfParamErrPro
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_4560
+     * @tc.desc   Test getBundleInfoForSelf with error param(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoForSelfParamErrPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -1143,10 +1238,13 @@ export default function getBundleInfoForSelf() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_4580
-     * @tc.name: getBundleInfoForSelfParamErrCal
-     * @tc.desc: Test getBundleInfoForSelf with error param(by callback).
+    /**
+     * @tc.name   getBundleInfoForSelfParamErrCal
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_4580
+     * @tc.desc   Test getBundleInfoForSelf with error param(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoForSelfParamErrCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -1172,10 +1270,13 @@ export default function getBundleInfoForSelf() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_6980
-     * @tc.name: getBundleInfoForSelfSyncParamNull
-     * @tc.desc: Test getBundleInfoForSelfSync with null.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncParamNull
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_6980
+     * @tc.desc   Test getBundleInfoForSelfSync with null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoForSelfSyncParamNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -1189,10 +1290,13 @@ export default function getBundleInfoForSelf() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7000
-     * @tc.name: getBundleInfoForSelfSyncParamUndefined
-     * @tc.desc: Test getBundleInfoForSelfSync with undefined.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncParamUndefined
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7000
+     * @tc.desc   Test getBundleInfoForSelfSync with undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoForSelfSyncParamUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       try {
@@ -1206,10 +1310,13 @@ export default function getBundleInfoForSelf() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7020
-     * @tc.name: getBundleInfoForSelfSyncDefault
-     * @tc.desc: Test getBundleInfoForSelfSync with default flag
+    /**
+     * @tc.name   getBundleInfoForSelfSyncDefault
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7020
+     * @tc.desc   Test getBundleInfoForSelfSync with default flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncDefault', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT);
@@ -1231,10 +1338,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7040
-     * @tc.name: getBundleInfoForSelfSyncAppInfo
-     * @tc.desc: Test getBundleInfoForSelfSync with appInfo flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncAppInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7040
+     * @tc.desc   Test getBundleInfoForSelfSync with appInfo flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncAppInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
@@ -1277,10 +1387,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7060
-     * @tc.name: getBundleInfoForSelfSyncHapModuleInfo
-     * @tc.desc: Test getBundleInfoForSelfSync with hapModuleInfo flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncHapModuleInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7060
+     * @tc.desc   Test getBundleInfoForSelfSync with hapModuleInfo flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncHapModuleInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE);
@@ -1308,10 +1421,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7080
-     * @tc.name: getBundleInfoForSelfSyncAbilitiesInfo
-     * @tc.desc: Test getBundleInfoForSelfSync with abilitiesInfo flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncAbilitiesInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7080
+     * @tc.desc   Test getBundleInfoForSelfSync with abilitiesInfo flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncAbilitiesInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY);
@@ -1403,10 +1519,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7100
-     * @tc.name: getBundleInfoForSelfSyncExtensionAbilitiesInfo
-     * @tc.desc: Test getBundleInfoForSelfSync with extensionAbilitiesInfo flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncExtensionAbilitiesInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7100
+     * @tc.desc   Test getBundleInfoForSelfSync with extensionAbilitiesInfo flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncExtensionAbilitiesInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundle.BundleFlag.GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY);
@@ -1416,7 +1535,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo).assertEqual(null);
       expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
       let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-      expect(extensionList.length).assertEqual(29);
+      expect(extensionList.length).assertEqual(30);
       let count = 0;
       for (let i = 0;i < extensionList.length; i++) {
         switch (extensionList[i].name) {
@@ -1589,10 +1708,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.NOTIFICATION_SUBSCRIBER)
               count = count + 30
               break;
+          case 'crypto':
+              console.info("crypto" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
+              count = count + 35
+              break;
         }
         console.info("count" + JSON.stringify(count));
       }
-      expect(count).assertEqual(430);
+      expect(count).assertEqual(465);
       expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
       expect(data.reqPermissionDetails.length).assertEqual(0);
       expect(data.permissionGrantStates.length).assertEqual(0);
@@ -1600,10 +1724,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7120
-     * @tc.name: getBundleInfoForSelfSyncReqPermissionDetails
-     * @tc.desc: Test getBundleInfoForSelfSync with reqPermissionDetails flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncReqPermissionDetails
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7120
+     * @tc.desc   Test getBundleInfoForSelfSync with reqPermissionDetails flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncReqPermissionDetails', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION);
@@ -1633,10 +1760,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7140
-     * @tc.name: getBundleInfoForSelfSyncMetadata
-     * @tc.desc: Test getBundleInfoForSelfSync with metadata flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncMetadata
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7140
+     * @tc.desc   Test getBundleInfoForSelfSync with metadata flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncMetadata', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundle.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA);
@@ -1659,10 +1789,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7160
-     * @tc.name: getBundleInfoForSelfSyncDisable
-     * @tc.desc: Test getBundleInfoForSelfSync with disable flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncDisable
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7160
+     * @tc.desc   Test getBundleInfoForSelfSync with disable flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncDisable', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_DISABLE);
@@ -1676,10 +1809,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7180
-     * @tc.name: getBundleInfoForSelfSyncSignatureInfo
-     * @tc.desc: Test getBundleInfoForSelfSync with signatureInfo flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncSignatureInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7180
+     * @tc.desc   Test getBundleInfoForSelfSync with signatureInfo flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncSignatureInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO);
@@ -1696,10 +1832,13 @@ export default function getBundleInfoForSelf() {
       done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7200
-     * @tc.name: getBundleInfoForSelfSyncRouterMap
-     * @tc.desc: Test getBundleInfoForSelfSync with metadata flag.
+    /**
+     * @tc.name   getBundleInfoForSelfSyncRouterMap
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7200
+     * @tc.desc   Test getBundleInfoForSelfSync with metadata flag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getBundleInfoForSelfSyncRouterMap', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) =>  {
       let data = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ROUTER_MAP);

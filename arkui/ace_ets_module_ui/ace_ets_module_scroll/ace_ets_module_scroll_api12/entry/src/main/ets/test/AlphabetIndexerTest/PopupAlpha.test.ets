@@ -41,12 +41,12 @@ export default function PopupAlphaTest() {
       done();
     });
     /**
-     * @tc.number    PopupAlpha
-     * @tc.name      PopupAlphaTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PopupAlphaTest_0100
+     * @tc.number PopupAlpha
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PopupAlphaTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('PopupAlphaTest_0100 START');
@@ -59,12 +59,12 @@ export default function PopupAlphaTest() {
       done();
     });
     /**
-     * @tc.number    PopupAlpha
-     * @tc.name      PopupAlphaTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PopupAlphaTest_0200
+     * @tc.number PopupAlpha
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PopupAlphaTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('PopupAlphaTest_0200 START');
@@ -77,12 +77,12 @@ export default function PopupAlphaTest() {
       done();
     });
     /**
-     * @tc.number    PopupAlpha
-     * @tc.name      PopupAlphaTest_0300
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PopupAlphaTest_0300
+     * @tc.number PopupAlpha
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PopupAlphaTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('PopupAlphaTest_0300 START');
@@ -95,12 +95,12 @@ export default function PopupAlphaTest() {
       done();
     });
     /**
-     * @tc.number    PopupAlpha
-     * @tc.name      PopupAlphaTest_0400
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PopupAlphaTest_0400
+     * @tc.number PopupAlpha
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PopupAlphaTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('PopupAlphaTest_0400 START');

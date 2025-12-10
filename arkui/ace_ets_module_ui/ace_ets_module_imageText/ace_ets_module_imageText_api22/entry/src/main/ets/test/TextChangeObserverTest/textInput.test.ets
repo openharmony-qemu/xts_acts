@@ -47,12 +47,12 @@ export default function textInputTest() {
     });
 
     /**
-     * @tc.number    textInputTest_0010
-     * @tc.name      textInputTest_0010
-     * @tc.desc      Global observer enabled or disabled, text change of the textInput component, Expected: observed text is 'global:textInputTest_0010'
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textInputTest_0010
+     * @tc.number textInputTest_0010
+     * @tc.desc   Global observer enabled or disabled, text change of the textInput component, Expected: observed text is 'global:textInputTest_0010'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest_0010] START');
@@ -95,12 +95,12 @@ export default function textInputTest() {
     });
 
     /**
-     * @tc.number    textInputTest_0011
-     * @tc.name      textInputTest_0011
-     * @tc.desc      Local observer enabled or disabled, text change of the textInput component, Expected: observed text is 'local:textInputTest_0011'
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textInputTest_0011
+     * @tc.number textInputTest_0011
+     * @tc.desc   Local observer enabled or disabled, text change of the textInput component, Expected: observed text is 'local:textInputTest_0011'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest_0011', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest_0011] START');

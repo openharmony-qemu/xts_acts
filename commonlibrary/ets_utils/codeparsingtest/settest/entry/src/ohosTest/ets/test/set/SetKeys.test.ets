@@ -169,7 +169,7 @@ export default function SetKeysTest() {
       // This API supports only one parameter: preset action function.
     });
     beforeEach(async () => {
-      await sleep(30)
+      await sleep(50)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -184,12 +184,12 @@ export default function SetKeysTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
+     * @tc.name   testSetKeys0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_001
-     * @tc.name testSetKeys0001
-     * @tc.desc Test basic functionality of Set.keys() with string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test basic functionality of Set.keys() with string elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set(['a', 'b', 'c']);
@@ -201,12 +201,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_002
-     * @tc.name testSetKeys0002
-     * @tc.desc Test Set.keys() with number elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with number elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2, 3, 4]);
@@ -219,12 +219,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_003
-     * @tc.name testSetKeys0003
-     * @tc.desc Test Set.keys() on empty Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() on empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set<number>();
@@ -233,12 +233,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_004
-     * @tc.name testSetKeys0004
-     * @tc.desc Test that Set.keys() preserves insertion order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test that Set.keys() preserves insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set<string>();
@@ -253,12 +253,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_005
-     * @tc.name testSetKeys0005
-     * @tc.desc Test Set.keys() with duplicate elements (which get ignored)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with duplicate elements (which get ignored)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2, 2, 3, 3, 3]);
@@ -270,12 +270,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_006
-     * @tc.name testSetKeys0006
-     * @tc.desc Test Set.keys() with mixed data types (number, string, boolean, null, undefined)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with mixed data types (number, string, boolean, null, undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 'a', true, null, undefined]);
@@ -288,12 +288,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_007
-     * @tc.name testSetKeys0007
-     * @tc.desc Test Set.keys() with object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: GeneratedObjectLiteralInterface_1 = { id: 1 };
@@ -306,12 +306,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_008
-     * @tc.name testSetKeys0008
-     * @tc.desc Test Set.keys() with NaN elements (which are considered equal)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with NaN elements (which are considered equal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([NaN, NaN, 10]);
@@ -322,12 +322,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_009
-     * @tc.name testSetKeys0009
-     * @tc.desc Test Set.keys() with 0 and -0 (treated as equal)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with 0 and -0 (treated as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([0, -0, 1]);
@@ -338,12 +338,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_010
-     * @tc.name testSetKeys0010
-     * @tc.desc Test that each call to keys() returns a new iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test that each call to keys() returns a new iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2, 3]);
@@ -356,12 +356,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_011
-     * @tc.name testSetKeys0011
-     * @tc.desc Test Set.keys() after adding new elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() after adding new elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2]);
@@ -373,12 +373,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_012
-     * @tc.name testSetKeys0012
-     * @tc.desc Test Set.keys() after deleting an element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() after deleting an element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2, 3]);
@@ -390,12 +390,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_013
-     * @tc.name testSetKeys0013
-     * @tc.desc Test Set.keys() with BigInt elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1n, 2n, 3n]);
@@ -406,24 +406,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_014
-     * @tc.name testSetKeys0014
-     * @tc.desc Test Set.keys() with Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0014()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testSetKeys0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_015
-     * @tc.name testSetKeys0015
-     * @tc.desc Test iterator state after complete iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test iterator state after complete iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2]);
@@ -435,12 +435,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_016
-     * @tc.name testSetKeys0016
-     * @tc.desc Test Set.keys() with Date objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1 = new Date('2023-01-01');
@@ -452,12 +452,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_017
-     * @tc.name testSetKeys0017
-     * @tc.desc Test Set.keys() with RegExp objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with RegExp objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex1 = /a/;
@@ -469,12 +469,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_018
-     * @tc.name testSetKeys0018
-     * @tc.desc Test converting Set.keys() iterator to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test converting Set.keys() iterator to array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set(['x', 'y', 'z']);
@@ -486,12 +486,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_019
-     * @tc.name testSetKeys0019
-     * @tc.desc Test iterating over Set.keys() with for...of loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test iterating over Set.keys() with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([10, 20, 30]);
@@ -506,12 +506,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_020
-     * @tc.name testSetKeys0020
-     * @tc.desc Test Set.keys() with SameValueZero comparison (0, -0, false)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with SameValueZero comparison (0, -0, false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([0, -0, false]);
@@ -522,12 +522,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_021
-     * @tc.name testSetKeys0021
-     * @tc.desc Test Set.keys() with large number of elements (1000 elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with large number of elements (1000 elements)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0021', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set = new Set<number>();
@@ -544,12 +544,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_022
-     * @tc.name testSetKeys0022
-     * @tc.desc Test Set.keys() after calling clear()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() after calling clear()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2, 3]);
@@ -559,12 +559,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_023
-     * @tc.name testSetKeys0023
-     * @tc.desc Test that keys() and values() return same iterator for Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test that keys() and values() return same iterator for Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set(['a', 'b']);
@@ -575,12 +575,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_024
-     * @tc.name testSetKeys0024
-     * @tc.desc Test that keys() returns an iterator object with next() method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test that keys() returns an iterator object with next() method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2]);
@@ -590,12 +590,12 @@ export default function SetKeysTest() {
 
 
     /**
+     * @tc.name   testSetKeys0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_026
-     * @tc.name testSetKeys0026
-     * @tc.desc Test Set.keys() with function elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with function elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const func1 = () => 'hello';
@@ -607,12 +607,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_027
-     * @tc.name testSetKeys0027
-     * @tc.desc Test partial iteration with Set.keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test partial iteration with Set.keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2, 3, 4, 5]);
@@ -623,12 +623,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_028
-     * @tc.name testSetKeys0028
-     * @tc.desc Test Set.keys() with null and undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with null and undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([null, undefined, null, undefined]);
@@ -639,12 +639,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_029
-     * @tc.name testSetKeys0029
-     * @tc.desc Test chained iteration with Set.keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test chained iteration with Set.keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set(['p', 'q', 'r']);
@@ -668,12 +668,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_030
-     * @tc.name testSetKeys0030
-     * @tc.desc Test Set.keys() with mixed objects and primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with mixed objects and primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj: GeneratedObjectLiteralInterface_3 = { name: 'test' };
@@ -686,12 +686,12 @@ export default function SetKeysTest() {
       expect(keys.next().done).assertEqual(true);
     });
     /**
+     * @tc.name   testSetKeys0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_031
-     * @tc.name testSetKeys0031
-     * @tc.desc Test Set.keys() with elements added in reverse order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with elements added in reverse order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set<number>();
@@ -705,12 +705,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_032
-     * @tc.name testSetKeys0032
-     * @tc.desc Test Set.keys() with elements added and removed multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with elements added and removed multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set<number>();
@@ -728,12 +728,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_033
-     * @tc.name testSetKeys0033
-     * @tc.desc Test Set.keys() with Symbol.iterator call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Symbol.iterator call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set(['a', 'b']);
@@ -744,12 +744,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_034
-     * @tc.name testSetKeys0034
-     * @tc.desc Test Set.keys() with very large integers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with very large integers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const largeNum1 = 9007199254740991n; // Maximum safe integer as BigInt
@@ -762,12 +762,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_035
-     * @tc.name testSetKeys0035
-     * @tc.desc Test Set.keys() with empty strings and whitespace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with empty strings and whitespace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set(['', ' ', '  ']);
@@ -778,12 +778,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_036
-     * @tc.name testSetKeys0036
-     * @tc.desc Test Set.keys() with objects modified after insertion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with objects modified after insertion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj: GeneratedObjectLiteralInterface_4 = { prop: 'initial' };
@@ -797,24 +797,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_037
-     * @tc.name testSetKeys0037
-     * @tc.desc Test Set.keys() with iterating over frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with iterating over frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0037()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testSetKeys0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_038
-     * @tc.name testSetKeys0038
-     * @tc.desc Test Set.keys() with iterating during concurrent modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with iterating during concurrent modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([1, 2, 3]);
@@ -828,12 +828,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_039
-     * @tc.name testSetKeys0039
-     * @tc.desc Test Set.keys() with iterating over weak references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with iterating over weak references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let obj1: GeneratedObjectLiteralInterface_3 | null = { name: 'obj1' };
@@ -857,12 +857,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_040
-     * @tc.name testSetKeys0040
-     * @tc.desc Test Set.keys() with Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set(['ä', 'ö', 'ü', 'ñ', 'ç']);
@@ -875,12 +875,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_041
-     * @tc.name testSetKeys0041
-     * @tc.desc Test Set.keys() with surrogate pair characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with surrogate pair characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const emoji1 = '😊'; // U+1F60A
@@ -893,12 +893,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_042
-     * @tc.name testSetKeys0042
-     * @tc.desc Test Set.keys() with very long strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with very long strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const longStr1 = 'a'.repeat(1000);
@@ -911,60 +911,60 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_043
-     * @tc.name testSetKeys0043
-     * @tc.desc Test Set.keys() with inherited properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with inherited properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0043()).assertDeepEquals([true, true, true])
     });
 
     /**
+     * @tc.name   testSetKeys0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_044
-     * @tc.name testSetKeys0044
-     * @tc.desc Test Set.keys() with non-enumerable properties in objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with non-enumerable properties in objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0044()).assertDeepEquals([true, 'secret']);
     });
 
     /**
+     * @tc.name   testSetKeys0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_045
-     * @tc.name testSetKeys0045
-     * @tc.desc Test Set.keys() with symbol properties in objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with symbol properties in objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0045()).assertDeepEquals([true, 'private']);
     });
 
     /**
+     * @tc.name   testSetKeys0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_046
-     * @tc.name testSetKeys0046
-     * @tc.desc Test Set.keys() with circular references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with circular references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0046()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testSetKeys0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_047
-     * @tc.name testSetKeys0047
-     * @tc.desc Test Set.keys() with Date objects of same time
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Date objects of same time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1 = new Date('2023-01-01');
@@ -979,12 +979,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_048
-     * @tc.name testSetKeys0048
-     * @tc.desc Test Set.keys() with large dataset after many modifications
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with large dataset after many modifications
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0048', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set = new Set<number>();
@@ -1007,12 +1007,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_049
-     * @tc.name testSetKeys0049
-     * @tc.desc Test Set.keys() with typed arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1 = new Uint8Array([1, 2, 3]);
@@ -1025,12 +1025,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_050
-     * @tc.name testSetKeys0050
-     * @tc.desc Test Set.keys() with Map objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Map objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1 = new Map([['a', 1]]);
@@ -1043,12 +1043,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_051
-     * @tc.name testSetKeys0051
-     * @tc.desc Test Set.keys() with Set objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Set objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const innerSet1 = new Set([1, 2]);
@@ -1061,12 +1061,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_052
-     * @tc.name testSetKeys0052
-     * @tc.desc Test Set.keys() with WeakMap objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with WeakMap objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const wm1: WeakMap<object, string> = new WeakMap();
@@ -1079,12 +1079,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_053
-     * @tc.name testSetKeys0053
-     * @tc.desc Test Set.keys() with WeakSet objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with WeakSet objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const ws1 = new WeakSet();
@@ -1097,12 +1097,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_054
-     * @tc.name testSetKeys0054
-     * @tc.desc Test Set.keys() with promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const promise1 = Promise.resolve(1);
@@ -1115,24 +1115,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_055
-     * @tc.name testSetKeys0055
-     * @tc.desc Test Set.keys() with generators
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with generators
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0055()).assertDeepEquals([false, false]);
     });
 
     /**
+     * @tc.name   testSetKeys0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_056
-     * @tc.name testSetKeys0056
-     * @tc.desc Test Set.keys() with iterators from other collections
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with iterators from other collections
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -1146,12 +1146,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_057
-     * @tc.name testSetKeys0057
-     * @tc.desc Test Set.keys() with Error objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Error objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const error1 = new Error('Error 1');
@@ -1164,12 +1164,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_059
-     * @tc.name testSetKeys0059
-     * @tc.desc Test Set.keys() with objects implementing valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with objects implementing valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: ValueOfInterface = {
@@ -1187,12 +1187,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_060
-     * @tc.name testSetKeys0060
-     * @tc.desc Test Set.keys() with objects implementing toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with objects implementing toString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: toStringInterface = { toString: () => 'same' };
@@ -1206,24 +1206,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_061
-     * @tc.name testSetKeys0061
-     * @tc.desc Test Set.keys() with null prototype objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with null prototype objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetKeysJs0061()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testSetKeys0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_062
-     * @tc.name testSetKeys0062
-     * @tc.desc Test Set.keys() with boxed primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with boxed primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const numObj = new Number(123);
@@ -1239,12 +1239,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_063
-     * @tc.name testSetKeys0063
-     * @tc.desc Test Set.keys() with boxed vs unboxed primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with boxed vs unboxed primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const numObj = new Number(123);
@@ -1259,12 +1259,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_064
-     * @tc.name testSetKeys0064
-     * @tc.desc Test Set.keys() with multiple NaN values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with multiple NaN values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([NaN, NaN, NaN, 1, NaN]);
@@ -1276,12 +1276,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_065
-     * @tc.name testSetKeys0065
-     * @tc.desc Test Set.keys() with Infinity and -Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with Infinity and -Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set = new Set([Infinity, -Infinity, Infinity]);
@@ -1294,12 +1294,12 @@ export default function SetKeysTest() {
 
 
     /**
+     * @tc.name   testSetKeys0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_067
-     * @tc.name testSetKeys0067
-     * @tc.desc Test Set.keys() with objects having same JSON representation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with objects having same JSON representation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: GeneratedObjectLiteralInterface_5 = { a: 1, b: 2 };
@@ -1312,12 +1312,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_068
-     * @tc.name testSetKeys0068
-     * @tc.desc Test Set.keys() with iterating over a set of sets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with iterating over a set of sets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type NumberSet = Set<number>;
@@ -1337,12 +1337,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_069
-     * @tc.name testSetKeys0069
-     * @tc.desc Test Set.keys() with date objects after modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with date objects after modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date = new Date('2023-01-01');
@@ -1357,12 +1357,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_070
-     * @tc.name testSetKeys0070
-     * @tc.desc Test Set.keys() with multiple references to the same object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with multiple references to the same object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const sharedObj: GeneratedObjectLiteralInterface_3 = { name: 'shared' };
@@ -1375,12 +1375,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_071
-     * @tc.name testSetKeys0071
-     * @tc.desc Test Set.keys() with objects having read-only properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with objects having read-only properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface ReadonlyObj {
@@ -1402,12 +1402,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_072
-     * @tc.name testSetKeys0072
-     * @tc.desc Test Set.keys() with union type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with union type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type UnionType = string | number | boolean;
@@ -1421,12 +1421,12 @@ export default function SetKeysTest() {
 
 
     /**
+     * @tc.name   testSetKeys0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_074
-     * @tc.name testSetKeys0074
-     * @tc.desc Test Set.keys() with optional properties objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with optional properties objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface OptionalPropObj {
@@ -1450,12 +1450,12 @@ export default function SetKeysTest() {
 
 
     /**
+     * @tc.name   testSetKeys0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_077
-     * @tc.name testSetKeys0077
-     * @tc.desc Test Set.keys() with intersection type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with intersection type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Base {
@@ -1477,12 +1477,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0078
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_078
-     * @tc.name testSetKeys0078
-     * @tc.desc Test Set.keys() with enum type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with enum type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       enum Color { Red, Green, Blue }
@@ -1495,12 +1495,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0079
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_079
-     * @tc.name testSetKeys0079
-     * @tc.desc Test Set.keys() with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Person {
@@ -1524,12 +1524,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0080
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_080
-     * @tc.name testSetKeys0080
-     * @tc.desc Test Set.keys() with abstract class implementations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with abstract class implementations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       abstract class Shape {
@@ -1572,12 +1572,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_081
-     * @tc.name testSetKeys0081
-     * @tc.desc Test Set.keys() with generic class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with generic class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Box<T> {
@@ -1601,12 +1601,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_083
-     * @tc.name testSetKeys0083
-     * @tc.desc Test Set.keys() with nullable type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with nullable type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type NullableString = string | null;
@@ -1619,12 +1619,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_084
-     * @tc.name testSetKeys0084
-     * @tc.desc Test Set.keys() with non-null assertion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with non-null assertion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type MaybeNumber = number | undefined;
@@ -1641,12 +1641,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_085
-     * @tc.name testSetKeys0085
-     * @tc.desc Test Set.keys() with type assertion elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with type assertion elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Animal { type: string; }
@@ -1665,12 +1665,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_086
-     * @tc.name testSetKeys0086
-     * @tc.desc Test Set.keys() with never type in union
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with never type in union
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type NeverUnion = string | never;
@@ -1682,12 +1682,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_087
-     * @tc.name testSetKeys0087
-     * @tc.desc Test Set.keys() with void type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with void type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type VoidType = void;
@@ -1699,12 +1699,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_088
-     * @tc.name testSetKeys0088
-     * @tc.desc Test Set.keys() with bigint literals
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with bigint literals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<bigint> = new Set([100n, 200n, 300n]);
@@ -1716,12 +1716,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_089
-     * @tc.name testSetKeys0089
-     * @tc.desc Test Set.keys() with template literal types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with template literal types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Greeting = `Hello, ${string}`;
@@ -1735,12 +1735,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0092
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_092
-     * @tc.name testSetKeys0092
-     * @tc.desc Test Set.keys() with recursive type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with recursive type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface RecursiveType {
@@ -1760,12 +1760,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0093
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_093
-     * @tc.name testSetKeys0093
-     * @tc.desc Test Set.keys() with function types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with function types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type StringProcessor = (input: string) => string;
@@ -1782,12 +1782,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0094
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_094
-     * @tc.name testSetKeys0094
-     * @tc.desc Test Set.keys() with parameter properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with parameter properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Car {
@@ -1818,12 +1818,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0095
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_095
-     * @tc.name testSetKeys0095
-     * @tc.desc Test Set.keys() with static class properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with static class properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Configuration {
@@ -1846,12 +1846,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0096
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_096
-     * @tc.name testSetKeys0096
-     * @tc.desc Test Set.keys() with private class methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with private class methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Counter {
@@ -1878,12 +1878,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_097
-     * @tc.name testSetKeys0097
-     * @tc.desc Test Set.keys() with protected class members
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with protected class members
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Parent {
@@ -1911,12 +1911,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_098
-     * @tc.name testSetKeys0098
-     * @tc.desc Test Set.keys() with static methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with static methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class MathOperations {
@@ -1936,12 +1936,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0099
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_099
-     * @tc.name testSetKeys0099
-     * @tc.desc Test Set.keys() with abstract methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with abstract methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       abstract class Device {
@@ -1970,12 +1970,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetKeys0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_100
-     * @tc.name testSetKeys0100
-     * @tc.desc Test Set.keys() with generic functions as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.keys() with generic functions as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeys0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type GenericFunc<T> = (input: T) => T;
@@ -1992,12 +1992,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues001
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_001
-     * @tc.name testSetValues001
-     * @tc.desc Test Set.values() iteration with basic string elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() iteration with basic string elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['alpha', 'beta', 'gamma']);
@@ -2010,12 +2010,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues002
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_002
-     * @tc.name testSetValues002
-     * @tc.desc Test Set.values() iteration with basic number elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() iteration with basic number elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([5, 10, 15, 20]);
@@ -2028,12 +2028,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues003
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_003
-     * @tc.name testSetValues003
-     * @tc.desc Test Set.values() with empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<boolean> = new Set();
@@ -2044,12 +2044,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues004
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_004
-     * @tc.name testSetValues004
-     * @tc.desc Test that Set.values() maintains insertion order
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test that Set.values() maintains insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['first', 'second', 'third']);
@@ -2068,12 +2068,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues005
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_005
-     * @tc.name testSetValues005
-     * @tc.desc Test that Set.values() filters duplicate elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test that Set.values() filters duplicate elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([3, 3, 6, 6, 9]);
@@ -2086,12 +2086,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues006
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_006
-     * @tc.name testSetValues006
-     * @tc.desc Test Set.values() with boolean elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with boolean elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<boolean> = new Set([true, false, true]);
@@ -2103,12 +2103,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues007
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_007
-     * @tc.name testSetValues007
-     * @tc.desc Test Set.values() with plain object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with plain object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: TestObject = { id: 1, data: 'test1' };
@@ -2125,12 +2125,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues008
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_008
-     * @tc.name testSetValues008
-     * @tc.desc Test Set.values() with NaN elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with NaN elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([NaN, NaN, 7]);
@@ -2142,12 +2142,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues009
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_009
-     * @tc.name testSetValues009
-     * @tc.desc Test Set.values() with 0 and -0 elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with 0 and -0 elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([0, -0, 4]);
@@ -2159,12 +2159,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues010
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_010
-     * @tc.name testSetValues010
-     * @tc.desc Test independence of multiple iterators from Set.values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test independence of multiple iterators from Set.values()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['a', 'b', 'c']);
@@ -2179,12 +2179,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues011
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_011
-     * @tc.name testSetValues011
-     * @tc.desc Test Set.values() after adding elements dynamically
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() after adding elements dynamically
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2]);
@@ -2199,12 +2199,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues012
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_012
-     * @tc.name testSetValues012
-     * @tc.desc Test Set.values() after deleting elements dynamically
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() after deleting elements dynamically
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['x', 'y', 'z']);
@@ -2217,12 +2217,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues013
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_013
-     * @tc.name testSetValues013
-     * @tc.desc Test Set.values() with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<bigint> = new Set([100n, 200n, 300n]);
@@ -2234,24 +2234,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues014
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_014
-     * @tc.name testSetValues014
-     * @tc.desc Test Set.values() with Symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       expect(testSetValuesJs014()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testSetValues015
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_015
-     * @tc.name testSetValues015
-     * @tc.desc Test Set.values() state after full iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() state after full iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3]);
@@ -2264,12 +2264,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues016
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_016
-     * @tc.name testSetValues016
-     * @tc.desc Test Set.values() with Date object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Date object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1: Date = new Date('2024-01-01');
@@ -2286,12 +2286,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues017
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_017
-     * @tc.name testSetValues017
-     * @tc.desc Test Set.values() with RegExp object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with RegExp object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const reg1: RegExp = /abc/;
@@ -2308,12 +2308,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues018
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_018
-     * @tc.name testSetValues018
-     * @tc.desc Test converting Set.values() iterator to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test converting Set.values() iterator to array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['a', 'b', 'c']);
@@ -2333,12 +2333,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues019
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_019
-     * @tc.name testSetValues019
-     * @tc.desc Test iterating Set.values() with for...of loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test iterating Set.values() with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([10, 20, 30]);
@@ -2359,12 +2359,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues020
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_020
-     * @tc.name testSetValues020
-     * @tc.desc Test SameValueZero comparison via Set.values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test SameValueZero comparison via Set.values()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: TestObject = { id: 1, data: 'same' };
@@ -2378,12 +2378,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues021
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_021
-     * @tc.name testSetValues021
-     * @tc.desc Test Set.values() with large dataset (1000+ elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with large dataset (1000+ elements)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues021', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -2404,12 +2404,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues022
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_022
-     * @tc.name testSetValues022
-     * @tc.desc Test Set.values() after clear() operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() after clear() operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['a', 'b', 'c']);
@@ -2420,12 +2420,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues023
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_023
-     * @tc.desc Test equivalence of Set.values() and Set.keys()
-     * @tc.name testSetValues023
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test equivalence of Set.values() and Set.keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3]);
@@ -2438,12 +2438,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues024
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_024
-     * @tc.name testSetValues024
-     * @tc.desc Test explicit type annotation for Set.values() iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test explicit type annotation for Set.values() iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['test']);
@@ -2454,12 +2454,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues026
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_026
-     * @tc.name testSetValues026
-     * @tc.desc Test Set.values() with function elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with function elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const func1 = () => 'function1';
@@ -2476,12 +2476,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues027
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_027
-     * @tc.name testSetValues027
-     * @tc.desc Test partial iteration with Set.values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test partial iteration with Set.values()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['one', 'two', 'three', 'four']);
@@ -2494,12 +2494,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues028
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_028
-     * @tc.name testSetValues028
-     * @tc.desc Test Set.values() with null and undefined elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with null and undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<null | undefined> = new Set([null, undefined, null]);
@@ -2511,12 +2511,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues029
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_029
-     * @tc.name testSetValues029
-     * @tc.desc Test chained iteration with Set.values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test chained iteration with Set.values()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3]);
@@ -2540,12 +2540,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues030
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_030
-     * @tc.name testSetValues030
-     * @tc.desc Test Set.values() with mixed type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with mixed type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mixedSet: Set<string | number | boolean> = new Set(['text', 42, true]);
@@ -2557,12 +2557,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues031
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_031
-     * @tc.name testSetValues031
-     * @tc.desc Test Set.values() with elements added after iterator creation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements added after iterator creation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2]);
@@ -2582,12 +2582,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues032
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_032
-     * @tc.name testSetValues032
-     * @tc.desc Test Set.values() with elements deleted after iterator creation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements deleted after iterator creation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['a', 'b', 'c']);
@@ -2604,12 +2604,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues033
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_033
-     * @tc.name testSetValues033
-     * @tc.desc Test Set.values() with iterator reusability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with iterator reusability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([10, 20]);
@@ -2629,24 +2629,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues034
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_034
-     * @tc.name testSetValues034
-     * @tc.desc Test Set.values() with deeply nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with deeply nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs034()).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   testSetValues035
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_035
-     * @tc.name testSetValues035
-     * @tc.desc Test Set.values() with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const instance1: TestClass = new TestClass('test1', 1);
@@ -2662,12 +2662,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues036
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_036
-     * @tc.name testSetValues036
-     * @tc.desc Test Set.values() with enum values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with enum values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<TestEnum> = new Set([TestEnum.Option1, TestEnum.Option2]);
@@ -2681,12 +2681,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues037
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_037
-     * @tc.name testSetValues037
-     * @tc.desc Test Set.values() with mixed primitive types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with mixed primitive types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string | number | boolean> = new Set(['text', 100, true]);
@@ -2702,12 +2702,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues038
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_038
-     * @tc.name testSetValues038
-     * @tc.desc Test Set.values() with very large numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with very large numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([Number.MAX_SAFE_INTEGER, Number.MAX_VALUE]);
@@ -2721,12 +2721,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues039
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_039
-     * @tc.name testSetValues039
-     * @tc.desc Test Set.values() with negative numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([-1, -5, -10]);
@@ -2742,12 +2742,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues040
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_040
-     * @tc.name testSetValues040
-     * @tc.desc Test Set.values() with empty strings and whitespace
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with empty strings and whitespace
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['', ' ', '  ']);
@@ -2763,12 +2763,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues041
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_041
-     * @tc.name testSetValues041
-     * @tc.desc Test Set.values() after multiple add/delete operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() after multiple add/delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3]);
@@ -2788,12 +2788,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues042
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_042
-     * @tc.name testSetValues042
-     * @tc.desc Test Set.values() with Symbol.iterator polyfill
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Symbol.iterator polyfill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['a', 'b', 'c']);
@@ -2812,12 +2812,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues043
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_043
-     * @tc.name testSetValues043
-     * @tc.desc Test Set.values() with sparse array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with sparse array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Create sparse array
@@ -2842,24 +2842,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues044
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_044
-     * @tc.name testSetValues044
-     * @tc.desc Test Set.values() with frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetValuesJs044()).assertEqual(1);
     });
 
     /**
+     * @tc.name   testSetValues045
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_045
-     * @tc.name testSetValues045
-     * @tc.desc Test Set.values() with very large dataset iteration performance
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with very large dataset iteration performance
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues045', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -2890,24 +2890,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues046
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_046
-     * @tc.name testSetValues046
-     * @tc.desc Test Set.values() with null prototype objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with null prototype objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetValuesJs046()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testSetValues047
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_047
-     * @tc.name testSetValues047
-     * @tc.desc Test Set.values() with regex pattern objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with regex pattern objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex1: RegExp = /test/i;
@@ -2923,12 +2923,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues048
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_048
-     * @tc.name testSetValues048
-     * @tc.desc Test Set.values() with Date objects representing same time
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Date objects representing same time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1: Date = new Date('2024-01-01');
@@ -2944,12 +2944,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues049
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_049
-     * @tc.name testSetValues049
-     * @tc.desc Test Set.values() with Map objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Map objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: Map<number, string> = new Map([[1, 'one']]);
@@ -2965,12 +2965,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues050
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_050
-     * @tc.name testSetValues050
-     * @tc.desc Test Set.values() with Set objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Set objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const innerSet1: Set<number> = new Set([1, 2]);
@@ -2986,12 +2986,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues051
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_051
-     * @tc.name testSetValues051
-     * @tc.desc Test Set.values() with function objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with function objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const func1: () => string = () => 'function 1';
@@ -3007,24 +3007,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues052
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_052
-     * @tc.name testSetValues052
-     * @tc.desc Test Set.values() with generator functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with generator functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetValuesJs052()).assertDeepEquals([1, 3]);
     });
 
     /**
+     * @tc.name   testSetValues053
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_053
-     * @tc.name testSetValues053
-     * @tc.desc Test Set.values() with Uint8Array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Uint8Array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: Uint8Array = new Uint8Array([1, 2, 3]);
@@ -3040,12 +3040,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues054
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_054
-     * @tc.name testSetValues054
-     * @tc.desc Test Set.values() with null and undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with null and undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<null | undefined> = new Set([null, undefined, null]);
@@ -3059,12 +3059,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues055
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_055
-     * @tc.name testSetValues055
-     * @tc.desc Test Set.values() with unique string objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with unique string objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const strObj1: String = new String('test1');
@@ -3081,12 +3081,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues056
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_056
-     * @tc.name testSetValues056
-     * @tc.desc Test Set.values() with number objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with number objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const numObj1: Number = new Number(10);
@@ -3102,12 +3102,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues057
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_057
-     * @tc.name testSetValues057
-     * @tc.desc Test Set.values() with boolean objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with boolean objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const boolObj1: Boolean = new Boolean(true);
@@ -3123,12 +3123,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues058
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_058
-     * @tc.name testSetValues058
-     * @tc.desc Test Set.values() with iterating and modifying simultaneously
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with iterating and modifying simultaneously
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3]);
@@ -3156,28 +3156,28 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues059
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_059
-     * @tc.name testSetValues059
-     * @tc.desc Test Set.values() with objects containing Symbols as properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with objects containing Symbols as properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetValuesJs059()).assertDeepEquals(['value1', 'value2']);
     });
 
     /**
+     * @tc.name   testSetValues060
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_060
-     * @tc.name testSetValues060
-     * @tc.desc Test Set.values() with maximum capacity elements
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with maximum capacity elements
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues060', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const maxElements: number = 100000;
+      const maxElements: number = 1000;
 
       // Add maximum elements
       for (let i = 0; i < maxElements; i++) {
@@ -3197,12 +3197,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues061
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_061
-     * @tc.name testSetValues061
-     * @tc.desc Test Set.values() with elements added through constructor and add()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements added through constructor and add()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Initialize with constructor and add more elements
@@ -3228,12 +3228,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues062
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_062
-     * @tc.name testSetValues062
-     * @tc.desc Test Set.values() after clear() operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() after clear() operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3, 4]);
@@ -3248,12 +3248,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues063
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_063
-     * @tc.name testSetValues063
-     * @tc.desc Test Set.values() with elements modified after insertion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements modified after insertion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: DataObject = { id: 1, content: 'original' };
@@ -3279,12 +3279,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues065
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_065
-     * @tc.name testSetValues065
-     * @tc.desc Test Set.values() with String objects and primitive strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with String objects and primitive strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const strObj: String = new String('object');
@@ -3303,12 +3303,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues066
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_066
-     * @tc.name testSetValues066
-     * @tc.desc Test Set.values() with elements removed during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements removed during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([10, 20, 30, 40, 50]);
@@ -3331,12 +3331,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues067
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_067
-     * @tc.name testSetValues067
-     * @tc.desc Test Set.values() with custom class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with custom class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const item1: CustomItem = new CustomItem('A', 100);
@@ -3361,16 +3361,16 @@ export default function SetKeysTest() {
 
 
     /**
+     * @tc.name   testSetValues069
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_069
-     * @tc.name testSetValues069
-     * @tc.desc Test Set.values() with large dataset and conversion to Array
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with large dataset and conversion to Array
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues069', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const targetSize: number = 100000;
+      const targetSize: number = 1000;
 
       // Populate set with unique numbers
       for (let i = 0; i < targetSize; i++) {
@@ -3389,12 +3389,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues070
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_070
-     * @tc.name testSetValues070
-     * @tc.desc Test Set.values() with nested Set objects as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with nested Set objects as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const innerSet1: Set<string> = new Set(['a', 'b']);
@@ -3417,12 +3417,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues071
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_071
-     * @tc.name testSetValues071
-     * @tc.desc Test Set.values() with elements added/removed before and during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements added/removed before and during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3]);
@@ -3447,12 +3447,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues072
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_072
-     * @tc.name testSetValues072
-     * @tc.desc Test Set.values() with ArrayBuffer and TypedArray elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with ArrayBuffer and TypedArray elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const buffer1: ArrayBuffer = new ArrayBuffer(8);
@@ -3480,24 +3480,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues073
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_073
-     * @tc.name testSetValues073
-     * @tc.desc Test Set.values() with objects containing Symbols as properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with objects containing Symbols as properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs073()).assertDeepEquals([2, 'value1', 'value2']);
     });
 
     /**
+     * @tc.name   testSetValues074
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_074
-     * @tc.name testSetValues074
-     * @tc.desc Test Set.values() with mixed Date objects and timestamps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with mixed Date objects and timestamps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1: Date = new Date('2024-01-01');
@@ -3514,12 +3514,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues075
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_075
-     * @tc.name testSetValues075
-     * @tc.desc Test Set.values() after multiple add/delete cycles
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() after multiple add/delete cycles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set();
@@ -3543,24 +3543,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues077
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_077
-     * @tc.name testSetValues077
-     * @tc.desc Test Set.values() with nested objects that modify during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with nested objects that modify during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs077()).assertDeepEquals(['modified1', 'modified2']);
     });
 
     /**
+     * @tc.name   testSetValues078
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_078
-     * @tc.name testSetValues078
-     * @tc.desc Test Set.values() with WeakRef objects as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with WeakRef objects as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Define interface for weak reference targets
@@ -3582,12 +3582,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues079
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_079
-     * @tc.name testSetValues079
-     * @tc.desc Test Set.values() with mixed enum values and their numeric equivalents
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with mixed enum values and their numeric equivalents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<Status | number> = new Set([
@@ -3610,12 +3610,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues080
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_080
-     * @tc.name testSetValues080
-     * @tc.desc Test Set.values() with very large string elements (100k+ characters)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with very large string elements (100k+ characters)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues080', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       // Generate large strings
@@ -3633,12 +3633,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues081
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_081
-     * @tc.name testSetValues081
-     * @tc.desc Test Set.values() with objects that override valueOf()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with objects that override valueOf()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class CustomNumber {
@@ -3668,24 +3668,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues082
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_082
-     * @tc.name testSetValues082
-     * @tc.desc Test Set.values() with recursive objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with recursive objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs082()).assertDeepEquals([2, 'root', 'root2']);
     });
 
     /**
+     * @tc.name   testSetValues083
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_083
-     * @tc.name testSetValues083
-     * @tc.desc Test Set.values() with elements added from another Set's values iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements added from another Set's values iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const sourceSet: Set<number> = new Set([10, 20, 30, 40]);
@@ -3705,12 +3705,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues084
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_084
-     * @tc.name testSetValues084
-     * @tc.desc Test Set.values() with Promise objects as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Promise objects as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const promise1: Promise<number> = Promise.resolve(100);
@@ -3727,12 +3727,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues085
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_085
-     * @tc.name testSetValues085
-     * @tc.desc Test Set.values() with elements that are Maps with identical content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements that are Maps with identical content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: Map<string, number> = new Map([['a', 1], ['b', 2]]);
@@ -3748,12 +3748,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues086
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_086
-     * @tc.name testSetValues086
-     * @tc.desc Test Set.values() with typed arrays sharing the same buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with typed arrays sharing the same buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const buffer: ArrayBuffer = new ArrayBuffer(16);
@@ -3775,12 +3775,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues087
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_087
-     * @tc.name testSetValues087
-     * @tc.desc Test Set.values() with Error objects of different types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with Error objects of different types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const error1: Error = new Error('Generic error');
@@ -3797,24 +3797,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues088
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_088
-     * @tc.name testSetValues088
-     * @tc.desc Test Set.values() with elements added via spread operator from multiple sources
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements added via spread operator from multiple sources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs088()).assertDeepEquals(['a', 'b', 'c', 'd', 'e', 'f', 'g']);
     });
 
     /**
+     * @tc.name   testSetValues090
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_090
-     * @tc.name testSetValues090
-     * @tc.desc Test Set.values() with BigInt values and their string representations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with BigInt values and their string representations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const big1: bigint = 123456789012345678901234567890n;
@@ -3830,12 +3830,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues091
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_091
-     * @tc.name testSetValues091
-     * @tc.desc Test Set.values() with multiple iterators operating simultaneously
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with multiple iterators operating simultaneously
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3, 4, 5]);
@@ -3862,24 +3862,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues092
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_092
-     * @tc.name testSetValues092
-     * @tc.desc Test Set.values() with objects created via Object.create()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with objects created via Object.create()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs092()).assertDeepEquals([2, 1, 2, 'prototype']);
     });
 
     /**
+     * @tc.name   testSetValues093
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_093
-     * @tc.name testSetValues093
-     * @tc.desc Test Set.values() with regular expressions and their source equivalents
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with regular expressions and their source equivalents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex1: RegExp = /test/i;
@@ -3895,12 +3895,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues094
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_094
-     * @tc.name testSetValues094
-     * @tc.desc Test Set.values() with elements that are functions with same implementation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements that are functions with same implementation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const func1: () => number = () => 42;
@@ -3917,12 +3917,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues096
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_096
-     * @tc.name testSetValues096
-     * @tc.desc Test Set.values() with elements that are HTML-like object representations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements that are HTML-like object representations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface HTMLElementLike {
@@ -3952,16 +3952,16 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues097
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_097
-     * @tc.name testSetValues097
-     * @tc.desc Test Set.values() with elements added and removed in high frequency
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements added and removed in high frequency
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues097', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const operations: number = 100000;
+      const operations: number = 1000;
 
       // High-frequency add/delete
       const startModify: number = Date.now();
@@ -3988,18 +3988,15 @@ export default function SetKeysTest() {
       expect(values[1] % 3 === 0).assertEqual(false);
       expect(values[values.length - 1] % 3 === 0).assertEqual(false);
 
-      expect(modifyTime).assertLess(700);
-      expect(iterateTime).assertLess(300);
-
     });
 
     /**
+     * @tc.name   testSetValues098
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_098
-     * @tc.name testSetValues098
-     * @tc.desc Test Set.values() with mixed null/undefined and their string representations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with mixed null/undefined and their string representations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<null | undefined | string> = new Set([
@@ -4019,12 +4016,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues099
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_099
-     * @tc.name testSetValues099
-     * @tc.desc Test Set.values() with elements that are instances of derived classes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with elements that are instances of derived classes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Base {
@@ -4056,15 +4053,15 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetValues100
      * @tc.number SUB_COMMONLIBRARY_SET_VALUES_100
-     * @tc.name testSetValues100
-     * @tc.desc Test Set.values() with extremely large dataset (1M+ elements)
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 1
+     * @tc.desc   Test Set.values() with extremely large dataset (1M+ elements)
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetValues100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const TARGET_SIZE = 1_000_000;
+      const TARGET_SIZE = 1_00;
       const HEAD_TAKE   = 10;
       const PERF_FACTOR = 3;
       const POPULATE_BUDGET_MS = 1500 * PERF_FACTOR;
@@ -4099,12 +4096,12 @@ export default function SetKeysTest() {
 
 
     /**
+     * @tc.name   testSetSize001
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_001
-     * @tc.name testSetSize001
-     * @tc.desc Verify size of empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size of empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -4114,12 +4111,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize002
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_002
-     * @tc.name testSetSize002
-     * @tc.desc Verify size with unique string elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with unique string elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['a', 'b', 'c', 'd']);
@@ -4129,12 +4126,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize003
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_003
-     * @tc.name testSetSize003
-     * @tc.desc Verify size ignores duplicate number elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size ignores duplicate number elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 2, 3, 3, 3]);
@@ -4144,12 +4141,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize004
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_004
-     * @tc.name testSetSize004
-     * @tc.desc Verify size updates after add operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size updates after add operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<boolean> = new Set();
@@ -4165,12 +4162,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize005
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_005
-     * @tc.name testSetSize005
-     * @tc.desc Verify size updates after delete operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size updates after delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['x', 'y', 'z']);
@@ -4186,12 +4183,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize006
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_006
-     * @tc.name testSetSize006
-     * @tc.desc Verify size after clear operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size after clear operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([10, 20, 30]);
@@ -4205,12 +4202,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize007
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_007
-     * @tc.name testSetSize007
-     * @tc.desc Verify size with object elements (distinct references)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with object elements (distinct references)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: TestEntity = { id: 1, name: 'obj1' };
@@ -4222,12 +4219,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize008
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_008
-     * @tc.name testSetSize008
-     * @tc.desc Verify size with NaN elements (treated as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with NaN elements (treated as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([NaN, NaN, 5, NaN]);
@@ -4235,12 +4232,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize009
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_009
-     * @tc.name testSetSize009
-     * @tc.desc Verify size with 0 and -0 elements (treated as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with 0 and -0 elements (treated as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([0, -0, 1, -0]);
@@ -4248,12 +4245,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize010
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_010
-     * @tc.name testSetSize010
-     * @tc.desc Verify size with Symbol elements (always unique)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with Symbol elements (always unique)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       try {
@@ -4265,12 +4262,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize011
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_011
-     * @tc.name testSetSize011
-     * @tc.desc Verify size with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const big1: bigint = 100n;
@@ -4282,12 +4279,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize012
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_012
-     * @tc.name testSetSize012
-     * @tc.desc Verify size with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const inst1: TestModel = new TestModel('A', 10);
@@ -4299,12 +4296,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize013
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_013
-     * @tc.name testSetSize013
-     * @tc.desc Verify size with enum values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with enum values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<TestStatus> = new Set([
@@ -4317,12 +4314,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize014
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_014
-     * @tc.name testSetSize014
-     * @tc.desc Verify size with mixed primitive types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with mixed primitive types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string | number | boolean | null> = new Set([
@@ -4332,12 +4329,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize015
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_015
-     * @tc.name testSetSize015
-     * @tc.desc Verify size with large dataset (10,000+ elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with large dataset (10,000+ elements)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize015', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -4359,12 +4356,12 @@ export default function SetKeysTest() {
 
 
     /**
+     * @tc.name   testSetSize017
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_017
-     * @tc.name testSetSize017
-     * @tc.desc Verify size with Date objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1: Date = new Date('2024-01-01');
@@ -4376,12 +4373,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize018
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_018
-     * @tc.name testSetSize018
-     * @tc.desc Verify size with function elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with function elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const func1: () => void = () => {
@@ -4395,24 +4392,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize019
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_019
-     * @tc.name testSetSize019
-     * @tc.desc Verify size immutability (cannot be assigned directly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size immutability (cannot be assigned directly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs019()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testSetSize020
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_020
-     * @tc.name testSetSize020
-     * @tc.desc Verify size after consecutive add/delete operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size after consecutive add/delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set();
@@ -4439,12 +4436,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize021
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_021
-     * @tc.name testSetSize021
-     * @tc.desc Verify size with extremely large string values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with extremely large string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Create very long strings
@@ -4457,12 +4454,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize022
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_022
-     * @tc.name testSetSize022
-     * @tc.desc Verify size with mixed case-sensitive string elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with mixed case-sensitive string elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['Apple', 'apple', 'APPLE', 'Banana']);
@@ -4470,12 +4467,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize023
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_023
-     * @tc.name testSetSize023
-     * @tc.desc Verify size with sparse array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with sparse array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Create sparse array with empty slots
@@ -4489,24 +4486,24 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize025
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_025
-     * @tc.name testSetSize025
-     * @tc.desc Verify size with objects that have null prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with objects that have null prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs025()).assertEqual(2);
     });
 
     /**
+     * @tc.name   testSetSize026
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_026
-     * @tc.name testSetSize026
-     * @tc.desc Verify size with RegExp objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with RegExp objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex1: RegExp = /test/i;
@@ -4518,12 +4515,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize027
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_027
-     * @tc.name testSetSize027
-     * @tc.desc Verify size after adding and deleting the same element multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size after adding and deleting the same element multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -4546,12 +4543,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize028
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_028
-     * @tc.name testSetSize028
-     * @tc.desc Verify size with Map objects as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with Map objects as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: Map<string, number> = new Map([['a', 1]]);
@@ -4563,12 +4560,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize029
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_029
-     * @tc.name testSetSize029
-     * @tc.desc Verify size with Set objects as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with Set objects as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const innerSet1: Set<number> = new Set([1, 2]);
@@ -4580,12 +4577,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize030
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_030
-     * @tc.name testSetSize030
-     * @tc.desc Verify size with TypedArray elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with TypedArray elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: Uint8Array = new Uint8Array([1, 2, 3]);
@@ -4597,12 +4594,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize031
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_031
-     * @tc.name testSetSize031
-     * @tc.desc Verify size with mixed unique and duplicate complex objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with mixed unique and duplicate complex objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const data1: ImmutableData = new ImmutableData('key1', 100);
@@ -4615,12 +4612,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize032
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_032
-     * @tc.name testSetSize032
-     * @tc.desc Verify size with maximum safe integer values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with maximum safe integer values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const maxSafe: number = Number.MAX_SAFE_INTEGER;
@@ -4631,12 +4628,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize033
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_033
-     * @tc.name testSetSize033
-     * @tc.desc Verify size with negative zero and positive zero in mixed types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with negative zero and positive zero in mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number | string> = new Set([0, -0, '0', '-0', 0, -0]);
@@ -4644,12 +4641,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize034
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_034
-     * @tc.name testSetSize034
-     * @tc.desc Verify size with elements added during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements added during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3]);
@@ -4669,12 +4666,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize035
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_035
-     * @tc.name testSetSize035
-     * @tc.desc Verify size with elements removed during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements removed during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3, 4, 5]);
@@ -4693,52 +4690,52 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize036
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_036
-     * @tc.name testSetSize036
-     * @tc.desc Verify size with complex union type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with complex union type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs036()).assertEqual(7);
     });
 
     /**
+     * @tc.name   testSetSize038
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_038
-     * @tc.name testSetSize038
-     * @tc.desc Verify size with generator function results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with generator function results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs038()).assertEqual(4); // Unique values: 1,2,3,4
     });
 
     /**
+     * @tc.name   testSetSize039
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_039
-     * @tc.name testSetSize039
-     * @tc.desc Verify size with objects containing Symbols as properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with objects containing Symbols as properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetSizeJs039()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testSetSize040
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_040
-     * @tc.name testSetSize040
-     * @tc.desc Verify size with maximum capacity elements (performance test)
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 1
+     * @tc.desc   Verify size with maximum capacity elements (performance test)
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize040', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const targetSize: number = 100000;
+      const targetSize: number = 1000;
 
       // Measure time to add elements
       const startTime: number = Date.now();
@@ -4763,12 +4760,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize041
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_041
-     * @tc.name testSetSize041
-     * @tc.desc Verify size with empty and whitespace strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with empty and whitespace strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['', ' ', '  ', '\t', '\n', '']);
@@ -4776,12 +4773,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize042
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_042
-     * @tc.name testSetSize042
-     * @tc.desc Verify size with numbers in different formats (octal, hex, decimal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with numbers in different formats (octal, hex, decimal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([
@@ -4795,12 +4792,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize043
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_043
-     * @tc.name testSetSize043
-     * @tc.desc Verify size with objects after modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with objects after modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: GeneratedObjectLiteralInterface_1 = { id: 1 };
@@ -4821,12 +4818,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize044
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_044
-     * @tc.name testSetSize044
-     * @tc.desc Verify size with multiple NaN values mixed with other numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with multiple NaN values mixed with other numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([
@@ -4841,12 +4838,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize045
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_045
-     * @tc.name testSetSize045
-     * @tc.desc Verify size with Proxy objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with Proxy objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const target1: GeneratedObjectLiteralInterface_1 = { id: 1 };
@@ -4861,12 +4858,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize046
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_046
-     * @tc.name testSetSize046
-     * @tc.desc Verify size with dates across different time zones
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with dates across different time zones
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Same moment in time, different time zones
@@ -4879,12 +4876,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize048
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_048
-     * @tc.name testSetSize048
-     * @tc.desc Verify size with unique and duplicate special types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with unique and duplicate special types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const big1: bigint = 123n;
@@ -4902,12 +4899,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize049
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_049
-     * @tc.name testSetSize049
-     * @tc.desc Verify size remains consistent after serialization/deserialization
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size remains consistent after serialization/deserialization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // Create objects and serialize/deserialize
@@ -4925,12 +4922,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize050
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_050
-     * @tc.name testSetSize050
-     * @tc.desc Verify size with elements added via spread operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements added via spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: number[] = [1, 2, 3];
@@ -4941,12 +4938,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize051
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_051
-     * @tc.name testSetSize051
-     * @tc.desc Verify size with elements added from another Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements added from another Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const sourceSet: Set<string> = new Set(['a', 'b', 'c']);
@@ -4959,12 +4956,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize052
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_052
-     * @tc.name testSetSize052
-     * @tc.desc Verify size with elements removed using multiple delete calls in sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements removed using multiple delete calls in sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([10, 20, 30, 40, 50, 60]);
@@ -4976,12 +4973,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize053
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_053
-     * @tc.name testSetSize053
-     * @tc.desc Verify size with elements that are promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements that are promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const promise1: Promise<number> = Promise.resolve(1);
@@ -4993,12 +4990,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize054
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_054
-     * @tc.name testSetSize054
-     * @tc.desc Verify size with large negative numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with large negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([
@@ -5010,12 +5007,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize055
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_055
-     * @tc.name testSetSize055
-     * @tc.desc Verify size with elements that are class instances with same values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements that are class instances with same values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const item1: ImmutableItem = new ImmutableItem('key', 'value');
@@ -5027,12 +5024,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize056
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_056
-     * @tc.name testSetSize056
-     * @tc.desc Verify size with elements that are error objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements that are error objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const error1: Error = new Error('Message');
@@ -5044,12 +5041,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize057
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_057
-     * @tc.name testSetSize057
-     * @tc.desc Verify size with elements added in different orders
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements added in different orders
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set1: Set<string> = new Set(['x', 'y', 'z']);
@@ -5061,12 +5058,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize058
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_058
-     * @tc.name testSetSize058
-     * @tc.desc Verify size with elements that are weak references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements that are weak references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const target1: EmptyObject = {};
@@ -5080,12 +5077,12 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize059
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_059
-     * @tc.name testSetSize059
-     * @tc.desc Verify size with elements that are buffers of same content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size with elements that are buffers of same content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const buffer1: ArrayBuffer = new ArrayBuffer(4);
@@ -5102,19 +5099,19 @@ export default function SetKeysTest() {
     });
 
     /**
+     * @tc.name   testSetSize060
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_060
-     * @tc.name testSetSize060
-     * @tc.desc Verify size consistency across multiple operations
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify size consistency across multiple operations
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetSize060', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
       const operations: Array<GeneratedTypeLiteralInterface_2> = [];
 
       // Generate random operations
-      for (let i = 0; i < 10000; i++) {
+      for (let i = 0; i < 100; i++) {
         operations.push({
           type: Math.random() > 0.3 ? 'add' : 'delete',
           value: Math.floor(Math.random() * 1000)

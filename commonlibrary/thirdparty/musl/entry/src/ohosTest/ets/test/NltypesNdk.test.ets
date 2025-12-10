@@ -25,12 +25,12 @@ export default function nltypesNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_NLTYPES_CATOPEN_0100
-     * @tc.name       : testMuslNltypesCatopen001
-     * @tc.desc       : test catopen
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslNltypesCatopen001
+     * @tc.number SUB_THIRDPARTY_MUSL_NLTYPES_CATOPEN_0100
+     * @tc.desc   test catopen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslNltypesCatopen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;

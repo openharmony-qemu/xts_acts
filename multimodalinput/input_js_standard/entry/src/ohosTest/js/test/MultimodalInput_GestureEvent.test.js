@@ -22,9 +22,12 @@ export default function MultimodalInput_GestureEvent_test() {
   describe('MultimodalInput_GestureEvent_test', function () {
 
     /**
+     * @tc.name   Multimodalinput_GestureEvent_SUB_MMI_GestureEventTest_001
      * @tc.number Multimodalinput_GestureEventTest_001
-     * @tc.name Multimodalinput_GestureEvent_SUB_MMI_GestureEventTest_001
-     * @tc.desc GestureEvent interface On gesture type
+     * @tc.desc   GestureEvent interface On gesture type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multimodalinput_GestureEvent_SUB_MMI_GestureEventTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_001 enter`);
@@ -35,9 +38,12 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
+     * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_002
      * @tc.number Multimodalinput_GestureEventTest_002
-     * @tc.name Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_002
-     * @tc.desc GestureEvent interface On gesture type
+     * @tc.desc   GestureEvent interface On gesture type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_002 enter`);
@@ -48,9 +54,12 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
+     * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_003
      * @tc.number Multimodalinput_GestureEventTest_003
-     * @tc.name Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_003
-     * @tc.desc GestureEvent interface On gesture type
+     * @tc.desc   GestureEvent interface On gesture type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_003 enter`);
@@ -61,9 +70,12 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
+     * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_004
      * @tc.number Multimodalinput_GestureEventTest_004
-     * @tc.name Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_004
-     * @tc.desc GestureEvent interface On gesture type
+     * @tc.desc   GestureEvent interface On gesture type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_004 enter`);
@@ -74,9 +86,12 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
+     * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_006
      * @tc.number Multimodalinput_GestureEventTest_006
-     * @tc.name Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_006
-     * @tc.desc GestureEvent interface On gesture pinch
+     * @tc.desc   GestureEvent interface On gesture pinch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_006 enter`);
@@ -91,9 +106,12 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
+     * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_Rotate_001
      * @tc.number Multimodalinput_GestureEventTest_007
-     * @tc.name Multimodalinput_GestureEvent_test_SUB_MMI_Rotate_001
-     * @tc.desc GestureEvent interface On gesture rotate
+     * @tc.desc   GestureEvent interface On gesture rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multimodalinput_GestureEvent_test_SUB_MMI_Rotate_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_GestureEvent_test_SUB_MMI_Rotate_001 enter`);
@@ -108,9 +126,12 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
+     * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_ThreeFingersTap_001
      * @tc.number Multimodalinput_GestureEventTest_008
-     * @tc.name Multimodalinput_GestureEvent_test_SUB_MMI_ThreeFingersTap_001
-     * @tc.desc GestureEvent interface On gesture threeFingersTap
+     * @tc.desc   GestureEvent interface On gesture threeFingersTap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Multimodalinput_GestureEvent_test_SUB_MMI_ThreeFingersTap_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_GestureEvent_test_SUB_MMI_ThreeFingersTap_001 enter`);

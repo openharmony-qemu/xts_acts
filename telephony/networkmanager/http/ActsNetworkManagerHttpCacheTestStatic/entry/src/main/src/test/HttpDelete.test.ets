@@ -44,12 +44,12 @@ export default function HttpDeleteTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Delete_0100
-         * @tc.name   : testNetworkMgrHttpHttpResponseCacheDelete_static_0100
-         * @tc.desc   : Disable cache and delete data within it.Use callback as an asynchronous method.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0100
+         * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0100
+         * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpResponseCacheDelete_static_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0100';
@@ -87,12 +87,12 @@ export default function HttpDeleteTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Delete_0200
-         * @tc.name   : testNetworkMgrHttpHttpResponseCacheDelete_static_0200
-         * @tc.desc   : Disable cache and delete data within it.Use Promise as an asynchronous method.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0200
+         * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0200
+         * @tc.desc   Disable cache and delete data within it.Use Promise as an asynchronous method.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpResponseCacheDelete_static_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0200';

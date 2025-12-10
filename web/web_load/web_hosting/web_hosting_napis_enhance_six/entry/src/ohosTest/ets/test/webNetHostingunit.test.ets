@@ -26,13 +26,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0370
-     * @tc.name       : testWebHttpBodyStream_IsEof
-     * @tc.desc       : test WebHttpBodyStream_IsEof
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_IsEof
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0370
+     * @tc.desc   test WebHttpBodyStream_IsEof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_IsEof', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
@@ -47,13 +47,13 @@ export default function webviewApi() {
 
 
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0380
-     * @tc.name       : testWebHttpBodyStream_IsChunked
-     * @tc.desc       : test WebHttpBodyStream_IsChunked
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_IsChunked
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0380
+     * @tc.desc   test WebHttpBodyStream_IsChunked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_IsChunked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
@@ -67,13 +67,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0390
-     * @tc.name       : testWebHttpBodyStream_IsInMemory
-     * @tc.desc       : test WebHttpBodyStream_IsInMemory
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_IsInMemory
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0390
+     * @tc.desc   test WebHttpBodyStream_IsInMemory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_IsInMemory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_IsInMemory PASS');
@@ -85,13 +85,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0400
-     * @tc.name       : testWebHttpBodyStream_GetPosition
-     * @tc.desc       : test WebHttpBodyStream_GetPosition
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_GetPosition
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0400
+     * @tc.desc   test WebHttpBodyStream_GetPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_GetPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_GetPosition PASS');
@@ -103,13 +103,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0410
-     * @tc.name       : testWebHttpBodyStream_GetSize
-     * @tc.desc       : test WebHttpBodyStream_GetSize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_GetSize
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0410
+     * @tc.desc   test WebHttpBodyStream_GetSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_GetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_GetSize PASS');
@@ -121,13 +121,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0420
-     * @tc.name       : testWebHttpBodyStream_SetReadCallback
-     * @tc.desc       : test WebHttpBodyStream_SetReadCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_SetReadCallback
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0420
+     * @tc.desc   test WebHttpBodyStream_SetReadCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_SetReadCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_SetReadCallback PASS');
@@ -139,13 +139,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0430
-     * @tc.name       : testWebHttpBodyStream_SetUserData
-     * @tc.desc       : test WebHttpBodyStream_SetUserData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_SetUserData
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0430
+     * @tc.desc   test WebHttpBodyStream_SetUserData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_SetUserData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_SetUserData PASS');
@@ -157,13 +157,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0440
-     * @tc.name       : testWebHttpBodyStream_Init
-     * @tc.desc       : test WebHttpBodyStream_Init
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebHttpBodyStream_Init
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0440
+     * @tc.desc   test WebHttpBodyStream_Init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebHttpBodyStream_Init', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebHttpBodyStream_Init PASS');
@@ -175,13 +175,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0450
-     * @tc.name       : testWebResourceHandler_Destroy
-     * @tc.desc       : test WebResourceHandler_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResourceHandler_Destroy
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0450
+     * @tc.desc   test WebResourceHandler_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResourceHandler_Destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_Destroy PASS');
@@ -193,13 +193,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0460
-     * @tc.name       : testWebResourceHandler_DidReceiveResponse
-     * @tc.desc       : test WebResourceHandler_DidReceiveResponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResourceHandler_DidReceiveResponse
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0460
+     * @tc.desc   test WebResourceHandler_DidReceiveResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResourceHandler_DidReceiveResponse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidReceiveResponse PASS');
@@ -211,13 +211,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0470
-     * @tc.name       : testWebResourceHandler_DidReceiveData
-     * @tc.desc       : test WebResourceHandler_DidReceiveData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResourceHandler_DidReceiveData
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0470
+     * @tc.desc   test WebResourceHandler_DidReceiveData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResourceHandler_DidReceiveData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidReceiveData PASS');
@@ -229,13 +229,13 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0480
-     * @tc.name       : testWebResourceHandler_DidFinish
-     * @tc.desc       : test WebResourceHandler_DidFinish
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResourceHandler_DidFinish
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0480
+     * @tc.desc   test WebResourceHandler_DidFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResourceHandler_DidFinish', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceHandler_DidFinish PASS');

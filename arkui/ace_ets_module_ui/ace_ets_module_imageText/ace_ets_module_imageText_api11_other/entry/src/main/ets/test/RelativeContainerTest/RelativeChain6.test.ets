@@ -42,14 +42,15 @@ export default function RelativeChain6() {
       console.info("RelativeChain6 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0480
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain6_001
+     * @tc.number RelativeChain6_001
+     * @tc.desc   RelativeChain6_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain6_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain6_001] START');
 
@@ -71,14 +72,15 @@ export default function RelativeChain6() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0490
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain6_002
+     * @tc.number RelativeChain6_002
+     * @tc.desc   RelativeChain6_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain6_002', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain6_002] START');
 
@@ -99,14 +101,15 @@ export default function RelativeChain6() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0500
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain6_003
+     * @tc.number RelativeChain6_003
+     * @tc.desc   RelativeChain6_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain6_003', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain6_003] START');
 

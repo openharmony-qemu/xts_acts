@@ -54,12 +54,12 @@ export default function ActsWebViewTest3() {
 
 
     /**
+     * @tc.name   SUB_ACE_WEB_THREAT_0800
      * @tc.number SUB_ACE_WEB_THREAT_0800
-     * @tc.name testWebView_enableSafeBrowsing_default
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_THREAT_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("enableSafeBrowsing", 161210);

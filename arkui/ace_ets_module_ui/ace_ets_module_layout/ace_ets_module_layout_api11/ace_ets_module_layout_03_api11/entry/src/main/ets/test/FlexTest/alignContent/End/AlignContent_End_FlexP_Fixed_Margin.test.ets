@@ -51,13 +51,15 @@ export default function AlignContent_End_FlexP_Fixed_Margin() {
       console.info("AlignContent_End_FlexP_Fixed_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_1100
-     * @tc.name testAlignContentEndFlexFixedMarginSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set the sub component
-     *               margin to meet the flex size requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexFixedMarginSatisfy
+     * @tc.number testAlignContentEndFlexFixedMarginSatisfy
+     * @tc.desc   testAlignContentEndFlexFixedMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexFixedMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexFixedMarginSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -108,13 +110,15 @@ export default function AlignContent_End_FlexP_Fixed_Margin() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_1200
-     * @tc.name testAlignContentEndFlexFixedMarginNoSatisfy
-     * @tc.desc The Flex component alignContent property is set to FlexAlign.End, and the sub component margin is
-     *               set, which does not meet the flex size requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexFixedMarginNoSatisfy
+     * @tc.number testAlignContentEndFlexFixedMarginNoSatisfy
+     * @tc.desc   testAlignContentEndFlexFixedMarginNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexFixedMarginNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexFixedMarginNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

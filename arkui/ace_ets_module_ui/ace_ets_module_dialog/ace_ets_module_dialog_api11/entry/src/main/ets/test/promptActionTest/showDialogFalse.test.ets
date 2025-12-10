@@ -48,12 +48,12 @@ export default function showDialogFalse() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showDialogFalse_0100
-     * @tc.name      showDialogFalse_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogFalse_0100
+     * @tc.number SUB_ACE_showDialogFalse_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showDialogFalse_0100', Level.LEVEL2, async (done: Function) => {
       console.info('showDialogFalse_0100 START');

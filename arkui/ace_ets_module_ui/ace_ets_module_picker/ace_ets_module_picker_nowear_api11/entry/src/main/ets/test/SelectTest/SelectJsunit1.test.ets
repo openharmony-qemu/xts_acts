@@ -44,6 +44,14 @@ export default function selectJsunit() {
       console.info("select after each called");
     });
 
+    /**
+     * @tc.name   selectTest_0100
+     * @tc.number selectTest_0100
+     * @tc.desc   selectTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('selectTest_0100 START');
       await Utils.sleep(1000);
@@ -54,6 +62,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0200
+     * @tc.number selectTest_0200
+     * @tc.desc   selectTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0200] START');
       await Utils.sleep(1000);
@@ -79,6 +95,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0300
+     * @tc.number selectTest_0300
+     * @tc.desc   selectTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0300] START');
       await Utils.sleep(2000);
@@ -92,6 +116,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0400
+     * @tc.number selectTest_0400
+     * @tc.desc   selectTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0400] START');
       await Utils.sleep(1000);
@@ -124,6 +156,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0500
+     * @tc.number selectTest_0500
+     * @tc.desc   selectTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0500] START');
       await Utils.sleep(2000);
@@ -134,6 +174,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0600
+     * @tc.number selectTest_0600
+     * @tc.desc   selectTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0600] START');
       try {
@@ -159,6 +207,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0700
+     * @tc.number selectTest_0700
+     * @tc.desc   selectTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0700] START');
       await Utils.sleep(1000);
@@ -184,6 +240,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0800
+     * @tc.number selectTest_0800
+     * @tc.desc   selectTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0800', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0800] START');
       await Utils.sleep(1000);
@@ -209,6 +273,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_0900
+     * @tc.number selectTest_0900
+     * @tc.desc   selectTest_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_0900', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0900] START');
       await Utils.sleep(1000);
@@ -234,6 +306,14 @@ export default function selectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   selectTest_1000
+     * @tc.number selectTest_1000
+     * @tc.desc   selectTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('selectTest_1000', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_1000] START');
       try {

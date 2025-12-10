@@ -156,12 +156,12 @@ export default function UsbApiIsochronousTransferTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_Func_0200
-     * @tc.name     : testUsbSubmitTransfer001
-     * @tc.desc     : isochronous transfer read successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer001
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0200
+     * @tc.desc   isochronous transfer read successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSubmitTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, 'Isochronous testUsbSubmitTransfer001 enter');
@@ -207,14 +207,14 @@ export default function UsbApiIsochronousTransferTest() {
       }
     });
 
-    /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_FuncErr_0200
-     * @tc.name     : testUsbSubmitTransfer801Err001
-     * @tc.desc     : isochronous transfer read
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
-     */
+     /**
+      * @tc.name   testUsbSubmitTransfer801Err001
+      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_FuncErr_0200
+      * @tc.desc   isochronous transfer read
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('testUsbSubmitTransfer801Err001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, 'Isochronous testUsbSubmitTransfer801Err001 enter');
       if (!isDeviceConnected) {
@@ -258,12 +258,12 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
-     * @tc.name     : testUsbSubmitTransfer002
-     * @tc.desc     : isochronous transfer write successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer002
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
+     * @tc.desc   isochronous transfer write successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSubmitTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, 'Isochronous testUsbSubmitTransfer002 enter');
@@ -309,12 +309,12 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
-     * @tc.name     : testUsbSubmitTransfer003
-     * @tc.desc     : isochronous transfer error endpoint.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer003
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
+     * @tc.desc   isochronous transfer error endpoint.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'Isochronous testUsbSubmitTransfer003 enter');
@@ -343,12 +343,12 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_ErrCode801_0100
-     * @tc.name     : testUsbSubmitTransfer801Err003
-     * @tc.desc     : isochronous transfer error endpoint.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer801Err003
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode801_0100
+     * @tc.desc   isochronous transfer error endpoint.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer801Err003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'Isochronous testUsbSubmitTransfer801Err003 enter');
@@ -380,12 +380,12 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0200
-     * @tc.name     : testUsbSubmitTransfer004
-     * @tc.desc     : isochronous transfer claimInterface no call. IO error.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer004
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0200
+     * @tc.desc   isochronous transfer claimInterface no call. IO error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'Isochronous testUsbSubmitTransfer004 enter');
@@ -420,12 +420,12 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0300
-     * @tc.name     : testUsbSubmitTransfer005
-     * @tc.desc     : iso transfer No permission.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer005
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0300
+     * @tc.desc   iso transfer No permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'iso testUsbSubmitTransfer005 enter');
@@ -454,12 +454,12 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
-     * @tc.name     : testUsbCancelTransfer001
-     * @tc.desc     : isochronous transfer cancel failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbCancelTransfer001
+     * @tc.number SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
+     * @tc.desc   isochronous transfer cancel failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbCancelTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'Isochronous testUsbCancelTransfer001 enter');
@@ -486,12 +486,12 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_UsbCancelTransfer_ErrCode_0200
-     * @tc.name     : testUsbCancelTransfer002
-     * @tc.desc     : isochronous transfer No permission.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbCancelTransfer002
+     * @tc.number SUB_USB_Host_JS_UsbCancelTransfer_ErrCode_0200
+     * @tc.desc   isochronous transfer No permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbCancelTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, 'isochronous testUsbCancelTransfer002 enter');

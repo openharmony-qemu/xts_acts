@@ -64,12 +64,12 @@ describe('relationalStorePredicatesComplexFiledTest', function () {
     }
 
     /**
-     * @tc.name RelationalStorePredicatesComplexFiled0001
+     * @tc.name   RelationalStorePredicatesComplexFiled0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1250
-     * @tc.desc resultSet Update test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet Update test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationalStorePredicatesComplexFiled0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* RelationalStorePredicatesComplexFiled0001 start *************");
@@ -93,12 +93,12 @@ describe('relationalStorePredicatesComplexFiledTest', function () {
     })
 
     /**
-     * @tc.name RelationalStorePredicatesComplexFiled0002
+     * @tc.name   RelationalStorePredicatesComplexFiled0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1260
-     * @tc.desc resultSet Update test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet Update test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelationalStorePredicatesComplexFiled0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* RelationalStorePredicatesComplexFiled0002 start *************");

@@ -45,6 +45,14 @@ export default function navigationJsunittt() {
       console.info("navigation after each called");
     });
 
+    /**
+     * @tc.name   testNavigation_100
+     * @tc.number testNavigation_100
+     * @tc.desc   testNavigation_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNavigation_100',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_100] START');
       await Utils.sleep(1000);
@@ -56,6 +64,14 @@ export default function navigationJsunittt() {
       done();
     });
 
+    /**
+     * @tc.name   testNavigation_200
+     * @tc.number testNavigation_200
+     * @tc.desc   testNavigation_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNavigation_200',  Level.LEVEL0, async  (done:Function) =>{
       console.info('testNavigation_200 START');
       await Utils.sleep(1000);
@@ -78,6 +94,14 @@ export default function navigationJsunittt() {
       console.info('testNavigation_200 END');
     });
 
+    /**
+     * @tc.name   testNavigation_300
+     * @tc.number testNavigation_300
+     * @tc.desc   testNavigation_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNavigation_300',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_300] START');
       await Utils.sleep(1000);
@@ -89,6 +113,14 @@ export default function navigationJsunittt() {
       done();
     });
 
+    /**
+     * @tc.name   testNavigation_400
+     * @tc.number testNavigation_400
+     * @tc.desc   testNavigation_400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNavigation_400',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_400] START');
       await Utils.sleep(1000);

@@ -26,52 +26,52 @@ export default function customDialogSetModalModeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0100
-     * @tc.name       : testCustomDialogSetModalMode001
-     * @tc.desc       : testing setModalMode for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetModalMode001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0100
+     * @tc.desc   testing setModalMode for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetModalMode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetModalMode001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0200
-     * @tc.name       : testCustomDialogSetModalMode002
-     * @tc.desc       : testing setModalMode for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetModalMode002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0200
+     * @tc.desc   testing setModalMode for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetModalMode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetModalMode002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0300
-     * @tc.name       : testCustomDialogSetModalMode003
-     * @tc.desc       : testing setModalMode for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetModalMode003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0300
+     * @tc.desc   testing setModalMode for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetModalMode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetModalMode003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0400
-     * @tc.name       : testCustomDialogSetModalMode004
-     * @tc.desc       : testing setModalMode for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetModalMode004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETMODALMODE_0400
+     * @tc.desc   testing setModalMode for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetModalMode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetModalMode004()).assertEqual(0)

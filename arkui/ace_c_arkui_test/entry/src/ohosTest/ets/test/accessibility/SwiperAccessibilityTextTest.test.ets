@@ -26,26 +26,26 @@ export default function swiperAccessibilityTextTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYTEXT_0100
-     * @tc.name       : testSwiperAccessibilityText001
-     * @tc.desc       : testing accessibilityText for Swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperAccessibilityText001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYTEXT_0100
+     * @tc.desc   testing accessibilityText for Swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAccessibilityText001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAccessibilityText001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYTEXT_0200
-     * @tc.name       : testSwiperAccessibilityText002
-     * @tc.desc       : testing accessibilityText for Swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperAccessibilityText002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYTEXT_0200
+     * @tc.desc   testing accessibilityText for Swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAccessibilityText002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAccessibilityText002()).assertEqual(0)

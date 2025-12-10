@@ -21,7 +21,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import wantagent from '@ohos.app.ability.wantAgent';
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import { Component, Driver, ON } from '@ohos.UiTest'
@@ -68,9 +68,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_3850
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_3850
-     * @tc.desc  use NotificationRequest type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_3850
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_3850
+     * @tc.desc   use NotificationRequest type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_3850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -142,9 +145,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_3950
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_3950
-     * @tc.desc  use NotificationLongTextContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_3950
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_3950
+     * @tc.desc   use NotificationLongTextContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_3950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -204,9 +210,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4050
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4050
-     * @tc.desc  use NotificationBasicContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4050
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4050
+     * @tc.desc   use NotificationBasicContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -263,9 +272,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4150
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4150
-     * @tc.desc  use NotificationMultiLineContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4150
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4150
+     * @tc.desc   use NotificationMultiLineContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -324,9 +336,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4250
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4250
-     * @tc.desc  use NotificationActionButton type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4250
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4250
+     * @tc.desc   use NotificationActionButton type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -343,6 +358,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             }
           ],
           actionType: wantAgent.OperationType.SEND_COMMON_EVENT,
+          requestCode: 0,
           actionFlags: [wantAgent.WantAgentFlags.ONE_TIME_FLAG]
         };
 
@@ -410,9 +426,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4350
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4350
-     * @tc.desc  use NotificationTemplate type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4350
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4350
+     * @tc.desc   use NotificationTemplate type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -420,7 +439,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4350 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
 
-        let data1: Record<string, Object> = {
+        let data1: Record<string, RecordData> = {
           "title": 'file',
           "fileName": 'music.mp4',
           "progressValue": 45
@@ -481,9 +500,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4450
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4450
-     * @tc.desc  use DistributedOptions type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4450
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4450
+     * @tc.desc   use DistributedOptions type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -548,9 +570,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4550
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4550
-     * @tc.desc  use NotificationBasicContent type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4550
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4550
+     * @tc.desc   use NotificationBasicContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -629,10 +654,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
 
 
     /**
-         * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4650
-         * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4650
-         * @tc.desc  use NotificationMultiLineContent type
-         */
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4650
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4650
+     * @tc.desc   use NotificationMultiLineContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ans_Publish_Publish_Static_4650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4650 ===>'
@@ -676,9 +704,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4750
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4750
-     * @tc.desc  use BundleOption type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4750
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4750
+     * @tc.desc   use BundleOption type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -699,9 +730,12 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4850
-     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4850
-     * @tc.desc  use NotificationFlags type
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_4850
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4850
+     * @tc.desc   use NotificationFlags type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -717,8 +751,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             = ${flags.soundEnabled},${flags.vibrationEnabled}`);
         console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled1
             = ${typeof flags.soundEnabled},${typeof flags.vibrationEnabled}`);
-        expect(typeof flags.soundEnabled == 'number').assertTrue()
-        expect(typeof flags.vibrationEnabled == 'number').assertTrue()
+        expect(typeof flags.soundEnabled).assertEqual('number')
+        expect(typeof flags.vibrationEnabled).assertEqual('number')
         let num1 = flags.soundEnabled as notificationManager.NotificationFlagStatus
         let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
         expect(num1 == 1).assertTrue()

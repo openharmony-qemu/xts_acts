@@ -26,14 +26,14 @@ export default function stackOnAreaChangeTest() {
       await Utils.pushPage(`stack/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_ONAREACHANGE_0100
-    * @tc.name       : testStackOnAreaChange001
-    * @tc.desc       : test OnAreaChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackOnAreaChange001
+     * @tc.number SUB_ARKUI_CAPI_STACK_ONAREACHANGE_0100
+     * @tc.desc   test OnAreaChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackOnAreaChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestStackSize');
       await Utils.sleep(1000);
@@ -41,14 +41,14 @@ export default function stackOnAreaChangeTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_ONAREACHANGE_0200
-    * @tc.name       : testStackOnAreaChange002
-    * @tc.desc       : test OnAreaChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackOnAreaChange002
+     * @tc.number SUB_ARKUI_CAPI_STACK_ONAREACHANGE_0200
+     * @tc.desc   test OnAreaChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackOnAreaChange002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestStackMoveCompare');
       await Utils.sleep(1000);
@@ -56,14 +56,14 @@ export default function stackOnAreaChangeTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_ONAREACHANGE_0300
-    * @tc.name       : testStackOnAreaChange003
-    * @tc.desc       : test OnAreaChange event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackOnAreaChange003
+     * @tc.number SUB_ARKUI_CAPI_STACK_ONAREACHANGE_0300
+     * @tc.desc   test OnAreaChange event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackOnAreaChange003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestStackOffset');
       await Utils.sleep(1000);

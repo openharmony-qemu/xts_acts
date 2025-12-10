@@ -79,12 +79,12 @@ export default function ActsMiscdeviceNdkTest() {
     let TAG = ""
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0100
-     * @tc.name       : testActsMiscdeviceNdkTest001
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest001
+     * @tc.number SEN_MISC_Miscdevice_ETS_0100
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest001"
@@ -96,12 +96,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0200
-     * @tc.name       : testActsMiscdeviceNdkTest002
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest002
+     * @tc.number SEN_MISC_Miscdevice_ETS_0200
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest002"
@@ -122,12 +122,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0300
-     * @tc.name       : testActsMiscdeviceNdkTest003
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest003
+     * @tc.number SEN_MISC_Miscdevice_ETS_0300
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest003"
@@ -145,12 +145,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0400
-     * @tc.name       : testActsMiscdeviceNdkTest004
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest004
+     * @tc.number SEN_MISC_Miscdevice_ETS_0400
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest004"
@@ -172,12 +172,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0500
-     * @tc.name       : testActsMiscdeviceNdkTest005
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest005
+     * @tc.number SEN_MISC_Miscdevice_ETS_0500
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest005"
@@ -199,12 +199,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0600
-     * @tc.name       : testActsMiscdeviceNdkTest006
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest006
+     * @tc.number SEN_MISC_Miscdevice_ETS_0600
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest006"
@@ -226,12 +226,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0700
-     * @tc.name       : testActsMiscdeviceNdkTest007
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest007
+     * @tc.number SEN_MISC_Miscdevice_ETS_0700
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest007"
@@ -253,12 +253,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0800
-     * @tc.name       : testActsMiscdeviceNdkTest008
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest008
+     * @tc.number SEN_MISC_Miscdevice_ETS_0800
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest008"
@@ -280,12 +280,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0900
-     * @tc.name       : testActsMiscdeviceNdkTest009
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest009
+     * @tc.number SEN_MISC_Miscdevice_ETS_0900
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest009"
@@ -307,12 +307,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0100
-     * @tc.name       : testActsMiscdeviceNdkTest010
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest010
+     * @tc.number SEN_MISC_Miscdevice_ETS_0100
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest010"
@@ -334,12 +334,12 @@ export default function ActsMiscdeviceNdkTest() {
     });
 
     /**
-     * @tc.number     : SEN_MISC_Miscdevice_ETS_0110
-     * @tc.name       : testActsMiscdeviceNdkTest011
-     * @tc.desc       : OH_Misc_ActsMiscdeviceNdkTest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testActsMiscdeviceNdkTest011
+     * @tc.number SEN_MISC_Miscdevice_ETS_0110
+     * @tc.desc   OH_Misc_ActsMiscdeviceNdkTest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testActsMiscdeviceNdkTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "====>testActsMiscdeviceNdkTest011"

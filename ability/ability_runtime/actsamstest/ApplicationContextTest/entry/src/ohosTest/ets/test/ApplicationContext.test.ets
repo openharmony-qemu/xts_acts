@@ -26,13 +26,13 @@ export default function applicationContextTest() {
     beforeAll(() => {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
     })
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0100
-     * @tc.name: TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0100
-     * @tc.desc:Using the on method set color mode
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0100
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0100
+     * @tc.desc   Using the on method set color mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0100', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -50,13 +50,13 @@ export default function applicationContextTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200
-     * @tc.name: TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0200
-     * @tc.desc:Using the on method set color mode and check the result
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0200
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200
+     * @tc.desc   Using the on method set color mode and check the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0200', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -84,13 +84,13 @@ export default function applicationContextTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0100
-     * @tc.name: TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguage0100
-     * @tc.desc:Using the on method set language
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguage0100
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0100
+     * @tc.desc   Using the on method set language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguage0100', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -108,13 +108,13 @@ export default function applicationContextTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
-     * @tc.name: TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguage0200
-     * @tc.desc:Application call interface to set language
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguage0200
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
+     * @tc.desc   Application call interface to set language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguage0200', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -142,13 +142,13 @@ export default function applicationContextTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0300
-     * @tc.name: TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguageMode0300
-     * @tc.desc: The application parameter is undefined calling the interface to set the language
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguageMode0300
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0300
+     * @tc.desc   The application parameter is undefined calling the interface to set the language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestAbilityAbilityRuntimeConfigrationApplicationContextSetLanguageMode0300', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -166,13 +166,13 @@ export default function applicationContextTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0300
-     * @tc.name: TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0300
-     * @tc.desc:Using the on method set color mode
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0300
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0300
+     * @tc.desc   Using the on method set color mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0300', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',

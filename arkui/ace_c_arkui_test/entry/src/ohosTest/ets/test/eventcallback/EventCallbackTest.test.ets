@@ -31,14 +31,14 @@ export default function eventCallbackTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0100
-    * @tc.name       : testEventCallback001
-    * @tc.desc       : testing addNodeEventReceiver with nomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback001
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0100
+     * @tc.desc   testing addNodeEventReceiver with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackAddReceiverTest';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -48,14 +48,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0200
-    * @tc.name       : testEventCallback002
-    * @tc.desc       : testing removeNodeEventReceiver with nomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback002
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0200
+     * @tc.desc   testing removeNodeEventReceiver with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackRemoveReceiverTest';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -65,14 +65,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0300
-    * @tc.name       : testEventCallback003
-    * @tc.desc       : testing registerNodeEvent with nomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback003
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0300
+     * @tc.desc   testing registerNodeEvent with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackRegisterEventTest';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -82,14 +82,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0400
-    * @tc.name       : testEventCallback004
-    * @tc.desc       : testing unregisterNodeEvent with nomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback004
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0400
+     * @tc.desc   testing unregisterNodeEvent with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackUnregisterEventTest';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -99,14 +99,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0500
-    * @tc.name       : testEventCallback005
-    * @tc.desc       : testing registerNodeEventReceiver with nomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback005
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0500
+     * @tc.desc   testing registerNodeEventReceiver with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackRegisterReceiverTest';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -116,14 +116,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0600
-    * @tc.name       : testEventCallback006
-    * @tc.desc       : testing unregisterNodeEventReceiver with nomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback006
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0600
+     * @tc.desc   testing unregisterNodeEventReceiver with nomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackUnregisterReceiverTest';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -133,14 +133,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0700
-    * @tc.name       : testEventCallback007
-    * @tc.desc       : testing addNodeEventReceiver with abnomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback007
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0700
+     * @tc.desc   testing addNodeEventReceiver with abnomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback007', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackAddReceiver401Test';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -150,14 +150,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0800
-    * @tc.name       : testEventCallback008
-    * @tc.desc       : testing removeNodeEventReceiver with abnomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback008
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0800
+     * @tc.desc   testing removeNodeEventReceiver with abnomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback008', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackRemoveReceiver401Test';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -167,14 +167,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_0900
-    * @tc.name       : testEventCallback009
-    * @tc.desc       : testing registerNodeEvent with abnomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback009
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_0900
+     * @tc.desc   testing registerNodeEvent with abnomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback009', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackRegisterEvent401Test';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -184,14 +184,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_1000
-    * @tc.name       : testEventCallback010
-    * @tc.desc       : testing registerNodeEvent with abnomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback010
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_1000
+     * @tc.desc   testing registerNodeEvent with abnomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback010', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackRegisterEvent001Test';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);
@@ -201,14 +201,14 @@ export default function eventCallbackTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_EVENT_CALLBACK_1100
-    * @tc.name       : testEventCallback011
-    * @tc.desc       : testing registerNodeEvent with abnomral value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEventCallback011
+     * @tc.number SUB_ARKUI_CAPI_EVENT_CALLBACK_1100
+     * @tc.desc   testing registerNodeEvent with abnomral value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEventCallback011', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'EventCallbackRegisterEvent002Test';
       await Utils.pushPage(`eventcallback/${PAGE_TAG}`);

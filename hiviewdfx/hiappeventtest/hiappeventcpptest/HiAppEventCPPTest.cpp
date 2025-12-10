@@ -57,12 +57,13 @@ void HiAppEventCPPTest::TearDown()
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is false.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0100
-* @author f00601390
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_0100
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0100
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0100, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_0100 start" << endl;
     bool result = false;
@@ -93,12 +94,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0100, Function|M
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0200
-* @author f00601390
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_0200
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0200
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0200, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_0200 start" << endl;
     bool result = false;
@@ -129,11 +131,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0200, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Keyvalue of the Boolean List Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0300
-* @author f00601390
-* @tc.desc The keyvalue is reported as a boolean list.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_0300
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0300
+ * @tc.desc   The keyvalue is reported as a boolean list.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0300, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_0300 start" << endl;
     bool result = false;
@@ -164,11 +168,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0300, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Keyvalue of the Boolean List Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0400
-* @author f00601390
-* @tc.desc The keyvalue is reported as a boolean list.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_0400
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0400
+ * @tc.desc   The keyvalue is reported as a boolean list.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0400, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_0400 start" << endl;
     bool result = false;
@@ -199,11 +205,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0400, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Keyvalue of the Boolean List Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0500
-* @author f00601390
-* @tc.desc The keyvalue is reported as a boolean list.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_0500
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0500
+ * @tc.desc   The keyvalue is reported as a boolean list.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0500, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_0500 start" << endl;
     bool result = false;
@@ -236,11 +244,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0500, Function|M
 }
 
 /**
-* @tc.name Testing the Native Write Interface of the HiAppEvent, Reporting the Keyvalue of the Double Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0800
-* @author f00601390
-* @tc.desc The keyvalue type is double.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_0800
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0800
+ * @tc.desc   The keyvalue type is double.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0800, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_0800 start" << endl;
     bool result = false;
@@ -271,11 +281,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0800, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Keyvalue of a Double List.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0900
-* @author f00601390
-* @tc.desc The keyvalue is reported as a double list.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_0900
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_0900
+ * @tc.desc   The keyvalue is reported as a double list.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0900, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_0900 start" << endl;
     bool result = false;
@@ -306,11 +318,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_0900, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the KeyValue of the Floating Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1000
-* @author f00601390
-* @tc.desc The keyvalue type is float.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1000
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1000
+ * @tc.desc   The keyvalue type is float.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1000, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1000 start" << endl;
     bool result = false;
@@ -341,11 +355,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1000, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Keyvalue of a Floating List.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1100
-* @author f00601390
-* @tc.desc The keyvalue is reported as a float list.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1100
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1100
+ * @tc.desc   The keyvalue is reported as a float list.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1100, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1100 start" << endl;
     bool result = false;
@@ -376,11 +392,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1100, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reported When the Keyvalue Is of the Int Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1200
-* @author f00601390
-* @tc.desc The keyvalue is of the int type.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1200
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1200
+ * @tc.desc   The keyvalue is of the int type.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1200, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1200 start" << endl;
     bool result = false;
@@ -411,11 +429,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1200, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting of the int List Type of Keyvalue.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1300
-* @author f00601390
-* @tc.desc The keyvalue is reported as an int list.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1300
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1300
+ * @tc.desc   The keyvalue is reported as an int list.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1300, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1300 start" << endl;
     bool result = false;
@@ -446,11 +466,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1300, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test Reported When the Keyvalue Is of the Long Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1400
-* @author f00601390
-* @tc.desc The keyvalue type is long.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1400
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1400
+ * @tc.desc   The keyvalue type is long.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1400, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1400 start" << endl;
     bool result = false;
@@ -481,11 +503,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1400, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test Reported When the Keyvalue Is of the Long Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1500
-* @author f00601390
-* @tc.desc The keyvalue type is long.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1500
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1500
+ * @tc.desc   The keyvalue type is long.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1500, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1500 start" << endl;
     bool result = false;
@@ -516,11 +540,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1500, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test Reported When the Keyvalue Is of the Long Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1600
-* @author f00601390
-* @tc.desc The keyvalue type is long.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1600
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1600
+ * @tc.desc   The keyvalue type is long.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1600, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1600 start" << endl;
     bool result = false;
@@ -551,11 +577,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1600, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test Reported When the Keyvalue Is of the Long Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1700
-* @author f00601390
-* @tc.desc The keyvalue type is long.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1700
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1700
+ * @tc.desc   The keyvalue type is long.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1700, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1700 start" << endl;
     bool result = false;
@@ -586,11 +614,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1700, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test Reported When the Keyvalue Is of the Long Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1800
-* @author f00601390
-* @tc.desc The keyvalue type is long.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1800
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1800
+ * @tc.desc   The keyvalue type is long.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1800, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1800 start" << endl;
     bool result = false;
@@ -621,11 +651,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1800, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test Reported When the Keyvalue Is of the Long Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1900
-* @author f00601390
-* @tc.desc The keyvalue type is long.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_1900
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_1900
+ * @tc.desc   The keyvalue type is long.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1900, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_1900 start" << endl;
     bool result = false;
@@ -656,11 +688,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_1900, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Keyvalue of the string List Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2100
-* @author f00601390
-* @tc.desc The keyvalue is reported as a string list, 100 list parameters .
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2100
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2100
+ * @tc.desc   The keyvalue is reported as a string list, 100 list parameters .
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2100, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2100 start" << endl;
     bool result = false;
@@ -698,11 +732,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2100, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Keyvalue of the string Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2200
-* @author f00601390
-* @tc.desc The keyvalue is reported as a string, 8 * 1024 lenth.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2200
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2200
+ * @tc.desc   The keyvalue is reported as a string, 8 * 1024 lenth.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2200, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2200 start" << endl;
     bool result = false;
@@ -736,11 +772,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2200, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the event name is null.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2300
-* @author f00601390
-* @tc.desc Reported event name is null.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2300
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2300
+ * @tc.desc   Reported event name is null.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2300, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2300 start" << endl;
     char str[] = "hello";
@@ -756,11 +794,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2300, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the event name is empty.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2400
-* @author f00601390
-* @tc.desc Reported event name is empty.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2400
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2400
+ * @tc.desc   Reported event name is empty.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2400, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2400 start" << endl;
     char str[] = "hello";
@@ -776,11 +816,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2400, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the event name starts with number.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2500
-* @author f00601390
-* @tc.desc Reported event name starts with number.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2500
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2500
+ * @tc.desc   Reported event name starts with number.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2500, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2500 start" << endl;
     char str[] = "hello";
@@ -796,11 +838,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2500, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, 33 parameters are reported.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2700
-* @author f00601390
-* @tc.desc key and values 33 parameters are reported.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2700
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2700
+ * @tc.desc   key and values 33 parameters are reported.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2700, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2700 start" << endl;
     bool result = false;
@@ -838,11 +882,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2700, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, key and value is empty.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2800
-* @author f00601390
-* @tc.desc key and value is empty.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2800
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2800
+ * @tc.desc   key and value is empty.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2800, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2800 start" << endl;
     bool result = false;
@@ -873,11 +919,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2800, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, key is not string type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2900
-* @author f00601390
-* @tc.desc key is not string type.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_2900
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_2900
+ * @tc.desc   key is not string type.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2900, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_2900 start" << endl;
     bool result = false;
@@ -908,11 +956,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_2900, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, key start with number.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3000
-* @author f00601390
-* @tc.desc key start with number.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3000
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3000
+ * @tc.desc   key start with number.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3000, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3000 start" << endl;
     bool result = false;
@@ -943,11 +993,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3000, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, Reporting the Key value of the string Type.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3100
-* @author f00601390
-* @tc.desc The keyvalue is reported as a string, 8 * 1024 + 1 length.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3100
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3100
+ * @tc.desc   The keyvalue is reported as a string, 8 * 1024 + 1 length.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3100, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3100 start" << endl;
     bool result = false;
@@ -983,11 +1035,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3100, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, key and value is NULL.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3200
-* @author f00601390
-* @tc.desc key and value is NULL.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3200
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3200
+ * @tc.desc   key and value is NULL.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3200, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3200 start" << endl;
     bool result = false;
@@ -1018,11 +1072,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3200, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, List Type Reporting,101 List Parameters.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3300
-* @author f00601390
-* @tc.desc 101 List Parameters.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3300
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3300
+ * @tc.desc   101 List Parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3300, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3300 start" << endl;
     bool result = false;
@@ -1061,11 +1117,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3300, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, 32 parameters are reported.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3400
-* @author f00601390
-* @tc.desc key and values 32 parameters are reported.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3400
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3400
+ * @tc.desc   key and values 32 parameters are reported.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3400, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3400 start" << endl;
     bool result = false;
@@ -1103,11 +1161,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3400, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, 32 parameters are reported.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3500
-* @author f00601390
-* @tc.desc key and values 32 parameters are reported.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3500
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3500
+ * @tc.desc   key and values 32 parameters are reported.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3500, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3500 start" << endl;
     string getlogFile;
@@ -1153,11 +1213,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3500, Function|M
 }
 
 /**
-* @tc.name HiAppEvent Native Write Interface Test, 32 parameters are reported.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3500
-* @author f00601390
-* @tc.desc key and values 32 parameters are reported.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3600
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3500
+ * @tc.desc   key and values 32 parameters are reported.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3600, Function|MediumTest|Level4){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3600 start" << endl;
     string getlogFile;
@@ -1203,12 +1265,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3600, Function|M
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3700
-* @author f00601390
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3700
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3700
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3700, Function|MediumTest|Level3){
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3700 start" << endl;
     OH_HiAppEvent_Configure("disable", "true");
@@ -1229,12 +1292,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3700, Function|M
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3800
-* @author z30053398
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3800
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3800
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3800, Function | MediumTest | Level3) {
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3800 start" << endl;
     ASSERT_EQ(OH_HiAppEvent_SetConfigItem(nullptr, "testName", "testValue"), ErrorCode::ERROR_EVENT_CONFIG_IS_NULL);
@@ -1264,12 +1328,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3800, Function |
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3900
-* @author z30053398
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_3900
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_3900
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3900, Function | MediumTest | Level3) {
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_3900 start" << endl;
     HiAppEvent_Config* configDemo = OH_HiAppEvent_CreateConfig();
@@ -1287,12 +1352,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_3900, Function |
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4000
-* @author z30053398
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_4000
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4000
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4000, Function | MediumTest | Level3) {
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_4000 start" << endl;
     ASSERT_EQ(OH_HiAppEvent_SetEventConfig("MAIN_THREAD_JANK", nullptr), ErrorCode::ERROR_INVALID_PARAM_VALUE);
@@ -1326,12 +1392,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4000, Function |
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4100
-* @author z30053398
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_4100
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4100
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4100, Function | MediumTest | Level3) {
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_4100  start" << endl;
     HiAppEvent_Config* configDemo = OH_HiAppEvent_CreateConfig();
@@ -1352,12 +1419,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4100, Function |
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native Write Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4200
-* @author z30053398
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_4200
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4200
+ * @tc.desc   The keyvalue is of the boolean type and the bool value is false.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4200, Function | MediumTest | Level3) {
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_4200 start" << endl;
     HiAppEvent_Config* configDemo = OH_HiAppEvent_CreateConfig();
@@ -1394,14 +1462,15 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4200, Function |
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_4200 end" << endl;
 }
 
-/**
-* @tc.name Test of the HiAppEvent Native SetReportRoute Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4300
-* @author z30053398
-* @tc.desc The keyvalue is of the boolean type and the bool value is false.
-*/
 
+/**
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_4300
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4300
+ * @tc.desc   DFX_DFT_HiviewKit_HiAppEvent_Native_4300
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4300, Function | MediumTest | Level3) {
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_4300 start" << endl;
     const char * validname = "test_processor";
@@ -1421,12 +1490,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4300, Function |
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native SetReportRoute Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4400
-* @author w30032608
-* @tc.desc check the interface of SetEventConfig for EVENT_MAIN_THREAD_JANK_V2 when the log type is in format.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_4400
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4400
+ * @tc.desc   check the interface of SetEventConfig for EVENT_MAIN_THREAD_JANK_V2 when the log type is in format.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4400, TestSize.Level0)
 {
     HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
@@ -1452,12 +1522,13 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4400, TestSize.L
 }
 
 /**
-* @tc.name Test of the HiAppEvent Native SetReportRoute Interface in which the keyvalue
-*          is of the boolean type and the bool value is true.
-* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4500
-* @author w30032608
-* @tc.desc check the interface of SetEventConfig for EVENT_MAIN_THREAD_JANK_V2 when the log type is in format.
-*/
+ * @tc.name   DFX_DFT_HiviewKit_HiAppEvent_Native_4500
+ * @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4500
+ * @tc.desc   check the interface of SetEventConfig for EVENT_MAIN_THREAD_JANK_V2 when the log type is in format.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4500, TestSize.Level0)
 {
     HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();

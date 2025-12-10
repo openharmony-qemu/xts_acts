@@ -44,11 +44,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmWritable_0001
-     * @tc.name      JsvmWritableTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmWritableTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmWritable_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmWritableTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmWritableCode();
@@ -57,11 +58,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmConfigurable_0001
-     * @tc.name      JsvmConfigurableTest0001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmConfigurableTest0001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmConfigurable_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmConfigurableTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmConfigurableCode();
@@ -70,11 +72,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmNoReceiverCheck_0001
-     * @tc.name      JsvmNoReceiverCheckTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmNoReceiverCheckTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmNoReceiverCheck_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmNoReceiverCheckTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmNoReceiverCheckCode();
@@ -83,11 +86,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmStatic_0001
-     * @tc.name      JsvmStaticTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmStaticTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmStatic_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmStaticTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmStaticCode();
@@ -96,11 +100,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmDefaultMethod_0001
-     * @tc.name      JsvmDefaultMethodTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmDefaultMethodTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmDefaultMethod_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmDefaultMethodTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmDefaultMethodCode();
@@ -109,11 +114,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmMethodNoReceiverCheck_0001
-     * @tc.name      JsvmMethodNoReceiverCheckTest0001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmMethodNoReceiverCheckTest0001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmMethodNoReceiverCheck_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmMethodNoReceiverCheckTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmMethodNoReceiverCheckCode();
@@ -122,11 +128,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmDefaultJsproperty_0001
-     * @tc.name      JsvmDefaultJspropertyTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmDefaultJspropertyTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmDefaultJsproperty_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmDefaultJspropertyTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmDefaultJspropertyCode();
@@ -135,11 +142,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmJspropertyNoReceiverlCheck_0001
-     * @tc.name      JsvmJspropertyNoReceiverlCheckTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmJspropertyNoReceiverlCheckTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmJspropertyNoReceiverlCheck_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmJspropertyNoReceiverlCheckTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmJspropertyNoReceiverlCheckCode();
@@ -148,11 +156,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmKeyAllProperties_0001
-     * @tc.name      JsvmKeyAllPropertiesTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmKeyAllPropertiesTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmKeyAllProperties_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmKeyAllPropertiesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmKeyAllPropertiesCode();
@@ -161,11 +170,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmKeySkipStrings_0001
-     * @tc.name      JsvmKeySkipStringsTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmKeySkipStringsTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmKeySkipStrings_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmKeySkipStringsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmKeySkipStringsCode();
@@ -174,11 +184,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeDefault_0001
-     * @tc.name      JsvmCompileModeDefaultTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCompileModeDefaultTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeDefault_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCompileModeDefaultTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCompileModeDefaultCode();
@@ -187,11 +198,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeConsumeCode_0001
-     * @tc.name      JsvmCompileModeConsumeCodeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCompileModeConsumeCodeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeConsumeCode_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCompileModeConsumeCodeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCompileModeConsumeCodeCode();
@@ -200,11 +212,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeProduceCompileProfile_0001
-     * @tc.name      JsvmCompileModeProduceCompileProfileTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCompileModeProduceCompileProfileTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeProduceCompileProfile_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCompileModeProduceCompileProfileTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCompileModeProduceCompileProfileCode();
@@ -213,11 +226,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeConsumeCompileProfile_0001
-     * @tc.name      JsvmCompileModeConsumeCompileProfileTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCompileModeConsumeCompileProfileTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileModeConsumeCompileProfile_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCompileModeConsumeCompileProfileTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCompileModeConsumeCompileProfileCode();
@@ -226,11 +240,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCompileCodeCache_0001
-     * @tc.name      JsvmCompileCodeCacheTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCompileCodeCacheTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileCodeCache_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCompileCodeCacheTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCompileCodeCacheCode();
@@ -239,11 +254,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCompileCompileProfile_0001
-     * @tc.name      JsvmCompileCompileProfileTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCompileCompileProfileTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileCompileProfile_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCompileCompileProfileTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCompileCompileProfileCode();
@@ -252,11 +268,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCompileEnableSourceMap_0001
-     * @tc.name      JsvmCompileEnableSourceMapTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCompileEnableSourceMapTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCompileEnableSourceMap_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCompileEnableSourceMapTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCompileEnableSourceMapCode();
@@ -265,11 +282,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalHeapSize_0001
-     * @tc.name      JsvmHeapStatisticsTotalHeapSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsTotalHeapSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalHeapSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsTotalHeapSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsTotalHeapSizeCode();
@@ -278,11 +296,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalHeapSizeExecutable_0001
-     * @tc.name      JsvmHeapStatisticsTotalHeapSizeExecutableTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsTotalHeapSizeExecutableTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalHeapSizeExecutable_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsTotalHeapSizeExecutableTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsTotalHeapSizeExecutableCode();
@@ -291,11 +310,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalPhysicalSize_0001
-     * @tc.name      JsvmHeapStatisticsTotalPhysicalSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsTotalPhysicalSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalPhysicalSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsTotalPhysicalSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsTotalPhysicalSizeCode();
@@ -304,11 +324,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalAvailableSize_0001
-     * @tc.name      JsvmHeapStatisticsTotalAvailableSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsTotalAvailableSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalAvailableSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsTotalAvailableSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsTotalAvailableSizeCode();
@@ -317,11 +338,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsUsedHeapSize_0001
-     * @tc.name      JsvmHeapStatisticsUsedHeapSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsUsedHeapSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsUsedHeapSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsUsedHeapSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsUsedHeapSizeCode();
@@ -330,11 +352,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsHeapSizeLimit_0001
-     * @tc.name      JsvmHeapStatisticsHeapSizeLimitTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsHeapSizeLimitTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsHeapSizeLimit_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsHeapSizeLimitTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsHeapSizeLimitCode();
@@ -343,11 +366,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsMallocedMemory_0001
-     * @tc.name      JsvmHeapStatisticsMallocedMemoryTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsMallocedMemoryTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsMallocedMemory_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsMallocedMemoryTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsMallocedMemoryCode();
@@ -356,11 +380,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsExternalMemory_0001
-     * @tc.name      JsvmHeapStatisticsExternalMemoryTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsExternalMemoryTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsExternalMemory_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsExternalMemoryTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsExternalMemoryCode();
@@ -369,11 +394,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsPeakMallocedMemory_0001
-     * @tc.name      JsvmHeapStatisticsPeakMallocedMemoryTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsPeakMallocedMemoryTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsPeakMallocedMemory_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsPeakMallocedMemoryTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsPeakMallocedMemoryCode();
@@ -382,11 +408,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsNumberOfDetachedContext_0001
-     * @tc.name      JsvmHeapStatisticsNumberOfDetachedContextTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsNumberOfDetachedContextTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsNumberOfDetachedContext_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsNumberOfDetachedContextTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsNumberOfDetachedContextCode();
@@ -395,11 +422,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalGlobalHandlesSize_0001
-     * @tc.name      JsvmHeapStatisticsTotalGlobalHandlesSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsTotalGlobalHandlesSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsTotalGlobalHandlesSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsTotalGlobalHandlesSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsTotalGlobalHandlesSizeCode();
@@ -408,11 +436,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsUsedGlobalHandlesSize_0001
-     * @tc.name      JsvmHeapStatisticsUsedGlobalHandlesSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmHeapStatisticsUsedGlobalHandlesSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmHeapStatisticsUsedGlobalHandlesSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmHeapStatisticsUsedGlobalHandlesSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmHeapStatisticsUsedGlobalHandlesSizeCode();
@@ -421,11 +450,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmInitOptionsArgc_0001
-     * @tc.name      JsvmInitOptionsArgcTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmInitOptionsArgcTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmInitOptionsArgc_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmInitOptionsArgcTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       setTimeout(()=>{
@@ -438,11 +468,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmInitOptionsArgv_0001
-     * @tc.name      JsvmInitOptionsArgvTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmInitOptionsArgvTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmInitOptionsArgv_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmInitOptionsArgvTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       setTimeout(()=>{
@@ -454,11 +485,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmInitOptionsRemoveFlags_0001
-     * @tc.name      JsvmInitOptionsRemoveFlagsTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmInitOptionsRemoveFlagsTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmInitOptionsRemoveFlags_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmInitOptionsRemoveFlagsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       setTimeout(()=>{
@@ -470,11 +502,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
+     * @tc.name   JsvmCreateVmOptionsMaxOldGenerationSizeTest001
      * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsMaxOldGenerationSize_0001
-     * @tc.name JsvmCreateVmOptionsMaxOldGenerationSizeTest001
-     * @tc.desc CreateVM,return JSVM_OK
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCreateVmOptionsMaxOldGenerationSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCreateVmOptionsMaxOldGenerationSizeCode();
@@ -483,11 +516,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
+     * @tc.name   JsvmCreateVmOptionsMaxYoungGenerationSizeTest001
      * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsMaxYoungGenerationSize_0001
-     * @tc.name JsvmCreateVmOptionsMaxYoungGenerationSizeTest001
-     * @tc.desc CreateVM,return JSVM_OK
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCreateVmOptionsMaxYoungGenerationSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCreateVmOptionsMaxYoungGenerationSizeCode();
@@ -496,11 +530,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
+     * @tc.name   JsvmCreateVmOptionsInitialOldGenerationSizeTest001
      * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsInitialOldGenerationSize_0001
-     * @tc.name JsvmCreateVmOptionsInitialOldGenerationSizeTest001
-     * @tc.desc CreateVM,return JSVM_OK
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCreateVmOptionsInitialOldGenerationSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCreateVmOptionsInitialOldGenerationSizeCode();
@@ -509,11 +544,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsInitialYoungGenerationSize_0001
-     * @tc.name      JsvmCreateVmOptionsInitialYoungGenerationSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCreateVmOptionsInitialYoungGenerationSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsInitialYoungGenerationSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCreateVmOptionsInitialYoungGenerationSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -524,11 +560,12 @@ export default function JsvmEnumTest() {
       });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsSnapshotBlobData_0001
-     * @tc.name      JsvmCreateVmOptionsSnapshotBlobDataTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCreateVmOptionsSnapshotBlobDataTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsSnapshotBlobData_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCreateVmOptionsSnapshotBlobDataTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCreateVmOptionsSnapshotBlobDataCode();
@@ -537,11 +574,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsSnapshotBlobSize_0001
-     * @tc.name      JsvmCreateVmOptionsSnapshotBlobSizeTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmCreateVmOptionsSnapshotBlobSizeTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmCreateVmOptionsSnapshotBlobSize_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmCreateVmOptionsSnapshotBlobSizeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmCreateVmOptionsSnapshotBlobSizeCode();
@@ -550,11 +588,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmVmInfoEngine_0001
-     * @tc.name      JsvmVmInfoEngineTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmVmInfoEngineTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmVmInfoEngine_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmVmInfoEngineTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmVmInfoEngineCode();
@@ -563,11 +602,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmVmInfoVersion_0001
-     * @tc.name      JsvmVmInfoVersionTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmVmInfoVersionTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmVmInfoVersion_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmVmInfoVersionTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmVmInfoVersionCode();
@@ -576,11 +616,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmVmInfoCachedDataVersionTag_0001
-     * @tc.name      JsvmVmInfoCachedDataVersionTagTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmVmInfoCachedDataVersionTagTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmVmInfoCachedDataVersionTag_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmVmInfoCachedDataVersionTagTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmVmInfoCachedDataVersionTagCode();
@@ -589,11 +630,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmExtendedErrorInfoEngineReserved_0001
-     * @tc.name      JsvmExtendedErrorInfoEngineReservedTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmExtendedErrorInfoEngineReservedTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmExtendedErrorInfoEngineReserved_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmExtendedErrorInfoEngineReservedTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmExtendedErrorInfoEngineReservedCode();
@@ -602,11 +644,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmExtendedErrorInfoEngineError_0001
-     * @tc.name      JsvmExtendedErrorInfoEngineErrorTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmExtendedErrorInfoEngineErrorTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmExtendedErrorInfoEngineError_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmExtendedErrorInfoEngineErrorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmExtendedErrorInfoEngineErrorCode();
@@ -615,11 +658,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmRegexpNone_0001
-     * @tc.name      JsvmRegexpNoneTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmRegexpNoneTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmRegexpNone_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmRegexpNoneTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmRegexpNoneCode();
@@ -628,11 +672,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmDefineClassOptions_0001
-     * @tc.name      JsvmDefineClassOptionsTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmDefineClassOptionsTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmDefineClassOptions_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmDefineClassOptionsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmDefineClassOptionsCode();
@@ -641,11 +686,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmDefineClassNormal_0001
-     * @tc.name      JsvmDefineClassNormalTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmDefineClassNormalTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmDefineClassNormal_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmDefineClassNormalTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmDefineClassNormalCode();
@@ -654,11 +700,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeMinorMarkCompact_0001
-     * @tc.name      JsvmGcTypeMinorMarkCompactTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmGcTypeMinorMarkCompactTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeMinorMarkCompact_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmGcTypeMinorMarkCompactTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmGcTypeMinorMarkCompactCode();
@@ -667,11 +714,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeMarkSweepCompact_0001
-     * @tc.name      JsvmGcTypeMarkSweepCompactTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmGcTypeMarkSweepCompactTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeMarkSweepCompact_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmGcTypeMarkSweepCompactTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmGcTypeMarkSweepCompactCode();
@@ -680,11 +728,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeIncrementalMarking_0001
-     * @tc.name      JsvmGcTypeIncrementalMarkingTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmGcTypeIncrementalMarkingTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeIncrementalMarking_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmGcTypeIncrementalMarkingTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmGcTypeIncrementalMarkingCode();
@@ -693,11 +742,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeProcessWeakCallbacks_0001
-     * @tc.name      JsvmGcTypeProcessWeakCallbacksTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmGcTypeProcessWeakCallbacksTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmGcTypeProcessWeakCallbacks_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmGcTypeProcessWeakCallbacksTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmGcTypeProcessWeakCallbacksCode();
@@ -706,11 +756,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmNapiQosBackground_0001
-     * @tc.name      JsvmNapiQosBackgroundTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmNapiQosBackgroundTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmNapiQosBackground_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmNapiQosBackgroundTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmNapiQosBackgroundCode(1000, (input:number) => {
@@ -722,11 +773,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmNapiQosUtility_0001
-     * @tc.name      JsvmNapiQosUtilityTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmNapiQosUtilityTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmNapiQosUtility_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmNapiQosUtilityTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmNapiQosUtilityCode(1000, (input:number) => {
@@ -738,11 +790,12 @@ export default function JsvmEnumTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ERROR_ETS_JSVM_JsvmNapiQosUserInitiared_0001
-     * @tc.name      JsvmNapiQosUserInitiaredTest001
-     * @tc.desc      CreateVM,return JSVM_OK
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   JsvmNapiQosUserInitiaredTest001
+     * @tc.number SUB_ACE_ERROR_ETS_JSVM_JsvmNapiQosUserInitiared_0001
+     * @tc.desc   CreateVM,return JSVM_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('JsvmNapiQosUserInitiaredTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let rst: number = napitest.JsvmNapiQosUserInitiaredCode(1000, (input:number) => {

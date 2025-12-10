@@ -78,14 +78,14 @@ describe("VibratorJsTest_misc_1", function () {
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
     let TAG = ""
 
-    /*
-    * @tc.name:SubVibratorJsTest0001
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0190
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0001
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0190
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0001---------------------------');
         TAG = "SubVibratorJsTest0001"
@@ -111,14 +111,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0002
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0200
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0002
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0002---------------------------');
         TAG = "SubVibratorJsTest0002"
@@ -144,14 +144,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0003
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0210
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0003
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0210
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0003---------------------------');
         TAG = "SubVibratorJsTest0003"
@@ -174,14 +174,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0004
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0220
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0004
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0220
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0004---------------------------');
         TAG = "SubVibratorJsTest0004"
@@ -200,13 +200,13 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0005
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0230
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    /**
+     * @tc.name   SubVibratorJsTest0005
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0230
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SubVibratorJsTest0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0005---------------------------');
@@ -229,14 +229,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0006
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0240
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0006
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0240
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0006---------------------------');
         TAG = "SubVibratorJsTest0006"
@@ -260,14 +260,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0007
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0250
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0007
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0250
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0007---------------------------');
         TAG = "SubVibratorJsTest0007"
@@ -286,14 +286,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0008
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0260
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0008
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0260
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0008---------------------------');
         TAG = "SubVibratorJsTest0008"
@@ -328,14 +328,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0009
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0270
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0009
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0270
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0009---------------------------');
         TAG = "SubVibratorJsTest0009"
@@ -351,14 +351,14 @@ describe("VibratorJsTest_misc_1", function () {
         }
     })
 
-    /*
-    * @tc.name:SubVibratorJsTest0010
-    * @tc.desc:Verification results of the incorrect parameters of the test interface.
-    * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0280
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SubVibratorJsTest0010
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0280
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SubVibratorJsTest0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SubVibratorJsTest0010---------------------------');
         TAG = "SubVibratorJsTest0010"

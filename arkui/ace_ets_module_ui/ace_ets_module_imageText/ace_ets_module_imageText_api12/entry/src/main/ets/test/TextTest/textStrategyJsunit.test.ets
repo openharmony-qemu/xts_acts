@@ -42,14 +42,14 @@ export default function textStrategyJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_textStrategyJsunit_0100
-    * @tc.name: textStrategyJsunit_0100
-    * @tc.desc: The enumeration value of lineBreakStrategy
-    * @tc.level: Level 2
-    * @tc.type:
-    * @tc.size:
-    */
+    /**
+     * @tc.name   textStrategyJsunit_0100
+     * @tc.number SUB_ACE_textStrategyJsunit_0100
+     * @tc.desc   The enumeration value of lineBreakStrategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textStrategyJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('textStrategyJsunit_0100 START');
 

@@ -32,12 +32,12 @@ import applicationManager from '@ohos.enterprise.applicationManager';
 export default function afterAllTest() {
   describe('afterAll_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_001
-     * @tc.name      : test_clearUpApplicationData_001
-     * @tc.desc      : test clearUpApplicationData method without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_001
+     * @tc.desc   test clearUpApplicationData method without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -50,12 +50,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_002
-     * @tc.name      : test_clearUpApplicationData_002
-     * @tc.desc      : test clearUpApplicationData method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_002
+     * @tc.desc   test clearUpApplicationData method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_002", Level.LEVEL2, async (done: Function) => {
       try {
@@ -71,12 +71,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_003
-     * @tc.name      : test_clearUpApplicationData_003
-     * @tc.desc      : test clearUpApplicationData method with invalid bundle name
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_003
+     * @tc.desc   test clearUpApplicationData method with invalid bundle name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -92,12 +92,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_004
-     * @tc.name      : test_clearUpApplicationData_004
-     * @tc.desc      : test clearUpApplicationData method with invalid app index
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_004
+     * @tc.desc   test clearUpApplicationData method with invalid app index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -113,12 +113,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_005
-     * @tc.name      : test_clearUpApplicationData_005
-     * @tc.desc      : test clearUpApplicationData method with invalid user id
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_005
+     * @tc.desc   test clearUpApplicationData method with invalid user id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -134,12 +134,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_006
-     * @tc.name      : test_clearUpApplicationData_006
-     * @tc.desc      : test clearUpApplicationData method success
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_006
+     * @tc.desc   test clearUpApplicationData method success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_006", Level.LEVEL2, async (done: Function) => {
       try {

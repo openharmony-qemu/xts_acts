@@ -56,14 +56,14 @@ export default function webAttributeTest() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONRENDEREXITED_0100
-    * @tc.name        : testOnRenderExitedStatic001
-    * @tc.desc        : test onRenderExited RenderExitReason.PROCESS_CRASHED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnRenderExitedStatic001
+     * @tc.number SUB_WEB_ONRENDEREXITED_0100
+     * @tc.desc   test onRenderExited RenderExitReason.PROCESS_CRASHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnRenderExitedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitOnRenderExited", 10)
@@ -78,14 +78,14 @@ export default function webAttributeTest() {
         await Utils.msSleep(3000);
         done()
       })
-    /*
-    * @tc.number     : SUB_WEB_RENDEREXITREASONPROCESSCRASHED_0100
-    * @tc.name       : testRenderExitReasonProcessCrashedStatic001
-    * @tc.desc       : test RenderExitReasonProcessCrashed
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRenderExitReasonProcessCrashedStatic001
+     * @tc.number SUB_WEB_RENDEREXITREASONPROCESSCRASHED_0100
+     * @tc.desc   test RenderExitReasonProcessCrashed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRenderExitReasonProcessCrashedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitRenderExitReasonProcessCrashed", 10)

@@ -43,6 +43,14 @@ export default function GridCallbackJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridCallbackJsunit_1000
+     * @tc.number GridCallbackJsunit_1000
+     * @tc.desc   GridCallbackJsunit_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridCallbackJsunit_1000',  Level.LEVEL0, async (done: Function) => {
       // Verify Neither rowsTemplate nor columnsTemplate is set
       console.info('[GridCallbackJsunit_1000] START');

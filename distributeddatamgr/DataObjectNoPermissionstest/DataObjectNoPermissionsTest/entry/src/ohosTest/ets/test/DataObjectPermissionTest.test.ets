@@ -48,12 +48,12 @@ export default function DataObjectPermissionTest() {
     })
 
     /**
+     * @tc.name   SUB_DataObject_setSessionId_Callback_PermissionTest_0100
      * @tc.number SUB_DataObject_setSessionId_Callback_PermissionTest_0100
-     * @tc.name DataObjectPermissionTest01
-     * @tc.desc Test DataObject setSessionId Callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.desc   Test DataObject setSessionId Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DataObject_setSessionId_Callback_PermissionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       console.info(TAG + '************ SUB_DataObject_setSessionId_Callback_PermissionTest_0100 start ************')
@@ -71,12 +71,12 @@ export default function DataObjectPermissionTest() {
     })
 
     /**
+     * @tc.name   SUB_DataObject_setSessionId_Promise_PermissionTest_0100
      * @tc.number SUB_DataObject_setSessionId_Promise_PermissionTest_0100
-     * @tc.name DataObjectPermissionTest02
-     * @tc.desc Test DataObject setSessionId Promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setSessionId Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DataObject_setSessionId_Promise_PermissionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_DataObject_setSessionId_Promise_PermissionTest_0100 start ************')

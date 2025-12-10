@@ -49,10 +49,12 @@ export default function EntryOptionPage() {
 
 
     /**
-     * @tc.number    EntryOptionPage_0100
-     * @tc.name      EntryOptionPage_0100
-     * @tc.desc      Test EntryOptionPage useSharedStorage is false
-     * @tc.level     Level 0
+     * @tc.name   EntryOptionPage_0100
+     * @tc.number EntryOptionPage_0100
+     * @tc.desc   Test EntryOptionPage useSharedStorage is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EntryOptionPage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('EntryOptionPage_0100 START');

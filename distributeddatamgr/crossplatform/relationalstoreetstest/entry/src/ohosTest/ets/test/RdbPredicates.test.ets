@@ -128,12 +128,12 @@ export default function rdbPredicatesTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2800
-     * @tc.name   : testRdbPredicatesConstructor001
-     * @tc.desc   : Test the constructor method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesConstructor001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2800
+     * @tc.desc   Test the constructor method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesConstructor001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesConstructor001 start *************");
@@ -146,12 +146,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2770
-     * @tc.name   : testRdbPredicatesConstructor002
-     * @tc.desc   : Test the constructor() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesConstructor002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2770
+     * @tc.desc   Test the constructor() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesConstructor002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesConstructor002 start *************");
@@ -164,12 +164,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2780
-     * @tc.name   : testRdbPredicatesConstructor003
-     * @tc.desc   : Test the constructor() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesConstructor003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2780
+     * @tc.desc   Test the constructor() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesConstructor003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesConstructor003 start *************");
@@ -186,12 +186,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2790
-     * @tc.name   : testRdbPredicatesConstructor004
-     * @tc.desc   : Test the constructor() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesConstructor004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2790
+     * @tc.desc   Test the constructor() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesConstructor004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesConstructor004 start *************");
@@ -208,12 +208,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1040
-     * @tc.name   : testRdbPredicatesEqualTo001
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1040
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo001 start *************");
@@ -230,12 +230,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1010
-     * @tc.name   : testRdbPredicatesEqualTo002
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1010
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo002 start *************");
@@ -252,12 +252,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1030
-     * @tc.name   : testRdbPredicatesEqualTo003
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1030
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo003 start *************");
@@ -274,12 +274,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1020
-     * @tc.name   : testRdbPredicatesEqualTo004
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1020
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo004 start *************");
@@ -296,12 +296,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1140
-     * @tc.name   : testRdbPredicatesEqualTo005
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1140
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo005 start *************");
@@ -318,12 +318,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1050
-     * @tc.name   : testRdbPredicatesEqualTo006
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1050
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo006 start *************");
@@ -340,12 +340,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1150
-     * @tc.name   : testRdbPredicatesEqualTo007
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1150
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo007 start *************");
@@ -362,12 +362,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1060
-     * @tc.name   : testRdbPredicatesEqualTo008
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1060
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo008 start *************");
@@ -385,12 +385,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1120
-     * @tc.name   : testRdbPredicatesEqualTo009
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1120
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo009 start *************");
@@ -411,12 +411,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1130
-     * @tc.name   : testRdbPredicatesEqualTo010
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1130
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo010 start *************");
@@ -437,12 +437,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1090
-     * @tc.name   : testRdbPredicatesEqualTo011
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1090
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo011 start *************");
@@ -459,12 +459,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1080
-     * @tc.name   : testRdbPredicatesEqualTo012
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1080
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo012 start *************");
@@ -483,12 +483,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1070
-     * @tc.name   : testRdbPredicatesEqualTo013
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo013
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1070
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo013 start *************");
@@ -505,12 +505,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1110
-     * @tc.name   : testRdbPredicatesEqualTo015
-     * @tc.desc   : Test the equalTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEqualTo015
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1110
+     * @tc.desc   Test the equalTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEqualTo015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEqualTo015 start *************");
@@ -527,12 +527,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2520
-     * @tc.name   : testRdbPredicatesNotEqualTo001
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2520
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo001 start *************");
@@ -549,12 +549,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2760
-     * @tc.name   : testRdbPredicatesNotEqualTo002
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2760
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo002 start *************");
@@ -572,12 +572,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2510
-     * @tc.name   : testRdbPredicatesNotEqualTo003
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2510
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo003 start *************");
@@ -594,12 +594,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2500
-     * @tc.name   : testRdbPredicatesNotEqualTo004
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2500
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo004 start *************");
@@ -616,12 +616,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2570
-     * @tc.name   : testRdbPredicatesNotEqualTo005
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2570
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo005 start *************");
@@ -638,12 +638,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2530
-     * @tc.name   : testRdbPredicatesNotEqualTo006
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2530
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo006 start *************");
@@ -660,12 +660,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2630
-     * @tc.name   : testRdbPredicatesNotEqualTo007
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2630
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo007 start *************");
@@ -682,12 +682,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2540
-     * @tc.name   : testRdbPredicatesNotEqualTo008
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2540
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo008 start *************");
@@ -704,12 +704,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2600
-     * @tc.name   : testRdbPredicatesNotEqualTo009
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2600
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo009 start *************");
@@ -730,12 +730,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2610
-     * @tc.name   : testRdbPredicatesNotEqualTo010
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2610
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo010 start *************");
@@ -756,12 +756,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2580
-     * @tc.name   : testRdbPredicatesNotEqualTo011
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2580
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo011 start *************");
@@ -778,12 +778,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2560
-     * @tc.name   : testRdbPredicatesNotEqualTo012
-     * @tc.desc   : Test the testRdbPredicatesNotEqualTo012() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2560
+     * @tc.desc   Test the testRdbPredicatesNotEqualTo012() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo012 start *************");
@@ -801,12 +801,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2550
-     * @tc.name   : testRdbPredicatesNotEqualTo013
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo013
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2550
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo013 start *************");
@@ -823,12 +823,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2620
-     * @tc.name   : testRdbPredicatesNotEqualTo015
-     * @tc.desc   : Test the notEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotEqualTo015
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2620
+     * @tc.desc   Test the notEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotEqualTo015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotEqualTo015 start *************");
@@ -845,12 +845,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0460
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap001
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0460
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap001 start *************");
@@ -872,12 +872,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0510
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap002
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0510
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap002 start *************");
@@ -894,12 +894,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0470
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap003
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0470
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap003 start *************");
@@ -916,12 +916,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1000
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap004
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1000
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap004 start *************");
@@ -938,12 +938,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0540
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap005
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0540
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap005 start *************");
@@ -960,12 +960,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0500
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap006
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0500
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap006 start *************");
@@ -986,12 +986,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0530
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap007
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0530
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap007 start *************");
@@ -1012,12 +1012,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0490
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap008
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0490
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap008 start *************");
@@ -1038,12 +1038,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0480
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap009
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0480
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap009 start *************");
@@ -1060,12 +1060,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0520
-     * @tc.name   : testRdbPredicatesBeginWrapAndEndWrap010
-     * @tc.desc   : Test the beginWrap() and endWrap() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginWrapAndEndWrap010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0520
+     * @tc.desc   Test the beginWrap() and endWrap() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginWrapAndEndWrap010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginWrapAndEndWrap010 start *************");
@@ -1086,12 +1086,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0410
-     * @tc.name   : testRdbPredicatesOr001
-     * @tc.desc   : Test the or() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOr001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0410
+     * @tc.desc   Test the or() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOr001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOr001 start *************");
@@ -1113,12 +1113,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0430
-     * @tc.name   : testRdbPredicatesOr002
-     * @tc.desc   : Test the or() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOr002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0430
+     * @tc.desc   Test the or() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOr002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOr002 start *************");
@@ -1140,12 +1140,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0400
-     * @tc.name   : testRdbPredicatesOr003
-     * @tc.desc   : Test the or() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOr003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0400
+     * @tc.desc   Test the or() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOr003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOr003 start *************");
@@ -1167,12 +1167,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0420
-     * @tc.name   : testRdbPredicatesOr004
-     * @tc.desc   : Test the or() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOr004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0420
+     * @tc.desc   Test the or() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOr004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOr004 start *************");
@@ -1198,12 +1198,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0450
-     * @tc.name   : testRdbPredicatesOr005
-     * @tc.desc   : Test the or() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOr005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0450
+     * @tc.desc   Test the or() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOr005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOr005 start *************");
@@ -1229,12 +1229,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0440
-     * @tc.name   : testRdbPredicatesOr006
-     * @tc.desc   : Test the or() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOr006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0440
+     * @tc.desc   Test the or() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOr006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOr006 start *************");
@@ -1260,12 +1260,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0240
-     * @tc.name   : testRdbPredicatesAnd001
-     * @tc.desc   : Test the and() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesAnd001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0240
+     * @tc.desc   Test the and() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesAnd001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesAnd001 start *************");
@@ -1282,12 +1282,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0360
-     * @tc.name   : testRdbPredicatesAnd002
-     * @tc.desc   : Test the or() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesAnd002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0360
+     * @tc.desc   Test the or() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesAnd002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesAnd002 start *************");
@@ -1308,12 +1308,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0390
-     * @tc.name   : testRdbPredicatesAnd003
-     * @tc.desc   : Test the and() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesAnd003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0390
+     * @tc.desc   Test the and() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesAnd003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesAnd003 start *************");
@@ -1334,12 +1334,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0380
-     * @tc.name   : testRdbPredicatesAnd004
-     * @tc.desc   : Test the and() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesAnd004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0380
+     * @tc.desc   Test the and() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesAnd004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesAnd004 start *************");
@@ -1365,12 +1365,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0230
-     * @tc.name   : testRdbPredicatesAnd005
-     * @tc.desc   : Test the and() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesAnd005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0230
+     * @tc.desc   Test the and() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesAnd005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesAnd005 start *************");
@@ -1396,12 +1396,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0370
-     * @tc.name   : testRdbPredicatesAnd006
-     * @tc.desc   : Test the and() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesAnd006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0370
+     * @tc.desc   Test the and() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesAnd006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesAnd006 start *************");
@@ -1420,12 +1420,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0860
-     * @tc.name   : testRdbPredicatesContains001
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0860
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains001 start *************");
@@ -1440,12 +1440,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0780
-     * @tc.name   : testRdbPredicatesContains002
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0780
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains002 start *************");
@@ -1460,12 +1460,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0790
-     * @tc.name   : testRdbPredicatesContains003
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0790
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains003 start *************");
@@ -1480,12 +1480,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0800
-     * @tc.name   : testRdbPredicatesContains004
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0800
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains004 start *************");
@@ -1500,12 +1500,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0830
-     * @tc.name   : testRdbPredicatesContains005
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0830
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains005 start *************");
@@ -1520,12 +1520,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0810
-     * @tc.name   : testRdbPredicatesContains006
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0810
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains006 start *************");
@@ -1542,12 +1542,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0820
-     * @tc.name   : testRdbPredicatesContains007
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0820
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains007 start *************");
@@ -1564,12 +1564,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0850
-     * @tc.name   : testRdbPredicatesContains008
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0850
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains008 start *************");
@@ -1588,12 +1588,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0840
-     * @tc.name   : testRdbPredicatesContains009
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0840
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains009 start *************");
@@ -1609,12 +1609,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0870
-     * @tc.name   : testRdbPredicatesContains010
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0870
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains010 start *************");
@@ -1633,12 +1633,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0880
-     * @tc.name   : testRdbPredicatesContains011
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesContains011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0880
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesContains011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesContains011 start *************");
@@ -1657,12 +1657,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0250
-     * @tc.name   : testRdbPredicatesBeginsWith001
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0250
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith001 start *************");
@@ -1677,12 +1677,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0260
-     * @tc.name   : testRdbPredicatesBeginsWith002
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0260
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith002 start *************");
@@ -1697,12 +1697,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0270
-     * @tc.name   : testRdbPredicatesBeginsWith003
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0270
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith003 start *************");
@@ -1717,12 +1717,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0280
-     * @tc.name   : testRdbPredicatesBeginsWith004
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0280
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith004 start *************");
@@ -1737,12 +1737,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0310
-     * @tc.name   : testRdbPredicatesBeginsWith005
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0310
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith005 start *************");
@@ -1757,12 +1757,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0290
-     * @tc.name   : testRdbPredicatesBeginsWith006
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0290
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith006 start *************");
@@ -1779,12 +1779,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0300
-     * @tc.name   : testRdbPredicatesBeginsWith007
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0300
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith007 start *************");
@@ -1801,12 +1801,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0330
-     * @tc.name   : testRdbPredicatesBeginsWith008
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0330
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith008 start *************");
@@ -1825,12 +1825,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0320
-     * @tc.name   : testRdbPredicatesBeginsWith009
-     * @tc.desc   : Test the contains() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0320
+     * @tc.desc   Test the contains() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith009 start *************");
@@ -1845,12 +1845,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0340
-     * @tc.name   : testRdbPredicatesBeginsWith010
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0340
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith010 start *************");
@@ -1869,12 +1869,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0350
-     * @tc.name   : testRdbPredicatesBeginsWith011
-     * @tc.desc   : Test the beginsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBeginsWith011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0350
+     * @tc.desc   Test the beginsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBeginsWith011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBeginsWith011 start *************");
@@ -1893,12 +1893,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0970
-     * @tc.name   : testRdbPredicatesEndsWith001
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0970
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith001 start *************");
@@ -1913,12 +1913,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0890
-     * @tc.name   : testRdbPredicatesEndsWith002
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0890
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith002 start *************");
@@ -1933,12 +1933,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0900
-     * @tc.name   : testRdbPredicatesEndsWith003
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0900
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith003 start *************");
@@ -1953,12 +1953,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0910
-     * @tc.name   : testRdbPredicatesEndsWith004
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0910
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith004 start *************");
@@ -1973,12 +1973,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0940
-     * @tc.name   : testRdbPredicatesEndsWith005
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0940
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith005 start *************");
@@ -1993,12 +1993,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0920
-     * @tc.name   : testRdbPredicatesEndsWith006
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0920
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith006 start *************");
@@ -2015,12 +2015,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0930
-     * @tc.name   : testRdbPredicatesEndsWith007
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0930
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith007 start *************");
@@ -2037,12 +2037,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0960
-     * @tc.name   : testRdbPredicatesEndsWith008
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0960
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith008 start *************");
@@ -2061,12 +2061,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0950
-     * @tc.name   : testRdbPredicatesEndsWith009
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0950
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith009 start *************");
@@ -2081,12 +2081,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0980
-     * @tc.name   : testRdbPredicatesEndsWith010
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0980
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith010 start *************");
@@ -2105,12 +2105,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0990
-     * @tc.name   : testRdbPredicatesEndsWith011
-     * @tc.desc   : Test the endsWith() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesEndsWith011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0990
+     * @tc.desc   Test the endsWith() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesEndsWith011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesEndsWith011 start *************");
@@ -2129,12 +2129,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1810
-     * @tc.name   : testRdbPredicatesIsNull001
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1810
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull001 start *************");
@@ -2149,12 +2149,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1800
-     * @tc.name   : testRdbPredicatesIsNull002
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1800
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull002 start *************");
@@ -2169,12 +2169,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1840
-     * @tc.name   : testRdbPredicatesIsNull003
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1840
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull003 start *************");
@@ -2189,12 +2189,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1830
-     * @tc.name   : testRdbPredicatesIsNull004
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1830
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull004 start *************");
@@ -2209,12 +2209,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1820
-     * @tc.name   : testRdbPredicatesIsNull005
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1820
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull005 start *************");
@@ -2229,12 +2229,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1850
-     * @tc.name   : testRdbPredicatesIsNull006
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1850
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull006 start *************");
@@ -2250,12 +2250,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1780
-     * @tc.name   : testRdbPredicatesIsNull007
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1780
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull007 start *************");
@@ -2271,12 +2271,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1790
-     * @tc.name   : testRdbPredicatesIsNull008
-     * @tc.desc   : Test the isNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNull008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1790
+     * @tc.desc   Test the isNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNull008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNull008 start *************");
@@ -2292,12 +2292,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1710
-     * @tc.name   : testRdbPredicatesIsNotNull001
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1710
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull001 start *************");
@@ -2312,12 +2312,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1700
-     * @tc.name   : testRdbPredicatesIsNotNull002
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1700
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull002 start *************");
@@ -2332,12 +2332,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1740
-     * @tc.name   : testRdbPredicatesIsNotNull003
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1740
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull003 start *************");
@@ -2352,12 +2352,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :  SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1730
-     * @tc.name   : testRdbPredicatesIsNotNull004
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1730
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull004 start *************");
@@ -2372,12 +2372,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1720
-     * @tc.name   : testRdbPredicatesIsNotNull005
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1720
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull005 start *************");
@@ -2392,12 +2392,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1750
-     * @tc.name   : testRdbPredicatesIsNotNull006
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1750
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull006 start *************");
@@ -2416,12 +2416,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1680
-     * @tc.name   : testRdbPredicatesIsNotNull007
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1680
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull007 start *************");
@@ -2440,12 +2440,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1690
-     * @tc.name   : testRdbPredicatesIsNotNull008
-     * @tc.desc   : Test the isNotNull() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIsNotNull008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1690
+     * @tc.desc   Test the isNotNull() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIsNotNull008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIsNotNull008 start *************");
@@ -2464,12 +2464,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2190
-     * @tc.name   : testRdbPredicatesLike001
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2190
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike001 start *************");
@@ -2484,12 +2484,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2200
-     * @tc.name   : testRdbPredicatesLike002
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2200
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike002 start *************");
@@ -2504,12 +2504,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :  SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2210
-     * @tc.name   : testRdbPredicatesLike003
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2210
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike003 start *************");
@@ -2524,12 +2524,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2220
-     * @tc.name   : testRdbPredicatesLike004
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2220
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike004 start *************");
@@ -2544,12 +2544,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2260
-     * @tc.name   : testRdbPredicatesLike005
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2260
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike005 start *************");
@@ -2563,12 +2563,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2290
-     * @tc.name   : testRdbPredicatesLike006
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2290
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike006 start *************");
@@ -2585,12 +2585,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2230
-     * @tc.name   : testRdbPredicatesLike007
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2230
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike007 start *************");
@@ -2604,12 +2604,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2250
-     * @tc.name   : testRdbPredicatesLike008
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2250
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike008 start *************");
@@ -2626,12 +2626,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2270
-     * @tc.name   : testRdbPredicatesLike009
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2270
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike009 start *************");
@@ -2647,12 +2647,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2280
-     * @tc.name   : testRdbPredicatesLike010
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2280
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike010 start *************");
@@ -2668,12 +2668,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :  SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2240
-     * @tc.name   : testRdbPredicatesLike011
-     * @tc.desc   : Test the like() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLike011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2240
+     * @tc.desc   Test the like() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLike011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLike011 start *************");
@@ -2688,13 +2688,12 @@ export default function rdbPredicatesTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1190
-     * @tc.name   : testRdbPredicatesGlob001
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * End with ? by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1190
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob001 start *************");
@@ -2711,13 +2710,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1210
-     * @tc.name   : testRdbPredicatesGlob002
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * Begin with ? by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1210
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob002 start *************");
@@ -2734,13 +2732,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1230
-     * @tc.name   : testRdbPredicatesGlob003
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * Begin and end with ? by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testGlob0006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1230
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testGlob0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testGlob0006 start *************");
@@ -2757,13 +2754,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1180
-     * @tc.name   : testRdbPredicatesGlob004
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * End with * by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1180
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob004 start *************");
@@ -2780,13 +2776,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1200
-     * @tc.name   : testRdbPredicatesGlob005
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * Begin with * by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1200
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob005 start *************");
@@ -2803,13 +2798,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1220
-     * @tc.name   : testRdbPredicatesGlob006
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * Begin and end with * by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1220
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob006 start *************");
@@ -2826,13 +2820,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1170
-     * @tc.name   : testRdbPredicatesGlob007
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * End with ? by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1170
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob007 start *************");
@@ -2849,13 +2842,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1240
-     * @tc.name   : testRdbPredicatesGlob008
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * End with ? by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1240
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob008 start *************");
@@ -2872,13 +2864,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1260
-     * @tc.name   : testRdbPredicatesGlob009
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * End with ? by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1260
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob009 start *************");
@@ -2899,13 +2890,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1270
-     * @tc.name   : testRdbPredicatesGlob010
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * End with ? by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1270
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob010 start *************");
@@ -2926,13 +2916,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1250
-     * @tc.name   : testRdbPredicatesGlob011
-     * @tc.desc   : Test the glob() method of class RdbPredicates.
-     * Begin and end with * by glob.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGlob011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1250
+     * @tc.desc   Test the glob() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGlob011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGlob011 start *************");
@@ -2949,12 +2938,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0700
-     * @tc.name   : testRdbPredicatesBetween001
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0700
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween001 start *************");
@@ -2971,12 +2960,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0690
-     * @tc.name   : testRdbPredicatesBetween002
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0690
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween002 start *************");
@@ -2993,12 +2982,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0710
-     * @tc.name   : testRdbPredicatesBetween003
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0710
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween003 start *************");
@@ -3015,12 +3004,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0730
-     * @tc.name   : testRdbPredicatesBetween004
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0730
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween004 start *************");
@@ -3037,12 +3026,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0670
-     * @tc.name   : testRdbPredicatesBetween005
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0670
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween005 start *************");
@@ -3059,12 +3048,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0660
-     * @tc.name   : testRdbPredicatesBetween006
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0660
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween006 start *************");
@@ -3081,12 +3070,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0650
-     * @tc.name   : testRdbPredicatesBetween007
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0650
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween007 start *************");
@@ -3103,12 +3092,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0740
-     * @tc.name   : testRdbPredicatesBetween008
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0740
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween008 start *************");
@@ -3125,12 +3114,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0570
-     * @tc.name   : testRdbPredicatesBetween009
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0570
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween009 start *************");
@@ -3147,12 +3136,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0680
-     * @tc.name   : testRdbPredicatesBetween010
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0680
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween010 start *************");
@@ -3170,12 +3159,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0550
-     * @tc.name   : testRdbPredicatesBetween011
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0550
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween011 start *************");
@@ -3192,12 +3181,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0560
-     * @tc.name   : testRdbPredicatesBetween012
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0560
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween012 start *************");
@@ -3214,12 +3203,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0590
-     * @tc.name   : testRdbPredicatesBetween013
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween013
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0590
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween013 start *************");
@@ -3236,12 +3225,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0600
-     * @tc.name   : testRdbPredicatesBetween014
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween014
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0600
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween014 start *************");
@@ -3258,12 +3247,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0610
-     * @tc.name   : testRdbPredicatesBetween015
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween015
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0610
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween015 start *************");
@@ -3280,12 +3269,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0620
-     * @tc.name   : testRdbPredicatesBetween016
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween016
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0620
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween016 start *************");
@@ -3302,12 +3291,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0630
-     * @tc.name   : testRdbPredicatesBetween017
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween017
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0630
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween017 start *************");
@@ -3324,12 +3313,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0640
-     * @tc.name   : testRdbPredicatesBetween018
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween018
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0640
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween018 start *************");
@@ -3346,12 +3335,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0750
-     * @tc.name   : testRdbPredicatesBetween004
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween019
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0750
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween019 start *************");
@@ -3368,12 +3357,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0760
-     * @tc.name   : testRdbPredicatesBetween020
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween020
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0760
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween020 start *************");
@@ -3390,12 +3379,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0580
-     * @tc.name   : testRdbPredicatesBetween021
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween021
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0580
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween021 start *************");
@@ -3412,12 +3401,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0770
-     * @tc.name   : testRdbPredicatesBetween022
-     * @tc.desc   : Test the between() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesBetween022
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0770
+     * @tc.desc   Test the between() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesBetween022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesBetween022 start *************");
@@ -3434,12 +3423,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2330
-     * @tc.name   : testRdbPredicatesNotBetween001
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2330
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween001 start *************");
@@ -3456,12 +3445,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2300
-     * @tc.name   : testRdbPredicatesNotBetween002
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2300
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween002 start *************");
@@ -3478,12 +3467,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2360
-     * @tc.name   : testRdbPredicatesNotBetween003
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2360
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween003 start *************");
@@ -3500,12 +3489,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2470
-     * @tc.name   : testRdbPredicatesNotBetween004
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2470
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween004 start *************");
@@ -3522,12 +3511,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2340
-     * @tc.name   : testRdbPredicatesNotBetween005
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2340
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween005 start *************");
@@ -3544,12 +3533,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2430
-     * @tc.name   : testRdbPredicatesNotBetween006
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2430
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween006 start *************");
@@ -3570,12 +3559,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2320
-     * @tc.name   : testRdbPredicatesNotBetween007
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2320
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween007 start *************");
@@ -3592,12 +3581,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2310
-     * @tc.name   : testRdbPredicatesNotBetween008
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2310
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween008 start *************");
@@ -3614,12 +3603,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2420
-     * @tc.name   : testRdbPredicatesNotBetween009
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2420
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween009 start *************");
@@ -3636,12 +3625,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2370
-     * @tc.name   : testRdbPredicatesNotBetween010
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2370
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween010 start *************");
@@ -3658,12 +3647,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2380
-     * @tc.name   : testRdbPredicatesNotBetween011
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2380
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween011 start *************");
@@ -3680,12 +3669,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2390
-     * @tc.name   : testRdbPredicatesNotBetween012
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2390
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween012 start *************");
@@ -3702,12 +3691,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2400
-     * @tc.name   : testRdbPredicatesNotBetween013
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween013
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2400
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween013 start *************");
@@ -3724,12 +3713,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :  SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2410
-     * @tc.name   : testRdbPredicatesNotBetween014
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween014
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2410
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween014 start *************");
@@ -3746,12 +3735,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2490
-     * @tc.name   : testRdbPredicatesNotBetween015
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween015
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2490
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween015 start *************");
@@ -3768,12 +3757,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2460
-     * @tc.name   : testRdbPredicatesNotBetween016
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween016
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2460
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween016 start *************");
@@ -3790,12 +3779,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2450
-     * @tc.name   : testRdbPredicatesNotBetween017
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween017
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2450
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween017 start *************");
@@ -3812,12 +3801,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2350
-     * @tc.name   : testRdbPredicatesNotBetween019
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween019
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2350
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween019 start *************");
@@ -3834,12 +3823,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2480
-     * @tc.name   : testRdbPredicatesNotBetween020
-     * @tc.desc   : Test the notBetween() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotBetween020
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2480
+     * @tc.desc   Test the notBetween() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotBetween020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotBetween020 start *************");
@@ -3857,12 +3846,12 @@ export default function rdbPredicatesTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1310
-     * @tc.name   : testRdbPredicatesGreaterThan001
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1310
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan001 start *************");
@@ -3879,12 +3868,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1290
-     * @tc.name   : testRdbPredicatesGreaterThan002
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1290
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan002 start *************");
@@ -3901,12 +3890,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1340
-     * @tc.name   : testRdbPredicatesGreaterThan003
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1340
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan003 start *************");
@@ -3923,12 +3912,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1440
-     * @tc.name   : testRdbPredicatesGreaterThan004
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1440
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan004 start *************");
@@ -3945,12 +3934,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1320
-     * @tc.name   : testRdbPredicatesGreaterThan005
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1320
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan005 start *************");
@@ -3967,12 +3956,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1300
-     * @tc.name   : testRdbPredicatesGreaterThan006
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1300
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan006 start *************");
@@ -3989,12 +3978,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1410
-     * @tc.name   : testRdbPredicatesGreaterThan007
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1410
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan007 start *************");
@@ -4011,12 +4000,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1460
-     * @tc.name   : testRdbPredicatesGreaterThan008
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1460
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan008 start *************");
@@ -4033,12 +4022,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1330
-     * @tc.name   : testRdbPredicatesGreaterThan009
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1330
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan009 start *************");
@@ -4055,12 +4044,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1430
-     * @tc.name   : testRdbPredicatesGreaterThan010
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1430
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan010 start *************");
@@ -4081,12 +4070,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1400
-     * @tc.name   : testRdbPredicatesGreaterThan011
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1400
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan011 start *************");
@@ -4103,12 +4092,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1350
-     * @tc.name   : testRdbPredicatesGreaterThan012
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1350
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan012 start *************");
@@ -4125,12 +4114,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1360
-     * @tc.name   : testRdbPredicatesGreaterThan013
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan013
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1360
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan013 start *************");
@@ -4147,12 +4136,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1370
-     * @tc.name   : testRdbPredicatesGreaterThan014
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan014
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1370
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan014 start *************");
@@ -4169,12 +4158,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1380
-     * @tc.name   : testRdbPredicatesGreaterThan015
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan015
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1380
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan015 start *************");
@@ -4191,12 +4180,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1390
-     * @tc.name   : testRdbPredicatesGreaterThan016
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan016
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1390
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan016 start *************");
@@ -4213,12 +4202,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1420
-     * @tc.name   : testRdbPredicatesGreaterThan018
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan018
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1420
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan018 start *************");
@@ -4235,12 +4224,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1450
-     * @tc.name   : testRdbPredicatesGreaterThan019
-     * @tc.desc   : Test the greaterThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThan019
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1450
+     * @tc.desc   Test the greaterThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThan019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThan019 start *************");
@@ -4257,12 +4246,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1910
-     * @tc.name   : testRdbPredicatesLessThan001
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1910
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan001 start *************");
@@ -4279,12 +4268,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1870
-     * @tc.name   : testRdbPredicatesLessThan002
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1870
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan002 start *************");
@@ -4301,12 +4290,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1930
-     * @tc.name   : testRdbPredicatesLessThan003
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1930
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan003 start *************");
@@ -4323,12 +4312,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1970
-     * @tc.name   : testRdbPredicatesLessThan004
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1970
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan004 start *************");
@@ -4345,12 +4334,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1880
-     * @tc.name   : testRdbPredicatesLessThan005
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1880
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan005 start *************");
@@ -4367,12 +4356,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1920
-     * @tc.name   : testRdbPredicatesLessThan006
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1920
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan006 start *************");
@@ -4389,12 +4378,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1960
-     * @tc.name   : testRdbPredicatesLessThan007
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1960
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan007 start *************");
@@ -4411,12 +4400,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1900
-     * @tc.name   : testRdbPredicatesLessThan008
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1900
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan008 start *************");
@@ -4433,12 +4422,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1940
-     * @tc.name   : testRdbPredicatesLessThan009
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1940
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan009 start *************");
@@ -4459,12 +4448,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1950
-     * @tc.name   : testRdbPredicatesLessThan010
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1950
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan010 start *************");
@@ -4481,12 +4470,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1890
-     * @tc.name   : testRdbPredicatesLessThan012
-     * @tc.desc   : Test the lessThan() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThan012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1890
+     * @tc.desc   Test the lessThan() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThan012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThan012 start *************");
@@ -4503,12 +4492,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1490
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo001
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1490
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo001 start *************");
@@ -4525,12 +4514,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1480
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo002
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1480
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo002 start *************");
@@ -4547,12 +4536,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1520
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo003
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo003
+     * @tc.number SUB_SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1520
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo003 start *************");
@@ -4569,12 +4558,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1540
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo004
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1540
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo004 start *************");
@@ -4591,12 +4580,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1550
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo005
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1550
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo005 start *************");
@@ -4613,12 +4602,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1530
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo006
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1530
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo006 start *************");
@@ -4639,12 +4628,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :     SSUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1510
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo007
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo007
+     * @tc.number SSUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1510
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo007 start *************");
@@ -4661,12 +4650,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1500
-     * @tc.name   : testRdbPredicatesGreaterThanOrEqualTo008
-     * @tc.desc   : Test the greaterThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGreaterThanOrEqualTo008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1500
+     * @tc.desc   Test the greaterThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGreaterThanOrEqualTo008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGreaterThanOrEqualTo008 start *************");
@@ -4683,12 +4672,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2150
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo001
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2150
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo001 start *************");
@@ -4705,12 +4694,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2140
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo002
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2140
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo002 start *************");
@@ -4727,12 +4716,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1980
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo003
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1980
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo003 start *************");
@@ -4749,12 +4738,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2060
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo004
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2060
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo004 start *************");
@@ -4771,12 +4760,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2040
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo005
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2040
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo005 start *************");
@@ -4793,12 +4782,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1990
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo006
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1990
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo006 start *************");
@@ -4815,12 +4804,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2000
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo007
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2000
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo007 start *************");
@@ -4837,12 +4826,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2010
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo008
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2010
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo008 start *************");
@@ -4859,12 +4848,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2020
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo009
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo009
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2020
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo009 start *************");
@@ -4881,12 +4870,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2030
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo010
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo010
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2030
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo010 start *************");
@@ -4903,12 +4892,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2120
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo011
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2120
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo011 start *************");
@@ -4925,12 +4914,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2070
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo012
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2070
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo012 start *************");
@@ -4947,12 +4936,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2080
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo013
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo013
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2080
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo013 start *************");
@@ -4969,12 +4958,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2090
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo014
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo014
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2090
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo014 start *************");
@@ -4991,12 +4980,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2100
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo015
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo015
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2100
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo015 start *************");
@@ -5013,12 +5002,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2110
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo016
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo016
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2110
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo016 start *************");
@@ -5035,12 +5024,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2160
-     * @tc.name   : testRdbPredicatesLessThanOrEqualTo017
-     * @tc.desc   : Test the lessThanOrEqualTo() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLessThanOrEqualTo017
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2160
+     * @tc.desc   Test the lessThanOrEqualTo() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLessThanOrEqualTo017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLessThanOrEqualTo017 start *************");
@@ -5060,12 +5049,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2710
-     * @tc.name   : testRdbPredicatesOrderByAsc001
-     * @tc.desc   : Test the orderByAsc() and distinct() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOrderByAsc001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2710
+     * @tc.desc   Test the orderByAsc() and distinct() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOrderByAsc001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOrderByAsc001 start *************");
@@ -5088,12 +5077,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2700
-     * @tc.name   : testRdbPredicatesOrderByAsc002
-     * @tc.desc   : Test the orderByAsc() and distinct() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOrderByAsc002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2700
+     * @tc.desc   Test the orderByAsc() and distinct() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOrderByAsc002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOrderByAsc002 start *************");
@@ -5110,12 +5099,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2750
-     * @tc.name   : testRdbPredicatesOrderByDesc001
-     * @tc.desc   : Test the orderByDesc() and distinct() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOrderByDesc001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2750
+     * @tc.desc   Test the orderByDesc() and distinct() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOrderByDesc001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOrderByDesc001 start *************");
@@ -5138,12 +5127,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2740
-     * @tc.name   : testRdbPredicatesOrderByDesc002
-     * @tc.desc   : Test the orderByDesc() and distinct() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOrderByDesc002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2740
+     * @tc.desc   Test the orderByDesc() and distinct() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOrderByDesc002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOrderByDesc002 start *************");
@@ -5160,12 +5149,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0170
-     * @tc.name   : testRdbPredicatesLimitAs001
-     * @tc.desc   : Test the limitAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLimitAs001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0170
+     * @tc.desc   Test the limitAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLimitAs001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLimitAs001 start *************");
@@ -5180,12 +5169,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0180
-     * @tc.name   : testRdbPredicatesLimitAs002
-     * @tc.desc   : Test the limitAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLimitAs002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0180
+     * @tc.desc   Test the limitAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLimitAs002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLimitAs002 start *************");
@@ -5200,12 +5189,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0160
-     * @tc.name   : testRdbPredicatesLimitAs003
-     * @tc.desc   : Test the limitAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLimitAs003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0160
+     * @tc.desc   Test the limitAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLimitAs003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLimitAs003 start *************");
@@ -5220,12 +5209,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0190
-     * @tc.name   : testRdbPredicatesLimitAs004
-     * @tc.desc   : Test the limitAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLimitAs004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0190
+     * @tc.desc   Test the limitAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLimitAs004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLimitAs004 start *************");
@@ -5240,12 +5229,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0150
-     * @tc.name   : testRdbPredicatesLimitAs005
-     * @tc.desc   : Test the limitAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLimitAs005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0150
+     * @tc.desc   Test the limitAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLimitAs005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLimitAs005 start *************");
@@ -5260,12 +5249,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0140
-     * @tc.name   : testRdbPredicatesLimitAs006
-     * @tc.desc   : Test the limitAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesLimitAs006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0140
+     * @tc.desc   Test the limitAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesLimitAs006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesLimitAs006 start *************");
@@ -5280,12 +5269,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0130
-     * @tc.name   : testRdbPredicatesOffsetAs001
-     * @tc.desc   : Test the offsetAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOffsetAs001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0130
+     * @tc.desc   Test the offsetAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOffsetAs001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOffsetAs001 start *************");
@@ -5300,12 +5289,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0120
-     * @tc.name   : testRdbPredicatesOffsetAs002
-     * @tc.desc   : Test the offsetAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOffsetAs002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0120
+     * @tc.desc   Test the offsetAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOffsetAs002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOffsetAs002 start *************");
@@ -5320,12 +5309,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0100
-     * @tc.name   : testRdbPredicatesOffsetAs003
-     * @tc.desc   : Test the offsetAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOffsetAs003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0100
+     * @tc.desc   Test the offsetAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOffsetAs003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOffsetAs003 start *************");
@@ -5340,12 +5329,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0110
-     * @tc.name   : testRdbPredicatesOffsetAs004
-     * @tc.desc   : Test the offsetAs() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesOffsetAs004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0110
+     * @tc.desc   Test the offsetAs() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesOffsetAs004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesOffsetAs004 start *************");
@@ -5361,12 +5350,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0210
-     * @tc.name   : testRdbPredicatesGroupBy001
-     * @tc.desc   : Test the groupBy() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGroupBy001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0210
+     * @tc.desc   Test the groupBy() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGroupBy001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGroupBy001 start *************");
@@ -5382,12 +5371,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0200
-     * @tc.name   : testRdbPredicatesGroupBy002
-     * @tc.desc   : Test the groupBy() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGroupBy002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0200
+     * @tc.desc   Test the groupBy() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGroupBy002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGroupBy002 start *************");
@@ -5403,12 +5392,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0220
-     * @tc.name   : testRdbPredicatesGroupBy003
-     * @tc.desc   : Test the groupBy() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesGroupBy003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_0220
+     * @tc.desc   Test the groupBy() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesGroupBy003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesGroupBy003 start *************");
@@ -5428,12 +5417,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1650
-     * @tc.name   : testRdbPredicatesIndexedBy001
-     * @tc.desc   : Test the indexedBy() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testIndexedBy0001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1650
+     * @tc.desc   Test the indexedBy() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testIndexedBy0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testIndexedBy0001 start *************");
@@ -5454,12 +5443,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1640
-     * @tc.name   : testRdbPredicatesIndexedBy002
-     * @tc.desc   : Test the indexedBy() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIndexedBy002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1640
+     * @tc.desc   Test the indexedBy() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIndexedBy002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIndexedBy002 start *************");
@@ -5477,12 +5466,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1610
-     * @tc.name   : testRdbPredicatesIn001
-     * @tc.desc   : Test the in() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIn001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1610
+     * @tc.desc   Test the in() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIn001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIn001 start *************");
@@ -5498,12 +5487,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1580
-     * @tc.name   : testRdbPredicatesIn002
-     * @tc.desc   : Test the in() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIn002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1580
+     * @tc.desc   Test the in() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIn002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIn002 start *************");
@@ -5519,12 +5508,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1590
-     * @tc.name   : testRdbPredicatesIn003
-     * @tc.desc   : Test the in() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIn003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1590
+     * @tc.desc   Test the in() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIn003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIn003 start *************");
@@ -5540,12 +5529,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1600
-     * @tc.name   : testRdbPredicatesIn004
-     * @tc.desc   : Test the in() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIn004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1600
+     * @tc.desc   Test the in() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIn004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIn004 start *************");
@@ -5561,12 +5550,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number :  SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1620
-     * @tc.name   : testRdbPredicatesIn005
-     * @tc.desc   : Test the in() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIn005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1620
+     * @tc.desc   Test the in() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIn005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIn005 start *************");
@@ -5582,12 +5571,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1570
-     * @tc.name   : testRdbPredicatesIn006
-     * @tc.desc   : Test the in() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesIn006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_1570
+     * @tc.desc   Test the in() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesIn006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesIn006 start *************");
@@ -5608,12 +5597,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2660
-     * @tc.name   : testRdbPredicatesNotIn001
-     * @tc.desc   : Test the notIn() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotIn001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2660
+     * @tc.desc   Test the notIn() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotIn001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotIn001 start *************");
@@ -5629,12 +5618,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2670
-     * @tc.name   : testRdbPredicatesNotIn002
-     * @tc.desc   : Test the notIn() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotIn002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2670
+     * @tc.desc   Test the notIn() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotIn002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotIn002 start *************");
@@ -5650,12 +5639,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2650
-     * @tc.name   : testRdbPredicatesNotIn003
-     * @tc.desc   : Test the notIn() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotIn003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2650
+     * @tc.desc   Test the notIn() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotIn003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotIn003 start *************");
@@ -5671,12 +5660,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2680
-     * @tc.name   : testRdbPredicatesNotIn004
-     * @tc.desc   : Test the notIn() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotIn004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2680
+     * @tc.desc   Test the notIn() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotIn004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotIn004 start *************");
@@ -5692,12 +5681,12 @@ export default function rdbPredicatesTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2690
-     * @tc.name   : testRdbPredicatesNotIn005
-     * @tc.desc   : Test the notIn() method of class RdbPredicates.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbPredicatesNotIn005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_PredicateJsAPITest_2690
+     * @tc.desc   Test the notIn() method of class RdbPredicates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbPredicatesNotIn005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbPredicatesNotIn005 start *************");

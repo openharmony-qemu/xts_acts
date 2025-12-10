@@ -68,8 +68,8 @@ export default function imagepixelMapSupportYuv() {
     const getImageSource = async (
       fileName:string,
       type:string
-    ): Promise<image.ImageSource> => {
-      let imageSourceApi:image.ImageSource
+    ): Promise<image.ImageSource | undefined> => {
+      let imageSourceApi:image.ImageSource | undefined
       if(type === "buffer") {
         const buffer = await getBuffer(fileName)
         imageSourceApi = image.createImageSource(buffer)
@@ -90,13 +90,17 @@ export default function imagepixelMapSupportYuv() {
       fileName:string,
       imageSourceType:string,
       editable:boolean
-    ): Promise<image.PixelMap> => {
+    ): Promise<image.PixelMap | undefined> => {
       let imageSourceApi = await getImageSource(fileName, imageSourceType);
+      if (imageSourceApi == undefined) {
+        hilog.info(0x0000, '%{public}s', '%{public}s', `fileName: ${fileName}, createImageSource failed, imageSourceType: ${imageSourceType}`);
+        return undefined;
+      }
       let decodingOptions: image.DecodingOptions = {
         editable: editable,
         desiredPixelFormat: image.PixelMapFormat.NV12,
       };
-      let pixelMap_NV12: image.PixelMap = await imageSourceApi.createPixelMap(decodingOptions);
+      let pixelMap_NV12 = await imageSourceApi.createPixelMap(decodingOptions);
       return pixelMap_NV12
     }
 
@@ -104,13 +108,17 @@ export default function imagepixelMapSupportYuv() {
       fileName:string,
       imageSourceType:string,
       editable:boolean
-    ): Promise<image.PixelMap> => {
+    ): Promise<image.PixelMap | undefined> => {
       let imageSourceApi = await getImageSource(fileName, imageSourceType);
+      if (imageSourceApi == undefined) {
+        hilog.info(0x0000, '%{public}s', '%{public}s', `fileName: ${fileName}, createImageSource failed, imageSourceType: ${imageSourceType}`);
+        return undefined;
+      }
       let decodingOptions: image.DecodingOptions = {
         editable: editable,
         desiredPixelFormat: image.PixelMapFormat.NV21,
       };
-      let pixelMap_NV21: image.PixelMap = await imageSourceApi.createPixelMap(decodingOptions);
+      let pixelMap_NV21 = await imageSourceApi.createPixelMap(decodingOptions);
       return pixelMap_NV21
     }
 
@@ -256,19 +264,22 @@ export default function imagepixelMapSupportYuv() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
-      * @tc.desc    packing -promise
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
+     * @tc.desc   packing -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100"
       try{
-        let pixelMap_NV12: image.PixelMap = await getPixMap_NV12("yuv_test_oto.jpeg", "buffer", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_oto.jpeg", "buffer", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult = await pixelMapPacker(testTag, pixelMap_NV12, "packing", 'promise', 'image/webp', 100)
         expect(checkResult).assertTrue()
         done()
@@ -280,19 +291,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
-      * @tc.desc    packing -callback
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
+     * @tc.desc   packing -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200"
       try{
-        let pixelMap_NV12: image.PixelMap = await getPixMap_NV12("yuv_test_eto.jpg", "rawfile",  true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_eto.jpg", "rawfile",  true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult = await pixelMapPacker(testTag, pixelMap_NV12, "packing", 'callback', 'image/jpeg', 0);
         expect(checkResult).assertTrue();
         done()
@@ -305,19 +319,22 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
-      * @tc.desc    packToFile -promise
-      *                 1.modifyImageProperty
-      *                 2.packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
+     * @tc.desc   packToFile -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100"
       try{
-        let pixelMap_NV12: image.PixelMap = await getPixMap_NV12("yuv_test_ote.jpg", "uri", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_ote.jpg", "uri", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult =  await pixelMapPacker(testTag, pixelMap_NV12, "packToFile", 'promise', 'image/jpeg', 98);
         expect(checkResult).assertTrue()
         done()
@@ -329,19 +346,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
-      * @tc.desc    packToFile  -callback
-      *                 1.modifyImageProperty
-      *                 2.packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
+     * @tc.desc   packToFile  -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200"
       try{
-        let pixelMap_NV12: image.PixelMap = await getPixMap_NV12("yuv_test_oto.jpeg", "fd", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_oto.jpeg", "fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult = await pixelMapPacker(testTag, pixelMap_NV12, "packToFile", 'callback', 'image/png', 98);
         expect(checkResult).assertTrue()
         done()
@@ -353,19 +373,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
-      * @tc.desc    packing -promise
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
+     * @tc.desc   packing -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV21("yuv_test_ote.jpg", "fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_ote.jpg", "fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult = await pixelMapPacker(testTag, pixelMap_NV21, "packing", 'promise', 'image/png', 22);
         expect(checkResult).assertTrue()
         done()
@@ -377,19 +400,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
-      * @tc.desc    packing -callback
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
+     * @tc.desc   packing -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV21("yuv_test_oto.jpeg", "fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_oto.jpeg", "fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult = await pixelMapPacker(testTag, pixelMap_NV21, "packing", 'callback', 'image/jpeg', 98);
         expect(checkResult).assertTrue()
         done()
@@ -401,19 +427,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
-      * @tc.desc    packing -promise
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
+     * @tc.desc   packing -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV21("yuv_test_ote.jpg", "fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_ote.jpg", "fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult =  await pixelMapPacker(testTag, pixelMap_NV21, "packToFile", 'promise', 'image/jpeg', 98);
         expect(checkResult).assertTrue()
         done()
@@ -425,19 +454,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
-      * @tc.desc    packing -callback
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
+     * @tc.desc   packing -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV21("yuv_test_oto.jpeg", "fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_oto.jpeg", "fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const checkResult = await pixelMapPacker(testTag, pixelMap_NV21, "packToFile", 'callback', 'image/webp', 100);
         expect(checkResult).assertTrue()
         done()
@@ -449,20 +481,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100"
       try{
-        let pixelMap_NV12 : image.PixelMap = await getPixMap_NV12("yuv_test_oto.jpeg", "fd", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_oto.jpeg", "fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV12, 'promise',  targetColorSpace)
@@ -474,20 +508,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200"
       try{
-        let pixelMap_NV12 : image.PixelMap = await getPixMap_NV12("yuv_test_oto.jpeg", "fd", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_oto.jpeg", "fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.DCI_P3;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV12, 'callback',  targetColorSpace)
@@ -499,20 +535,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300"
       try{
-        let pixelMap_NV12 : image.PixelMap = await getPixMap_NV12("yuv_test_eto.jpg","fd", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_eto.jpg","fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.DISPLAY_P3;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV12, 'promise', targetColorSpace)
@@ -524,20 +562,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400"
       try{
-        let pixelMap_NV12 : image.PixelMap = await getPixMap_NV12("yuv_test_oto.jpeg","fd", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_oto.jpeg","fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.ADOBE_RGB_1998;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV12, 'callback', targetColorSpace)
@@ -550,20 +590,22 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.desc    writeBufferToPixels -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writeBufferToPixels
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.desc   writeBufferToPixels -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100"
       try{
-        let pixelMap_NV12: image.PixelMap = await getPixMap_NV12("yuv_test_ete.jpg", "fd", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_ete.jpg", "fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const result = await testWriteBufferToPixels(testTag, pixelMap_NV12, 'promise')
         expect(result).assertTrue()
         done()
@@ -575,20 +617,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.desc    writeBufferToPixels -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBuffer
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.desc   writeBufferToPixels -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200"
       try{
-        let pixelMap_NV12: image.PixelMap = await getPixMap_NV12("yuv_test_oto.jpeg","uri", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_oto.jpeg","uri", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const result = await testWriteBufferToPixels(testTag, pixelMap_NV12, 'callback')
         expect(result).assertTrue()
         done()
@@ -600,20 +644,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.desc    writeBufferToPixelsSync
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBufferSync
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.desc   writeBufferToPixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300"
       try{
-        let pixelMap_NV12: image.PixelMap = await getPixMap_NV12("yuv_test_ote.jpg", "fd", true);
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_ote.jpg", "fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const result = await testWriteBufferToPixels(testTag, pixelMap_NV12, 'sync')
         expect(result).assertTrue()
         done()
@@ -626,20 +672,22 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100"
       try{
-        let pixelMap_NV21 : image.PixelMap = await getPixMap_NV21("yuv_test_ete.jpg", "buffer", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_ete.jpg", "buffer", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV21, 'promise', targetColorSpace);
@@ -652,20 +700,22 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200"
       try{
-        let pixelMap_NV21 : image.PixelMap = await getPixMap_NV21("yuv_test_ote.jpg", "fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_ote.jpg", "fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.DCI_P3;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV21, 'callback', targetColorSpace);
@@ -677,20 +727,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300"
       try{
-        let pixelMap_NV21 : image.PixelMap = await getPixMap_NV21("yuv_test_eto.jpg","fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_eto.jpg","fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.DISPLAY_P3;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV21, 'promise', targetColorSpace);
@@ -702,20 +754,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV21("yuv_test_ote.jpg","fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_ote.jpg","fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         let colorSpaceName = colorSpaceManager.ColorSpace.ADOBE_RGB_1998;
         let targetColorSpace : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
         await testPixelMapApplyColorSpace(done, testTag, pixelMap_NV21, 'callback', targetColorSpace);
@@ -727,20 +781,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.desc    writeBufferToPixels -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writeBufferToPixels
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.desc   writeBufferToPixels -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV21("yuv_test_ete.jpg", "fd", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_ete.jpg", "fd", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const result = await testWriteBufferToPixels(testTag, pixelMap_NV21, 'promise')
         expect(result).assertTrue()
         done()
@@ -752,20 +808,22 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.desc    writeBufferToPixels -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBuffer
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.desc   writeBufferToPixels -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV21("yuv_test_oto.jpeg","uri", true);
+        let pixelMap_NV21 = await getPixMap_NV21("yuv_test_oto.jpeg","uri", true);
+        if (pixelMap_NV21 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
         const result = await testWriteBufferToPixels(testTag, pixelMap_NV21, 'callback')
         expect(result).assertTrue()
         done()
@@ -777,21 +835,23 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.desc    writeBufferToPixelsSync
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBufferSync
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.desc   writeBufferToPixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300"
       try{
-        let pixelMap_NV21: image.PixelMap = await getPixMap_NV12("yuv_test_ote.jpg", "fd", true);
-        const result = await testWriteBufferToPixels(testTag, pixelMap_NV21, 'sync')
+        let pixelMap_NV12 = await getPixMap_NV12("yuv_test_ote.jpg", "fd", true);
+        if (pixelMap_NV12 == undefined) {
+          expect().assertFail();
+          done();
+          return undefined;
+        }
+        const result = await testWriteBufferToPixels(testTag, pixelMap_NV12, 'sync')
         expect(result).assertTrue()
         done()
       }catch(error){

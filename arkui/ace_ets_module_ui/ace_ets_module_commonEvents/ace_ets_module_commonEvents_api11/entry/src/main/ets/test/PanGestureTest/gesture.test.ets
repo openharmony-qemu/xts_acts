@@ -55,11 +55,14 @@ done();
       console.info("gestureSetDirection after each called");
     });
 
-    /*
-        * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-        * @tc.name         testgestureSetDirection0001
-        * @tc.desic         acegestureSetDirectionEtsTest0001
-        */
+    /**
+     * @tc.name   testgestureSetDirection0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testgestureSetDirection0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgestureSetDirection0001', Level.LEVEL0, async () => {
       console.info('gestureSetDirection testgestureSetDirection0001 START');
       await Utils.sleep(2000);
@@ -81,10 +84,13 @@ done();
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testgestureSetDistance0002
-     * @tc.desic         acegestureSetDistanceEtsTest0002
+    /**
+     * @tc.name   testgestureSetDistance0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testgestureSetDistance0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgestureSetDistance0002', Level.LEVEL0, async () => {
       console.info('gestureSetDistance testgestureSetDistance0002 START');
@@ -107,10 +113,13 @@ done();
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testgestureSetFingers0003
-     * @tc.desic         acegestureSetFingersEtsTest0003
+    /**
+     * @tc.name   testgestureSetFingers0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testgestureSetFingers0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgestureSetFingers0003', Level.LEVEL0, async () => {
       console.info('gestureSetFingers testgestureSetFingers0003 START');

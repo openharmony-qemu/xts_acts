@@ -46,6 +46,14 @@ export default function aboutToRecycleiamge() {
       console.info("aboutToRecycleiamge after each called");
     });
 
+    /**
+     * @tc.name   aboutToRecycleiamge_0100
+     * @tc.number aboutToRecycleiamge_0100
+     * @tc.desc   aboutToRecycleiamge_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('aboutToRecycleiamge_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[aboutToRecycleiamge_0100] START');
       await CommonFunc.sleep(1000);

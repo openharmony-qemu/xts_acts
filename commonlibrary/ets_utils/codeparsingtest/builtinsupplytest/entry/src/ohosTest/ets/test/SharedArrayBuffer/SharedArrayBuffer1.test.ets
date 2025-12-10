@@ -44,12 +44,12 @@ export default function SharedArrayBuffer1Test() {
     })
 
     /**
+     * @tc.name   SharedArrayBuffer1Test001
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0100
-     * @tc.name SharedArrayBuffer1Test001
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(1024);
@@ -57,12 +57,12 @@ export default function SharedArrayBuffer1Test() {
 
     });
     /**
+     * @tc.name   SharedArrayBuffer1Test002
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0200
-     * @tc.name SharedArrayBuffer1Test002
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(1024);
@@ -70,12 +70,12 @@ export default function SharedArrayBuffer1Test() {
       expect(negSliceSAB.byteLength).assertEqual(100);
     });
     /**
+     * @tc.name   SharedArrayBuffer1Test003
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0300
-     * @tc.name SharedArrayBuffer1Test003
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(1024);
@@ -84,12 +84,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test004
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0400
-     * @tc.name SharedArrayBuffer1Test004
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigSAB = new SharedArrayBuffer(1024 * 1024);
@@ -97,12 +97,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test005
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0500
-     * @tc.name SharedArrayBuffer1Test005
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(1024);
@@ -110,12 +110,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test006
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0600
-     * @tc.name SharedArrayBuffer1Test006
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const comboNegSliceSAB = new SharedArrayBuffer(1000);
@@ -124,12 +124,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test007
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0700
-     * @tc.name SharedArrayBuffer1Test007
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUintSAB = new SharedArrayBuffer(8);
@@ -139,12 +139,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test008
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0800
-     * @tc.name SharedArrayBuffer1Test008
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sliceBufferSAB = new SharedArrayBuffer(8);
@@ -154,12 +154,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test009
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_0900
-     * @tc.name SharedArrayBuffer1Test009
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const clampedSAB = new SharedArrayBuffer(4);
@@ -169,12 +169,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test010
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1000
-     * @tc.name SharedArrayBuffer1Test010
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const overNegStartSAB = new SharedArrayBuffer(1000);
@@ -183,12 +183,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test011
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1100
-     * @tc.name SharedArrayBuffer1Test011
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const floatSAB = new SharedArrayBuffer(4);
@@ -198,12 +198,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test012
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1200
-     * @tc.name SharedArrayBuffer1Test012
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int16SAB = new SharedArrayBuffer(4);
@@ -213,12 +213,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test013
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1300
-     * @tc.name SharedArrayBuffer1Test013
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const offsetSliceSAB = new SharedArrayBuffer(8);
@@ -228,12 +228,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test014
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1400
-     * @tc.name SharedArrayBuffer1Test014
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigIntNegSAB = new SharedArrayBuffer(8);
@@ -243,12 +243,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test015
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1500
-     * @tc.name SharedArrayBuffer1Test015
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptySAB = new SharedArrayBuffer(0);
@@ -257,12 +257,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test016
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1600
-     * @tc.name SharedArrayBuffer1Test016
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const uint32SAB = new SharedArrayBuffer(4);
@@ -272,12 +272,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test017
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1700
-     * @tc.name SharedArrayBuffer1Test017
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(100);
@@ -285,12 +285,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test018
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1800
-     * @tc.name SharedArrayBuffer1Test018
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(100);
@@ -301,12 +301,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test019
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_1900
-     * @tc.name SharedArrayBuffer1Test019
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(100);
@@ -316,12 +316,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test020
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2000
-     * @tc.name SharedArrayBuffer1Test020
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(100);
@@ -329,12 +329,12 @@ export default function SharedArrayBuffer1Test() {
       expect(slicedSAB.byteLength).assertEqual(20);
     });
     /**
+     * @tc.name   SharedArrayBuffer1Test021
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2100
-     * @tc.name SharedArrayBuffer1Test021
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(100);
@@ -343,12 +343,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test022
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2200
-     * @tc.name SharedArrayBuffer1Test022
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(100);
@@ -357,12 +357,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test023
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2300
-     * @tc.name SharedArrayBuffer1Test023
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const basicSAB = new SharedArrayBuffer(100);
@@ -371,12 +371,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test024
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2400
-     * @tc.name SharedArrayBuffer1Test024
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(128);
@@ -384,12 +384,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test025
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2500
-     * @tc.name SharedArrayBuffer1Test025
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(64);
@@ -399,12 +399,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test026
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2600
-     * @tc.name SharedArrayBuffer1Test026
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(32);
@@ -413,12 +413,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test027
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2700
-     * @tc.name SharedArrayBuffer1Test027
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(48);
@@ -428,12 +428,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test028
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2800
-     * @tc.name SharedArrayBuffer1Test028
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(16);
@@ -442,12 +442,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test029
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_2900
-     * @tc.name SharedArrayBuffer1Test029
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(96);
@@ -457,12 +457,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test030
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3000
-     * @tc.name SharedArrayBuffer1Test030
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(64);
@@ -471,12 +471,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test031
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3100
-     * @tc.name SharedArrayBuffer1Test031
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(40);
@@ -486,12 +486,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test032
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3200
-     * @tc.name SharedArrayBuffer1Test032
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(100);
@@ -500,12 +500,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test033
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3300
-     * @tc.name SharedArrayBuffer1Test033
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(20);
@@ -513,12 +513,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test034
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3400
-     * @tc.name SharedArrayBuffer1Test034
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(56);
@@ -528,12 +528,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test035
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3500
-     * @tc.name SharedArrayBuffer1Test035
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(80);
@@ -542,12 +542,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test036
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3600
-     * @tc.name SharedArrayBuffer1Test036
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(36);
@@ -558,12 +558,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test037
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3700
-     * @tc.name SharedArrayBuffer1Test037
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(44);
@@ -573,12 +573,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test038
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3800
-     * @tc.name SharedArrayBuffer1Test038
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(72);
@@ -587,12 +587,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test039
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_3900
-     * @tc.name SharedArrayBuffer1Test039
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(52);
@@ -602,12 +602,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test040
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4000
-     * @tc.name SharedArrayBuffer1Test040
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(60);
@@ -618,12 +618,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test041
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4100
-     * @tc.name SharedArrayBuffer1Test041
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(16);
@@ -632,12 +632,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test042
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4200
-     * @tc.name SharedArrayBuffer1Test042
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(88);
@@ -647,12 +647,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test043
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4300
-     * @tc.name SharedArrayBuffer1Test043
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(24);
@@ -661,12 +661,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test044
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4400
-     * @tc.name SharedArrayBuffer1Test044
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(48);
@@ -677,12 +677,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test045
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4500
-     * @tc.name SharedArrayBuffer1Test045
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(32);
@@ -692,12 +692,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test046
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4600
-     * @tc.name SharedArrayBuffer1Test046
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(64);
@@ -706,12 +706,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test047
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4700
-     * @tc.name SharedArrayBuffer1Test047
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(76);
@@ -721,12 +721,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test048
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4800
-     * @tc.name SharedArrayBuffer1Test048
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(200);
@@ -735,12 +735,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test049
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_4900
-     * @tc.name SharedArrayBuffer1Test049
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(0);
@@ -748,12 +748,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test050
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5000
-     * @tc.name SharedArrayBuffer1Test050
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(90);
@@ -761,12 +761,12 @@ export default function SharedArrayBuffer1Test() {
       expect(Atomics.load(view, 45)).assertEqual(0);
     });
     /**
+     * @tc.name   SharedArrayBuffer1Test051
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5100
-     * @tc.name SharedArrayBuffer1Test051
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(80);
@@ -775,12 +775,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test052
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5200
-     * @tc.name SharedArrayBuffer1Test052
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(40);
@@ -790,12 +790,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test053
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5300
-     * @tc.name SharedArrayBuffer1Test053
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(120);
@@ -804,12 +804,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test054
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5400
-     * @tc.name SharedArrayBuffer1Test054
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(30);
@@ -819,12 +819,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test055
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5500
-     * @tc.name SharedArrayBuffer1Test055
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(60);
@@ -834,12 +834,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test056
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5600
-     * @tc.name SharedArrayBuffer1Test056
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(90);
@@ -848,12 +848,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test057
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5700
-     * @tc.name SharedArrayBuffer1Test057
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(52);
@@ -863,12 +863,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test058
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5800
-     * @tc.name SharedArrayBuffer1Test058
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(150);
@@ -877,12 +877,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test059
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_5900
-     * @tc.name SharedArrayBuffer1Test059
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(45);
@@ -893,12 +893,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test060
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6000
-     * @tc.name SharedArrayBuffer1Test060
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(72);
@@ -908,12 +908,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test061
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6100
-     * @tc.name SharedArrayBuffer1Test061
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(35);
@@ -922,12 +922,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test062
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6200
-     * @tc.name SharedArrayBuffer1Test062
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(55);
@@ -937,12 +937,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test063
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6300
-     * @tc.name SharedArrayBuffer1Test063
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(110);
@@ -951,12 +951,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test064
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6400
-     * @tc.name SharedArrayBuffer1Test064
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(20);
@@ -964,12 +964,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test065
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6500
-     * @tc.name SharedArrayBuffer1Test065
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(64);
@@ -979,12 +979,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test066
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6600
-     * @tc.name SharedArrayBuffer1Test066
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(40);
@@ -993,12 +993,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test067
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6700
-     * @tc.name SharedArrayBuffer1Test067
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(95);
@@ -1010,12 +1010,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test068
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6800
-     * @tc.name SharedArrayBuffer1Test068
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(30);
@@ -1025,12 +1025,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test069
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_6900
-     * @tc.name SharedArrayBuffer1Test069
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(100);
@@ -1039,12 +1039,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test070
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7000
-     * @tc.name SharedArrayBuffer1Test070
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(50);
@@ -1052,12 +1052,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test071
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7100
-     * @tc.name SharedArrayBuffer1Test071
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(70);
@@ -1067,12 +1067,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test072
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7200
-     * @tc.name SharedArrayBuffer1Test072
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(40);
@@ -1081,12 +1081,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test073
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7300
-     * @tc.name SharedArrayBuffer1Test073
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(80);
@@ -1095,12 +1095,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test074
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7400
-     * @tc.name SharedArrayBuffer1Test074
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(32);
@@ -1110,12 +1110,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test075
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7500
-     * @tc.name SharedArrayBuffer1Test075
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(60);
@@ -1124,12 +1124,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test076
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7600
-     * @tc.name SharedArrayBuffer1Test076
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(80);
@@ -1139,12 +1139,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test077
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7700
-     * @tc.name SharedArrayBuffer1Test077
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(120);
@@ -1153,12 +1153,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test078
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7800
-     * @tc.name SharedArrayBuffer1Test078
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(50);
@@ -1170,12 +1170,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test079
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_7900
-     * @tc.name SharedArrayBuffer1Test079
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(70);
@@ -1184,12 +1184,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test080
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8000
-     * @tc.name SharedArrayBuffer1Test080
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(30);
@@ -1199,12 +1199,12 @@ export default function SharedArrayBuffer1Test() {
       expect(uint16View[0]).assertEqual(255);
     });
     /**
+     * @tc.name   SharedArrayBuffer1Test081
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8100
-     * @tc.name SharedArrayBuffer1Test081
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(60);
@@ -1214,12 +1214,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test082
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8200
-     * @tc.name SharedArrayBuffer1Test082
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(100);
@@ -1228,12 +1228,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test083
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8300
-     * @tc.name SharedArrayBuffer1Test083
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(40);
@@ -1248,12 +1248,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test084
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8400
-     * @tc.name SharedArrayBuffer1Test084
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(80);
@@ -1265,12 +1265,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test085
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8500
-     * @tc.name SharedArrayBuffer1Test085
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(25);
@@ -1279,12 +1279,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test086
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8600
-     * @tc.name SharedArrayBuffer1Test086
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(55);
@@ -1295,12 +1295,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test087
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8700
-     * @tc.name SharedArrayBuffer1Test087
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(72);
@@ -1310,12 +1310,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test088
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8800
-     * @tc.name SharedArrayBuffer1Test088
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(35);
@@ -1324,12 +1324,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test089
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_8900
-     * @tc.name SharedArrayBuffer1Test089
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(44);
@@ -1339,12 +1339,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test090
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9000
-     * @tc.name SharedArrayBuffer1Test090
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(65);
@@ -1354,12 +1354,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test091
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9100
-     * @tc.name SharedArrayBuffer1Test091
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(85);
@@ -1369,12 +1369,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test092
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9200
-     * @tc.name SharedArrayBuffer1Test092
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(50);
@@ -1386,12 +1386,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test093
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9300
-     * @tc.name SharedArrayBuffer1Test093
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(72);
@@ -1401,12 +1401,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test094
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9400
-     * @tc.name SharedArrayBuffer1Test094
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(30);
@@ -1415,12 +1415,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test095
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9500
-     * @tc.name SharedArrayBuffer1Test095
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(40);
@@ -1431,12 +1431,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test096
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9600
-     * @tc.name SharedArrayBuffer1Test096
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(60);
@@ -1446,12 +1446,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test097
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9700
-     * @tc.name SharedArrayBuffer1Test097
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(95);
@@ -1460,12 +1460,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test098
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9800
-     * @tc.name SharedArrayBuffer1Test098
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(56);
@@ -1475,12 +1475,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test099
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_9900
-     * @tc.name SharedArrayBuffer1Test099
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(80);
@@ -1489,12 +1489,12 @@ export default function SharedArrayBuffer1Test() {
     });
 
     /**
+     * @tc.name   SharedArrayBuffer1Test100
      * @tc.number SUB_BUILTINS_SharedArrayBuffer1_TEST_10000
-     * @tc.name SharedArrayBuffer1Test100
-     * @tc.desc test SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SharedArrayBuffer1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(64);

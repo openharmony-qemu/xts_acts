@@ -26,39 +26,39 @@ export default function textAreaBackgroundColorTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_BACKGROUNDCOLOR_0100
-     * @tc.name: testTextAreaBackgroundColor001
-     * @tc.desc: testing backgroundColor for textArea with red value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for textArea with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaBackgroundColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_BACKGROUNDCOLOR_0200
-     * @tc.name: testTextAreaBackgroundColor002
-     * @tc.desc: testing backgroundColor for textArea with black value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for textArea with black value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaBackgroundColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_BACKGROUNDCOLOR_0300
-     * @tc.name: testTextAreaBackgroundColor003
-     * @tc.desc: testing backgroundColor for textArea with white value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for textArea with white value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaBackgroundColor003()).assertEqual(0)

@@ -46,12 +46,12 @@ export default function irregularAniGrid() {
     });
 
     /**
-     * @tc.number    irregularAniGrid_001
-     * @tc.name      irregularAniGrid_0100
-     * @tc.desc      Set the animation parameter of ScrollPage to true.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   irregularAniGrid_0100
+     * @tc.number irregularAniGrid_001
+     * @tc.desc   Set the animation parameter of ScrollPage to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('irregularAniGrid_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[irregularAniGrid_0100] START');

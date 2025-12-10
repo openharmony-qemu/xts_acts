@@ -22,6 +22,10 @@ import ColumnMatchParentTest from './Column/ColumnMatchParentTest'
 import ColumnWrapContentTest from './Column/ColumnWrapContentTest'
 import ColumnFixAtiDealSizeTest from './Column/ColumnFixAtiDealSizeTest'
 import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffect.test'
+import ListDraggingEventTest from './list/ListDraggingEventTest.test'
+import ListFlingEventTest from './list/ListFlingEventTest.test'
+import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
+import SourceTypeTest from './sourceType/SourceTypeTest.test'
 
 export default function testsuite() {
   TestInvalidateAttributes();
@@ -34,4 +38,8 @@ export default function testsuite() {
   ColumnWrapContentTest();
   ColumnFixAtiDealSizeTest();
   ImageContentTransitionEffectTest();
+  ListDraggingEventTest();
+  ListFlingEventTest();
+  ImageSupportSvg2Test();
+  SourceTypeTest();
 }

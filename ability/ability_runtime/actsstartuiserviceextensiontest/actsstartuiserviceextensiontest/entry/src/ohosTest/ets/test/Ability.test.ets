@@ -52,13 +52,13 @@ export default function abilityTest() {
       await sleep(2000);
       done();
     })
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_0100
-     * @tc.name: When the input parameter want is null, an error code is returned.
-     * @tc.desc: When the input parameter want is null, an error code is returned.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0100
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0100
+     * @tc.desc   When the input parameter want is null, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_0100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0100";
@@ -83,13 +83,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_0200
-     * @tc.name: When the input parameter want is null, an error code is returned.
-     * @tc.desc: When the input parameter want is null, an error code is returned.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0200
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0200
+     * @tc.desc   When the input parameter want is null, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_0200', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0200";
@@ -127,13 +127,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_1000
-     * @tc.name: When the input parameter want is null, an error code is returned.
-     * @tc.desc: When the input parameter want is null, an error code is returned.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1000
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1000
+     * @tc.desc   When the input parameter want is null, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_1000', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1000";
@@ -165,13 +165,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_1100
-     * @tc.name: When the input parameter want is null, an error code is returned.
-     * @tc.desc: When the input parameter want is null, an error code is returned.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1100
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1100
+     * @tc.desc   When the input parameter want is null, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_1100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1100";
@@ -213,13 +213,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_0300
-     * @tc.name: When the input parameter want is null, an error code is returned.
-     * @tc.desc: When the input parameter want is null, an error code is returned.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0300
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0300
+     * @tc.desc   When the input parameter want is null, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_0300', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0300";
@@ -251,14 +251,14 @@ export default function abilityTest() {
       }
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_WantConstant_0100
-    * @tc.name: Get APP_INSTANCE_KEY CREATE_APP_INSTANCE_KEY CALLER_APP_CLONE_INDEX.
-    * @tc.desc: Get APP_INSTANCE_KEY CREATE_APP_INSTANCE_KEY CALLER_APP_CLONE_INDEX.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_WantConstant_0100
+     * @tc.number SUB_Ability_AbilityRuntime_WantConstant_0100
+     * @tc.desc   Get APP_INSTANCE_KEY CREATE_APP_INSTANCE_KEY CALLER_APP_CLONE_INDEX.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_WantConstant_0100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_WantConstant_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_WantConstant_0100] start');
@@ -269,14 +269,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_0100
-    * @tc.name: When app not support capability, an error code is returned.
-    * @tc.desc: When app not support capability, an error code is returned.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_0100
+     * @tc.number SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_0100
+     * @tc.desc   When app not support capability, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_0100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_0100] start');
@@ -292,14 +292,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_getCurrentInstanceKey_0100
-    * @tc.name: When app not support capability, an error code is returned.
-    * @tc.desc: When app not support capability, an error code is returned.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_getCurrentInstanceKey_0100
+     * @tc.number SUB_Ability_AbilityRuntime_getCurrentInstanceKey_0100
+     * @tc.desc   When app not support capability, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_getCurrentInstanceKey_0100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_getCurrentInstanceKey_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getCurrentInstanceKey_0100] start');
@@ -316,13 +316,13 @@ export default function abilityTest() {
     })
 
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_fontId_0100
-     * @tc.name: Obtains the fontId of the current application.
-     * @tc.desc: Obtains the fontId of the current application.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_fontId_0100
+     * @tc.number SUB_Ability_AbilityRuntime_fontId_0100
+     * @tc.desc   Obtains the fontId of the current application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_fontId_0100', Level.LEVEL0, async (done: Function) => {
       console.info('====> [SUB_Ability_AbilityRuntime_fontId_0100] start');
@@ -339,13 +339,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_0700
-     * @tc.name: When the input parameter want is null, an error code is returned(UIExtension).
-     * @tc.desc: When the input parameter want is null, an error code is returned(UIExtension).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0700
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0700
+     * @tc.desc   When the input parameter want is null, an error code is returned(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_0700', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0700";
@@ -392,13 +392,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_0800
-     * @tc.name: When the input parameter want is null, an error code is returned(UIExtension).
-     * @tc.desc: When the input parameter want is null, an error code is returned(UIExtension).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0800
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0800
+     * @tc.desc   When the input parameter want is null, an error code is returned(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_0800', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0800";
@@ -445,13 +445,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIServiceExtension_0900
-     * @tc.name: When the input parameter want is null, an error code is returned(UIExtension).
-     * @tc.desc: When the input parameter want is null, an error code is returned(UIExtension).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0900
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0900
+     * @tc.desc   When the input parameter want is null, an error code is returned(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIServiceExtension_0900', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0900";

@@ -15,7 +15,7 @@
 import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
 
-let sendMessageTime = 1000;
+let sendMessageTime = 2000;
 
 function PublishCallBackOne() {
   console.info('====>Publish CallBack ACTS_StartAbility_0100_CommonEvent====>');

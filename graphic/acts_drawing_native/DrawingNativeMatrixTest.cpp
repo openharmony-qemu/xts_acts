@@ -44,13 +44,13 @@ class DrawingNativeMatrixTest : public testing::Test {
         std::cout << "DrawingNativeMatrixTest errorCodeReset after each test case." << std::endl;
     }
 };
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0100
- * @tc.name: testMatrixCreateDestroyNormal
- * @tc.desc: Test for creating and destroying a matrix with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixCreateDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0100
+ * @tc.desc   Test for creating and destroying a matrix with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -60,13 +60,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyNormal, Function | Smal
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0101
- * @tc.name: testMatrixCreateDestroyNULL
- * @tc.desc: Test for creating and destroying a matrix with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateDestroyNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0101
+ * @tc.desc   Test for creating and destroying a matrix with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixDestroy with nullptr parameter
@@ -75,13 +75,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyNULL, Function | SmallT
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0102
- * @tc.name: testMatrixCreateDestroyMultipleCalls
- * @tc.desc: Test for multiple calls of creating and destroying a matrix.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateDestroyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0102
+ * @tc.desc   Test for multiple calls of creating and destroying a matrix.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MatrixCreate 10 times
@@ -102,13 +102,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyMultipleCalls, Function
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0200
- * @tc.name: testMatrixCreateRotationNormal
- * @tc.desc: Test for creating a rotation matrix with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixCreateRotationNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0200
+ * @tc.desc   Test for creating a rotation matrix with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreateRotation, rotate angles deg traverse 0 degrees, 180 degrees, 360 degrees, -90 degrees,
@@ -123,13 +123,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationNormal, Function | Sma
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0201
- * @tc.name: testMatrixCreateRotationNull
- * @tc.desc: Test for creating a rotation matrix with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateRotationNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0201
+ * @tc.desc   Test for creating a rotation matrix with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateRotation with the first parameter as null
@@ -150,13 +150,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationNull, Function | Small
     OH_Drawing_MatrixDestroy(matrix3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0202
- * @tc.name: testMatrixCreateRotationAbnormal
- * @tc.desc: Test for creating a rotation matrix with abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateRotationAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0202
+ * @tc.desc   Test for creating a rotation matrix with abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateRotation with an input angle greater than 360 degrees
@@ -177,13 +177,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationAbnormal, Function | S
     OH_Drawing_MatrixDestroy(matrix3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0203
- * @tc.name: testMatrixCreateRotationMaximum
- * @tc.desc: Test for creating a rotation matrix with maximum values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateRotationMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0203
+ * @tc.desc   Test for creating a rotation matrix with maximum values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateRotation with the maximum value of the rotation angle parameter deg
@@ -204,13 +204,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationMaximum, Function | Sm
     OH_Drawing_MatrixDestroy(matrix3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0205
- * @tc.name: testMatrixCreateRotationMultipleCalls
- * @tc.desc: Test for multiple calls of creating a rotation matrix.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateRotationMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0205
+ * @tc.desc   Test for multiple calls of creating a rotation matrix.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MatrixCreateRotation 10 times, each time with different rotation angles and coordinate points
@@ -229,13 +229,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateRotationMultipleCalls, Functio
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0300
- * @tc.name: testMatrixCreateTranslationNormal
- * @tc.desc: Test for creating a translation matrix with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixCreateTranslationNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0300
+ * @tc.desc   Test for creating a translation matrix with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreateTranslation, passing in a decimal number
@@ -251,13 +251,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationNormal, Function | 
     OH_Drawing_MatrixDestroy(matrix2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0301
- * @tc.name: testMatrixCreateTranslationNull
- * @tc.desc: Test for creating a translation matrix with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateTranslationNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0301
+ * @tc.desc   Test for creating a translation matrix with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateTranslation with the first parameter as null
@@ -273,13 +273,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationNull, Function | Sm
     OH_Drawing_MatrixDestroy(matrix2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0302
- * @tc.name: testMatrixCreateTranslationAbnormal
- * @tc.desc: Test for creating a translation matrix with abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateTranslationAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0302
+ * @tc.desc   Test for creating a translation matrix with abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateTranslation with the first parameter as a negative number
@@ -295,13 +295,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationAbnormal, Function 
     OH_Drawing_MatrixDestroy(matrix2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0303
- * @tc.name: testMatrixCreateTranslationMaximum
- * @tc.desc: Test for creating a translation matrix with maximum values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateTranslationMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0303
+ * @tc.desc   Test for creating a translation matrix with maximum values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateTranslation with the first parameter as the maximum value
@@ -317,13 +317,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationMaximum, Function |
     OH_Drawing_MatrixDestroy(matrix2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0304
- * @tc.name: testMatrixCreateTranslationMultipleCalls
- * @tc.desc: Test for multiple calls of creating a translation matrix.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateTranslationMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0304
+ * @tc.desc   Test for multiple calls of creating a translation matrix.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationMultipleCalls, Function | SmallTest | Level3) {
     std::random_device rd;
@@ -339,13 +339,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateTranslationMultipleCalls, Func
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0400
- * @tc.name: testMatrixMatrixSetGetMatrixNormal
- * @tc.desc: Test for setting and getting matrix values with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixMatrixSetGetMatrixNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0400
+ * @tc.desc   Test for setting and getting matrix values with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -374,13 +374,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixNormal, Function |
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0401
- * @tc.name: testMatrixMatrixSetGetMatrixNull
- * @tc.desc: Test for setting and getting matrix values with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixMatrixSetGetMatrixNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0401
+ * @tc.desc   Test for setting and getting matrix values with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -421,13 +421,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixNull, Function | S
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0402
- * @tc.name: testMatrixMatrixSetGetMatrixAbnormal
- * @tc.desc: Test for setting and getting matrix values with abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixMatrixSetGetMatrixAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0402
+ * @tc.desc   Test for setting and getting matrix values with abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -458,13 +458,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixAbnormal, Function
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0403
- * @tc.name: testMatrixMatrixSetGetMatrixMaximum
- * @tc.desc: Test for setting and getting matrix values with maximum values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixMatrixSetGetMatrixMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0403
+ * @tc.desc   Test for setting and getting matrix values with maximum values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixSetMatrix with the second to tenth parameters as maximum values
@@ -484,13 +484,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixMaximum, Function 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0404
- * @tc.name: testMatrixMatrixSetGetMatrixMultipleCalls
- * @tc.desc: Test for multiple calls of setting and getting matrix values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixMatrixSetGetMatrixMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0404
+ * @tc.desc   Test for multiple calls of setting and getting matrix values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -530,13 +530,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixMatrixSetGetMatrixMultipleCalls, Fun
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0500
- * @tc.name: testMatrixTranslateNormal
- * @tc.desc: Test for translating a matrix with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixTranslateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0500
+ * @tc.desc   Test for translating a matrix with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -554,13 +554,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateNormal, Function | SmallTes
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0501
- * @tc.name: testMatrixTranslateNull
- * @tc.desc: Test for translating a matrix with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixTranslateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0501
+ * @tc.desc   Test for translating a matrix with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -577,13 +577,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateNull, Function | SmallTest 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0502
- * @tc.name: testMatrixTranslateAbnormal
- * @tc.desc: Test for translating a matrix with abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixTranslateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0502
+ * @tc.desc   Test for translating a matrix with abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -597,13 +597,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateAbnormal, Function | SmallT
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0503
- * @tc.name: testMatrixTranslateMaximum
- * @tc.desc: Test for translating a matrix with maximum values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixTranslateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0503
+ * @tc.desc   Test for translating a matrix with maximum values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -617,13 +617,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateMaximum, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0504
- * @tc.name: testMatrixTranslateMultipleCalls
- * @tc.desc: Test for multiple calls of translating a matrix.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixTranslateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0504
+ * @tc.desc   Test for multiple calls of translating a matrix.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -642,13 +642,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixTranslateMultipleCalls, Function | S
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0600
- * @tc.name: testMatrixRotateNormal
- * @tc.desc: test for testMatrixRotateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixRotateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0600
+ * @tc.desc   test for testMatrixRotateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -681,13 +681,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateNormal, Function | SmallTest |
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0601
- * @tc.name: testMatrixRotateNull
- * @tc.desc: test for testMatrixRotateNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixRotateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0601
+ * @tc.desc   test for testMatrixRotateNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -706,13 +706,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateNull, Function | SmallTest | L
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0602
- * @tc.name: testMatrixRotateAbnormal
- * @tc.desc: test for testMatrixRotateAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixRotateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0602
+ * @tc.desc   test for testMatrixRotateAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -727,13 +727,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateAbnormal, Function | SmallTest
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0603
- * @tc.name: testMatrixRotateMaximum
- * @tc.desc: test for testMatrixRotateMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixRotateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0603
+ * @tc.desc   test for testMatrixRotateMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -750,13 +750,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateMaximum, Function | SmallTest 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0604
- * @tc.name: testMatrixRotateMultipleCalls
- * @tc.desc: test for testMatrixRotateMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixRotateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0604
+ * @tc.desc   test for testMatrixRotateMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -777,13 +777,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixRotateMultipleCalls, Function | Smal
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0700
- * @tc.name: testMatrixCreateScaleNormal
- * @tc.desc: test for testMatrixCreateScaleNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixCreateScaleNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0700
+ * @tc.desc   test for testMatrixCreateScaleNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreateScale, passing in decimals
@@ -797,13 +797,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleNormal, Function | SmallT
     OH_Drawing_MatrixDestroy(matrix2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0701
- * @tc.name: testMatrixCreateScaleNull
- * @tc.desc: test for testMatrixCreateScaleNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateScaleNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0701
+ * @tc.desc   test for testMatrixCreateScaleNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateScale with the first parameter as null
@@ -829,13 +829,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleNull, Function | SmallTes
     OH_Drawing_MatrixDestroy(matrix4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0702
- * @tc.name: testMatrixCreateScaleAbnormal
- * @tc.desc: test for testMatrixCreateScaleAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateScaleAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0702
+ * @tc.desc   test for testMatrixCreateScaleAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateScale with the first parameter as a negative number
@@ -861,13 +861,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleAbnormal, Function | Smal
     OH_Drawing_MatrixDestroy(matrix4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0703
- * @tc.name: testMatrixCreateScaleMaximum
- * @tc.desc: test for testMatrixCreateScaleMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateScaleMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0703
+ * @tc.desc   test for testMatrixCreateScaleMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreateScale with the first parameter as the maximum value
@@ -893,13 +893,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleMaximum, Function | Small
     OH_Drawing_MatrixDestroy(matrix4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0704
- * @tc.name: testMatrixCreateScaleMultipleCalls
- * @tc.desc: test for testMatrixCreateScaleMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixCreateScaleMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0704
+ * @tc.desc   test for testMatrixCreateScaleMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MatrixCreateScale 10 times with random numbers for sx, sy, px, and py, and ensure successful
@@ -918,13 +918,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateScaleMultipleCalls, Function |
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0800
- * @tc.name: testMatrixScaleNormal
- * @tc.desc: test for testMatrixScaleNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixScaleNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0800
+ * @tc.desc   test for testMatrixScaleNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -943,13 +943,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleNormal, Function | SmallTest | 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0801
- * @tc.name: testMatrixScaleNull
- * @tc.desc: test for testMatrixScaleNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixScaleNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0801
+ * @tc.desc   test for testMatrixScaleNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -971,13 +971,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleNull, Function | SmallTest | Le
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0802
- * @tc.name: testMatrixScaleAbnormal
- * @tc.desc: test for testMatrixScaleAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixScaleAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0802
+ * @tc.desc   test for testMatrixScaleAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -996,13 +996,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleAbnormal, Function | SmallTest 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0803
- * @tc.name: testMatrixScaleMaximum
- * @tc.desc: test for testMatrixScaleMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixScaleMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0803
+ * @tc.desc   test for testMatrixScaleMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1021,13 +1021,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleMaximum, Function | SmallTest |
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0804
- * @tc.name: testMatrixScaleMultipleCalls
- * @tc.desc: test for testMatrixScaleMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixScaleMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0804
+ * @tc.desc   test for testMatrixScaleMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1049,13 +1049,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixScaleMultipleCalls, Function | Small
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0900
- * @tc.name: testMatrixSetRectToRectNormal
- * @tc.desc: test for testMatrixSetRectToRectNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixSetRectToRectNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0900
+ * @tc.desc   test for testMatrixSetRectToRectNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixSetRectToRectNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -1081,13 +1081,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixSetRectToRectNormal, Function | Smal
     OH_Drawing_RectDestroy(rectDst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0901
- * @tc.name: testMatrixSetRectToRectNull
- * @tc.desc: test for testMatrixSetRectToRectNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixSetRectToRectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0901
+ * @tc.desc   test for testMatrixSetRectToRectNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixSetRectToRectNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1120,13 +1120,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixSetRectToRectNull, Function | SmallT
     OH_Drawing_RectDestroy(rectDst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0902
- * @tc.name: testMatrixSetRectToRectMultipleCalls
- * @tc.desc: test for testMatrixSetRectToRectMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixSetRectToRectMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_0902
+ * @tc.desc   test for testMatrixSetRectToRectMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixSetRectToRectMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1154,13 +1154,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixSetRectToRectMultipleCalls, Function
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1000
- * @tc.name: testMatrixPreRotateNormal
- * @tc.desc: test for testMatrixPreRotateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixPreRotateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1000
+ * @tc.desc   test for testMatrixPreRotateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -1194,13 +1194,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateNormal, Function | SmallTes
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1001
- * @tc.name: testMatrixPreRotateNull
- * @tc.desc: test for testMatrixPreRotateNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreRotateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1001
+ * @tc.desc   test for testMatrixPreRotateNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1221,13 +1221,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateNull, Function | SmallTest 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1002
- * @tc.name: testMatrixPreRotateAbnormal
- * @tc.desc: test for testMatrixPreRotateAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreRotateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1002
+ * @tc.desc   test for testMatrixPreRotateAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1242,13 +1242,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateAbnormal, Function | SmallT
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1003
- * @tc.name: testMatrixPreRotateMaximum
- * @tc.desc: test for testMatrixPreRotateMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreRotateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1003
+ * @tc.desc   test for testMatrixPreRotateMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1265,13 +1265,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateMaximum, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1004
- * @tc.name: testMatrixPreRotateMultipleCalls
- * @tc.desc: test for testMatrixPreRotateMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreRotateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1004
+ * @tc.desc   test for testMatrixPreRotateMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1292,13 +1292,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreRotateMultipleCalls, Function | S
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1100
- * @tc.name: testMatrixPreScaleNormal
- * @tc.desc: test for testMatrixPreScaleNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixPreScaleNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1100
+ * @tc.desc   test for testMatrixPreScaleNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -1317,13 +1317,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleNormal, Function | SmallTest
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1101
- * @tc.name: testMatrixPreScaleNull
- * @tc.desc: test for testMatrixPreScaleNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreScaleNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1101
+ * @tc.desc   test for testMatrixPreScaleNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1346,13 +1346,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleNull, Function | SmallTest |
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1102
- * @tc.name: testMatrixPreScaleAbnormal
- * @tc.desc: test for testMatrixPreScaleAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreScaleAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1102
+ * @tc.desc   test for testMatrixPreScaleAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1371,13 +1371,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleAbnormal, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1103
- * @tc.name: testMatrixPreScaleMaximum
- * @tc.desc: test for testMatrixPreScaleMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreScaleMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1103
+ * @tc.desc   test for testMatrixPreScaleMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1396,13 +1396,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleMaximum, Function | SmallTes
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1104
- * @tc.name: testMatrixPreScaleMultipleCalls
- * @tc.desc: test for testMatrixPreScaleMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreScaleMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1104
+ * @tc.desc   test for testMatrixPreScaleMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1424,13 +1424,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreScaleMultipleCalls, Function | Sm
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1200
- * @tc.name: testMatrixPreTranslateNormal
- * @tc.desc: test for testMatrixPreTranslateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixPreTranslateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1200
+ * @tc.desc   test for testMatrixPreTranslateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -1449,13 +1449,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateNormal, Function | Small
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1201
- * @tc.name: testMatrixPreTranslateNull
- * @tc.desc: test for testMatrixPreTranslateNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreTranslateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1201
+ * @tc.desc   test for testMatrixPreTranslateNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1473,13 +1473,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateNull, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1202
- * @tc.name: testMatrixPreTranslateAbnormal
- * @tc.desc: test for testMatrixPreTranslateAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreTranslateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1202
+ * @tc.desc   test for testMatrixPreTranslateAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1494,13 +1494,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateAbnormal, Function | Sma
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1203
- * @tc.name: testMatrixPreTranslateMaximum
- * @tc.desc: test for testMatrixPreTranslateMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreTranslateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1203
+ * @tc.desc   test for testMatrixPreTranslateMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1515,13 +1515,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateMaximum, Function | Smal
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1204
- * @tc.name: testMatrixPreTranslateMultipleCalls
- * @tc.desc: test for testMatrixPreTranslateMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPreTranslateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1204
+ * @tc.desc   test for testMatrixPreTranslateMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1541,13 +1541,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPreTranslateMultipleCalls, Function 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1300
- * @tc.name: testMatrixPostRotateNormal
- * @tc.desc: test for testMatrixPostRotateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixPostRotateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1300
+ * @tc.desc   test for testMatrixPostRotateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -1581,13 +1581,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateNormal, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1301
- * @tc.name: testMatrixPostRotateNull
- * @tc.desc: test for testMatrixPostRotateNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostRotateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1301
+ * @tc.desc   test for testMatrixPostRotateNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1608,13 +1608,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateNull, Function | SmallTest
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1302
- * @tc.name: testMatrixPostRotateAbnormal
- * @tc.desc: test for testMatrixPostRotateAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostRotateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1302
+ * @tc.desc   test for testMatrixPostRotateAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1629,13 +1629,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateAbnormal, Function | Small
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1303
- * @tc.name: testMatrixPostRotateMaximum
- * @tc.desc: test for testMatrixPostRotateMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostRotateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1303
+ * @tc.desc   test for testMatrixPostRotateMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1652,13 +1652,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateMaximum, Function | SmallT
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1304
- * @tc.name: testMatrixPostRotateMultipleCalls
- * @tc.desc: test for testMatrixPostRotateMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostRotateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1304
+ * @tc.desc   test for testMatrixPostRotateMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1679,13 +1679,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostRotateMultipleCalls, Function | 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1400
- * @tc.name: testMatrixPostScaleNormal
- * @tc.desc: test for testMatrixPostScaleNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMatrixPostScaleNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1400
+ * @tc.desc   test for testMatrixPostScaleNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_MatrixCreate
@@ -1704,13 +1704,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleNormal, Function | SmallTes
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1401
- * @tc.name: testMatrixPostScaleNull
- * @tc.desc: test for testMatrixPostScaleNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostScaleNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1401
+ * @tc.desc   test for testMatrixPostScaleNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1732,13 +1732,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleNull, Function | SmallTest 
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1402
- * @tc.name: testMatrixPostScaleAbnormal
- * @tc.desc: test for testMatrixPostScaleAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostScaleAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1402
+ * @tc.desc   test for testMatrixPostScaleAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1757,13 +1757,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleAbnormal, Function | SmallT
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1403
- * @tc.name: testMatrixPostScaleMaximum
- * @tc.desc: test for testMatrixPostScaleMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostScaleMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1403
+ * @tc.desc   test for testMatrixPostScaleMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate
@@ -1782,13 +1782,13 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleMaximum, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1404
- * @tc.name: testMatrixPostScaleMultipleCalls
- * @tc.desc: test for testMatrixPostScaleMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMatrixPostScaleMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_1404
+ * @tc.desc   test for testMatrixPostScaleMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixPostScaleMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixCreate

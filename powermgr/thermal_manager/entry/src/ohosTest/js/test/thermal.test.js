@@ -44,12 +44,13 @@ export default function ThermalTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /* @tc.number SUB_PowerSystem_ThermalManager_JSTest_0010
-     * @tc.name testGet_Thermal_Level_JSTest0010
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   Get_Thermal_Level_JSTest0010
+     * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0010
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Get_Thermal_Level_JSTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'Get_Thermal_Level_JSTest0010';
@@ -66,12 +67,13 @@ export default function ThermalTest() {
       }
     })
 
-    /* @tc.number SUB_PowerSystem_ThermalManager_JSTest_0020
-     * @tc.name testSubscribeAndUnsubscribe_Thermal_Level_JSTest0020
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   Subscribe_Thermal_Level_JSTest0020
+     * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0020
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Subscribe_Thermal_Level_JSTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'Subscribe_Thermal_Level_JSTest0020';
@@ -89,12 +91,13 @@ export default function ThermalTest() {
       }
     })
 
-    /* @tc.number SUB_PowerSystem_ThermalManager_JSTest_0020
-     * @tc.name testSubscribeAndUnsubscribe_Thermal_Level_JSTest0020
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   Unsubscribe_Thermal_Level_JSTest0030
+     * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0020
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Unsubscribe_Thermal_Level_JSTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async function (done) {
@@ -117,12 +120,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Get_Thermal_Level_Cool_JSTest0040
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0040
-     * @tc.name testGet_Thermal_Level_Cool_JSTest0040
-     * @tc.desc Get device thermalLevel COOL
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel COOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Get_Thermal_Level_Cool_JSTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'Get_Thermal_Level_Cool_JSTest0040';
@@ -139,12 +142,12 @@ export default function ThermalTest() {
     })
 
     /**
+     * @tc.name   Get_Thermal_Level_Normal_JSTest0050
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0050
-     * @tc.name testGet_Thermal_Level_Normal_JSTest0050
-     * @tc.desc Get device thermalLevel NORMAL
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Get_Thermal_Level_Normal_JSTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async function (done) {
@@ -162,12 +165,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Get_Thermal_Level_Warm_JSTest0060
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0060
-     * @tc.name testGet_Thermal_Level_Warm_JSTest0060
-     * @tc.desc Get device thermalLevel WARM
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel WARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Get_Thermal_Level_Warm_JSTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'Get_Thermal_Level_Warm_JSTest0060';
@@ -184,12 +187,12 @@ export default function ThermalTest() {
     })
 
     /**
+     * @tc.name   Get_Thermal_Level_Hot_JSTest0070
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0070
-     * @tc.name testGet_Thermal_Level_Hot_JSTest0070
-     * @tc.desc Get device thermalLevel HOT
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel HOT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Get_Thermal_Level_Hot_JSTest0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'Get_Thermal_Level_Hot_JSTest0070';
@@ -206,12 +209,12 @@ export default function ThermalTest() {
     })
 
     /**
+     * @tc.name   Get_Thermal_Level_OverHeated_JSTest0080
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0080
-     * @tc.name testGet_Thermal_Level_OverHeated_JSTest0080
-     * @tc.desc Get device thermalLevel OVERHEATED
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel OVERHEATED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Get_Thermal_Level_OverHeated_JSTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -229,12 +232,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Get_Thermal_Level_Warning_JSTest0090
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0090
-     * @tc.name testGet_Thermal_Level_Warning_JSTest0090
-     * @tc.desc Get device thermalLevel WARNING
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel WARNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Get_Thermal_Level_Warning_JSTest0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -252,12 +255,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Get_Thermal_Level_Emergency_JSTest0100
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0100
-     * @tc.name testGet_Thermal_Level_Emergency_JSTest0100
-     * @tc.desc Get device thermalLevel EMERGENCY
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel EMERGENCY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Get_Thermal_Level_Emergency_JSTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -275,12 +278,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Get_Thermal_Level_Escape_JSTest0110
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0110
-     * @tc.name testGet_Thermal_Level_Escape_JSTest0110
-     * @tc.desc Get device thermalLevel ESCAPE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device thermalLevel ESCAPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Get_Thermal_Level_Escape_JSTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -298,12 +301,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Get_Level_JSTest0120
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0120
-     * @tc.name testGet_Level_JSTest0120
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Get_Level_JSTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let TAG = 'Get_Level_JSTest0120';
@@ -321,12 +324,12 @@ export default function ThermalTest() {
     })
 
     /**
+     * @tc.name   Register_Thermal_Level_Callback_JSTest0130
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0130
-     * @tc.name testRegister_Thermal_Level_Callback_JSTest0130
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Register_Thermal_Level_Callback_JSTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -348,12 +351,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Register_Thermal_Level_Callback_JSTest0140
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0140
-     * @tc.name testRegister_Thermal_Level_Callback_JSTest0140
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Register_Thermal_Level_Callback_JSTest0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -369,12 +372,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   UnRegister_Thermal_Level_Callback_JSTest0150
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0150
-     * @tc.name testUnRegister_Thermal_Level_Callback_JSTest0150
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('UnRegister_Thermal_Level_Callback_JSTest0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -390,12 +393,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   UnRegister_Thermal_Level_Callback_JSTest0160
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0160
-     * @tc.name testUnRegister_Thermal_Level_Callback_JSTest0160
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('UnRegister_Thermal_Level_Callback_JSTest0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -412,12 +415,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   UnRegister_Thermal_Level_Callback_JSTest0170
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0170
-     * @tc.name testUnRegister_Thermal_Level_Callback_JSTest0170
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('UnRegister_Thermal_Level_Callback_JSTest0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -442,12 +445,12 @@ export default function ThermalTest() {
       })
 
     /**
+     * @tc.name   Unsubscribe_Thermal_Level_Callback_JSTest0180
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0180
-     * @tc.name testUnsubscribe_Thermal_Level_Callback_JSTest0180
-     * @tc.desc Thermal acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Thermal acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Unsubscribe_Thermal_Level_Callback_JSTest0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {

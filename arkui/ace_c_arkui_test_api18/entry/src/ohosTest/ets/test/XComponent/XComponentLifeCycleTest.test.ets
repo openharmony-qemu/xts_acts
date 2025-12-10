@@ -25,13 +25,13 @@ export default function XComponentLifeCycleTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_LIFECYCLE_0100
-     * @tc.name       : testXComponentLifeCycle_001
-     * @tc.desc       : testing XComponent LifeCycle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentLifeCycle_001
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_LIFECYCLE_0100
+     * @tc.desc   testing XComponent LifeCycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentLifeCycle_001', Level.LEVEL1, async (done: Function) => {
       console.info("[testXComponentLifeCycle_001] Start");
@@ -93,13 +93,13 @@ export default function XComponentLifeCycleTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_LIFECYCLE_0200
-     * @tc.name       : testXComponentLifeCycle_002
-     * @tc.desc       : testing XComponent LifeCycle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentLifeCycle_002
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_LIFECYCLE_0200
+     * @tc.desc   testing XComponent LifeCycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentLifeCycle_002', Level.LEVEL1, async (done: Function) => {
       console.info("[testXComponentLifeCycle_002] Start");

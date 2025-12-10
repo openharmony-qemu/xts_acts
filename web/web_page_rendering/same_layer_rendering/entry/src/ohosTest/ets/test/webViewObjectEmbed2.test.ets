@@ -49,13 +49,13 @@ export default function ActsAceWebViewObjectEmbed2() {
 
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED2_API_0002
-     *@tc.name testWebViewObjectEmbed02
-     *@tc.desc test objectEmbed2
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbed02
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED2_API_0002
+     * @tc.desc   test objectEmbed2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbed02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbed02"

@@ -91,12 +91,12 @@ export default function btBleNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number: testStopAdvertisingNop
-     * @tc.name: testStopAdvertising
-     * @tc.desc: test stopAdvertising by promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStopAdvertisingNop
+     * @tc.number testStopAdvertisingNop
+     * @tc.desc   test stopAdvertising by promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStopAdvertisingNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -110,12 +110,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testStopAdvertisingAsyncCallbackNop
-     * @tc.name: testStopAdvertising
-     * @tc.desc: test stopAdvertising by async callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStopAdvertisingAsyncCallbackNop
+     * @tc.number testStopAdvertisingAsyncCallbackNop
+     * @tc.desc   test stopAdvertising by async callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStopAdvertisingAsyncCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let advHandle = 0xFF;
@@ -141,12 +141,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testEnableAdvertisingNop
-     * @tc.name: testEnableAdvertising
-     * @tc.desc: test enableAdvertising by promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testEnableAdvertisingNop
+     * @tc.number testEnableAdvertisingNop
+     * @tc.desc   test enableAdvertising by promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testEnableAdvertisingNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -163,12 +163,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testEnableAdvertisingAsyncCallbackNop
-     * @tc.name: testEnableAdvertising
-     * @tc.desc: test enableAdvertising by async callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testEnableAdvertisingAsyncCallbackNop
+     * @tc.number testEnableAdvertisingAsyncCallbackNop
+     * @tc.desc   test enableAdvertising by async callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testEnableAdvertisingAsyncCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let advHandle = 0xFF;
@@ -197,12 +197,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testStartAdvertisingNop
-     * @tc.name: testStartAdvertising
-     * @tc.desc: test startAdvertising by promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStartAdvertisingNop
+     * @tc.number testStartAdvertisingNop
+     * @tc.desc   test startAdvertising by promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStartAdvertisingNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -216,12 +216,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testStartAdvertisingAsyncCallbackNop
-     * @tc.name: testStartAdvertising
-     * @tc.desc: test startAdvertising by async callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStartAdvertisingAsyncCallbackNop
+     * @tc.number testStartAdvertisingAsyncCallbackNop
+     * @tc.desc   test startAdvertising by async callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStartAdvertisingAsyncCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let functionStartAdvertising = async () => {
@@ -246,12 +246,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testDisableAdvertisingNop
-     * @tc.name: testDisableAdvertising
-     * @tc.desc: test disableAdvertising by promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testDisableAdvertisingNop
+     * @tc.number testDisableAdvertisingNop
+     * @tc.desc   test disableAdvertising by promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testDisableAdvertisingNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -269,12 +269,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testDisableAdvertisingAsyncCallbackNop
-     * @tc.name: testDisableAdvertising
-     * @tc.desc: test disableAdvertising by async callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testDisableAdvertisingAsyncCallbackNop
+     * @tc.number testDisableAdvertisingAsyncCallbackNop
+     * @tc.desc   test disableAdvertising by async callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testDisableAdvertisingAsyncCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let advHandle = 0xFF;
@@ -303,12 +303,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testStopBLEScanNop
-     * @tc.name: testStopBLEScan
-     * @tc.desc: test stopBLEScan without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStopBLEScanNop
+     * @tc.number testStopBLEScanNop
+     * @tc.desc   test stopBLEScan without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStopBLEScanNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -322,12 +322,12 @@ export default function btBleNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testStartScanNop
-     * @tc.name: testStartScan
-     * @tc.desc: test startScan without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStartScanNop
+     * @tc.number testStartScanNop
+     * @tc.desc   test startScan without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStartScanNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -352,12 +352,12 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testStopScanNop
-     * @tc.name: testStopScan
-     * @tc.desc: test stopScan without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStopScanNop
+     * @tc.number testStopScanNop
+     * @tc.desc   test stopScan without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStopScanNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -382,12 +382,12 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGetConnectedBLEDevicesNop
-     * @tc.name: testGetConnectedBLEDevices
-     * @tc.desc: test getConnectedBLEDevices without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetConnectedBLEDevicesNop
+     * @tc.number testGetConnectedBLEDevicesNop
+     * @tc.desc   test getConnectedBLEDevices without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetConnectedBLEDevicesNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -406,12 +406,12 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testStartBleScanNop
-     * @tc.name: testStartBleScan
-     * @tc.desc: test startBLEScan without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStartBleScanNop
+     * @tc.number testStartBleScanNop
+     * @tc.desc   test startBLEScan without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStartBleScanNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -425,12 +425,12 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testStopAdvertisingNoParamNop
-     * @tc.name: testStopAdvertising
-     * @tc.desc: test stopAdvertising without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testStopAdvertisingNoParamNop
+     * @tc.number testStopAdvertisingNoParamNop
+     * @tc.desc   test stopAdvertising without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStopAdvertisingNoParamNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -444,12 +444,12 @@ export default function btBleNopUiJsunit() {
     })
 
     /**
+     * @tc.name   testGetConnectedBLEDevicesBleProfileNop
      * @tc.number testGetConnectedBLEDevicesBleProfileNop
-     * @tc.name testGetConnectedBLEDevicesBleProfileNop
-     * @tc.desc test getConnectedBLEDevices BleProfile without permission
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   test getConnectedBLEDevices BleProfile without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetConnectedBLEDevicesBleProfileNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -467,6 +467,49 @@ export default function btBleNopUiJsunit() {
       }
       done();
     })
+
+    /**
+     * @tc.name   testGATTSERVER_GETCONNECTEDSTATE_NOP
+     * @tc.number testGATTSERVER_GETCONNECTEDSTATE_NOP
+     * @tc.desc   20251113API22用例覆盖GattServer-getConnectedState without permission .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGATTSERVER_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        let gattServer: ble.GattServer = ble.createGattServer();
+        let return_status: ble.ProfileConnectionState = gattServer.getConnectedState('01:02:00:02:03:01');
+        console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+        expect().assertFail();
+      } catch (error) {
+        console.error(`[bt_arkts]server ProfileConnectionState 0100 is failed, code is ${error.code},message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP
+     * @tc.number testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP
+     * @tc.desc   20251113API22用例覆盖GattClientDevice-getConnectedState without permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        let device:ble.GattClientDevice = ble.createGattClientDevice('00:11:22:33:44:55');
+        let return_status=device.getConnectedState();
+        console.info('[bt_arkts] client ProfileConnectionState 0100 is' + JSON.stringify(return_status))
+        expect().assertFail();
+      } catch (error) {
+        console.error(`[bt_arkts]getConnectedState status is failed, code is ${error.code},message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+      }
+      done();
+    })
+
   })
 }
 

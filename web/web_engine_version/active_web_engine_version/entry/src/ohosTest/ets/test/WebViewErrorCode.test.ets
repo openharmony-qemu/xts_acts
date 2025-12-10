@@ -58,13 +58,13 @@ export default function webViewWebViewErrorCode() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_BASIC_ETS_GETPAGEOFFSETERRORCODE_0100
-     *@tc.name emitGetPageOffsetErrorCode
-     *@tc.desc emitGetPageOffsetErrorCode
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   emitGetPageOffsetErrorCode
+     * @tc.number SUB_ACE_BASIC_ETS_GETPAGEOFFSETERRORCODE_0100
+     * @tc.desc   emitGetPageOffsetErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitGetPageOffsetErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetPageOffsetErrorCode";
@@ -74,13 +74,13 @@ export default function webViewWebViewErrorCode() {
       await Utils.waitAndClickComponent(driver, "webViewOthersErrorCode");
     })
 
-    /*
-     *@tc.number SUB_ACE_BASIC_ETS_AVOIDVISIBLEVIEWPORTBOTTOMERRORCODE_0200
-     *@tc.name emitAvoidVisibleViewportBottomErrorCode
-     *@tc.desc emitAvoidVisibleViewportBottomErrorCode
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   emitAvoidVisibleViewportBottomErrorCode
+     * @tc.number SUB_ACE_BASIC_ETS_AVOIDVISIBLEVIEWPORTBOTTOMERRORCODE_0200
+     * @tc.desc   emitAvoidVisibleViewportBottomErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitAvoidVisibleViewportBottomErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAvoidVisibleViewportBottomErrorCode";

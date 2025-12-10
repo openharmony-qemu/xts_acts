@@ -24,12 +24,12 @@ const RDB_E_INVALID_OBJECT_TYPE = 14800020;
 export default function ActsRdbErrorCodeTest() {
   describe('ActsRdbErrorCodeTest', () => {
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_ERR_0100
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_ERR_0100
-     * @tc.desc    : The execution error scene in the test error code information.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_ERR_0100
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_ERR_0100
+     * @tc.desc   The execution error scene in the test error code information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_ERR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -47,12 +47,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_EMPTY_TABLE_NAME_0200
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_EMPTY_TABLE_NAME_0200
-     * @tc.desc    : Failure scenario in which the table name in the test error code information is empty.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_EMPTY_TABLE_NAME_0200
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_EMPTY_TABLE_NAME_0200
+     * @tc.desc   Failure scenario in which the table name in the test error code information is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_EMPTY_TABLE_NAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -70,12 +70,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_TYPE_0300
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_TYPE_0300
-     * @tc.desc    : Test the fault scenario where the column type in the error code information is illegal.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_TYPE_0300
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_TYPE_0300
+     * @tc.desc   Test the fault scenario where the column type in the error code information is illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_TYPE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -93,12 +93,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_NO_ROW_IN_QUERY_0400
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_NO_ROW_IN_QUERY_0400
-     * @tc.desc    : There is no recorded fault scenario in the result set obtained by testing the query in the error code information.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_NO_ROW_IN_QUERY_0400
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_NO_ROW_IN_QUERY_0400
+     * @tc.desc   There is no recorded fault scenario in the result set obtained by testing the query in the error code information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_NO_ROW_IN_QUERY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -116,12 +116,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_NO_TRANSACTION_IN_SESSION_0500
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_NO_TRANSACTION_IN_SESSION_0500
-     * @tc.desc    : Test the fault scenario in the error code information that there is no open transaction in the database session.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_NO_TRANSACTION_IN_SESSION_0500
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_NO_TRANSACTION_IN_SESSION_0500
+     * @tc.desc   Test the fault scenario in the error code information that there is no open transaction in the database session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_NO_TRANSACTION_IN_SESSION_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -139,12 +139,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_INDEX_0600
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_INDEX_0600
-     * @tc.desc    : Test the fault scenario that the column index in the error code information is illegal.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_INDEX_0600
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_INDEX_0600
+     * @tc.desc   Test the fault scenario that the column index in the error code information is illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_INVALID_COLUMN_INDEX_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -162,12 +162,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_ALREADY_CLOSED_0700
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_ALREADY_CLOSED_0700
-     * @tc.desc    : Test the fault scenario in which the database in the error code information is closed.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_ALREADY_CLOSED_0700
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_ALREADY_CLOSED_0700
+     * @tc.desc   Test the fault scenario in which the database in the error code information is closed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_ALREADY_CLOSED_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -185,12 +185,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_NOT_SUPPORTED_ATTACH_IN_WAL_MODE_0800
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_NOT_SUPPORTED_ATTACH_IN_WAL_MODE_0800
-     * @tc.desc    : Test the fault scenario in the error code information that the ATTACH operation is not supported in the WAL log mode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_NOT_SUPPORTED_ATTACH_IN_WAL_MODE_0800
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_NOT_SUPPORTED_ATTACH_IN_WAL_MODE_0800
+     * @tc.desc   Test the fault scenario in the error code information that the ATTACH operation is not supported in the WAL log mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_NOT_SUPPORTED_ATTACH_IN_WAL_MODE_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -209,12 +209,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_DATABASE_BUSY_0900
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_DATABASE_BUSY_0900
-     * @tc.desc    : Test the failure scenario in which the database in the error code information is unresponsive.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_DATABASE_BUSY_0900
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_DATABASE_BUSY_0900
+     * @tc.desc   Test the failure scenario in which the database in the error code information is unresponsive.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_DATABASE_BUSY_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -232,12 +232,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_CLOSED_1000
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_CLOSED_1000
-     * @tc.desc    : Test the fault scenario in which the result set in the error code information has been closed.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_CLOSED_1000
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_CLOSED_1000
+     * @tc.desc   Test the fault scenario in which the result set in the error code information has been closed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_CLOSED_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -255,12 +255,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_IS_AFTER_LAST_1100
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_IS_AFTER_LAST_1100
-     * @tc.desc    : The cursor of the result set in the test error code information is already in the fault scenario of the last line.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_IS_AFTER_LAST_1100
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_IS_AFTER_LAST_1100
+     * @tc.desc   The cursor of the result set in the test error code information is already in the fault scenario of the last line.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_STEP_RESULT_IS_AFTER_LAST_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -278,12 +278,12 @@ export default function ActsRdbErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200
-     * @tc.name    : SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200
-     * @tc.desc    : In the fault scenario where the object type in the test error code information is illegal.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200
+     * @tc.number SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200
+     * @tc.desc   In the fault scenario where the object type in the test error code information is illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Rdb_ErrCode_RDB_E_INVALID_OBJECT_TYPE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

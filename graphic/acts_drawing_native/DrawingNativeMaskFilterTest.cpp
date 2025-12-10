@@ -47,13 +47,13 @@ class DrawingNativeMaskFilterTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0100
- * @tc.name: testMaskFilterCreateBlurDestroyNormal
- * @tc.desc: Test for creating and destroying a blur mask filter with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testMaskFilterCreateBlurDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0100
+ * @tc.desc   Test for creating and destroying a blur mask filter with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_BlurType types[] = {
@@ -88,13 +88,13 @@ HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyNormal, Fun
     OH_Drawing_MaskFilterDestroy(maskFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0101
- * @tc.name: testMaskFilterCreateBlurDestroyNULL
- * @tc.desc: Test for creating and destroying a blur mask filter with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMaskFilterCreateBlurDestroyNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0101
+ * @tc.desc   Test for creating and destroying a blur mask filter with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyNULL, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MaskFilterCreateBlur with the second parameter as zero and check the error code using
@@ -104,13 +104,13 @@ HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyNULL, Funct
     OH_Drawing_MaskFilterDestroy(maskFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0102
- * @tc.name: testMaskFilterCreateBlurDestroyMultipleCalls
- * @tc.desc: Test for multiple calls of creating and destroying a blur mask filter.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMaskFilterCreateBlurDestroyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0102
+ * @tc.desc   Test for multiple calls of creating and destroying a blur mask filter.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MaskFilterCreateBlur and OH_Drawing_MaskFilterDestroy 10 times in a loop
@@ -132,13 +132,13 @@ HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyMultipleCal
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0103
- * @tc.name: testMaskFilterCreateBlurDestroyAbnormal
- * @tc.desc: Test for creating and destroying a blur mask filter with abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMaskFilterCreateBlurDestroyAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0103
+ * @tc.desc   Test for creating and destroying a blur mask filter with abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyAbnormal, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MaskFilterCreateBlur with a negative value for sigma and check the error code using
@@ -147,13 +147,13 @@ HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyAbnormal, F
     OH_Drawing_MaskFilterDestroy(maskFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0104
- * @tc.name: testMaskFilterCreateBlurDestroyMaximum
- * @tc.desc: Test for creating and destroying a blur mask filter with maximum values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testMaskFilterCreateBlurDestroyMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0104
+ * @tc.desc   Test for creating and destroying a blur mask filter with maximum values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeMaskFilterTest, testMaskFilterCreateBlurDestroyMaximum, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_MaskFilterCreateBlur with a maximum value for sigma

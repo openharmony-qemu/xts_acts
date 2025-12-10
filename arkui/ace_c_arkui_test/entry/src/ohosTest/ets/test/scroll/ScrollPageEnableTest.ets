@@ -26,65 +26,65 @@ export default function scrollPageEnableTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0100
-     * @tc.name       : testScrollPageEnable001
-     * @tc.desc       : testing pageEnable for scroll with false value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollPageEnable001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0100
+     * @tc.desc   testing pageEnable for scroll with false value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollPageEnable001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollPageEnable001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0200
-     * @tc.name       : testScrollPageEnable002
-     * @tc.desc       : testing pageEnable for scroll with true value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollPageEnable002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0200
+     * @tc.desc   testing pageEnable for scroll with true value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollPageEnable002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollPageEnable002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0300
-     * @tc.name       : testScrollPageEnable003
-     * @tc.desc       : testing pageEnable for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollPageEnable003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0300
+     * @tc.desc   testing pageEnable for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollPageEnable003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollPageEnable003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0400
-     * @tc.name       : testScrollPageEnable004
-     * @tc.desc       : testing pageEnable for scroll with NULL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollPageEnable004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0400
+     * @tc.desc   testing pageEnable for scroll with NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollPageEnable004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollPageEnable004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0500
-     * @tc.name       : testScrollPageEnable005
-     * @tc.desc       : testing pageEnable for scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollPageEnable005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_PAGEENABLE_0500
+     * @tc.desc   testing pageEnable for scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollPageEnable005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollPageEnable005()).assertEqual(0)

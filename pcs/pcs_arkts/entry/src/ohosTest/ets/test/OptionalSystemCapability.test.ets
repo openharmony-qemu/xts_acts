@@ -23,13 +23,13 @@ async function stopApplication(bundleName: string) {
 
 export default function optionalSystemCapability() {
   describe('optionalSystemCapability', () => {
-    /*
-     * @tc.number: C-STD-SOFTWARE-00300
-     * @tc.name: testPowerManagerQuery
-     * @tc.desc: 【C-STD-SOFTWARE-00300】如果设备支持电池，则必须提供电池电量信息和充放电状态的查询能力和接口。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testPowerManagerQuery
+     * @tc.number C-STD-SOFTWARE-00300
+     * @tc.desc   【C-STD-SOFTWARE-00300】如果设备支持电池，则必须提供电池电量信息和充放电状态的查询能力和接口。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPowerManagerQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testPowerManagerQuery start`);
@@ -50,13 +50,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testPowerManagerQuery end`);
     })
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1300
-     * @tc.name: testCustomInputMethod
-     * @tc.desc: 【C-STD-SOFTWARE-1302】必须支持第三方输入法应用。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testCustomInputMethod
+     * @tc.number C-STD-SOFTWARE-1300
+     * @tc.desc   【C-STD-SOFTWARE-1302】必须支持第三方输入法应用。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCustomInputMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testCustomInputMethod start`);
@@ -80,13 +80,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testDefaultInputMethod end`);
     })
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1301
-     * @tc.name: testInputMethodEngine
-     * @tc.desc: 【C-STD-SOFTWARE-1100】必须完整实现输入法管理框架。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testInputMethodEngine
+     * @tc.number C-STD-SOFTWARE-1301
+     * @tc.desc   【C-STD-SOFTWARE-1100】必须完整实现输入法管理框架。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInputMethodEngine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testInputMethodEngine start`);
@@ -96,13 +96,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testInputMethodEngine end`);
     })
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1302
-     * @tc.name: testDefaultInputMethod
-     * @tc.desc: 【C-STD-SOFTWARE-1302】必须预安装英文输入法应用。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testDefaultInputMethod
+     * @tc.number C-STD-SOFTWARE-1302
+     * @tc.desc   【C-STD-SOFTWARE-1302】必须预安装英文输入法应用。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultInputMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testDefaultInputMethod start`);
@@ -122,13 +122,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testDefaultInputMethod end`);
     })
 
-    /*
-     * @tc.number: C-S-SOFTWARE-1003
-     * @tc.name: testJPEGDecoding
-     * @tc.desc: 【C-S-SOFTWARE-1006】必须支持JPEG格式解码，支持基础和渐进式解码，支持JPEG(.jpg)容器格式。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testJPEGDecoding
+     * @tc.number C-S-SOFTWARE-1003
+     * @tc.desc   【C-S-SOFTWARE-1006】必须支持JPEG格式解码，支持基础和渐进式解码，支持JPEG(.jpg)容器格式。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJPEGDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testJPEGDecoding start`);
@@ -156,13 +156,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testJPEGDecoding testPNGDecoding end`);
     })
 
-    /*
-     * @tc.number: C-S-SOFTWARE-1004
-     * @tc.name: testGIFDecoding
-     * @tc.desc: 【C-S-SOFTWARE-1006】必须支持GIF格式解码，支持GIF(.gif)容器格式。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testGIFDecoding
+     * @tc.number C-S-SOFTWARE-1004
+     * @tc.desc   【C-S-SOFTWARE-1006】必须支持GIF格式解码，支持GIF(.gif)容器格式。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGIFDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testGIFDecoding start`);
@@ -190,13 +190,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testGIFDecoding testPNGDecoding end`);
     })
 
-    /*
-     * @tc.number: C-S-SOFTWARE-1005
-     * @tc.name: testPNGDecoding
-     * @tc.desc: 【C-S-SOFTWARE-1005】必须支持PNG格式解码，支持PNG(.png)容器格式。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testPNGDecoding
+     * @tc.number C-S-SOFTWARE-1005
+     * @tc.desc   【C-S-SOFTWARE-1005】必须支持PNG格式解码，支持PNG(.png)容器格式。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPNGDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGDecoding start`);
@@ -223,13 +223,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testPNGDecoding testPNGDecoding end`);
     })
 
-    /*
-     * @tc.number: C-S-SOFTWARE-1006
-     * @tc.name: testBMPDecoding
-     * @tc.desc: 【C-S-SOFTWARE-1006】必须支持BMP格式解码，支持BMP(.bmp)容器格式。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testBMPDecoding
+     * @tc.number C-S-SOFTWARE-1006
+     * @tc.desc   【C-S-SOFTWARE-1006】必须支持BMP格式解码，支持BMP(.bmp)容器格式。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBMPDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testBMPDecoding start`);
@@ -257,13 +257,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testBMPDecoding testPNGDecoding end`);
     })
 
-    /*
-     * @tc.number: C-S-SOFTWARE-1007
-     * @tc.name: testBMPDecoding
-     * @tc.desc: 【C-S-SOFTWARE-1007】必须支持WebP格式解码，支持WebP(.webp)容器格式。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testWEBPDecoding
+     * @tc.number C-S-SOFTWARE-1007
+     * @tc.desc   【C-S-SOFTWARE-1007】必须支持WebP格式解码，支持WebP(.webp)容器格式。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWEBPDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testWEBPDecoding start`);
@@ -292,13 +292,13 @@ export default function optionalSystemCapability() {
     })
 
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1000
-     * @tc.name: testBMPDecoding
-     * @tc.desc: 【C-STD-SOFTWARE-1000】必须支持JPEG格式编码。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testJPEGPacker
+     * @tc.number C-STD-SOFTWARE-1000
+     * @tc.desc   【C-STD-SOFTWARE-1000】必须支持JPEG格式编码。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJPEGPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
@@ -327,13 +327,13 @@ export default function optionalSystemCapability() {
     })
 
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1001
-     * @tc.name: testBMPDecoding
-     * @tc.desc: 【C-S-SOFTWARE-1001】必须支持PNG格式编码。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testPNGPacker
+     * @tc.number C-STD-SOFTWARE-1001
+     * @tc.desc   【C-S-SOFTWARE-1001】必须支持PNG格式编码。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPNGPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
@@ -363,13 +363,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testPNGPacker end`);
     })
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1003
-     * @tc.name: testBMPDecoding
-     * @tc.desc: 【C-S-SOFTWARE-1003】必须支持WebP格式编码。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testWEBPPacker
+     * @tc.number C-STD-SOFTWARE-1003
+     * @tc.desc   【C-S-SOFTWARE-1003】必须支持WebP格式编码。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWEBPPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
@@ -399,13 +399,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testPNGPacker end`);
     })
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1401
-     * @tc.name: testSetTime
-     * @tc.desc: 【C-STD-SOFTWARE-1401】必须通过权限机制管控修改系统时间时区的行为。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testSetTime
+     * @tc.number C-STD-SOFTWARE-1401
+     * @tc.desc   【C-STD-SOFTWARE-1401】必须通过权限机制管控修改系统时间时区的行为。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetTime", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTime start`);
@@ -421,13 +421,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testSetTime end`);
     })
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1400
-     * @tc.name: testSetTimeOut
-     * @tc.desc: 【 C-STD-SOFTWARE-1400】必须通过限制定时器拉起已经退出的进程的行为。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testSetTimeOut
+     * @tc.number C-STD-SOFTWARE-1400
+     * @tc.desc   【 C-STD-SOFTWARE-1400】必须通过限制定时器拉起已经退出的进程的行为。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetTimeOut", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTimeOut start`);
@@ -446,13 +446,13 @@ export default function optionalSystemCapability() {
       console.log(`${TAG}, testSetTime end`);
     })
 
-    /*
-     * @tc.number: C-STD-SOFTWARE-1800
-     * @tc.name: testHomeEvent
-     * @tc.desc: 【C-STD-SOFTWARE-1800】电源键, Home键, 静音键必须系统处理, 禁止发送给应用, 返回键必须发送到应用处理。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testHomeEvent
+     * @tc.number C-STD-SOFTWARE-1800
+     * @tc.desc   【C-STD-SOFTWARE-1800】电源键, Home键, 静音键必须系统处理, 禁止发送给应用, 返回键必须发送到应用处理。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHomeEvent", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testHomeEvent start`);

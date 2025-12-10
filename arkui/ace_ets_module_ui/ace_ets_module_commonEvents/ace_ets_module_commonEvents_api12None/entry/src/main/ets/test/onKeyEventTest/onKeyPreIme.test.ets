@@ -51,12 +51,12 @@ export default function onKeyPreImeTest() {
     });
 
     /**
-     * @tc.number    onKeyPreImeTest_0010
-     * @tc.name      onKeyPreImeTest_0010
-     * @tc.desc      frameNode: onKeyPreIme
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onKeyPreImeTest_0010
+     * @tc.number onKeyPreImeTest_0010
+     * @tc.desc   frameNode: onKeyPreIme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onKeyPreImeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('onKeyPreImeTest_0010 START');
@@ -74,12 +74,12 @@ export default function onKeyPreImeTest() {
     });
 
     /**
-     * @tc.number    onKeyPreImeTest_0020
-     * @tc.name      onKeyPreImeTest_0020
-     * @tc.desc      KeyEvent: getModifierKeyState
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onKeyPreImeTest_0020
+     * @tc.number onKeyPreImeTest_0020
+     * @tc.desc   KeyEvent: getModifierKeyState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onKeyPreImeTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('onKeyPreImeTest_0020 START');

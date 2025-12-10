@@ -27,14 +27,14 @@ export default function scrollOnScrollStartTest() {
       await Utils.pushPage(`scroll/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ONSCROLLSTART_0100
-    * @tc.name       : testScrollOnScrollStart001
-    * @tc.desc       : test OnScrollStart event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollOnScrollStart001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ONSCROLLSTART_0100
+     * @tc.desc   test OnScrollStart event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollOnScrollStart001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       let rect = Utils.getComponentRect("scrollCalled");
@@ -50,13 +50,13 @@ export default function scrollOnScrollStartTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ONSCROLLSTART_0200
-     * @tc.name       : testScrollOnScrollStart002
-     * @tc.desc       : test OnScrollStart event not callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollOnScrollStart002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ONSCROLLSTART_0200
+     * @tc.desc   test OnScrollStart event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollOnScrollStart002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

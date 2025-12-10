@@ -50,12 +50,12 @@ export default function RouterReplaceUrl401() {
 
 
     /**
-     * @tc.number    RouterReplaceUrl401_0100
-     * @tc.name      RouterReplaceUrl401_0100
-     * @tc.desc      Test replaceUrl error code 401
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   RouterReplaceUrl401_0100
+     * @tc.number RouterReplaceUrl401_0100
+     * @tc.desc   Test replaceUrl error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterReplaceUrl401_0100', Level.LEVEL2, async (done: Function) => {
       console.info('RouterReplaceUrl401_0100 START');

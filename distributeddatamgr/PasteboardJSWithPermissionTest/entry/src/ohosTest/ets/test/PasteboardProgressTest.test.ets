@@ -90,12 +90,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0100
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0100
-     * @tc.name Single_Level_Path
-     * @tc.desc Test pasteBoard progress single level path and no fileConflictOption
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0100 start ************')
@@ -133,12 +133,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0200
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0200
-     * @tc.name Multi_Level_Path_With_Digit
-     * @tc.desc Test pasteBoard progress multi level path with digit
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress multi level path with digit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0200 start ************')
@@ -179,12 +179,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0300
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0300
-     * @tc.name Path_Not_Exist
-     * @tc.desc Test pasteBoard progress path not exist
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress path not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0300 start ************')
@@ -215,12 +215,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0500
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0500
-     * @tc.name Path_With_Special_Characters
-     * @tc.desc Test pasteBoard progress path with special characters and Chinese
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress path with special characters and Chinese
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0500 start ************')
@@ -261,12 +261,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0600
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0600
-     * @tc.name Path_Greater_Than_250
-     * @tc.desc Test pasteBoard progress path greater than 250
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress path greater than 250
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0600 start ************')
@@ -300,12 +300,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0700
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0700
-     * @tc.name Path_Equal_To_250
-     * @tc.desc Test pasteBoard progress path equal to 250
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress path equal to 250
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0700 start ************')
@@ -346,12 +346,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0800
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0800
-     * @tc.name fileConflictOption_OVERWRITE
-     * @tc.desc Test pasteBoard progress fileConflictOptions OVERWRITE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress fileConflictOptions OVERWRITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0800 start ************')
@@ -390,12 +390,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_0900
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_0900
-     * @tc.name fileConflictOption_SKIP
-     * @tc.desc Test pasteBoard progress fileConflictOptions SKIP
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress fileConflictOptions SKIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_0900 start ************')
@@ -434,12 +434,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1000
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1000
-     * @tc.name fileConflictOption_Invalid_Value
-     * @tc.desc Test pasteBoard progress fileConflictOptions invalid value
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress fileConflictOptions invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1000 start ************')
@@ -478,12 +478,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1100
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1100
-     * @tc.name progressIndicator_Invalid_Value
-     * @tc.desc Test pasteBoard progress progressIndicator invalid value
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress progressIndicator invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1100 start ************')
@@ -521,12 +521,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1200
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1200
-     * @tc.name progressIndicator_None
-     * @tc.desc Test pasteBoard progress progressIndicator None
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress progressIndicator None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1200 start ************')
@@ -564,12 +564,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1300
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1300
-     * @tc.name progressIndicator_Default
-     * @tc.desc Test pasteBoard progress progressIndicator default
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress progressIndicator default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1300 start ************')
@@ -607,12 +607,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1400
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1400
-     * @tc.name progressListener_UNDEFINED
-     * @tc.desc Test pasteBoard progress progressIndicator INVALID
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress progressIndicator INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1400 start ************')
@@ -650,12 +650,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1500
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1500
-     * @tc.name With_progressListener
-     * @tc.desc Test pasteBoard progress with progressListener
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress with progressListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1500 start ************')
@@ -697,12 +697,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1600
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1600
-     * @tc.name progressSignal_UNIFIED
-     * @tc.desc Test pasteBoard progress progressSignal UNDEFINED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard progress progressSignal UNDEFINED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1600 start ************')
@@ -740,14 +740,14 @@ export default function PasteboardProgressTest() {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1600 end ************')
     })
 
-    /**
-     * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1700
-     * @tc.name progressSignal_UNIFIED
-     * @tc.desc Test pasteBoard progress progressSignal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1700
+      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1700
+      * @tc.desc   Test pasteBoard progress progressSignal
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_Pasteboard_Local_SDK_ProgressTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1700 start ************')
       const fileNames = ['test17_1.txt', 'test17_2.txt', 'test17_3.txt', 'test17_4.txt'];
@@ -816,12 +816,12 @@ export default function PasteboardProgressTest() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_ProgressTest_1800
      * @tc.number SUB_Pasteboard_Local_SDK_ProgressTest_1800
-     * @tc.name filesize_less_than_1K
-     * @tc.desc Test pasteBoard file size less than 1K
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard file size less than 1K
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_ProgressTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_ProgressTest_1800 start ************')

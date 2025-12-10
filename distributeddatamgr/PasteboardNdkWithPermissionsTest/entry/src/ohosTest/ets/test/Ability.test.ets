@@ -85,15 +85,15 @@ export default function pasteboardTestNdkPermissionTest() {
 
     })
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithOH_Pasteboard_GetDataWithProgress001Progress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress001
+     * @tc.number OH_Pasteboard_GetDataWithProgress001
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -110,15 +110,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
     
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress002
+     * @tc.number OH_Pasteboard_GetDataWithProgress002
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -137,15 +137,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 0
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress003
+     * @tc.number OH_Pasteboard_GetDataWithProgress003
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('OH_Pasteboard_GetDataWithProgress003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data = testndk.OH_Pasteboard_GetDataWithProgress003();
       console.info(TAG + "OH_Pasteboard_GetDataWithProgress003 data = " + data );
@@ -153,15 +153,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress004
+     * @tc.number OH_Pasteboard_GetDataWithProgress004
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/文件";
@@ -177,15 +177,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress005
+     * @tc.number OH_Pasteboard_GetDataWithProgress005
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps1122";
@@ -202,15 +202,15 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
     
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress006
+     * @tc.number OH_Pasteboard_GetDataWithProgress006
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps_day";
@@ -226,15 +226,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress007
+     * @tc.number OH_Pasteboard_GetDataWithProgress007
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps.day";
@@ -250,15 +250,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress008
+     * @tc.number OH_Pasteboard_GetDataWithProgress008
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps*day";
@@ -275,15 +275,15 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress012
+     * @tc.number OH_Pasteboard_GetDataWithProgress012
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -298,15 +298,15 @@ export default function pasteboardTestNdkPermissionTest() {
       expect(data).assertEqual(0);
       done();
     });
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress013
+     * @tc.number OH_Pasteboard_GetDataWithProgress013
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -322,15 +322,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress014
+     * @tc.number OH_Pasteboard_GetDataWithProgress014
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -346,15 +346,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress015
+     * @tc.number OH_Pasteboard_GetDataWithProgress015
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -370,15 +370,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-        /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress016
+     * @tc.number OH_Pasteboard_GetDataWithProgress016
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -394,15 +394,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress017
+     * @tc.number OH_Pasteboard_GetDataWithProgress017
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -418,15 +418,15 @@ export default function pasteboardTestNdkPermissionTest() {
       expect(data).assertEqual(0);
       done();
     });
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress018
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress018
+     * @tc.number OH_Pasteboard_GetDataWithProgress018
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -442,15 +442,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress018
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress019
+     * @tc.number OH_Pasteboard_GetDataWithProgress019
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -466,15 +466,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress018
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress020
+     * @tc.number OH_Pasteboard_GetDataWithProgress020
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -490,15 +490,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress018
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress021
+     * @tc.number OH_Pasteboard_GetDataWithProgress021
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -514,15 +514,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress018
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress011
+     * @tc.number OH_Pasteboard_GetDataWithProgress011
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222";
@@ -538,15 +538,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress018
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress010
+     * @tc.number OH_Pasteboard_GetDataWithProgress010
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/le.txt';
       let dirPath = BASE_PATH+"/haps22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222";
@@ -562,15 +562,15 @@ export default function pasteboardTestNdkPermissionTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetDataWithProgress017
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetDataWithProgress009
+     * @tc.number OH_Pasteboard_GetDataWithProgress009
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetDataWithProgress009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
@@ -587,15 +587,15 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_GetChangeCount_NdkApiTest_0100
-     * @tc.name OH_Pasteboard_GetChangeCount0100
-     * @tc.desc changeCount should not change after clear pasteboard
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetChangeCount0100
+     * @tc.number OH_Pasteboard_GetChangeCount0100
+     * @tc.desc   OH_Pasteboard_GetChangeCount0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetChangeCount0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Pasteboard_GetChangeCount0100();
       console.info(TAG + "OH_Pasteboard_GetChangeCount0100 res=" + res );
@@ -604,15 +604,15 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_GetChangeCount_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetChangeCount0200
-     * @tc.desc changeCount should add 1 after setData
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
     
+    /**
+     * @tc.name   OH_Pasteboard_GetChangeCount0200
+     * @tc.number OH_Pasteboard_GetChangeCount0200
+     * @tc.desc   OH_Pasteboard_GetChangeCount0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetChangeCount0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Pasteboard_GetChangeCount0200();
       console.info(TAG + "OH_Pasteboard_GetChangeCount0200 res=" + res );
@@ -621,15 +621,15 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_GetChangeCount_NdkApiTest_0300
-     * @tc.name OH_Pasteboard_GetChangeCount0300
-     * @tc.desc changeCount should add 2 after setData twice
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @tc.name   OH_Pasteboard_GetChangeCount0300
+     * @tc.number OH_Pasteboard_GetChangeCount0300
+     * @tc.desc   OH_Pasteboard_GetChangeCount0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetChangeCount0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Pasteboard_GetChangeCount0300();
       console.info(TAG + "OH_Pasteboard_GetChangeCount0300 res=" + res );

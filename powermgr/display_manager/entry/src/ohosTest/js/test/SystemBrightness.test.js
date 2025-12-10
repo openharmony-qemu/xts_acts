@@ -38,12 +38,12 @@ export default function SystemBrightnessTest() {
     })
 
     /**
+     * @tc.name   SystemBrightnessTest_0100
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0010
-     * @tc.name testSystemBrightnessTest_0100
-     * @tc.desc Get brightness success
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SystemBrightnessTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let TAG = 'SystemBrightnessTest_0100';
@@ -67,12 +67,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0200
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0020
-     * @tc.name testSystemBrightnessTest_0200
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_0200';
@@ -93,12 +93,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0300
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0030
-     * @tc.name testSystemBrightnessTest_0300
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_0300';
@@ -113,12 +113,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0400
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0040
-     * @tc.name testSystemBrightnessTest_0400
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_0400';
@@ -136,12 +136,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0500
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0050
-     * @tc.name testSystemBrightnessTest_0500
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_0500';
@@ -160,12 +160,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0600
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0060
-     * @tc.name testSystemBrightnessTest_0600
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let TAG = 'SystemBrightnessTest_0600';
@@ -179,12 +179,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0700
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0070
-     * @tc.name testSystemBrightnessTest_0700
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let TAG = 'SystemBrightnessTest_0700';
@@ -197,12 +197,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0800
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0080
-     * @tc.name testSystemBrightnessTest_0800
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_0800';
@@ -232,12 +232,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_0900
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0090
-     * @tc.name testSystemBrightnessTest_0900
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_0900';
@@ -264,12 +264,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1000
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0100
-     * @tc.name testSystemBrightnessTest_1000
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1000';
@@ -289,12 +289,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1100
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0110
-     * @tc.name testSystemBrightnessTest_1100
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1100';
@@ -319,12 +319,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1200
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0120
-     * @tc.name testSystemBrightnessTest_1200
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1200';
@@ -344,12 +344,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1300
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0130
-     * @tc.name testSystemBrightnessTest_1300
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let TAG = 'SystemBrightnessTest_1300';
@@ -364,12 +364,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1310
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0131
-     * @tc.name testSystemBrightnessTest_1310
-     * @tc.desc Set brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Set brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1310';
@@ -385,12 +385,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1400
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0140
-     * @tc.name testSystemBrightnessTest_1400
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1400';
@@ -414,12 +414,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1500
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0150
-     * @tc.name testSystemBrightnessTest_1500
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1500';
@@ -440,12 +440,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1600
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0160
-     * @tc.name testSystemBrightnessTest_1600
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1600';
@@ -460,12 +460,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1700
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0170
-     * @tc.name testSystemBrightnessTest_1700
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1700';
@@ -484,12 +484,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1800
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0180
-     * @tc.name testSystemBrightnessTest_1800
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let TAG = 'SystemBrightnessTest_1800';
@@ -503,12 +503,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1900
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_1900
-     * @tc.name testSystemBrightnessTest_1900
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1900';
@@ -526,12 +526,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_1910
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0191
-     * @tc.name testSystemBrightnessTest_1910
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_1910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_1910';
@@ -547,12 +547,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2000
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0200
-     * @tc.name testSystemBrightnessTest_2000
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2000';
@@ -581,12 +581,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2100
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0210
-     * @tc.name testSystemBrightnessTest_2100
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2100';
@@ -612,12 +612,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2200
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0220
-     * @tc.name testSystemBrightnessTest_2200
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let TAG = 'SystemBrightnessTest_2200';
@@ -636,12 +636,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2300
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0230
-     * @tc.name testSystemBrightnessTest_2300
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2300';
@@ -665,12 +665,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2400
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0240
-     * @tc.name testSystemBrightnessTest_2400
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2400';
@@ -690,12 +690,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2410
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0241
-     * @tc.name testSystemBrightnessTest_2410
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2410';
@@ -711,12 +711,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2500
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0250
-     * @tc.name testSystemBrightnessTest_2500
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2500';
@@ -739,12 +739,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2600
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0260
-     * @tc.name testSystemBrightnessTest_2600
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2600';
@@ -764,12 +764,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2700
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0270
-     * @tc.name testSystemBrightnessTest_2700
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2700';
@@ -789,12 +789,12 @@ export default function SystemBrightnessTest() {
     });
 
     /**
+     * @tc.name   SystemBrightnessTest_2710
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0271
-     * @tc.name testSystemBrightnessTest_2710
-     * @tc.desc Get brightness success
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SystemBrightnessTest_2710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'SystemBrightnessTest_2710';

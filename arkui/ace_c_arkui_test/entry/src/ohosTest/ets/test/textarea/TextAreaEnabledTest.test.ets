@@ -26,14 +26,14 @@ export default function textAreaEnabledTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ENABLED_0100
-    * @tc.name       : testTextAreaEnabled001
-    * @tc.desc       : testing enabled event callback for textarea with normal value (1)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaEnabled001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENABLED_0100
+     * @tc.desc   testing enabled event callback for textarea with normal value (1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickEnabledTextarea')
       await Utils.sleep(1000)
@@ -50,14 +50,14 @@ export default function textAreaEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ENABLED_0200
-    * @tc.name       : testTextAreaEnabled002
-    * @tc.desc       : testing enabled event callback for textarea with normal value (0)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaEnabled002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENABLED_0200
+     * @tc.desc   testing enabled event callback for textarea with normal value (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickDisabledTextarea')
       await Utils.sleep(1000)
@@ -74,14 +74,14 @@ export default function textAreaEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ENABLED_0300
-    * @tc.name       : testTextAreaEnabled003
-    * @tc.desc       : testing enabled event callback for textarea with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testTextAreaEnabled003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENABLED_0300
+     * @tc.desc   testing enabled event callback for textarea with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaEnabled003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalTextarea')
       await Utils.sleep(1000)

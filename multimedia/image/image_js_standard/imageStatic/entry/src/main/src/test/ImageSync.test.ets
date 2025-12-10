@@ -66,7 +66,6 @@ export default function imageSync() {
       console.info('afterEach case');
     });
 
-
     const getFd = (fileName: string): int => {
       filePath = filesDir + "/" + fileName;
       console.info("image filePath:" + filePath);
@@ -179,7 +178,7 @@ export default function imageSync() {
         console.info(`${testNum} start image buffer length: ` + testimagebuffer.byteLength);
         let bufferSize = testimagebuffer.byteLength;
         let offset: int = 0;
-        const incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
+        const incSouce: image.ImageSource | undefined = image.createIncrementalSource(new ArrayBuffer(1));
         let ret: boolean;
         let isFinished: boolean = false;
         while (offset < testimagebuffer.byteLength) {
@@ -189,17 +188,24 @@ export default function imageSync() {
             isFinished = true;
           }
           try {
-            await incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
-            offset = offset + oneStep.byteLength as int;
-            console.info(`${testNum} offset: ` + offset);
-            ret = true;
+            if (incSouce == undefined) {
+              console.info(`${testNum} createIncrementalSource failed`);
+              ret = false;
+              expect(false).assertTrue();
+              done();
+            } else {
+              await incSouce!.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
+              offset = offset + oneStep.byteLength as int;
+              console.info(`${testNum} offset: ` + offset);
+              ret = true;
+            }
           } catch (error) {
             console.info(`${testNum} updateData failed`);
             expect(false).assertTrue();
             ret = false;
           }
         }
-        if (ret) {
+        if (ret && incSouce != undefined) {
           console.info(`${testNum} updateData success`);
           let decodingOptions: image.DecodingOptions = {
             sampleSize: 1
@@ -303,90 +309,72 @@ export default function imageSync() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0100
-      * @tc.desc    test all information with getImageInfoSync for jpg
-      *                 1.create jpg imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0100
+     * @tc.desc   test all information with getImageInfoSync for jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0100", "test.jpg", 1446, 1476, "image/jpeg", 0);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0200
-      * @tc.desc    test all information with getImageInfoSync for bmp
-      *                 1.create bmp imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0200
+     * @tc.desc   test all information with getImageInfoSync for bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0200", "test.bmp", 1399, 1042, "image/bmp", 0);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0300
-      * @tc.desc    test all information with getImageInfoSync for png
-      *                 1.create png imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0300
+     * @tc.desc   test all information with getImageInfoSync for png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0300", "test.png", 6016, 3384, "image/png", 0);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0400
-      * @tc.desc    test all information with getImageInfoSync for gif
-      *                 1.create gif imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0400
+     * @tc.desc   test all information with getImageInfoSync for gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0400", "test.gif", 6016, 3384, "image/gif", 0);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0500
-      * @tc.desc    test all information with getImageInfoSync for dng
-      *                 1.create dng imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0500
+     * @tc.desc   test all information with getImageInfoSync for dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0500", "test.dng", 5976, 3992, "image/x-adobe-dng", 0);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0600
-      * @tc.desc    test all information with getImageInfoSync for webp
-      *                 1.create webp imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0600
+     * @tc.desc   test all information with getImageInfoSync for webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0600", "test_large.webp", 1212, 681,
@@ -394,15 +382,12 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0700
-      * @tc.desc    test all information with getImageInfoSync for svg
-      *                 1.create svg imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0700
+     * @tc.desc   test all information with getImageInfoSync for svg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0700", "test_large.svg", 2136, 1968,
@@ -410,45 +395,60 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0800
-      * @tc.desc    test all information with getImageInfoSync for ico
-      *                 1.create ico imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0800
+     * @tc.desc   test all information with getImageInfoSync for ico
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0800", "test.ico", 64, 64, "image/x-icon", 0);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0900
-      * @tc.desc    test getImageInfoSync for wrong suffix image
-      *                 1.create wrong suffix imagesource
-      *                 2.call getImageInfoSync(index:0)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0900
+     * @tc.desc   test getImageInfoSync for wrong suffix image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_STATIC_0900", "test.123", 6016, 3384, "image/bmp", 0);
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0300
-      * @tc.desc    test getImageInfoSync with index1 for gif
-      *                 1.create gif imagesource
-      *                 2.call getImageInfoSync(index:1)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0100
+     * @tc.desc   test getImageInfoSync with index1 for one frame gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        await getImageInfoInvaildIndex(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0100", "test.gif", 1);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0200
+     * @tc.desc   test getImageInfoSync with index-1 for one frame gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        await getImageInfoInvaildIndex(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0200", "test.gif", -1);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0300
+     * @tc.desc   test getImageInfoSync with index1 for gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0300", "moving_test.gif", 198, 202,
@@ -456,15 +456,24 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0500
-      * @tc.desc    test getImageInfoSync with index1 for webp
-      *                 1.create jpg imagesource
-      *                 2.call getImageInfoSync(index:1)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0400
+     * @tc.desc   test getImageInfoSync with index1 for one frame webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        await getImageInfoInvaildIndex(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0400", "test_large.webp", 1);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0500
+     * @tc.desc   test getImageInfoSync with index1 for webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0500", "moving_test.webp", 658, 494,
@@ -472,15 +481,12 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0600
-      * @tc.desc    test getImageInfoSync with index null for jpg
-      *                 1.create jpg imagesource
-      *                 2.call getImageInfoSync(index:null)
-      *                 3.return imageinfo
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0600
+     * @tc.desc   test getImageInfoSync with index null for jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetImageInfo(done, "SUB_MULTIMEDIA_IMAGE_GETIMAGEINFOSYNC_INDEX_STATIC_0600", "test.jpg", 1446, 1476,
@@ -489,46 +495,36 @@ export default function imageSync() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0100
-      * @tc.desc    test createPixelMapSync with buffer data png
-      *                 1.create png incremental source
-      *                 2.update data
-      *                 3.create pixelmap sync
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0100
+     * @tc.desc   test createPixelMapSync with buffer data png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testCreateIncrementalSourcePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0100", "test.png");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0200
-      * @tc.desc    test createPixelMapSync with buffer data jpg
-      *                 1.create jpg incremental source
-      *                 2.update data
-      *                 3.create pixelmap sync
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0200
+     * @tc.desc   test createPixelMapSync with buffer data jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testCreateIncrementalSourcePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0200", "test.jpg");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0300
-      * @tc.desc    test createPixelMapSync with decodingOption index0
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-index0
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0300
+     * @tc.desc   test createPixelMapSync with decodingOption index0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998)
@@ -551,16 +547,40 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0500
-      * @tc.desc    test createPixelMapSync with decodingOption sampleSize
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-sampleSize
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0400
+     * @tc.desc   test createPixelMapSync with decodingOption index-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let decodingOptions: image.DecodingOptions = {
+            index: -1,
+            sampleSize: 1,
+            rotate: 10,
+            editable: true,
+            desiredSize: {
+                width: 1, height: 2
+            },
+            desiredRegion: {
+                size: {
+                    height: 1, width: 2
+                }, x: 0, y: 0
+            },
+            desiredPixelFormat: image.PixelMapFormat.RGB_565,
+            fitDensity: 240
+        };
+        createPixelMapInvaildOpt(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0400", "test.jpg", decodingOptions);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0500
+     * @tc.desc   test createPixelMapSync with decodingOption sampleSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3);
@@ -582,16 +602,12 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0600
-      * @tc.desc    test createPixelMapSync with decodingOption rotate
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-rotate
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0600
+     * @tc.desc   test createPixelMapSync with decodingOption rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3);
@@ -613,16 +629,12 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0700
-      * @tc.desc    test createPixelMapSync with decodingOption editable
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-editable
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0700
+     * @tc.desc   test createPixelMapSync with decodingOption editable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB);
@@ -644,16 +656,12 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800
-      * @tc.desc    test createPixelMapSync with decodingOption desiredSize
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-desiredSize
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800
+     * @tc.desc   test createPixelMapSync with decodingOption desiredSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB);
@@ -674,16 +682,12 @@ export default function imageSync() {
         testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0800", "test.jpg", decodingOptions);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900
-      * @tc.desc    test createPixelMapSync with decodingOption desiredRegion
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-desiredRegion
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900
+     * @tc.desc   test createPixelMapSync with decodingOption desiredRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let primaries: colorSpaceManager.ColorSpacePrimaries = {
@@ -714,16 +718,12 @@ export default function imageSync() {
         testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_0900", "test.jpg", decodingOptions);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000
-      * @tc.desc    test createPixelMapSync with decodingOption desiredPixelFormat
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-desiredPixelFormat
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000
+     * @tc.desc   test createPixelMapSync with decodingOption desiredPixelFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998_LIMIT);
@@ -744,16 +744,12 @@ export default function imageSync() {
         testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1000", "test.jpg", decodingOptions);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100
-      * @tc.desc    test createPixelMapSync with decodingOption fitDensity
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-fitDensity
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100
+     * @tc.desc   test createPixelMapSync with decodingOption fitDensity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_SRGB);
@@ -774,16 +770,12 @@ export default function imageSync() {
         testCreatePixelMap(done, "SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1100", "test.jpg", decodingOptions);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200
-      * @tc.desc    test createPixelMapSync with decodingOption desiredColorSpace
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-desiredColorSpace
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200
+     * @tc.desc   test createPixelMapSync with decodingOption desiredColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         let csm = colorSpaceManager.create(colorSpaceManager.ColorSpace.LINEAR_SRGB);
@@ -799,16 +791,12 @@ export default function imageSync() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1300
-      * @tc.desc    test createPixelMapSync with decodingOption null
-      *                 1.create imagesource
-      *                 2.set DecodeOptions-null
-      *                 3.create PixelMap
-      *                 4.return PixelMap
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1300
+     * @tc.desc   test createPixelMapSync with decodingOption null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAPSYNC_STATIC_1300");

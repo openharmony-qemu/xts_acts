@@ -25,12 +25,12 @@ export default function SysInfoNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SYSINFO_GET_PHYS_PAGES_0100
-     * @tc.name       : testMuslSysInfoGetPhysPages001
-     * @tc.desc       : test get_phys_pages
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSysInfoGetPhysPages001
+     * @tc.number SUB_THIRDPARTY_MUSL_SYSINFO_GET_PHYS_PAGES_0100
+     * @tc.desc   test get_phys_pages
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSysInfoGetPhysPages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -40,12 +40,12 @@ export default function SysInfoNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SYSINFO_GET_NPROCS_CONF_0100
-     * @tc.name       : testMuslSysInfoGetNprocsConf001
-     * @tc.desc       : test get_nprocs_conf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSysInfoGetNprocsConf001
+     * @tc.number SUB_THIRDPARTY_MUSL_SYSINFO_GET_NPROCS_CONF_0100
+     * @tc.desc   test get_nprocs_conf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSysInfoGetNprocsConf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -55,12 +55,12 @@ export default function SysInfoNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SYSINFO_GET_NPROCS_0100
-     * @tc.name       : testMuslSysInfoGetNprocs001
-     * @tc.desc       : test get_nprocs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSysInfoGetNprocs001
+     * @tc.number SUB_THIRDPARTY_MUSL_SYSINFO_GET_NPROCS_0100
+     * @tc.desc   test get_nprocs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSysInfoGetNprocs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -70,12 +70,12 @@ export default function SysInfoNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SYSINFO_GET_AVPHYS_PAGES_0100
-     * @tc.name       : testMuslSysInfoGetAvphysPages001
-     * @tc.desc       : test get_avphys_pages
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSysInfoGetAvphysPages001
+     * @tc.number SUB_THIRDPARTY_MUSL_SYSINFO_GET_AVPHYS_PAGES_0100
+     * @tc.desc   test get_avphys_pages
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSysInfoGetAvphysPages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;

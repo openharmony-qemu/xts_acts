@@ -117,13 +117,13 @@ export default function UsbApiBulkTransferTest() {
         console.info(TAG, 'beforeEach: *************Usb Unit Test CaseEx*************');
     })
 
-     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
-     * @tc.name     : testUsbSubmitTransfer001
-     * @tc.desc     : bulk transfer write successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+    /**
+     * @tc.name   testUsbSubmitTransfer001
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
+     * @tc.desc   bulk transfer write successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSubmitTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         console.info(TAG, 'bulk testUsbSubmitTransfer001 enter');
@@ -157,12 +157,12 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_Func_0200
-     * @tc.name     : testUsbSubmitTransfer002
-     * @tc.desc     : bulk transfer read successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer002
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0200
+     * @tc.desc   bulk transfer read successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSubmitTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         console.info(TAG, 'bulk testUsbSubmitTransfer002 enter');
@@ -195,12 +195,12 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
-     * @tc.name     : testUsbSubmitTransfer003
-     * @tc.desc     : bulk transfer error endpoint. IO error.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer003
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
+     * @tc.desc   bulk transfer error endpoint. IO error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.info(TAG, 'bulk testUsbSubmitTransfer003 enter');
@@ -229,12 +229,12 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_usbSubmitTransfer_Func_0300
-     * @tc.name     : testUsbSubmitTransfer004
-     * @tc.desc     : bulk transfer claimInterface no call. connectDevice no call.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbSubmitTransfer004
+     * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0300
+     * @tc.desc   bulk transfer claimInterface no call. connectDevice no call.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbSubmitTransfer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.info(TAG, 'bulk testUsbSubmitTransfer004 enter');
@@ -264,12 +264,12 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_UsbCancelTransfer_Func_0100
-     * @tc.name     : testUsbCancelTransfer001
-     * @tc.desc     : bulk transfer cancel successfully. 
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbCancelTransfer001
+     * @tc.number SUB_USB_Host_JS_UsbCancelTransfer_Func_0100
+     * @tc.desc   bulk transfer cancel successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbCancelTransfer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         console.info(TAG, 'bulk testUsbCancelTransfer001 enter');
@@ -298,12 +298,12 @@ export default function UsbApiBulkTransferTest() {
     });
 
     /**
-     * @tc.number   : SUB_USB_Host_JS_UsbCancelTransfer_ErrCode_0100
-     * @tc.name     : testUsbCancelTransfer002
-     * @tc.desc     : bulk transfer cancel failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   testUsbCancelTransfer002
+     * @tc.number SUB_USB_Host_JS_UsbCancelTransfer_ErrCode_0100
+     * @tc.desc   bulk transfer cancel failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbCancelTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.info(TAG, 'bulk testUsbCancelTransfer002 enter');

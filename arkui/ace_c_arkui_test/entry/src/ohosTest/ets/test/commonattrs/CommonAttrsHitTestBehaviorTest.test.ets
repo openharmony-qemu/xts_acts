@@ -27,13 +27,13 @@ export default function commonAttrsHitTestBehaviorTest() {
       await Utils.pushPage(`commonattrs/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_HITTESTBEHAVIOR_0100
-     * @tc.name       : testCommonAttrsHitTestBehavior001
-     * @tc.desc       : test commonattrs hitTestBehavior with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsHitTestBehavior001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_HITTESTBEHAVIOR_0100
+     * @tc.desc   test commonattrs hitTestBehavior with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsHitTestBehavior001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackDefault')

@@ -26,39 +26,39 @@ export default function textWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WIDTH_0100
-     * @tc.name       : testTextWidth001
-     * @tc.desc       : testing width for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWidth001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WIDTH_0100
+     * @tc.desc   testing width for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WIDTH_0200
-     * @tc.name       : testTextWidth002
-     * @tc.desc       : testing width for text with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextWidth002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WIDTH_0200
+     * @tc.desc   testing width for text with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WIDTH_0300
-     * @tc.name       : testTextWidth003
-     * @tc.desc       : testing width for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWidth003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WIDTH_0300
+     * @tc.desc   testing width for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWidth003()).assertEqual(0)

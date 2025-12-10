@@ -49,12 +49,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0100
-     * @tc.name      : testRegionIsPointContainedNormal
-     * @tc.desc      : testRegionIsPointContainedNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegionIsPointContainedNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0100
+     * @tc.desc   testRegionIsPointContainedNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionIsPointContainedNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionIsPointContainedNormal';
@@ -84,12 +84,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0101
-     * @tc.name      : testRegionIsPointContainedNull
-     * @tc.desc      : testRegionIsPointContainedNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionIsPointContainedNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0101
+     * @tc.desc   testRegionIsPointContainedNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsPointContainedNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsPointContainedNull';
@@ -132,12 +132,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0103
-     * @tc.name      : testRegionIsPointContainedMultipleCalls
-     * @tc.desc      : testRegionIsPointContainedMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionIsPointContainedMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0103
+     * @tc.desc   testRegionIsPointContainedMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsPointContainedMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsPointContainedMultipleCalls';
@@ -164,12 +164,12 @@ export default function drawingTsRegionTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0200
-     * @tc.name      : testRegionIsRegionContainedNormal
-     * @tc.desc      : testRegionIsRegionContainedNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegionIsRegionContainedNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0200
+     * @tc.desc   testRegionIsRegionContainedNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionIsRegionContainedNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionIsRegionContainedNormal';
@@ -203,12 +203,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0201
-     * @tc.name      : testRegionIsRegionContainedNull
-     * @tc.desc      : testRegionIsRegionContainedNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionIsRegionContainedNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0201
+     * @tc.desc   testRegionIsRegionContainedNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsRegionContainedNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsRegionContainedNull';
@@ -231,12 +231,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0203
-     * @tc.name      : testRegionIsRegionContainedMultipleCalls
-     * @tc.desc      : testRegionIsRegionContainedMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionIsRegionContainedMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0203
+     * @tc.desc   testRegionIsRegionContainedMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsRegionContainedMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsRegionContainedMultipleCalls';
@@ -257,12 +257,12 @@ export default function drawingTsRegionTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0300
-     * @tc.name      : testRegionQuickRejectNormal
-     * @tc.desc      : testRegionQuickRejectNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegionQuickRejectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0300
+     * @tc.desc   testRegionQuickRejectNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionQuickRejectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionQuickRejectNormal';
@@ -290,12 +290,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0301
-     * @tc.name      : testRegionQuickRejectNull
-     * @tc.desc      : testRegionQuickRejectNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionQuickRejectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0301
+     * @tc.desc   testRegionQuickRejectNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionQuickRejectNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionQuickRejectNull';
@@ -366,12 +366,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0303
-     * @tc.name      : testRegionQuickRejectMultipleCalls
-     * @tc.desc      : testRegionQuickRejectMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionQuickRejectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0303
+     * @tc.desc   testRegionQuickRejectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionQuickRejectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionQuickRejectMultipleCalls';
@@ -392,12 +392,12 @@ export default function drawingTsRegionTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0400
-     * @tc.name      : testRegionSetPathNormal
-     * @tc.desc      : testRegionSetPathNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegionSetPathNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0400
+     * @tc.desc   testRegionSetPathNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionSetPathNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionSetPathNormal';
@@ -417,12 +417,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0401
-     * @tc.name      : testRegionSetPathNull
-     * @tc.desc      : testRegionSetPathNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionSetPathNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0401
+     * @tc.desc   testRegionSetPathNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionSetPathNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionSetPathNull';
@@ -468,12 +468,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0403
-     * @tc.name      : testRegionSetPathMultipleCalls
-     * @tc.desc      : testRegionSetPathMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionSetPathMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0403
+     * @tc.desc   testRegionSetPathMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionSetPathMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionSetPathMultipleCalls';
@@ -498,12 +498,12 @@ export default function drawingTsRegionTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0500
-     * @tc.name      : testRegionSetRectNormal
-     * @tc.desc      : testRegionSetRectNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegionSetRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0500
+     * @tc.desc   testRegionSetRectNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionSetRectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionSetRectNormal';
@@ -537,12 +537,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0501
-     * @tc.name      : testRegionSetRectNull
-     * @tc.desc      : testRegionSetRectNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionSetRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0501
+     * @tc.desc   testRegionSetRectNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionSetRectNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionSetRectNull';
@@ -622,12 +622,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0503
-     * @tc.name      : testRegionSetRectMultipleCalls
-     * @tc.desc      : testRegionSetRectMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionSetRectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0503
+     * @tc.desc   testRegionSetRectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionSetRectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionSetRectMultipleCalls';
@@ -647,12 +647,12 @@ export default function drawingTsRegionTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0600
-     * @tc.name      : testRegionOpNormal
-     * @tc.desc      : testRegionOpNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegionOpNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0600
+     * @tc.desc   testRegionOpNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionOpNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionOpNormal';
@@ -738,12 +738,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0601
-     * @tc.name      : testRegionOpNull
-     * @tc.desc      : testRegionOpNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionOpNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0601
+     * @tc.desc   testRegionOpNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionOpNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionOpNull';
@@ -806,12 +806,12 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0603
-     * @tc.name      : testRegionOpMultipleCalls
-     * @tc.desc      : testRegionOpMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionOpMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0603
+     * @tc.desc   testRegionOpMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionOpMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionOpMultipleCalls';
@@ -834,12 +834,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0700
-     * @tc.name      : testRegionConstructor1Normal
-     * @tc.desc      : testRegionConstructor1Normal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionConstructor1Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0700
+     * @tc.desc   testRegionConstructor1Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionConstructor1Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionConstructor1Normal';
@@ -853,12 +853,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0701
-     * @tc.name      : testRegionConstructor1MultipleCalls
-     * @tc.desc      : testRegionConstructor1MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionConstructor1MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0701
+     * @tc.desc   testRegionConstructor1MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionConstructor1MultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionConstructor1MultipleCalls';
@@ -874,12 +874,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0800
-     * @tc.name      : testRegionConstructor2Normal
-     * @tc.desc      : testRegionConstructor2Normal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionConstructor2Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0800
+     * @tc.desc   testRegionConstructor2Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionConstructor2Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionConstructor2Normal';
@@ -949,12 +949,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0801
-     * @tc.name      : testRegionConstructor2MultipleCalls
-     * @tc.desc      : testRegionConstructor2MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionConstructor2MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0801
+     * @tc.desc   testRegionConstructor2MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionConstructor2MultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionConstructor2MultipleCalls';
@@ -978,12 +978,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0802
-     * @tc.name      : testRegionConstructor2Null
-     * @tc.desc      : testRegionConstructor2Null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionConstructor2Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0802
+     * @tc.desc   testRegionConstructor2Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionConstructor2Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionConstructor2Null';
@@ -1005,12 +1005,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0900
-     * @tc.name      : testRegionConstructor3Normal
-     * @tc.desc      : testRegionConstructor3Normal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionConstructor3Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0900
+     * @tc.desc   testRegionConstructor3Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionConstructor3Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionConstructor3Normal';
@@ -1080,12 +1080,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0901
-     * @tc.name      : testRegionConstructor3MultipleCalls
-     * @tc.desc      : testRegionConstructor3MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionConstructor3MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0901
+     * @tc.desc   testRegionConstructor3MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionConstructor3MultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionConstructor3MultipleCalls';
@@ -1101,12 +1101,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0902
-     * @tc.name      : testRegionConstructor3Null
-     * @tc.desc      : testRegionConstructor3Null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionConstructor3Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_0902
+     * @tc.desc   testRegionConstructor3Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionConstructor3Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionConstructor3Null';
@@ -1176,12 +1176,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1000
-     * @tc.name      : testRegionIsEqualNormal
-     * @tc.desc      : testRegionIsEqualNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionIsEqualNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1000
+     * @tc.desc   testRegionIsEqualNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionIsEqualNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionIsEqualNormal';
@@ -1236,12 +1236,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1001
-     * @tc.name      : testRegionIsEqualMultipleCalls
-     * @tc.desc      : testRegionIsEqualMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionIsEqualMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1001
+     * @tc.desc   testRegionIsEqualMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsEqualMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsEqualMultipleCalls';
@@ -1261,12 +1261,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1002
-     * @tc.name      : testRegionIsEqualNull
-     * @tc.desc      : testRegionIsEqualNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionIsEqualNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1002
+     * @tc.desc   testRegionIsEqualNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsEqualNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsEqualNull';
@@ -1289,12 +1289,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1100
-     * @tc.name      : testRegionIsComplexNormal
-     * @tc.desc      : testRegionIsComplexNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionIsComplexNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1100
+     * @tc.desc   testRegionIsComplexNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionIsComplexNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionIsComplexNormal';
@@ -1348,12 +1348,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1101
-     * @tc.name      : testRegionIsComplexMultipleCalls
-     * @tc.desc      : testRegionIsComplexMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionIsComplexMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1101
+     * @tc.desc   testRegionIsComplexMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsComplexMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsComplexMultipleCalls';
@@ -1370,12 +1370,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1200
-     * @tc.name      : testRegionIsEmptyNormal
-     * @tc.desc      : testRegionIsEmptyNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionIsEmptyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1200
+     * @tc.desc   testRegionIsEmptyNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionIsEmptyNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionIsEmptyNormal';
@@ -1471,12 +1471,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1201
-     * @tc.name      : testRegionIsEmptyMultipleCalls
-     * @tc.desc      : testRegionIsEmptyMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionIsEmptyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1201
+     * @tc.desc   testRegionIsEmptyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionIsEmptyMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionIsEmptyMultipleCalls';
@@ -1493,12 +1493,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1300
-     * @tc.name      : testRegionGetBoundsNormal
-     * @tc.desc      : testRegionGetBoundsNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionGetBoundsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1300
+     * @tc.desc   testRegionGetBoundsNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionGetBoundsNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionGetBoundsNormal';
@@ -1617,12 +1617,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1301
-     * @tc.name      : testRegionGetBoundsMultipleCalls
-     * @tc.desc      : testRegionGetBoundsMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionGetBoundsMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1301
+     * @tc.desc   testRegionGetBoundsMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionGetBoundsMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionGetBoundsMultipleCalls';
@@ -1641,12 +1641,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1400
-     * @tc.name      : testRegionGetBoundaryPathNormal
-     * @tc.desc      : testRegionGetBoundaryPathNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionGetBoundaryPathNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1400
+     * @tc.desc   testRegionGetBoundaryPathNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionGetBoundaryPathNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionGetBoundaryPathNormal';
@@ -1754,12 +1754,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1401
-     * @tc.name      : testRegionGetBoundaryPathMultipleCalls
-     * @tc.desc      : testRegionGetBoundaryPathMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionGetBoundaryPathMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1401
+     * @tc.desc   testRegionGetBoundaryPathMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionGetBoundaryPathMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionGetBoundaryPathMultipleCalls';
@@ -1777,12 +1777,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1500
-     * @tc.name      : testRegionOffsetNormal
-     * @tc.desc      : testRegionOffsetNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionOffsetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1500
+     * @tc.desc   testRegionOffsetNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionOffsetNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionOffsetNormal';
@@ -1837,12 +1837,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1501
-     * @tc.name      : testRegionOffsetMultipleCalls
-     * @tc.desc      : testRegionOffsetMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionOffsetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1501
+     * @tc.desc   testRegionOffsetMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionOffsetMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionOffsetMultipleCalls';
@@ -1859,12 +1859,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1502
-     * @tc.name      : testRegionOffsetNull
-     * @tc.desc      : testRegionOffsetNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionOffsetNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1502
+     * @tc.desc   testRegionOffsetNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionOffsetNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionOffsetNull';
@@ -1904,12 +1904,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1600
-     * @tc.name      : testRegionQuickRejectRegionNormal
-     * @tc.desc      : testRegionQuickRejectRegionNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionQuickRejectRegionNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1600
+     * @tc.desc   testRegionQuickRejectRegionNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionQuickRejectRegionNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionQuickRejectRegionNormal';
@@ -2016,12 +2016,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1601
-     * @tc.name      : testRegionQuickRejectRegionMultipleCalls
-     * @tc.desc      : testRegionQuickRejectRegionMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionQuickRejectRegionMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1601
+     * @tc.desc   testRegionQuickRejectRegionMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionQuickRejectRegionMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionQuickRejectRegionMultipleCalls';
@@ -2040,12 +2040,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1602
-     * @tc.name      : testRegionQuickRejectRegionNull
-     * @tc.desc      : testRegionQuickRejectRegionNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionQuickRejectRegionNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1602
+     * @tc.desc   testRegionQuickRejectRegionNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionQuickRejectRegionNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionQuickRejectRegionNull';
@@ -2068,12 +2068,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1700
-     * @tc.name      : testRegionSetEmptyNormal
-     * @tc.desc      : testRegionSetEmptyNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionSetEmptyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1700
+     * @tc.desc   testRegionSetEmptyNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionSetEmptyNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionSetEmptyNormal';
@@ -2099,12 +2099,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1701
-     * @tc.name      : testRegionSetEmptyMultipleCalls
-     * @tc.desc      : testRegionSetEmptyMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionSetEmptyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1701
+     * @tc.desc   testRegionSetEmptyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionSetEmptyMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionSetEmptyMultipleCalls';
@@ -2122,12 +2122,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1800
-     * @tc.name      : testRegionSetRegionNormal
-     * @tc.desc      : testRegionSetRegionNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRegionSetRegionNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1800
+     * @tc.desc   testRegionSetRegionNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegionSetRegionNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRegionSetRegionNormal';
@@ -2222,12 +2222,12 @@ export default function drawingTsRegionTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1801
-     * @tc.name      : testRegionSetRegionMultipleCalls
-     * @tc.desc      : testRegionSetRegionMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRegionSetRegionMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1801
+     * @tc.desc   testRegionSetRegionMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionSetRegionMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionSetRegionMultipleCalls';
@@ -2245,12 +2245,12 @@ export default function drawingTsRegionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1802
-     * @tc.name      : testRegionSetRegionNull
-     * @tc.desc      : testRegionSetRegionNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRegionSetRegionNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_1802
+     * @tc.desc   testRegionSetRegionNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRegionSetRegionNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRegionSetRegionNull';

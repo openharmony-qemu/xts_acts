@@ -62,12 +62,12 @@ export default function relationalStoreInsertTest() {
         console.info(TAG + "*************Unit Test Begin*************");
 
         /**
-         * @tc.name testRdbStoreInsert0001
+         * @tc.name   testRdbStoreInsert0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0100
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreInsert0001 start *************");
@@ -131,12 +131,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStoreInsert0002
+         * @tc.name   testRdbStoreInsert0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0200
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreInsert0002 start *************");
@@ -162,12 +162,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStoreInsert0003
+         * @tc.name   testRdbStoreInsert0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0300
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreInsert0003 start *************");
@@ -199,12 +199,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStoreInsert0004
+         * @tc.name   testRdbStoreInsert0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0400
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreInsert0004 start *************");
@@ -228,12 +228,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0001
+         * @tc.name   testRdbStorebatchInsertPromise0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0500
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0001 start *************");
@@ -297,12 +297,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0002
+         * @tc.name   testRdbStorebatchInsertPromise0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0600
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await rdbStore.executeSql(CREATE_TABLE_NAME + "2" + CREATE_TABLE)
@@ -365,12 +365,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0003
+         * @tc.name   testRdbStorebatchInsertPromise0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0700
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0003 start *************");
@@ -475,12 +475,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0004
+         * @tc.name   testRdbStorebatchInsertPromise0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0800
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0004 start *************");
@@ -531,12 +531,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0005
+         * @tc.name   testRdbStorebatchInsertPromise0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_0900
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0005 start *************");
@@ -594,12 +594,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0006
+         * @tc.name   testRdbStorebatchInsertPromise0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1000
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0006 start *************");
@@ -637,12 +637,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0007
+         * @tc.name   testRdbStorebatchInsertPromise0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1100
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0007 start *************");
@@ -661,12 +661,12 @@ export default function relationalStoreInsertTest() {
 
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0001
+         * @tc.name   testRdbStorebatchInsertCallback0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1200
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0001 start *************");
@@ -753,12 +753,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0002
+         * @tc.name   testRdbStorebatchInsertCallback0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1300
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0002 start *************");
@@ -826,12 +826,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0003
+         * @tc.name   testRdbStorebatchInsertCallback0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1400
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0003 start *************");
@@ -935,12 +935,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0004
+         * @tc.name   testRdbStorebatchInsertCallback0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1500
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0004 start *************");
@@ -991,12 +991,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0005
+         * @tc.name   testRdbStorebatchInsertCallback0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1600
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0005 start *************");
@@ -1058,12 +1058,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0006
+         * @tc.name   testRdbStorebatchInsertCallback0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1700
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0006 start *************");
@@ -1110,12 +1110,12 @@ export default function relationalStoreInsertTest() {
 
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0007
+         * @tc.name   testRdbStorebatchInsertCallback0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1800
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0007 start *************");
@@ -1142,12 +1142,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name InsertWithConflictResolution0001
+         * @tc.name   InsertWithConflictResolution0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_1900
-         * @tc.desc rdb insertWithConflictResolution test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insertWithConflictResolution test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('InsertWithConflictResolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + " ************* InsertWithConflictResolution0001 start *************");
@@ -1192,12 +1192,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name InsertWithConflictResolution0002
+         * @tc.name   InsertWithConflictResolution0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2000
-         * @tc.desc rdb insertWithConflictResolution test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insertWithConflictResolution test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('InsertWithConflictResolution0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + " ************* InsertWithConflictResolution0002 start *************");
@@ -1242,12 +1242,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name InsertWithConflictResolution0003
+         * @tc.name   InsertWithConflictResolution0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2100
-         * @tc.desc rdb insertWithConflictResolution test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insertWithConflictResolution test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('InsertWithConflictResolution0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + " ************* InsertWithConflictResolution0003 start *************");
@@ -1294,12 +1294,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name InsertWithConflictResolution0004
+         * @tc.name   InsertWithConflictResolution0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2200
-         * @tc.desc rdb insertWithConflictResolution test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insertWithConflictResolution test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('InsertWithConflictResolution0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + " ************* InsertWithConflictResolution0004 start *************");
@@ -1366,12 +1366,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name InsertWithConflictResolution0005
+         * @tc.name   InsertWithConflictResolution0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2300
-         * @tc.desc rdb insertWithConflictResolution test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insertWithConflictResolution test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('InsertWithConflictResolution0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + " ************* InsertWithConflictResolution0005 start *************");
@@ -1398,12 +1398,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name InsertWithConflictResolution0006
+         * @tc.name   InsertWithConflictResolution0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2400
-         * @tc.desc rdb insertWithConflictResolution test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insertWithConflictResolution test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('InsertWithConflictResolution0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + " ************* InsertWithConflictResolution0006 start *************");
@@ -1449,12 +1449,12 @@ export default function relationalStoreInsertTest() {
 
 
         /**
-         * @tc.name InsertWithConflictResolution0007
+         * @tc.name   InsertWithConflictResolution0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2500
-         * @tc.desc rdb insertWithConflictResolution test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insertWithConflictResolution test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('InsertWithConflictResolution0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + " ************* InsertWithConflictResolution0007 start *************");
@@ -1496,12 +1496,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStoreInsert0005
+         * @tc.name   testRdbStoreInsert0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2600
-         * @tc.desc rdb insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             console.log(TAG + "************* testRdbStoreInsert0005 start *************");
@@ -1560,12 +1560,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStoreInsert0006
+         * @tc.name   testRdbStoreInsert0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2700
-         * @tc.desc rdb insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             console.log(TAG + "************* testRdbStoreInsert0006 start *************");
@@ -1592,12 +1592,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStorebatchInsertCallback0008
+         * @tc.name   testRdbStorebatchInsertCallback0008
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2800
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0008 start *************");
@@ -1639,12 +1639,12 @@ export default function relationalStoreInsertTest() {
         });
 
         /**
-         * @tc.name testRdbStorebatchInsertPromise0008
+         * @tc.name   testRdbStorebatchInsertPromise0008
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_2900
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertPromise0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0008 start *************");
@@ -1685,13 +1685,13 @@ export default function relationalStoreInsertTest() {
             console.info(TAG + "************* testRdbStorebatchInsertPromise0008 end *************");
         })
 		
-		/**
-         * @tc.name testRdbStorebatchInsertCallback0009
+        /**
+         * @tc.name   testRdbStorebatchInsertCallback0009
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_3000
-         * @tc.desc RelationalStore insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStorebatchInsertCallback0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + "************* testRdbStorebatchInsertCallback0009 start *************");
@@ -1733,12 +1733,12 @@ export default function relationalStoreInsertTest() {
         });
 
         /**
-         * @tc.name testRdbStoreInsert0007
+         * @tc.name   testRdbStoreInsert0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_3100
-         * @tc.desc rdb insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.log(TAG + "************* testRdbStoreInsert0007 start *************");
@@ -1771,12 +1771,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStoreInsert0008
+         * @tc.name   testRdbStoreInsert0008
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_3200
-         * @tc.desc rdb insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.log(TAG + "************* testRdbStoreInsert0008 start *************");
@@ -1804,12 +1804,12 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @tc.name testRdbStoreInsert0009
+         * @tc.name   testRdbStoreInsert0009
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertEtsAPITest_3300
-         * @tc.desc rdb insert test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rdb insert test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreInsert0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.log(TAG + "************* testRdbStoreInsert0009 start *************");

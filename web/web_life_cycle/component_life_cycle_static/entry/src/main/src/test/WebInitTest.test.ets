@@ -60,14 +60,14 @@ export default function webInitTest() {
       console.info('componentLifeCycleTestOne beforeEach start');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONCE_0100
-    * @tc.name        : testOnceStatic001
-    * @tc.desc        : test once webInit should be called
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnceStatic001
+     * @tc.number SUB_WEB_ONCE_0100
+     * @tc.desc   test once webInit should be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);
@@ -80,14 +80,14 @@ export default function webInitTest() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONCE_0200
-    * @tc.name        : testOnceStatic002
-    * @tc.desc        : test once webCreated should not be called
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnceStatic002
+     * @tc.number SUB_WEB_ONCE_0200
+     * @tc.desc   test once webCreated should not be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnceStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -100,6 +100,14 @@ export default function webInitTest() {
       done()
     })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10)

@@ -92,6 +92,9 @@ export default function MediaAssetManagerRequestImageTest() {
   describe('MediaAssetManagerRequestImageTest', () => {
     let dr = Driver.create();
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+    const fetchOptions = fetchAllOption();
+
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case');
       await getPermission();
@@ -109,16 +112,16 @@ export default function MediaAssetManagerRequestImageTest() {
 
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
+      AppStorage.delete('key');
     });
 
-
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_001
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_001
-     * @tc.desc      : requestImagePromiseTest RequestOptions deliveryMode max+1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_001
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_001
+     * @tc.desc   requestImagePromiseTest RequestOptions deliveryMode max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_001';
@@ -133,12 +136,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_002
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_002
-     * @tc.desc      : requestImagePromiseTest RequestOptions deliveryMode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_002
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_002
+     * @tc.desc   requestImagePromiseTest RequestOptions deliveryMode -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_002';
@@ -152,12 +155,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_003
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_003
-     * @tc.desc      : requestImagePromiseTest RequestOptions deliveryMode 1000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_003
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_003
+     * @tc.desc   requestImagePromiseTest RequestOptions deliveryMode 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_003';
@@ -171,12 +174,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_004
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_004
-     * @tc.desc      : requestImagePromiseTest RequestOptions compatibleMode -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_004
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_004
+     * @tc.desc   requestImagePromiseTest RequestOptions compatibleMode -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_004';
@@ -191,12 +194,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_005
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_005
-     * @tc.desc      : requestImagePromiseTest RequestOptions compatibleMode max+1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_005
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_005
+     * @tc.desc   requestImagePromiseTest RequestOptions compatibleMode max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_005';
@@ -212,12 +215,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_006
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_006
-     * @tc.desc      : requestImagePromiseTest RequestOptions compatibleMode undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_006
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_006
+     * @tc.desc   requestImagePromiseTest RequestOptions compatibleMode undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_006';
@@ -233,12 +236,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_007
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_007
-     * @tc.desc      : requestImagePromiseTest RequestOptions mediaAssetProgressHandler undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_007
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_007
+     * @tc.desc   requestImagePromiseTest RequestOptions mediaAssetProgressHandler undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_007';
@@ -256,12 +259,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_008
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_008
-     * @tc.desc      : requestImagePromiseTest RequestOptions mediaAssetProgressHandler all negative
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_008
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_008
+     * @tc.desc   requestImagePromiseTest RequestOptions mediaAssetProgressHandler all negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_008';
@@ -278,12 +281,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_009
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_009
-     * @tc.desc      : requestImagePromiseTest RequestOptions mediaAssetProgressHandler all max+1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_009
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_009
+     * @tc.desc   requestImagePromiseTest RequestOptions mediaAssetProgressHandler all max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_009';
@@ -303,12 +306,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_010
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_010
-     * @tc.desc      : requestImagePromiseTest fetchColumns is ['']
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_010
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_010
+     * @tc.desc   requestImagePromiseTest fetchColumns is ['']
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_010';
@@ -326,12 +329,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_011
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_011
-     * @tc.desc      : requestImagePromiseTest fetchColumns is ['text']
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_011
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_011
+     * @tc.desc   requestImagePromiseTest fetchColumns is ['text']
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_011';
@@ -350,12 +353,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_012
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_012
-     * @tc.desc      : requestImagePromiseTest predicates is error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_012
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_012
+     * @tc.desc   requestImagePromiseTest predicates is error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_REQUEST_ERROR_012';
@@ -374,12 +377,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_0013
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_0013
-     * @tc.desc      : requestImagePromiseTest RequestOptions asset null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_0013
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_0013
+     * @tc.desc   requestImagePromiseTest RequestOptions asset null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_0013', Level.LEVEL0, async (done: Function) => {
       const handler = new MediaHandler();
@@ -399,12 +402,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_ERROR_0014
-     * @tc.name      : MEDIA_ASSET_MANAGER_REQUEST_ERROR_0014
-     * @tc.desc      : requestImagePromiseTest RequestOptions asset undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_0014
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_0014
+     * @tc.desc   requestImagePromiseTest RequestOptions asset undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_0014', Level.LEVEL0, async (done: Function) => {
       const handler = new MediaHandler();
@@ -423,14 +426,253 @@ export default function MediaAssetManagerRequestImageTest() {
       }
       done();
     })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_015
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_015
+     * @tc.desc   requestImagePromiseTest RequestOptions requestOptions undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_015', Level.LEVEL0, async (done: Function) => {
+      const handler = new MediaHandler();
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_015";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, undefined, handler);
+        console.info(TAG, 'requestImage successfully', requestId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_016
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_016
+     * @tc.desc   requestImagePromiseTest RequestOptions requestOptions null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_016', Level.LEVEL0, async (done: Function) => {
+      const handler = new MediaHandler();
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_016";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, null, handler);
+        console.info(TAG, 'requestImage successfully', requestId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_017
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_017
+     * @tc.desc   requestImagePromiseTest RequestOptions requestOptions ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_017', Level.LEVEL0, async (done: Function) => {
+      const handler = new MediaHandler();
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_017";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      AppStorage.setOrCreate('key', '');
+      let requestOptions: photoAccessHelper.RequestOptions  = AppStorage.get('key') as ESObject;
+      try {
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler);
+        console.info(TAG, 'requestImage successfully', requestId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_001
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_001
-     * @tc.desc      : quickRequestImage input deliveryMode is 10000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_018
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_018
+     * @tc.desc   requestImagePromiseTest testContext undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_018', Level.LEVEL0, async (done: Function) => {
+      const handler = new MediaHandler();
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_018";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(undefined, photoAsset, requestOptions, handler);
+        console.info(TAG, 'requestImage successfully', requestId);
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_019
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_019
+     * @tc.desc   requestImagePromiseTest testContext null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_019', Level.LEVEL0, async (done: Function,requestOptions: photoAccessHelper.RequestOptions) => {
+      const handler = new MediaHandler();
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_019";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(null, photoAsset, requestOptions, handler);
+        console.info(TAG, 'requestImage successfully', requestId);
+
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_020
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_020
+     * @tc.desc   requestImagePromiseTest testContext ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_020', Level.LEVEL0, async (done: Function,requestOptions: photoAccessHelper.RequestOptions) => {
+      const handler = new MediaHandler();
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_020";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      AppStorage.setOrCreate('key', '');
+      let testContext: Context = AppStorage.get('key') as ESObject;
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler);
+        console.info(TAG, 'requestImage successfully', requestId);
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_021
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_021
+     * @tc.desc   requestImagePromiseTest handler ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_021', Level.LEVEL0, async (done: Function) => {
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_021";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      AppStorage.setOrCreate('key', '');
+      let handler: photoAccessHelper.MediaAssetDataHandler<image.ImageSource>= AppStorage.get('key') as ESObject;
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler);
+        console.info(TAG, 'requestImage successfully', requestId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_022
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_022
+     * @tc.desc   requestImagePromiseTest handler null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_022', Level.LEVEL0, async (done: Function) => {
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_022";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, null);
+        console.info(TAG, 'requestImage successfully', requestId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_023
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_ERROR_023
+     * @tc.desc   requestImagePromiseTest handler undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_REQUEST_ERROR_023', Level.LEVEL0, async (done: Function) => {
+      const testName ="MEDIA_ASSET_MANAGER_REQUEST_ERROR_023";
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, undefined);
+        console.info(TAG, 'requestImage successfully', requestId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+
+
+
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_001
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_001
+     * @tc.desc   quickRequestImage input deliveryMode is 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_001';
@@ -445,12 +687,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_002
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_002
-     * @tc.desc      : quickRequestImage input deliveryMode is -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_002
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_002
+     * @tc.desc   quickRequestImage input deliveryMode is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_002';
@@ -465,12 +707,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_003
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_003
-     * @tc.desc      : quickRequestImage input deliveryMode is 3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_003
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_003
+     * @tc.desc   quickRequestImage input deliveryMode is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_003';
@@ -486,12 +728,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_004
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_004
-     * @tc.desc      : quickRequestImage input fetchColumns is " "
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_004
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_004
+     * @tc.desc   quickRequestImage input fetchColumns is " "
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_004';
@@ -509,12 +751,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_005
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_005
-     * @tc.desc      : quickRequestImage input fetchColumns is ['text']
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_005
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_005
+     * @tc.desc   quickRequestImage input fetchColumns is ['text']
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'qMEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_005';
@@ -532,12 +774,12 @@ export default function MediaAssetManagerRequestImageTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_006
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_006
-     * @tc.desc      : quickRequestImage input predicates is error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_006
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_006
+     * @tc.desc   quickRequestImage input predicates is error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_006';
@@ -554,12 +796,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_007
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_007
-     * @tc.desc      : quickRequestImage input requestOptions is null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_007
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_007
+     * @tc.desc   quickRequestImage input requestOptions is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_007';
@@ -570,12 +812,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_008
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_008
-     * @tc.desc      : quickRequestImage input requestOptions is undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_008
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_008
+     * @tc.desc   quickRequestImage input requestOptions is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_008';
@@ -586,12 +828,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_009
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_009
-     * @tc.desc      : quickRequestImage input photoAsset is undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_009
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_009
+     * @tc.desc   quickRequestImage input photoAsset is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_009', Level.LEVEL0, async (done: Function) => {
       const handler = new QuickImageDataHandler();
@@ -610,12 +852,12 @@ export default function MediaAssetManagerRequestImageTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_0010
-     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_0010
-     * @tc.desc      : quickRequestImage input photoAsset is null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_0010
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_0010
+     * @tc.desc   quickRequestImage input photoAsset is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_0010', Level.LEVEL0, async (done: Function) => {
       const handler = new QuickImageDataHandler();
@@ -633,5 +875,244 @@ export default function MediaAssetManagerRequestImageTest() {
       }
       done();
     })
+
+
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_011
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_011
+     * @tc.desc   quickRequestImage input testContext is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_011', Level.LEVEL0, async (done: Function) => {
+      const handler = new QuickImageDataHandler();
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_011';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      AppStorage.setOrCreate('key', '');
+      let testContext: Context = AppStorage.get('key') as ESObject;
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, requestOptions, handler);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_012
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_012
+     * @tc.desc   quickRequestImage input testContext is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_012', Level.LEVEL0, async (done: Function) => {
+      const handler = new QuickImageDataHandler();
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_012';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(null, photoAsset, requestOptions, handler);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_013
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_013
+     * @tc.desc   quickRequestImage input testContext is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_013', Level.LEVEL0, async (done: Function) => {
+      const handler = new QuickImageDataHandler();
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_013';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(undefined, photoAsset, requestOptions, handler);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_014
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_014
+     * @tc.desc   quickRequestImage input requestOptions is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_014', Level.LEVEL0, async (done: Function) => {
+      const handler = new QuickImageDataHandler();
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_014';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, undefined, handler);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_015
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_015
+     * @tc.desc   quickRequestImage input requestOptions is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_015', Level.LEVEL0, async (done: Function) => {
+      const handler = new QuickImageDataHandler();
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_015';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, null, handler);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_016
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_016
+     * @tc.desc   quickRequestImage input requestOptions is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_016', Level.LEVEL0, async (done: Function) => {
+      const handler = new QuickImageDataHandler();
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_016';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      AppStorage.setOrCreate('key', '');
+      let requestOptions: photoAccessHelper.RequestOptions  = AppStorage.get('key') as ESObject;
+      try {
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, requestOptions, handler);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_017
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_017
+     * @tc.desc   quickRequestImage input handler is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_017', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_017';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      AppStorage.setOrCreate('key', '');
+      let handler: photoAccessHelper.QuickImageDataHandler<image.Picture> = AppStorage.get('key') as ESObject;
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, requestOptions, handler);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_018
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_018
+     * @tc.desc   quickRequestImage input handler is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_018';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, requestOptions, null);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.name   MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_019
+     * @tc.number MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_019
+     * @tc.desc   quickRequestImage input handler is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_QUICKREQUEST_ERROR_019';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let requestId = await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, requestOptions, undefined);
+        console.info(TAG, 'quickRequestImage successfully',requestId);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG  ,testName +`failed; error`+ err + err.code);
+        expect(err.code).assertEqual('401');
+      }
+      done();
+    })
+
+
   })
 }

@@ -26,78 +26,78 @@ export default function textAccessibilityLevelTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0100
-     * @tc.name       : testTextAccessibilityLevel001
-     * @tc.desc       : testing accessibilityLevel for Text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAccessibilityLevel001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0100
+     * @tc.desc   testing accessibilityLevel for Text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAccessibilityLevel001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAccessibilityLevel001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0200
-     * @tc.name       : testTextAccessibilityLevel002
-     * @tc.desc       : testing accessibilityLevel for Text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAccessibilityLevel002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0200
+     * @tc.desc   testing accessibilityLevel for Text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAccessibilityLevel002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAccessibilityLevel002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0300
-     * @tc.name       : testTextAccessibilityLevel003
-     * @tc.desc       : testing accessibilityLevel for Text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAccessibilityLevel003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0300
+     * @tc.desc   testing accessibilityLevel for Text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAccessibilityLevel003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAccessibilityLevel003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0400
-     * @tc.name       : testTextAccessibilityLevel004
-     * @tc.desc       : testing accessibilityLevel for Text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAccessibilityLevel004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0400
+     * @tc.desc   testing accessibilityLevel for Text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAccessibilityLevel004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAccessibilityLevel004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0500
-     * @tc.name       : testTextAccessibilityLevel005
-     * @tc.desc       : testing accessibilityLevel for Text with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextAccessibilityLevel005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0500
+     * @tc.desc   testing accessibilityLevel for Text with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAccessibilityLevel005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAccessibilityLevel005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0600
-     * @tc.name       : testTextAccessibilityLevel006
-     * @tc.desc       : testing accessibilityLevel for Text with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextAccessibilityLevel006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ACCESSIBILITYLEVEL_0600
+     * @tc.desc   testing accessibilityLevel for Text with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAccessibilityLevel006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAccessibilityLevel006()).assertEqual(0)

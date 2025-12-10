@@ -46,12 +46,12 @@ export default function bindTabsScroll() {
     });
 
     /**
-     * @tc.number    bindTabsScroll_001
-     * @tc.name      bindTabsScroll_0100
-     * @tc.desc      When sliding components, it will trigger the display and hide animations of TabBar.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   bindTabsScroll_0100
+     * @tc.number bindTabsScroll_001
+     * @tc.desc   When sliding components, it will trigger the display and hide animations of TabBar.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindTabsScroll_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[bindTabsScroll_0100] START');

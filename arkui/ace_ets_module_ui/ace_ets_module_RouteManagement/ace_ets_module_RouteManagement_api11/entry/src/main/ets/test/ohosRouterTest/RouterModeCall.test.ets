@@ -47,12 +47,12 @@ export default function RouterModeCall() {
     });
 
     /**
-     * @tc.number    RouterModeCall_0400
-     * @tc.name      RouterModeCall_0400
-     * @tc.desc      Test Router pushUrl callback 401
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   RouterModeCall_0400
+     * @tc.number RouterModeCall_0400
+     * @tc.desc   Test Router pushUrl callback 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterModeCall_0400', Level.LEVEL2, async (done: Function) => {
       console.info('RouterModeCall_0400 START');
@@ -74,12 +74,12 @@ export default function RouterModeCall() {
     });
 
     /**
-     * @tc.number    RouterModeCall_0500
-     * @tc.name      RouterModeCall_0500
-     * @tc.desc      Test Router pushUrl callback 100002
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   RouterModeCall_0500
+     * @tc.number RouterModeCall_0500
+     * @tc.desc   Test Router pushUrl callback 100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterModeCall_0500', Level.LEVEL2, async (done: Function) => {
       console.info('RouterModeCall_0500 START');
@@ -101,12 +101,12 @@ export default function RouterModeCall() {
     });
 
     /**
-     * @tc.number    RouterModeCall_0600
-     * @tc.name      RouterModeCall_0600
-     * @tc.desc      Test Router pushUrl 100003
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   RouterModeCall_0600
+     * @tc.number RouterModeCall_0600
+     * @tc.desc   Test Router pushUrl 100003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterModeCall_0600', Level.LEVEL2, async (done: Function) => {
       console.info('RouterModeCall_0600 START');

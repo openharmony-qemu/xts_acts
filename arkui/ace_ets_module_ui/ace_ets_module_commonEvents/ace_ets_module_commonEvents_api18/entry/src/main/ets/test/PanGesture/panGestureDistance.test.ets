@@ -48,12 +48,12 @@ export default function panGestureDistanceTest() {
     });
 
     /**
+     * @tc.name   panGesture_panRecognizer_getDistance_0010
      * @tc.number panGesture_panRecognizer_getDistance_0010
-     * @tc.name Test the api of panGesture
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('panGesture_panRecognizer_getDistance_0010', Level.LEVEL0, async (done: Function) => {
       console.info('panGesture_panRecognizer_getDistance_0010 START');
@@ -76,12 +76,12 @@ export default function panGestureDistanceTest() {
     });
 
     /**
+     * @tc.name   panGesture_panRecognizer_getDistance_0020
      * @tc.number panGesture_panRecognizer_getDistance_0020
-     * @tc.name Test the api of panGesture
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('panGesture_panRecognizer_getDistance_0020', Level.LEVEL0, async (done: Function) => {
       console.info('panGesture_panRecognizer_getDistance_0020 START');
@@ -105,12 +105,12 @@ export default function panGestureDistanceTest() {
     });
 
     /**
+     * @tc.name   panGesture_panRecognizer_getDistance_0030
      * @tc.number panGesture_panRecognizer_getDistance_0030
-     * @tc.name Test the api of panGesture
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('panGesture_panRecognizer_getDistance_0030', Level.LEVEL0, async (done: Function) => {
       console.info('panGesture_panRecognizer_getDistance_0030 START');

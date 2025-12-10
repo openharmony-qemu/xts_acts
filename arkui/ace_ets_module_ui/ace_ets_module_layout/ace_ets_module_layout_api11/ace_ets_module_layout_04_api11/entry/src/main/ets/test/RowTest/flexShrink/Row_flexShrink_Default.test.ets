@@ -46,9 +46,12 @@ export default function Row_flexShrink_Default() {
       console.info("Row_flexShrink_Default after each called")
     });
     /**
+     * @tc.name   SUB_ACE_Row_flexShrink_Default_TEST_0100
      * @tc.number SUB_ACE_Row_flexShrink_Default_TEST_0100
-     * @tc.name testflexShrink
-     * @tc.desc row1、row2、row3 set flexShrink(null)
+     * @tc.desc   row1、row2、row3 set flexShrink(null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexShrink_Default_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexShrink_Default_TEST_0100] START');
@@ -101,9 +104,12 @@ export default function Row_flexShrink_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_flexShrink_Default_TEST_0200
      * @tc.number SUB_ACE_Row_flexShrink_Default_TEST_0200
-     * @tc.name testflexShrink
-     * @tc.desc row1、row2、row3 set flexShrink(undefined)
+     * @tc.desc   row1、row2、row3 set flexShrink(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexShrink_Default_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexShrink_Default_TEST_0200] START');
@@ -156,9 +162,12 @@ export default function Row_flexShrink_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_flexShrink_Default_TEST_0300
      * @tc.number SUB_ACE_Row_flexShrink_Default_TEST_0300
-     * @tc.name testflexShrink
-     * @tc.desc row1、row2、row3 set flexShrink(-5)
+     * @tc.desc   row1、row2、row3 set flexShrink(-5)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexShrink_Default_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexShrink_Default_TEST_0300] START');
@@ -211,9 +220,12 @@ export default function Row_flexShrink_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_flexShrink_Default_TEST_0400
      * @tc.number SUB_ACE_Row_flexShrink_Default_TEST_0400
-     * @tc.name testflexShrink
-     * @tc.desc row1、row2、row3 do not set flexShrink
+     * @tc.desc   row1、row2、row3 do not set flexShrink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexShrink_Default_TEST_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexShrink_Default_TEST_0400] START');

@@ -19,12 +19,12 @@ export default function fieldNodeStageTest(){
   describe('fieldNodeStageTest', function() {
 
     /**
+     * @tc.name   testEtsAppendChild001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0400
-     * @tc.name [JS-API8]FieldNode.AppendChild().
-     * @tc.desc Test Js Api FieldNode.AppendChild() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsAppendChild001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -47,12 +47,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtsAppendChild002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0100
-     * @tc.name [JS-API8]FieldNode.AppendChild().
-     * @tc.desc Test Js Api FieldNode.AppendChild() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsAppendChild002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -69,12 +69,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtsAppendChild003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0600
-     * @tc.name [JS-API8]FieldNode.AppendChild().
-     * @tc.desc Test Js Api FieldNode.AppendChild() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsAppendChild003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -89,12 +89,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtsToJson001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0500
-     * @tc.name [JS-API8]FieldNode.ToJson().
-     * @tc.desc Test Js Api FieldNode.ToJson() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.ToJson() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsToJson001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -108,12 +108,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtsToJson002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0200
-     * @tc.name [JS-API8]FieldNode.ToJson().
-     * @tc.desc Test Js Api FieldNode.ToJson() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.ToJson() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsToJson002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -127,12 +127,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtsToJson003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0300
-     * @tc.name [JS-API8]FieldNode.ToJson().
-     * @tc.desc Test Js Api FieldNode.ToJson() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.ToJson() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsToJson003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -147,12 +147,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtsdefault001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0700
-     * @tc.name [JS-API8]FieldNode.default.
-     * @tc.desc Test Js Api FieldNode.default testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.default testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsdefault001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -167,12 +167,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtsnullable001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0800
-     * @tc.name [JS-API8]FieldNode.nullable.
-     * @tc.desc Test Js Api FieldNode.nullable testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.nullable testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsnullable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -187,12 +187,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtstype001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1400
-     * @tc.name [JS-API8]FieldNode.type.STRING
-     * @tc.desc Test Js Api FieldNode.type testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.type testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtstype001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -208,12 +208,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtstype002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1300
-     * @tc.name [JS-API8]FieldNode.type.INTEGER
-     * @tc.desc Test Js Api FieldNode.type testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.type testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtstype002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -229,12 +229,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtstype003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1200
-     * @tc.name [JS-API8]FieldNode.type.FLOAT
-     * @tc.desc Test Js Api FieldNode.type testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.type testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtstype003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -250,12 +250,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtstype004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1000
-     * @tc.name [JS-API8]FieldNode.type.BYTE_ARRAY
-     * @tc.desc Test Js Api FieldNode.type testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.type testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtstype004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -271,12 +271,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtstype005
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0900
-     * @tc.name [JS-API8]FieldNode.type.BOOLEAN
-     * @tc.desc Test Js Api FieldNode.type testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.type testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtstype005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -293,12 +293,12 @@ export default function fieldNodeStageTest(){
     })
 
     /**
+     * @tc.name   testEtstype006
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1100
-     * @tc.name [JS-API8]FieldNode.type.DOUBLE
-     * @tc.desc Test Js Api FieldNode.type testcase 006
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api FieldNode.type testcase 006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtstype006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {

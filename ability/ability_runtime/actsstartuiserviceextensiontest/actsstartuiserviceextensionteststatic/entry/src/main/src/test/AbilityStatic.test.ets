@@ -88,12 +88,12 @@ export default function abilitystaticTest() {
     })
 
     /**
-     * @tc.number SUB_Ability_AbilityRuntime_WantConstant_Static_0100
      * @tc.name   SUB_Ability_AbilityRuntime_WantConstant_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_WantConstant_Static_0100
      * @tc.desc   Get APP_INSTANCE_KEY CREATE_APP_INSTANCE_KEY CALLER_APP_CLONE_INDEX.
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_WantConstant_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = "SUB_Ability_AbilityRuntime_WantConstant_Static_0100";
@@ -106,13 +106,13 @@ export default function abilitystaticTest() {
     })
 
     /**
-    * @tc.number SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100
-    * @tc.name   SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100
-    * @tc.desc   When app not support capability, an error code is returned.
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  Level 3
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100
+     * @tc.desc   When app not support capability, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = "SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100] start');
@@ -129,13 +129,13 @@ export default function abilitystaticTest() {
     })
 
     /**
-    * @tc.number SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100
-    * @tc.name   SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100
-    * @tc.desc   When app not support capability, an error code is returned.
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  Level 3
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100
+     * @tc.desc   When app not support capability, an error code is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = "SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100] start');
@@ -152,12 +152,12 @@ export default function abilitystaticTest() {
     })
 
     /**
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0100
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0100
      * @tc.desc   Call the interface to return whether the current application is running
-     * @tc.type   Function
-     * @tc.size   MediumTest
-     * @tc.level  3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_AppManager_Static_0100`;
@@ -180,20 +180,20 @@ export default function abilitystaticTest() {
     });
 
     /**
-    * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0200
-    * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0200
-    * @tc.desc   Registering an Application Status Listener.
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  Level 3
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0200
+     * @tc.desc   Registering an Application Status Listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityRuntime_AppManager_Static_0200';
         hilog.info(domain, tag, `${itName} start`);
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on('applicationState', observer);
+          const observerId = appManager.onApplicationStateChange(observer);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
 
           hilog.info(domain, tag, `${itName} start reply ability`);
@@ -237,7 +237,7 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, `${itName} ProcessData assert End`);
 
           hilog.info(domain, tag, `${itName} off applicationState`);
-          await appManager.off('applicationState', observerId);
+          await appManager.offApplicationStateChange(observerId);
         } catch (err: BusinessError) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
@@ -246,13 +246,13 @@ export default function abilitystaticTest() {
         done()
       })
 
-      /**
-     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0300
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0300
      * @tc.desc   Test the third-party application with permission call killProcessesByBundleName will be blocked
-     * @tc.type   Function
-     * @tc.size   MediumTest
-     * @tc.level  3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
       let bundleName = "com.ohos.application";

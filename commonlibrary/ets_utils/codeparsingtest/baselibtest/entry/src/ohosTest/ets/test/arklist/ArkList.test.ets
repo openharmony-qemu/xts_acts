@@ -42,12 +42,12 @@ export default function ArkListTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_CONSTRUCTOR_0100
-     * @tc.name      : testListConstructor0001
-     * @tc.desc      : Testing List constructor support dataType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testListConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CONSTRUCTOR_0100
+     * @tc.desc   Testing List constructor support dataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testListConstructor0001';
@@ -62,12 +62,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_ADD_0100
-     * @tc.name      : testListAdd0001
-     * @tc.desc      : Testing List Add different dataType data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testListAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_ADD_0100
+     * @tc.desc   Testing List Add different dataType data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testListAdd0001';
@@ -96,12 +96,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_ADD_0200
-     * @tc.name      : testListAdd0002
-     * @tc.desc      : Testing List add special string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testListAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_ADD_0200
+     * @tc.desc   Testing List add special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testListAdd0002';
@@ -120,12 +120,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_INSERT_0100
-     * @tc.name      : testListInsert0001
-     * @tc.desc      : Testing List insert insert->getIndexOf->removeByIndex->has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testListInsert0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_INSERT_0100
+     * @tc.desc   Testing List insert insert->getIndexOf->removeByIndex->has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testListInsert0001';
@@ -148,12 +148,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_INSERT_0200
-     * @tc.name      : testListInsert0002
-     * @tc.desc      : Testing List insert insert->add->getLastIndexOf->removeByIndex->has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testListInsert0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_INSERT_0200
+     * @tc.desc   Testing List insert insert->add->getLastIndexOf->removeByIndex->has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testListInsert0002';
@@ -176,12 +176,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_HAS_0100
-     * @tc.name      : testListHas0001
-     * @tc.desc      : Testing List has different dataType data check has result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testListHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_HAS_0100
+     * @tc.desc   Testing List has different dataType data check has result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testListHas0001';
@@ -218,12 +218,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GET_0100
-     * @tc.name      : testListGet0001
-     * @tc.desc      : Testing List has different dataType data check get result
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GET_0100
+     * @tc.desc   Testing List has different dataType data check get result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGet0001';
@@ -253,12 +253,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0100
-     * @tc.name      : testListGetLastIndexOf0001
-     * @tc.desc      : Testing List getIndexOf add same data check index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0100
+     * @tc.desc   Testing List getIndexOf add same data check index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetLastIndexOf0001';
@@ -279,12 +279,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0200
-     * @tc.name      : testListGetLastIndexOf0002
-     * @tc.desc      : Testing List getIndexOf add->getLastIndexOf->removeByIndex same data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0200
+     * @tc.desc   Testing List getIndexOf add->getLastIndexOf->removeByIndex same data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetLastIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetLastIndexOf0002';
@@ -308,12 +308,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0300
-     * @tc.name      : testListGetLastIndexOf0003
-     * @tc.desc      : Testing List getIndexOf add->getLastIndexOf->removeByIndex->add->getLastIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0300
+     * @tc.desc   Testing List getIndexOf add->getLastIndexOf->removeByIndex->add->getLastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetLastIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetLastIndexOf0003';
@@ -335,12 +335,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0400
-     * @tc.name      : testListGetLastIndexOf0004
-     * @tc.desc      : Testing List getIndexOf add->remove->add->getLastIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0400
+     * @tc.desc   Testing List getIndexOf add->remove->add->getLastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetLastIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetLastIndexOf0004';
@@ -362,12 +362,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0100
-     * @tc.name      : testListGetIndexOf0001
-     * @tc.desc      : Testing List getIndexOf add same data check index
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0100
+     * @tc.desc   Testing List getIndexOf add same data check index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetIndexOf0001';
@@ -388,12 +388,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0200
-     * @tc.name      : testListGetIndexOf0002
-     * @tc.desc      : Testing List getIndexOf add->getIndexOf->removeByIndex same data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0200
+     * @tc.desc   Testing List getIndexOf add->getIndexOf->removeByIndex same data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetIndexOf0002';
@@ -417,12 +417,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0300
-     * @tc.name      : testListGetIndexOf0003
-     * @tc.desc      : Testing List getIndexOf add->remove->add->getIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0300
+     * @tc.desc   Testing List getIndexOf add->remove->add->getIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetIndexOf0003';
@@ -444,12 +444,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0400
-     * @tc.name      : testListGetIndexOf0004
-     * @tc.desc      : Testing List getIndexOf add->removeByIndex->add->getIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListGetIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0400
+     * @tc.desc   Testing List getIndexOf add->removeByIndex->add->getIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListGetIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListGetIndexOf0004';
@@ -470,12 +470,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_REPLACEALLELEMENT_0100
-     * @tc.name      : testListReplaceAllElement0001
-     * @tc.desc      : Testing List replaceAllElement insert new string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListReplaceAllElement0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_REPLACEALLELEMENT_0100
+     * @tc.desc   Testing List replaceAllElement insert new string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListReplaceAllElement0001';
@@ -516,12 +516,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0100
-     * @tc.name      : testListSort0001
-     * @tc.desc      : Testing List getIndexOf add->clear->add->insert->sort(a-b)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSort0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0100
+     * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(a-b)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSort0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSort0001';
@@ -547,12 +547,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0200
-     * @tc.name      : testListSort0002
-     * @tc.desc      : Testing List getIndexOf add->clear->add->insert->sort(b-a)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSort0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0200
+     * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(b-a)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSort0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSort0002';
@@ -578,12 +578,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0300
-     * @tc.name      : testListSort0003
-     * @tc.desc      : Testing List getIndexOf add->clear->add->insert->sort(a-b)->getSubList
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSort0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0300
+     * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(a-b)->getSubList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSort0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSort0003';
@@ -608,12 +608,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0400
-     * @tc.name      : testListSort0004
-     * @tc.desc      : Testing List getIndexOf add->clear->add->insert->sort(a-b)->getSubList->add
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSort0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0400
+     * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(a-b)->getSubList->add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSort0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSort0004';
@@ -640,12 +640,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0100
-     * @tc.name      : testListSet0001
-     * @tc.desc      : Testing List set list and update data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0100
+     * @tc.desc   Testing List set list and update data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSet0001';
@@ -674,12 +674,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0200
-     * @tc.name      : testListSet0002
-     * @tc.desc      : Testing List set getIndexOf->set->removeByIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0200
+     * @tc.desc   Testing List set getIndexOf->set->removeByIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSet0002';
@@ -708,12 +708,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0300
-     * @tc.name      : testListSet0003
-     * @tc.desc      : Testing List set getIndexOf->set->has
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0300
+     * @tc.desc   Testing List set getIndexOf->set->has
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSet0003';
@@ -741,12 +741,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0400
-     * @tc.name      : testListSet0004
-     * @tc.desc      : Testing List set set->convertToArray->instanceof
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0400
+     * @tc.desc   Testing List set set->convertToArray->instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSet0004';
@@ -786,12 +786,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0500
-     * @tc.name      : testListSet0005
-     * @tc.desc      : Testing List set set->getFirst
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSet0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0500
+     * @tc.desc   Testing List set set->getFirst
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSet0005';
@@ -827,12 +827,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0600
-     * @tc.name      : testListSet0006
-     * @tc.desc      : Testing List set set->getLast
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSet0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0600
+     * @tc.desc   Testing List set set->getLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSet0006';
@@ -868,12 +868,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SYMBOL_ITERATOR_0100
-     * @tc.name      : testListSymbolIterator0001
-     * @tc.desc      : Testing List Symbol.iterator for of
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSymbolIterator0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SYMBOL_ITERATOR_0100
+     * @tc.desc   Testing List Symbol.iterator for of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSymbolIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSymbolIterator0001';
@@ -894,12 +894,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_SYMBOL_ITERATOR_0200
-     * @tc.name      : testListSymbolIterator0002
-     * @tc.desc      : Testing List Symbol.iterator next
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListSymbolIterator0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SYMBOL_ITERATOR_0200
+     * @tc.desc   Testing List Symbol.iterator next
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSymbolIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListSymbolIterator0002';
@@ -924,12 +924,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0100
-     * @tc.name      : testListForEach0001
-     * @tc.desc      : Testing List forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0100
+     * @tc.desc   Testing List forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListForEach0001';
@@ -961,12 +961,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0200
-     * @tc.name      : testListForEach0002
-     * @tc.desc      : Testing List forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListForEach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0200
+     * @tc.desc   Testing List forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListForEach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListForEach0002';
@@ -1000,12 +1000,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0300
-     * @tc.name      : testListForEach0003
-     * @tc.desc      : Testing List forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListForEach0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0300
+     * @tc.desc   Testing List forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListForEach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListForEach0003';
@@ -1042,12 +1042,12 @@ export default function ArkListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0400
-     * @tc.name      : testListForEach0004
-     * @tc.desc      : Testing List forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testListForEach0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0400
+     * @tc.desc   Testing List forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testListForEach0004';

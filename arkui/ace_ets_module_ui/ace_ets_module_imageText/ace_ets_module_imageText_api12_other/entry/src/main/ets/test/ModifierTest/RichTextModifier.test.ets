@@ -42,12 +42,12 @@ export default function RichTextModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichTextModifierTest_0010
-     * @tc.name      RichTextModifierTest_0010
-     * @tc.desc      test RichTextModifier: width
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichTextModifierTest_0010
+     * @tc.number SUB_ACE_RichTextModifierTest_0010
+     * @tc.desc   test RichTextModifier: width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichTextModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('RichTextModifierTest_0010 START');
@@ -61,12 +61,12 @@ export default function RichTextModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichTextModifierTest_0020
-     * @tc.name      RichTextModifierTest_0020
-     * @tc.desc      test type of RichTextInstance: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichTextModifierTest_0020
+     * @tc.number SUB_ACE_RichTextModifierTest_0020
+     * @tc.desc   test type of RichTextInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichTextModifierTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('RichTextModifierTest_0020 START');

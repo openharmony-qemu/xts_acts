@@ -71,12 +71,12 @@ export default function requestDownloadNormalJSUnit() {
     }
 
     /**
+     * @tc.name   SUB_Misc_Request_DownloadManagement_0002
      * @tc.number SUB_Misc_Request_DownloadManagement_0002
-     * @tc.name SUB_Misc_Request_DownloadManagement_0002
-     * @tc.desc Get mimetype of the download task
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.desc   Get mimetype of the download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Misc_Request_DownloadManagement_0002', Level.LEVEL0, async (done: Function) => {
       console.info("====>---------------------SUB_Misc_Request_DownloadManagement_0002 is starting---------------------");
@@ -97,12 +97,12 @@ export default function requestDownloadNormalJSUnit() {
     });
 
     /**
+     * @tc.name   SUB_Misc_Request_DownloadManagement_Callback_0002
      * @tc.number SUB_Misc_Request_DownloadManagement_Callback_0002
-     * @tc.name SUB_Misc_Request_DownloadManagement_Callback_0002
-     * @tc.desc Get mimetype of the download task
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Get mimetype of the download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_Request_DownloadManagement_Callback_0002', Level.LEVEL2, async (done: Function) => {
       console.info("====>---------------------SUB_Misc_Request_DownloadManagement_Callback_0002 is starting---------------------");

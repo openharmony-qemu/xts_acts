@@ -45,10 +45,13 @@ export default function colorEnumJsunit() {
       console.info("colorEnumTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testcolorTransparent0001
-     * @tc.desic        acecolorTransparentEtsTest0001
+    /**
+     * @tc.name   testcolorTransparent0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testcolorTransparent0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcolorTransparent0001', Level.LEVEL1, async (done: Function) => {
       console.info('colorEnumTest testcolorTransparent0001 START');

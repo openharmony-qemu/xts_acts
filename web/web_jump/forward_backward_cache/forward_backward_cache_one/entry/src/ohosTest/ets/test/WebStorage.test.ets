@@ -62,13 +62,13 @@ export default function webStorage() {
     })
 
     /**
-    * @tc.number       SUB_WEB_GETORIGINS_0100
-    * @tc.name         testGetOrigins001
-    * @tc.desc         test getOrigins
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 0
-    */
+     * @tc.name   testGetOrigins001
+     * @tc.number SUB_WEB_GETORIGINS_0100
+     * @tc.desc   test getOrigins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetOrigins001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('testGetOrigins001', 134900)
       Utils.registerEvent('testGetOrigins001', 'resource://rawfile/', 134910, done);
@@ -76,13 +76,13 @@ export default function webStorage() {
     })
 
     /**
-    * @tc.number       SUB_WEB_GETORIGINS_0200
-    * @tc.name         testGetOrigins002
-    * @tc.desc         test getOrigins
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testGetOrigins002
+     * @tc.number SUB_WEB_GETORIGINS_0200
+     * @tc.desc   test getOrigins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetOrigins002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testGetOrigins002', 134900)
       Utils.registerEvent('testGetOrigins002', 'resource://rawfile/', 134920, done);
@@ -90,13 +90,13 @@ export default function webStorage() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_ORIGIN_0100
-    * @tc.name         testWebStorageOriginOrigin001
-    * @tc.desc         test WebStorageOrigin origin
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginOrigin001
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_ORIGIN_0100
+     * @tc.desc   test WebStorageOrigin origin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testWebStorageOriginOrigin001', 134900)
       Utils.registerEvent('testWebStorageOriginOrigin001', 'resource://rawfile/', 134930, done);
@@ -104,13 +104,13 @@ export default function webStorage() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_USAGE_0100
-    * @tc.name         testWebStorageOriginUsage001
-    * @tc.desc         test WebStorageOrigin usage
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginUsage001
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_USAGE_0100
+     * @tc.desc   test WebStorageOrigin usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testWebStorageOriginUsage001', 134900)
       Utils.registerEvent('testWebStorageOriginUsage001', true, 134940, done);
@@ -118,13 +118,13 @@ export default function webStorage() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_QUOTA_0100
-    * @tc.name         testWebStorageOriginQuota001
-    * @tc.desc         test WebStorageOrigin quota
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginQuota001
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_QUOTA_0100
+     * @tc.desc   test WebStorageOrigin quota
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginQuota001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testWebStorageOriginQuota001', 134900)
       Utils.registerEvent('testWebStorageOriginQuota001', true, 134950, done);
@@ -132,13 +132,13 @@ export default function webStorage() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINS_0100
-    * @tc.name         testWebStorageOriginGetOrigins001
-    * @tc.desc         test WebStorageOrigin GetOrigins
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginGetOrigins001
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_GETORIGINS_0100
+     * @tc.desc   test WebStorageOrigin GetOrigins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginGetOrigins001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testWebStorageOriginGetOrigins001', 134900)
@@ -147,13 +147,13 @@ export default function webStorage() {
       })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0100
-    * @tc.name         testWebStorageOriginGetOriginQuota001
-    * @tc.desc         test WebStorageOrigin getOriginQuota
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginGetOriginQuota001
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0100
+     * @tc.desc   test WebStorageOrigin getOriginQuota
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginGetOriginQuota001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testWebStorageOriginGetOriginQuota001', 134900)
@@ -162,13 +162,13 @@ export default function webStorage() {
       })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0200
-    * @tc.name         testWebStorageOriginGetOriginQuota002
-    * @tc.desc         test WebStorageOrigin getOriginQuota
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginGetOriginQuota002
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_GETORIGINQUOTA_0200
+     * @tc.desc   test WebStorageOrigin getOriginQuota
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginGetOriginQuota002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testWebStorageOriginGetOriginQuota002', 134900)
@@ -177,13 +177,13 @@ export default function webStorage() {
       })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0100
-    * @tc.name         testWebStorageOriginGetOriginUsage001
-    * @tc.desc         test WebStorageOrigin getOriginUsage
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginGetOriginUsage001
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0100
+     * @tc.desc   test WebStorageOrigin getOriginUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginGetOriginUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testWebStorageOriginGetOriginUsage001', 134900)
@@ -192,13 +192,13 @@ export default function webStorage() {
       })
 
     /**
-    * @tc.number       SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0200
-    * @tc.name         testWebStorageOriginGetOriginUsage002
-    * @tc.desc         test WebStorageOrigin getOriginUsage
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testWebStorageOriginGetOriginUsage002
+     * @tc.number SUB_WEB_WEBSTORAGEORIGIN_GETORIGINUSAGE_0200
+     * @tc.desc   test WebStorageOrigin getOriginUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebStorageOriginGetOriginUsage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testWebStorageOriginGetOriginUsage002', 134900)
@@ -207,13 +207,13 @@ export default function webStorage() {
       })
 
     /**
-    * @tc.number       SUB_WEB_DELETEALLDATA_0100
-    * @tc.name         testDeleteAllData001
-    * @tc.desc         test deleteAllData
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testDeleteAllData001
+     * @tc.number SUB_WEB_DELETEALLDATA_0100
+     * @tc.desc   test deleteAllData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeleteAllData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testDeleteAllData001', 134900)
       Utils.registerEvent('testDeleteAllData001', 0, 135010, done);
@@ -221,13 +221,13 @@ export default function webStorage() {
     })
 
     /**
-    * @tc.number       SUB_WEB_DELETEORIGIN_0100
-    * @tc.name         testDeleteOrigin001
-    * @tc.desc         test deleteOrigin
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testDeleteOrigin001
+     * @tc.number SUB_WEB_DELETEORIGIN_0100
+     * @tc.desc   test deleteOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeleteOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testDeleteOrigin001', 134900)
       Utils.registerEvent('testDeleteOrigin001', 0, 135020, done);

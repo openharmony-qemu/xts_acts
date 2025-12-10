@@ -18,6 +18,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function MultimodalInput_IntentionCode_test() {
   describe('MultimodalInput_IntentionCode_test', function () {
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_001
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_001
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_001 enter`);
 
@@ -26,6 +34,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_001 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_002
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_002
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_002 enter`);
 
@@ -34,6 +50,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_002 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_003
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_003
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_003 enter`);
 
@@ -42,6 +66,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_003 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_004
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_004
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_004 enter`);
 
@@ -50,6 +82,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_004 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_005
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_005
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_005 enter`);
 
@@ -58,6 +98,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_005 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_006
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_006
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_006 enter`);
 
@@ -66,6 +114,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_006 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_007
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_007
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_007 enter`);
 
@@ -74,6 +130,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_007 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_008
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_008
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_008 enter`);
 
@@ -82,6 +146,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_008 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_009
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_009
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_009 enter`);
 
@@ -90,6 +162,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_009 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_010
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_010
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_010 enter`);
 
@@ -98,6 +178,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_010 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_011
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_011
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_011 enter`);
 
@@ -106,6 +194,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_011 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_012
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_012
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_012 enter`);
 
@@ -114,6 +210,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_012 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_013
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_013
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_013 enter`);
 
@@ -122,6 +226,14 @@ export default function MultimodalInput_IntentionCode_test() {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_013 exit`);
     })
 
+    /**
+     * @tc.name   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_014
+     * @tc.number Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_014
+     * @tc.desc   Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Multimodalinput_IntentionCode_SUB_MMI_IntentionCodeTest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info(`Multimodalinput_IntentionCode_test_SUB_MMI_IntentionCodeTest_014 enter`);
 

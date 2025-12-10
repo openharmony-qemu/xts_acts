@@ -145,12 +145,12 @@ export default function schemaStageTest(){
     })
 
     /**
+     * @tc.name   testEtsToJsonString001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2100
-     * @tc.name [JS-API8]Schema.ToJsonString()
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsToJsonString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -180,12 +180,12 @@ export default function schemaStageTest(){
     })
 
     /**
+     * @tc.name   testEtsToJsonString002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2200
-     * @tc.name [JS-API8]Schema.ToJsonString()
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsToJsonString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -219,12 +219,12 @@ export default function schemaStageTest(){
     })
 
     /**
+     * @tc.name   testEtsToJsonString003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2300
-     * @tc.name [JS-API8]Schema.ToJsonString()
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsToJsonString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -266,14 +266,14 @@ export default function schemaStageTest(){
       done();
     })
 
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2000
-     * @tc.name [JS-API8]Schema.ToJsonString()
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+      /**
+       * @tc.name   testEtsToJsonString004
+       * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_2000
+       * @tc.desc   Test Js Api Schema.ToJsonString() testcase 004
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('testEtsToJsonString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
           let name = new ddm.FieldNode('name');
@@ -311,12 +311,12 @@ export default function schemaStageTest(){
         done();
       })
     /**
+     * @tc.name   testEtsroot001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1800
-     * @tc.name [JS-API8]Schema.root
-     * @tc.desc Test Js Api Schema.root testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.root testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsroot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -333,12 +333,12 @@ export default function schemaStageTest(){
     })
 
     /**
+     * @tc.name   testEtsindexes001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1500
-     * @tc.name [JS-API8]Schema.indexes
-     * @tc.desc Test Js Api Schema.indexes testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.indexes testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsindexes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -354,12 +354,12 @@ export default function schemaStageTest(){
     })
 
     /**
+     * @tc.name   testEtsmode001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1700
-     * @tc.name [JS-API8]Schema.mode
-     * @tc.desc Test Js Api Schema.mode testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.mode testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsmode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -376,12 +376,12 @@ export default function schemaStageTest(){
     })
 
     /**
+     * @tc.name   testEtsmode002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1600
-     * @tc.name [JS-API8]Schema.mode
-     * @tc.desc Test Js Api Schema.mode testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.mode testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsmode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -398,12 +398,12 @@ export default function schemaStageTest(){
     })
 
     /**
+     * @tc.name   testEtsskip001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1900
-     * @tc.name [JS-API8]Schema.skip
-     * @tc.desc Test Js Api Schema.skip testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.skip testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsskip001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {

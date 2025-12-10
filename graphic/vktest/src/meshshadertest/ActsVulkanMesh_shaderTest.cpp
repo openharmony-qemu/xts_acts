@@ -39,6 +39,14 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanMesh_shaderTestCase
+     * @tc.number TestVulkanMesh_shaderTestCase
+     * @tc.desc   TestVulkanMesh_shaderTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanMeshshaderTest, TestVulkanMesh_shaderTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanMeshshaderTest------\n");

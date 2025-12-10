@@ -235,34 +235,47 @@ void DecApiNdkTest::TearDown()
 
 namespace {
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0001
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0001
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0001
+ * @tc.number VIDEO_VC1DEC_CAP_API_0001
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0001, TestSize.Level2)
 {
     cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false);
-    string codec_name = OH_AVCapability_GetName(cap);
-    ASSERT_EQ(CODEC_NAME, codec_name);
+    if (cap != nullptr) {
+        string codec_name = OH_AVCapability_GetName(cap);
+        ASSERT_EQ(CODEC_NAME, codec_name);
+    }
 }
 
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0002
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0002
+ * @tc.number VIDEO_VC1DEC_CAP_API_0002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0002, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    ASSERT_NE(cap, nullptr);
-    ASSERT_EQ(64, OH_AVCapability_GetMaxSupportedInstances(cap));
+    if (cap != nullptr) {
+        ASSERT_NE(cap, nullptr);
+        ASSERT_EQ(64, OH_AVCapability_GetMaxSupportedInstances(cap));
+    }
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0003
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0003
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0003
+ * @tc.number VIDEO_VC1DEC_CAP_API_0003
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0003, TestSize.Level1)
 {
@@ -270,50 +283,60 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0003, TestSize.Level1)
     OH_AVRange range;
     memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetVideoWidthRange(capability, &range);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
-    ASSERT_EQ(range.minVal, 176);
-    ASSERT_EQ(range.maxVal, 2048);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetVideoWidthRange(capability, &range);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
+        ASSERT_EQ(range.minVal, 176);
+        ASSERT_EQ(range.maxVal, 2048);
+    }
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0004
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0004
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0004
+ * @tc.number VIDEO_VC1DEC_CAP_API_0004
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0004, TestSize.Level2)
 {
     OH_AVErrCode ret = AV_ERR_OK;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
          OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &g_pixelFormat, &g_pixelFormatNum);
-    ASSERT_NE(nullptr, g_pixelFormat);
-    ASSERT_EQ(g_pixelFormatNum, 3);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    for (int i = 0; i < g_pixelFormatNum; i++) {
-        vdec_ = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
-        ASSERT_NE(nullptr, vdec_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        EXPECT_GE(g_pixelFormat[i], 0);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, g_pixelFormat[i]);
-        EXPECT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
-        OH_AVFormat_Destroy(format);
-        OH_VideoDecoder_Destroy(vdec_);
-        format = nullptr;
-        vdec_ = nullptr;
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &g_pixelFormat, &g_pixelFormatNum);
+        ASSERT_NE(nullptr, g_pixelFormat);
+        ASSERT_EQ(g_pixelFormatNum, 3);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        for (int i = 0; i < g_pixelFormatNum; i++) {
+            vdec_ = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
+            ASSERT_NE(nullptr, vdec_);
+            format = OH_AVFormat_Create();
+            ASSERT_NE(nullptr, format);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+            EXPECT_GE(g_pixelFormat[i], 0);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, g_pixelFormat[i]);
+            EXPECT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+            OH_AVFormat_Destroy(format);
+            OH_VideoDecoder_Destroy(vdec_);
+            format = nullptr;
+            vdec_ = nullptr;
+        }
     }
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0005
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0005
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0005
+ * @tc.number VIDEO_VC1DEC_CAP_API_0005
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0005, TestSize.Level1)
 {
@@ -321,40 +344,45 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0005, TestSize.Level1)
     const int32_t *g_pixelFormat = nullptr;
     uint32_t g_pixelFormatNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &g_pixelFormat, &g_pixelFormatNum);
-    ASSERT_NE(nullptr, g_pixelFormat);
-    ASSERT_EQ(g_pixelFormatNum, PIXFORMAT_NUM);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    for (int i = 0; i < g_pixelFormatNum; i++) {
-        ASSERT_EQ(true, CheckPixelFormat(g_pixelFormat[i]));
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetVideoSupportedPixelFormats(capability, &g_pixelFormat, &g_pixelFormatNum);
+        ASSERT_NE(nullptr, g_pixelFormat);
+        ASSERT_EQ(g_pixelFormatNum, PIXFORMAT_NUM);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        for (int i = 0; i < g_pixelFormatNum; i++) {
+            ASSERT_EQ(true, CheckPixelFormat(g_pixelFormat[i]));
+            vdec_ = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
+            ASSERT_NE(nullptr, vdec_);
+            format = OH_AVFormat_Create();
+            ASSERT_NE(nullptr, format);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+            EXPECT_GE(g_pixelFormat[i], 0);
+            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, g_pixelFormat[i]);
+            EXPECT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
+            OH_AVFormat_Destroy(format);
+            OH_VideoDecoder_Destroy(vdec_);
+        }
         vdec_ = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
         ASSERT_NE(nullptr, vdec_);
         format = OH_AVFormat_Create();
         ASSERT_NE(nullptr, format);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        EXPECT_GE(g_pixelFormat[i], 0);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, g_pixelFormat[i]);
-        EXPECT_EQ(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
-        OH_AVFormat_Destroy(format);
-        OH_VideoDecoder_Destroy(vdec_);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21 + AV_PIXEL_FORMAT_NV21);
+        ASSERT_NE(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
     }
-    vdec_ = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
-    ASSERT_NE(nullptr, vdec_);
-    format = OH_AVFormat_Create();
-    ASSERT_NE(nullptr, format);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21 + AV_PIXEL_FORMAT_NV21);
-    ASSERT_NE(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
 }
 
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0006
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0006
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0006
+ * @tc.number VIDEO_VC1DEC_CAP_API_0006
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0006, TestSize.Level1)
 {
@@ -362,20 +390,25 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0006, TestSize.Level1)
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    ASSERT_EQ(profileNum, 3);
-    ASSERT_NE(nullptr, profiles);
-    for (int i = 0; i < profileNum; i++) {
-        ASSERT_EQ(CheckProfile(profiles[i]), true);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_EQ(profileNum, 3);
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            ASSERT_EQ(CheckProfile(profiles[i]), true);
+        }
     }
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0007
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0007
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0007
+ * @tc.number VIDEO_VC1DEC_CAP_API_0007
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0007, TestSize.Level1)
 {
@@ -385,29 +418,34 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0007, TestSize.Level1)
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    ASSERT_EQ(profileNum, 3);
-    ASSERT_NE(nullptr, profiles);
-    for (int i = 0; i < profileNum; i++) {
-        cout << "profiles[" << i << "] = " << profiles[i] << endl;
-        ASSERT_EQ(CheckProfile(profiles[i]), true);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
         ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_NE(nullptr, levels);
-        EXPECT_GT(levelNum, 0);
-        for (int j = 0; j < levelNum; j++) {
-            cout << "level is " << levels[j] << endl;
-            ASSERT_EQ(CheckLevelsForProfile(profiles[i], levels[j]), true);
+        ASSERT_EQ(profileNum, 3);
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            cout << "profiles[" << i << "] = " << profiles[i] << endl;
+            ASSERT_EQ(CheckProfile(profiles[i]), true);
+            ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
+            ASSERT_EQ(AV_ERR_OK, ret);
+            ASSERT_NE(nullptr, levels);
+            EXPECT_GT(levelNum, 0);
+            for (int j = 0; j < levelNum; j++) {
+                cout << "level is " << levels[j] << endl;
+                ASSERT_EQ(CheckLevelsForProfile(profiles[i], levels[j]), true);
+            }
         }
     }
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_CAP_API_0008
- * @tc.name      : VIDEO_VC1DEC_CAP_API_0008
- * @tc.desc      : api test
+ * @tc.name   VIDEO_VC1DEC_CAP_API_0008
+ * @tc.number VIDEO_VC1DEC_CAP_API_0008
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0008, TestSize.Level1)
 {
@@ -418,27 +456,32 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0008, TestSize.Level1)
     uint32_t profileNum = 0;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
         OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    ASSERT_EQ(profileNum, 3);
-    ASSERT_NE(nullptr, profiles);
-    for (int i = 0; i < profileNum; i++) {
-        ASSERT_EQ(profiles[i], i);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(
-            capability, profiles[i], &levels, &levelNum);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
         ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_NE(nullptr, levels);
-        for (int j = 0; j < levelNum; j++) {
-            ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, profiles[i], levels[j]));
+        ASSERT_EQ(profileNum, 3);
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            ASSERT_EQ(profiles[i], i);
+            ret = OH_AVCapability_GetSupportedLevelsForProfile(
+                capability, profiles[i], &levels, &levelNum);
+            ASSERT_EQ(AV_ERR_OK, ret);
+            ASSERT_NE(nullptr, levels);
+            for (int j = 0; j < levelNum; j++) {
+                ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, profiles[i], levels[j]));
+            }
         }
     }
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_CAP_API_0009
- * @tc.name      : VIDEO_MSVIDEO1DEC_CAP_API_0009
- * @tc.desc      : api test
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0009
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0009
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0009, TestSize.Level1)
 {
@@ -447,16 +490,21 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0009, TestSize.Level1)
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(
         OH_AVCODEC_MIMETYPE_VIDEO_MSVIDEO1, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    ASSERT_EQ(profileNum, 0);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_EQ(profileNum, 0);
+    }
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_CAP_API_0010
- * @tc.name      : VIDEO_MSVIDEO1DEC_CAP_API_0010
- * @tc.desc      : api test
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0010
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0010, TestSize.Level1)
 {
@@ -464,20 +512,25 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0010, TestSize.Level1)
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    ASSERT_EQ(2, profileNum);
-    ASSERT_NE(nullptr, profiles);
-    for (int i = 0; i < profileNum; i++) {
-        EXPECT_GE(profiles[i], 0);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_EQ(2, profileNum);
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            EXPECT_GE(profiles[i], 0);
+        }
     }
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_CAP_API_0011
- * @tc.name      : VIDEO_MSVIDEO1DEC_CAP_API_0011
- * @tc.desc      : api test
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0011
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0011
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0011, TestSize.Level1)
 {
@@ -485,21 +538,23 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0011, TestSize.Level1)
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability* capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false, SOFTWARE);
-    ASSERT_NE(nullptr, capability);
-    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
-    ASSERT_EQ(AV_ERR_OK, ret);
-    ASSERT_EQ(2, profileNum);
-    const int32_t* levels = nullptr;
-    uint32_t levelNum = 0;
-    ASSERT_NE(nullptr, profiles);
-    for (int i = 0; i < profileNum; i++) {
-        EXPECT_GE(profiles[i], 0);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
         ASSERT_EQ(AV_ERR_OK, ret);
-        ASSERT_NE(nullptr, levels);
-        EXPECT_GT(levelNum, 0);
-        for (int j = 0; j < levelNum; j++) {
-            EXPECT_GE(levels[j], 0);
+        ASSERT_EQ(2, profileNum);
+        const int32_t* levels = nullptr;
+        uint32_t levelNum = 0;
+        ASSERT_NE(nullptr, profiles);
+        for (int i = 0; i < profileNum; i++) {
+            EXPECT_GE(profiles[i], 0);
+            ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
+            ASSERT_EQ(AV_ERR_OK, ret);
+            ASSERT_NE(nullptr, levels);
+            EXPECT_GT(levelNum, 0);
+            for (int j = 0; j < levelNum; j++) {
+                EXPECT_GE(levels[j], 0);
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium'
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -47,56 +48,28 @@ export default function IsDisposedContentTest() {
     });
 
     /**
-     * @tc.number    IsDisposedContentTest_0100
-     * @tc.name      IsDisposedContentTest_0100
-     * @tc.desc      ReactiveComponentContent IsDisposedContentTest
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IsDisposedNodeTest_0100
+     * @tc.number IsDisposedContentTest_0100
+     * @tc.desc   ReactiveComponentContent IsDisposedContentTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('IsDisposedContentTest_0100', Level.LEVEL1, async (done: Function) => {
-      console.info('IsDisposedContentTest_0100 START');
+    it('IsDisposedNodeTest_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('IsDisposedNodeTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('isDisposed'));
-      await button2.click();
-      await CommonFunc.sleep(1000);
-
-      let strJson: string = getInspectorByKey('isDisposedText');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[IsDisposedContentTest_0100] component obj is: ' + JSON.stringify(obj));
-      console.info('[IsDisposedContentTest_0100] content obj is: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('false');
-      console.info('[IsDisposedContentTest_0100] END');
-      done();
-    });
-
-
-    /**
-     * @tc.number    isDisposedTest_0200
-     * @tc.name      isDisposedTest_0200
-     * @tc.desc      ReactiveComponentContent isDisposed Test
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
-     */
-    it('IsDisposedContentTest_0200', Level.LEVEL1, async (done: Function) => {
-      console.info('IsDisposedContentTest_0200 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('dispose'));
+      let button1 = await driver.findComponent(ON.id('btn_ComponentContent_isDisposed'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('isDisposed'));
+      let button2 = await driver.findComponent(ON.id('btn_ComponentContent_dispose'));
       await button2.click();
       await CommonFunc.sleep(1000);
-
-      let strJson: string = getInspectorByKey('isDisposedText');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[IsDisposedContentTest_0200] component obj is: ' + JSON.stringify(obj));
-      console.info('[IsDisposedContentTest_0200] content obj is: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('true');
-      console.info('[IsDisposedContentTest_0200] END');
+      expect(AppStorage.get('builderNodeIsDisposed1')).assertEqual(false);
+      expect(AppStorage.get('builderNodeIsDisposed2')).assertEqual(true);
+      AppStorage.delete('builderNodeIsDisposed1')
+      AppStorage.delete('builderNodeIsDisposed2')
+      console.info('[BuilderNodeIsDisposedTest_0100] END');
       done();
     });
   })

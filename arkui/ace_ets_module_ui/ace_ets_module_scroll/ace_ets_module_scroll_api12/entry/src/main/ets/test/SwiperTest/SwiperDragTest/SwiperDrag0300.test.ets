@@ -45,12 +45,12 @@ export default function SwiperDrag0300() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0300
      * @tc.number SWIPER_DRAG_0300
-     * @tc.name step
-     * @tc.desc loop
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0300', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0300 START");

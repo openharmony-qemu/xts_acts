@@ -29,9 +29,12 @@ export default function napiBufferTest() {
     });
 
     /**
+     * @tc.name   napiBufferTest003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0001
-     * @tc.name napiBufferTest003
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('napiBufferTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(napitest.BufferCopy().toString()).assertDeepEquals(napitest.testStr);

@@ -79,26 +79,26 @@ export default function checkAlbumAttrTest () {
     }
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_0000
-      * @tc.name      : album_000
-      * @tc.desc      : chech album attr
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
-    */
+     * @tc.name   album_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_0000
+     * @tc.desc   chech album attr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('album_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_000';
       await checkAssetAttr(done, testNum);
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_0100
-      * @tc.name      : album_001
-      * @tc.desc      : check album attribute - count, image count and video count - user album
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
-    */
+     * @tc.name   album_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_0100
+     * @tc.desc   check album attribute - count, image count and video count - user album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('album_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_001';
       try {
@@ -136,13 +136,13 @@ export default function checkAlbumAttrTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_0200
-      * @tc.name      : album_002
-      * @tc.desc      : check album attribute - count, image count and video count - system album
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
-    */
+     * @tc.name   album_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_0200
+     * @tc.desc   check album attribute - count, image count and video count - system album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('album_002', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_002';
       try {

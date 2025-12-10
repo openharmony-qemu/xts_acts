@@ -42,12 +42,12 @@ export default function NetManagerTLSSupportSendArrayBufferTest() {
     }
 
     /**
-     * @tc.number: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0100
-     * @tc.name: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0100
-     * @tc.desc: Test callback TLSSocketInstance send ArrayBuffer fail.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0100
+     * @tc.number SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0100
+     * @tc.desc   Test callback TLSSocketInstance send ArrayBuffer fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0100';
@@ -81,12 +81,12 @@ export default function NetManagerTLSSupportSendArrayBufferTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0200
-     * @tc.name: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0200
-     * @tc.desc: Test promise TLSSocketInstance send ArrayBuffer fail.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0200
+     * @tc.number SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0200
+     * @tc.desc   Test promise TLSSocketInstance send ArrayBuffer fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0200';
@@ -116,12 +116,12 @@ export default function NetManagerTLSSupportSendArrayBufferTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0300
-     * @tc.name: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0300
-     * @tc.desc: Test callback TLSSocketInstance send string fail.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0300
+     * @tc.number SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0300
+     * @tc.desc   Test callback TLSSocketInstance send string fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0300';
@@ -153,12 +153,12 @@ export default function NetManagerTLSSupportSendArrayBufferTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0400
-     * @tc.name: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0400
-     * @tc.desc: Test promise TLSSocketInstance send string fail.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0400
+     * @tc.number SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0400
+     * @tc.desc   Test promise TLSSocketInstance send string fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0400';
@@ -186,12 +186,12 @@ export default function NetManagerTLSSupportSendArrayBufferTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0500
-     * @tc.name: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0500
-     * @tc.desc: Test callback TLSSocketInstance send empty ArrayBuffer fail.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0500
+     * @tc.number SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0500
+     * @tc.desc   Test callback TLSSocketInstance send empty ArrayBuffer fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0500';
@@ -225,12 +225,12 @@ export default function NetManagerTLSSupportSendArrayBufferTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0600
-     * @tc.name: SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0600
-     * @tc.desc: Test promise TLSSocketInstance send empty ArrayBuffer fail.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0600
+     * @tc.number SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0600
+     * @tc.desc   Test promise TLSSocketInstance send empty ArrayBuffer fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'SUB_NetManager_NetStack_Api_TLSSupportSendArrayBuffer_0600';

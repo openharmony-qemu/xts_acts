@@ -56,6 +56,14 @@ export default function StorageProp21Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp21Jsunit_0200
+     * @tc.number StorageProp21Jsunit_0200
+     * @tc.desc   StorageProp21Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp21Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0200] START');
       let driver = await UiDriver.create()
@@ -72,6 +80,14 @@ export default function StorageProp21Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp21Jsunit_0300
+     * @tc.number StorageProp21Jsunit_0300
+     * @tc.desc   StorageProp21Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp21Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0300] START');
       let driver = await UiDriver.create()
@@ -88,6 +104,14 @@ export default function StorageProp21Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp21Jsunit_0400
+     * @tc.number StorageProp21Jsunit_0400
+     * @tc.desc   StorageProp21Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp21Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0400] START');
       let driver = await UiDriver.create()
@@ -104,6 +128,14 @@ export default function StorageProp21Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp21Jsunit_0500
+     * @tc.number StorageProp21Jsunit_0500
+     * @tc.desc   StorageProp21Jsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp21Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp21Jsunit_0500] START');
       let driver = await UiDriver.create()

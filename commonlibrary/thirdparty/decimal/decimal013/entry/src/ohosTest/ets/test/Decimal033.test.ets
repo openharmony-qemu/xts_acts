@@ -36,12 +36,12 @@ export default function DecimalTest033() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_mod_Func_001
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -207,12 +207,12 @@ export default function DecimalTest033() {
         test_mod_001('-860.1444052695', '825080074792355962132959107719531393891221', '-8.601444052695e+2', 32, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_mod_Func_002
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

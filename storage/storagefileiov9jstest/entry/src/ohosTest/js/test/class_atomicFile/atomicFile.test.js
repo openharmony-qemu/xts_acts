@@ -27,16 +27,14 @@ import {
   export default function atomicFileTest() {
   describe('fileIO_fs_atomicFile_test', function () {
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0000
-	 * @tc.name fileIO_test_atomicFile_000
-	 * @tc.desc Test the startWrite() interface of class AtomicFile
-	 * Create a file when file path is "", throw exception
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_000
+  * @tc.number SUB_DF_ATOMIC_FILE_0000
+  * @tc.desc   Test the startWrite() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  try {
 		let file1 = new fileIO.AtomicFile("");
@@ -47,16 +45,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0100
-	 * @tc.name fileIO_test_atomicFile_001
-	 * @tc.desc Test the startWrite() interface of class AtomicFile
-	 * Create a file when file is exist, overwrite original file
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_001
+  * @tc.number SUB_DF_ATOMIC_FILE_0100
+  * @tc.desc   Test the startWrite() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let fpath = await nextFileName('test1');
 	  expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -73,16 +69,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0200
-	 * @tc.name fileIO_test_atomicFile_002
-	 * @tc.desc Test the startWrite() interface of class AtomicFile
-	 * Create a file when file is not exist, create a new file
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_002
+  * @tc.number SUB_DF_ATOMIC_FILE_0200
+  * @tc.desc   Test the startWrite() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let filesDir = await featureAbility.getContext().getCacheDir();
 	  let fpath = filesDir + '/test2.txt';
@@ -104,16 +98,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0300
-	 * @tc.name fileIO_test_atomicFile_003
-	 * @tc.desc Test the startWrite() interface of class AtomicFile
-	 * Create a file when path is not exist, create a new file
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_003
+  * @tc.number SUB_DF_ATOMIC_FILE_0300
+  * @tc.desc   Test the startWrite() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let filesDir = await featureAbility.getContext().getCacheDir();
 	  let fpath = filesDir + '/test3/test3.txt';
@@ -126,16 +118,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0400
-	 * @tc.name fileIO_test_atomicFile_004
-	 * @tc.desc Test the readFully() interface of class AtomicFile
-	 * Open an existing file, read content
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_004
+  * @tc.number SUB_DF_ATOMIC_FILE_0400
+  * @tc.desc   Test the readFully() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let fpath = await nextFileName('test4');
 	  expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -153,16 +143,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0500
-	 * @tc.name fileIO_test_atomicFile_005
-	 * @tc.desc Test the openRead() interface of class AtomicFile
-	 * Open an existing file, create readStream read content
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_005
+  * @tc.number SUB_DF_ATOMIC_FILE_0500
+  * @tc.desc   Test the openRead() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let fpath = await nextFileName('test5');
 	  expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -183,16 +171,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0600
-	 * @tc.name fileIO_test_atomicFile_006
-	 * @tc.desc Test the failedWrite() interface of class AtomicFile
-	 * Open an existing file, create writeStream write content, call failedWrite will preserve source file
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_006
+  * @tc.number SUB_DF_ATOMIC_FILE_0600
+  * @tc.desc   Test the failedWrite() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  console.log('fileIO_test_atomicFile_006 begin');
 	  let fpath = await nextFileName('test6');
@@ -215,16 +201,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0700
-	 * @tc.name fileIO_test_atomicFile_007
-	 * @tc.desc Test the function interface of class AtomicFile
-	 * readFully() read one file, startWrite() create a new file, write() write content, finishWrite() close file
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_007
+  * @tc.number SUB_DF_ATOMIC_FILE_0700
+  * @tc.desc   Test the function interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let fpath = await nextFileName('test7');
 	  expect(prepareFile(fpath, "fileIO_test_atomicFile_007")).assertTrue();
@@ -254,16 +238,14 @@ import {
 	  }
 	});
   
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0800
-	 * @tc.name fileIO_test_atomicFile_008
-	 * @tc.desc Test the delete() interface of class AtomicFile
-	 * startWrite() create one nwe file, delete() will remove the new file
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_008
+  * @tc.number SUB_DF_ATOMIC_FILE_0800
+  * @tc.desc   Test the delete() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let fpath = await nextFileName('test8');
 	  expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -284,16 +266,14 @@ import {
 	  }
 	});
 
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_0900
-	 * @tc.name fileIO_test_atomicFile_009
-	 * @tc.desc Test the getBaseFile() interface of class AtomicFile
-	 * AtomicFile() create one file name, getBaseFile() will get the file name
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_009
+  * @tc.number SUB_DF_ATOMIC_FILE_0900
+  * @tc.desc   Test the getBaseFile() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 	  let filesDir = await featureAbility.getContext().getCacheDir();
 	  let fpath = filesDir + '/test9.txt';
@@ -307,16 +287,14 @@ import {
 	  }
 	});
 
-	/**
-	 * @tc.number SUB_DF_ATOMIC_FILE_1000
-	 * @tc.name fileIO_test_atomicFile_0010
-	 * @tc.desc Test the getBaseFile() interface of class AtomicFile
-	 * AtomicFile() create one file name, getBaseFile() will get the file name
-	 * @tc.size MEDIUM
-	 * @tc.type Functoin
-	 * @tc.level Level 0
-	 * @tc.require
-	 */
+ /**
+  * @tc.name   fileIO_test_atomicFile_010
+  * @tc.number SUB_DF_ATOMIC_FILE_1000
+  * @tc.desc   Test the getBaseFile() interface of class AtomicFile
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('fileIO_test_atomicFile_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 		let filesDir = await featureAbility.getContext().getCacheDir();
 		let fpath = filesDir + '/test10.txt';

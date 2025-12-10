@@ -17,7 +17,7 @@ import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.ar
 import Utils from '../../src/test/Util.test';
 import webview from '@ohos.web.webview'
 import emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
+import { Callback, RecordData } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base'
 import { Driver } from '@ohos.UiTest';
@@ -57,7 +57,7 @@ struct webViewIncognitoMode {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);
@@ -255,6 +255,25 @@ struct webViewIncognitoMode {
               }
               break;
             }
+
+            case 'emitWebViewIncognitoMode01': {
+              try {
+                this.controller.loadUrl('https://m.weibo.cn');
+                setTimeout(() => {
+                  let result = this.controller.isIncognitoMode();
+                  if (result === true) {
+                    Utils.emitEvent('success', 8019);
+                  } else {
+                    Utils.emitEvent('fail', 8019);
+                  }
+                }, 2000)
+
+              } catch (error) {
+                hilog.info(0X0000,"testTag",`ErrorCode: ` + error );
+              }
+              break;
+            }
+
           }
         })
       }

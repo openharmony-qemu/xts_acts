@@ -56,12 +56,14 @@ export default function onMeasureSize3() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_onMeasureSize3_001
-    * @tc.name  : onMeasureSize
-    * @tc.desc  : Set margin and padding when calling onMeasureSize and onPlaceChildren interfaces normally
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   onMeasureSize3_001
+     * @tc.number SUB_ACE_TS_COMPONENT_onMeasureSize3_001
+     * @tc.desc   Set margin and padding when calling onMeasureSize and onPlaceChildren interfaces normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onMeasureSize3_001', Level.LEVEL0, async (done: Function) => {
       console.info('[onMeasureSize3_001] START');
       await CommonFunc.sleep(1000);

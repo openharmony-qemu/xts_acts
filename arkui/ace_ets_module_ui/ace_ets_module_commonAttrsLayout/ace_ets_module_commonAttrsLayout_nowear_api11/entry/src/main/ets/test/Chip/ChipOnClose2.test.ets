@@ -57,12 +57,14 @@ export default function ChipOnClose2() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_CHIP_INTERFACE_1550
-      * @tc.name  : SearchMaxLength2_001
-      * @tc.desc  : set enabled to false and action event test
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   ChipOnClose2_001
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_CHIP_INTERFACE_1550
+     * @tc.desc   set enabled to false and action event test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ChipOnClose2_001', Level.LEVEL0, async (done: Function) => {
 
       console.info('ChipOnClose2_001 START');

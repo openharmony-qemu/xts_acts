@@ -45,12 +45,12 @@ export default function SwiperImplicitanimation0050() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0050
      * @tc.number SWIPER_IMPLICITANIMATION_0050
-     * @tc.name step
-     * @tc.desc change
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0050', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0050 START");

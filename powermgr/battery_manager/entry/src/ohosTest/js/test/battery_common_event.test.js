@@ -21,9 +21,12 @@ export default function BatteryCommonEventTest() {
     console.log("*************Battery commonEvent Test Begin*************");
 
     /**
+     * @tc.name   Subscribe_Battery_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0100
-     * @tc.name Subscribe_Battery_Changed_Common_Event
-     * @tc.desc battery acquisition kit
+     * @tc.desc   battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Battery_Changed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createBatteryChangedSubscriber();
@@ -31,9 +34,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Battery_Okay_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0110
-     * @tc.name Subscribe_Battery_Okay_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Battery_Okay_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createBatteryOkaySubscriber();
@@ -41,9 +47,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Battery_Low_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0120
-     * @tc.name Subscribe_Battery_Low_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Battery_Low_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createBatteryLowSubscriber();
@@ -51,9 +60,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Power_Connected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0130
-     * @tc.name Subscribe_Power_Connected_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Power_Connected_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createBatteryPowerConnectedSubscriber();
@@ -61,9 +73,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Power_Disconnected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0140
-     * @tc.name Subscribe_Power_Disconnected_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Power_Disconnected_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -72,9 +87,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Battery_Charging_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0150
-     * @tc.name Subscribe_Battery_Charging_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Battery_Charging_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createBatteryChargingSubscriber();
@@ -82,9 +100,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Battery_Discharging_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0160
-     * @tc.name Subscribe_Battery_Discharging_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Battery_Discharging_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -93,9 +114,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Boot_Completed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0170
-     * @tc.name Subscribe_Boot_Completed_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Boot_Completed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createBootCompletedSubscriber();
@@ -103,9 +127,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Locked_Boot_Completed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0180
-     * @tc.name Subscribe_Locked_Boot_Completed_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Locked_Boot_Completed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -114,9 +141,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Shutdown_Common_Event
      * @tc.number SUB_powersystem_batterymanager_jstest_0190
-     * @tc.name Subscribe_Shutdown_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Shutdown_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createShutdownSubscriber();
@@ -124,9 +154,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Screen_On_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0200
-     * @tc.name Subscribe_Screen_On_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Screen_On_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createScreenOnSubscriber();
@@ -134,9 +167,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_User_Present_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0210
-     * @tc.name Subscribe_User_Present_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_User_Present_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserPresentSubscriber();
@@ -144,9 +180,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Time_Tick_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0220
-     * @tc.name Subscribe_Time_Tick_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Time_Tick_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createTimeTickSubscriber();
@@ -154,9 +193,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Screen_Off_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0230
-     * @tc.name Subscribe_Screen_Off_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Screen_Off_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createScreenOffSubscriber();
@@ -164,9 +206,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Time_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0240
-     * @tc.name Subscribe_Time_Changed_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Time_Changed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createTimeChangedSubscriber();
@@ -174,9 +219,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Date_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0250
-     * @tc.name Subscribe_Date_Changed_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Date_Changed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createDateChangedSubscriber();
@@ -184,9 +232,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Timezone_Changed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0260
-     * @tc.name Subscribe_Timezone_Changed_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Timezone_Changed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createTimezoneChangedSubscriber();
@@ -194,9 +245,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Close_System_Dialogs_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0270
-     * @tc.name Subscribe_Close_System_Dialogs_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Close_System_Dialogs_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -205,9 +259,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Package_Added_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0280
-     * @tc.name Subscribe_Package_Added_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Package_Added_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createPackageAddedSubscriber();
@@ -215,9 +272,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Package_Replaced_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0290
-     * @tc.name Subscribe_Package_Replaced_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Package_Replaced_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createPackageReplacedSubscriber();
@@ -225,9 +285,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_My_Package_Replaced_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0300
-     * @tc.name Subscribe_My_Package_Replaced_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_My_Package_Replaced_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -236,9 +299,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Package_Removed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0310
-     * @tc.name Subscribe_Package_Removed_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Package_Removed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createPackageRemovedSubscriber();
@@ -246,9 +312,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Bundle_Removed_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0320
-     * @tc.name Subscribe_Bundle_Removed_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bundle_Removed_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createBundleRemovedSubscriber();
@@ -256,9 +325,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Packagefullyremoved_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0330
-     * @tc.name Subscribe_Packagefullyremoved_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Packagefullyremoved_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -267,9 +339,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Packagechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0340
-     * @tc.name Subscribe_Packagechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Packagechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createPackageChangedSubscriber();
@@ -277,9 +352,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Packagerestarted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0350
-     * @tc.name Subscribe_Packagerestarted_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Packagerestarted_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createPackageRestartedSubscriber();
@@ -287,9 +365,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Packagedatacleared_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0360
-     * @tc.name Subscribe_Packagedatacleared_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Packagedatacleared_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -298,9 +379,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Packagesuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0370
-     * @tc.name Subscribe_Packagesuspended_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Packagesuspended_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createPackageSuspendedSubscriber();
@@ -308,9 +392,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Packagesunsuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0380
-     * @tc.name Subscribe_Packagesunsuspended_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Packagesunsuspended_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -319,9 +406,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Mypackagesuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0390
-     * @tc.name Subscribe_Mypackagesuspended_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Mypackagesuspended_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -330,9 +420,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Mypackageunsuspended_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0400
-     * @tc.name Subscribe_Mypackageunsuspended_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Mypackageunsuspended_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -341,9 +434,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Mypackagefirstlaunch_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0410
-     * @tc.name Subscribe_Mypackagefirstlaunch_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Mypackagefirstlaunch_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -352,9 +448,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Mypackageneedsverification_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0420
-     * @tc.name Subscribe_Mypackageneedsverification_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Mypackageneedsverification_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -363,9 +462,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Externalapplicationsavailable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0430
-     * @tc.name Subscribe_Externalapplicationsavailable_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Externalapplicationsavailable_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -374,9 +476,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Externalapplicationsunavailable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0440
-     * @tc.name Subscribe_Externalapplicationsunavailable_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Externalapplicationsunavailable_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -385,9 +490,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Configurationchanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0450
-     * @tc.name Subscribe_Configurationchanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Configurationchanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -396,9 +504,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Locatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0460
-     * @tc.name Subscribe_Locatechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Locatechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createLocateChangedSubscriber();
@@ -406,9 +517,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Managepackagestorage_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0470
-     * @tc.name Subscribe_Managepackagestorage_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Managepackagestorage_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -417,9 +531,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Drivemode_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0480
-     * @tc.name Subscribe_Drivemode_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Drivemode_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createDriveModeSubscriber();
@@ -427,9 +544,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Homemode_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0490
-     * @tc.name Subscribe_Homemode_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Homemode_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createHomeModeSubscriber();
@@ -437,9 +557,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Officemode_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0500
-     * @tc.name Subscribe_Officemode_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Officemode_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createOfficeModeSubscriber();
@@ -447,9 +570,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userstarted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0510
-     * @tc.name Subscribe_Userstarted_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userstarted_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserStartedSubscriber();
@@ -457,9 +583,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userbackground_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0520
-     * @tc.name Subscribe_Userbackground_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userbackground_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserBackgroundSubscriber();
@@ -467,9 +596,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userforground_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0530
-     * @tc.name Subscribe_Userforground_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userforground_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserForgroundSubscriber();
@@ -477,9 +609,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userswitched_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0540
-     * @tc.name Subscribe_Userswitched_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userswitched_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserSwitchedSubscriber();
@@ -487,9 +622,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userstarting_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0550
-     * @tc.name Subscribe_Userstarting_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userstarting_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserStartingSubscriber();
@@ -497,9 +635,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userunlocked_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0560
-     * @tc.name Subscribe_Userunlocked_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userunlocked_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserUnlockedSubscriber();
@@ -507,9 +648,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userstopping_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0570
-     * @tc.name Subscribe_Userstopping_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userstopping_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserStoppingSubscriber();
@@ -517,9 +661,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Userstopped_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0580
-     * @tc.name Subscribe_Userstopped_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Userstopped_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createUserStoppedSubscriber();
@@ -527,9 +674,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Hwidlogin_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0590
-     * @tc.name Subscribe_Hwidlogin_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Hwidlogin_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createHwidLoginSubscriber();
@@ -537,9 +687,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Hwidlogout_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0600
-     * @tc.name Subscribe_Hwidlogout_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Hwidlogout_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createHwidLogoutSubscriber();
@@ -547,9 +700,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Hwidtokeninvalid_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0610
-     * @tc.name Subscribe_Hwidtokeninvalid_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Hwidtokeninvalid_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createHwidTokenInvalidSubscriber();
@@ -557,9 +713,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Hwidlogoff_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0620
-     * @tc.name Subscribe_Hwidlogoff_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Hwidlogoff_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createHwidLogOffSubscriber();
@@ -567,9 +726,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifipowerstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0630
-     * @tc.name Subscribe_Wifipowerstate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifipowerstate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiPowerStateSubscriber();
@@ -577,9 +739,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifiscanfinished_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0640
-     * @tc.name Subscribe_Wifiscanfinished_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifiscanfinished_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiScanFinishedSubscriber();
@@ -587,9 +752,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifirssivalue_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0650
-     * @tc.name Subscribe_Wifirssivalue_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifirssivalue_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiRssiValueSubscriber();
@@ -597,9 +765,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wificonnstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0660
-     * @tc.name Subscribe_Wificonnstate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wificonnstate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiConnStateSubscriber();
@@ -607,9 +778,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifihostpotstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0670
-     * @tc.name Subscribe_Wifihostpotstate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifihostpotstate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiHostpotStateSubscriber();
@@ -617,9 +791,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifiapstajoin_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0680
-     * @tc.name Subscribe_Wifiapstajoin_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifiapstajoin_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiApStaJoinSubscriber();
@@ -627,9 +804,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifiapstaleave_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0690
-     * @tc.name Subscribe_Wifiapstaleave_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifiapstaleave_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiApStaLeaveSubscriber();
@@ -637,9 +817,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifimplinkstatechange_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0700
-     * @tc.name Subscribe_Wifimplinkstatechange_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifimplinkstatechange_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -648,9 +831,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Wifip2pconnstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0710
-     * @tc.name Subscribe_Wifip2pconnstate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifip2pconnstate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
       createWifiP2PConnStateSubscriber();
@@ -658,9 +844,12 @@ export default function BatteryCommonEventTest() {
     })
 
     /**
+     * @tc.name   Subscribe_Wifip2pstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0720
-     * @tc.name Subscribe_Wifip2pstatechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifip2pstatechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -669,9 +858,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Wifip2ppeersstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0730
-     * @tc.name Subscribe_Wifip2ppeersstatechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifip2ppeersstatechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -680,9 +872,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Wifip2ppeersdiscoverystatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0740
-     * @tc.name Subscribe_Wifip2ppeersdiscoverystatechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifip2ppeersdiscoverystatechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -691,9 +886,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Wifip2pcurrentdevicestatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0750
-     * @tc.name Subscribe_Wifip2pcurrentdevicestatechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifip2pcurrentdevicestatechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -702,9 +900,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Wifip2pgroupstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0760
-     * @tc.name Subscribe_Wifip2pgroupstatechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Wifip2pgroupstatechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -713,9 +914,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhandsfreeagconntectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0770
-     * @tc.name Subscribe_Bluetoothhandsfreeagconntectstateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhandsfreeagconntectstateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -724,9 +928,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhandsfreeagconntectdeviceupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0780
-     * @tc.name Subscribe_Bluetoothhandsfreeagconntectdeviceupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhandsfreeagconntectdeviceupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -735,9 +942,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhandsfreeagaudiostateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0790
-     * @tc.name Subscribe_Bluetoothhandsfreeagaudiostateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhandsfreeagaudiostateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -746,9 +956,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetootha2dpsourceconnectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0800
-     * @tc.name Subscribe_Bluetootha2dpsourceconnectstateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetootha2dpsourceconnectstateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -757,9 +970,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetootha2dpsourcecurrentdeviceupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0810
-     * @tc.name Subscribe_Bluetootha2dpsourcecurrentdeviceupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetootha2dpsourcecurrentdeviceupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -768,9 +984,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetootha2dpsourceplayingstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0820
-     * @tc.name Subscribe_Bluetootha2dpsourceplayingstateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetootha2dpsourceplayingstateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -779,9 +998,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetootha2dpsourceavrcpconntectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0830
-     * @tc.name Subscribe_Bluetootha2dpsourceavrcpconntectstateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetootha2dpsourceavrcpconntectstateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -790,9 +1012,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetootha2dpsourcecodecvalueupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0840
-     * @tc.name Subscribe_Bluetootha2dpsourcecodecvalueupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetootha2dpsourcecodecvalueupdate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -801,9 +1026,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedevicediscovered_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0850
-     * @tc.name Subscribe_Bluetoothremotedevicediscovered_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedevicediscovered_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -812,9 +1040,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedeviceclassvalueupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0860
-     * @tc.name Subscribe_Bluetoothremotedeviceclassvalueupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedeviceclassvalueupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -823,9 +1054,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedeviceaclconnected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0870
-     * @tc.name Subscribe_Bluetoothremotedeviceaclconnected_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedeviceaclconnected_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -834,9 +1068,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedeviceacldisconnected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0880
-     * @tc.name Subscribe_Bluetoothremotedeviceacldisconnected_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedeviceacldisconnected_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -845,9 +1082,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedevicenameupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0890
-     * @tc.name Subscribe_Bluetoothremotedevicenameupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedevicenameupdate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -856,9 +1096,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedevicepairstate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0900
-     * @tc.name Subscribe_Bluetoothremotedevicepairstate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedevicepairstate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -867,9 +1110,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedevicebateryvalueupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0910
-     * @tc.name Subscribe_Bluetoothremotedevicebateryvalueupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedevicebateryvalueupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -878,9 +1124,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedevicesdpresult_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0920
-     * @tc.name Subscribe_Bluetoothremotedevicesdpresult_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedevicesdpresult_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -889,9 +1138,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedeviceuuidvalue_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0930
-     * @tc.name Subscribe_Bluetoothremotedeviceuuidvalue_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedeviceuuidvalue_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -900,9 +1152,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothpairingreq_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0940
-     * @tc.name Subscribe_Bluetoothpairingreq_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothpairingreq_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -911,9 +1166,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedevicepairingcancel_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0950
-     * @tc.name Subscribe_Bluetoothremotedevicepairingcancel_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedevicepairingcancel_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -922,9 +1180,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedeviceconntectreq_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0960
-     * @tc.name Subscribe_Bluetoothremotedeviceconntectreq_Common_Event
-     * @tc.desc Battery acquisition Kit
+     * @tc.desc   Battery acquisition Kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedeviceconntectreq_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -933,9 +1194,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedeviceconntectreply_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0970
-     * @tc.name Subscribe_Bluetoothremotedeviceconntectreply_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedeviceconntectreply_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -944,9 +1208,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothremotedeviceconntectcancel_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0980
-     * @tc.name Subscribe_Bluetoothremotedeviceconntectcancel_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothremotedeviceconntectcancel_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -955,9 +1222,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhandsfreeunitconntectstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_0990
-     * @tc.name Subscribe_Bluetoothhandsfreeunitconntectstateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhandsfreeunitconntectstateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -966,9 +1236,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhandsfreeunitaudiostateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1010
-     * @tc.name Subscribe_Bluetoothhandsfreeunitaudiostateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhandsfreeunitaudiostateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -977,9 +1250,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhandsfreeunitagcommonevent_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1020
-     * @tc.name Subscribe_Bluetoothhandsfreeunitagcommonevent_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhandsfreeunitagcommonevent_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -988,9 +1264,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhandsfreeunitagcallstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1030
-     * @tc.name Subscribe_Bluetoothhandsfreeunitagcallstateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhandsfreeunitagcallstateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -999,9 +1278,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhoststateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1040
-     * @tc.name Subscribe_Bluetoothhoststateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhoststateupdate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1010,9 +1292,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Bluetoothhostreqdiscoverable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1050
-     * @tc.name Subscribe_Bluetoothhostreqdiscoverable_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Bluetoothhostreqdiscoverable_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1021,9 +1306,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventhostreqenable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1060
-     * @tc.name Subscribe_Commoneventhostreqenable_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventhostreqenable_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1032,9 +1320,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventhostreqdisable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1070
-     * @tc.name Subscribe_Commoneventhostreqdisable_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventhostreqdisable_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1043,9 +1334,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventhostscanmodeupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1080
-     * @tc.name Subscribe_Commoneventhostscanmodeupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventhostscanmodeupdate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1054,9 +1348,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventhostdiscovetystarted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1090
-     * @tc.name Subscribe_Commoneventhostdiscovetystarted_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventhostdiscovetystarted_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1065,9 +1362,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventhostdiscovetyfinished_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1100
-     * @tc.name Subscribe_Commoneventhostdiscovetyfinished_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventhostdiscovetyfinished_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1076,9 +1376,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventhostnameupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1110
-     * @tc.name Subscribe_Commoneventhostnameupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventhostnameupdate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1087,9 +1390,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventhoststateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1120
-     * @tc.name Subscribe_Commoneventhoststateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventhoststateupdate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1098,9 +1404,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventa2dpsinkplayingstateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1130
-     * @tc.name Subscribe_Commoneventa2dpsinkplayingstateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventa2dpsinkplayingstateupdate_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -1109,9 +1418,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventa2dpsinkaudiostateupdate_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1140
-     * @tc.name Subscribe_Commoneventa2dpsinkaudiostateupdate_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventa2dpsinkaudiostateupdate_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1120,9 +1432,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventnfcactionadapterstatechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1150
-     * @tc.name Subscribe_Commoneventnfcactionadapterstatechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventnfcactionadapterstatechanged_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -1131,9 +1446,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventnfcactionrffieldondetected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1160
-     * @tc.name Subscribe_Commoneventnfcactionrffieldondetected_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventnfcactionrffieldondetected_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -1142,9 +1460,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventnfcactionrffieldoffdetected_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1170
-     * @tc.name Subscribe_Commoneventnfcactionrffieldoffdetected_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventnfcactionrffieldoffdetected_Common_Event',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
@@ -1153,9 +1474,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventdeviceidlemodechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1180
-     * @tc.name Subscribe_Commoneventdeviceidlemodechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventdeviceidlemodechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1164,9 +1488,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventpowersavemodechanged_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1190
-     * @tc.name Subscribe_Commoneventpowersavemodechanged_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventpowersavemodechanged_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1175,9 +1502,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventuseradded_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1200
-     * @tc.name Subscribe_Commoneventuseradded_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventuseradded_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1186,9 +1516,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventuserremoved_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1210
-     * @tc.name Subscribe_Commoneventuserremoved_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventuserremoved_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1197,9 +1530,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventabilityadded_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1220
-     * @tc.name Subscribe_Commoneventabilityadded_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventabilityadded_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1208,9 +1544,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   subscribe_CommonEventAbilityRemoved_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1230
-     * @tc.name subscribe_CommonEventAbilityRemoved_common_event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('subscribe_CommonEventAbilityRemoved_common_event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1219,9 +1558,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   subscribe_CommonEventAbilityUpdated_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1240
-     * @tc.name subscribe_CommonEventAbilityUpdated_common_event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('subscribe_CommonEventAbilityUpdated_common_event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1230,9 +1572,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   subscribe_CommonEventLocationModeStateChanged_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1250
-     * @tc.name subscribe_CommonEventLocationModeStateChanged_common_event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('subscribe_CommonEventLocationModeStateChanged_common_event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1241,9 +1586,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   subscribe_CommonEventIVISleep_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1260
-     * @tc.name subscribe_CommonEventIVISleep_common_event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('subscribe_CommonEventIVISleep_common_event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1252,9 +1600,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   subscribe_CommonEventIVIPause_common_event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1270
-     * @tc.name subscribe_CommonEventIVIPause_common_event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('subscribe_CommonEventIVIPause_common_event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1263,9 +1614,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventivistandby_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1280
-     * @tc.name Subscribe_Commoneventivistandby_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventivistandby_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1274,9 +1628,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventivilastmodesave_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1290
-     * @tc.name Subscribe_Commoneventivilastmodesave_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventivilastmodesave_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1285,9 +1642,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventivivoltageabnormal_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1300
-     * @tc.name Subscribe_Commoneventivivoltageabnormal_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventivivoltageabnormal_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1296,9 +1656,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventivihighttemperature_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1310
-     * @tc.name Subscribe_Commoneventivihighttemperature_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventivihighttemperature_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1307,9 +1670,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventiviextremetemperature_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1320
-     * @tc.name Subscribe_Commoneventiviextremetemperature_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventiviextremetemperature_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1318,9 +1684,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventivitemperatureabnormal_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1330
-     * @tc.name Subscribe_Commoneventivitemperatureabnormal_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventivitemperatureabnormal_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1329,9 +1698,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventivivoltagerecovery_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1340
-     * @tc.name Subscribe_Commoneventivivoltagerecovery_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventivivoltagerecovery_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1340,9 +1712,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventivitempraturerecovery_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1350
-     * @tc.name Subscribe_Commoneventivitempraturerecovery_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventivitempraturerecovery_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1351,9 +1726,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventiviactive_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1360
-     * @tc.name Subscribe_Commoneventiviactive_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventiviactive_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1362,9 +1740,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventusbdevidceattached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1370
-     * @tc.name Subscribe_Commoneventusbdevidceattached_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventusbdevidceattached_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1373,9 +1754,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventusbdevidcedetached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1380
-     * @tc.name Subscribe_Commoneventusbdevidcedetached_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventusbdevidcedetached_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1384,9 +1768,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventusbaccessoryattached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1390
-     * @tc.name Subscribe_Commoneventusbaccessoryattached_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventusbaccessoryattached_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1395,9 +1782,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventusbaccessorydetached_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1400
-     * @tc.name Subscribe_Commoneventusbaccessorydetached_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventusbaccessorydetached_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1406,9 +1796,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventdickremoved_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1410
-     * @tc.name Subscribe_Commoneventdickremoved_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventdickremoved_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1417,9 +1810,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventdickunmounted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1420
-     * @tc.name Subscribe_Commoneventdickunmounted_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventdickunmounted_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1428,9 +1824,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventdickmounted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1430
-     * @tc.name Subscribe_Commoneventdickmounted_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventdickmounted_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1439,9 +1838,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventdicknadremoval_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1440
-     * @tc.name Subscribe_Commoneventdicknadremoval_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventdicknadremoval_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1450,9 +1852,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Commoneventdickunmoutable_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1450
-     * @tc.name Subscribe_Commoneventdickunmoutable_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Commoneventdickunmoutable_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1461,9 +1866,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_CommonEventDickEject_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1460
-     * @tc.name Subscribe_CommonEventDickEject_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_CommonEventDickEject_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1472,9 +1880,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_CommonEventVisibleAccountsUpdated_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1470
-     * @tc.name Subscribe_CommonEventVisibleAccountsUpdated_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_CommonEventVisibleAccountsUpdated_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1483,9 +1894,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_CommonEventAccountDeleted_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1480
-     * @tc.name Subscribe_CommonEventAccountDeleted_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_CommonEventAccountDeleted_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1494,9 +1908,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_CommonEventFoundation_ReadyCommon_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1490
-     * @tc.name Subscribe_CommonEventFoundation_ReadyCommon_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_CommonEventFoundation_ReadyCommon_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1505,9 +1922,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_CommonEventAirplane_ModeChanged_CommonEvent
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1500
-     * @tc.name Subscribe_CommonEventAirplane_ModeChanged_CommonEvent
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_CommonEventAirplane_ModeChanged_CommonEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {
@@ -1516,9 +1936,12 @@ export default function BatteryCommonEventTest() {
       })
 
     /**
+     * @tc.name   Subscribe_Package_Installation_Started_Common_Event
      * @tc.number SUB_PowerSystem_BatteryManager_JSTest_1510
-     * @tc.name Subscribe_Package_Installation_Started_Common_Event
-     * @tc.desc Battery acquisition kit
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Subscribe_Package_Installation_Started_Common_Event', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       function (done) {

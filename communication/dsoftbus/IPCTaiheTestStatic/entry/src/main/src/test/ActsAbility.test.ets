@@ -91,7 +91,7 @@ class TestStub extends rpc.RemoteObject {
 
 
 class MyDeathRecipient implements rpc.DeathRecipient {
-    onRemoteDied(): void {
+    onRemoteDied: () => void = () => {
         hilog.info(domain, tag, '%{public}s', 'into onRemoteDied');
     }
 }
@@ -229,13 +229,13 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
-         * @tc.name     SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
-         * @tc.desc     test MessageSequence WriteInt and ReadInt
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
+         * @tc.number SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
+         * @tc.desc   test MessageSequence WriteInt and ReadInt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_WriteInt_ReadInt_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 --------------------');
@@ -257,13 +257,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
-         * @tc.name     SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
-         * @tc.desc     test MessageSequence WriteInterfaceToken and ReadInterfaceToken
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
+         * @tc.number SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
+         * @tc.desc   test MessageSequence WriteInterfaceToken and ReadInterfaceToken
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 --------------------');
@@ -285,13 +285,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
-         * @tc.name     SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
-         * @tc.desc     test MessageSequence setCapacity and getCapacity
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
+         * @tc.number SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
+         * @tc.desc   test MessageSequence setCapacity and getCapacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_setCapacity_getCapacity_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 --------------------');
@@ -313,13 +313,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeNoException_readException_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeNoException_readException_0100
-         * @tc.desc     test MessageSequence writeNoException and readException
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeNoException_readException_0100
+         * @tc.number SUB_IPC_MessageSequence_writeNoException_readException_0100
+         * @tc.desc   test MessageSequence writeNoException and readException
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeNoException_readException_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeNoException_readException_0100 --------------------');
@@ -339,13 +339,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeLong_readLong_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeLong_readLong_0100
-         * @tc.desc     test MessageSequence writeLong and readLong
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeLong_readLong_0100
+         * @tc.number SUB_IPC_MessageSequence_writeLong_readLong_0100
+         * @tc.desc   test MessageSequence writeLong and readLong
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeLong_readLong_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeLong_readLong_0100 --------------------');
@@ -367,13 +367,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
-         * @tc.desc     test MessageSequence writeBoolean and readBoolean
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
+         * @tc.desc   test MessageSequence writeBoolean and readBoolean
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 --------------------');
@@ -395,13 +395,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
-         * @tc.desc     test MessageSequence writeBoolean and readBoolean
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
+         * @tc.number SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
+         * @tc.desc   test MessageSequence writeBoolean and readBoolean
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 --------------------');
@@ -423,13 +423,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeString_readString_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeString_readString_0100
-         * @tc.desc     test MessageSequence writeString and readString
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeString_readString_0100
+         * @tc.number SUB_IPC_MessageSequence_writeString_readString_0100
+         * @tc.desc   test MessageSequence writeString and readString
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeString_readString_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
            await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeString_readString_0100 --------------------');
@@ -451,13 +451,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeByteArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeByteArray_0100
-         * @tc.desc     test MessageSequence writeByteArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeByteArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeByteArray_0100
+         * @tc.desc   test MessageSequence writeByteArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeByteArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeByteArray_0100 --------------------');
@@ -477,13 +477,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
-         * @tc.desc     test MessageSequence writeIntArray and readIntArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
+         * @tc.desc   test MessageSequence writeIntArray and readIntArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 --------------------');
@@ -505,13 +505,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
-         * @tc.desc     test MessageSequence writeIntArray and readIntArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
+         * @tc.desc   test MessageSequence writeIntArray and readIntArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 --------------------');
@@ -534,13 +534,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
-         * @tc.desc     test MessageSequence writeDoubleArray and readDoubleArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
+         * @tc.desc   test MessageSequence writeDoubleArray and readDoubleArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 --------------------');
@@ -562,13 +562,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
-         * @tc.desc     test MessageSequence writeDoubleArray and readDoubleArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
+         * @tc.desc   test MessageSequence writeDoubleArray and readDoubleArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 --------------------');
@@ -591,13 +591,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
-         * @tc.desc     test MessageSequence writeStringArray and readStringArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
+         * @tc.desc   test MessageSequence writeStringArray and readStringArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 --------------------');
@@ -619,13 +619,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
-         * @tc.desc     test MessageSequence writeStringArray and readStringArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
+         * @tc.desc   test MessageSequence writeStringArray and readStringArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 --------------------');
@@ -648,13 +648,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
-         * @tc.desc     test MessageSequence writeBooleanArray and readBooleanArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
+         * @tc.desc   test MessageSequence writeBooleanArray and readBooleanArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 --------------------');
@@ -676,13 +676,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
-         * @tc.desc     test MessageSequence writeBooleanArray and readBooleanArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
+         * @tc.desc   test MessageSequence writeBooleanArray and readBooleanArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 --------------------');
@@ -705,13 +705,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
-         * @tc.desc     test MessageSequence writeParcelable and readParcelable
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
+         * @tc.desc   test MessageSequence writeParcelable and readParcelable
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 --------------------');
@@ -736,13 +736,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
-         * @tc.desc     test MessageSequence writeParcelableArray and readParcelableArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
+         * @tc.desc   test MessageSequence writeParcelableArray and readParcelableArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 --------------------');
@@ -772,13 +772,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with int32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with int32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 --------------------');
@@ -809,13 +809,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with int32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with int32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 --------------------');
@@ -856,13 +856,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with uint8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with uint8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 --------------------');
@@ -890,13 +890,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with uint8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with uint8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 --------------------');
@@ -934,13 +934,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with int8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with int8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 --------------------');
@@ -971,13 +971,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with int8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with int8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 --------------------');
@@ -1018,13 +1018,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with float32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with float32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 --------------------');
@@ -1055,13 +1055,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with float32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with float32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 --------------------');
@@ -1102,13 +1102,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_create_0100
-         * @tc.name     SUB_IPC_Ashmem_create_0100
-         * @tc.desc     test create Ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_create_0100
+         * @tc.number SUB_IPC_Ashmem_create_0100
+         * @tc.desc   test create Ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_create_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_0100 --------------------');
@@ -1127,13 +1127,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_getAshmemSize_0100
-         * @tc.name     SUB_IPC_Ashmem_getAshmemSize_0100
-         * @tc.desc     test Ashmem getAshmemSize
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_getAshmemSize_0100
+         * @tc.number SUB_IPC_Ashmem_getAshmemSize_0100
+         * @tc.desc   test Ashmem getAshmemSize
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_getAshmemSize_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_getAshmemSize_0100 --------------------');
@@ -1154,13 +1154,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
-         * @tc.desc     test MessageSequence writeAshmem Ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
+         * @tc.number SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
+         * @tc.desc   test MessageSequence writeAshmem Ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 --------------------');
@@ -1182,13 +1182,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
-         * @tc.desc     test MessageSequence writeAshmem and readAshmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
+         * @tc.number SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
+         * @tc.desc   test MessageSequence writeAshmem and readAshmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 --------------------');
@@ -1220,13 +1220,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_create_0100
-         * @tc.name     SUB_IPC_MessageOption_create_0100
-         * @tc.desc     test MessageOption create
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_create_0100
+         * @tc.number SUB_IPC_MessageOption_create_0100
+         * @tc.desc   test MessageOption create
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_create_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_create_0100 --------------------');
@@ -1245,13 +1245,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_create_one_value_0100
-         * @tc.name     SUB_IPC_MessageOption_create_one_value_0100
-         * @tc.desc     test MessageOption create with ont input
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_create_one_value_0100
+         * @tc.number SUB_IPC_MessageOption_create_one_value_0100
+         * @tc.desc   test MessageOption create with ont input
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_create_one_value_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_create_one_value_0100 --------------------');
@@ -1270,13 +1270,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_isAsync_0100
-         * @tc.name     SUB_IPC_MessageOption_isAsync_0100
-         * @tc.desc     test MessageOption is async
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_isAsync_0100
+         * @tc.number SUB_IPC_MessageOption_isAsync_0100
+         * @tc.desc   test MessageOption is async
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_isAsync_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_isAsync_0100 --------------------');
@@ -1297,13 +1297,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_isAsync_false_0100
-         * @tc.name     SUB_IPC_MessageOption_isAsync_false_0100
-         * @tc.desc     test MessageOption is async false
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_isAsync_false_0100
+         * @tc.number SUB_IPC_MessageOption_isAsync_false_0100
+         * @tc.desc   test MessageOption is async false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_isAsync_false_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_isAsync_false_0100 --------------------');
@@ -1324,13 +1324,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_create_with_other_ashmem_0100
-         * @tc.name     SUB_IPC_Ashmem_create_with_other_ashmem_0100
-         * @tc.desc     test create Ashmem with other ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_create_with_other_ashmem_0100
+         * @tc.number SUB_IPC_Ashmem_create_with_other_ashmem_0100
+         * @tc.desc   test create Ashmem with other ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_create_with_other_ashmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_with_other_ashmem_0100 --------------------');
@@ -1351,13 +1351,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_mapReadWriteAshmem_0100
-         * @tc.name     SUB_IPC_Ashmem_mapReadWriteAshmem_0100
-         * @tc.desc     test create Ashmem with other ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_mapReadWriteAshmem_0100
+         * @tc.number SUB_IPC_Ashmem_mapReadWriteAshmem_0100
+         * @tc.desc   test create Ashmem with other ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_mapReadWriteAshmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_mapReadWriteAshmem_0100 --------------------');
@@ -1377,13 +1377,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_IPCSkeleton_getCallingPid_0100
-         * @tc.name     SUB_IPC_IPCSkeleton_getCallingPid_0100
-         * @tc.desc     test IPCSkeleton getCallingPid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_IPCSkeleton_getCallingPid_0100
+         * @tc.number SUB_IPC_IPCSkeleton_getCallingPid_0100
+         * @tc.desc   test IPCSkeleton getCallingPid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_IPCSkeleton_getCallingPid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingPid_0100 --------------------');
@@ -1403,13 +1403,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_IPCSkeleton_getCallingUid_0100
-         * @tc.name     SUB_IPC_IPCSkeleton_getCallingUid_0100
-         * @tc.desc     test IPCSkeleton getCallingUid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_IPCSkeleton_getCallingUid_0100
+         * @tc.number SUB_IPC_IPCSkeleton_getCallingUid_0100
+         * @tc.desc   test IPCSkeleton getCallingUid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_IPCSkeleton_getCallingUid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingUid_0100 --------------------');
@@ -1429,13 +1429,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_IPCSkeleton_getCallingTokenId_0100
-         * @tc.name     SUB_IPC_IPCSkeleton_getCallingTokenId_0100
-         * @tc.desc     test IPCSkeleton getCallingTokenId
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_IPCSkeleton_getCallingTokenId_0100
+         * @tc.number SUB_IPC_IPCSkeleton_getCallingTokenId_0100
+         * @tc.desc   test IPCSkeleton getCallingTokenId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_IPCSkeleton_getCallingTokenId_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingTokenId_0100 --------------------');
@@ -1455,13 +1455,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_0100
-         * @tc.desc     test MessageSequence writeRemoteObject
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_0100
+         * @tc.desc   test MessageSequence writeRemoteObject
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRemoteObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_0100 --------------------');
@@ -1483,13 +1483,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
-         * @tc.desc     test MessageSequence writeRemoteObject and readRemoteObject
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
+         * @tc.desc   test MessageSequence writeRemoteObject and readRemoteObject
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 --------------------');
@@ -1512,13 +1512,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_readFileDescriptor_0100
-         * @tc.name     SUB_IPC_MessageSequence_readFileDescriptor_0100
-         * @tc.desc     test MessageSequence readFileDescriptor
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readFileDescriptor_0100
+         * @tc.number SUB_IPC_MessageSequence_readFileDescriptor_0100
+         * @tc.desc   test MessageSequence readFileDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_readFileDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readFileDescriptor_0100 --------------------');
@@ -1545,13 +1545,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeFileDescriptor_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeFileDescriptor_0100
-         * @tc.desc     test MessageSequence writeFileDescriptor
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_0100
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_0100
+         * @tc.desc   test MessageSequence writeFileDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeFileDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_0100 --------------------');
@@ -1575,13 +1575,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_closeFileDescriptor_0100
-         * @tc.name     SUB_IPC_MessageSequence_closeFileDescriptor_0100
-         * @tc.desc     test MessageSequence closeFileDescriptor
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_closeFileDescriptor_0100
+         * @tc.number SUB_IPC_MessageSequence_closeFileDescriptor_0100
+         * @tc.desc   test MessageSequence closeFileDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_closeFileDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_closeFileDescriptor_0100 --------------------');
@@ -1605,13 +1605,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0100
-         * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0100
-         * @tc.desc     test RemoteObject sendMessageRequest
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0100
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0100
+         * @tc.desc   test RemoteObject sendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(2000);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0100 --------------------');
@@ -1647,13 +1647,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0200
-         * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0200
-         * @tc.desc     test RemoteObject sendMessageRequest SYNC
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0200
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0200
+         * @tc.desc   test RemoteObject sendMessageRequest SYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(2000);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0200 --------------------');
@@ -1684,13 +1684,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0300
-        * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0300
-        * @tc.desc     test RemoteObject sendMessageRequest ASYNC
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-       */
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0300
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0300
+         * @tc.desc   test RemoteObject sendMessageRequest ASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(2000);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0300 --------------------');
@@ -1721,13 +1721,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0400
-         * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0400
-         * @tc.desc     test RemoteObject sendMessageRequest SYNC
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0400
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0400
+         * @tc.desc   test RemoteObject sendMessageRequest SYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(2000);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0400 --------------------');
@@ -1763,14 +1763,14 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0400 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
-        * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
-        * @tc.desc     test RemoteObject sendMessageRequest
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
+         * @tc.desc   test RemoteObject sendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(2000);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 --------------------');
@@ -1797,13 +1797,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_getDescriptor_0100
-         * @tc.name     SUB_IPC_RemoteObject_getDescriptor_0100
-         * @tc.desc     test RemoteObject getDescriptor
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_getDescriptor_0100
+         * @tc.number SUB_IPC_RemoteObject_getDescriptor_0100
+         * @tc.desc   test RemoteObject getDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_getDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getDescriptor_0100 --------------------');
@@ -1829,13 +1829,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_getCallingPid_0100
-         * @tc.name     SUB_IPC_RemoteObject_getCallingPid_0100
-         * @tc.desc     test RemoteObject getCallingPid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_getCallingPid_0100
+         * @tc.number SUB_IPC_RemoteObject_getCallingPid_0100
+         * @tc.desc   test RemoteObject getCallingPid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_getCallingPid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getCallingPid_0100 --------------------');
@@ -1857,13 +1857,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_getCallingUid_0100
-         * @tc.name     SUB_IPC_RemoteObject_getCallingUid_0100
-         * @tc.desc     test RemoteObject getCallingUid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_getCallingUid_0100
+         * @tc.number SUB_IPC_RemoteObject_getCallingUid_0100
+         * @tc.desc   test RemoteObject getCallingUid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_getCallingUid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getCallingUid_0100 --------------------');
@@ -1885,13 +1885,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_registerDeathRecipient_0100
-         * @tc.name     SUB_IPC_registerDeathRecipient_0100
-         * @tc.desc     test registerDeathRecipient
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_registerDeathRecipient_0100
+         * @tc.number SUB_IPC_registerDeathRecipient_0100
+         * @tc.desc   test registerDeathRecipient
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_registerDeathRecipient_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_registerDeathRecipient_0100 --------------------');
@@ -1913,13 +1913,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_registerDeathRecipient_0200
-         * @tc.name     SUB_IPC_registerDeathRecipient_0200
-         * @tc.desc     test registerDeathRecipient
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_registerDeathRecipient_0200
+         * @tc.number SUB_IPC_registerDeathRecipient_0200
+         * @tc.desc   test registerDeathRecipient
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_registerDeathRecipient_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_registerDeathRecipient_0200 --------------------');
@@ -1938,13 +1938,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_0100
-         * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_0100
-         * @tc.desc     test RemoteProxy SendMessageRequest
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_0100
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_0100
+         * @tc.desc   test RemoteProxy SendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_0100 --------------------');
@@ -1984,13 +1984,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
-         * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
-         * @tc.desc     test RemoteProxy SendMessageRequest after write and read Proxy
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
+         * @tc.desc   test RemoteProxy SendMessageRequest after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(2000);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 --------------------');
@@ -2037,13 +2037,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
-         * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
-         * @tc.desc     test RemoteProxy SendMessageRequest
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
+         * @tc.desc   test RemoteProxy SendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 --------------------');
@@ -2079,13 +2079,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
-        * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
-        * @tc.desc     test RemoteProxy SendMessageRequest  callback after write and read Proxy
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
+         * @tc.desc   test RemoteProxy SendMessageRequest  callback after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 --------------------');
@@ -2123,13 +2123,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
-        * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
-        * @tc.desc     test RemoteProxy SendMessageRequest  callback after write and read Proxy
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
+         * @tc.desc   test RemoteProxy SendMessageRequest  callback after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200 --------------------');
@@ -2156,13 +2156,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_RemoteProxy_IsObjectDead_0100
-        * @tc.name     SUB_IPC_RemoteProxy_IsObjectDead_0100
-        * @tc.desc     test RemoteProxy IsObjectDead
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_IsObjectDead_0100
+         * @tc.number SUB_IPC_RemoteProxy_IsObjectDead_0100
+         * @tc.desc   test RemoteProxy IsObjectDead
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_IsObjectDead_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_IsObjectDead_0100 --------------------');
@@ -2200,12 +2200,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_getDescriptor_0100
-         * @tc.name     SUB_IPC_RemoteProxy_getDescriptor_0100
-         * @tc.desc     test RemoteProxy getDescriptor
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_RemoteProxy_getDescriptor_0100
+         * @tc.number SUB_IPC_RemoteProxy_getDescriptor_0100
+         * @tc.desc   test RemoteProxy getDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_IPC_RemoteProxy_getDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
           await Utils.msSleep(500);
@@ -2239,12 +2239,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_getDescriptor_0200
-         * @tc.name     SUB_IPC_RemoteProxy_getDescriptor_0200
-         * @tc.desc     test RemoteProxy getDescriptor RemoteProxy
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_RemoteProxy_getDescriptor_0200
+         * @tc.number SUB_IPC_RemoteProxy_getDescriptor_0200
+         * @tc.desc   test RemoteProxy getDescriptor RemoteProxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_IPC_RemoteProxy_getDescriptor_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
@@ -2264,12 +2264,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_IRemoteBroker_asObject_0100
-         * @tc.name     SUB_IPC_IRemoteBroker_asObject_0100
-         * @tc.desc     test asObject
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.number SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.desc   test asObject
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_IPC_IRemoteBroker_asObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
           await Utils.msSleep(500);
@@ -2306,12 +2306,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
-         * @tc.desc     test writeRemoteObject errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
+         * @tc.desc   test writeRemoteObject errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
@@ -2334,13 +2334,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
-        * @tc.desc     test readRemoteObject errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
+         * @tc.desc   test readRemoteObject errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100 --------------------');
@@ -2363,13 +2363,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
-        * @tc.desc     test writeInterfaceToken errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
+         * @tc.desc   test writeInterfaceToken errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 --------------------');
@@ -2390,13 +2390,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
-        * @tc.desc     test RemoteProxy SendMessageRequest after write and read Proxy
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
+         * @tc.desc   test RemoteProxy SendMessageRequest after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 --------------------');
@@ -2417,13 +2417,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
-        * @tc.desc     test readInterfaceToken errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
+         * @tc.desc   test readInterfaceToken errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 --------------------');
@@ -2445,13 +2445,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
-        * @tc.desc     test setCapacity errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
+         * @tc.desc   test setCapacity errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 --------------------');
@@ -2472,13 +2472,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
-        * @tc.desc     test writeNoException errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
+         * @tc.desc   test writeNoException errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 --------------------');
@@ -2499,13 +2499,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readException_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readException_ErrorCode_0100
-        * @tc.desc     test readException errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readException_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readException_ErrorCode_0100
+         * @tc.desc   test readException errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readException_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readException_ErrorCode_0100 --------------------');
@@ -2526,13 +2526,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
-        * @tc.desc     test writeInt errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
+         * @tc.desc   test writeInt errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeInt_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 --------------------');
@@ -2553,13 +2553,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readInt_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readInt_ErrorCode_0100
-        * @tc.desc     test readInt errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readInt_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readInt_ErrorCode_0100
+         * @tc.desc   test readInt errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readInt_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readInt_ErrorCode_0100 --------------------');
@@ -2581,13 +2581,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
-        * @tc.desc     test writeLong errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
+         * @tc.desc   test writeLong errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeLong_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 --------------------');
@@ -2608,13 +2608,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readLong_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readLong_ErrorCode_0100
-        * @tc.desc     test readLong errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readLong_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readLong_ErrorCode_0100
+         * @tc.desc   test readLong errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readLong_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readLong_ErrorCode_0100 --------------------');
@@ -2636,13 +2636,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
-        * @tc.desc     test writeBoolean errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
+         * @tc.desc   test writeBoolean errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 --------------------');
@@ -2663,13 +2663,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
-        * @tc.desc     test readBoolean errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
+         * @tc.desc   test readBoolean errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 --------------------');
@@ -2690,14 +2690,14 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_writeString_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeString_ErrorCode_0100
-        * @tc.desc     test writeString errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeString_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeString_ErrorCode_0100
+         * @tc.desc   test writeString errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeString_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeString_ErrorCode_0100 --------------------');
@@ -2718,13 +2718,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readString_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readString_ErrorCode_0100
-        * @tc.desc     test readString errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readString_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readString_ErrorCode_0100
+         * @tc.desc   test readString errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readString_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readString_ErrorCode_0100 --------------------');
@@ -2745,14 +2745,14 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readString_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
-        * @tc.desc     test writeParcelable errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
+         * @tc.desc   test writeParcelable errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 --------------------');
@@ -2774,13 +2774,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
-        * @tc.desc     test readParcelable errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
+         * @tc.desc   test readParcelable errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 --------------------');
@@ -2805,13 +2805,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
-        * @tc.desc     test writeIntArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
+         * @tc.desc   test writeIntArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 --------------------');
@@ -2833,13 +2833,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
-        * @tc.desc     test readIntArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
+         * @tc.desc   test readIntArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 --------------------');
@@ -2863,13 +2863,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
-        * @tc.desc     test readIntArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
+         * @tc.desc   test readIntArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 --------------------');
@@ -2893,13 +2893,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
-        * @tc.desc     test writeDoubleArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
+         * @tc.desc   test writeDoubleArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 --------------------');
@@ -2921,13 +2921,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
-        * @tc.desc     test readDoubleArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
+         * @tc.desc   test readDoubleArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 --------------------');
@@ -2951,13 +2951,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
-        * @tc.desc     test readDoubleArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
+         * @tc.desc   test readDoubleArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 --------------------');
@@ -2981,13 +2981,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
-        * @tc.desc     test writeBooleanArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
+         * @tc.desc   test writeBooleanArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 --------------------');
@@ -3009,13 +3009,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
-        * @tc.desc     test readBooleanArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
+         * @tc.desc   test readBooleanArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 --------------------');
@@ -3039,13 +3039,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
-        * @tc.desc     test readBooleanArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
+         * @tc.desc   test readBooleanArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 --------------------');
@@ -3069,13 +3069,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
-        * @tc.desc     test writeStringArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
+         * @tc.desc   test writeStringArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 --------------------');
@@ -3097,13 +3097,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
-        * @tc.desc     test readStringArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
+         * @tc.desc   test readStringArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 --------------------');
@@ -3127,13 +3127,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
-        * @tc.desc     test readStringArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
+         * @tc.desc   test readStringArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 --------------------');
@@ -3157,13 +3157,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
-        * @tc.desc     test writeParcelableArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
+         * @tc.desc   test writeParcelableArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 --------------------');
@@ -3188,13 +3188,13 @@ export default function abilityTest() {
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
-        * @tc.desc     test readParcelableArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
+         * @tc.desc   test readParcelableArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 --------------------');
@@ -3221,14 +3221,14 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
-        * @tc.desc     test writeByteArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
+         * @tc.desc   test writeByteArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 --------------------');
@@ -3250,13 +3250,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
-         * @tc.desc     test MessageSequence writeAshmem Ashmem errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeAshmem Ashmem errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 --------------------');
@@ -3278,14 +3278,14 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
-        * @tc.desc     test MessageSequence writeAshmem Ashmem errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeAshmem Ashmem errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 --------------------');
@@ -3309,13 +3309,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 --------------------');
@@ -3340,12 +3340,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
-         * @tc.desc     test MessageSequence readRawDataBuffer errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
+         * @tc.desc   test MessageSequence readRawDataBuffer errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
@@ -3371,14 +3371,14 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
-        * @tc.desc     test MessageSequence readFileDescriptor errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
+         * @tc.desc   test MessageSequence readFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 --------------------');
@@ -3406,13 +3406,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
-         * @tc.desc     test MessageSequence writeFileDescriptor errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100 --------------------');
@@ -3438,13 +3438,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
-         * @tc.desc     test MessageSequence writeFileDescriptor errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
+         * @tc.desc   test MessageSequence writeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200 --------------------');
@@ -3470,13 +3470,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
-         * @tc.name     SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
-         * @tc.desc     test MessageSequence writeFileDescriptor errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
+         * @tc.desc   test MessageSequence writeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 --------------------');
@@ -3496,13 +3496,13 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
-         * @tc.desc     test MessageSequence closeFileDescriptor errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
+         * @tc.desc   test MessageSequence closeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(500);
             hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 --------------------');

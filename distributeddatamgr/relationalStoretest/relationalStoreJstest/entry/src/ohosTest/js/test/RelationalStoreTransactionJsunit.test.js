@@ -54,12 +54,12 @@ export default function relationalStoreTransactionTest() {
         console.info(TAG + "*************Unit Test Begin*************");
 
         /**
-         * @tc.name testRdbTransactionInsert0001
+         * @tc.name   testRdbTransactionInsert0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0100
-         * @tc.desc RelationalStore transaction insert & commit, the result comes out is 3 items;
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore transaction insert & commit, the result comes out is 3 items;
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreInsert0001 start *************");
@@ -92,12 +92,12 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @tc.name testRdbTransactionInsert0002
+         * @tc.name   testRdbTransactionInsert0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0200
-         * @tc.desc RelationalStore transaction insert & commit, the result comes out is 3 items;
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore transaction insert & commit, the result comes out is 3 items;
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreInsert0002 start *************");
@@ -146,13 +146,12 @@ export default function relationalStoreTransactionTest() {
 
 
         /**
-         * @tc.name testRdbTransactionInsert0003
+         * @tc.name   testRdbTransactionInsert0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0300
-         * @tc.desc while using transaction to insert values, querying the db,
-         *     the result comes out is 0;
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   while using transaction to insert values, querying the db,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionInsert0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbTransactionInsert0003 start *************");
@@ -198,13 +197,12 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @tc.name testRdbTransactionRollBack0001
+         * @tc.name   testRdbTransactionRollBack0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0400
-         * @tc.desc the classical transaction scenario, when we insert or commit the value,
-         *     db returns an exception, we need to catch exception and rollback.
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   the classical transaction scenario, when we insert or commit the value,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionRollBack0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbTransactionRollBack0001 start *************");
@@ -236,13 +234,12 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @tc.name testRdbTransactionMulti0001
+         * @tc.name   testRdbTransactionMulti0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0500
-         * @tc.desc the classical transaction scenario, when we insert or commit the value,
-         *     db returns an exception, we need to catch exception and rollback.
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   the classical transaction scenario, when we insert or commit the value,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionMulti0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('ttt' + "************* testRdbTransactionMulti0001 start *************");
@@ -287,13 +284,12 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @tc.name testRdbTransactionMulti0002
+         * @tc.name   testRdbTransactionMulti0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0600
-         * @tc.desc the classical transaction scenario, when we insert or commit the value,
-         *     db returns an exception, we need to catch exception and rollback.
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   the classical transaction scenario, when we insert or commit the value,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionMulti0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbTransactionMulti0002 start *************");
@@ -341,13 +337,12 @@ export default function relationalStoreTransactionTest() {
             }
         })
         /**
-         * @tc.name testRdbTransactionMulti0003
+         * @tc.name   testRdbTransactionMulti0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0700
-         * @tc.desc the classical transaction scenario, when we insert or commit the value,
-         *     db returns an exception, we need to catch exception and rollback.
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   the classical transaction scenario, when we insert or commit the value,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionMulti0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbTransactionMulti0003 start *************");
@@ -399,13 +394,12 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @tc.name testRdbTransactionDelete0001
+         * @tc.name   testRdbTransactionDelete0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0800
-         * @tc.desc the classical transaction scenario, when we delete or commit the value,
-         *     db returns an exception, we need to catch exception and rollback.
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   the classical transaction scenario, when we delete or commit the value,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbTransactionDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbTransactionDelete0001 start *************");

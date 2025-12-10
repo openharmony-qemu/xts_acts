@@ -49,10 +49,12 @@ export default function MultiNavigationTest() {
 
 
     /**
-     * @tc.number    MultiNavigation_0100
-     * @tc.name      MultiNavigation_0100
-     * @tc.desc      Test MultiNavigation
-     * @tc.level     Level 2
+     * @tc.name   MultiNavigation_0100
+     * @tc.number MultiNavigation_0100
+     * @tc.desc   Test MultiNavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiNavigation_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('MultiNavigation_0100 START');
@@ -78,10 +80,12 @@ export default function MultiNavigationTest() {
 
     
     /**
-     * @tc.number    MultiNavigation_0200
-     * @tc.name      MultiNavigation_0200
-     * @tc.desc      Test MultiNavigation
-     * @tc.level     Level 2
+     * @tc.name   MultiNavigation_0200
+     * @tc.number MultiNavigation_0200
+     * @tc.desc   Test MultiNavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiNavigation_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('MultiNavigation_0200 START');
@@ -112,10 +116,12 @@ export default function MultiNavigationTest() {
 
     
     /**
-     * @tc.number    MultiNavigation_0300
-     * @tc.name      MultiNavigation_0300
-     * @tc.desc      Test MultiNavigation
-     * @tc.level     Level 2
+     * @tc.name   MultiNavigation_0300
+     * @tc.number MultiNavigation_0300
+     * @tc.desc   Test MultiNavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiNavigation_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('MultiNavigation_0300 START');

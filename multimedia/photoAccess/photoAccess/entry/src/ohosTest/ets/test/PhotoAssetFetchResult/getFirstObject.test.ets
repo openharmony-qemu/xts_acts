@@ -80,12 +80,12 @@ export default function assetGetFirstObjectTest() {
     //image
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_FIRST_OBJECT_0000
-     * @tc.name      : getFirstObject_callback_000
-     * @tc.desc      : getFirstObject image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFirstObject_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_FIRST_OBJECT_0000
+     * @tc.desc   getFirstObject image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFirstObject_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getFirstObject_callback_000';
@@ -100,12 +100,12 @@ export default function assetGetFirstObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_FIRST_OBJECT_0000
-     * @tc.name      : getFirstObject_promise_000
-     * @tc.desc      : getFirstObject image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFirstObject_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_FIRST_OBJECT_0000
+     * @tc.desc   getFirstObject image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFirstObject_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getFirstObject_promise_000';
@@ -121,12 +121,12 @@ export default function assetGetFirstObjectTest() {
     //video
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_FIRST_OBJECT_0100
-     * @tc.name      : getFirstObject_callback_001
-     * @tc.desc      : getFirstObject video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFirstObject_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_FIRST_OBJECT_0100
+     * @tc.desc   getFirstObject video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFirstObject_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getFirstObject_callback_001';
@@ -141,12 +141,12 @@ export default function assetGetFirstObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_FIRST_OBJECT_0100
-     * @tc.name      : getFirstObject_promise_001
-     * @tc.desc      : getFirstObject video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFirstObject_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_FIRST_OBJECT_0100
+     * @tc.desc   getFirstObject video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFirstObject_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getFirstObject_promise_001';

@@ -44,10 +44,13 @@ export default function searchOnCutJsunit() {
       console.info("searchOnCut after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testsearchOnCut0001
-     * @tc.desic         acesearchOnCutEtsTest0001
+    /**
+     * @tc.name   testsearchOnCut0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testsearchOnCut0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0001',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0001 START');
@@ -61,10 +64,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testsearchOnCut0002
-     * @tc.desic         acesearchOnCutEtsTest0002
+    /**
+     * @tc.name   testsearchOnCut0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testsearchOnCut0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0002',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0002 START');
@@ -78,10 +84,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testsearchOnCut0003
-     * @tc.desic         acesearchOnCutEtsTest0003
+    /**
+     * @tc.name   testsearchOnCut0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testsearchOnCut0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0003',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0003 START');
@@ -95,10 +104,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testsearchOnCut0004
-     * @tc.desic         acesearchOnCutEtsTest0004
+    /**
+     * @tc.name   testsearchOnCut0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testsearchOnCut0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0004',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0004 START');
@@ -112,10 +124,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testsearchOnCut0005
-     * @tc.desic         acesearchOnCutEtsTest0005
+    /**
+     * @tc.name   testsearchOnCut0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   testsearchOnCut0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0005',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0005 START');
@@ -129,10 +144,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testsearchOnCut0006
-     * @tc.desic         acesearchOnCutEtsTest0006
+    /**
+     * @tc.name   testsearchOnCut0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   testsearchOnCut0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0006',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0006 START');
@@ -146,10 +164,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testsearchOnCut0007
-     * @tc.desic         acesearchOnCutEtsTest0007
+    /**
+     * @tc.name   testsearchOnCut0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   testsearchOnCut0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0007',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0007 START');
@@ -163,10 +184,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         testsearchOnCut0009
-     * @tc.desic         acesearchOnCutEtsTest0009
+    /**
+     * @tc.name   testsearchOnCut0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   testsearchOnCut0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0009',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut009 START');
@@ -180,10 +204,13 @@ export default function searchOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testsearchOnCut0010
-     * @tc.desic         acesearchOnCutEtsTest0010
+    /**
+     * @tc.name   testsearchOnCut0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   testsearchOnCut0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0010',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0010 START');

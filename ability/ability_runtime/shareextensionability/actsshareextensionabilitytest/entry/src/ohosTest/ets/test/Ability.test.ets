@@ -53,9 +53,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0100
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: With the same application with the same module, test ShareExtensionAbility lifecycle.
+     * @tc.name   Acts_ShareExtensionAbility_0100
+     * @tc.number Acts_ShareExtensionAbility_0100
+     * @tc.desc   With the same application with the same module, test ShareExtensionAbility lifecycle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0100', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
@@ -125,9 +128,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0200
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: With the same application with the different module, test ShareExtensionAbility lifecycle.
+     * @tc.name   Acts_ShareExtensionAbility_0200
+     * @tc.number Acts_ShareExtensionAbility_0200
+     * @tc.desc   With the same application with the different module, test ShareExtensionAbility lifecycle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0200', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
@@ -194,9 +200,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0300
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: With the different application, test ShareExtensionAbility lifecycle.
+     * @tc.name   Acts_ShareExtensionAbility_0300
+     * @tc.number Acts_ShareExtensionAbility_0300
+     * @tc.desc   With the different application, test ShareExtensionAbility lifecycle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0300', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
@@ -268,9 +277,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0400
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Start the same ShareExtensionAbility with different UI components, and the test is successful.
+     * @tc.name   Acts_ShareExtensionAbility_0400
+     * @tc.number Acts_ShareExtensionAbility_0400
+     * @tc.desc   Start the same ShareExtensionAbility with different UI components, and the test is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0400', Level.LEVEL0, async (done: Function) => {
       let count = 0;
@@ -312,9 +324,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0500
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Start ShareExtensionAbility with invalid bundleName, start failed.
+     * @tc.name   Acts_ShareExtensionAbility_0500
+     * @tc.number Acts_ShareExtensionAbility_0500
+     * @tc.desc   Start ShareExtensionAbility with invalid bundleName, start failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0500', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
@@ -351,9 +366,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0600
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Start ShareExtensionAbility with invalid abilityName, start failed.
+     * @tc.name   Acts_ShareExtensionAbility_0600
+     * @tc.number Acts_ShareExtensionAbility_0600
+     * @tc.desc   Start ShareExtensionAbility with invalid abilityName, start failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0600', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
@@ -392,9 +410,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0700
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Start ShareExtensionAbility with invalid parameters, start failed.
+     * @tc.name   Acts_ShareExtensionAbility_0700
+     * @tc.number Acts_ShareExtensionAbility_0700
+     * @tc.desc   Start ShareExtensionAbility with invalid parameters, start failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0700', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
@@ -433,9 +454,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0800
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test terminateSelfWithResultEvent successful.
+     * @tc.name   Acts_ShareExtensionAbility_0800
+     * @tc.number Acts_ShareExtensionAbility_0800
+     * @tc.desc   Test terminateSelfWithResultEvent successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0800', Level.LEVEL0, async (done: Function) => {
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
@@ -491,9 +515,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_0900
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test sendData successful.
+     * @tc.name   Acts_ShareExtensionAbility_0900
+     * @tc.number Acts_ShareExtensionAbility_0900
+     * @tc.desc   Test sendData successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_0900', Level.LEVEL0, async (done: Function) => {
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
@@ -554,9 +581,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1000
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test the startAbility interface in callback form.
+     * @tc.name   Acts_ShareExtensionAbility_1000
+     * @tc.number Acts_ShareExtensionAbility_1000
+     * @tc.desc   Test the startAbility interface in callback form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1000', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -590,9 +620,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1100
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test the startAbility interface in promiss form.
+     * @tc.name   Acts_ShareExtensionAbility_1100
+     * @tc.number Acts_ShareExtensionAbility_1100
+     * @tc.desc   Test the startAbility interface in promiss form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1100', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -626,9 +659,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1200
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test the startAbility interface with invalid want.
+     * @tc.name   Acts_ShareExtensionAbility_1200
+     * @tc.number Acts_ShareExtensionAbility_1200
+     * @tc.desc   Test the startAbility interface with invalid want.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1200', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -662,9 +698,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1300
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test the startAbilityForResult interface in callback form.
+     * @tc.name   Acts_ShareExtensionAbility_1300
+     * @tc.number Acts_ShareExtensionAbility_1300
+     * @tc.desc   Test the startAbilityForResult interface in callback form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1300', Level.LEVEL0, async (done: Function) => {
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -701,9 +740,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1400
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test the startAbilityForResult interface in promiss form.
+     * @tc.name   Acts_ShareExtensionAbility_1400
+     * @tc.number Acts_ShareExtensionAbility_1400
+     * @tc.desc   Test the startAbilityForResult interface in promiss form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1400', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -739,9 +781,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1500
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test the startAbilityForResult interface with invalid want.
+     * @tc.name   Acts_ShareExtensionAbility_1500
+     * @tc.number Acts_ShareExtensionAbility_1500
+     * @tc.desc   Test the startAbilityForResult interface with invalid want.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1500', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -777,9 +822,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1600
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test setReceiveDataCallback successful.
+     * @tc.name   Acts_ShareExtensionAbility_1600
+     * @tc.number Acts_ShareExtensionAbility_1600
+     * @tc.desc   Test setReceiveDataCallback successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1600', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -818,9 +866,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1700
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Use ui components continuously to start two ShareExtensionAbility.
+     * @tc.name   Acts_ShareExtensionAbility_1700
+     * @tc.number Acts_ShareExtensionAbility_1700
+     * @tc.desc   Use ui components continuously to start two ShareExtensionAbility.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1700', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -849,9 +900,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1800
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test starts ShareExtensionAbility using startAbility interface.
+     * @tc.name   Acts_ShareExtensionAbility_1800
+     * @tc.number Acts_ShareExtensionAbility_1800
+     * @tc.desc   Test starts ShareExtensionAbility using startAbility interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1800', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -893,9 +947,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_1900
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test hapModuleInfo in context
+     * @tc.name   Acts_ShareExtensionAbility_1900
+     * @tc.number Acts_ShareExtensionAbility_1900
+     * @tc.desc   Test hapModuleInfo in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_1900', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -961,9 +1018,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2100
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test extensionAbilityInfo in context
+     * @tc.name   Acts_ShareExtensionAbility_2100
+     * @tc.number Acts_ShareExtensionAbility_2100
+     * @tc.desc   Test extensionAbilityInfo in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2100', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1030,9 +1090,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2000
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test config in context
+     * @tc.name   Acts_ShareExtensionAbility_2000
+     * @tc.number Acts_ShareExtensionAbility_2000
+     * @tc.desc   Test config in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2000', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1081,9 +1144,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2200
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test resourceManager in context
+     * @tc.name   Acts_ShareExtensionAbility_2200
+     * @tc.number Acts_ShareExtensionAbility_2200
+     * @tc.desc   Test resourceManager in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2200', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1120,9 +1186,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2300
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test applicationInfo in context
+     * @tc.name   Acts_ShareExtensionAbility_2300
+     * @tc.number Acts_ShareExtensionAbility_2300
+     * @tc.desc   Test applicationInfo in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2300', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1173,9 +1242,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2400
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test cacheDir in context
+     * @tc.name   Acts_ShareExtensionAbility_2400
+     * @tc.number Acts_ShareExtensionAbility_2400
+     * @tc.desc   Test cacheDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2400', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1214,9 +1286,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2500
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test tempDir in context
+     * @tc.name   Acts_ShareExtensionAbility_2500
+     * @tc.number Acts_ShareExtensionAbility_2500
+     * @tc.desc   Test tempDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2500', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1255,9 +1330,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2600
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test filesDir in context
+     * @tc.name   Acts_ShareExtensionAbility_2600
+     * @tc.number Acts_ShareExtensionAbility_2600
+     * @tc.desc   Test filesDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2600', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1296,9 +1374,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2700
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test databaseDir in context
+     * @tc.name   Acts_ShareExtensionAbility_2700
+     * @tc.number Acts_ShareExtensionAbility_2700
+     * @tc.desc   Test databaseDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2700', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1337,9 +1418,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2800
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test preferencesDir in context
+     * @tc.name   Acts_ShareExtensionAbility_2800
+     * @tc.number Acts_ShareExtensionAbility_2800
+     * @tc.desc   Test preferencesDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2800', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1378,9 +1462,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_2900
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Test bundleCodeDir in context
+     * @tc.name   Acts_ShareExtensionAbility_2900
+     * @tc.number Acts_ShareExtensionAbility_2900
+     * @tc.desc   Test bundleCodeDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_2900', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1419,9 +1506,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_3000
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in the moduleName of the current application hap1
+     * @tc.name   Acts_ShareExtensionAbility_3000
+     * @tc.number Acts_ShareExtensionAbility_3000
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_3000', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1466,9 +1556,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_3100
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in the moduleName of the current application hap2
+     * @tc.name   Acts_ShareExtensionAbility_3100
+     * @tc.number Acts_ShareExtensionAbility_3100
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_3100', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1513,9 +1606,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_3200
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in the moduleName of the cross-application hap1
+     * @tc.name   Acts_ShareExtensionAbility_3200
+     * @tc.number Acts_ShareExtensionAbility_3200
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the cross-application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_3200', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1559,9 +1655,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_3300
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in a non-existing moduleName
+     * @tc.name   Acts_ShareExtensionAbility_3300
+     * @tc.number Acts_ShareExtensionAbility_3300
+     * @tc.desc   Context calls createModuleContext, passing in a non-existing moduleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_3300', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1605,9 +1704,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_3400
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, and the incoming moduleName is undefined
+     * @tc.name   Acts_ShareExtensionAbility_3400
+     * @tc.number Acts_ShareExtensionAbility_3400
+     * @tc.desc   Context calls createModuleContext, and the incoming moduleName is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_3400', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -1651,9 +1753,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ShareExtensionAbility_3500
-     * @tc.name: Test ShareExtensionAbility basic function.
-     * @tc.desc: test getApplicationContext return not empty
+     * @tc.name   Acts_ShareExtensionAbility_3500
+     * @tc.number Acts_ShareExtensionAbility_3500
+     * @tc.desc   test getApplicationContext return not empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ShareExtensionAbility_3500', Level.LEVEL0, async (done: Function) => {
       await sleep(500);

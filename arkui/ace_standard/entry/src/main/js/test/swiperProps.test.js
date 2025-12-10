@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIdProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIdProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperIdProp START');
@@ -98,9 +101,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperClassProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperClassProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperClassProp START');
@@ -117,9 +123,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperClassPropNone START');
@@ -137,9 +146,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperRefProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperRefProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperRefProp START');
@@ -156,9 +168,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperRefPropNone START');
@@ -176,9 +191,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDataProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDataProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperDataProp START');
@@ -310,9 +346,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperDataPropNone START');
@@ -330,9 +369,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testSwiperClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testSwiperClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testSwiperClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testSwiperClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testSwiperClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testSwiperClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testSwiperDirPropRtl START');
@@ -426,9 +480,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testSwiperDirPropLtr START');
@@ -445,9 +502,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testSwiperDirPropAuto START');
@@ -464,9 +524,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperDirPropNone START');
@@ -483,9 +546,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testSwiperForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperForPropNull', Level.LEVEL0, async function(done) {
             console.info('testSwiperForPropNull START');
@@ -503,9 +569,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testSwiperForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperForPropOne', Level.LEVEL0, async function(done) {
             console.info('testSwiperForPropOne START');
@@ -523,9 +592,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testSwiperForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperForPropThree', Level.LEVEL0, async function(done) {
             console.info('testSwiperForPropThree START');
@@ -543,9 +615,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperIfPropTrue START');
@@ -563,9 +638,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperShowPropTrue START');
@@ -583,9 +661,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperShowPropFalse START');
@@ -603,9 +684,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwiperShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwiperShowPropNone START');
@@ -623,9 +707,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIndexProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIndexProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIndexProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperIndexProp START');
@@ -643,9 +730,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperAutoplayPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperAutoplayPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperAutoplayPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperAutoplayPropTrue START');
@@ -663,9 +753,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperAutoplayPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperAutoplayPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperAutoplayPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperAutoplayPropFalse START');
@@ -683,9 +776,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIntervalProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIntervalProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIntervalProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperIntervalProp START');
@@ -703,9 +799,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIndicatorPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIndicatorPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIndicatorPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperIndicatorPropTrue START');
@@ -723,9 +822,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIndicatorPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIndicatorPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIndicatorPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperIndicatorPropFalse START');
@@ -743,9 +845,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDigitalPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDigitalPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDigitalPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperDigitalPropTrue START');
@@ -763,9 +868,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDigitalPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDigitalPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDigitalPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperDigitalPropFalse START');
@@ -783,9 +891,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIndicatorMaskPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIndicatorMaskPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIndicatorMaskPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperIndicatorMaskPropTrue START');
@@ -803,9 +914,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIndicatorMaskPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIndicatorMaskPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIndicatorMaskPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperIndicatorMaskPropFalse START');
@@ -823,9 +937,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIndicatorDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIndicatorDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIndicatorDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperIndicatorDisabledPropTrue START');
@@ -844,9 +961,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperIndicatorDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperIndicatorDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperIndicatorDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperIndicatorDisabledPropFalse START');
@@ -865,9 +985,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperLoopPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperLoopPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperLoopPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperLoopPropTrue START');
@@ -885,9 +1008,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperLoopPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperLoopPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperLoopPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperLoopPropFalse START');
@@ -905,9 +1031,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDurationProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDurationProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDurationProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperDurationProp START');
@@ -925,9 +1054,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperVerticalPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwiperVerticalPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperVerticalPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwiperVerticalPropTrue START');
@@ -945,9 +1077,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperVerticalPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwiperVerticalPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperVerticalPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwiperVerticalPropFalse START');
@@ -965,9 +1100,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperCachedSizeProp
-         * @tc.desc      ACE
+         * @tc.name   testSwiperCachedSizeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperCachedSizeProp', Level.LEVEL0, async function(done) {
             console.info('testSwiperCachedSizeProp START');
@@ -985,9 +1123,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperScrollEffectPropFade
-         * @tc.desc      ACE
+         * @tc.name   testSwiperScrollEffectPropFade
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperScrollEffectPropFade', Level.LEVEL0, async function(done) {
             console.info('testSwiperScrollEffectPropFade START');
@@ -1005,9 +1146,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperScrollEffectPropSpring
-         * @tc.desc      ACE
+         * @tc.name   testSwiperScrollEffectPropSpring
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperScrollEffectPropSpring', Level.LEVEL0, async function(done) {
             console.info('testSwiperScrollEffectPropSpring START');
@@ -1025,9 +1169,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDisplayModePropStretch
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDisplayModePropStretch
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDisplayModePropStretch', Level.LEVEL0, async function(done) {
             console.info('testSwiperDisplayModePropStretch START');
@@ -1045,9 +1192,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperDisplayModePropAutoLinear
-         * @tc.desc      ACE
+         * @tc.name   testSwiperDisplayModePropAutoLinear
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperDisplayModePropAutoLinear', Level.LEVEL0, async function(done) {
             console.info('testSwiperDisplayModePropAutoLinear START');

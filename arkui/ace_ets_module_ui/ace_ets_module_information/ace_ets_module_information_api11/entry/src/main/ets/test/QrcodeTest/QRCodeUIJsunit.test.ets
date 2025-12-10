@@ -52,6 +52,14 @@ export default function QRCodeUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QRCodeUIJsunit_0100
+     * @tc.number QRCodeUIJsunit_0100
+     * @tc.desc   QRCodeUIJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QRCodeUIJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the QRCode component
       console.info('[QRCodeUIJsunit_0100] START');
@@ -75,6 +83,14 @@ export default function QRCodeUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QRCodeUIJsunit_0200
+     * @tc.number QRCodeUIJsunit_0200
+     * @tc.desc   QRCodeUIJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QRCodeUIJsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Modify the color of the QRCode component
       console.info('[QRCodeUIJsunit_0200] START');
@@ -89,6 +105,14 @@ export default function QRCodeUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QRCodeUIJsunit_0300
+     * @tc.number QRCodeUIJsunit_0300
+     * @tc.desc   QRCodeUIJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QRCodeUIJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Modify the backgroundColor of the QRCode component
       console.info('[QRCodeUIJsunit_0300] START');
@@ -103,6 +127,14 @@ export default function QRCodeUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QRCodeUIJsunit_0400
+     * @tc.number QRCodeUIJsunit_0400
+     * @tc.desc   QRCodeUIJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QRCodeUIJsunit_0400', Level.LEVEL0, async (done: Function) => {
       // Modify the value of the QRCode component
       console.info('[QRCodeUIJsunit_0400] START');
@@ -118,6 +150,14 @@ export default function QRCodeUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QRCodeUIJsunit_0500
+     * @tc.number QRCodeUIJsunit_0500
+     * @tc.desc   QRCodeUIJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QRCodeUIJsunit_0500', Level.LEVEL0, async (done: Function) => {
       // Illegal modification of the QRCode component value
       console.info('[QRCodeUIJsunit_0500] START');
@@ -151,6 +191,14 @@ export default function QRCodeUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QRCodeUIJsunit_0600
+     * @tc.number QRCodeUIJsunit_0600
+     * @tc.desc   QRCodeUIJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QRCodeUIJsunit_0600', Level.LEVEL0, async (done: Function) => {
       // Verify that component QRCode only supports click events
       console.info('[QRCodeUIJsunit_0600] START');

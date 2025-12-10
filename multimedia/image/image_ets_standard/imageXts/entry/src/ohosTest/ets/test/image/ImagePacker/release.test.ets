@@ -72,12 +72,12 @@ export default function imagePackerReleaseTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_RELEASE_001
-     * @tc.name      : imagePacker_release_promise_001
-     * @tc.desc      : imagePacker_release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_release_promise_001
+     * @tc.number IMAGE_SOURCE_RELEASE_001
+     * @tc.desc   imagePacker_release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_release_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_release_promise_001';
@@ -85,12 +85,12 @@ export default function imagePackerReleaseTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_RELEASE_002
-     * @tc.name      : imagePacker_release_callback_001
-     * @tc.desc      : imagePacker_release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_release_callback_001
+     * @tc.number IMAGE_SOURCE_RELEASE_002
+     * @tc.desc   imagePacker_release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_release_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_release_callback_001';

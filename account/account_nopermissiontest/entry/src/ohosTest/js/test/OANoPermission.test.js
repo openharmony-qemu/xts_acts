@@ -21,12 +21,12 @@ export default function ActsOANoPermissionTest() {
     describe('ActsOANoPermissionTest', function () {
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_0100
-         * @tc.name    : test getOsAccountCount errcode 201 callback
-         * @tc.desc    : no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0100
+         * @tc.number SUB_Account_OsAccount_NoPermission_0100
+         * @tc.desc   no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -50,12 +50,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_0200
-         * @tc.name    : test getOsAccountCount errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0200
+         * @tc.number SUB_Account_OsAccount_NoPermission_0200
+         * @tc.desc   no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -73,12 +73,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_0300
-         * @tc.name    : test getOsAccountLocalIdForDomain errcode 201 callback
-         * @tc.desc    : no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0300
+         * @tc.number SUB_Account_OsAccount_NoPermission_0300
+         * @tc.desc   no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -103,12 +103,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_0400
-         * @tc.name    : test getOsAccountLocalIdForDomain errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0400
+         * @tc.number SUB_Account_OsAccount_NoPermission_0400
+         * @tc.desc   no ohos.permission.MANAGE_LOCAL_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -127,12 +127,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_0500
-         * @tc.name    : test queryDistributedVirtualDeviceId errcode 201 callback
-         * @tc.desc    : no ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0500
+         * @tc.number SUB_Account_OsAccount_NoPermission_0500
+         * @tc.desc   no ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -156,12 +156,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_0600
-         * @tc.name    : test queryDistributedVirtualDeviceId errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0600
+         * @tc.number SUB_Account_OsAccount_NoPermission_0600
+         * @tc.desc   no ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -178,14 +178,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_0700
-        * @tc.name      : test checkOsAccountActivated callback
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0700
+         * @tc.number SUB_Account_OsAccount_NoPermission_0700
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_0700 ";
@@ -211,14 +211,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_0800
-        * @tc.name      : test checkOsAccountActivated promise
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0800
+         * @tc.number SUB_Account_OsAccount_NoPermission_0800
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_0800 ";
@@ -238,14 +238,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_0900
-        * @tc.name      : test checkOsAccountConstraintEnabled callback
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_0900
+         * @tc.number SUB_Account_OsAccount_NoPermission_0900
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_0900 ";
@@ -271,14 +271,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1000
-        * @tc.name      : test checkOsAccountConstraintEnabled promise
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1000
+         * @tc.number SUB_Account_OsAccount_NoPermission_1000
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1000 ";
@@ -298,14 +298,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1100
-        * @tc.name      : test checkOsAccountVerified callback
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1100
+         * @tc.number SUB_Account_OsAccount_NoPermission_1100
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1100 ";
@@ -331,14 +331,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1200
-        * @tc.name      : test checkOsAccountVerified promise
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1200
+         * @tc.number SUB_Account_OsAccount_NoPermission_1200
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1200 ";
@@ -358,14 +358,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1300
-        * @tc.name      : test getOsAccountConstraints callback
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1300
+         * @tc.number SUB_Account_OsAccount_NoPermission_1300
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1300 ";
@@ -391,14 +391,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1400
-        * @tc.name      : test getOsAccountConstraints promise
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1400
+         * @tc.number SUB_Account_OsAccount_NoPermission_1400
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1400 ";
@@ -418,14 +418,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1500
-        * @tc.name      : test getCurrentOsAccount callback
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1500
+         * @tc.number SUB_Account_OsAccount_NoPermission_1500
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1500 ";
@@ -451,14 +451,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1600
-        * @tc.name      : test getCurrentOsAccount promise
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1600
+         * @tc.number SUB_Account_OsAccount_NoPermission_1600
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1600 ";
@@ -478,14 +478,14 @@ export default function ActsOANoPermissionTest() {
                 }
             });
 
-        /*
-        * @tc.number    : SUB_Account_OsAccount_NoPermission_1700
-        * @tc.name      : test getOsAccountDomainInfo promise
-        * @tc.desc      : permission check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1700
+         * @tc.number SUB_Account_OsAccount_NoPermission_1700
+         * @tc.desc   permission check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_Account_OsAccount_NoPermission_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
                 let tag = "====>SUB_Account_OsAccount_NoPermission_1700 ";
@@ -506,12 +506,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_1800
-         * @tc.name    : test DomainAccountManager updateAccountInfo errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.MANAGE_DOMAIN_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1800
+         * @tc.number SUB_Account_OsAccount_NoPermission_1800
+         * @tc.desc   no ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.MANAGE_DOMAIN_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -536,12 +536,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_1900
-         * @tc.name    : test DomainServerConfigManager addServerConfig errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_1900
+         * @tc.number SUB_Account_OsAccount_NoPermission_1900
+         * @tc.desc   no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -568,12 +568,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_2000
-         * @tc.name    : test DomainServerConfigManager removeServerConfig errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_2000
+         * @tc.number SUB_Account_OsAccount_NoPermission_2000
+         * @tc.desc   no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -597,12 +597,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_2100
-         * @tc.name    : test DomainServerConfigManager updateServerConfig errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_2100
+         * @tc.number SUB_Account_OsAccount_NoPermission_2100
+         * @tc.desc   no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -630,12 +630,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_2200
-         * @tc.name    : test DomainServerConfigManager getServerConfig errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_2200
+         * @tc.number SUB_Account_OsAccount_NoPermission_2200
+         * @tc.desc   no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -659,12 +659,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_2300
-         * @tc.name    : test DomainServerConfigManager getAllServerConfigs errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_2300
+         * @tc.number SUB_Account_OsAccount_NoPermission_2300
+         * @tc.desc   no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {
@@ -687,12 +687,12 @@ export default function ActsOANoPermissionTest() {
             });
 
         /**
-         * @tc.number  : SUB_Account_OsAccount_NoPermission_2400
-         * @tc.name    : test DomainServerConfigManager getAccountServerConfig errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_OsAccount_NoPermission_2400
+         * @tc.number SUB_Account_OsAccount_NoPermission_2400
+         * @tc.desc   no ohos.permission.MANAGE_DOMAIN_ACCOUNT_SERVER_CONFIGS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_OsAccount_NoPermission_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done) => {

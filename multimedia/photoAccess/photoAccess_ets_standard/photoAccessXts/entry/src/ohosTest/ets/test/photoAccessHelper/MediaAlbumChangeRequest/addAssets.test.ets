@@ -69,12 +69,12 @@ export default function MediaAlbumChangeRequestAddAssetsTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001
-     * @tc.name      : mediaAlbumChangeRequest_addAssets_promise_001
-     * @tc.desc      : addAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   mediaAlbumChangeRequest_addAssets_promise_001
+     * @tc.number MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_addAssets_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_addAssets_promise_001';

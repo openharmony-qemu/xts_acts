@@ -47,9 +47,12 @@ export default function flexHeightModify_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenterDefaultSize
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_0800
-     * @tc.name testFlexItemAlignCenterDefaultSize
-     * @tc.desc Modify the first subcomponent's height.
+     * @tc.desc   Modify the first subcomponent's height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenterDefaultSize',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenterDefaultSize START');
@@ -81,9 +84,12 @@ export default function flexHeightModify_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenterHeightModify
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_0900
-     * @tc.name testFlexItemAlignCenterHeightModify
-     * @tc.desc Modify the first subcomponent's height.
+     * @tc.desc   Modify the first subcomponent's height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenterHeightModify',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenterHeightModify START');

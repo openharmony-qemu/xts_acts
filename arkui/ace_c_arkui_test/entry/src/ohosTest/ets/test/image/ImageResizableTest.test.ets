@@ -26,65 +26,65 @@ export default function imageResizableTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0100
-     * @tc.name       : testImageResizable001
-     * @tc.desc       : testing resizable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageResizable001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0100
+     * @tc.desc   testing resizable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageResizable001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageResizable001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0200
-     * @tc.name       : testImageResizable002
-     * @tc.desc       : testing resizable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageResizable002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0200
+     * @tc.desc   testing resizable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageResizable002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageResizable002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0300
-     * @tc.name       : testImageResizable003
-     * @tc.desc       : testing resizable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageResizable003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0300
+     * @tc.desc   testing resizable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageResizable003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageResizable003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0400
-     * @tc.name       : testImageResizable004
-     * @tc.desc       : testing resizable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageResizable004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0400
+     * @tc.desc   testing resizable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageResizable004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageResizable004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0500
-     * @tc.name       : testImageResizable005
-     * @tc.desc       : testing resizable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageResizable005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RESIZABLE_0500
+     * @tc.desc   testing resizable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageResizable005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageResizable005()).assertEqual(0)

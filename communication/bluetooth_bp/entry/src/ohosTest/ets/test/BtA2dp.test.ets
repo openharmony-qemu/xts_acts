@@ -116,12 +116,12 @@ describe('btA2dpTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0100
-     * @tc.name testGetPlayingState
-     * @tc.desc Test getPlayingState api10.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test getPlayingState api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -139,14 +139,14 @@ describe('btA2dpTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0200
-     * @tc.name testPlayingState
-     * @tc.desc Test PlayingState api10.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0200
+      * @tc.desc   Test PlayingState api10.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) => {
         try {
             let statePlaying = bluetooth.PlayingState.STATE_PLAYING;
@@ -163,12 +163,12 @@ describe('btA2dpTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0300
-     * @tc.name testCreateA2dpSrcProfile
-     * @tc.desc Test createA2dpSrcProfile
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test createA2dpSrcProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) => {
         try {
@@ -187,14 +187,14 @@ describe('btA2dpTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0100
-     * @tc.name testCodecType
-     * @tc.desc Test CodecType api11.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0100
+      * @tc.desc   Test CodecType api11.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let CODEC_TYPE_INVALID = bluetooth.CodecType.CODEC_TYPE_INVALID;
@@ -227,14 +227,14 @@ describe('btA2dpTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0200
-     * @tc.name testCodecChannelMode
-     * @tc.desc Test CodecChannelMode api11.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0200
+      * @tc.desc   Test CodecChannelMode api11.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let CODEC_CHANNEL_MODE_NONE = bluetooth.CodecChannelMode.CODEC_CHANNEL_MODE_NONE;
@@ -255,14 +255,14 @@ describe('btA2dpTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0300
-     * @tc.name testCodecBitsPerSample
-     * @tc.desc Test CodecBitsPerSample api11.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0300
+      * @tc.desc   Test CodecBitsPerSample api11.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let CODEC_BITS_PER_SAMPLE_NONE = bluetooth.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_NONE;
@@ -287,14 +287,14 @@ describe('btA2dpTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0400
-     * @tc.name testCodecSampleRate
-     * @tc.desc Test CodecSampleRate api11.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0400
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0400
+      * @tc.desc   Test CodecSampleRate api11.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let CODEC_SAMPLE_RATE_NONE = bluetooth.CodecSampleRate.CODEC_SAMPLE_RATE_NONE;
@@ -331,14 +331,14 @@ describe('btA2dpTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0500
-     * @tc.name testCodecBitRate
-     * @tc.desc Test CodecBitRate api19.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 0
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0500
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0500
+      * @tc.desc   Test CodecBitRate api19.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
         try {
             let CODEC_BIT_RATE_96000 = bluetooth.CodecBitRate.CODEC_BIT_RATE_96000;
@@ -392,14 +392,14 @@ describe('btA2dpTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0600
-     * @tc.name testCodecFrameLength
-     * @tc.desc Test CodecFrameLength api19.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 0
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0600
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0600
+      * @tc.desc   Test CodecFrameLength api19.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
         try {
             let CODEC_FRAME_LENGTH_5MS = bluetooth.CodecFrameLength.CODEC_FRAME_LENGTH_5MS;

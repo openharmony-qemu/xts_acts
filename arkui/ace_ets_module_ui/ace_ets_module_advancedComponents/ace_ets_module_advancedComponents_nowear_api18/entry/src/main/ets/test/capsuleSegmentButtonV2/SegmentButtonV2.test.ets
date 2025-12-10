@@ -49,12 +49,12 @@ export default function SegmentButtonV2Test() {
     });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0100
      * @tc.number SegmentButton single direction
-     * @tc.name SegmentButtonV2Test_0100
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -80,12 +80,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0200
      * @tc.number SegmentButton single direction
-     * @tc.name SegmentButtonV2Test_0200
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0300
      * @tc.number SegmentButton single direction
-     * @tc.name 'SegmentButtonV2Test_0300
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -138,12 +138,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0400
      * @tc.number SegmentButton single direction
-     * @tc.name 'SegmentButtonV2Test_0400
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -165,12 +165,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0500
      * @tc.number SegmentButton single direction
-     * @tc.name SegmentButtonV2Test_0500
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -193,12 +193,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0600
      * @tc.number SegmentButton single direction
-     * @tc.name 'SegmentButtonV2Test_0600
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -219,12 +219,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0700
      * @tc.number SegmentButton single direction
-     * @tc.name SegmentButtonV2Test_0700
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -249,12 +249,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0800
      * @tc.number SegmentButton single direction
-     * @tc.name SegmentButtonV2Test_0800
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -273,12 +273,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0900
      * @tc.number SegmentButton single direction
-     * @tc.name SegmentButtonV2Test_0900
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -302,12 +302,12 @@ export default function SegmentButtonV2Test() {
       });
 
     /**
+     * @tc.name   SegmentButtonV2Test_0110
      * @tc.number SegmentButton single direction
-     * @tc.name SegmentButtonV2Test_0110
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SegmentButtonV2Test_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

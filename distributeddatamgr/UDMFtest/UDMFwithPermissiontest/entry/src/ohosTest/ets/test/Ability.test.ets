@@ -70,12 +70,12 @@ export default function dragPerssionNormalTest() {
       });
     })
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0100
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0100
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -87,12 +87,12 @@ export default function dragPerssionNormalTest() {
       }
     })
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0200
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0200
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -105,12 +105,12 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
 
@@ -125,12 +125,12 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0400
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0400
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {
@@ -144,12 +144,12 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0500
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0500
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {
@@ -166,12 +166,12 @@ export default function dragPerssionNormalTest() {
 
     
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0600
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0600
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
 
@@ -183,12 +183,12 @@ export default function dragPerssionNormalTest() {
       }
     })   
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
 
@@ -202,12 +202,12 @@ export default function dragPerssionNormalTest() {
     })
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {
@@ -219,12 +219,12 @@ export default function dragPerssionNormalTest() {
       }
     })
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {
@@ -237,13 +237,13 @@ export default function dragPerssionNormalTest() {
         expect().assertFail();
       }
     })
-/**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async(done: Function) => {
       let options = {

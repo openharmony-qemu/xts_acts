@@ -94,14 +94,14 @@ export default function relationalStoreAsyncDownloadAssetTest() {
 
     console.log(TAG + "*************Unit Test Begin*************");
 
-    /**
-     * @tc.name test DistributedConfig.asyncDownloadAsset
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0100
-     * @tc.desc set distributed table cloud with 'asyncDownloadAsset' is true
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @tc.name   testRdbAsyncDownloadAsset001
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0100
+      * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is true
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testRdbAsyncDownloadAsset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testRdbAsyncDownloadAsset001 start *************");
       try {
@@ -130,14 +130,14 @@ export default function relationalStoreAsyncDownloadAssetTest() {
       }
     })
 
-    /**
-     * @tc.name test DistributedConfig.asyncDownloadAsset is false
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0200
-     * @tc.desc set distributed table cloud with 'asyncDownloadAsset' is false
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @tc.name   testRdbAsyncDownloadAsset002
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0200
+      * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is false
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testRdbAsyncDownloadAsset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testRdbAsyncDownloadAsset002 start *************");
       try {
@@ -167,13 +167,13 @@ export default function relationalStoreAsyncDownloadAssetTest() {
   })
 
   /**
-   * @tc.name set distributeded table cloud with promise
+   * @tc.name   testRdbAsyncDownloadAsset003
    * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0300
-   * @tc.desc set distributed table cloud with 'asyncDownloadAsset' is 20
-  * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+   * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is 20
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
   it('testRdbAsyncDownloadAsset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
     console.log(TAG + "************* testRdbAsyncDownloadAsset003 start *************");
     try {
@@ -199,14 +199,14 @@ export default function relationalStoreAsyncDownloadAssetTest() {
       }
     })
 
-  /**
-   * @tc.name set distributeded table cloud with promise
-   * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0400
-   * @tc.desc set distributed table cloud with 'asyncDownloadAsset' is 0
-  * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+   /**
+    * @tc.name   testRdbAsyncDownloadAsset004
+    * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0400
+    * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is 0
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
    it('testRdbAsyncDownloadAsset004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
     console.log(TAG + "************* testRdbAsyncDownloadAsset004 start *************");
     try {
@@ -232,14 +232,14 @@ export default function relationalStoreAsyncDownloadAssetTest() {
       }
     })
 
-  /**
-   * @tc.name set distributeded table cloud with promise
-   * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0500
-   * @tc.desc set distributed table cloud with 'asyncDownloadAsset' is 1
-  * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+   /**
+    * @tc.name   testRdbAsyncDownloadAsset005
+    * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0500
+    * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is 1
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
    it('testRdbAsyncDownloadAsset005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
     console.log(TAG + "************* testRdbAsyncDownloadAsset005 start *************");
     try {
@@ -265,14 +265,14 @@ export default function relationalStoreAsyncDownloadAssetTest() {
       }
     })
 
-  /**
-   * @tc.name set distributeded table cloud with promise
-   * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0600
-   * @tc.desc set distributed table cloud with 'asyncDownloadAsset' is -1
-  * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+   /**
+    * @tc.name   testRdbAsyncDownloadAsset006
+    * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0600
+    * @tc.desc   set distributed table cloud with 'asyncDownloadAsset' is -1
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
    it('testRdbAsyncDownloadAsset006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
     console.log(TAG + "************* testRdbAsyncDownloadAsset006 start *************");
     try {
@@ -299,14 +299,14 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     })
 
 
-  /**
-   * @tc.name set distributeded table cloud with promise
-   * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0700
-   * @tc.desc set distributed table cloud with 'autoSync' is true 'asyncDownloadAsset' is true
-  * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+   /**
+    * @tc.name   testRdbAsyncDownloadAsset007
+    * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0700
+    * @tc.desc   set distributed table cloud with 'autoSync' is true 'asyncDownloadAsset' is true
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
    it('testRdbAsyncDownloadAsset007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
     console.log(TAG + "************* testRdbAsyncDownloadAsset007 start *************");
     try {
@@ -336,12 +336,12 @@ export default function relationalStoreAsyncDownloadAssetTest() {
     })
 
     /**
-     * @tc.name set distributeded table cloud with promise
+     * @tc.name   testRdbAsyncDownloadAsset008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_AsyncDownloadAsset_0800
-     * @tc.desc set distributed table cloud with 'autoSync' is true 'asyncDownloadAsset' is false
-    * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   set distributed table cloud with 'autoSync' is true 'asyncDownloadAsset' is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbAsyncDownloadAsset008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testRdbAsyncDownloadAsset008 start *************");

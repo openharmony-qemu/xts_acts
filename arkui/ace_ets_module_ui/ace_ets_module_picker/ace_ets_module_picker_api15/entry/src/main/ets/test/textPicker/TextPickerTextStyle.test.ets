@@ -39,14 +39,14 @@ export default function TextPickerTextStyleTest() {
       }
       done()
     });
-    /* *
-    * @tc.number: TextPickerTextStyleTest_0100
-    * @tc.name  : TextPickerTextStyleTest_0100
-    * @tc.desc  : To test the minFontSize < maxFontSize, overflow = TextOverflow.Ellipsis
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextPickerTextStyleTest_0100
+     * @tc.number TextPickerTextStyleTest_0100
+     * @tc.desc   To test the minFontSize < maxFontSize, overflow = TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerTextStyleTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerTextStyleTest_0100 start');
       let driver = await Driver.create()
@@ -69,14 +69,14 @@ export default function TextPickerTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextPickerTextStyleTest_0200
-    * @tc.name  : TextPickerTextStyleTest_0200
-    * @tc.desc  : To test the minFontSize = maxFontSize, overflow = TextOverflow.Ellipsis
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextPickerTextStyleTest_0200
+     * @tc.number TextPickerTextStyleTest_0200
+     * @tc.desc   To test the minFontSize = maxFontSize, overflow = TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerTextStyleTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerTextStyleTest_0200 start');
       let driver = await Driver.create()
@@ -99,14 +99,14 @@ export default function TextPickerTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextPickerTextStyleTest_0300
-    * @tc.name  : TextPickerTextStyleTest_0300
-    * @tc.desc  : To test the minFontSize > maxFontSize, overflow = TextOverflow.Ellipsis
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextPickerTextStyleTest_0300
+     * @tc.number TextPickerTextStyleTest_0300
+     * @tc.desc   To test the minFontSize > maxFontSize, overflow = TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerTextStyleTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerTextStyleTest_0300 start');
       let driver = await Driver.create()
@@ -129,14 +129,14 @@ export default function TextPickerTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextPickerTextStyleTest_0400
-    * @tc.name  : TextPickerTextStyleTest_0400
-    * @tc.desc  : To test the minFontSize,maxFontSize, overflow = undefined
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextPickerTextStyleTest_0400
+     * @tc.number TextPickerTextStyleTest_0400
+     * @tc.desc   To test the minFontSize,maxFontSize, overflow = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerTextStyleTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerTextStyleTest_0400 start');
       let driver = await Driver.create()
@@ -159,14 +159,14 @@ export default function TextPickerTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextPickerTextStyleTest_0500
-    * @tc.name  : TextPickerTextStyleTest_0500
-    * @tc.desc  : To test the minFontSize,maxFontSize, overflow = null
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextPickerTextStyleTest_0500
+     * @tc.number TextPickerTextStyleTest_0500
+     * @tc.desc   To test the minFontSize,maxFontSize, overflow = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerTextStyleTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerTextStyleTest_0500 start');
       let driver = await Driver.create()
@@ -189,14 +189,14 @@ export default function TextPickerTextStyleTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextPickerTextStyleTest_0600
-    * @tc.name  : TextPickerTextStyleTest_0600
-    * @tc.desc  : To test the minFontSize = -10,maxFontSize = -20, overflow = TextOverflow.Clip
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextPickerTextStyleTest_0600
+     * @tc.number TextPickerTextStyleTest_0600
+     * @tc.desc   To test the minFontSize = -10,maxFontSize = -20, overflow = TextOverflow.Clip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerTextStyleTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerTextStyleTest_0600 start');
       let driver = await Driver.create()

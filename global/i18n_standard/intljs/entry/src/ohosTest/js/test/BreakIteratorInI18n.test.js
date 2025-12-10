@@ -56,11 +56,14 @@ describe('BreakIteratorInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0100
-    * @tc.name    test current interface
-    * @tc.desc    check the current result
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0100
+     * @tc.desc   check the current result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_iterator_0100', Level.LEVEL0, function () {
         console.log('i18n_test_iterator_0100 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -70,11 +73,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual(0);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0200
-    * @tc.name    test first interface
-    * @tc.desc    check the first
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0200
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0200
+     * @tc.desc   check the first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0200', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0200 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -84,11 +90,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual(0);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0300
-    * @tc.name    test last interface
-    * @tc.desc    check the last interface
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0300
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0300
+     * @tc.desc   check the last interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0300', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0300 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -98,11 +107,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual(40);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0400
-    * @tc.name    test next interface
-    * @tc.desc    check the next interface
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0400
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0400
+     * @tc.desc   check the next interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0400', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0400 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -112,11 +124,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual(3);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0500
-    * @tc.name    test next interface with param
-    * @tc.desc    check the next interface with param
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0500
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0500
+     * @tc.desc   check the next interface with param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0500', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0500 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -126,11 +141,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual(8);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0600
-    * @tc.name    test previous interface
-    * @tc.desc    check the previous interface
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0600
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0600
+     * @tc.desc   check the previous interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0600', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0600 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -140,11 +158,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual(-1);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0700
-    * @tc.name    test following interface
-    * @tc.desc    check the following interface
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0700
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0700
+     * @tc.desc   check the following interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0700', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0700 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -154,11 +175,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual(3);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0800
-    * @tc.name    test getLineBreakText interface
-    * @tc.desc    check the getLineBreakText interface
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0800
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0800
+     * @tc.desc   check the getLineBreakText interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0800', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0800 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -168,11 +192,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(value).assertEqual('My name is Tom.Welcome to the sky world.');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_0900
-    * @tc.name    test isBoundary interface
-    * @tc.desc    check the isBoundary interface
-    */
+    /**
+     * @tc.name   i18n_test_iterator_0900
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_0900
+     * @tc.desc   check the isBoundary interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_0900', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_0900 ' + 'start');
         let iterator =I18n.getLineInstance('en');
@@ -186,11 +213,14 @@ describe('BreakIteratorInI18nTest', function () {
         expect(current).assertEqual(11);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_BREAKITERATOR_1000
-    * @tc.name    test iterator interface
-    * @tc.desc    check the iterator interface
-    */
+    /**
+     * @tc.name   i18n_test_iterator_1000
+     * @tc.number SUB_GLOBAL_I18N_JS_BREAKITERATOR_1000
+     * @tc.desc   check the iterator interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_iterator_1000', Level.LEVEL2, function () {
         console.log('i18n_test_iterator_1000 ' + 'start');
         let iterator =I18n.getLineInstance('en');

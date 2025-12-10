@@ -20,10 +20,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function getBundleInfoForSelf() {
   describe('getBundleInfoForSelf', function () {
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_5680
-     * @tc.name: getBundleInfoForSelfAbilityPro
-     * @tc.desc: Test getBundleInfoForSelf with ability flag(by promise).
+    /**
+     * @tc.name   getBundleInfoForSelfAbilityPro
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5680
+     * @tc.desc   Test getBundleInfoForSelf with ability flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoForSelfAbilityPro', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       await bundle.getBundleInfoForSelf(

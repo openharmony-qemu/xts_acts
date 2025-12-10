@@ -60,10 +60,13 @@ ResConfigImpl *CreateResConfigImpl(const char *language, const char *script, con
     return resConfigImpl;
 }
 
-/*
- * @tc.name: ResConfigImplMatchTest001
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest001
+ * @tc.number ResConfigImplMatchTest001
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest001, TestSize.Level1)
 {
@@ -74,10 +77,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest001, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest002
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest002
+ * @tc.number ResConfigImplMatchTest002
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest002, TestSize.Level1)
 {
@@ -88,10 +94,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest002, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest003
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest003
+ * @tc.number ResConfigImplMatchTest003
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest003, TestSize.Level1)
 {
@@ -102,10 +111,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest003, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest004
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest004
+ * @tc.number ResConfigImplMatchTest004
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest004, TestSize.Level1)
 {
@@ -116,10 +128,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest004, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest005
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest005
+ * @tc.number ResConfigImplMatchTest005
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest005, TestSize.Level1)
 {
@@ -130,10 +145,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest005, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest006
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest006
+ * @tc.number ResConfigImplMatchTest006
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest006, TestSize.Level1)
 {
@@ -144,10 +162,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest006, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest007
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest007
+ * @tc.number ResConfigImplMatchTest007
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest007, TestSize.Level1)
 {
@@ -158,10 +179,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest007, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest008
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest008
+ * @tc.number ResConfigImplMatchTest008
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest008, TestSize.Level1)
 {
@@ -172,10 +196,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest008, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest009
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest009
+ * @tc.number ResConfigImplMatchTest009
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest009, TestSize.Level1)
 {
@@ -186,10 +213,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest009, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest010
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest010
+ * @tc.number ResConfigImplMatchTest010
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest010, TestSize.Level1)
 {
@@ -200,10 +230,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest010, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest011
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest011
+ * @tc.number ResConfigImplMatchTest011
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest011, TestSize.Level1)
 {
@@ -214,10 +247,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest011, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest012
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest012
+ * @tc.number ResConfigImplMatchTest012
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest012, TestSize.Level1)
 {
@@ -228,10 +264,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest012, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest013
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest013
+ * @tc.number ResConfigImplMatchTest013
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest013, TestSize.Level1)
 {
@@ -242,10 +281,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest013, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest014
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest014
+ * @tc.number ResConfigImplMatchTest014
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest014, TestSize.Level1)
 {
@@ -257,10 +299,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest014, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest015
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest015
+ * @tc.number ResConfigImplMatchTest015
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest015, TestSize.Level1)
 {
@@ -272,10 +317,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest015, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest016
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest016
+ * @tc.number ResConfigImplMatchTest016
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest016, TestSize.Level1)
 {
@@ -287,10 +335,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest016, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest017
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest017
+ * @tc.number ResConfigImplMatchTest017
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest017, TestSize.Level1)
 {
@@ -302,10 +353,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest017, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest018
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest018
+ * @tc.number ResConfigImplMatchTest018
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest018, TestSize.Level1)
 {
@@ -316,10 +370,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest018, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest019
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest019
+ * @tc.number ResConfigImplMatchTest019
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest019, TestSize.Level1)
 {
@@ -332,10 +389,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest019, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest020
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest020
+ * @tc.number ResConfigImplMatchTest020
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest020, TestSize.Level1)
 {
@@ -348,10 +408,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest020, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest021
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest021
+ * @tc.number ResConfigImplMatchTest021
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest021, TestSize.Level1)
 {
@@ -363,10 +426,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest021, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest022
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest022
+ * @tc.number ResConfigImplMatchTest022
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest022, TestSize.Level1)
 {
@@ -378,10 +444,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest022, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest023
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest023
+ * @tc.number ResConfigImplMatchTest023
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest023, TestSize.Level1)
 {
@@ -394,10 +463,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest023, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest024
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest024
+ * @tc.number ResConfigImplMatchTest024
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest024, TestSize.Level1)
 {
@@ -410,10 +482,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest024, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest025
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest025
+ * @tc.number ResConfigImplMatchTest025
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest025, TestSize.Level1)
 {
@@ -425,10 +500,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest025, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest026
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest026
+ * @tc.number ResConfigImplMatchTest026
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest026, TestSize.Level1)
 {
@@ -440,10 +518,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest026, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest027
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest027
+ * @tc.number ResConfigImplMatchTest027
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest027, TestSize.Level1)
 {
@@ -458,10 +539,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest027, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest028
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest028
+ * @tc.number ResConfigImplMatchTest028
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest028, TestSize.Level1)
 {
@@ -475,10 +559,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest028, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplMatchTest029
- * @tc.desc: Test ResConfig Match
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplMatchTest029
+ * @tc.number ResConfigImplMatchTest029
+ * @tc.desc   Test ResConfig Match
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest029, TestSize.Level1)
 {
@@ -493,10 +580,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplMatchTest029, TestSize.Level1)
     delete other;
 };
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest001
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest001
+ * @tc.number ResConfigImplIsMoreSuitableTest001
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest001, TestSize.Level1)
 {
@@ -510,10 +600,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest001, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest002
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest002
+ * @tc.number ResConfigImplIsMoreSuitableTest002
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest002, TestSize.Level1)
 {
@@ -527,10 +620,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest002, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest003
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest003
+ * @tc.number ResConfigImplIsMoreSuitableTest003
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest003, TestSize.Level1)
 {
@@ -544,10 +640,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest003, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest004
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest004
+ * @tc.number ResConfigImplIsMoreSuitableTest004
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest004, TestSize.Level1)
 {
@@ -561,10 +660,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest004, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest005
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest005
+ * @tc.number ResConfigImplIsMoreSuitableTest005
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest005, TestSize.Level1)
 {
@@ -578,10 +680,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest005, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest006
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest006
+ * @tc.number ResConfigImplIsMoreSuitableTest006
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest006, TestSize.Level1)
 {
@@ -595,10 +700,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest006, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest007
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest007
+ * @tc.number ResConfigImplIsMoreSuitableTest007
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest007, TestSize.Level1)
 {
@@ -612,10 +720,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest007, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest008
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest008
+ * @tc.number ResConfigImplIsMoreSuitableTest008
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest008, TestSize.Level1)
 {
@@ -629,10 +740,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest008, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest009
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest009
+ * @tc.number ResConfigImplIsMoreSuitableTest009
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest009, TestSize.Level1)
 {
@@ -646,10 +760,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest009, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest010
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest010
+ * @tc.number ResConfigImplIsMoreSuitableTest010
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest010, TestSize.Level1)
 {
@@ -663,10 +780,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest010, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest011
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest011
+ * @tc.number ResConfigImplIsMoreSuitableTest011
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest011, TestSize.Level1)
 {
@@ -680,10 +800,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest011, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest012
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest012
+ * @tc.number ResConfigImplIsMoreSuitableTest012
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest012, TestSize.Level1)
 {
@@ -697,10 +820,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest012, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest013
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest013
+ * @tc.number ResConfigImplIsMoreSuitableTest013
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest013, TestSize.Level1)
 {
@@ -714,10 +840,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest013, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest014
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest014
+ * @tc.number ResConfigImplIsMoreSuitableTest014
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest014, TestSize.Level1)
 {
@@ -731,10 +860,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest014, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest015
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest015
+ * @tc.number ResConfigImplIsMoreSuitableTest015
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest015, TestSize.Level1)
 {
@@ -748,10 +880,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest015, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest016
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest016
+ * @tc.number ResConfigImplIsMoreSuitableTest016
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest016, TestSize.Level1)
 {
@@ -765,10 +900,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest016, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest017
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest017
+ * @tc.number ResConfigImplIsMoreSuitableTest017
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest017, TestSize.Level1)
 {
@@ -782,10 +920,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest017, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest018
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest018
+ * @tc.number ResConfigImplIsMoreSuitableTest018
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest018, TestSize.Level1)
 {
@@ -799,10 +940,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest018, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest019
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest019
+ * @tc.number ResConfigImplIsMoreSuitableTest019
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest019, TestSize.Level1)
 {
@@ -816,10 +960,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest019, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest020
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest020
+ * @tc.number ResConfigImplIsMoreSuitableTest020
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest020, TestSize.Level1)
 {
@@ -833,10 +980,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest020, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest021
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest021
+ * @tc.number ResConfigImplIsMoreSuitableTest021
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest021, TestSize.Level1)
 {
@@ -850,10 +1000,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest021, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest022
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest022
+ * @tc.number ResConfigImplIsMoreSuitableTest022
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest022, TestSize.Level1)
 {
@@ -867,10 +1020,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest022, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest023
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest023
+ * @tc.number ResConfigImplIsMoreSuitableTest023
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest023, TestSize.Level1)
 {
@@ -884,10 +1040,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest023, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest024
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest024
+ * @tc.number ResConfigImplIsMoreSuitableTest024
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest024, TestSize.Level1)
 {
@@ -901,10 +1060,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest024, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest025
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest025
+ * @tc.number ResConfigImplIsMoreSuitableTest025
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest025, TestSize.Level1)
 {
@@ -918,10 +1080,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest025, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest026
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest026
+ * @tc.number ResConfigImplIsMoreSuitableTest026
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest026, TestSize.Level1)
 {
@@ -935,10 +1100,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest026, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest027
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest027
+ * @tc.number ResConfigImplIsMoreSuitableTest027
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest027, TestSize.Level1)
 {
@@ -952,10 +1120,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest027, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest028
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest028
+ * @tc.number ResConfigImplIsMoreSuitableTest028
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest028, TestSize.Level1)
 {
@@ -969,10 +1140,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest028, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest029
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest029
+ * @tc.number ResConfigImplIsMoreSuitableTest029
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest029, TestSize.Level1)
 {
@@ -986,10 +1160,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest029, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest030
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest030
+ * @tc.number ResConfigImplIsMoreSuitableTest030
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest030, TestSize.Level1)
 {
@@ -1003,10 +1180,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest030, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest031
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest031
+ * @tc.number ResConfigImplIsMoreSuitableTest031
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest031, TestSize.Level1)
 {
@@ -1020,10 +1200,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest031, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest032
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest032
+ * @tc.number ResConfigImplIsMoreSuitableTest032
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest032, TestSize.Level1)
 {
@@ -1037,10 +1220,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest032, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest033
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest033
+ * @tc.number ResConfigImplIsMoreSuitableTest033
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest033, TestSize.Level1)
 {
@@ -1054,10 +1240,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest033, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest034
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest034
+ * @tc.number ResConfigImplIsMoreSuitableTest034
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest034, TestSize.Level1)
 {
@@ -1071,10 +1260,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest034, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest035
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest035
+ * @tc.number ResConfigImplIsMoreSuitableTest035
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest035, TestSize.Level1)
 {
@@ -1088,10 +1280,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest035, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest036
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest036
+ * @tc.number ResConfigImplIsMoreSuitableTest036
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest036, TestSize.Level1)
 {
@@ -1105,10 +1300,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest036, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest037
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest037
+ * @tc.number ResConfigImplIsMoreSuitableTest037
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest037, TestSize.Level1)
 {
@@ -1122,10 +1320,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest037, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest038
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest038
+ * @tc.number ResConfigImplIsMoreSuitableTest038
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest038, TestSize.Level1)
 {
@@ -1139,10 +1340,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest038, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest039
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest039
+ * @tc.number ResConfigImplIsMoreSuitableTest039
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest039, TestSize.Level1)
 {
@@ -1156,10 +1360,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest039, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest040
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest040
+ * @tc.number ResConfigImplIsMoreSuitableTest040
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest040, TestSize.Level1)
 {
@@ -1173,10 +1380,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest040, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest041
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest041
+ * @tc.number ResConfigImplIsMoreSuitableTest041
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest041, TestSize.Level1)
 {
@@ -1192,10 +1402,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest041, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest042
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest042
+ * @tc.number ResConfigImplIsMoreSuitableTest042
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest042, TestSize.Level1)
 {
@@ -1214,10 +1427,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest042, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest043
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest043
+ * @tc.number ResConfigImplIsMoreSuitableTest043
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest043, TestSize.Level1)
 {
@@ -1239,10 +1455,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest043, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest044
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest044
+ * @tc.number ResConfigImplIsMoreSuitableTest044
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest044, TestSize.Level1)
 {
@@ -1262,10 +1481,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest044, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest045
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest045
+ * @tc.number ResConfigImplIsMoreSuitableTest045
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest045, TestSize.Level1)
 {
@@ -1288,10 +1510,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest045, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest046
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest046
+ * @tc.number ResConfigImplIsMoreSuitableTest046
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest046, TestSize.Level1)
 {
@@ -1314,10 +1539,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest046, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest047
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest047
+ * @tc.number ResConfigImplIsMoreSuitableTest047
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest047, TestSize.Level1)
 {
@@ -1340,10 +1568,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest047, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest048
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest048
+ * @tc.number ResConfigImplIsMoreSuitableTest048
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest048, TestSize.Level1)
 {
@@ -1358,10 +1589,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest048, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest049
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest049
+ * @tc.number ResConfigImplIsMoreSuitableTest049
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest049, TestSize.Level1)
 {
@@ -1376,10 +1610,13 @@ HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest049, TestSize.Level1)
     delete other;
 }
 
-/*
- * @tc.name: ResConfigImplIsMoreSuitableTest050
- * @tc.desc: Test ResConfig IsMoreSuitable
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigImplIsMoreSuitableTest050
+ * @tc.number ResConfigImplIsMoreSuitableTest050
+ * @tc.desc   Test ResConfig IsMoreSuitable
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigImplTest, ResConfigImplIsMoreSuitableTest050, TestSize.Level1)
 {

@@ -43,12 +43,12 @@ export default function flingError() {
     });
 
     /**
-     * @tc.number    flingError_001
-     * @tc.name      flingError_0100
-     * @tc.desc      401 error code for the fling attribute.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   flingError_0100
+     * @tc.number flingError_001
+     * @tc.desc   401 error code for the fling attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flingError_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[flingError_0100] START');
@@ -65,12 +65,12 @@ export default function flingError() {
     });
 
     /**
-     * @tc.number    flingError_002
-     * @tc.name      flingError_0200
-     * @tc.desc      100004 error code for the fling attribute.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   flingError_0200
+     * @tc.number flingError_002
+     * @tc.desc   100004 error code for the fling attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flingError_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[flingError_0200] START');

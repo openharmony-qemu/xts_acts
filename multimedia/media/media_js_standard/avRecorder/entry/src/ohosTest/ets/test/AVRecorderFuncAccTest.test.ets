@@ -81,14 +81,14 @@ export default function AVRecorderFuncAccTest() {
     })
 
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0100
-        * @tc.desc      : Recorder audio 001.pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0100
+     * @tc.desc   Recorder audio 001.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -101,14 +101,14 @@ export default function AVRecorderFuncAccTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0100 end')
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0200
-        * @tc.desc      : Recorder audio pause->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0200
+     * @tc.desc   Recorder audio pause->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -123,14 +123,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0300
-        * @tc.desc      : Local Video recording 3 seconds to stop
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0300
+     * @tc.desc   Local Video recording 3 seconds to stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -145,14 +145,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0400
-        * @tc.desc      : Local Video pause->resume->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0400
+     * @tc.desc   Local Video pause->resume->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -167,14 +167,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0500
-        * @tc.desc      : Local Video pause->stop->reset
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0500
+     * @tc.desc   Local Video pause->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -189,14 +189,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0600
-       * @tc.desc      : Local Video pause->resume->stop->reset
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0600
+     * @tc.desc   Local Video pause->resume->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -211,14 +211,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0700
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0700
-       * @tc.desc      : Local Video stop->reset->pause->resume->stop->reset
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0700
+     * @tc.desc   Local Video stop->reset->pause->resume->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0700', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0700 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -233,14 +233,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0800
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0800
-        * @tc.desc      : Local Video stop->reset->pause->stop->reset
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0800
+     * @tc.desc   Local Video stop->reset->pause->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0800', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0800 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -255,14 +255,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0900
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0900
-       * @tc.desc      : Local Video start->pause->start(error)
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0900
+     * @tc.desc   Local Video start->pause->start(error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0900', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0900 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -277,14 +277,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1000
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1000
-        * @tc.desc      : Local Video start->stop->pause(error)
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1000
+     * @tc.desc   Local Video start->stop->pause(error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1000', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1000 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -299,14 +299,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1100
-        * @tc.desc      : Local Video audioEncoderMime
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1100
+     * @tc.desc   Local Video audioEncoderMime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_1100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -321,14 +321,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0100
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0100
-       * @tc.desc      : 音频录制，location对应的latitude和longitude为-30和60
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0100
+     * @tc.desc   音频录制，location对应的latitude和longitude为-30和60
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -353,14 +353,14 @@ export default function AVRecorderFuncAccTest() {
     })
 
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0200
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0200
-       * @tc.desc      : 音频录制，location对应的latitude和longitude为90和180
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0200
+     * @tc.desc   音频录制，location对应的latitude和longitude为90和180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -385,14 +385,14 @@ export default function AVRecorderFuncAccTest() {
     })
 
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0300
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0300
-       * @tc.desc      : 音频录制，location对应的latitude和longitude为60和-90
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0300
+     * @tc.desc   音频录制，location对应的latitude和longitude为60和-90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -417,14 +417,14 @@ export default function AVRecorderFuncAccTest() {
     })
 
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0400
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0400
-       * @tc.desc      : 音频录制，location对应的latitude和longitude为0和0
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0400
+     * @tc.desc   音频录制，location对应的latitude和longitude为0和0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -449,14 +449,14 @@ export default function AVRecorderFuncAccTest() {
     })
 
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0500
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0500
-       * @tc.desc      : Local Video recorder with designated latitude and longitude
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0500
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -480,14 +480,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0600
-        * @tc.desc      : Local Video recorder with designated latitude and longitude
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0600
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_FORMAT_API_0600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -512,14 +512,14 @@ export default function AVRecorderFuncAccTest() {
     })
 
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0100
-        * @tc.desc      : Recorder pause->prepare 1000 times
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0100
+     * @tc.desc   Recorder pause->prepare 1000 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -532,14 +532,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0101
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0101
-        * @tc.desc      : Recorder audio 001.pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0101
+     * @tc.desc   Recorder audio 001.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0101', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_FUNCTION_0101 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -552,14 +552,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0200
-        * @tc.desc      : Recorder audio channel
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0200
+     * @tc.desc   Recorder audio channel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -572,14 +572,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0300
-        * @tc.desc      : Recorder audio channel
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0300
+     * @tc.desc   Recorder audio channel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -592,14 +592,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0400
-        * @tc.desc      : Recorder audio resume->prepare
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0400
+     * @tc.desc   Recorder audio resume->prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -612,14 +612,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0500
-        * @tc.desc      : Recorder audio channel
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0500
+     * @tc.desc   Recorder audio channel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -632,14 +632,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0600
-        * @tc.desc      : Recorder audio pause->start
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0600
+     * @tc.desc   Recorder audio pause->start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -652,14 +652,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0700
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0700
-        * @tc.desc      : Recorder audio resume->start
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0700
+     * @tc.desc   Recorder audio resume->start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0700', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0700 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -672,14 +672,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_0800
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_0800
-        * @tc.desc      : Recorder audio creatAVRecorder->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_0800
+     * @tc.desc   Recorder audio creatAVRecorder->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_0800', Level.LEVEL0, async (done: Function) => {
       let fileName: string = commonFun.resourceNameAac();
       expect(fileName).not().assertNull();
@@ -691,14 +691,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0900
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0900
-        * @tc.desc      : Recorder audio prepare->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0900
+     * @tc.desc   Recorder audio prepare->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0900', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_START_API_0900 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -711,14 +711,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1000
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1000
-        * @tc.desc      : Recorder audio start->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1000
+     * @tc.desc   Recorder audio start->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1000', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1000 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -731,14 +731,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1100
-        * @tc.desc      : Recorder audio resume->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1100
+     * @tc.desc   Recorder audio resume->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -751,14 +751,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1200
-        * @tc.desc      : Recorder audio stop->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1200
+     * @tc.desc   Recorder audio stop->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -771,14 +771,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1300
-        * @tc.desc      : Recorder audio reset->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1300
+     * @tc.desc   Recorder audio reset->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -791,14 +791,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1400
-        * @tc.desc      : Recorder audio all step->pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1400
+     * @tc.desc   Recorder audio all step->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -811,14 +811,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1500
-        * @tc.desc      : Recorder audio pause three times
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1500
+     * @tc.desc   Recorder audio pause three times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PAUSE_API_1500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -831,14 +831,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1600
-        * @tc.desc      : Recorder audio creatAVRecorder->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1600
+     * @tc.desc   Recorder audio creatAVRecorder->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -851,14 +851,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1700
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1700
-        * @tc.desc      : Recorder audio prepare->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1700
+     * @tc.desc   Recorder audio prepare->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1700', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1700 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -871,14 +871,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1800
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1800
-        * @tc.desc      : Recorder audio start->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1800
+     * @tc.desc   Recorder audio start->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1800', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1800 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -891,14 +891,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1900
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1900
-        * @tc.desc      : Recorder audio pause->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1900
+     * @tc.desc   Recorder audio pause->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1900', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_1900 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -911,14 +911,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2000
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2000
-        * @tc.desc      : Recorder audio stop->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2000
+     * @tc.desc   Recorder audio stop->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2000', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2000 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -931,14 +931,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2100
-        * @tc.desc      : Recorder audio reset->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2100
+     * @tc.desc   Recorder audio reset->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -951,14 +951,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2200
-        * @tc.desc      : Recorder audio all->resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2200
+     * @tc.desc   Recorder audio all->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -971,14 +971,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2300
-        * @tc.desc      : Recorder audio resume threee times
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2300
+     * @tc.desc   Recorder audio resume threee times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESUME_API_2300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -991,14 +991,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2400
-        * @tc.desc      : Recorder audio pause->stop
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2400
+     * @tc.desc   Recorder audio pause->stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1011,14 +1011,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2500
-        * @tc.desc      : Recorder audio resume->stop
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2500
+     * @tc.desc   Recorder audio resume->stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_STOP_API_2500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1031,14 +1031,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2600
-        * @tc.desc      : Recorder audio pause->reset
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2600
+     * @tc.desc   Recorder audio pause->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1050,14 +1050,14 @@ export default function AVRecorderFuncAccTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2600 end')
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2700
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2700
-        * @tc.desc      : Recorder audio resume->reset
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2700
+     * @tc.desc   Recorder audio resume->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2700', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RESET_API_2700 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1070,14 +1070,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2800
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2800
-        * @tc.desc      : Recorder audio pause->release
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2800
+     * @tc.desc   Recorder audio pause->release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2800', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2800 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1090,14 +1090,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2900
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2900
-        * @tc.desc      : Recorder audio resume->release
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2900
+     * @tc.desc   Recorder audio resume->release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2900', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_2900 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1110,14 +1110,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_3000
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_3000
-        * @tc.desc      : Recorder audio release 3 times
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_3000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_3000
+     * @tc.desc   Recorder audio release 3 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_3000', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_RELEASE_API_3000 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1130,14 +1130,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3100
-        * @tc.desc      : Recorder audio create->getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3100
+     * @tc.desc   Recorder audio create->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1150,14 +1150,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3200
-        * @tc.desc      : Recorder audio  prepare->getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3200
+     * @tc.desc   Recorder audio  prepare->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1170,14 +1170,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3300
-        * @tc.desc      : Recorder audio  start->getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3300
+     * @tc.desc   Recorder audio  start->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1190,14 +1190,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3400
-        * @tc.desc      : Recorder audio pause->getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3400
+     * @tc.desc   Recorder audio pause->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1210,14 +1210,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3500
-        * @tc.desc      : Recorder audio resume->getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3500
+     * @tc.desc   Recorder audio resume->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1230,14 +1230,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3600
-        * @tc.desc      : Recorder audio stop->getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3600
+     * @tc.desc   Recorder audio stop->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1250,14 +1250,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3700
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3700
-        * @tc.desc      : Recorder audio reset->getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3700
+     * @tc.desc   Recorder audio reset->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3700', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3700 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1270,14 +1270,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3800
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3800
-        * @tc.desc      : Recorder audio getInputSurface 3 times
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3800
+     * @tc.desc   Recorder audio getInputSurface 3 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3800', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETINPUTSURFACE_API_3800 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1290,14 +1290,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0100
-        * @tc.desc      : Recorder audio createAVRecorder
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0100
+     * @tc.desc   Recorder audio createAVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1310,14 +1310,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0200
-        * @tc.desc      : Recorder audio AvRecorder.prepare
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0200
+     * @tc.desc   Recorder audio AvRecorder.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1330,14 +1330,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0300
-        * @tc.desc      : AvRecorder.getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0300
+     * @tc.desc   AvRecorder.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1350,14 +1350,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0400
-        * @tc.desc      : AvRecorder.start
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0400
+     * @tc.desc   AvRecorder.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1370,14 +1370,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0500
-        * @tc.desc      : AvRecorder.pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0500
+     * @tc.desc   AvRecorder.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1390,14 +1390,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0600
-        * @tc.desc      : AvRecorder.resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0600
+     * @tc.desc   AvRecorder.resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1410,14 +1410,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0700
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0700
-        * @tc.desc      : AvRecorder.stop
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0700
+     * @tc.desc   AvRecorder.stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0700', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0700 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1430,14 +1430,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0800
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0800
-        * @tc.desc      : AvRecorder.reset
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0800
+     * @tc.desc   AvRecorder.reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0800', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_CALLBACK_01_0800 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1450,14 +1450,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0100
-        * @tc.desc      : AvRecorder.createAVRecorder
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0100
+     * @tc.desc   AvRecorder.createAVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1470,14 +1470,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0200
-        * @tc.desc      : AvRecorder.prepare
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0200
+     * @tc.desc   AvRecorder.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1490,14 +1490,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0300
-        * @tc.desc      : AvRecorder.getInputSurface
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0300
+     * @tc.desc   AvRecorder.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0300 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1509,14 +1509,14 @@ export default function AVRecorderFuncAccTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0300 end');
       done();
     })
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0400
-        * @tc.desc      : AvRecorder.start
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0400
+     * @tc.desc   AvRecorder.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0400', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0400 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1529,14 +1529,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0500
-        * @tc.desc      : AvRecorder.pause
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0500
+     * @tc.desc   AvRecorder.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0500', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0500 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1549,14 +1549,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0600
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0600
-        * @tc.desc      : AvRecorder.resume
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0600
+     * @tc.desc   AvRecorder.resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0600', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0600 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1569,14 +1569,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0700
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0700
-        * @tc.desc      : AvRecorder.stop
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0700
+     * @tc.desc   AvRecorder.stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0700', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0700 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1589,14 +1589,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0800
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0800
-        * @tc.desc      : AvRecorder.reset
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0800
+     * @tc.desc   AvRecorder.reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0800', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0800 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1609,14 +1609,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0900
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0900
-        * @tc.desc      : AvRecorder.release
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 4
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0900
+     * @tc.desc   AvRecorder.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0900', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PERFORMANCE_PROMISE_01_0900 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1629,14 +1629,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_001
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_001
-        * @tc.desc      : Recorder audio create->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_001
+     * @tc.desc   Recorder audio create->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_001', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_001 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1649,14 +1649,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_002
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_002
-        * @tc.desc      : Recorder audio  prepare->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_002
+     * @tc.desc   Recorder audio  prepare->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_002', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_002 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1669,14 +1669,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_003
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_003
-        * @tc.desc      : Recorder audio  start->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_003
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_003
+     * @tc.desc   Recorder audio  start->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_003', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_003 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1689,14 +1689,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_004
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_004
-        * @tc.desc      : Recorder audio pause->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_004
+     * @tc.desc   Recorder audio pause->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_004', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_004 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1709,14 +1709,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_005
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_005
-        * @tc.desc      : Recorder audio resume->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_005
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_005
+     * @tc.desc   Recorder audio resume->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_005', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_005 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1729,14 +1729,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_006
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_006
-        * @tc.desc      : Recorder audio stop->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_006
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_006
+     * @tc.desc   Recorder audio stop->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_006', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_006 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1749,14 +1749,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_007
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_007
-        * @tc.desc      : Recorder audio reset->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_007
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_007
+     * @tc.desc   Recorder audio reset->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_007', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_007 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1769,14 +1769,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0460
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0460
-        * @tc.desc      : Recorder audio channel
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0460
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0460
+     * @tc.desc   Recorder audio channel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0460', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0460 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1788,14 +1788,14 @@ export default function AVRecorderFuncAccTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_PREPARE_API_0460 end')
       done();
     })
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_008
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_008
-        * @tc.desc      : Recorder audio create->getAVRecorderConfig
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliabilit test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_008
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_008
+     * @tc.desc   Recorder audio create->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_008', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_GETAVRECORDERCONFIG_API_008 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1808,14 +1808,14 @@ export default function AVRecorderFuncAccTest() {
       done();
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0100
-        * @tc.desc      : Recorder audio setmetadata
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0100
+     * @tc.desc   Recorder audio setmetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0100', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0100 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1827,14 +1827,14 @@ export default function AVRecorderFuncAccTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0100 end')
       done();
     })
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0200
-        * @tc.desc      : Recorder audio setmetadata
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0200
+     * @tc.desc   Recorder audio setmetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0200', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0200 start')
       let fileName: string = commonFun.resourceNameAac();
@@ -1846,14 +1846,14 @@ export default function AVRecorderFuncAccTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0200 end')
       done();
     })
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0300
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0300
-        * @tc.desc      : Recorder audio setmetadata
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0300
+     * @tc.desc   Recorder audio setmetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0300', Level.LEVEL0, async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0300 start')
       let fileName: string = commonFun.resourceNameAac();

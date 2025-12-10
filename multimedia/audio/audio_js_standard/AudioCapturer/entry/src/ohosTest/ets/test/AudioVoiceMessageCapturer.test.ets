@@ -430,12 +430,12 @@ export default function audioCapturerVoiceMessage() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_12000
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_CALL]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_CALL
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_12000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_12000
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_CALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_12000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -465,12 +465,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
-     * @tc.name      : test[AudioCapturer function with voice message sourcetype]
-     * @tc.desc      : AudioCapturer with parameter set
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100
+     * @tc.desc   AudioCapturer with parameter set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -506,12 +506,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9700
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9700
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -541,12 +541,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9800
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT RINGTONE]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT RINGTONE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9800
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -576,12 +576,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9900
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT MUSIC]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT MUSIC
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9900
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -609,12 +609,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10000
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT MOVIE]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT MOVIE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10000
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -643,12 +643,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10100
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT GAME]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT GAME
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10100
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -676,12 +676,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10200
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT SPEECH]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT SPEECH
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10200
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -709,12 +709,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10300
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT NAVIGATION]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT NAVIGATION
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10300
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -742,12 +742,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10400
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT ALARM]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT ALARM
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10400
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -776,12 +776,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10500
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT NOTIFICATION]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT NOTIFICATION
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10500
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -810,12 +810,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10600
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_ASSISTANT]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_ASSISTANT
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10600
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -843,12 +843,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10700
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT ACCESSIBILITY]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT ACCESSIBILITY
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10700
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -876,12 +876,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10900
-     * @tc.name      : test[AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10900
+     * @tc.desc   AudioCapturer VOICE_MESSAGE INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -911,12 +911,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11000
-     * @tc.name      : test[AudioCapturer RINGTONE INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer RINGTONE INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11000
+     * @tc.desc   AudioCapturer RINGTONE INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -944,12 +944,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11100
-     * @tc.name      : test[AudioCapturer MUSIC INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer MUSIC INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11100
+     * @tc.desc   AudioCapturer MUSIC INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -977,12 +977,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11200
-     * @tc.name      : test[AudioCapturer MOVIE INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer MOVIE INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11200
+     * @tc.desc   AudioCapturer MOVIE INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1012,12 +1012,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11300
-     * @tc.name      : test[AudioCapturer GAME INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer GAME INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11300
+     * @tc.desc   AudioCapturer GAME INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1045,12 +1045,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11400
-     * @tc.name      : test[AudioCapturer SPEECH INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer SPEECH INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11400
+     * @tc.desc   AudioCapturer SPEECH INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1076,12 +1076,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11500
-     * @tc.name      : test[AudioCapturer NAVIGATION INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer NAVIGATION INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11500
+     * @tc.desc   AudioCapturer NAVIGATION INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1108,12 +1108,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11600
-     * @tc.name      : test[AudioCapturer ALARM INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer ALARM INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11600
+     * @tc.desc   AudioCapturer ALARM INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1139,12 +1139,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11700
-     * @tc.name      : test[AudioCapturer NOTIFICATION INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer NOTIFICATION INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11700
+     * @tc.desc   AudioCapturer NOTIFICATION INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1170,12 +1170,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11800
-     * @tc.name      : test[AudioCapturer VOICE_ASSISTANT INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer VOICE_ASSISTANT INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11800
+     * @tc.desc   AudioCapturer VOICE_ASSISTANT INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1201,12 +1201,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11900
-     * @tc.name      : test[AudioCapturer ACCESSIBILITY INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer ACCESSIBILITY INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11900
+     * @tc.desc   AudioCapturer ACCESSIBILITY INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_11900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;
@@ -1233,12 +1233,12 @@ export default function audioCapturerVoiceMessage() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10800
-     * @tc.name      : test[AudioCapturer VOICE_CALL INTERRUPT VOICE_MESSAGE]
-     * @tc.desc      : AudioCapturer VOICE_CALL INTERRUPT VOICE_MESSAGE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10800
+     * @tc.desc   AudioCapturer VOICE_CALL INTERRUPT VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDER_INTERRUPT_10800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag1 = false;

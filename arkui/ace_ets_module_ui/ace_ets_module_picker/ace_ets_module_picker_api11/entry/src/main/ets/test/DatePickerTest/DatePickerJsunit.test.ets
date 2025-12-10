@@ -44,6 +44,14 @@ export default function datePickerJsunit() {
       console.info("datePicker after each called");
     });
 
+    /**
+     * @tc.name   datePickerTest_0100
+     * @tc.number datePickerTest_0100
+     * @tc.desc   datePickerTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('datePickerTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerText_0100 START');
       let strJson = getInspectorByKey('datePicker');
@@ -55,6 +63,14 @@ export default function datePickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   datePickerTest_0300
+     * @tc.number datePickerTest_0300
+     * @tc.desc   datePickerTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('datePickerTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerTest_0300 START');
       try {

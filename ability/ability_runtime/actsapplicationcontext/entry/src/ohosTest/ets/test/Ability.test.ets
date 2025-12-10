@@ -78,9 +78,12 @@ export default function abilityTest() {
   describe('ActsChainApplicationContext', () => {
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContext_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContext_0100
-     * @tc.desc: Verify that the chain call function is functioning properly in delegator getAppContext.
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_0100
+     * @tc.desc   Verify that the chain call function is functioning properly in delegator getAppContext.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_ApplicationContext_0100 ";
@@ -104,10 +107,13 @@ export default function abilityTest() {
       })
     })
 
-     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContext_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContext_0200
-     * @tc.desc: Verify that the chain call function is functioning properly in UIAbilityContext.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_0200
+     * @tc.desc   Verify that the chain call function is functioning properly in UIAbilityContext.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_ApplicationContext_0200 ";

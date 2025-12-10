@@ -41,12 +41,12 @@ export default function UDMFSupportClipboardApiTest() {
   describe('UDMFSupportClipboardApiTest', () => {
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0100
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0100
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0100';
@@ -64,15 +64,15 @@ export default function UDMFSupportClipboardApiTest() {
       console.info(TAG, 'start' + typeof properties.shareOptions);
       console.info(TAG, 'end');
     })
-    /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200
+     * @tc.desc   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0200';
       console.info(TAG, 'start');
@@ -111,12 +111,12 @@ export default function UDMFSupportClipboardApiTest() {
     });
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const TAG = 'UnifiedDataPropertiesTest003';
@@ -142,12 +142,12 @@ export default function UDMFSupportClipboardApiTest() {
       }
     });
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400';
@@ -176,12 +176,12 @@ export default function UDMFSupportClipboardApiTest() {
       expect(types[1]).assertEqual(htmlType);
     });
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0500
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0500
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0500';
@@ -238,12 +238,12 @@ export default function UDMFSupportClipboardApiTest() {
     });
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0600
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0600
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0600';
@@ -306,12 +306,12 @@ export default function UDMFSupportClipboardApiTest() {
       expect(data6.abilityName).assertEqual(wantText.abilityName);
     });
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0700
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0700
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0700';
@@ -344,12 +344,12 @@ export default function UDMFSupportClipboardApiTest() {
     });
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0800
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0800
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0800';
@@ -381,12 +381,12 @@ export default function UDMFSupportClipboardApiTest() {
       expect(data4).assertEqual(8899.7788);
     });
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0900
-     * @tc.name      : testUnifiedDataChannelProperties
-     * @tc.desc      : unifiedDataChannel properties test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0900
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0900';
@@ -420,12 +420,12 @@ export default function UDMFSupportClipboardApiTest() {
     });
   
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000
-     * @tc.name      : testaddRecord
-     * @tc.desc      : addRecord  test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000
+     * @tc.desc   addRecord  test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000 start');
@@ -439,12 +439,12 @@ export default function UDMFSupportClipboardApiTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1000 end");
     });
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1100
-     * @tc.name      : testhasType
-     * @tc.desc      : hasType test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1100
+     * @tc.desc   hasType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_1100 start');

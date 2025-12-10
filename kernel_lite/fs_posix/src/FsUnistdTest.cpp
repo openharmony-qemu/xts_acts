@@ -34,9 +34,12 @@
 using namespace testing::ext;
 
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0100
- * @tc.name     basic function test : access check file exists.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testAccess
+ * @tc.number SUB_KERNEL_FS_UNISTD_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(FileSystemTest, testAccess, Function | MediumTest | Level0)
 {
@@ -48,9 +51,12 @@ HWTEST_F(FileSystemTest, testAccess, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0110
- * @tc.name     basic function test : test access with ENOENT
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testAccessEnoent
+ * @tc.number SUB_KERNEL_FS_UNISTD_0110
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(FileSystemTest, testAccessEnoent, Function | MediumTest | Level0)
 {
@@ -60,9 +66,12 @@ HWTEST_F(FileSystemTest, testAccessEnoent, Function | MediumTest | Level0)
 
 #if defined(LITE_FS_JFFS2)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0120
- * @tc.name     basic function test : access check file R_OK.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testAccessRok
+ * @tc.number SUB_KERNEL_FS_UNISTD_0120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testAccessRok, Function | MediumTest | Level1)
 {
@@ -76,9 +85,12 @@ HWTEST_F(FileSystemTest, testAccessRok, Function | MediumTest | Level1)
 
 #if defined(LITE_FS_JFFS2)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0130
- * @tc.name     basic function test : access check file W_OK.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testAccessWok
+ * @tc.number SUB_KERNEL_FS_UNISTD_0130
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testAccessWok, Function | MediumTest | Level1)
 {
@@ -92,9 +104,12 @@ HWTEST_F(FileSystemTest, testAccessWok, Function | MediumTest | Level1)
 
 #if defined(LITE_FS_JFFS2)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0140
- * @tc.name     basic function test : access check file X_OK
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testAccessXok
+ * @tc.number SUB_KERNEL_FS_UNISTD_0140
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testAccessXok, Function | MediumTest | Level1)
 {
@@ -107,9 +122,12 @@ HWTEST_F(FileSystemTest, testAccessXok, Function | MediumTest | Level1)
 #endif
 
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0200
- * @tc.name     basic function test : switch to the current working directory.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testChdir
+ * @tc.number SUB_KERNEL_FS_UNISTD_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testChdir, Function | MediumTest | Level1)
 {
@@ -126,9 +144,12 @@ HWTEST_F(FileSystemTest, testChdir, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0210
- * @tc.name     basic function test : test chdir with ENOENT
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testChdirEnoent
+ * @tc.number SUB_KERNEL_FS_UNISTD_0210
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testChdirEnoent, Function | MediumTest | Level3)
 {
@@ -139,9 +160,12 @@ HWTEST_F(FileSystemTest, testChdirEnoent, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0220
- * @tc.name     basic function test : test chdir with ENAMETOOLONG
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testChdirEnametoolong
+ * @tc.number SUB_KERNEL_FS_UNISTD_0220
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testChdirEnametoolong, Function | MediumTest | Level3)
 {
@@ -159,9 +183,12 @@ HWTEST_F(FileSystemTest, testChdirEnametoolong, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0230
- * @tc.name     basic function test : test chdir with ENOTDIR
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testChdirEnotdir
+ * @tc.number SUB_KERNEL_FS_UNISTD_0230
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testChdirEnotdir, Function | MediumTest | Level3)
 {
@@ -176,9 +203,12 @@ HWTEST_F(FileSystemTest, testChdirEnotdir, Function | MediumTest | Level3)
 }
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0500
- * @tc.name     basic function test : using ftruncate to change the file size
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFtruncate
+ * @tc.number SUB_KERNEL_FS_UNISTD_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testFtruncate, Function | MediumTest | Level1)
 {
@@ -200,9 +230,12 @@ HWTEST_F(FileSystemTest, testFtruncate, Function | MediumTest | Level1)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0501
- * @tc.name     basic function test : test ftruncate with EINVAL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFtruncateEinval
+ * @tc.number SUB_KERNEL_FS_UNISTD_0501
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testFtruncateEinval, Function | MediumTest | Level3)
 {
@@ -221,9 +254,12 @@ HWTEST_F(FileSystemTest, testFtruncateEinval, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0502
- * @tc.name     basic function test : test ftruncate with ENOSYS
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFtruncateEacces
+ * @tc.number SUB_KERNEL_FS_UNISTD_0502
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testFtruncateEacces, Function | MediumTest | Level3)
 {
@@ -234,9 +270,12 @@ HWTEST_F(FileSystemTest, testFtruncateEacces, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0503
- * @tc.name     basic function test : test ftruncate with EBADF
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFtruncateEbadf
+ * @tc.number SUB_KERNEL_FS_UNISTD_0503
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testFtruncateEbadf, Function | MediumTest | Level3)
 {
@@ -248,9 +287,12 @@ HWTEST_F(FileSystemTest, testFtruncateEbadf, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0510
- * @tc.name     basic function test : using truncate functions to change the file size
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testTruncate
+ * @tc.number SUB_KERNEL_FS_UNISTD_0510
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testTruncate, Function | MediumTest | Level1)
 {
@@ -271,9 +313,12 @@ HWTEST_F(FileSystemTest, testTruncate, Function | MediumTest | Level1)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0511
- * @tc.name     basic function test : test truncate with EINVAL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testTruncateEinval
+ * @tc.number SUB_KERNEL_FS_UNISTD_0511
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testTruncateEinval, Function | MediumTest | Level3)
 {
@@ -292,9 +337,12 @@ HWTEST_F(FileSystemTest, testTruncateEinval, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0512
- * @tc.name     basic function test : test truncate with EACCES
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testTruncateEacces
+ * @tc.number SUB_KERNEL_FS_UNISTD_0512
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testTruncateEacces, Function | MediumTest | Level3)
 {
@@ -306,9 +354,12 @@ HWTEST_F(FileSystemTest, testTruncateEacces, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0513
- * @tc.name     basic function test : test truncate with ENAMETOOLONG
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testTruncateEnametoolong
+ * @tc.number SUB_KERNEL_FS_UNISTD_0513
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testTruncateEnametoolong, Function | MediumTest | Level3)
 {
@@ -327,9 +378,12 @@ HWTEST_F(FileSystemTest, testTruncateEnametoolong, Function | MediumTest | Level
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0514
- * @tc.name     basic function test : test truncate with ENOENT
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testTruncateEnoent
+ * @tc.number SUB_KERNEL_FS_UNISTD_0514
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testTruncateEnoent, Function | MediumTest | Level3)
 {
@@ -341,9 +395,12 @@ HWTEST_F(FileSystemTest, testTruncateEnoent, Function | MediumTest | Level3)
 
 #ifdef LITE_FS_PATHCONF
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0600
- * @tc.name     basic function test : Use the pathconf function to get the configuration value of the file
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPathconf
+ * @tc.number SUB_KERNEL_FS_UNISTD_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testPathconf, Function | MediumTest | Level2)
 {
@@ -386,9 +443,12 @@ HWTEST_F(FileSystemTest, testPathconf, Function | MediumTest | Level2)
 
 #ifdef LITE_FS_PATHCONF
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0610
- * @tc.name     basic function test : test pathconf function with error number EINVAL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPathconfEinval
+ * @tc.number SUB_KERNEL_FS_UNISTD_0610
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testPathconfEinval, Function | MediumTest | Level2)
 {
@@ -403,9 +463,12 @@ HWTEST_F(FileSystemTest, testPathconfEinval, Function | MediumTest | Level2)
 
 #ifdef LITE_FS_PATHCONF
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0620
- * @tc.name     basic function test : test pathconf function with error number EFAULT
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPathconfEfault
+ * @tc.number SUB_KERNEL_FS_UNISTD_0620
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testPathconfEfault, Function | MediumTest | Level2)
 {
@@ -417,9 +480,12 @@ HWTEST_F(FileSystemTest, testPathconfEfault, Function | MediumTest | Level2)
 
 #ifdef LITE_FS_PATHCONF
 /**
- * @tc.number   SUB_KERNEL_FS_UNISTD_0630
- * @tc.name     basic function test : test pathconf function with error number ENOENT
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPathconfEnoent
+ * @tc.number SUB_KERNEL_FS_UNISTD_0630
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testPathconfEnoent, Function | MediumTest | Level2)
 {
@@ -432,10 +498,13 @@ HWTEST_F(FileSystemTest, testPathconfEnoent, Function | MediumTest | Level2)
 
 #ifdef LITE_FS_PATHCONF
 /**
-* @tc.number    SUB_KERNEL_FS_UNISTD_0700
-* @tc.name      basic function test : Use the fpathconf function to get the configuration value of the file
-* @tc.desc      [C- SOFTWARE -0200]
-*/
+ * @tc.name   testFpathconf
+ * @tc.number SUB_KERNEL_FS_UNISTD_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(FileSystemTest, testFpathconf, Function | MediumTest | Level2)
 {
     int fd = open(FILE0, O_CREAT | O_RDWR, 0777);
@@ -478,10 +547,13 @@ HWTEST_F(FileSystemTest, testFpathconf, Function | MediumTest | Level2)
 
 #ifdef LITE_FS_PATHCONF
 /**
-* @tc.number    SUB_KERNEL_FS_UNISTD_0710
-* @tc.name      basic function test : test fpathconf function with error number EINVAL
-* @tc.desc      [C- SOFTWARE -0200]
-*/
+ * @tc.name   testFpathconfEinval
+ * @tc.number SUB_KERNEL_FS_UNISTD_0710
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(FileSystemTest, testFpathconfEinval, Function | MediumTest | Level2)
 {
     int fd = open(FILE0, O_CREAT | O_RDWR, 0777);
@@ -498,10 +570,13 @@ HWTEST_F(FileSystemTest, testFpathconfEinval, Function | MediumTest | Level2)
 
 #ifdef LITE_FS_PATHCONF
 /**
-* @tc.number    SUB_KERNEL_FS_UNISTD_0720
-* @tc.name      basic function test : test fpathconf function with error number EBADF
-* @tc.desc      [C- SOFTWARE -0200]
-*/
+ * @tc.name   testFpathconfEbadf
+ * @tc.number SUB_KERNEL_FS_UNISTD_0720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(FileSystemTest, testFpathconfEbadf, Function | MediumTest | Level2)
 {
     // invalid file description

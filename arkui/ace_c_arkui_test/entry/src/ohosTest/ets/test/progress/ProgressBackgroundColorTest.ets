@@ -26,39 +26,39 @@ export default function progressBackgroundColorTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_BACKGROUNDCOLOR_0100
-     * @tc.name       : testProgressBackgroundColor001
-     * @tc.desc       : testing backgroundColor for Progress with red value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for Progress with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressBackgroundColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_BACKGROUNDCOLOR_0200
-     * @tc.name       : testProgressBackgroundColor002
-     * @tc.desc       : testing backgroundColor for Progress with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for Progress with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressBackgroundColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_BACKGROUNDCOLOR_0300
-     * @tc.name       : testProgressBackgroundColor003
-     * @tc.desc       : testing backgroundColor for Progress with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for Progress with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressBackgroundColor003()).assertEqual(0)

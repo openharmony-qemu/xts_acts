@@ -26,52 +26,52 @@ export default function stackMarginTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_MARGIN_0100
-     * @tc.name       : testStackMargin001
-     * @tc.desc       : testing margin for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackMargin001
+     * @tc.number SUB_ARKUI_CAPI_STACK_MARGIN_0100
+     * @tc.desc   testing margin for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackMargin001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackMargin001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_MARGIN_0200
-     * @tc.name       : testStackMargin002
-     * @tc.desc       : testing margin for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackMargin002
+     * @tc.number SUB_ARKUI_CAPI_STACK_MARGIN_0200
+     * @tc.desc   testing margin for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackMargin002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackMargin002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_MARGIN_0300
-     * @tc.name       : testStackMargin003
-     * @tc.desc       : testing margin for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackMargin003
+     * @tc.number SUB_ARKUI_CAPI_STACK_MARGIN_0300
+     * @tc.desc   testing margin for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackMargin003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackMargin003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_MARGIN_0400
-     * @tc.name       : testStackMargin004
-     * @tc.desc       : testing margin for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackMargin004
+     * @tc.number SUB_ARKUI_CAPI_STACK_MARGIN_0400
+     * @tc.desc   testing margin for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackMargin004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackMargin004()).assertEqual(0)

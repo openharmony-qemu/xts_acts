@@ -45,16 +45,16 @@ export default function getUIObserver() {
       done();
     });
 
+
+
     /**
-     * @tc.number    SUB_ACE_getUIObserver_0100
-     * @tc.name      getUIObserver_0100
-     * @tc.desc      getUIObserver api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getUIObserver_0100
+     * @tc.number getUIObserver_0100
+     * @tc.desc   getUIObserver_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('getUIObserver_0100', Level.LEVEL0, async  (done: Function)=> {
       console.info('getUIObserver_0100 START');
       let driver = await Driver.create()

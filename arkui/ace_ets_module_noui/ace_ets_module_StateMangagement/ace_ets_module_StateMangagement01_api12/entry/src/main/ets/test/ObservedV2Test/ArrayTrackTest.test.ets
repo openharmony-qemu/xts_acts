@@ -41,12 +41,12 @@ export default function ArrayTrackTest() {
       done();
     });
     /**
-     * @tc.number    ArrayTrack
-     * @tc.name      ArrayTrackTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ArrayTrackTest_0100
+     * @tc.number ArrayTrack
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArrayTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArrayTrackTest_0100 START');

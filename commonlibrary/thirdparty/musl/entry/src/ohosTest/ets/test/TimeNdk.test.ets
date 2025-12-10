@@ -28,12 +28,12 @@ export default function timeNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0100
-     * @tc.name       : testMuslTimeSetitimer001
-     * @tc.desc       : test setitimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeSetitimer001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0100
+     * @tc.desc   test setitimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeSetitimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a:number = time.setitimer(0, 100000, 0, 100000);
@@ -41,12 +41,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0200
-     * @tc.name       : testMuslTimeSetitimer002
-     * @tc.desc       : test setitimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeSetitimer002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0200
+     * @tc.desc   test setitimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeSetitimer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a:number = time.setitimer(0, 0, 0, 100000);
@@ -54,12 +54,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0300
-     * @tc.name       : testMuslTimeSetitimer003
-     * @tc.desc       : test setitimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeSetitimer003
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0300
+     * @tc.desc   test setitimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeSetitimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a:number = time.setitimer(0, 100000, 0, 0);
@@ -67,12 +67,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0400
-     * @tc.name       : testMuslTimeSetitimer004
-     * @tc.desc       : test setitimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeSetitimer004
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_SETITIMER_0400
+     * @tc.desc   test setitimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeSetitimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a:number = time.setitimer(100000, 100000, 100000, 0);
@@ -80,12 +80,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0100
-     * @tc.name       : testMuslTimeStrftime001
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0100
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%c"
@@ -94,12 +94,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0200
-     * @tc.name       : testMuslTimeStrftime002
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0200
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%D"
@@ -108,12 +108,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0300
-     * @tc.name       : testMuslTimeStrftime003
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime003
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0300
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%I"
@@ -122,12 +122,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0400
-     * @tc.name       : testMuslTimeStrftime004
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime004
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0400
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%F"
@@ -136,12 +136,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0500
-     * @tc.name       : testMuslTimeStrftime005
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime005
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0500
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%j"
@@ -150,12 +150,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0600
-     * @tc.name       : testMuslTimeStrftime006
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime006
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0600
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%R"
@@ -164,12 +164,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0700
-     * @tc.name       : testMuslTimeStrftime007
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime007
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0700
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%v"
@@ -178,12 +178,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0800
-     * @tc.name       : testMuslTimeStrftime008
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime008
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0800
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%P"
@@ -192,12 +192,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0900
-     * @tc.name       : testMuslTimeStrftime009
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime009
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_0900
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%T"
@@ -206,12 +206,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_1000
-     * @tc.name       : testMuslTimeStrftime010
-     * @tc.desc       : test strftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftime010
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_1000
+     * @tc.desc   test strftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftime010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%k"
@@ -221,12 +221,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0100
-     * @tc.name       : testMuslTimeStrftimeL001
-     * @tc.desc       : test strftime_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftimeL001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0100
+     * @tc.desc   test strftime_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftimeL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%c"
@@ -235,12 +235,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0200
-     * @tc.name       : testMuslTimeStrftimeL002
-     * @tc.desc       : test strftime_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftimeL002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0200
+     * @tc.desc   test strftime_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftimeL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%D"
@@ -249,12 +249,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0300
-     * @tc.name       : testMuslTimeStrftimeL003
-     * @tc.desc       : test strftime_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftimeL003
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0300
+     * @tc.desc   test strftime_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftimeL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%I"
@@ -263,12 +263,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0400
-     * @tc.name       : testMuslTimeStrftimeL004
-     * @tc.desc       : test strftime_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftimeL004
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0400
+     * @tc.desc   test strftime_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftimeL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%F"
@@ -277,12 +277,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0500
-     * @tc.name       : testMuslTimeStrftimeL005
-     * @tc.desc       : test strftime_l
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrftimeL005
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRFTIME_L_0500
+     * @tc.desc   test strftime_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrftimeL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%j"
@@ -292,12 +292,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TIMEGM_0100
-     * @tc.name       : testMuslTimeTimegm001
-     * @tc.desc       : test timegm
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeTimegm001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TIMEGM_0100
+     * @tc.desc   test timegm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTimegm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = time.timegm();
@@ -306,12 +306,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TIMESPECGET_0100
-     * @tc.name       : testMuslTimeTimespecget001
-     * @tc.desc       : test timespec_get
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeTimespecget001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TIMESPECGET_0100
+     * @tc.desc   test timespec_get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTimespecget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -320,12 +320,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TIMECREATE_0100
-     * @tc.name       : testMuslTimeTimerCreate001
-     * @tc.desc       : test timer_create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeTimerCreate001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TIMECREATE_0100
+     * @tc.desc   test timer_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTimerCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -335,12 +335,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TIMERGETOVERRUN_0100
-     * @tc.name       : testMuslTimeTimerGetoverrun001
-     * @tc.desc       : test timer_getoverrun
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeTimerGetoverrun001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TIMERGETOVERRUN_0100
+     * @tc.desc   test timer_getoverrun
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTimerGetoverrun001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -350,12 +350,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TIMERGETTIME_0100
-     * @tc.name       : testMuslTimeTimerGettime001
-     * @tc.desc       : test timer_gettime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeTimerGettime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TIMERGETTIME_0100
+     * @tc.desc   test timer_gettime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTimerGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -364,12 +364,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_STRPTIME_0100
-     * @tc.name       : testMuslTimeStrptime001
-     * @tc.desc       : test strptime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeStrptime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_STRPTIME_0100
+     * @tc.desc   test strptime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeStrptime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = "%u"
@@ -379,12 +379,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TZSET_0100
-     * @tc.name       : testMuslTimeTzset001
-     * @tc.desc       : test tzset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeTzset001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TZSET_0100
+     * @tc.desc   test tzset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTzset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.tzset();
@@ -393,12 +393,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CTIME_0100
-     * @tc.name       : testMuslTimeCTime001
-     * @tc.desc       : test ctime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeCTime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CTIME_0100
+     * @tc.desc   test ctime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeCTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time.ctime()).assertEqual(0);
@@ -406,12 +406,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CTIME_R_0100
-     * @tc.name       : testMuslTimeCTimeR001
-     * @tc.desc       : test ctime_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeCTimeR001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CTIME_R_0100
+     * @tc.desc   test ctime_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeCTimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time.ctime_r()).assertEqual(0);
@@ -419,12 +419,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_DIFFTIME_0100
-     * @tc.name       : testMuslTimeDiffTime001
-     * @tc.desc       : test difftime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeDiffTime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_DIFFTIME_0100
+     * @tc.desc   test difftime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeDiffTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let backParam = false;
@@ -436,12 +436,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_ASCTIME_0100
-     * @tc.name       : testMuslTimeAsctime001
-     * @tc.desc       : test asctime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeAsctime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_ASCTIME_0100
+     * @tc.desc   test asctime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeAsctime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -451,12 +451,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_ASCTIMER_0100
-     * @tc.name       : testMuslTimeAsctimeR001
-     * @tc.desc       : test asctime_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeAsctimeR001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_ASCTIMER_0100
+     * @tc.desc   test asctime_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeAsctimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -466,12 +466,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CLOCK_0100
-     * @tc.name       : testMuslTimeClock001
-     * @tc.desc       : test clock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeClock001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CLOCK_0100
+     * @tc.desc   test clock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeClock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -481,12 +481,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CLOCK_GETCPUCLOCKED_0100
-     * @tc.name       : testMuslTimeClockGetcpuclockid001
-     * @tc.desc       : test clock_getcpuclockid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeClockGetcpuclockid001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CLOCK_GETCPUCLOCKED_0100
+     * @tc.desc   test clock_getcpuclockid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeClockGetcpuclockid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -496,12 +496,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CLOCK_GETRES_0100
-     * @tc.name       : testMuslTimeClockGetres001
-     * @tc.desc       : test clock_getres
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeClockGetres001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CLOCK_GETRES_0100
+     * @tc.desc   test clock_getres
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeClockGetres001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -511,12 +511,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CLOCK_GETTIME_0100
-     * @tc.name       : testMuslTimeClockGettime001
-     * @tc.desc       : test clock_gettime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeClockGettime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CLOCK_GETTIME_0100
+     * @tc.desc   test clock_gettime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeClockGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -526,12 +526,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CLOCKNANOSLEEP_0100
-     * @tc.name       : testMuslTimeClockNanosleep001
-     * @tc.desc       : test clock_nanosleep
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeClockNanosleep001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CLOCKNANOSLEEP_0100
+     * @tc.desc   test clock_nanosleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeClockNanosleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -541,12 +541,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_CLOCKSETTIME_0100
-     * @tc.name       : testMuslTimeClockSettime001
-     * @tc.desc       : test clock_settime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeClockSettime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_CLOCKSETTIME_0100
+     * @tc.desc   test clock_settime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeClockSettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -556,12 +556,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_LOCALTIME_0100
-     * @tc.name       : testMuslTimeLocaltime001
-     * @tc.desc       : test localtime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeLocaltime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_LOCALTIME_0100
+     * @tc.desc   test localtime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeLocaltime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.localtime();
@@ -570,12 +570,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_LOCALTIME_R_0100
-     * @tc.name       : testMuslTimeLocaltimeR001
-     * @tc.desc       : test localtimeR
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeLocaltimeR001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_LOCALTIME_R_0100
+     * @tc.desc   test localtimeR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeLocaltimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.localtimeR();
@@ -584,12 +584,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_MKTIME_0100
-     * @tc.name       : testMuslTimeMkTime001
-     * @tc.desc       : test mktime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeMkTime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_MKTIME_0100
+     * @tc.desc   test mktime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeMkTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.mkTime();
@@ -598,12 +598,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_GMTIME_0100
-     * @tc.name       : testMuslTimeGmtime001
-     * @tc.desc       : test gmtime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeGmtime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_GMTIME_0100
+     * @tc.desc   test gmtime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeGmtime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.gmtime();
@@ -612,12 +612,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_GMTIME_R_0100
-     * @tc.name       : testMuslTimeGmtimeR001
-     * @tc.desc       : test gmtimeR
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeGmtimeR001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_GMTIME_R_0100
+     * @tc.desc   test gmtimeR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeGmtimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.gmtimeR();
@@ -626,12 +626,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_LUTIMES_0100
-     * @tc.name       : testMuslTimeLutimes001
-     * @tc.desc       : test lutimes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeLutimes001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_LUTIMES_0100
+     * @tc.desc   test lutimes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeLutimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.lutimes();
@@ -640,12 +640,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_NANOSLEEP_0100
-     * @tc.name       : testMuslTimeNanosleep001
-     * @tc.desc       : test nanosleep
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeNanosleep001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_NANOSLEEP_0100
+     * @tc.desc   test nanosleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeNanosleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = time.nanosleep();
@@ -653,12 +653,12 @@ export default function timeNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TIMEZONE_0100
-     * @tc.name       : testMuslTimeTimeZone001
-     * @tc.desc       : test timezone
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeTimeZone001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TIMEZONE_0100
+     * @tc.desc   test timezone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTimeZone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = time.timeZone();
@@ -668,12 +668,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TIME_0100
-     * @tc.name       : testMuslTimeTime001
-     * @tc.desc       : test time
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeTime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TIME_0100
+     * @tc.desc   test time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = time.time();
@@ -683,12 +683,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_GETDATEERR_0100
-     * @tc.name       : testMuslTimeGetDateErr001
-     * @tc.desc       : test getdate_err
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeGetDateErr001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_GETDATEERR_0100
+     * @tc.desc   test getdate_err
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeGetDateErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = time.getdateErr();
@@ -698,12 +698,12 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_DAYLIGHT_0100
-     * @tc.name       : testMuslTimeDaylight001
-     * @tc.desc       : test daylight
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeDaylight001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_DAYLIGHT_0100
+     * @tc.desc   test daylight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeDaylight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = time.daylight();

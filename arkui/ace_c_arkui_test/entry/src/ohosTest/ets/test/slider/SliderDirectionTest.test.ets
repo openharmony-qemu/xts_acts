@@ -26,65 +26,65 @@ export default function sliderDirectionTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_DIRECTION_0100
-     * @tc.name: testSliderDirection001
-     * @tc.desc: testing direction for slider with default value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderDirection001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_DIRECTION_0100
+     * @tc.desc   testing direction for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderDirection001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderDirection001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_DIRECTION_0200
-     * @tc.name: testSliderDirection002
-     * @tc.desc: testing direction for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderDirection002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_DIRECTION_0200
+     * @tc.desc   testing direction for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderDirection002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderDirection002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_DIRECTION_0300
-     * @tc.name: testSliderDirection003
-     * @tc.desc: testing direction for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderDirection003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_DIRECTION_0300
+     * @tc.desc   testing direction for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderDirection003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderDirection003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_DIRECTION_0400
-     * @tc.name: testSliderDirection004
-     * @tc.desc: testing direction for slider with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderDirection004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_DIRECTION_0400
+     * @tc.desc   testing direction for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderDirection004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderDirection004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_DIRECTION_0500
-     * @tc.name: testSliderDirection005
-     * @tc.desc: testing direction for slider with negative value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSliderDirection005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_DIRECTION_0500
+     * @tc.desc   testing direction for slider with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderDirection005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderDirection005()).assertEqual(0)

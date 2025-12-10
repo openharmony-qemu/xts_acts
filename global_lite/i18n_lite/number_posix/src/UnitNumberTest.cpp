@@ -46,10 +46,13 @@ static int GetLocaleIndex(LocaleInfo locale, vector<LocaleInfo> locales)
     return -1;
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0100
- * @tc.name     test NumberFormat Construction,locale is null
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_Construction_0100
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0100, Function | MediumTest | Level0)
 {
@@ -62,10 +65,13 @@ HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0100, Function
     free(localeInfo);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0200
- * @tc.name     test NumberFormat Construction,locale is normal,script is Latn
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_Construction_0200
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0200, Function | MediumTest | Level0)
 {
@@ -76,10 +82,13 @@ HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0200, Function
     free(numberForm);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0300
- * @tc.name     test NumberFormat Construction,locale is normal
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_Construction_0300
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0300, Function | MediumTest | Level0)
 {
@@ -90,10 +99,13 @@ HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0300, Function
     free(numberForm);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0400
- * @tc.name     test NumberFormat Construction,locale is copy
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_Construction_0400
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_CONSTRUCTIION_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0400, Function | MediumTest | Level0)
 {
@@ -106,11 +118,6 @@ HWTEST_F(NumberConstructionTest, GLOBAL_NumberFormat_Construction_0400, Function
     free(localeInfo);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_DOUBLEFORMAT_0100
- * @tc.name     test NumberFormat Format API,type is DECIMAL
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_DoubleFormat_0100, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -131,11 +138,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_DoubleFormat_0100, Function | MediumTes
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_DOUBLEFORMAT_0200
- * @tc.name     test NumberFormat Format API,type is PERCENT
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_DoubleFormat_0200, Function | MediumTest | Level0)
 {
     double percentNum1 = 0.1234;
@@ -154,11 +156,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_DoubleFormat_0200, Function | MediumTes
 }
 
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INTFORMAT_0100
- * @tc.name     test NumberFormat Format API
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_IntFormat_0100, Function | MediumTest | Level0)
 {
     int intNum1 = 1234567;
@@ -179,11 +176,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_IntFormat_0100, Function | MediumTest |
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_DOUBLEFORMATNOGROUP_0100
- * @tc.name     test NumberFormat FormatNoGroup API
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_DoubleFormatNoGroup_0100, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -205,11 +197,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_DoubleFormatNoGroup_0100, Function | Me
 }
 
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INTFORMATNOGROUP_0100
- * @tc.name     test NumberFormat FormatNoGroup API,illegal NumberFormatType type
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_IntFormatNoGroup_0100, Function | MediumTest | Level0)
 {
     int intNum1 = 1234567;
@@ -230,11 +217,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_IntFormatNoGroup_0100, Function | Mediu
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMAXDECIMALLENGTH_0100
- * @tc.name     test NumberFormat SetMaxDecimalLength API,length is -1
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0100, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -256,11 +238,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0100, Function | Me
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMAXDECIMALLENGTH_0200
- * @tc.name     test NumberFormat SetMaxDecimalLength API,length is 0
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0200, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -282,11 +259,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0200, Function | Me
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMAXDECIMALLENGTH_0300
- * @tc.name     test NumberFormat SetMaxDecimalLength API,length is 10
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0300, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -308,11 +280,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0300, Function | Me
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMAXDECIMALLENGTH_0400
- * @tc.name     test NumberFormat SetMaxDecimalLength API,length is 2
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0400, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.5678;
@@ -328,11 +295,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMaxDecimalLength_0400, Function | Me
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMINDECIMALLENGTH_0100
- * @tc.name     test NumberFormat SetMinDecimalLength API,length is -1
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMinDecimalLength_0100, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -348,11 +310,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMinDecimalLength_0100, Function | Me
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMINDECIMALLENGTH_0200
- * @tc.name     test NumberFormat SetMinDecimalLength API,length is 0
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMinDecimalLength_0200, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -368,11 +325,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMinDecimalLength_0200, Function | Me
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMINDECIMALLENGTH_0300
- * @tc.name     test NumberFormat SetMinDecimalLength API,length is 3
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMinDecimalLength_0300, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8234567.56;
@@ -388,11 +340,6 @@ HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMinDecimalLength_0300, Function | Me
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_INT_SETMINDECIMALLENGTH_0400
- * @tc.name     test NumberFormat SetMinDecimalLength API,length is 2
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(NumberTest, GLOBAL_NumberFormat_SetMinDecimalLength_0400, Function | MediumTest | Level0)
 {
     double doubleNum1 = 8.23456789567E8;

@@ -39,12 +39,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkAshmemAshmemFd_0100
-     * @tc.name    : SUB_Driver_Ext_UsbDdkAshmemAshmemFd_0100
-     * @tc.desc    : Test UsbDdkAshmemAshmemFd.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkAshmemAshmemFd_0100
+     * @tc.number SUB_Driver_Ext_UsbDdkAshmemAshmemFd_0100
+     * @tc.desc   Test UsbDdkAshmemAshmemFd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkAshmemAshmemFd_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -60,12 +60,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  :
-     * @tc.name    : SUB_Driver_Ext_UsbDdkAshmemSize_0200
-     * @tc.desc    : Test UsbDdkAshmemSize.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkAshmemSize_0200
+     * @tc.number SUB_Driver_Ext_UsbDdkAshmemSize_0200
+     * @tc.desc   Test UsbDdkAshmemSize.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkAshmemSize_0200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -81,12 +81,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkAshmemAddress_0300
-     * @tc.name    : SUB_Driver_Ext_UsbDdkAshmemAddress_0300
-     * @tc.desc    : Test UsbDdkAshmemAddress.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkAshmemAddress_0300
+     * @tc.number SUB_Driver_Ext_UsbDdkAshmemAddress_0300
+     * @tc.desc   Test UsbDdkAshmemAddress.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkAshmemAddress_0300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -102,12 +102,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkAshmemOffset_0400
-     * @tc.name    : SUB_Driver_Ext_UsbDdkAshmemOffset_0400
-     * @tc.desc    : Test UsbDdkAshmemOffset.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkAshmemOffset_0400
+     * @tc.number SUB_Driver_Ext_UsbDdkAshmemOffset_0400
+     * @tc.desc   Test UsbDdkAshmemOffset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkAshmemOffset_0400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -123,12 +123,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkAshmemBufferLength_0500
-     * @tc.name    : SUB_Driver_Ext_UsbDdkAshmemBufferLength_0500
-     * @tc.desc    : Test UsbDdkAshmemBufferLength.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkAshmemBufferLength_0500
+     * @tc.number SUB_Driver_Ext_UsbDdkAshmemBufferLength_0500
+     * @tc.desc   Test UsbDdkAshmemBufferLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkAshmemBufferLength_0500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -144,12 +144,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkAshmemTransferredLength_0600
-     * @tc.name    : SUB_Driver_Ext_UsbDdkAshmemTransferredLength_0600
-     * @tc.desc    : Test UsbDdkAshmemTransferredLength.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkAshmemTransferredLength_0600
+     * @tc.number SUB_Driver_Ext_UsbDdkAshmemTransferredLength_0600
+     * @tc.desc   Test UsbDdkAshmemTransferredLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkAshmemTransferredLength_0600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -165,12 +165,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkSuccess_0700
-     * @tc.name    : SUB_Driver_Ext_UsbDdkSuccess_0700
-     * @tc.desc    : Test UsbDdkSuccess.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkSuccess_0700
+     * @tc.number SUB_Driver_Ext_UsbDdkSuccess_0700
+     * @tc.desc   Test UsbDdkSuccess.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkSuccess_0700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -186,12 +186,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkFailure_0800
-     * @tc.name    : SUB_Driver_Ext_UsbDdkFailure_0800
-     * @tc.desc    : Test UsbDdkFailure.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkFailure_0800
+     * @tc.number SUB_Driver_Ext_UsbDdkFailure_0800
+     * @tc.desc   Test UsbDdkFailure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkFailure_0800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -207,12 +207,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkInvalidParameter_0900
-     * @tc.name    : SUB_Driver_Ext_UsbDdkInvalidParameter_0900
-     * @tc.desc    : Test UsbDdkInvalidParameter.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkInvalidParameter_0900
+     * @tc.number SUB_Driver_Ext_UsbDdkInvalidParameter_0900
+     * @tc.desc   Test UsbDdkInvalidParameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkInvalidParameter_0900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -228,12 +228,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkInvalidOperation_1000
-     * @tc.name    : SUB_Driver_Ext_UsbDdkInvalidOperation_1000
-     * @tc.desc    : Test UsbDdkInvalidOperation.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkInvalidOperation_1000
+     * @tc.number SUB_Driver_Ext_UsbDdkInvalidOperation_1000
+     * @tc.desc   Test UsbDdkInvalidOperation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkInvalidOperation_1000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -249,12 +249,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbDdkNullPTR_1100
-     * @tc.name    : SUB_Driver_Ext_UsbDdkNullPTR_1100
-     * @tc.desc    : Test UsbDdkNullPTR.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbDdkNullPTR_1100
+     * @tc.number SUB_Driver_Ext_UsbDdkNullPTR_1100
+     * @tc.desc   Test UsbDdkNullPTR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbDdkNullPTR_1100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -270,12 +270,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
-     * @tc.desc    : Test ScsiPeripheralDdkInit.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralDdkInit_1200
+     * @tc.desc   Test ScsiPeripheralDdkInit.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralDdkInit_1200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -291,12 +291,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralRelease_1300
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralRelease_1300
-     * @tc.desc    : Test ScsiPeripheralRelease.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralRelease_1300
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralRelease_1300
+     * @tc.desc   Test ScsiPeripheralRelease.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralRelease_1300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -312,12 +312,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralOpen_1400
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralOpen_1400
-     * @tc.desc    : Test ScsiPeripheralOpen.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralOpen_1400
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralOpen_1400
+     * @tc.desc   Test ScsiPeripheralOpen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralOpen_1400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -333,12 +333,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralClose_1500
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralClose_1500
-     * @tc.desc    : Test ScsiPeripheralClose.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralClose_1500
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralClose_1500
+     * @tc.desc   Test ScsiPeripheralClose.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralClose_1500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -354,12 +354,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralTestUnitReady_1600
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralTestUnitReady_1600
-     * @tc.desc    : Test ScsiPeripheralTestUnitReady.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralTestUnitReady_1600
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralTestUnitReady_1600
+     * @tc.desc   Test ScsiPeripheralTestUnitReady.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralTestUnitReady_1600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -375,12 +375,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralInquiry_1700
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralInquiry_1700
-     * @tc.desc    : Test ScsiPeripheralClose.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralInquiry_1700
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralInquiry_1700
+     * @tc.desc   Test ScsiPeripheralClose.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralInquiry_1700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -396,12 +396,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralReadCapacity10_1800
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralReadCapacity10_1800
-     * @tc.desc    : Test ScsiPeripheralReadCapacity10.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralReadCapacity10_1800
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralReadCapacity10_1800
+     * @tc.desc   Test ScsiPeripheralReadCapacity10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralReadCapacity10_1800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -417,12 +417,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralRequestSense_1900
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralRequestSense_1900
-     * @tc.desc    : Test ScsiPeripheralRequestSense.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralRequestSense_1900
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralRequestSense_1900
+     * @tc.desc   Test ScsiPeripheralRequestSense.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralRequestSense_1900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -438,12 +438,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralRead_2000
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralRead_2000
-     * @tc.desc    : Test ScsiPeripheralRead.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralRead_2000
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralRead_2000
+     * @tc.desc   Test ScsiPeripheralRead.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralRead_2000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -459,12 +459,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralWrite_2100
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralWrite_2100
-     * @tc.desc    : Test ScsiPeripheralWrite.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralWrite_2100
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralWrite_2100
+     * @tc.desc   Test ScsiPeripheralWrite.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralWrite_2100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -480,12 +480,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralSendRequestByCDB_2300
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralSendRequestByCDB_2300
-     * @tc.desc    : Test ScsiPeripheralSendRequestByCDB.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralSendRequestByCDB_2300
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralSendRequestByCDB_2300
+     * @tc.desc   Test ScsiPeripheralSendRequestByCDB.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralSendRequestByCDB_2300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -501,12 +501,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralVerify10CONDITIONMET_2500
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralVerify10CONDITIONMET_2500
-     * @tc.desc    : Test ScsiPeripheralVerify10CONDITIONMET.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10CONDITIONMET_2500
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10CONDITIONMET_2500
+     * @tc.desc   Test ScsiPeripheralVerify10CONDITIONMET.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralVerify10CONDITIONMET_2500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -522,12 +522,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralVerify10BUSY_2600
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralVerify10BUSY_2600
-     * @tc.desc    : Test ScsiPeripheralVerify10BUSY.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10BUSY_2600
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10BUSY_2600
+     * @tc.desc   Test ScsiPeripheralVerify10BUSY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralVerify10BUSY_2600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -543,12 +543,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralVerify10RESERVATIONCONFLICT_2700
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralVerify10RESERVATIONCONFLICT_2700
-     * @tc.desc    : Test ScsiPeripheralVerify10RESERVATIONCONFLICT.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10RESERVATIONCONFLICT_2700
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10RESERVATIONCONFLICT_2700
+     * @tc.desc   Test ScsiPeripheralVerify10RESERVATIONCONFLICT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralVerify10RESERVATIONCONFLICT_2700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -564,12 +564,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralVerify10TASKSETFULL_2800
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralVerify10TASKSETFULL_2800
-     * @tc.desc    : Test ScsiPeripheralVerify10TASKSETFULL.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10TASKSETFULL_2800
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10TASKSETFULL_2800
+     * @tc.desc   Test ScsiPeripheralVerify10TASKSETFULL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralVerify10TASKSETFULL_2800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -585,12 +585,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralVerify10ACAACTIVE_2900
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralVerify10ACAACTIVE_2900
-     * @tc.desc    : Test ScsiPeripheralVerify10ACAACTIVE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10ACAACTIVE_2900
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10ACAACTIVE_2900
+     * @tc.desc   Test ScsiPeripheralVerify10ACAACTIVE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralVerify10ACAACTIVE_2900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -606,12 +606,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_ScsiPeripheralVerify10TASKABORTED_3000
-     * @tc.name    : SUB_Driver_Ext_ScsiPeripheralVerify10TASKABORTED_3000
-     * @tc.desc    : Test ScsiPeripheralVerify10TASKABORTED.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_ScsiPeripheralVerify10TASKABORTED_3000
+     * @tc.number SUB_Driver_Ext_ScsiPeripheralVerify10TASKABORTED_3000
+     * @tc.desc   Test ScsiPeripheralVerify10TASKABORTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_ScsiPeripheralVerify10TASKABORTED_3000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -627,12 +627,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialInit_3100
-     * @tc.name    : SUB_Driver_Ext_UsbSerialInit_3100
-     * @tc.desc    : Test UsbSerialInit.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialInit_3100
+     * @tc.number SUB_Driver_Ext_UsbSerialInit_3100
+     * @tc.desc   Test UsbSerialInit.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialInit_3100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -648,12 +648,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialReleaseInitError_3200
-     * @tc.name    : SUB_Driver_Ext_UsbSerialReleaseInitError_3200
-     * @tc.desc    : Test UsbSerialReleaseInitError.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialReleaseInitError_3200
+     * @tc.number SUB_Driver_Ext_UsbSerialReleaseInitError_3200
+     * @tc.desc   Test UsbSerialReleaseInitError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialReleaseInitError_3200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -669,12 +669,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialCloseInitError_3300
-     * @tc.name    : SUB_Driver_Ext_UsbSerialCloseInitError_3300
-     * @tc.desc    : Test UsbSerialCloseInitError.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialCloseInitError_3300
+     * @tc.number SUB_Driver_Ext_UsbSerialCloseInitError_3300
+     * @tc.desc   Test UsbSerialCloseInitError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialCloseInitError_3300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -690,12 +690,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialOpen_3400
-     * @tc.name    : SUB_Driver_Ext_UsbSerialOpen_3400
-     * @tc.desc    : Test UsbSerialOpen.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialOpen_3400
+     * @tc.number SUB_Driver_Ext_UsbSerialOpen_3400
+     * @tc.desc   Test UsbSerialOpen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialOpen_3400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -711,12 +711,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialRead_3600
-     * @tc.name    : SUB_Driver_Ext_UsbSerialRead_3600
-     * @tc.desc    : Test UsbSerialRead.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialRead_3600
+     * @tc.number SUB_Driver_Ext_UsbSerialRead_3600
+     * @tc.desc   Test UsbSerialRead.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialRead_3600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -732,12 +732,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialWrite_3700
-     * @tc.name    : SUB_Driver_Ext_UsbSerialWrite_3700
-     * @tc.desc    : Test UsbSerialWrite.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialWrite_3700
+     * @tc.number SUB_Driver_Ext_UsbSerialWrite_3700
+     * @tc.desc   Test UsbSerialWrite.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialWrite_3700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -753,12 +753,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialSetBaudRate_3800
-     * @tc.name    : SUB_Driver_Ext_UsbSerialSetBaudRate_3800
-     * @tc.desc    : Test UsbSerialSetBaudRate.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialSetBaudRate_3800
+     * @tc.number SUB_Driver_Ext_UsbSerialSetBaudRate_3800
+     * @tc.desc   Test UsbSerialSetBaudRate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialSetBaudRate_3800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -774,12 +774,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialSetParams_3900
-     * @tc.name    : SUB_Driver_Ext_UsbSerialSetParams_3900
-     * @tc.desc    : Test UsbSerialSetParams.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialSetParams_3900
+     * @tc.number SUB_Driver_Ext_UsbSerialSetParams_3900
+     * @tc.desc   Test UsbSerialSetParams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialSetParams_3900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -795,12 +795,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialSetTimeout_4000
-     * @tc.name    : SUB_Driver_Ext_UsbSerialSetTimeout_4000
-     * @tc.desc    : Test UsbSerialSetTimeout.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialSetTimeout_4000
+     * @tc.number SUB_Driver_Ext_UsbSerialSetTimeout_4000
+     * @tc.desc   Test UsbSerialSetTimeout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialSetTimeout_4000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -816,12 +816,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialSetFlowControl_4100
-     * @tc.name    : SUB_Driver_Ext_UsbSerialSetFlowControl_4100
-     * @tc.desc    : Test UsbSerialSetFlowControl.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialSetFlowControl_4100
+     * @tc.number SUB_Driver_Ext_UsbSerialSetFlowControl_4100
+     * @tc.desc   Test UsbSerialSetFlowControl.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialSetFlowControl_4100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -837,12 +837,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialFlush_4200
-     * @tc.name    : SUB_Driver_Ext_UsbSerialFlush_4200
-     * @tc.desc    : Test UsbSerialFlush.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialFlush_4200
+     * @tc.number SUB_Driver_Ext_UsbSerialFlush_4200
+     * @tc.desc   Test UsbSerialFlush.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialFlush_4200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -858,12 +858,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialFlushInput_4300
-     * @tc.name    : SUB_Driver_Ext_UsbSerialFlushInput_4300
-     * @tc.desc    : Test UsbSerialFlushInput.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialFlushInput_4300
+     * @tc.number SUB_Driver_Ext_UsbSerialFlushInput_4300
+     * @tc.desc   Test UsbSerialFlushInput.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialFlushInput_4300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -879,12 +879,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialFlushOutput_4400
-     * @tc.name    : SUB_Driver_Ext_UsbSerialFlushOutput_4400
-     * @tc.desc    : Test UsbSerialFlushOutput.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialFlushOutput_4400
+     * @tc.number SUB_Driver_Ext_UsbSerialFlushOutput_4400
+     * @tc.desc   Test UsbSerialFlushOutput.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialFlushOutput_4400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -900,12 +900,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialNoFlowControl_4500
-     * @tc.name    : SUB_Driver_Ext_UsbSerialNoFlowControl_4500
-     * @tc.desc    : Test UsbSerialNoFlowControl.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialNoFlowControl_4500
+     * @tc.number SUB_Driver_Ext_UsbSerialNoFlowControl_4500
+     * @tc.desc   Test UsbSerialNoFlowControl.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialNoFlowControl_4500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -921,12 +921,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialHardwareFlowControl_4600
-     * @tc.name    : SUB_Driver_Ext_UsbSerialHardwareFlowControl_4600
-     * @tc.desc    : Test UsbSerialHardwareFlowControl.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialHardwareFlowControl_4600
+     * @tc.number SUB_Driver_Ext_UsbSerialHardwareFlowControl_4600
+     * @tc.desc   Test UsbSerialHardwareFlowControl.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialHardwareFlowControl_4600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -942,12 +942,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialParityNone_4700
-     * @tc.name    : SUB_Driver_Ext_UsbSerialParityNone_4700
-     * @tc.desc    : Test UsbSerialParityNone.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialParityNone_4700
+     * @tc.number SUB_Driver_Ext_UsbSerialParityNone_4700
+     * @tc.desc   Test UsbSerialParityNone.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialParityNone_4700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -963,12 +963,12 @@ export default function ActsUsbDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_UsbSerialParityEven_4800
-     * @tc.name    : SUB_Driver_Ext_UsbSerialParityEven_4800
-     * @tc.desc    : Test UsbSerialParityEven.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialParityEven_4800
+     * @tc.number SUB_Driver_Ext_UsbSerialParityEven_4800
+     * @tc.desc   Test UsbSerialParityEven.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_UsbSerialParityEven_4800', Level.LEVEL0, async (done: Function) => {
       try {

@@ -83,12 +83,13 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_Sta_0002
-        * @tc.name testgetScanInfos
-        * @tc.desc Test getScanInfos promise and callback API functionality.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @tc.name   Communication_WiFi_XTS_Sta_0002
+         * @tc.number Communication_WiFi_XTS_Sta_0002
+         * @tc.desc   Test getScanInfos promise and callback API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_Sta_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await wifi.getScanInfos()
                 .then(result => {
@@ -124,12 +125,13 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_Sta_0021
-        * @tc.name testGetSignalLevel
-        * @tc.desc Test getSignalLevel API functionality..
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @tc.name   Communication_WiFi_XTS_Sta_0021
+         * @tc.number Communication_WiFi_XTS_Sta_0021
+         * @tc.desc   Test getSignalLevel API functionality..
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_Sta_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             console.info("[wifi_test] check the 2.4G rssi assgined to level test.");
             console.info("[wifi_test] getSignalLevel " + wifi.getSignalLevel(-65, 1));
@@ -173,12 +175,13 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_Sta_0017
-        * @tc.name testgetCountryCode
-        * @tc.desc Test getCountryCode API function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @tc.name   Communication_WiFi_XTS_Sta_0017
+         * @tc.number Communication_WiFi_XTS_Sta_0017
+         * @tc.desc   Test getCountryCode API function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_Sta_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             expect(wifi.isWifiActive()).assertTrue();
             let getCountryCodeResult = wifi.getCountryCode();
@@ -189,12 +192,13 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_Sta_0020
-        * @tc.name testFeatureSupported
-        * @tc.desc Test FeatureSupported API function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @tc.name   Communication_WiFi_XTS_Sta_0020
+         * @tc.number Communication_WiFi_XTS_Sta_0020
+         * @tc.desc   Test FeatureSupported API function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_Sta_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             expect(wifi.isWifiActive()).assertTrue();
             let wifiUtils = {
@@ -232,12 +236,13 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_Sta_0004
-        * @tc.name testGetLinkedInfo
-        * @tc.desc Test Test getLinkedInfo and getIpInfo  information.
-        * @tc.type Function
-        * @tc.level Level 1
-        */
+         * @tc.name   Communication_WiFi_XTS_Sta_0004
+         * @tc.number Communication_WiFi_XTS_Sta_0004
+         * @tc.desc   Test Test getLinkedInfo and getIpInfo  information.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_Sta_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let isConnectedResult = wifi.isConnected();
             let ipInfoResult = wifi.getIpInfo();

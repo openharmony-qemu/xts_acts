@@ -40,9 +40,12 @@ describe('HiCheckerTest', function () {
     })
 
     /**
-     * @tc.number 
-     * @tc.name DFX_DFR_Hichecker_Interface_0100
-     * @tc.desc 
+     * @tc.name   DFX_DFR_Hichecker_Interface_0100
+     * @tc.number DFX_DFR_Hichecker_Interface_0100
+     * @tc.desc   DFX_DFR_Hichecker_Interface_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_0100 start');
@@ -52,11 +55,14 @@ describe('HiCheckerTest', function () {
         expect(tmp).assertTrue();
     })
 
-    /**
-     * @tc.number 
-     * @tc.name DFX_DFR_Hichecker_Interface_0500
-     * @tc.desc 
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_0500
+      * @tc.number DFX_DFR_Hichecker_Interface_0500
+      * @tc.desc   DFX_DFR_Hichecker_Interface_0500
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_0500 start');
         hichecker.addRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS | hichecker.RULE_CHECK_SLOW_EVENT);
@@ -70,11 +76,14 @@ describe('HiCheckerTest', function () {
         expect(hichecker.getRule() == tmp).assertTrue();
     })
 
-    /**
-     * @tc.number 
-     * @tc.name DFX_DFR_Hichecker_Interface_0200
-     * @tc.desc 
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_0200
+      * @tc.number DFX_DFR_Hichecker_Interface_0200
+      * @tc.desc   DFX_DFR_Hichecker_Interface_0200
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_0200 start');
         hichecker.addRule(-1);
@@ -88,11 +97,14 @@ describe('HiCheckerTest', function () {
         expect(hichecker.contains(999999)).assertEqual(false);
     })
 
-    /**
-     * @tc.number 
-     * @tc.name DFX_DFR_Hichecker_Interface_1200
-     * @tc.desc 
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_1200
+      * @tc.number DFX_DFR_Hichecker_Interface_1200
+      * @tc.desc   DFX_DFR_Hichecker_Interface_1200
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_1200 start');
         hichecker.addRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS);
@@ -102,11 +114,14 @@ describe('HiCheckerTest', function () {
         expect(hichecker.contains(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS)).assertEqual(false);
     })
 
-    /**
-     * @tc.number 
-     * @tc.name DFX_DFR_Hichecker_Interface_0800
-     * @tc.desc 
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_0800
+      * @tc.number DFX_DFR_Hichecker_Interface_0800
+      * @tc.desc   DFX_DFR_Hichecker_Interface_0800
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_0800 start');
         hichecker.addRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS | hichecker.RULE_CHECK_SLOW_EVENT);
@@ -119,11 +134,14 @@ describe('HiCheckerTest', function () {
         expect(hichecker.getRule() == 0).assertTrue();
     })
 
-    /**
-     * @tc.number 
-     * @tc.name DFX_DFR_Hichecker_Interface_1300
-     * @tc.desc 
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_1300
+      * @tc.number DFX_DFR_Hichecker_Interface_1300
+      * @tc.desc   DFX_DFR_Hichecker_Interface_1300
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_1300 start');
         hichecker.addRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS | hichecker.RULE_CHECK_SLOW_EVENT);
@@ -138,11 +156,14 @@ describe('HiCheckerTest', function () {
         expect(hichecker.getRule() == tmp).assertTrue();
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2200
-     * @tc.name   addCheckRule with normal parameter
-     * @tc.desc
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2200
+      * @tc.number DFX_DFR_Hichecker_Interface_2200
+      * @tc.desc   DFX_DFR_Hichecker_Interface_2200
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_2200 start');
         try {
@@ -160,11 +181,14 @@ describe('HiCheckerTest', function () {
         }
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2300
-     * @tc.name   removeCheckRule with normal parameter
-     * @tc.desc
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2300
+      * @tc.number DFX_DFR_Hichecker_Interface_2300
+      * @tc.desc   DFX_DFR_Hichecker_Interface_2300
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_2300 start');
         try {
@@ -183,11 +207,14 @@ describe('HiCheckerTest', function () {
         }
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2400
-     * @tc.name   containsCheckRule with normal parameter
-     * @tc.desc
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2400
+      * @tc.number DFX_DFR_Hichecker_Interface_2400
+      * @tc.desc   DFX_DFR_Hichecker_Interface_2400
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_2400 start');
         try {
@@ -205,11 +232,14 @@ describe('HiCheckerTest', function () {
         }
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2500
-     * @tc.name   addCheckRule with abnormal parameter
-     * @tc.desc
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2500
+      * @tc.number DFX_DFR_Hichecker_Interface_2500
+      * @tc.desc   DFX_DFR_Hichecker_Interface_2500
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_2500 start');
         try {
@@ -221,11 +251,14 @@ describe('HiCheckerTest', function () {
         }
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2600
-     * @tc.name   removeCheckRule with abnormal parameter
-     * @tc.desc
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2600
+      * @tc.number DFX_DFR_Hichecker_Interface_2600
+      * @tc.desc   DFX_DFR_Hichecker_Interface_2600
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_2600 start');
         try {
@@ -237,11 +270,14 @@ describe('HiCheckerTest', function () {
         }
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2700
-     * @tc.name   containsCheckRule with abnormal parameter
-     * @tc.desc
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2700
+      * @tc.number DFX_DFR_Hichecker_Interface_2700
+      * @tc.desc   DFX_DFR_Hichecker_Interface_2700
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_2700 start');
         try {
@@ -255,11 +291,14 @@ describe('HiCheckerTest', function () {
         }
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2800
-     * @tc.name   containsCheckRule with normal parameter
-     * @tc.desc
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2800
+      * @tc.number DFX_DFR_Hichecker_Interface_2800
+      * @tc.desc   DFX_DFR_Hichecker_Interface_2800
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('DFX_DFR_Hichecker_Interface_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info('DFX_DFR_Hichecker_Interface_2800 start');
         try {
@@ -274,14 +313,14 @@ describe('HiCheckerTest', function () {
         }
     })
 
-    /**
-     * @tc.number DFX_DFR_Hichecker_Interface_2900
-     * @tc.name DFX_DFR_Hichecker_Interface_2900
-     * @tc.desc 验证containsCheckRule传入false返回值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
-     */
+     /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_2900
+      * @tc.number DFX_DFR_Hichecker_Interface_2900
+      * @tc.desc   验证containsCheckRule传入false返回值正常
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('DFX_DFR_Hichecker_Interface_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_2900 start');
         try {

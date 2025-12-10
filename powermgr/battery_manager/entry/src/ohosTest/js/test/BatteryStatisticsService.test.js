@@ -40,12 +40,12 @@ export default function BatteryStatisticsServiceTest() {
     })
 
     /**
+     * @tc.name   BatteryStatisticsServiceTest_0100
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0010
-     * @tc.name testBatteryStatisticsServiceTest_0100
-     * @tc.desc BatteryStatisticsService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryStatisticsService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryStatisticsServiceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryStatisticsServiceTest_0100';
@@ -67,12 +67,12 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
+     * @tc.name   BatteryStatisticsServiceTest_0200
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0020
-     * @tc.name testBatteryStatisticsServiceTest_0200
-     * @tc.desc BatteryStatisticsService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryStatisticsService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryStatisticsServiceTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryStatisticsServiceTest_0200';
@@ -91,12 +91,12 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
+     * @tc.name   BatteryStatisticsServiceTest_0300
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0030
-     * @tc.name testBatteryStatisticsServiceTest_0300
-     * @tc.desc BatteryStatisticsService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryStatisticsService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryStatisticsServiceTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryStatisticsServiceTest_0300';
@@ -111,12 +111,12 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
+     * @tc.name   BatteryStatisticsServiceTest_0400
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0040
-     * @tc.name testBatteryStatisticsServiceTest_0400
-     * @tc.desc BatteryStatisticsService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryStatisticsService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryStatisticsServiceTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryStatisticsServiceTest_0400';
@@ -131,12 +131,12 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
+     * @tc.name   BatteryStatisticsServiceTest_0500
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0050
-     * @tc.name testBatteryStatisticsServiceTest_0500
-     * @tc.desc BatteryStatisticsService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryStatisticsService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryStatisticsServiceTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryStatisticsServiceTest_0500';
@@ -151,12 +151,12 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
+     * @tc.name   BatteryStatisticsServiceTest_0600
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0060
-     * @tc.name testBatteryStatisticsServiceTest_0600
-     * @tc.desc BatteryStatisticsService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryStatisticsService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('BatteryStatisticsServiceTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'BatteryStatisticsServiceTest_0600';

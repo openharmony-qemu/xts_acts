@@ -39,13 +39,13 @@ export default function NativeApiString3Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_SUCCESS_0100
-    * @tc.name      TestGetSuccess0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetSuccess0100
+     * @tc.number SUB_GLOBAL_SUCCESS_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetSuccess0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSuccess0100 start====");
@@ -60,13 +60,13 @@ export default function NativeApiString3Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_ERROR_CODE_INVALID_INPUT_PARAMETER_0100
-    * @tc.name      TestGetInvalidInputParameter0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetInvalidInputParameter0100
+     * @tc.number SUB_GLOBAL_ERROR_CODE_INVALID_INPUT_PARAMETER_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetInvalidInputParameter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetSuccess0100 start====");
@@ -81,13 +81,13 @@ export default function NativeApiString3Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_ERROR_CODE_RES_ID_NOT_FOUND_0100
-    * @tc.name      TestGetIdNotFound0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetIdNotFound0100
+     * @tc.number SUB_GLOBAL_ERROR_CODE_RES_ID_NOT_FOUND_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetIdNotFound0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetIdNotFound0100 start====");
@@ -102,13 +102,13 @@ export default function NativeApiString3Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_ERROR_CODE_RES_NOT_FOUND_BY_ID_0100
-    * @tc.name      TestGetNotFoundById0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetNotFoundById0100
+     * @tc.number SUB_GLOBAL_ERROR_CODE_RES_NOT_FOUND_BY_ID_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetNotFoundById0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetNotFoundById0100 start====");
@@ -123,13 +123,13 @@ export default function NativeApiString3Test() {
     })
 
     /**
-    * @tc.number    SUB_GLOBAL_ERROR_CODE_RES_NAME_NOT_FOUND_0100
-    * @tc.name      TestGetNameNotFound0100
-    * @tc.desc      overriding error code
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 1
-    */
+     * @tc.name   TestGetNameNotFound0100
+     * @tc.number SUB_GLOBAL_ERROR_CODE_RES_NAME_NOT_FOUND_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestGetNameNotFound0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetNameNotFound0100 start====");
@@ -144,12 +144,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_ERROR_CODE_RES_REF_TOO_MUCH_0100
-     * @tc.name      TestGetRefTooMuch0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetRefTooMuch0100
+     * @tc.number SUB_GLOBAL_ERROR_CODE_RES_REF_TOO_MUCH_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetRefTooMuch0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -165,12 +165,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_ERROR_CODE_OVERLAY_RES_PATH_INVALID_0100
-     * @tc.name      TestGetResPathInvalid0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetResPathInvalid0100
+     * @tc.number SUB_GLOBAL_ERROR_CODE_OVERLAY_RES_PATH_INVALID_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetResPathInvalid0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -186,12 +186,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_DIRECTION_VERTICAL_0100
-     * @tc.name      TestGetDirectionVertical0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetDirectionVertical0100
+     * @tc.number SUB_GLOBAL_DIRECTION_VERTICAL_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDirectionVertical0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -208,12 +208,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_COLOR_MODE_LIGHT_0100
-     * @tc.name      TestGetColorModeLight0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetColorModeLight0100
+     * @tc.number SUB_GLOBAL_COLOR_MODE_LIGHT_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetColorModeLight0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -229,12 +229,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_DEVICE_TYPE_PHONE_0100
-     * @tc.name      TestGetDeviceType0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetDeviceType0100
+     * @tc.number SUB_GLOBAL_DEVICE_TYPE_PHONE_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDeviceType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -250,12 +250,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_DEVICE_TYPE_TABLET_0200
-     * @tc.name      TestGetDeviceType0200
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetDeviceType0200
+     * @tc.number SUB_GLOBAL_DEVICE_TYPE_TABLET_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDeviceType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -270,13 +270,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_DEVICE_TYPE_CAR_0300
-     * @tc.name      TestGetDeviceType0300
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetDeviceType0300
+     * @tc.number SUB_GLOBAL_DEVICE_TYPE_CAR_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDeviceType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -291,13 +291,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_DEVICE_TYPE_PC_0400
-     * @tc.name      TestGetDeviceType0400
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetDeviceType0400
+     * @tc.number SUB_GLOBAL_DEVICE_TYPE_PC_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDeviceType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -312,13 +312,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_DEVICE_TYPE_TV_0500
-     * @tc.name      TestGetDeviceType0500
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetDeviceType0500
+     * @tc.number SUB_GLOBAL_DEVICE_TYPE_TV_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDeviceType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -333,13 +333,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_DEVICE_TYPE_WEARABLE_0600
-     * @tc.name      TestGetDeviceType0600
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetDeviceType0600
+     * @tc.number SUB_GLOBAL_DEVICE_TYPE_WEARABLE_0600
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDeviceType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -354,13 +354,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_DEVICE_TYPE_2IN1_0700
-     * @tc.name      TestGetDeviceType0700
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetDeviceType0700
+     * @tc.number SUB_GLOBAL_DEVICE_TYPE_2IN1_0700
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDeviceType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -375,13 +375,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_SCREEN_MDPI_0100
-     * @tc.name      TestGetScreenDensity0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetScreenDensity0100
+     * @tc.number SUB_GLOBAL_SCREEN_MDPI_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetScreenDensity0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -396,13 +396,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_SCREEN_SDPI_0200
-     * @tc.name      TestGetScreenDensity0200
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetScreenDensity0200
+     * @tc.number SUB_GLOBAL_SCREEN_SDPI_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetScreenDensity0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -417,13 +417,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_SCREEN_LDPI_0300
-     * @tc.name      TestGetScreenDensity0300
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetScreenDensity0300
+     * @tc.number SUB_GLOBAL_SCREEN_LDPI_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetScreenDensity0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -438,13 +438,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_SCREEN_XLDPI_0400
-     * @tc.name      TestGetScreenDensity0400
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetScreenDensity0400
+     * @tc.number SUB_GLOBAL_SCREEN_XLDPI_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetScreenDensity0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -459,13 +459,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_SCREEN_XXLDPI_0500
-     * @tc.name      TestGetScreenDensity0500
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetScreenDensity0500
+     * @tc.number SUB_GLOBAL_SCREEN_XXLDPI_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetScreenDensity0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -480,13 +480,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_SCREEN_XXXLDPI_0600
-     * @tc.name      TestGetScreenDensity0600
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetScreenDensity0600
+     * @tc.number SUB_GLOBAL_SCREEN_XXXLDPI_0600
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetScreenDensity0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -501,13 +501,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_DIRECTION_0100
-     * @tc.name      TestGetConfigurations0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetConfigurations0100
+     * @tc.number SUB_GLOBAL_DIRECTION_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetConfigurations0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -523,13 +523,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_DEVICETYPE_0200
-     * @tc.name      TestGetConfigurations0200
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetConfigurations0200
+     * @tc.number SUB_GLOBAL_DEVICETYPE_0200
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetConfigurations0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -545,13 +545,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_SCREENDENSITY_0300
-     * @tc.name      TestGetConfigurations0300
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetConfigurations0300
+     * @tc.number SUB_GLOBAL_SCREENDENSITY_0300
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetConfigurations0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -566,13 +566,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_COLORMODE_0400
-     * @tc.name      TestGetConfigurations0400
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetConfigurations0400
+     * @tc.number SUB_GLOBAL_COLORMODE_0400
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetConfigurations0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -587,13 +587,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_MCC_0500
-     * @tc.name      TestGetConfigurations0500
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetConfigurations0500
+     * @tc.number SUB_GLOBAL_MCC_0500
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetConfigurations0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -608,13 +608,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_MNC_0600
-     * @tc.name      TestGetConfigurations0600
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetConfigurations0600
+     * @tc.number SUB_GLOBAL_MNC_0600
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetConfigurations0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -629,13 +629,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-   /**
-     * @tc.number    SUB_GLOBAL_RESERVED_0700
-     * @tc.name      TestGetConfigurations0700
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestGetConfigurations0700
+     * @tc.number SUB_GLOBAL_RESERVED_0700
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetConfigurations0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -651,12 +651,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_DIRECTION_HORIZONTAL_0100
-     * @tc.name      TestGetDirectionHorizontal0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetDirectionHorizontal0100
+     * @tc.number SUB_GLOBAL_DIRECTION_HORIZONTAL_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetDirectionHorizontal0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -671,12 +671,12 @@ export default function NativeApiString3Test() {
     })
 
     /**
-     * @tc.number    SUB_GLOBAL_COLOR_MODE_DARK_0100
-     * @tc.name      TestGetColorModeDark0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   TestGetColorModeDark0100
+     * @tc.number SUB_GLOBAL_COLOR_MODE_DARK_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestGetColorModeDark0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -694,13 +694,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-    /* *
-     * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0100
-     * @tc.name      TestAddResource0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestAddResource0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestAddResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -717,13 +717,13 @@ export default function NativeApiString3Test() {
       }
     })
 
-    /* *
-     * @tc.number    SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0100
-     * @tc.name      TestRemoveResource0100
-     * @tc.desc      overriding error code
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+    /**
+     * @tc.name   TestRemoveResource0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0100
+     * @tc.desc   overriding error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestRemoveResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

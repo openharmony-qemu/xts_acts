@@ -42,12 +42,12 @@ export default function rectJsunit() {
     });
 
     /**
+     * @tc.name   testrect_radiusHeight
      * @tc.number testrect_radiusHeight
-     * @tc.name Test the properties of components
-     * @tc.desc Set radiusHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set radiusHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrect_radiusHeight', Level.LEVEL0, async (done: Function) => {
       console.info('[testrect_radiusHeight] START');
@@ -64,12 +64,12 @@ export default function rectJsunit() {
     });
 
     /**
+     * @tc.name   testrect_radius
      * @tc.number testrect_radius
-     * @tc.name Test the properties of components
-     * @tc.desc Set radius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set radius values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrect_radius', Level.LEVEL0, async (done: Function) => {
       console.info('[testrect_radius] START');
@@ -86,12 +86,12 @@ export default function rectJsunit() {
     });
 
     /**
+     * @tc.name   testrect_radiusWidth
      * @tc.number testrect_radiusWidth
-     * @tc.name Test the properties of components
-     * @tc.desc Set radiusWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set radiusWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrect_radiusWidth', Level.LEVEL0, async (done: Function) => {
       console.info('[testrect_radiusWidth] START');
@@ -108,12 +108,12 @@ export default function rectJsunit() {
     });
 
     /**
+     * @tc.name   testrect__001
      * @tc.number testrect__001
-     * @tc.name Test the properties of components
-     * @tc.desc Change radiusHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change radiusHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testrect__001', Level.LEVEL0, async (done: Function) => {
       console.info('testrect__001 START');

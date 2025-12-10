@@ -64,6 +64,14 @@ export default function LinkSonJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   LinkSonJsunit_0100
+     * @tc.number LinkSonJsunit_0100
+     * @tc.desc   LinkSonJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSonJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0100 START');
@@ -111,6 +119,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   LinkSonJsunit_0200
+     * @tc.number LinkSonJsunit_0200
+     * @tc.desc   LinkSonJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSonJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0200 START');
@@ -158,6 +174,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   LinkSonJsunit_0300
+     * @tc.number LinkSonJsunit_0300
+     * @tc.desc   LinkSonJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSonJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0300 START');
@@ -205,6 +229,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   LinkSonJsunit_0400
+     * @tc.number LinkSonJsunit_0400
+     * @tc.desc   LinkSonJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSonJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0400 START');
@@ -251,6 +283,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   LinkSonJsunit_0500
+     * @tc.number LinkSonJsunit_0500
+     * @tc.desc   LinkSonJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSonJsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0500 START');
@@ -298,6 +338,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   LinkSonJsunit_0600
+     * @tc.number LinkSonJsunit_0600
+     * @tc.desc   LinkSonJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSonJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0600 START');

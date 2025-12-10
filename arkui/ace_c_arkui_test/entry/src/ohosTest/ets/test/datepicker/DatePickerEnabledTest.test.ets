@@ -26,14 +26,14 @@ export default function datePickerEnabledTest() {
       await Utils.pushPage(`datepicker/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ENABLED_0100
-    * @tc.name       : testDatePickerEnabled001
-    * @tc.desc       : testing enabled event callback for datePicker with normal value (true)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDatePickerEnabled001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ENABLED_0100
+     * @tc.desc   testing enabled event callback for datePicker with normal value (true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickEnabledDatePicker')
       await Utils.sleep(1000)
@@ -51,14 +51,14 @@ export default function datePickerEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ENABLED_0200
-    * @tc.name       : testDatePickerEnabled002
-    * @tc.desc       : testing enabled event callback for datePicker with normal value (false)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDatePickerEnabled002
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ENABLED_0200
+     * @tc.desc   testing enabled event callback for datePicker with normal value (false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickDisabledDatePicker')
       await Utils.sleep(1000)
@@ -76,14 +76,14 @@ export default function datePickerEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ENABLED_0300
-    * @tc.name       : testDatePickerEnabled003
-    * @tc.desc       : testing enabled event callback for datePicker with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testDatePickerEnabled003
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ENABLED_0300
+     * @tc.desc   testing enabled event callback for datePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerEnabled003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalDatePicker')
       await Utils.sleep(1000)

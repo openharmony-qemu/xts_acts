@@ -37,12 +37,12 @@ export default function userAndSysCertNoPermissionJsTestUnit() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_0500
      * @tc.number SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_0500
-     * @tc.name test getAllUserTrustedCertificates with no ohos.permission.ACCESS_CERT_MANAGER
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -56,12 +56,12 @@ export default function userAndSysCertNoPermissionJsTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_0600
      * @tc.number SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_0600
-     * @tc.name test getUserTrustedCertificate with no ohos.permission.ACCESS_CERT_MANAGER
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -75,12 +75,12 @@ export default function userAndSysCertNoPermissionJsTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SysCertJsApi_NoPermission_Func_0200
      * @tc.number SUB_Security_CertManager_SysCertJsApi_NoPermission_Func_0200
-     * @tc.name Test getAllSystemAPPCertificates with no ohos.permission.ACCESS_CERT_MANAGER
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_SysCertJsApi_NoPermission_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {

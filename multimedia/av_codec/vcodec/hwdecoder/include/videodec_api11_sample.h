@@ -35,6 +35,7 @@
 #include "native_averrors.h"
 #include "surface/window.h"
 #include "iconsumer_surface.h"
+#include "native_avcapability.h"
 
 namespace OHOS {
 namespace Media {
@@ -107,7 +108,11 @@ public:
     bool getOutputBufferIndexRepeated = false;
     bool getOutputBufferIndexNoExisted = false;
     bool abnormalIndexValue = false;
-    
+    bool setTransform = false;
+    int32_t DEFAULT_TRANSFORM = 0;
+    bool needAutoSwitch = true;
+    int32_t beforeSwitchTransform = -1;
+    int32_t afterSwitchTransform = -2;
     int32_t Start();
     int32_t Stop();
     int32_t Flush();
@@ -144,6 +149,11 @@ public:
     void InFuncTest();
     void OutputFuncTest();
     void SyncOutputFunc();
+    int32_t SetConfigTransform();
+    int32_t SetSurface();
+    int32_t SetParameterTransform();
+    int32_t SetParameter();
+    int32_t GetSurfaceTransform(int32_t surfaceFlag);
     int32_t SyncOutputFuncEos(uint32_t &last_index, uint32_t &outFrames, uint32_t &index,
     OH_AVBuffer *buffer, OH_AVCodecBufferAttr &attr);
     int32_t QueryInputBuffer(uint32_t index, int64_t timeoutUs);
@@ -160,6 +170,18 @@ public:
     bool IsRender();
     void RenderOutAtTime(uint32_t index);
     bool MdCompare(uint8_t source[]);
+    void GetVideoSupportedPixelFormats();
+    void GetFormatKey();
+    bool isGetVideoSupportedPixelFormats = false;
+    bool isGetFormatKey = false;
+    int isGetVideoSupportedPixelFormatsNum = 0;
+    int isGetFormatKeyNum = 0;
+    const char *avcodecMimeType = nullptr;
+    bool isEncoder = true;
+    const OH_NativeBuffer_Format *pixlFormats = nullptr;
+    uint32_t pixlFormatNum = 0;
+    int firstCallBackKey = 0;
+    int onStreamChangedKey = 0;
     std::vector<uint8_t> LoadHashFile();
     VDecAPI11Signal *signal_;
     uint32_t errCount = 0;

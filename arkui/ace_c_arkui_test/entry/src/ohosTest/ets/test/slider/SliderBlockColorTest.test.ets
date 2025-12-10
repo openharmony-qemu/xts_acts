@@ -26,91 +26,91 @@ export default function sliderBlockColorTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0100
-     * @tc.name: testSliderBlockColor001
-     * @tc.desc: testing blockColor for slider with default value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockColor001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0100
+     * @tc.desc   testing blockColor for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0200
-     * @tc.name: testSliderBlockColor002
-     * @tc.desc: testing blockColor for slider with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockColor002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0200
+     * @tc.desc   testing blockColor for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0300
-     * @tc.name: testSliderBlockColor003
-     * @tc.desc: testing blockColor for slider with boundary value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockColor003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0300
+     * @tc.desc   testing blockColor for slider with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0400
-     * @tc.name: testSliderBlockColor004
-     * @tc.desc: testing blockColor for slider with boundary value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockColor004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0400
+     * @tc.desc   testing blockColor for slider with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0500
-     * @tc.name: testSliderBlockColor005
-     * @tc.desc: testing blockColor for slider with full transparent black value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockColor005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0500
+     * @tc.desc   testing blockColor for slider with full transparent black value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0600
-     * @tc.name: testSliderBlockColor006
-     * @tc.desc: testing blockColor for slider with translucent black value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockColor006
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0600
+     * @tc.desc   testing blockColor for slider with translucent black value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0700
-     * @tc.name: testSliderBlockColor007
-     * @tc.desc: testing blockColor for slider with zero value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSliderBlockColor007
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0700
+     * @tc.desc   testing blockColor for slider with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor007()).assertEqual(0)
@@ -118,12 +118,12 @@ export default function sliderBlockColorTest() {
     })
 
     /**
+     * @tc.name   testSliderBlockColor008
      * @tc.number SUB_ARKUI_CAPI_SLIDER_BLOCKCOLOR_0800
-     * @tc.name testSliderBlockColor008
-     * @tc.desc testing blockColor for slider with gradient value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.desc   testing blockColor for slider with gradient value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderBlockColor008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderBlockColor008()).assertEqual(0)

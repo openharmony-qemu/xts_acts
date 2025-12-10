@@ -30,7 +30,7 @@ import SingleKvStoreDataChange from './SingleKvStoreDataChange.test';
 import DeviceKvStoreReturnValue from './DeviceKvStoreReturnValue.test';
 import SingleKvStoreReturnValue from './SingleKvStoreReturnValue.test';
 import KVStoreResultSetReturnValue from './KVStoreResultSetReturnValue.test';
-
+import SchemaFieldNode from './SchemaFieldNode.test';
 
 export default function testsuite() {
   deviceKvStoreCallbackTest();
@@ -50,6 +50,6 @@ export default function testsuite() {
   DeviceKvStoreReturnValue();
   SingleKvStoreReturnValue();
   KVStoreResultSetReturnValue();
-
+  SchemaFieldNode();
 
 }

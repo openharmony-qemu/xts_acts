@@ -60,14 +60,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_EMITGETPAGEOFFSET_0100
-    * @tc.name       : emitgetPageOffset001
-    * @tc.desc       : emitgetPageOffset001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitgetPageOffset001
+     * @tc.number SUB_WEB_EMITGETPAGEOFFSET_0100
+     * @tc.desc   emitgetPageOffset001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitgetPageOffset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitgetPageOffset001';
       tcName = 'emitgetPageOffset001'
@@ -79,14 +79,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_EMITGETPAGEOFFSET_0200
-    * @tc.name       : emitgetPageOffset002
-    * @tc.desc       : emitgetPageOffset002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitgetPageOffset002
+     * @tc.number SUB_WEB_EMITGETPAGEOFFSET_0200
+     * @tc.desc   emitgetPageOffset002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitgetPageOffset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitgetPageOffset002';
       tcName = 'emitgetPageOffset002'
@@ -97,14 +97,14 @@ export default function WebViewEnumAndFontLibrary() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_EMITGETPAGEOFFSET_0300
-    * @tc.name       : emitgetPageOffset003
-    * @tc.desc       : emitgetPageOffset003
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitgetPageOffset003
+     * @tc.number SUB_WEB_EMITGETPAGEOFFSET_0300
+     * @tc.desc   emitgetPageOffset003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitgetPageOffset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitgetPageOffset003';
       tcName = 'emitgetPageOffset003'

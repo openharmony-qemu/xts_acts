@@ -36,12 +36,12 @@ export default function BundleManager() {
     });
 
     /**
-     * @tc.number    : ABILITY_TEST_LAUNCHTYPE_0100
-     * @tc.name      : testLaunchType001
-     * @tc.desc      : test LaunchType SINGLETON
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testLaunchType001
+     * @tc.number ABILITY_TEST_LAUNCHTYPE_0100
+     * @tc.desc   test LaunchType SINGLETON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLaunchType001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -56,12 +56,12 @@ export default function BundleManager() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_LAUNCHTYPE_0200
-     * @tc.name      : testLaunchType002
-     * @tc.desc      : test LaunchType MULTITON
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testLaunchType002
+     * @tc.number ABILITY_TEST_LAUNCHTYPE_0200
+     * @tc.desc   test LaunchType MULTITON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLaunchType002', Level.LEVEL0, async (done: Function) => {
       try {

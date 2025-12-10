@@ -46,12 +46,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1001
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1001
-     * @tc.name builtinsArrayJoinTest1001
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayJoinTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       let array: Array<number> = [1, 2, 3];
@@ -61,12 +61,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1002
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1002
-     * @tc.name builtinsArrayJoinTest1002
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayJoinTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       let array: Array<number> = [1, 2, 3];
@@ -76,12 +76,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1003
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1003
-     * @tc.name builtinsArrayJoinTest1003
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<number | undefined> = [1, , 3];
@@ -91,12 +91,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1004
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1004
-     * @tc.name builtinsArrayJoinTest1004
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<number | undefined> = [1, , 3];
@@ -106,12 +106,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1005
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1005
-     * @tc.name builtinsArrayJoinTest1005
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<string | undefined | null> = [null, undefined, 'a'];
@@ -121,12 +121,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1006
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1006
-     * @tc.name builtinsArrayJoinTest1006
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<number> = [NaN];
@@ -136,12 +136,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1007
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1007
-     * @tc.name builtinsArrayJoinTest1007
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<number> = [1, 2, 3];
@@ -151,12 +151,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1008
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1008
-     * @tc.name builtinsArrayJoinTest1008
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<number> = [1, 2, 3];
@@ -166,12 +166,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1009
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1009
-     * @tc.name builtinsArrayJoinTest1009
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<number> = [1, 2, 3];
@@ -181,12 +181,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1010
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1010
-     * @tc.name builtinsArrayJoinTest1010
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: string[] = [];
@@ -196,12 +196,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1011
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1011
-     * @tc.name builtinsArrayJoinTest1011
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<undefined> = [undefined, undefined];
@@ -211,12 +211,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1012
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1012
-     * @tc.name builtinsArrayJoinTest1012
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<number> = [1, 2, 3];
@@ -226,12 +226,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1013
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1013
-     * @tc.name builtinsArrayJoinTest1013
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<string | number | boolean | Keyof> = ["apple", 123, true, {
@@ -243,12 +243,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1014
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1014
-     * @tc.name builtinsArrayJoinTest1014
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<string> = ['a', 'b', 'c'];
@@ -258,12 +258,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1015
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1015
-     * @tc.name builtinsArrayJoinTest1015
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<string> = ['a', 'b', 'c'];
@@ -273,12 +273,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1016
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1016
-     * @tc.name SUB_BUILTINS_ARRAY_JOIN_TEST_1016
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('builtinsArrayJoinTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
     //   let array: Array<string|null> = ['a','b','c'];
@@ -288,12 +288,12 @@ export default function builtinsArrayJoinTest() {
     // })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1017
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1017
-     * @tc.name builtinsArrayJoinTest1017
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<string> = ['a', 'b', 'c'];
@@ -303,12 +303,12 @@ export default function builtinsArrayJoinTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayJoinTest1018
      * @tc.number SUB_BUILTINS_ARRAY_JOIN_TEST_1018
-     * @tc.name builtinsArrayJoinTest1018
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array: Array<string> = ['a', 'b', 'c'];

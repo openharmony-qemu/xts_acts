@@ -67,9 +67,12 @@ export default function ListItem_Delete_Start_Resource() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_Resource_0100
      * @tc.number SUB_ACE_ListItem_Delete_Start_Resource_0100
-     * @tc.name testListItem
-     * @tc.desc Do not set actionAreaDistance and slide 70
+     * @tc.desc   Do not set actionAreaDistance and slide 70
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_Resource_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_Resource_0100] START');
@@ -109,9 +112,12 @@ export default function ListItem_Delete_Start_Resource() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_Resource_0200
      * @tc.number SUB_ACE_ListItem_Delete_Start_Resource_0200
-     * @tc.name testListItem
-     * @tc.desc Do not set actionAreaDistance and slide 40
+     * @tc.desc   Do not set actionAreaDistance and slide 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_Resource_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_Resource_0200] START');

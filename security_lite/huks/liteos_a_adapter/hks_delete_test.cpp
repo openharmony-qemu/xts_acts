@@ -61,9 +61,12 @@ const struct HksTestKeyExistParams g_testKeyExistParams[] = {
 };
 
 /**
- * @tc.name: HksDeleteTest.HksDeleteTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksDeleteTest001
+ * @tc.number HksDeleteTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksDeleteTest, HksDeleteTest001, TestSize.Level1)
 {

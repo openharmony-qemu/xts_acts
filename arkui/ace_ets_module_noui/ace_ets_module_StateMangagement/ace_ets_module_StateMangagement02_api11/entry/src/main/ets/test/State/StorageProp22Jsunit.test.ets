@@ -56,6 +56,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0100
+     * @tc.number StorageProp22Jsunit_0100
+     * @tc.desc   StorageProp22Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StorageProp22Jsunit_0100 START');
       let strJson = getInspectorByKey('lse1');
@@ -67,6 +75,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0200
+     * @tc.number StorageProp22Jsunit_0200
+     * @tc.desc   StorageProp22Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StorageProp22Jsunit_0200 START');
       let strJson = getInspectorByKey('text_sp');
@@ -78,6 +94,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0300
+     * @tc.number StorageProp22Jsunit_0300
+     * @tc.desc   StorageProp22Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0300 START');
@@ -90,6 +114,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0400
+     * @tc.number StorageProp22Jsunit_0400
+     * @tc.desc   StorageProp22Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0400 START');
@@ -102,6 +134,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0500
+     * @tc.number StorageProp22Jsunit_0500
+     * @tc.desc   StorageProp22Jsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0500 START');
@@ -125,6 +165,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0600
+     * @tc.number StorageProp22Jsunit_0600
+     * @tc.desc   StorageProp22Jsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('StorageProp22Jsunit_0600 START');
       let driver = await UiDriver.create()
@@ -147,6 +195,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0700
+     * @tc.number StorageProp22Jsunit_0700
+     * @tc.desc   StorageProp22Jsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0700 START');
@@ -170,6 +226,14 @@ export default function StorageProp22Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StorageProp22Jsunit_0800
+     * @tc.number StorageProp22Jsunit_0800
+     * @tc.desc   StorageProp22Jsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageProp22Jsunit_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0800 START');

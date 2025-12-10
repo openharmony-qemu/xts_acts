@@ -38,12 +38,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testGetStorageHelper001
+         * @tc.name   testGetStorageHelper001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0500
-         * @tc.desc getStorageSync interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   getStorageSync interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetStorageHelper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             mPref = storage.getStorageSync(PATH);
@@ -54,12 +54,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testGetStorageHelper002
+         * @tc.name   testGetStorageHelper002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0700
-         * @tc.desc getStorage interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   getStorage interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetStorageHelper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const promise = storage.getStorage(PATH);
@@ -75,12 +75,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testGetStorageCallback0020
+         * @tc.name   testGetStorageCallback0020
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0600
-         * @tc.desc getStorage callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   getStorage callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetStorageCallback0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             storage.getStorage(PATH,(err,pref)=>{
@@ -93,12 +93,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testRemoveStorageFromCache001
+         * @tc.name   testRemoveStorageFromCache001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0800
-         * @tc.desc removeStorageFromCacheSync interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   removeStorageFromCacheSync interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRemoveStorageFromCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             let perf = storage.getStorageSync('/data/test_storage1');
@@ -113,12 +113,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testRemoveStorageFromCache002
+         * @tc.name   testRemoveStorageFromCache002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0900
-         * @tc.desc removeStorageFromCache promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   removeStorageFromCache promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRemoveStorageFromCache002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let perf = storage.getStorageSync('/data/test_storage2');
@@ -132,12 +132,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testRemoveStorageFromCache004
+         * @tc.name   testRemoveStorageFromCache004
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0400
-         * @tc.desc removeStorageFromCache callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   removeStorageFromCache callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRemoveStorageFromCache004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let perf = storage.getStorageSync('/data/test_storage2');
@@ -149,12 +149,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testDeleteStorageHelper001
+         * @tc.name   testDeleteStorageHelper001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0100
-         * @tc.desc deleteStorageSync interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   deleteStorageSync interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testDeleteStorageHelper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             let perf = storage.getStorageSync('/data/test_storage3');
@@ -171,12 +171,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testDeleteStorageHelper002
+         * @tc.name   testDeleteStorageHelper002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0200
-         * @tc.desc deleteStorage interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   deleteStorage interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testDeleteStorageHelper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let perf = storage.getStorageSync('/data/test_storage4');
@@ -190,12 +190,12 @@ export default function storageHelperTest() {
         })
 
         /**
-         * @tc.name testDeleteStoragCallback0070
+         * @tc.name   testDeleteStoragCallback0070
          * @tc.number SUB_DistributedData_Preference_SDK_StorageSyncTest_0300
-         * @tc.desc deleteStorage interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   deleteStorage interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testDeleteStoragCallback0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let perf = storage.getStorageSync('/data/test_storage4');

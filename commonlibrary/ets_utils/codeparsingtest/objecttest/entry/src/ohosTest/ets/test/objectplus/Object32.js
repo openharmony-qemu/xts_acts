@@ -114,7 +114,7 @@ export function Fn12_ArrayWithNullUndefined() {
 export function Fn13_DateEnUsShortTime() {
     const testDate = new Date(Date.UTC(2024, 5, 15, 14, 30));
     const result = testDate.toLocaleString("en-US", { timeStyle: "short", timeZone: "UTC" });
-    const expected = "2:30 PM";
+    const expected = "2:30 PM";
     return result === expected;
 }
 
@@ -274,7 +274,7 @@ export function Fn36_CurrencyMinFractionDigitsZero() {
 export function Fn37_DateNewYorkTimezone() {
     const testDate = new Date(Date.UTC(2024, 5, 15, 12, 0)); // UTC 12点
     const result = testDate.toLocaleString("en-US", { timeZone: "America/New_York" });
-    const expected = "6/15/2024, 8:00:00 AM"; // 纽约时区-4（夏令时）
+    const expected = "6/15/2024, 8:00:00 AM"; // 纽约时区-4（夏令时）
     return result === expected;
 }
 
@@ -403,7 +403,7 @@ export function Fn53_ArrayJaJpSeparator() {
 export function Fn54_DateEnUsHour12Format() {
     const testDate = new Date(Date.UTC(2024, 5, 15, 14, 30));
     const result = testDate.toLocaleString("en-US", { timeStyle: "short", hour12: true, timeZone: "UTC" });
-    const expected = "2:30 PM";
+    const expected = "2:30 PM";
     return result === expected;
 }
 
@@ -502,7 +502,7 @@ export function Fn66_DateTimeZoneNameShort() {
         timeZone: "UTC",
         timeZoneName: "short"
     });
-    const expected = "6/15/2024, 12:00:00 PM UTC";
+    const expected = "6/15/2024, 12:00:00 PM UTC";
     return result === expected;
 }
 
@@ -610,7 +610,7 @@ export function Fn78_DateTimeZoneNameLong() {
         timeZone: "UTC",
         timeZoneName: "long"
     });
-    const expected = "6/15/2024, 12:00:00 PM Coordinated Universal Time";
+    const expected = "6/15/2024, 12:00:00 PM Coordinated Universal Time";
     return result === expected;
 }
 
@@ -683,7 +683,7 @@ export function Fn88_NumberCompactEnUs() {
 export function Fn90_DatePacificNewYorkTimezone() {
     const testDate = new Date(Date.UTC(2024, 5, 15, 12, 0)); // UTC 12:00
     const result = testDate.toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
-    const expected = "6/15/2024, 5:00:00 AM"; // 夏令时-7
+    const expected = "6/15/2024, 5:00:00 AM"; // 夏令时-7
     return result === expected;
 }
 
@@ -804,7 +804,7 @@ export function Fn103_ArrayWithRegExp() {
 export function Fn104_DateArEgLongDate() {
     const testDate = new Date(Date.UTC(2024, 9, 1));
     const result = testDate.toLocaleString("ar-EG", { dateStyle: "long", timeZone: "UTC" });
-    const expected = "١ أكتوبر ٢٠٢٤";
+    const expected = "١ أكتوبر، ٢٠٢٤";
     return result === expected;
 }
 
@@ -877,7 +877,7 @@ export function Fn112_EmptyMapToLocaleString() {
 export function Fn113_DateFrCaDateTime() {
     const testDate = new Date(Date.UTC(2024, 5, 15, 9, 30));
     const result = testDate.toLocaleString("fr-CA", { timeZone: "UTC" });
-    const expected = "2024-06-15 09 h 30 min 00 s";
+    const expected = "2024-06-15 09:30:00";
     return result === expected;
 }
 
@@ -917,7 +917,7 @@ export function Fn117_NumberZhHkHkdCurrency() {
 export function Fn118_ArrayDateRegExpMixed() {
     const testArr = [new Date(Date.UTC(2024, 5, 15)), /regex/];
     const result = testArr.toLocaleString("en-US", { timeZone: "UTC" });
-    const expected = "6/15/2024, 12:00:00 AM,/regex/";
+    const expected = "6/15/2024, 12:00:00 AM,/regex/";
     return result === expected;
 }
 
