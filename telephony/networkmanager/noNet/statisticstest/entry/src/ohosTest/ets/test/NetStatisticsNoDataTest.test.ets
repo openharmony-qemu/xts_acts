@@ -16,6 +16,7 @@
 import { describe, beforeAll,it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import statistics from '@ohos.net.statistics';
+import connection from '@ohos.net.connection';
 import data from '@ohos.telephony.data';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
