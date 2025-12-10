@@ -107,6 +107,21 @@ export default function TextPickerCascadeTest(){
       done()
     })
 
+      /**
+     * @tc.name   TextPickerCascadeTest_b2
+     * @tc.number TextPickerCascadeTest_b2
+     * @tc.desc   TextPickerCascadeTest_b2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_b2',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_b2()).assertEqual(0)
+      console.log('TextPickerCascadeTest_b2 will drag and check:: ')
+      await Utils.sleep(200)   
+      done()
+    })
+
     /**
      * @tc.name   TextPickerCascadeTest_c
      * @tc.number TextPickerCascadeTest_c
@@ -136,6 +151,21 @@ export default function TextPickerCascadeTest(){
       console.log('TextPickerCascadeTest_c1 will drag and check:: ')
       await Utils.sleep(200)
       
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_c2
+     * @tc.number TextPickerCascadeTest_c2
+     * @tc.desc   TextPickerCascadeTest_c2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_c2',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_c2()).assertEqual(0)
+      console.log('TextPickerCascadeTest_c2 will drag and check:: ')
+      await Utils.sleep(200)      
       done()
     })
 
@@ -214,7 +244,22 @@ export default function TextPickerCascadeTest(){
       expect(nativeRender.TextPickerCascadeTest_e1()).assertEqual(0)
       console.log('TextPickerCascadeTest_e1 will drag and check:: ')
       await Utils.sleep(200)
-      
+    
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_e2
+     * @tc.number TextPickerCascadeTest_e2
+     * @tc.desc   TextPickerCascadeTest_e2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_e2',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_e2()).assertEqual(0)
+      console.log('TextPickerCascadeTest_e2 will drag and check:: ')
+      await Utils.sleep(200)   
       done()
     })
 
