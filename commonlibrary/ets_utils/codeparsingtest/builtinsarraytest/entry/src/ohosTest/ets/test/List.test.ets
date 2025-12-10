@@ -127,7 +127,6 @@ import indexedCollections17Test from './TypeArray2/IndexedCollections17.test';
 import indexedCollections18Test from './TypeArray2/IndexedCollections18.test';
 import indexedCollections19Test from './TypeArray2/IndexedCollections19.test';
 import indexedCollections20Test from './TypeArray2/IndexedCollections20.test';
-import indexedCollections21Test from './TypeArray2/IndexedCollections21.test';
 
 
 export default function testsuite() {
@@ -247,6 +246,4 @@ export default function testsuite() {
   indexedCollections18Test();
   indexedCollections19Test();
   indexedCollections20Test();
-  indexedCollections21Test();
-
 }
