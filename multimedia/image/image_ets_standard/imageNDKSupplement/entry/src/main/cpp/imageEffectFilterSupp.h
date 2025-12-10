@@ -15,6 +15,7 @@ extern "C" {
 
 napi_value OHEffectFilterCreateSupp(napi_env env, napi_callback_info info);
 napi_value OHEffectFilterLookUpFiltersSupp(napi_env env, napi_callback_info info);
+napi_value OHEffectFilterLookUpFiltersNullptrSupp(napi_env env, napi_callback_info info);
 napi_value OHEffectFilterSetValueSupp(napi_env env, napi_callback_info info);
 napi_value OHEffectFilterGetValueSupp(napi_env env, napi_callback_info info);
 napi_value OHEffectFilterRegisterSupp(napi_env env, napi_callback_info info);
