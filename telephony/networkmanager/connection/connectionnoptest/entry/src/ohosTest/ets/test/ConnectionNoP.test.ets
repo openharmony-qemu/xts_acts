@@ -355,9 +355,9 @@ export default function Multicastconnection201Test() {
           console.info(`${caseName}ipAddress:${data[0].ipAddress}`)
           console.info(`${caseName}ifaceName:${data[0].iface}`)
           console.info(`${caseName}macAddress:${data[0].macAddress}`)
-          ExpectFail();
-          done();
         }
+        ExpectFail();
+        done();
       }).catch((error: BusinessError)=>{
         console.info(`${caseName} error  fetching ip neigh table errorCode:${error.code}`+ JSON.stringify(error));
         ExpectTrue(error.code == 201);
