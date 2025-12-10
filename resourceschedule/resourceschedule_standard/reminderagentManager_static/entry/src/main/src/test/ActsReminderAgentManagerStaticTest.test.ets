@@ -1127,6 +1127,8 @@ export default function ActsReminderAgentManagerStaticTest() {
             reminderAgentManager.updateReminder(reminderId, timer).then(() => {
               console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_022 update reminder succeed");
               expect(callbackFlag).assertEqual(0);
+
+              reminderAgentManager.cancelAllReminders();
               done();
             }).catch((err: Error) => {
               console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_022 updateReminder promise err code:" + err.code + " message:" + err.message);
@@ -1134,8 +1136,6 @@ export default function ActsReminderAgentManagerStaticTest() {
               done();
             });
 
-            await reminderAgentManager.cancelAllReminders();
-            done();
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_022 publishReminder promise err code:" + err.code + " message:" + err.message);
           });
