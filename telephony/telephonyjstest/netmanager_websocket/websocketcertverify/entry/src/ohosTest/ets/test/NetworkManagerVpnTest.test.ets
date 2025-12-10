@@ -578,6 +578,33 @@ export default function NetworkManagerVpnTest() {
         done();
       }
     })
+    /**
+     * @tc.name   testNetworkManagerVPNProtectProcessNetPromise0100
+     * @tc.number SUB_NetworkManager_VPN_ProtectProcessNet_Promise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerVPNProtectProcessNetPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNProtectProcessNetPromise0100';
+      try {
+        let vpnInstance = vpnExtension.createVpnConnection(context2);
+        vpnInstance.protectProcessNet().then(() => {
+          console.log(`${caseName} protectProcessNet success`);
+          expect().assertTrue();
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} protectProcessNet fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      }
+      catch (error) {
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })    
 
   });
 }
