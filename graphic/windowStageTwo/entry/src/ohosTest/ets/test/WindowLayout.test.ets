@@ -4337,12 +4337,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed in showWindow. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
-          if (err.code === 1300002 || err.code === 801) {
-            done()
+          if (canIUseRes) {
+            expect(err.code).assertEqual(1300002)
           } else {
-            expect().assertFail();
-            done()
+            expect(err.code).assertEqual(801)
           }
+          done()
         });
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
@@ -4385,7 +4385,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass?.destroyWindow();
-        if (err.code === 801) {
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(801)
           done()
         } else {
           expect().assertFail();
@@ -4424,8 +4425,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         done()
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(1300002);
-        done();
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(1300002);
+          done();
+        }
       }
     });
 

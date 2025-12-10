@@ -3651,7 +3651,7 @@ export default function windowImmersiveTest() {
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
-        if (isInFreeWindowMode) {
+        if (isInFreeWindowMode && canIUseRes) {
           const mainWindowProperties = windowClass.getWindowProperties();
           const mainWindowRect = mainWindowProperties.windowRect;
           console.info(caseName + ' Main window rect: ' + JSON.stringify(mainWindowRect));
