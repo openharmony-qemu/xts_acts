@@ -175,6 +175,7 @@
     "pages/ArkUI/TabBarIndicatorPixmap",
     "pages/ArkUI/RichEditiorComponentContentKeyboard",
     "pages/ArkUI/WindowSizeLayoutBreakpointChange",
-    "pages/ArkUI/AccessibilityActionOptionsScrollStep"
+    "pages/ArkUI/AccessibilityActionOptionsScrollStep",
+    "pages/ArkUI/Magnifier"
   ]
 }
