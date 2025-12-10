@@ -76,7 +76,6 @@ export default function SendableImagecreateImageSourceTest() {
      * @tc.type    Function
      * @tc.level   Level 0
      */
-
     it('IMAGE_SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_002';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
