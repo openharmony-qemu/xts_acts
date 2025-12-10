@@ -481,12 +481,12 @@ export default function   netStatisticsNoDataTest() {
           done()
         }).catch((error: BusinessError) => {
           console.error(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
-          expectFail(`${caseName} fail,errInfo->${JSON.stringify(error)}`);
+          ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(error)}`);
           done()
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
         console.info(`${caseName} test end`);
       }
@@ -517,12 +517,12 @@ export default function   netStatisticsNoDataTest() {
           done()
         }).catch((error: BusinessError) => {
           console.error(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
-          expectFail(`${caseName} fail,errInfo->${JSON.stringify(error)}`);
+          ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(error)}`);
           done()
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
         console.info(`${caseName} test end`);
       }
@@ -549,7 +549,7 @@ export default function   netStatisticsNoDataTest() {
 
         statistics.getSelfTrafficStats(networkInfo).then((stats: statistics.NetStatsInfo) => {
           console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
-          ExpectTrue(stats.rxBytes == 0 && stats.txBytes == 0)
+          ExpectTrue(false, `${caseName}`)
           done()
         }).catch((error: BusinessError) => {
           console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
@@ -558,7 +558,7 @@ export default function   netStatisticsNoDataTest() {
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
         console.info(`${caseName} test end`);
       }
@@ -584,7 +584,7 @@ export default function   netStatisticsNoDataTest() {
 
         statistics.getSelfTrafficStats(networkInfo).then((stats: statistics.NetStatsInfo) => {
           console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
-          ExpectTrue(stats.rxBytes == 0 && stats.txBytes == 0)
+          ExpectTrue(false, `${caseName}`)
           done()
         }).catch((error: BusinessError) => {
           console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
@@ -593,7 +593,7 @@ export default function   netStatisticsNoDataTest() {
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
         console.info(`${caseName} test end`);
       }
