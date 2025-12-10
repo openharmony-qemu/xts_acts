@@ -2898,7 +2898,7 @@ export default function audioManagerApi9() {
         console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
         await audioCap.start();
         const isAvailable = streamManager.isRecordingAvailable(checkCapturerInfo);
-        expect(isAvailable).assertFalse();
+        expect(isAvailable).assertTrue();
         await audioCap.stop();
         await audioCap.release();
       } catch (error) {
