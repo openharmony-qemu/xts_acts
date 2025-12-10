@@ -1344,7 +1344,7 @@ napi_value TestLockCursorandUnLockCursor2(napi_env env, napi_callback_info info)
     int32_t result = OH_WindowManager_UnlockCursor(windowId);
     OH_LOG_INFO(LOG_APP, "TestLockCursorandUnLockCursor2 OH_WindowManager_UnlockCursor: %{public}d", result);
     napi_value retValue;
-    if (result1 == 0) {
+    if (result == 0) {
         napi_create_int32(env, 0, &retValue);
     } else {
         napi_create_int32(env, -1, &retValue);
