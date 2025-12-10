@@ -21,6 +21,7 @@ export const OHImageEffectReplaceFilterSupp: (a: number) => number;
 
 export const OHEffectFilterCreateSupp: (a: number) => number;
 export const OHEffectFilterLookUpFiltersSupp: (a: number) => number;
+export const OHEffectFilterLookUpFiltersNullptrSupp: () => undefined;
 export const OHEffectFilterSetValueSupp: (a: number) => number;
 export const OHEffectFilterGetValueSupp: (a: number) => number;
 export const OHEffectFilterRegisterSupp: (a: number) => number;
