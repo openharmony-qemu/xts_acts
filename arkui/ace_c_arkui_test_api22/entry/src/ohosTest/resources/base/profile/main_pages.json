@@ -18,6 +18,7 @@
     "MainAbility/pages/swiper/finishAnimationTest",
     "MainAbility/pages/imageSpanTest/ImageSpanTest",
     "MainAbility/pages/customKeyboard/CustomKeyboardTest",
-    "MainAbility/pages/image/animationControllerTest"
+    "MainAbility/pages/image/animationControllerTest",
+    "MainAbility/pages/grid/GridFillPolicyTest"
   ]
 }
