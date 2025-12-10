@@ -82,21 +82,21 @@ export default function ImageEffectFilterSuppTest() {
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
 
-    /**
+   /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
      * @tc.name    SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004
-     * @tc.desc    OHEffectFilterLookUpFiltersSupp——EFFECT_ERROR_PARAM_INVALID
+     * @tc.desc    OHEffectFilterLookUpFiltersSupp-空指针检查
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004', Level.LEVEL1, () => {
-      console.info(TAG,'Start',);
-      const testName = 'SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004'
-      let result: number = testNapi.OHEffectFilterLookUpFiltersSupp(CASE_INDEX_2);
-      console.info(TAG,testName,'Success',JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
-    });
+   it('SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004', Level.LEVEL1, () => {
+    console.info(TAG,'Start',);
+    const testName = 'SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_LOOK_UP_FILTERS_SUPP_004'
+    let result: undefined = testNapi.OHEffectFilterLookUpFiltersNullptrSupp();
+    console.info(TAG,testName,'Success',JSON.stringify(result));
+    expect(result).assertUndefined();
+  });
 
     /**
      * @tc.number  SUB_IMAGE_EFFECT_FILTER_OH_EFFECT_FILTER_SET_VALUE_SUPP_005
