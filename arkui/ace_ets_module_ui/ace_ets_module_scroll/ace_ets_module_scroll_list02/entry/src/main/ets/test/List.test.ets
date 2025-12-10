@@ -47,6 +47,7 @@ import offsetEdgeBtm from './contentOffset/offsetEdgeBtm.test';
 import offsetEdgeTop from './contentOffset/offsetEdgeTop.test';
 import offsetAlignEnd from './contentOffset/offsetAlignEnd.test';
 import offsetAlignStart from './contentOffset/offsetAlignStart.test';
+import listContentOffset from './contentOffset/listContentOffset.test';
 import childrenSizeError from './errorCode/childrenSizeError.test';
 import flingError from './errorCode/flingError.test';
 import setTest from './childrenMainSize/setTest.test'
@@ -63,6 +64,7 @@ import listOffsetJsunit from './List/listOffsetJsunit.test';
 import listVisibleContent from './List/listVisibleContent.test';
 import ListFlingCallback from './List/ListFlingCallback.test'
 import ListScrollEdgeCallback from './List/ListScrollEdgeCallback.test';
+import listFrictionRes from './List/listFrictionRes.test';
 
 export default function testsuite() {
   listJsunit()
@@ -97,6 +99,7 @@ export default function testsuite() {
   offsetEdgeTop();
   offsetAlignEnd();
   offsetAlignStart();
+  listContentOffset()
   ListWillScroll()
   offsetRemain()
   listLevel1Test()
@@ -113,4 +116,5 @@ export default function testsuite() {
   listDidJsunit()
   ListFlingCallback()
   ListScrollEdgeCallback()
+  listFrictionRes()
 }

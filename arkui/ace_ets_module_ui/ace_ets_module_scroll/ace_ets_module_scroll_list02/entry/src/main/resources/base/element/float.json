@@ -51,6 +51,10 @@
     {
       "name": "nextMargin",
       "value": "30"
+    },
+    {
+      "name": "friction",
+      "value": "0.6"
     }
   ]
 }
