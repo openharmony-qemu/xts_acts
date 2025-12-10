@@ -14,7 +14,7 @@
  */
 
 import { expect, describe, it, afterEach, beforeEach, Level } from '@ohos/hypium';
-import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
+import { Driver, ON, PointerMatrix, Rect, UiDirection} from '@ohos.UiTest';
 import router from '@ohos.router';
 import nativeRender from 'libnativerender.so'
 import Utils from '../common/Utils';
@@ -23,10 +23,48 @@ import Utils from '../common/Utils';
 export default function CoastingAxisTest(){
   describe('CoastingAxisTest',  () =>{
 
+    beforeEach(async (done: Function) => {
+       await Utils.pushPage(`list/coastingAxisTest`, done);
+    });
+
     afterEach(async (done: Function) => {
       await Utils.sleep(100)
       done()
     })
+
+    /**
+     * @tc.name   CoastingAxisTest
+     * @tc.number CoastingAxisTest003
+     * @tc.desc   Test the alt interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CoastingAxisTest',  Level.LEVEL0, async (done: Function) => {
+      await Utils.sleep(500);
+      console.log('CoastingAxisTest000 0')
+      let driver = await Driver.create();
+      console.log('CoastingAxisTest000 1')
+      let scrollBar = await driver.findComponent(ON.id('column'));
+      console.log('CoastingAxisTest000 2')
+      let center = await scrollBar.getBoundsCenter();
+      console.log('CoastingAxisTest000 3')
+      await Utils.sleep(500);
+      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      console.log('CoastingAxisTest000 4')
+      await Utils.sleep(500);
+      expect(nativeRender.CoastingAxisTest_c()).assertEqual(0)
+      console.log('CoastingAxisEventTest_c End')
+      await Utils.sleep(200)
+      expect(nativeRender.CoastingAxisTest_d()).assertEqual(0)
+      console.log('CoastingAxisEventTest_d End')
+      await Utils.sleep(200)
+      expect(nativeRender.CoastingAxisTest_e()).assertEqual(0)
+      console.log('CoastingAxisEventTest_e End')
+      await Utils.sleep(200)
+      done()
+    })
+
     /**
      * @tc.name   CoastingAxisTest_a
      * @tc.number CoastingAxisTest001
