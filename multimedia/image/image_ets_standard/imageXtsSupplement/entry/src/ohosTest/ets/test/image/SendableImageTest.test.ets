@@ -402,7 +402,6 @@ export default function SendableImageTest() {
         AppStorage.setOrCreate('key', '');
         let region:image.Region = AppStorage.get('key') as ESObject;
         sendableImage.createPixelMapFromSurface('', region).then(() => {
-          console.info(TAG,'Succeeded in creating pixelmap from Surface');
           done();
         }).catch((error: BusinessError) => {
           console.error(TAG,testName,`Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
