@@ -31,7 +31,9 @@ import imageSpanTest from "./imageSpanTest/ImageSpanTest.test";
 import customKeyboardTest from "./customKeyboard/CustomKeyboardTest.test";
 import animationControllerTest from "./image/animationControllerTest.test";
 import ImageDrawableErrorTest from "./image/drawableDescriptorError.test";
-import GridFillPolicyTest from "./grid/GridFillPolicyTest.test"
+import GridFillPolicyTest from "./grid/GridFillPolicyTest.test";
+import gridAttrsTest from "./grid/GridAttrsTest.test";
+import gridEventTest from './grid/GridEventTest.test'
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -54,4 +56,6 @@ export default function testsuite() {
   animationControllerTest();
   ImageDrawableErrorTest();
   GridFillPolicyTest();
+  gridAttrsTest();
+  gridEventTest();
 }

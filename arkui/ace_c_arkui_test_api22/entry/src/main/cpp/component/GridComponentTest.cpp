@@ -303,4 +303,214 @@ void GridComponent::SetOnScrollBarUpdate()
     _nodeAPI->registerNodeEvent(_component, NODE_GRID_ON_SCROLL_BAR_UPDATE, ON_SCROLL_UPDATE, nullptr);
     _nodeAPI->registerNodeEventReceiver(&OnEventReceive);
 }
+
+void GridComponent::SetGridNestedScroll(int32_t forward, int32_t backward)
+{
+    ArkUI_NumberValue value[] = {{.i32 = forward}, {.i32 = backward}};
+    ArkUI_AttributeItem item = {value, PARAM_2};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_NESTED_SCROLL, &item);
+}
+
+void GridComponent::SetOnScrollIndex(OnScrollIndex onScrollIndex)
+{
+    auto onScrollIndexCallback = [onScrollIndex](ArkUI_NodeEvent *event) {
+        ArkUI_NodeComponentEvent *result = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
+        if (onScrollIndex) {
+            int32_t first = result->data[PARAM_0].i32;
+            int32_t last = result->data[PARAM_1].i32;
+            onScrollIndex(first, last);
+        }
+    };
+    eventMap_[NODE_GRID_ON_SCROLL_INDEX] = onScrollIndexCallback;
+    _nodeAPI->registerNodeEvent(_component, NODE_GRID_ON_SCROLL_INDEX, PARAM_0, nullptr);
+}
+
+void GridComponent::SetColumnsTemplate(const std::string &str)
+{
+    ArkUI_AttributeItem item = {.string = str.c_str()};
+    _nodeAPI->setAttribute(_component, NODE_GRID_COLUMN_TEMPLATE, &item);
+}
+
+void GridComponent::SetRowsTemplate(const std::string &str)
+{
+    ArkUI_AttributeItem item = {.string = str.c_str()};
+    _nodeAPI->setAttribute(_component, NODE_GRID_ROW_TEMPLATE, &item);
+}
+
+void GridComponent::SetGridScrollToIndex(int32_t index)
+{
+    ArkUI_NumberValue value[] = {{.i32 = index}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_WATER_FLOW_SCROLL_TO_INDEX, &item);
+}
+
+void GridComponent::SetGridScrollToIndex(int32_t index, int32_t animation)
+{
+    ArkUI_NumberValue value[] = {{.i32 = index}, {.i32 = animation}};
+    ArkUI_AttributeItem item = {value, PARAM_2};
+    _nodeAPI->setAttribute(_component, NODE_WATER_FLOW_SCROLL_TO_INDEX, &item);
+}
+
+void GridComponent::SetGridScrollToIndex(int32_t index, int32_t animation, int32_t alignment)
+{
+    ArkUI_NumberValue value[] = {{.i32 = index}, {.i32 = animation}, {.i32 = alignment}};
+    ArkUI_AttributeItem item = {value, PARAM_3};
+    _nodeAPI->setAttribute(_component, NODE_WATER_FLOW_SCROLL_TO_INDEX, &item);
+}
+
+void GridComponent::SetItemConstraintSize(float minWidth, float maxWidth, float minHeight, float maxHeight)
+{
+    ArkUI_NumberValue value[] = {{.f32 = minWidth}, {.f32 = maxWidth}, {.f32 = minHeight}, {.f32 = maxHeight}};
+    ArkUI_AttributeItem item = {value, PARAM_3};
+    _nodeAPI->setAttribute(_component, NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE, &item);
+}
+
+void GridComponent::SetGridScrollBar(int32_t barState)
+{
+    ArkUI_NumberValue value[] = {{.i32 = barState}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_BAR_DISPLAY_MODE, &item);
+}
+
+void GridComponent::SetGridScrollBarWidth(float width)
+{
+    ArkUI_NumberValue value[] = {{.f32 = width}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_BAR_WIDTH, &item);
+}
+
+void GridComponent::SetGridScrollBarColor(uint32_t color)
+{
+    ArkUI_NumberValue value[] = {{.u32 = color}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_BAR_COLOR, &item);
+}
+
+void GridComponent::SetGridEnableScrollInteraction(bool enableScrollInteraction)
+{
+    ArkUI_NumberValue value[] = {{.i32 = enableScrollInteraction}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_ENABLE_SCROLL_INTERACTION, &item);
+}
+
+void GridComponent::SetGridFriction(float friction)
+{
+    ArkUI_NumberValue value[] = {{.f32 = friction}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_FRICTION, &item);
+}
+
+void GridComponent::SetGridEdgeEffect(int32_t edgeEffect, bool alwaysEnabled)
+{
+    ArkUI_NumberValue value[] = {{.i32 = edgeEffect}, {.i32 = alwaysEnabled}};
+    ArkUI_AttributeItem item = {value, PARAM_2};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_EDGE_EFFECT, &item);
+}
+
+void GridComponent::SetScrollEdge(int32_t type)
+{
+    ArkUI_NumberValue value[] = {{.i32 = type}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_EDGE, &item);
+}
+
+void GridComponent::SetScrollPage(bool next)
+{
+    ArkUI_NumberValue value[] = {{.i32 = next}};
+    ArkUI_AttributeItem item = {value, PARAM_1};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_PAGE, &item);
+}
+
+void GridComponent::SetScrollPage(bool next, bool animation)
+{
+    ArkUI_NumberValue value[] = {{.i32 = next}, {.i32 = animation}};
+    ArkUI_AttributeItem item = {value, PARAM_2};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_PAGE, &item);
+}
+
+void GridComponent::SetScrollBy(float hDistance, float vDistance)
+{
+    ArkUI_NumberValue value[] = {{.f32 = hDistance}, {.f32 = vDistance}};
+    ArkUI_AttributeItem item = {value, PARAM_2};
+    _nodeAPI->setAttribute(_component, NODE_SCROLL_BY, &item);
+}
+
+void GridComponent::SetOnWillScroll(OnWillScroll onWillScroll)
+{
+    auto onWillScrollCallback = [onWillScroll](ArkUI_NodeEvent *event) {
+        ArkUI_NodeComponentEvent *result = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
+        float offset = result->data[PARAM_0].f32;
+        int32_t state = result->data[PARAM_1].i32;
+        int32_t source = result->data[PARAM_2].i32;
+        if (onWillScroll) {
+            onWillScroll(offset, state, source);
+        }
+    };
+    eventMap_[NODE_GRID_ON_WILL_SCROLL] = onWillScrollCallback;
+    _nodeAPI->registerNodeEvent(_component, NODE_GRID_ON_WILL_SCROLL, PARAM_0, nullptr);
+}
+
+void GridComponent::SetOnReachStart(OnReachStart onReachStart)
+{
+    auto onReachStartCallback = [onReachStart](ArkUI_NodeEvent *) {
+        if (onReachStart) {
+            onReachStart();
+        }
+    };
+    eventMap_[NODE_SCROLL_EVENT_ON_REACH_START] = onReachStartCallback;
+    _nodeAPI->registerNodeEvent(_component, NODE_SCROLL_EVENT_ON_REACH_START, PARAM_0, nullptr);
+}
+
+void GridComponent::SetOnReachEnd(OnReachEnd onReachEnd)
+{
+    auto onReachEndCallback = [onReachEnd](ArkUI_NodeEvent *) {
+        if (onReachEnd) {
+            onReachEnd();
+        }
+    };
+    eventMap_[NODE_SCROLL_EVENT_ON_REACH_END] = onReachEndCallback;
+    _nodeAPI->registerNodeEvent(_component, NODE_SCROLL_EVENT_ON_REACH_END, PARAM_0, nullptr);
+}
+
+void GridComponent::SetOnScrollStart(OnScrollStart onScrollStart)
+{
+    auto onScrollStartCallback = [onScrollStart](ArkUI_NodeEvent*) {
+        if (onScrollStart) {
+            onScrollStart();
+        }
+    };
+    eventMap_[NODE_SCROLL_EVENT_ON_SCROLL_START] = onScrollStartCallback;
+    _nodeAPI->registerNodeEvent(_component, NODE_SCROLL_EVENT_ON_SCROLL_START, 0, nullptr);
+}
+
+void GridComponent::SetOnScrollStop(OnScrollStop onScrollStop)
+{
+    auto onScrollStopCallback = [onScrollStop](ArkUI_NodeEvent *) {
+        if (onScrollStop) {
+            onScrollStop();
+        }
+    };
+    eventMap_[NODE_SCROLL_EVENT_ON_SCROLL_STOP] = onScrollStopCallback;
+    _nodeAPI->registerNodeEvent(_component, NODE_SCROLL_EVENT_ON_SCROLL_STOP, PARAM_0, nullptr);
+}
+
+void GridComponent::SetOnDidScroll(OnDidScroll onDidScroll)
+{
+    auto onDidScrollCallback = [onDidScroll](ArkUI_NodeEvent *event) {
+        ArkUI_NodeComponentEvent *result = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
+        if (onDidScroll) {
+            float offset = result->data[PARAM_0].f32;
+            int32_t state = result->data[PARAM_1].i32;
+            onDidScroll(offset, state);
+        }
+    };
+    eventMap_[NODE_GRID_ON_DID_SCROLL] = onDidScrollCallback;
+    _nodeAPI->registerNodeEvent(_component, NODE_GRID_ON_DID_SCROLL, PARAM_0, nullptr);
+}
+
+void GridComponent::SetGridRowsTemplate(const std::string& str)
+{
+    ArkUI_AttributeItem item = { .string = str.c_str() };
+    _nodeAPI->setAttribute(_component, NODE_GRID_ROW_TEMPLATE, &item);
+}
 } // namespace ArkUICapiTest
