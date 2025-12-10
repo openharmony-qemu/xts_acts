@@ -24,13 +24,13 @@ import { Magnifier } from '@kit.ArkUI';
 struct MagnifierExample {
   private magnifier: Magnifier = this.getUIContext().getMagnifier();
   @State name: string = 'Magnifier';
-  @State StepTips: string = '操作步骤：触摸图片' + '\n' + '预期结果：触摸点上方出现放大镜，放大显示触摸位置';
-  @State Vue: boolean = false;
+  @State stepTips: string = '操作步骤：触摸图片' + '\n' + '预期结果：触摸点上方出现放大镜，放大显示触摸位置';
+  @State testFlag: boolean = false;
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (!this.testFlag) {
+      Button({ stateEffect: this.testFlag }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -44,7 +44,7 @@ struct MagnifierExample {
 
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.testFlag }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -92,7 +92,7 @@ struct MagnifierExample {
   }
 
   aboutToAppear() {
-    FirstDialog.ChooseDialog(this.StepTips, this.name);
+    FirstDialog.ChooseDialog(this.stepTips, this.name);
   }
 
   build() {
@@ -143,7 +143,7 @@ struct MagnifierExample {
                   this.magnifier.show(x, y)
                 } else if (event.type === TouchType.Up) {
                   this.magnifier.unbind()
-                  this.Vue = true;
+                  this.testFlag = true;
                 } else if (event.type === TouchType.Cancel) {
                   this.magnifier.unbind()
                 }
@@ -166,7 +166,7 @@ struct MagnifierExample {
             AlertDialog.show(
               {
                 title: '操作提示',
-                message: this.StepTips,
+                message: this.stepTips,
                 confirm: {
                   value: 'OK',
                   action: () => {
