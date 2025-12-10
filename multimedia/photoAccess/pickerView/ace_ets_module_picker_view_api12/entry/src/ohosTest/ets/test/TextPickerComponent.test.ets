@@ -2552,6 +2552,10 @@ export default function TextPicker() {
       let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
       if (checkBoxes === null || checkBoxes.length <= 0) {
         console.info("testPicker53 findComponent checkbox fail");
+        router.back();
+        done();
+        console.info("testPicker53 finish!");
+        return;
       } else {
         console.info("testPicker53 findComponent checkbox success");
         await checkBoxes[0].click();
