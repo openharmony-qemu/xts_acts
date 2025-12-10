@@ -77,7 +77,7 @@ struct webViewController {
         })
       }
 
-      Web({ src: 'https://www.example.com', controller: this.controller })
+      Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .key("onShowFileSelectorKey")
         .onPageEnd((event) => {

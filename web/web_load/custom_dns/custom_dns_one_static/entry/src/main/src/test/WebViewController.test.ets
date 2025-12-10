@@ -61,7 +61,7 @@ export default function webViewController() {
       await Utils.msSleep(3000);
       Utils.emitEvent("testSecureDnsModeAUTO001", 10);
       await Utils.msSleep(3000);
-      Utils.registerEvent("testSecureDnsModeAUTO001", "Example Domain", 31036, done);
+      Utils.registerEvent("testSecureDnsModeAUTO001", "index", 31036, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebViewControllerButton', 10, '');
       await Utils.msSleep(2000);
