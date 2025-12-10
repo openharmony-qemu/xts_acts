@@ -238,6 +238,7 @@ export default function UIAbilityContextStatic() {
      * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         let options: AtomicServiceOptions = {
           flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
@@ -272,6 +273,7 @@ export default function UIAbilityContextStatic() {
      * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         context.openAtomicService('')
           .then((result: common.AbilityResult) => {
