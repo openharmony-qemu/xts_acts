@@ -71,16 +71,16 @@ export default function OnlyColumnsTemplate5() {
      */
 it('SUB_ACE_GRID_OnlyColumnsTemplate5_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate5_static_0400] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart1', value: -1
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd1', value: 1
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart2', value: -1
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd2', value: 1
       })
       await CommonFunc.sleep(2000);

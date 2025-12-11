@@ -105,16 +105,16 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0100', Level.LEVEL0, async (done: (
      */
 it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate1_static_0200] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart1', value: 0
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd1', value: 1
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart2', value: 2
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd2', value: 3
       })
       await CommonFunc.sleep(2000);

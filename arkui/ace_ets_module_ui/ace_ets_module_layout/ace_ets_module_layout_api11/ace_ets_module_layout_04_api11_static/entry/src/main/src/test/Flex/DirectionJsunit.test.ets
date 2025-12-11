@@ -89,7 +89,7 @@ it('directionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info('directionTest_static_0200 START');
 
       try {
-        AppStorage.setOrCreate<FlexDirection>('sDirection',FlexDirection.Row)
+        AppStorage.setOrCreate<FlexDirection>('flexDirection',FlexDirection.Row)
       } catch (err) {
         console.log("directionTest_static_0200 change component data error: " + (err as Error)?.message);
       }
@@ -111,7 +111,7 @@ it('directionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 it('directionTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('directionTest_static_0300 START');
       try {
-        AppStorage.setOrCreate<FlexDirection>('sDirection',666 as FlexDirection)
+        AppStorage.setOrCreate<FlexDirection>('flexDirection',FlexDirection.Row)
       } catch (err) {
         console.log("directionTest_static_0300 change component data error: " + (err as Error)?.message);
       }

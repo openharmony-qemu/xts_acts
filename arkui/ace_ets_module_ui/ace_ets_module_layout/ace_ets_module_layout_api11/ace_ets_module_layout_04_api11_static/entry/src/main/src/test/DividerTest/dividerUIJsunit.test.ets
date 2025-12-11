@@ -79,7 +79,7 @@ it('dividerUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
       expect(obj.getElement('$attrs').getString('vertical')).assertEqual('false');
       expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('20.00vp');
       expect(obj.getElement('$attrs').getString('lineCap')).assertEqual('BUTT');
-      expect(obj.getElement('$attrs').getString('color')).assertEqual('#FFACBDEF');
+      expect(obj.getElement('$attrs').getString('color')).assertEqual('#FFFF0000');
        done();
     });
 

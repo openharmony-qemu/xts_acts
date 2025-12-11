@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Text, Row, ColumnOptions, Margin, GradientDirection } from '@ohos.arkui.component'
-import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { Entry, Component, Column, Text, Row, ColumnOptions, Margin, GradientDirection,Color } from '@ohos.arkui.component'
+import { State,AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct linearGradientExample {
-  @StorageProp('sDirection') sDirection: GradientDirection = GradientDirection.LeftTop
+  @StoragePropRef('sDirection') sDirection: GradientDirection = GradientDirection.LeftTop
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
@@ -31,7 +31,7 @@ struct linearGradientExample {
         .linearGradient({
           angle: 45,
           direction: this.sDirection,
-          colors: [[0xAEE1E1, 0.0], [0xD3E0DC, 0.3], [0xFCD1D1, 1.0]]
+          colors: [[Color.Red, 0.0], [Color.Red, 0.3], [Color.Red, 1.0]]
         }).key("GradientDirection")
     }
     .width('100%')
