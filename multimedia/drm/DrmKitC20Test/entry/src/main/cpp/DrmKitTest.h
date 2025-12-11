@@ -27,6 +27,7 @@ napi_value OH_MediaKeySession_ProcessMediaKeyResponseInvalue(napi_env env, napi_
 napi_value OH_MediaKeySession_CheckMediaKeyStatusInvalue(napi_env env, napi_callback_info info);
 napi_value OH_MediaKeySession_ClearMediaKeysInvalue(napi_env env, napi_callback_info info);
 napi_value OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue(napi_env env, napi_callback_info info);
+napi_value OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne(napi_env env, napi_callback_info info);
 napi_value OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue(napi_env env, napi_callback_info info);
 napi_value OH_MediaKeySession_RestoreOfflineMediaKeysInvalue(napi_env env, napi_callback_info info);
 napi_value OH_MediaKeySession_GetContentProtectionLevelInvalue(napi_env env, napi_callback_info info);

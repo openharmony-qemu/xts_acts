@@ -23,6 +23,10 @@ public:
     ~CoastingAxisTest();
     static napi_value CoastingAxisEventTest_a(napi_env env, napi_callback_info info);
     static napi_value CoastingAxisEventTest_b(napi_env env, napi_callback_info info);
+    static napi_value CoastingAxisEventTest_c(napi_env env, napi_callback_info info);
+    static napi_value CoastingAxisEventTest_d(napi_env env, napi_callback_info info);
+    static napi_value CoastingAxisEventTest_e(napi_env env, napi_callback_info info);
+    static napi_value CreateNativeNode(napi_env env, napi_callback_info info);
 };
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COASTING_TEST_H

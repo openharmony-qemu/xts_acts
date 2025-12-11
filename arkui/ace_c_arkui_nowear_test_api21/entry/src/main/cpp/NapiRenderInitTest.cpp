@@ -17,7 +17,7 @@
 #include "manager/PluginManagerTest.h"
 #include "list/SwipeActionTest.h"
 #include "list/SwipeErrorTest.h"
-
+#include "sourceType/SourceTypeTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -34,6 +34,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"swipeErrorTest", nullptr, SwipeErrorTest::swipeErrorTest, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"swipeActionTest", nullptr, SwipeActionTest::swipeActionTest, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"SourceTypeTest", nullptr, ButtonSourceTypeTest::CreateNativeNode, nullptr, nullptr, nullptr,
             napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

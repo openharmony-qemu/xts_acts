@@ -35,6 +35,8 @@ import gridDraggingFling from './Grid/gridDraggingFling.test';
 import gridScrollbarColor from './Grid/gridScrollbarColor.test';
 import GridContentSize from './Grid/GridContentSize.test';
 import GridFillPolicy from './Grid/GridFillPolicy.test';
+import gridOffsetRes from './Grid/gridOffsetRes.test';
+import gridContentOffset from './Grid/gridContentOffset.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -59,4 +61,6 @@ export default function testsuite() {
   gridScrollbarColor()
   GridContentSize()
   GridFillPolicy()
+  gridOffsetRes()
+  gridContentOffset()
 }

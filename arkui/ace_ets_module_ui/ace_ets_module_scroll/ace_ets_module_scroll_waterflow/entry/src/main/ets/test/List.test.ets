@@ -18,6 +18,8 @@ import WaterflowAddJsunit from './WaterflowAddJsunit.test';
 import WaterFlowFriction from './WaterFlowFriction.test';
 import waterFlowDraggingFling from './WaterFlow/waterFlowDraggingFling.test';
 import repeatNoMakeObserved from './WaterFlow/repeatNoMakeObserved.test';
+import waterOffsetRes from './WaterFlow/waterOffsetRes.test';
+import waterContentOffset from './WaterFlow/waterContentOffset.test';
 
 export default function testsuite() {
   WaterflowDemo()
@@ -25,4 +27,6 @@ export default function testsuite() {
   WaterFlowFriction()
   waterFlowDraggingFling()
   repeatNoMakeObserved()
+  waterOffsetRes()
+  waterContentOffset()
 }

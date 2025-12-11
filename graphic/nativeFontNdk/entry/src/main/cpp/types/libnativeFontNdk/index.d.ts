@@ -97,4 +97,7 @@ export const oHDrawingGetRun001: () => Array<number>;
 export const oHDrawingSetTypographyStyleAttributeDouble001: () => number;
 export const oHDrawingSetTypographyStyleAttributeInt001: () => number;
 export const oHDrawingSetTextStyleAttributeDouble001: () => number;
+export const oHDrawingSetTextStyleAttributeDouble002: () => number;
+export const oHDrawingSetTextStyleAttributeDouble003: () => number;
+export const oHDrawingSetTextStyleAttributeDouble004: () => number;
 export const oHDrawingSetTextStyleAttributeInt001: () => number;

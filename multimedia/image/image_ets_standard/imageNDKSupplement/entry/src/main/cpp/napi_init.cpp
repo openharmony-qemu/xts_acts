@@ -15,6 +15,7 @@
 
 #include "napi/native_api.h"
 #include "ImageEffectSuppTest.h"
+#include "OHEffectFilterInfoSupplementTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -25,6 +26,21 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHEffectFilterInfoSetFilterNameSupplementTest", OHEffectFilterInfoSetFilterNameSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoGetFilterNameSupplementTest", OHEffectFilterInfoGetFilterNameSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoSetSupportedBufferTypesSuppTest", OHEffectFilterInfoSetSupportedBufferTypesSuppTest),
+    DESCRIPTOR("OHEffectFilterInfoGetSupportedBufferTypesSuppTest", OHEffectFilterInfoGetSupportedBufferTypesSuppTest),
+    DESCRIPTOR("OHEffectFilterInfoSetSupportedFormatsSuppTest", OHEffectFilterInfoSetSupportedFormatsSuppTest),
+    DESCRIPTOR("OHEffectFilterInfoGetSupportedFormatsSuppTest", OHEffectFilterInfoGetSupportedFormatsSuppTest),
+    DESCRIPTOR("OHEffectFilterInfoReleaseSupplementTest", OHEffectFilterInfoReleaseSupplementTest),
+    DESCRIPTOR("OHImageEffectAddFilterByFilterSupp", OHImageEffectAddFilterByFilterSupp),
+    DESCRIPTOR("OHImageEffectInsertFilterByFilterSupp", OHImageEffectInsertFilterByFilterSupp),
+    DESCRIPTOR("OHImageEffectRemoveFilterByIndexSupp", OHImageEffectRemoveFilterByIndexSupp),
+    DESCRIPTOR("OHImageEffectGetFilterSupp", OHImageEffectGetFilterSupp),
+    DESCRIPTOR("OHImageEffectSetInputPictureSupp", OHImageEffectSetInputPictureSupp),
+    DESCRIPTOR("OHImageEffectSetOutputPictureSupp", OHImageEffectSetOutputPictureSupp),
+    DESCRIPTOR("OHImageEffectReleaseSupp", OHImageEffectReleaseSupp),
+    DESCRIPTOR("OHImageEffectReplaceFilterByFilterSupp", OHImageEffectReplaceFilterByFilterSupp),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

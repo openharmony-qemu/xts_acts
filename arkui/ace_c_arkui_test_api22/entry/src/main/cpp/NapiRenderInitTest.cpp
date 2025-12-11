@@ -30,6 +30,8 @@
 #include "swiper/FinishAnimationTest.h"
 #include "imageSpanTest/ImageSpanTest.h"
 #include "customKeyboard/CustomKeyboardTest.h"
+#include "image/AnimationControllerTest.h"
+#include "grid/GridFillPolicyTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -50,6 +52,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"CoastingAxisTest_a", nullptr, CoastingAxisTest::CoastingAxisEventTest_a,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CoastingAxisTest_b", nullptr, CoastingAxisTest::CoastingAxisEventTest_b,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_c", nullptr, CoastingAxisTest::CoastingAxisEventTest_c,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_d", nullptr, CoastingAxisTest::CoastingAxisEventTest_d,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_e", nullptr, CoastingAxisTest::CoastingAxisEventTest_e,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest", nullptr, CoastingAxisTest::CreateNativeNode,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"WaterFlowFillPolicyTest", nullptr, WaterFlowTest::WaterFlowFillPolicyTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
@@ -74,6 +84,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"imageSpanTest", nullptr, ImageSpanTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"customKeyboardTest", nullptr, CustomKeyboardTest::CreateNativeNode,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"animationControllerTest", nullptr, AnimationControllerTest::animationControllerTest,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GridFillPolicyTest", nullptr, GridTest::CreateNativeNode, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

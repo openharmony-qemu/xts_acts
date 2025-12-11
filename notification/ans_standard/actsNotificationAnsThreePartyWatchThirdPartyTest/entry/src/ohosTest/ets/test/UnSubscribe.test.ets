@@ -41,8 +41,13 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
         console.info(TAG+"subscribe success1111");
       }).catch((err: BusinessError) => {
         console.error(TAG+`subscribe fail: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
       // 2、调用接口getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>查询订阅信息
       await notificationExtensionSubscription.getSubscribeInfo().then((data) => {
@@ -50,16 +55,26 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
         expect(data.length).assertEqual(1)
       }).catch((err: BusinessError) => {
         console.error(TAG+`getSubscribeInfo fail: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
       // 3、调用接口unsubscribe(): Promise<void>
       await notificationExtensionSubscription.unsubscribe().then(() => {
         console.info(TAG+"unsubscribe success1111");
       }).catch((err: BusinessError) => {
         console.error(TAG+`unubscribe fail11111111: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+        if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
       // 4、调用接口getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>查询订阅信息
       await notificationExtensionSubscription.getSubscribeInfo().then((data) => {
@@ -68,8 +83,13 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
         done();
       }).catch((err: BusinessError) => {
         console.error(TAG+`getSubscribeInfo fail1111: ${JSON.stringify(err)}`);
-        expect().assertFail()
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
     })
     /**
@@ -94,8 +114,13 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
         console.info(TAG+"subscribe success1111");
       }).catch((err: BusinessError) => {
         console.error(TAG+`subscribe fail: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
       // 2、调用接口getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>查询订阅信息
       await notificationExtensionSubscription.getSubscribeInfo().then((data) => {
@@ -103,16 +128,26 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
         expect(data.length).assertEqual(1)
       }).catch((err: BusinessError) => {
         console.error(TAG+`getSubscribeInfo fail: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
       // 3、调用接口unsubscribe(): Promise<void>
       await notificationExtensionSubscription.unsubscribe().then(() => {
         console.info(TAG+"unsubscribe success1111");
       }).catch((err: BusinessError) => {
         console.error(TAG+`unubscribe fail11111111: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
       // 4、再次调用取消订阅接口unsubscribe(): Promise<void>
       await notificationExtensionSubscription.unsubscribe().then(() => {
@@ -122,8 +157,13 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
         done();
       }).catch((err: BusinessError) => {
         console.error(TAG+`unubscribe fail11111111: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
     })
 

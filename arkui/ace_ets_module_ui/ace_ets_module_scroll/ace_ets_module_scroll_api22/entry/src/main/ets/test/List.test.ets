@@ -28,6 +28,7 @@ import ListFillPolicy from './ListTest/ListFillPolicy.test';
 import GridFillPolicy from './GridTest/GridFillPolicy.test';
 import WaterFlowFillPolicy from './WaterFlowTest/WaterFlowFillPolicy.test';
 import WaterFlowFillPolicyModifier from './WaterFlowTest/WaterFlowFillPolicyModifier.test';
+import GridFillPolicyModifier from './GridTest/GridFillPolicyModifier.test';
 
 export default function testsuite() {
   WaterFlowFillPolicyModifier();
@@ -45,4 +46,5 @@ export default function testsuite() {
   ListFillPolicy();
   GridFillPolicy();
   WaterFlowFillPolicy();
+  GridFillPolicyModifier();
 }

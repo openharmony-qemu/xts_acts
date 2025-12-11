@@ -19,6 +19,14 @@
     {
       "name": "Margin_Test",
       "value": "20"
+    },
+    {
+      "name": "friction",
+      "value": "0.6"
+    },
+    {
+      "name": "offset",
+      "value": "20"
     }
   ]
 }

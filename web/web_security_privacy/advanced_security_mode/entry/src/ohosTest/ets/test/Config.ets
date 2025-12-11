@@ -24,4 +24,6 @@ export class CommonConstants {
 
   static readonly URL_HTTPS_EXPIREDBADSSL: string = 'https://expired.badssl.com/';
 
+  static readonly URL_HTTPS_BAIDU: string = 'https://www.baidu.com';
+
 }

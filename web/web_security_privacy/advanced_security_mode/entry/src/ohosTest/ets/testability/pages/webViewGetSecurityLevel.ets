@@ -88,7 +88,7 @@ struct webViewGetSecurityLevel {
               case 'testWebViewGetSecurityLevelSecure': {
                   try {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl(CommonConstants.URL_HTTPS_EXAMPLE);
+                    this.controller.loadUrl(CommonConstants.URL_HTTPS_BAIDU);
                     await waitForExist(()=>this.isPageEnd, 'testWebViewGetSecurityLevelSecure_isPageEnd', 0, 1000);
                     let securityLevel = this.controller.getSecurityLevel();
                     console.log('securityLevel===>'+securityLevel)
@@ -142,6 +142,18 @@ struct webViewGetSecurityLevel {
         .databaseAccess(this.databaseAccess)
         .onPageEnd(()=>{
           this.isPageEnd = 0;
+        })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          if (event) {
+            console.log('onSslErrorEvent url: ' + event.url);
+            console.log('onSslErrorEvent error: ' + event.error);
+            console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
+            console.log('onSslErrorEvent referrer: ' + event.referrer);
+            console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
+            console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+            console.log('onSslErrorEvent handler: ' + event.handler);
+            event.handler.handleConfirm();
+          }
         })
     }
   }

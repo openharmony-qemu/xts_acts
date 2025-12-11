@@ -9,6 +9,7 @@
         "MainAbility/pages/CommonCustom/mediaQuery",
         "MainAbility/pages/CommonAttrs/backgroundAndSizeSetting",
         "MainAbility/pages/CommonAttrs/border",
-        "MainAbility/pages/CommonAttrs/BorderRadiusRenderStrategy"
+        "MainAbility/pages/CommonAttrs/BorderRadiusRenderStrategy",
+        "MainAbility/pages/CommonAttrs/FlexFourBoundary"
     ]
 }

@@ -35,9 +35,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_001
      * @tc.name test_UiWindow_getBundleName_17000004_static
+     * @tc.number uitestUiWindowErrorTest_001
      * @tc.desc setPoint 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_getBundleName_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004_static start`);
@@ -64,9 +67,12 @@ export default function uitestUiWindowErrorTest() {
 
 
     /**
-     * @tc.number uitestUiWindowErrorTest_002
      * @tc.name test_UiWindow_getBounds_17000004_static
+     * @tc.number uitestUiWindowErrorTest_002
      * @tc.desc getBounds 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_getBounds_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getBounds_17000004_static start`);
@@ -91,9 +97,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_003
      * @tc.name test_UiWindow_getTitle_17000004_static
+     * @tc.number uitestUiWindowErrorTest_003
      * @tc.desc getTitle 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_getTitle_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getTitle_17000004_static start`);
@@ -120,9 +129,12 @@ export default function uitestUiWindowErrorTest() {
 
 
     /**
-     * @tc.number uitestUiWindowErrorTest_004
      * @tc.name test_UiWindow_getWindowMode_17000004_static
+     * @tc.number uitestUiWindowErrorTest_004
      * @tc.desc getWindowMode 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_getWindowMode_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004_static start`);
@@ -148,9 +160,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_005
      * @tc.name test_UiWindow_isFocused_17000004_static
+     * @tc.number uitestUiWindowErrorTest_005
      * @tc.desc isFocused 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_isFocused_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_isFocused_17000004_static start`);
@@ -176,9 +191,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_006
      * @tc.name test_UiWindow_isActive_17000004_static
+     * @tc.number uitestUiWindowErrorTest_006
      * @tc.desc isActive 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_isActive_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_isActive_17000004_static start`);
@@ -205,9 +223,12 @@ export default function uitestUiWindowErrorTest() {
 
 
     /**
-     * @tc.number uitestUiWindowErrorTest_0007
      * @tc.name test_UiWindow_isactive_17000004_static
+     * @tc.number uitestUiWindowErrorTest_0007
      * @tc.desc isactive 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_isactive_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_isactive_17000004_static start`);
@@ -233,9 +254,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_0008
      * @tc.name test_UiWindow_focus_17000004_static
+     * @tc.number uitestUiWindowErrorTest_0008
      * @tc.desc focus 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_focus_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_focus_17000004_static start`);
@@ -261,9 +285,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_0009
      * @tc.name test_UiWindow_moveTo_17000004_static
+     * @tc.number uitestUiWindowErrorTest_0009
      * @tc.desc moveTo 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_moveTo_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static start`);
@@ -304,9 +331,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_011
      * @tc.name test_UiWindow_resize_17000004_static
+     * @tc.number uitestUiWindowErrorTest_011
      * @tc.desc resize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_resize_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_resize_17000004_static start`);
@@ -350,9 +380,12 @@ export default function uitestUiWindowErrorTest() {
 
 
     /**
-     * @tc.number uitestUiWindowErrorTest_013
      * @tc.name test_UiWindow_split_17000004_static
+     * @tc.number uitestUiWindowErrorTest_013
      * @tc.desc split 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_split_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_split_17000004_static start`);
@@ -396,9 +429,12 @@ export default function uitestUiWindowErrorTest() {
 
 
     /**
-     * @tc.number uitestUiWindowErrorTest_015
      * @tc.name test_UiWindow_maximize_17000004_static
+     * @tc.number uitestUiWindowErrorTest_015
      * @tc.desc maximize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_maximize_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_maximize_17000004_static start`);
@@ -441,9 +477,12 @@ export default function uitestUiWindowErrorTest() {
 
 
     /**
-     * @tc.number uitestUiWindowErrorTest_017
      * @tc.name test_UiWindow_minimize_17000004_static
+     * @tc.number uitestUiWindowErrorTest_017
      * @tc.desc minimize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_minimize_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_minimize_17000004_static start`);
@@ -484,9 +523,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_019
      * @tc.name test_UiWindow_resume_17000004_static
+     * @tc.number uitestUiWindowErrorTest_019
      * @tc.desc resume 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_resume_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_resume_17000004_static start`);
@@ -528,9 +570,12 @@ export default function uitestUiWindowErrorTest() {
     })
 
     /**
-     * @tc.number uitestUiWindowErrorTest_021
      * @tc.name test_UiWindow_close_17000004_static
+     * @tc.number uitestUiWindowErrorTest_021
      * @tc.desc close 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_UiWindow_close_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_close_17000004_static start`);

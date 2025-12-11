@@ -60,6 +60,9 @@
         "MainAbility/pages/ImageOrientation/ImageOrientation",
         "MainAbility/pages/ImageMatrix/ImageMatrix",
         "MainAbility/pages/ImageHdrBrightness/ImageHdrBrightness",
-        "MainAbility/pages/ImageLoader/ImageLoader"
+        "MainAbility/pages/ImageLoader/ImageLoader",
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi01",
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi02",
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi03"
     ]
 }

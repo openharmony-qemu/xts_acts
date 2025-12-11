@@ -18,6 +18,7 @@ import {
     describe, it, expect,
   } from '../Common';
 import { TestType, Size, Level } from '@ohos/hypium';
+import fileUri from '@ohos.file.fileuri';
 
 const LocationType = {
   'LOCAl': 1,
@@ -116,6 +117,74 @@ describe('fileIO_fs_stat', function () {
     }
   });
 
+  /**
+   * @tc.name   fileIO_stat_sync_004
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_0400
+   * @tc.desc   Test statSync() for uri interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_sync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_stat_sync_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let uri = fileUri.getUriFromPath(fpath);
+
+    try {
+      let stat = fileIO.statSync(uri);
+      expect(stat !== null).assertTrue();
+      console.log('fileIO_stat_sync_004 stat ' + stat.size);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_stat_sync_004 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_sync_005
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_0500
+   * @tc.desc   Test statSync() for uri interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_sync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_stat_sync_005');
+    fileIO.mkdirSync(dpath);
+    let uri = fileUri.getUriFromPath(dpath);
+
+    try {
+      let stat = fileIO.statSync(uri);
+      expect(stat !== null).assertTrue();
+      console.log('fileIO_stat_sync_005 stat ' + stat.size);
+      fileIO.rmdirSync(dpath);
+    } catch (e) {
+      console.log('fileIO_stat_sync_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_sync_006
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_0600
+   * @tc.desc   Test statSync() for uri interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_stat_sync_006');
+    let uri = fileUri.getUriFromPath(fpath);
+
+    try {
+      let stat = fileIO.statSync(uri);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+    }
+  });
 
   /**
    * @tc.name   fileIO_stat_sync_ino_000
@@ -1127,6 +1196,83 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       console.log('fileIO_stat_async_008 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_async_009
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0900
+   * @tc.desc   Test stat() interface for uri. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_async_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_stat_async_009');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let uri = fileUri.getUriFromPath(fpath);
+
+    try {
+      let stat = await fileIO.stat(uri);
+      expect(stat !== null).assertTrue();
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_stat_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+   /**
+   * @tc.name   fileIO_stat_async_010
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1000
+   * @tc.desc   Test stat() interface for uri. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+   it('fileIO_stat_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    let dpath = await nextFileName('fileIO_stat_async_010');
+    fileIO.mkdirSync(dpath);
+    let uri = fileUri.getUriFromPath(dpath);
+
+    try {
+      fileIO.stat(uri, (err, stat) => {
+        if(err) {
+          console.log('fileIO_stat_async_010 error package1: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        expect(stat !== null).assertTrue();
+        fileIO.rmdirSync(dpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_stat_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_async_011
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1100
+   * @tc.desc   Test stat() interface for uri. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_stat_async_011');
+    let uri = fileUri.getUriFromPath(fpath);
+
+    try {
+      let stat = await fileIO.stat(uri);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_async_011 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      done();
     }
   });
 

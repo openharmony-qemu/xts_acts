@@ -36,6 +36,7 @@
         "MainAbility/pages/contentOffset/offsetEdgeTop",
         "MainAbility/pages/contentOffset/offsetAlignEnd",
         "MainAbility/pages/contentOffset/offsetAlignStart",
+        "MainAbility/pages/contentOffset/listContentOffset",
         "MainAbility/pages/List/ListWillScroll",
         "MainAbility/pages/List/offsetRemain",
         "MainAbility/pages/List/ListLevel1",
@@ -51,6 +52,7 @@
         "MainAbility/pages/List/listVisibleContent",
         "MainAbility/pages/List/listDid",
         "MainAbility/pages/List/ListFlingCallback",
-        "MainAbility/pages/List/ListScrollEdgeCallback"
+        "MainAbility/pages/List/ListScrollEdgeCallback",
+        "MainAbility/pages/List/listFrictionRes"
     ]
 }
