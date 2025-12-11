@@ -105,7 +105,7 @@ export default function HttpHttpProtocolTest() {
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((res: http.HttpResponse) => {
-              console.info(`${caseName}  httpRequest success`);
+              console.info(`${caseName}  httpRequest success ${JSON.stringify(res)}`);
               ExpectTrue(res.responseCode == 200);
               httpRequest.destroy();
               done();
@@ -192,7 +192,7 @@ export default function HttpHttpProtocolTest() {
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((res: http.HttpResponse) => {
-              console.info(`${caseName}  httpRequest success`);
+              console.info(`${caseName}  httpRequest success ${JSON.stringify(res)}`);
               ExpectTrue(res.responseCode == 200);
               httpRequest.destroy();
               done();
@@ -279,7 +279,7 @@ export default function HttpHttpProtocolTest() {
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((res: http.HttpResponse) => {
-              console.info(`${caseName}  httpRequest success`);
+              console.info(`${caseName}  httpRequest success ${JSON.stringify(res)}`);
               ExpectTrue(res.responseCode == 200);
               httpRequest.destroy();
               done();
@@ -366,7 +366,7 @@ export default function HttpHttpProtocolTest() {
             httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((res: number) => {
-              console.info(`${caseName}  httpRequest success`);
+              console.info(`${caseName}  httpRequest success ${JSON.stringify(res)}`);
               ExpectTrue(res == 200);
               httpRequest.destroy();
               done();
@@ -453,7 +453,7 @@ export default function HttpHttpProtocolTest() {
             httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((res: number) => {
-              console.info(`${caseName}  httpRequest success`);
+              console.info(`${caseName}  httpRequest success ${JSON.stringify(res)}`);
               ExpectTrue(res == 200);
               httpRequest.destroy();
               done();
@@ -540,7 +540,7 @@ export default function HttpHttpProtocolTest() {
             httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((res: number) => {
-              console.info(`${caseName}  httpRequest success`);
+              console.info(`${caseName}  httpRequest success ${JSON.stringify(res)}`);
               ExpectTrue(res == 200);
               httpRequest.destroy();
               done();
