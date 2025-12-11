@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
@@ -46,7 +46,7 @@ async function forKey(Key: string, text: string) {
       data: {
         "type": Key,
         "text": text,
-      } as Record<String, RecordData>
+      } as Record<string, Object | null | undefined>
     }
     let backEvent: events_emitter.InnerEvent = {
       eventId: 10,
@@ -57,7 +57,7 @@ async function forKey(Key: string, text: string) {
   } catch (err) {
     console.info("emit emitKey  err: " + JSON.stringify(err));
   }
-  sleep(2000);
+  await sleep(2);
 }
 
 export default function TextPickerSec() {
@@ -78,8 +78,6 @@ export default function TextPickerSec() {
         console.info("get TextPickerSec state pages:" + JSON.stringify(pages));
         if (!("TextPickerSec" == pages.name)) {
           console.info("get TextPickerSec pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -88,18 +86,17 @@ export default function TextPickerSec() {
       }
       await sleep(2)
     });
-
-
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0100
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0100
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "true");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPicker');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0100 START :' + JSON.stringify(strJson));
@@ -114,17 +111,16 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0200
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0200
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "false");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPicker');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0200 START :' + JSON.stringify(strJson));
@@ -139,17 +135,16 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0300
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0300
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPickerErr", "null");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPicker');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0300 START :' + JSON.stringify(strJson));
@@ -164,17 +159,16 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0400
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0400
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPickerErr", "undefined");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPicker');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0400 START :' + JSON.stringify(strJson));
@@ -189,19 +183,18 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0500
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0500
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "true");
-      await sleep(1000)
+      await sleep(1)
       await forKey("TextPicker", "false");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPicker');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0500 START :' + JSON.stringify(strJson));
@@ -216,19 +209,18 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0600
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0600
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPickerErr", "null");
-      await sleep(1000)
+      await sleep(1)
       await forKey("TextPicker", "false");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPicker');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0600 START :' + JSON.stringify(strJson));
@@ -243,19 +235,18 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0700
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0700
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "false");
-      await sleep(1000)
+      await sleep(1)
       await forKey("TextPickerErr", "null");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPicker');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0700 START :' + JSON.stringify(strJson));
@@ -270,17 +261,16 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0800
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0800
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPickerErr');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0800 START :' + JSON.stringify(strJson));
@@ -295,40 +285,38 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_0900
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_0900
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await forKey("TextPicker", "0");
-      await sleep(1000)
+      await sleep(1)
       try {
         let strJson = inspector.getInspectorByKey('TextPickerErr');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0900 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0900 obj $attrs.canLoop :' + JSON.stringify(obj.getElement('$attrs').getString('canLoop')));
         expect(obj.getElement('$attrs').getString('canLoop')).assertEqual("true")
-        done()
+
       } catch (err) {
         expect().assertFail()
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_0900 err  :' + JSON.stringify(err))
-        done()
       }
+      done()
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPicker_CanLoop_static_1000
      * @tc.name     ArkUX_Stage_TextPicker_CanLoop_static_1000
      * @tc.desc     ArkUX_Stage_TextPicker_CanLoop_static_1000
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPicker_CanLoop_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPicker_CanLoop_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let strJson = inspector.getInspectorByKey('TextPickerNoCanLoop');
         console.info('ArkUX_Stage_TextPicker_CanLoop_static_1000 START :' + JSON.stringify(strJson));
@@ -343,21 +331,20 @@ export default function TextPickerSec() {
       }
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_TextPickerDialog_CanLoop_0100
      * @tc.name     ArkUX_Stage_TextPickerDialog_CanLoop_0100
      * @tc.desc     ArkUX_Stage_TextPickerDialog_CanLoop_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_TextPickerDialog_CanLoop_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_TextPickerDialog_CanLoop_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let strJson = inspector.getInspectorByKey('TextPickerDialog');
         console.info('ArkUX_Stage_TextPickerDialog_CanLoop_0100 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextPickerDialog_CanLoop_0100 obj $attrs.canLoop :' + JSON.stringify(obj.getElement('$attrs').getString('canLoop')));
-        expect(obj.getElement('$attrs').getString('canLoop')).assertEqual(undefined)
+        console.info('ArkUX_Stage_TextPickerDialog_CanLoop_0100 obj $attrs.canLoop :' + JSON.stringify(obj.getElement('$attrs').tryGetElement('canLoop')));
+        expect(obj.getElement('$attrs').tryGetElement('canLoop')).assertEqual(undefined)
         done()
       } catch (err) {
         expect().assertFail()

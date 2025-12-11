@@ -51,11 +51,10 @@ struct DatePickerUIExample {
   messageManager:MessageManager = new MessageManager()
    onPageShow() {
     console.info('Checkbox onPageShow')
-
     AppStorage.setOrCreate('messageManager', this.messageManager)
     let callback:Callback = (message: Message) => {
-      console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'isLunar') {
+        console.log('message.value',message.value)
           this.isLunar = message.value as boolean
       }
       if (message.name == 'options') {

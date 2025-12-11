@@ -50,12 +50,12 @@ import {
 import {
   State,
   Link,
-  PropRef
+  Prop
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Slider23 {
-  @State outSetValueOne: double = 0
+  @State outSetValueOne: number = 0
   @State sliderMode:SliderChangeMode | int = 0
 
   build() {
@@ -71,7 +71,7 @@ struct Slider23 {
         .blockSize({ width: 10, height: 30 })
         .trackThickness(60)
         .showTips(true)
-        .onChange((value: double, mode: SliderChangeMode) => {
+        .onChange((value: number, mode: SliderChangeMode) => {
           this.outSetValueOne = value
           this.sliderMode = mode
           console.info('value:' + value + 'mode:' + mode.toString())

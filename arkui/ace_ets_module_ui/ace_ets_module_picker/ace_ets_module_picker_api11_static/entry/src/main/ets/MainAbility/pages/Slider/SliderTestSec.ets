@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import events_emitter from '@ohos.events.emitter';
 import {
-  Entry,
+  Entry,ResourceStr,
   Component,
   $r,
   Column,
@@ -40,7 +40,7 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -57,72 +57,72 @@ struct Index {
     console.info("key==> page valueChangeCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
-      if(data.getProperty('value').toString() =="true"){
-        if( data.getProperty('content').toString() =="no") {
+      const data = eventData.data as Record<string, Object | null | undefined>
+      if(data!['value'] =="true"){
+        if( data!['content'] =="no") {
           this.valueNo = true;
         }
-        if( data.getProperty('content').toString() =="null") {
+        if( data!['content'] =="null") {
           this.value = true
           this.isStr = false
           this.isNum = false
           this.isNUll = true
         }
-        if( data.getProperty('content').toString() =="undefined") {
+        if( data!['content'] =="undefined") {
           this.value = true
           this.isStr = false
           this.isNum = false
           this.isNUll = false
         }
-        if( data.getProperty('content').toString() =="ResourceTest") {
+        if( data!['content'] =="ResourceTest") {
           this.style = SliderStyle.InSet
           this.resFalg = true
         }
       }
-      if(data.getProperty('value').toString() =="false"){
-        if( data.getProperty('content').toString() =="no") {
+      if(data!['value'] =="false"){
+        if( data!['content'] =="no") {
           this.valueNo = false;
         }
-        if( data.getProperty('content').toString() =="null") {
+        if( data!['content'] =="null") {
           this.value = false
           this.isStr = false
           this.isNum = false
           this.isNUll = true
         }
-        if( data.getProperty('content').toString() =="undefined") {
+        if( data!['content'] =="undefined") {
           this.value = false
           this.isStr = false
           this.isNum = false
           this.isNUll = false
         }
-        if( data.getProperty('content').toString() =="ResourceTest") {
+        if( data!['content'] =="ResourceTest") {
           this.style = SliderStyle.OutSet
           this.resFalg = false
         }
       }
-      if(data.getProperty('value').toString() =="trueStr") {
+      if(data!['value'] =="trueStr") {
         this.style = SliderStyle.InSet
         this.isStr = true
         this.value = true
-        this.content = data.getProperty('content').toString();
+        this.content = data!['content'] as ResourceStr;
       }
-      if(data.getProperty('value').toString() =="falseStr") {
+      if(data!['value'] =="falseStr") {
         this.style = SliderStyle.OutSet
         this.value = false
         this.isStr = true
-        this.content = data.getProperty('content').toString();
+        this.content = data!['content'] as ResourceStr;
       }
-      if(data.getProperty('value').toString() =="trueNum") {
+      if(data!['value'] =="trueNum") {
         this.isStr = false
         this.isNum = true
         this.value = true
-        this.num = Number(data.getProperty('content').toString()) as double;
+        this.num = data!['content'] as ResourceStr;
       }
-      if(data.getProperty('value').toString() =="falseNum") {
+      if(data!['value'] =="falseNum") {
         this.value = false
         this.isStr = false
         this.isNum = true
-        this.num = Number(data.getProperty('content').toString()) as double;
+        this.num = data!['content'] as ResourceStr;
       }
     }
 
@@ -131,20 +131,20 @@ struct Index {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
   }
 
-  @State ValueOne: double = 40;
-  @State ValueTwo: double = 40;
-  @State ValueThi: double = 40;
-  @State ValueFour: double = 40;
+  @State ValueOne: number = 40;
+  @State ValueTwo: number = 40;
+  @State ValueThi: number = 40;
+  @State ValueFour: number = 40;
   @State value:boolean = false;
   @State isStr:boolean = false;
   @State isNum:boolean = false;
   @State isNUll:boolean = false;
   @State valueNo:boolean = false;
   @State resFalg:boolean = false;
-  @State content:string = "";
+  @State content: ResourceStr = "";
   @State style:SliderStyle = SliderStyle.InSet;
   @State direction_:Axis =Axis.Vertical;
-  @State num: double = 0;
+  @State num: ResourceStr = '';
 
   build() {
     Row() {
@@ -155,8 +155,8 @@ struct Index {
           max: 100,
           style: this.style
         })
-          .showTips(this.value,this.isStr?this.content:fakeString(this.isNum?this.num:(this.isNUll? null:undefined)))
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .showTips(this.value,this.isStr?this.content:this.isNum?this.num:(this.isNUll? undefined:undefined))
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.ValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -168,7 +168,7 @@ struct Index {
           style: this.style
         })
           .showTips(this.valueNo)
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.ValueTwo = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -183,7 +183,7 @@ struct Index {
               .height(300)
               .showSteps(true)
               .showTips(this.resFalg,$r("app.string.sliderTest"))
-              .onChange((value: double, mode: SliderChangeMode) => {
+              .onChange((value: number, mode: SliderChangeMode) => {
                 this.ValueThi = value
                 console.info('value:' + value + 'mode:' + mode.toString())
               })
@@ -196,7 +196,7 @@ struct Index {
             })
               .height(300)
               .showSteps(true)
-              .onChange((value: double, mode: SliderChangeMode) => {
+              .onChange((value: number, mode: SliderChangeMode) => {
                 this.ValueFour = value
                 console.info('value:' + value + 'mode:' + mode.toString())
               })
@@ -207,8 +207,4 @@ struct Index {
     }
     .height('100%')
   }
-}
-
-function fakeString(val: string|double|null|undefined) {
-  return val as string
 }

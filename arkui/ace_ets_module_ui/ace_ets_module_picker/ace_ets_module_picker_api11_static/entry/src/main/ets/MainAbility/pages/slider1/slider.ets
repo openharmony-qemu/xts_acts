@@ -34,11 +34,11 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct SliderExample {
-  @State outSetValue: double = 40;
-  @State inSetValue: double = 40;
-  @State outVerticalSetValue: double = 40;
-  @State inVerticalSetValue: double = 40;
-  @State stepValue: double = 1;
+  @State outSetValue: number = 40;
+  @State inSetValue: number = 40;
+  @State outVerticalSetValue: number = 40;
+  @State inVerticalSetValue: number = 40;
+  @State stepValue: number = 1;
   @State decorationValue: Axis = Axis.Vertical;
   @State value: number = 40;
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
@@ -52,7 +52,7 @@ struct SliderExample {
         this.value = data.getProperty('value').toNumber();
       }
       if (data.getProperty('stepValue') != null) {
-        this.stepValue = data.getProperty('stepValue').toNumber() as double;
+        this.stepValue = data.getProperty('stepValue').toNumber();
       }
     }
   }
@@ -82,7 +82,7 @@ struct SliderExample {
           .selectedColor(Color.Blue)
           .showSteps(true)
           .showTips(true)
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.outSetValue = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -105,7 +105,7 @@ struct SliderExample {
           .selectedColor(0xCCCCCC)
           .showSteps(false)
           .showTips(false)
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.inSetValue = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -129,7 +129,7 @@ struct SliderExample {
             .selectedColor(Color.Blue)
             .showSteps(true)
             .showTips(true)
-            .onChange((value: double, mode: SliderChangeMode) => {
+            .onChange((value: number, mode: SliderChangeMode) => {
               this.outVerticalSetValue = value
               console.info('value:' + value + 'mode:' + mode.toString())
             })
@@ -153,7 +153,7 @@ struct SliderExample {
             .showSteps(false)
             .showTips(false)
             .trackThickness(1)
-            .onChange((value: double, mode: SliderChangeMode) => {
+            .onChange((value: number, mode: SliderChangeMode) => {
               this.inVerticalSetValue = value
               console.info('value:' + value + 'mode:' + mode.toString())
             })

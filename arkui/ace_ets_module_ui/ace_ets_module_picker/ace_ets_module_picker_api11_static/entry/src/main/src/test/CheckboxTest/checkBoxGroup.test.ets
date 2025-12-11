@@ -59,10 +59,8 @@ export default function checkBoxGroupPartJsunit() {
         console.info("get checkBoxGroup state pages:" + JSON.stringify(pages));
         if (!("checkBoxGroup" == pages.name)) {
           console.info("get checkBoxGroup pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push checkBoxGroup page error: " + err);
@@ -75,13 +73,15 @@ export default function checkBoxGroupPartJsunit() {
     });
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testcheckBoxGroupPart0011_static
      * @tc.name     testcheckBoxGroupPart0011_static
      * @tc.desc     testcheckBoxGroupPart0011_static
      * @tc.level    Level.LEVEL1
      */
-    it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('checkBoxGroupPart testcheckBoxGroupPart0011 START');
       await Utils.sleep(2000);
       try {
@@ -90,7 +90,7 @@ export default function checkBoxGroupPartJsunit() {
         let strJson: string = inspector.getInspectorByKey('Checkbox2');
         console.info("[testcheckBoxGroupPart0011] component select strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson);
-        expect(obj.getElement('$type')).assertEqual('Checkbox');
+        expect(obj.getElement('$type').asString()).assertEqual('Checkbox');
         expect(obj.getElement('$attrs').getString('select')).assertEqual("false");
       } catch (err) {
         console.info("testcheckBoxGroupPart_0011 on click err : " + JSON.stringify(err));
@@ -101,13 +101,15 @@ export default function checkBoxGroupPartJsunit() {
     });
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testcheckBoxGroup0001_static
      * @tc.name     testcheckBoxGroup0001_static
      * @tc.desc     testcheckBoxGroup0001_static
      * @tc.level    Level.LEVEL1
      */
-    it('testcheckBoxGroup0001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testcheckBoxGroup0001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('checkBoxGroup testcheckBoxGroup0001 START');
       await Utils.sleep(2000);
       try {

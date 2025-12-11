@@ -57,9 +57,8 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
-import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -112,14 +111,13 @@ struct SliderMoving {
         .selectedColor(Color.Blue)
         .showSteps(true)
         .showTips(true)
-        .onChange((value: double, mode: SliderChangeMode) => {
-          Log.showInfo(TAG, 'SliderChangeMode.Moving: ' + SliderChangeMode.Moving.toString())
-          Log.showInfo(TAG, 'value:' + value + 'mode:' + mode.toString())
+        .onChange((value: number, mode: SliderChangeMode) => {
+          console.info("Slider emit action state err11: ")
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "Mode": 0
-              } as Record<String, RecordData>
+                "Mode": 0 as double
+              } as Record<string, Object | null | undefined>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60307,

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { Entry, Component, Column, Text, Rating, Margin, Row, TimePickerResult, ClickEvent, Alignment, TextAlign, TextOverflow } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
@@ -41,11 +41,10 @@ struct stageTimePickerDialog {
           .key("TimePickerDialog1")
           .onClick((e:ClickEvent) => {
             try {
-              //globalThis.uiContent.showTimePickerDialog({
               AppStorage.get<UIContext>('uiContent')?.showTimePickerDialog({
                 selected: this.selectTime,
                 onAccept: (value: TimePickerResult) => {
-                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                  this.selectTime.setHours(value.hour, value.minute)
                   console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
                 },
                 onCancel: () => {
@@ -58,7 +57,7 @@ struct stageTimePickerDialog {
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<String, RecordData>
+                } as Record<string,Object | null | undefined>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -87,11 +86,10 @@ struct stageTimePickerDialog {
           .key("TimePickerDialog2")
           .onClick((e:ClickEvent) => {
             try {
-              //globalThis.uiContent.showTimePickerDialog({
               AppStorage.get<UIContext>('uiContent')?.showTimePickerDialog({
                 selected: this.selectTime,
                 onAccept: (value: TimePickerResult) => {
-                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                  this.selectTime.setHours(value.hour, value.minute)
                   console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
                 },
                 onCancel: () => {
@@ -104,7 +102,7 @@ struct stageTimePickerDialog {
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
-                }as Record<String, RecordData>
+                }as Record<string,Object | null | undefined>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -137,7 +135,7 @@ struct stageTimePickerDialog {
               AppStorage.get<UIContext>('uiContent')?.showTimePickerDialog({
                 selected: this.selectTime,
                 onAccept: (value: TimePickerResult) => {
-                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                  this.selectTime.setHours(value.hour, value.minute)
                   console.info("TimePickerDialog:onAccept()" + JSON.stringify(value))
                 },
                 onCancel: () => {
@@ -150,7 +148,7 @@ struct stageTimePickerDialog {
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                }as Record<String, RecordData>
+                }as Record<string, Object | null | undefined>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,

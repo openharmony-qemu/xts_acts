@@ -57,8 +57,6 @@ export default function TimePickerTest() {
         console.info("get TimePicker state pages:" + JSON.stringify(pages));
         if (!("TimePicker" == pages.name)) {
           console.info("get TimePicker pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -70,13 +68,15 @@ export default function TimePickerTest() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   TimePicker_static_001
      * @tc.name     TimePicker_static_001
      * @tc.desc     TimePicker_static_001
      * @tc.level    Level.LEVEL1
      */
-    it('TimePicker_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TimePicker_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       console.info('[TimePicker_static_001] START');
       await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function TimePickerTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TimePicker_static_001] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj.getElement('$type')).assertEqual('TimePicker');
+      expect(obj.getElement('$type').asString()).assertEqual('TimePicker');
 
       console.info('[TimePicker_static_001] END');
       done();

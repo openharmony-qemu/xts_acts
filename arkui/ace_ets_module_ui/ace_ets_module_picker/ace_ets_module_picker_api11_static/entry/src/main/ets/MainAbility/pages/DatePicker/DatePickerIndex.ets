@@ -57,7 +57,7 @@ struct DatePickerExample {
     private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
         console.info("select page state change called:" + JSON.stringify(eventData));
         if (eventData != null && eventData.data != null) {
-            const data = eventData.data as Record<string, Object | null | undefined>                            //需要先获取并声明类型之后  再访问成员属性
+            const data = eventData.data as Record<string, Object | null | undefined>
             if (data!['disappearTextStyle'] != null) {
                 console.log('disappearTextStyledisappearTextStyle',data!['disappearTextStyle'] as PickerTextStyle)
                 this.disappearTextStyle = data!['disappearTextStyle'] as PickerTextStyle
@@ -74,7 +74,7 @@ struct DatePickerExample {
 
     aboutToAppear(){        
         let stateChangeEvent: events_emitter.InnerEvent = {
-            eventId: 183,
+            eventId: 185,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(stateChangeEvent, this.stateChangCallBack);

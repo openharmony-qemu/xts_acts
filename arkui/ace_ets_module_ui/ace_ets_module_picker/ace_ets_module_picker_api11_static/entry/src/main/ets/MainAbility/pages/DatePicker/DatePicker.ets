@@ -43,9 +43,9 @@ import { State } from '@ohos.arkui.stateManagement'
 struct DatePickerDialogExample {
 
   private changeOrientation(isLandscape: boolean) {
-    // ��ȡUIAbilityʵ������������Ϣ
+    // 获取UIAbility实例的上下文信息
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-    // ���øýӿ��ֶ��ı��豸������״̬
+    // 调用该接口手动改变设备横竖屏状态
     window.getLastWindow(context).then((lastWindow) => {
       lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
     });
