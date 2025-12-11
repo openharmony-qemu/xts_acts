@@ -963,7 +963,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         }
 
         //wantAgent对象
-        let wantAgent: Object = {};
+        let wantAgent: WantAgent = {};
         //WantAgentInfo对象
         let wantAgentInfo: WantAgent.WantAgentInfo = {
           wants: [
@@ -984,7 +984,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         };
 
         try {
-          WantAgent.getWantAgent(wantAgentInfo).then((data) => {
+          WantAgent.getWantAgent(wantAgentInfo).then((data:WantAgent) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
@@ -1086,7 +1086,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
 
         //wantAgent对象
-        let wantAgent: Object = {};
+        let wantAgent: WantAgent = {};
         let parameters1: Record<String, RecordData> = {
           "mykey0": 2222,
           "mykey1": [1, 2, 3],
@@ -1116,7 +1116,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           actionFlags: [WantAgent.WantAgentFlags.ONE_TIME_FLAG]
         };
         try {
-          WantAgent.getWantAgent(wantAgentInfo).then((data) => {
+          WantAgent.getWantAgent(wantAgentInfo).then((data:WantAgent) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
