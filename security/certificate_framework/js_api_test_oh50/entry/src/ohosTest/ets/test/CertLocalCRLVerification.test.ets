@@ -347,11 +347,11 @@ export default function certFrameworkCertCheckCrlTestUnit() {
               ],
             }
           };
-          await x509CertChain.validate(param);
-          expect(null).assertFail();
+          let result: cert.CertChainValidationResult = await x509CertChain.validate(param);
+          expect(result.entityCert).not().assertNull();
         } catch (error) {
           console.error(`[XTS] Crl_Func_0900 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+          expect(null).assertFail();
         }
         done();
       });
