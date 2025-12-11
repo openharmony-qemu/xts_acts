@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
- {
+
+{
   "module": {
     "name": "entry",
     "type": "entry",
@@ -26,9 +26,9 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
-        "icon": "$media:icon",
+        "icon": "$media:layered_image",
         "label": "$string:EntryAbility_label",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
@@ -39,25 +39,10 @@
               "entity.system.home"
             ],
             "actions": [
-              "action.system.home"
+              "ohos.want.action.home"
             ]
           }
-        ],
-        "backgroundModes": [
-          "audioPlayback"
         ]
-      }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
-        "reason": "$string:reason",
-        "usedScene": {
-          "abilities": [
-            "FormAbility"
-          ],
-          "when": "inuse"
-        }
       }
     ]
   }
