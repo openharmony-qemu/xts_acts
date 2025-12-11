@@ -591,5 +591,143 @@ export default function typefaceTest() {
         expect(e.code).assertEqual(401)
       }
     });
+    /**
+     * @tc.name   testTypeFaceIsBoldNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0700
+     * @tc.desc   testTypeFaceIsBoldNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTypeFaceIsBoldNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const msg = 'testTypeFaceIsBoldNormal';
+      const font = new drawing.Font();
+      try {
+        let typeface = font.getTypeface() as drawing.Typeface;
+        let result = typeface.isBold() ;
+        console.info(msg + ' isBold 1 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 1 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/NotoSansBengaliUI-Bold.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isBold();
+        console.info(msg + ' isBold 2 success ' + JSON.stringify(result));
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 2 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isBold();
+        console.info(msg + ' isBold 3 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 3 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsBoldMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0701
+     * @tc.desc   Test for testTypeFaceIsBoldMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTypeFaceIsBoldMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceIsBoldMultipleCalls';
+      const font = new drawing.Font();
+      let str = "/system/fonts/NotoSansBengaliUI-Bold.ttf";
+      let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+      for (let i = 0; i < 20; i++) {
+        try {
+          let result = typeface.isBold();
+          console.info(msg + ' isBold successed step is: ' + i + "result is: " + result);
+          expect(result).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` isBold errorCode is:  ${e.code} + errormsg is: ${e.message} step is: ${i}`);
+          expect().assertFail();
+        }
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsItalicNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0800
+     * @tc.desc   testTypeFaceIsItalicNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTypeFaceIsItalicNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const msg = 'testTypeFaceIsItalicNormal';
+      const font = new drawing.Font();
+      try {
+        let typeface = font.getTypeface() as drawing.Typeface;
+        let result = typeface.isItalic() ;
+        console.info(msg + ' isItalic 1 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 1 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isItalic();
+        console.info(msg + ' isItalic 2 success ' + JSON.stringify(result));
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 2 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isItalic();
+        console.info(msg + ' isItalic 3 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 3 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsBoldMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0801
+     * @tc.desc   Test for testTypeFaceIsBoldMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTypeFaceIsBoldMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceIsBoldMultipleCalls';
+      const font = new drawing.Font();
+      let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+      let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+      for (let i = 0; i < 20; i++) {
+        try {
+          let result = typeface.isItalic();
+          console.info(msg + ' isItalic successed step is: ' + i + "result is: " + result);
+          expect(result).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` isItalic errorCode is:  ${e.code} + errormsg is: ${e.message} step is: ${i}`);
+          expect().assertFail();
+        }
+      }
+    });
   })
 }
