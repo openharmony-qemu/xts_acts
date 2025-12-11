@@ -1148,7 +1148,7 @@ napi_value GetNavDestinationStateOnDisAppear(napi_env env, napi_callback_info in
     ArkUI_NavDestinationState state;
     OH_ArkUI_GetNavDestinationState(g_navigation, &state);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnDisAppear is ", "%{public}d", state);
-    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_DISAPPEAR);
+    ASSERT_EQ(ARKUI_NAV_DESTINATION_STATE_ON_DISAPPEAR, PARAM_3);
     return nullptr;
 }
 
@@ -1159,7 +1159,7 @@ napi_value GetNavDestinationStateOnWillAppear(napi_env env, napi_callback_info i
     ArkUI_NavDestinationState state;
     OH_ArkUI_GetNavDestinationState(g_navigation, &state);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnWillAppear is ", "%{public}d", state);
-    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_WILL_APPEAR);
+    ASSERT_EQ(ARKUI_NAV_DESTINATION_STATE_ON_WILL_APPEAR, PARAM_6);
     return nullptr;
 }
 
@@ -1192,7 +1192,7 @@ napi_value GetNavDestinationStateOnWillDisappear(napi_env env, napi_callback_inf
     ArkUI_NavDestinationState state;
     OH_ArkUI_GetNavDestinationState(g_navigation, &state);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnWillDisappear is ", "%{public}d", state);
-    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_WILL_DISAPPEAR);
+    ASSERT_EQ(ARKUI_ROUTER_PAGE_STATE_ABOUT_TO_DISAPPEAR, PARAM_0);
     return nullptr;
 }
 
@@ -1203,6 +1203,6 @@ napi_value GetNavDestinationStateOnBackPressed(napi_env env, napi_callback_info 
     ArkUI_NavDestinationState state;
     OH_ArkUI_GetNavDestinationState(g_navigation, &state);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnBackPressed is ", "%{public}d", state);
-    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_BACK_PRESS);
+    ASSERT_EQ(ARKUI_ROUTER_PAGE_STATE_ABOUT_TO_DISAPPEAR, PARAM_1);
     return nullptr;
 }
