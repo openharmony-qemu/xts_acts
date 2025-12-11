@@ -104,7 +104,7 @@ export default function perfTestErrorTest() {
                 let perfTestStrategy: PerfTestStrategy = {
                     metrics: metrics,
                     actionCode: (finish: Callback<boolean>) => {
-                        await Utils.msSleep(5000);
+                        await Utils.msSleep(1000);
                         finish(true)
                     },
                     resetCode: (finish: Callback<boolean>) => {
