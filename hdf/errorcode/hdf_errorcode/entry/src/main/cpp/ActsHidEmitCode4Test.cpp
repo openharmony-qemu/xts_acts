@@ -361,7 +361,7 @@ int32_t CreateTestDeviceHIDRELRY(const char* str)
         .hidAbsAxes = absAxes.data(),
         .length = (uint16_t)absAxes.size()
     };
-    std::vector<Hid_RelAxes> relAxes = {HID_REL_X, HID_REL_Y};
+    std::vector<Hid_RelAxes> relAxes = {HID_REL_X, HID_REL_RY};
     Hid_RelAxesArray  resAxesArray = {
         .hidRelAxes = relAxes.data(),
         .length = (uint16_t)relAxes.size()

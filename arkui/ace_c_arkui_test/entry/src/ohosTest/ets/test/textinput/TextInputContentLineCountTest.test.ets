@@ -26,37 +26,37 @@ export default function textInputContentLineCountTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CONTENT_LINE_COUNT_0001
-     * @tc.name: testTextInputContentLineCount001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputContentLineCount001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CONTENT_LINE_COUNT_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputContentLineCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputContentLineCount001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CONTENT_LINE_COUNT_0002
-     * @tc.name: testTextInputContentLineCount002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputContentLineCount002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CONTENT_LINE_COUNT_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputContentLineCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputContentLineCount002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CONTENT_LINE_COUNT_0003
-     * @tc.name: testTextInputContentLineCount003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputContentLineCount003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CONTENT_LINE_COUNT_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputContentLineCount003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputContentLineCount003()).assertEqual(0)

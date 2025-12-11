@@ -26,39 +26,39 @@ export default function DragSetGetUdmfDataTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetGetUdmfData_0100
-     * @tc.name       : SetGetUdmfDataTest001
-     * @tc.desc       : testing SetData event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetGetUdmfDataTest001
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetGetUdmfData_0100
+     * @tc.desc   testing SetData event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetGetUdmfDataTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_setGetUdmfData_001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetGetUdmfData_0200
-     * @tc.name       : SetGetUdmfDataTest002
-     * @tc.desc       : testing GetUdmfData event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetGetUdmfDataTest002
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetGetUdmfData_0200
+     * @tc.desc   testing GetUdmfData event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetGetUdmfDataTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_setGetUdmfData_002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetGetUdmfData_0300
-     * @tc.name       : SetGetUdmfDataTest003
-     * @tc.desc       : testing DragAction_SetData event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetGetUdmfDataTest003
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetGetUdmfData_0300
+     * @tc.desc   testing DragAction_SetData event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetGetUdmfDataTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_setGetUdmfData_003()).assertEqual(0)

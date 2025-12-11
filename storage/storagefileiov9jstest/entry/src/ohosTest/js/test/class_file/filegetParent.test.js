@@ -23,14 +23,12 @@ export default function fileIOFileGetParent() {
   describe('fileIO_fs_file_getParent', function () {
 
   /**
+   * @tc.name   fileIO_test_filegetParent_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0100
-   * @tc.name fileIO_test_filegetParent_001
-   * @tc.desc Test getParent() interfaces. 
-   * Open the file, file getParent(),write content
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getParent() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_filegetParent_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_filegetParent_001');
@@ -52,14 +50,12 @@ export default function fileIOFileGetParent() {
   });
 
   /**
+   * @tc.name   fileIO_test_filegetParent_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0200
-   * @tc.name fileIO_test_filegetParent_002
-   * @tc.desc Test getParent() interfaces. 
-   * Open the file, file getParent(),without content
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getParent() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_filegetParent_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_filegetParent_002');
@@ -80,14 +76,12 @@ export default function fileIOFileGetParent() {
   });
 
   /**
+   * @tc.name   fileIO_test_filegetParent_003
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0300
-   * @tc.name fileIO_test_filegetParent_003
-   * @tc.desc Test getParent() interfaces.argument is : true. 
-   * Open the file, file getParent(true)
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getParent() interfaces.argument is : true.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_filegetParent_003', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_filegetParent_003');
@@ -107,14 +101,12 @@ export default function fileIOFileGetParent() {
   });
 
   /**
+   * @tc.name   fileIO_test_filegetParent_004
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0400
-   * @tc.name fileIO_test_filegetParent_004
-   * @tc.desc Test getParent() interfaces.argument is : false. 
-   * Open the file, file getParent(false)
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getParent() interfaces.argument is : false.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_filegetParent_004', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_filegetParent_004');
@@ -134,14 +126,12 @@ export default function fileIOFileGetParent() {
   });
 
   /**
+   * @tc.name   fileIO_test_filegetParent_005
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0500
-   * @tc.name fileIO_test_filegetParent_005
-   * @tc.desc Test getParent() interfaces.argument is : -1. 
-   * Open the file, file getParent(-1)
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getParent() interfaces.argument is : -1.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_filegetParent_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_filegetParent_005');
@@ -161,14 +151,12 @@ export default function fileIOFileGetParent() {
   });
 
   /**
+   * @tc.name   fileIO_test_filegetParent_006
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0600
-   * @tc.name fileIO_test_filegetParent_006
-   * @tc.desc Test getParent() interfaces. 
-   * Open the file, file getParent(),fs.dup
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getParent() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_filegetParent_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_filegetParent_006');
@@ -188,14 +176,12 @@ export default function fileIOFileGetParent() {
   });
 
   /**
+   * @tc.name   fileIO_test_filegetParent_007
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0700
-   * @tc.name fileIO_test_filegetParent_007
-   * @tc.desc Test getParent() interfaces. 
-   * Open the file, file getParent(),fileuri.getUriFromPath()
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getParent() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_filegetParent_007', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_filegetParent_007');

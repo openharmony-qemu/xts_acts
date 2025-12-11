@@ -46,9 +46,12 @@ export default function GetStateByIndexTest() {
     });
 
     /**
+     * @tc.name   GetStateByIndexTest_0200
      * @tc.number GetStateByIndexTest_0200
-     * @tc.name GetStateByIndexTest_0200
-     * @tc.desc router.getStateByIndex return undefined
+     * @tc.desc   router.getStateByIndex return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GetStateByIndexTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('GetStateByIndexTest_0200 START');
@@ -68,9 +71,12 @@ export default function GetStateByIndexTest() {
     });
 
     /**
+     * @tc.name   GetStateByIndexTest_0100
      * @tc.number GetStateByIndexTest_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   GetStateByIndexTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GetStateByIndexTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('GetStateByIndexTest_0100 START');
@@ -95,9 +101,12 @@ export default function GetStateByIndexTest() {
     });
 
     /**
+     * @tc.name   GetStateByIndexTest_0300
      * @tc.number GetStateByIndexTest_0300
-     * @tc.name GetStateByIndexTest_0300
-     * @tc.desc router.getStateByUrl return length > 0
+     * @tc.desc   router.getStateByUrl return length > 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GetStateByIndexTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('GetStateByIndexTest_0300 START');
@@ -120,9 +129,12 @@ export default function GetStateByIndexTest() {
     });
 
     /**
+     * @tc.name   GetStateByIndexTest_0400
      * @tc.number GetStateByIndexTest_0400
-     * @tc.name GetStateByIndexTest_0400
-     * @tc.desc router.getStateByUrl return length == 0
+     * @tc.desc   router.getStateByUrl return length == 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GetStateByIndexTest_0400', Level.LEVEL2, async (done: Function) => {
       console.info('GetStateByIndexTest_0400 START');

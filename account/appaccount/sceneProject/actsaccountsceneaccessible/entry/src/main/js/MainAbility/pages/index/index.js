@@ -24,6 +24,7 @@ export default {
     onInit() {
         let enableBundle = 'com.example.actsgetallaccessibleaccounts';
         let enableBundle2 = 'com.example.getallaccountsnoparameter';
+        let enableBundle3 = 'com.example.getallaccountsnoparameter.static';
         this.title = 'scene accessible account';
         console.info('====>scene accessible account start====');
         console.info('====>scene add account start====');
@@ -39,6 +40,11 @@ export default {
             }
             try {
                 await appAccountManager.setAppAccess('account_name_scene_single', enableBundle2, true);
+            } catch (err) {
+                console.info('====>setAppAccess enableBundle2 err:' + JSON.stringify(err));
+            }
+            try {
+                await appAccountManager.setAppAccess('account_name_scene_single', enableBundle3, true);
             } catch (err) {
                 console.info('====>setAppAccess enableBundle2 err:' + JSON.stringify(err));
             }

@@ -23,7 +23,7 @@ import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want 
 import { webview } from '@kit.ArkWeb';
 import { pasteboard } from '@kit.BasicServicesKit';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
-const EVENT_ID_SET_SUITE_KEY = 183111;
+const EVENT_ID_SET_SUITE_KEY = 183112;
 let driver = Driver.create();
 const TAG = 'ContextMenu';
 

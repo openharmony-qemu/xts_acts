@@ -42,13 +42,13 @@ class DrawingNativeShadowLayerTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0100
- * @tc.name: testShadowLayerCreateNormal
- * @tc.desc: test for testShadowLayerCreateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShadowLayerCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0100
+ * @tc.desc   test for testShadowLayerCreateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_ShadowLayerCreate with integer values for blurRadius, x, and y
@@ -61,13 +61,13 @@ HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateNormal, Function | S
     OH_Drawing_ShadowLayerDestroy(shadow2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0101
- * @tc.name: testShadowLayerCreateNull
- * @tc.desc: test for testShadowLayerCreateNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShadowLayerCreateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0101
+ * @tc.desc   test for testShadowLayerCreateNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShadowLayerCreate with the first parameter being empty, check the error code using
@@ -90,13 +90,13 @@ HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateNull, Function | Sma
     OH_Drawing_ShadowLayerDestroy(shadow4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0102
- * @tc.name: testShadowLayerCreateAbnormal
- * @tc.desc: test for testShadowLayerCreateAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShadowLayerCreateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0102
+ * @tc.desc   test for testShadowLayerCreateAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShadowLayerCreate with the first parameter as a negative number, check the error code using
@@ -119,13 +119,13 @@ HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateAbnormal, Function |
     OH_Drawing_ShadowLayerDestroy(shadow4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0103
- * @tc.name: testShadowLayerCreateMaximum
- * @tc.desc: test for testShadowLayerCreateMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShadowLayerCreateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0103
+ * @tc.desc   test for testShadowLayerCreateMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateMaximum, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ShadowLayerCreate with the first parameter as the maximum value
@@ -147,13 +147,13 @@ HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateMaximum, Function | 
     OH_Drawing_ShadowLayerDestroy(shadow4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0104
- * @tc.name: testShadowLayerCreateMultipleCalls
- * @tc.desc: test for testShadowLayerCreateMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShadowLayerCreateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0104
+ * @tc.desc   test for testShadowLayerCreateMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ShadowLayerCreate 10 times with random values for blurRadius, x, y, and different colors
@@ -171,13 +171,13 @@ HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerCreateMultipleCalls, Funct
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0200
- * @tc.name: testShadowLayerDestroyNormal
- * @tc.desc: test for testShadowLayerDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShadowLayerDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0200
+ * @tc.desc   test for testShadowLayerDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerDestroyNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_ShadowLayerCreate
@@ -188,13 +188,13 @@ HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerDestroyNormal, Function | 
     OH_Drawing_ShadowLayerDestroy(shadow);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0201
- * @tc.name: testShadowLayerDestroyNull
- * @tc.desc: test for testShadowLayerDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShadowLayerDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0201
+ * @tc.desc   test for testShadowLayerDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShadowLayerTest, testShadowLayerDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShadowLayerDestroy with null parameter

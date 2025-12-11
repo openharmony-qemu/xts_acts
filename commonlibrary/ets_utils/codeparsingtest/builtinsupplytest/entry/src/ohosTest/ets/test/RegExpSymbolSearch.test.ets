@@ -30,12 +30,12 @@ export default function builtinsRegExpSymbolSearchTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpSymbolSearchTest0100
      * @tc.number SUB_BUILTINS_REGEXP_SYMBOL_SEARCH_TEST_0100
-     * @tc.name builtinsRegExpSymbolSearchTest0100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpSymbolSearchTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpSymbolSearchTest0100';
@@ -47,12 +47,12 @@ export default function builtinsRegExpSymbolSearchTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpSymbolSearchTest0200
      * @tc.number SUB_BUILTINS_REGEXP_SYMBOL_SEARCH_TEST_0200
-     * @tc.name builtinsRegExpSymbolSearchTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpSymbolSearchTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpSymbolSearchTest0200';

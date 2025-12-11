@@ -20,7 +20,7 @@ let environmentCallback: EnvironmentCallback
 
 @Entry
 @Component
-struct CalendarPickerExample {
+struct CalendarPickerDisableDateRangeAndMarkTodayExample {
   @State selectedDate: Date = new Date('2025-01-02')
   @State startDate: Date = new Date('2025-01-01')
   @State endDate: Date = new Date('2025-02-28')
@@ -40,7 +40,7 @@ struct CalendarPickerExample {
         Text('disableDateRange:' + JSON.stringify(this.disableDateRange))
         Text('startDate:' + JSON.stringify(this.startDate))
         Text('endDate:' + JSON.stringify(this.endDate))
-        
+
         Row({ space: 1 }) {
           Button('正常值 ').onClick(() => {
             this.disableDateRange = [{ start: new Date('2025-01-09'), end: new Date('2025-01-10') }]

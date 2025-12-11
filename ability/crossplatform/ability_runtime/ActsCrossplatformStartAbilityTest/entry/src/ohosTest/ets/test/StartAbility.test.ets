@@ -88,12 +88,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_CALLBACK_0001
      * @tc.number ACTS_START_ABILITY_CALLBACK_0001
-     * @tc.name actsStartAbilityCallback0001
-     * @tc.desc Test the api "abilityDelegator.startAbility", return the result with callback function.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.startAbility", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_CALLBACK_0001", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_0001';
@@ -147,12 +147,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_CALLBACK_PARAMETER_0002
      * @tc.number ACTS_START_ABILITY_CALLBACK_PARAMETER_0002
-     * @tc.name actsStartAbilityCallbackParameter0002
-     * @tc.desc Test the api: startAbility, want contain 'parameters'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, want contain 'parameters'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_CALLBACK_PARAMETER_0002", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_PARAMETER_0002';
@@ -206,12 +206,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_PROMISE_0001
      * @tc.number ACTS_START_ABILITY_PROMISE_0001
-     * @tc.name actsStartAbilityPromise0001
-     * @tc.desc Test the api "abilityDelegator.startAbility", return the result with callback function.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.startAbility", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_PROMISE_0001';
@@ -241,12 +241,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_PROMISE_PARAMETER_0002
      * @tc.number ACTS_START_ABILITY_PROMISE_PARAMETER_0002
-     * @tc.name actsStartAbilityPromiseParameter0002
-     * @tc.desc Test the api: startAbility, want contain 'parameters'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, want contain 'parameters'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_PROMISE_PARAMETER_0002", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_PROMISE_PARAMETER_0002';
@@ -303,12 +303,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_PROMISE_ERROR_0001
      * @tc.number ACTS_START_ABILITY_PROMISE_ERROR_0001
-     * @tc.name actsStartAbilityPromiseError0001
-     * @tc.desc Test the api: startAbility, start an ability which bundle is not exist, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, start an ability which bundle is not exist, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_PROMISE_ERROR_0001", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_PROMISE_ERROR_0001';
@@ -354,12 +354,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_PROMISE_ERROR_0002
      * @tc.number ACTS_START_ABILITY_PROMISE_ERROR_0002
-     * @tc.name actsStartAbilityPromiseError0002
-     * @tc.desc Test the api: startAbility, bundlename is the error value, abilityname does not pass in the value, modulename is the correct value, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, bundlename is the error value, abilityname does not pass in the value, modulename is the correct value, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_PROMISE_ERROR_0002", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_PROMISE_ERROR_0002';
@@ -404,12 +404,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_PROMISE_ERROR_0003
      * @tc.number ACTS_START_ABILITY_PROMISE_ERROR_0003
-     * @tc.name actsStartAbilityPromiseError0003
-     * @tc.desc Test the api: startAbility, start an ability which BundleName does not pass in a value, AbilityName is the correct value, and ModuleName is the correct value, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, start an ability which BundleName does not pass in a value, AbilityName is the correct value, and ModuleName is the correct value, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_PROMISE_ERROR_0003", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_PROMISE_ERROR_0003';
@@ -454,12 +454,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_PROMISE_ERROR_0006
      * @tc.number ACTS_START_ABILITY_PROMISE_ERROR_0006
-     * @tc.name actsStartAbilityPromiseError0006
-     * @tc.desc Test the api: startAbility, want is empty, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, want is empty, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_PROMISE_ERROR_0006", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_PROMISE_ERROR_0006';
@@ -501,12 +501,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_PROMISE_ERROR_0007
      * @tc.number ACTS_START_ABILITY_PROMISE_ERROR_0007
-     * @tc.name actsStartAbilityPromiseError0007
-     * @tc.desc Test the api: startAbility, want is undefined, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, want is undefined, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_PROMISE_ERROR_0007", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_PROMISE_ERROR_0007';
@@ -548,12 +548,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_CALLBACK_ERROR_0001
      * @tc.number ACTS_START_ABILITY_CALLBACK_ERROR_0001
-     * @tc.name actsStartAbilityCallbackError0001
-     * @tc.desc Test the api: startAbility, start an ability which bundleName is the error value, AbilityName is the correct value, and ModuleName is the correct value named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, start an ability which bundleName is the error value, AbilityName is the correct value, and ModuleName is the correct value named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_CALLBACK_ERROR_0001", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_ERROR_0001';
@@ -601,12 +601,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_CALLBACK_ERROR_0002
      * @tc.number ACTS_START_ABILITY_CALLBACK_ERROR_0002
-     * @tc.name actsStartAbilityCallbackError0002
-     * @tc.desc Test the api: startAbility, start an ability which bundlename is the error value, abilityname does not pass in the value, modulename is the correct value, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, start an ability which bundlename is the error value, abilityname does not pass in the value, modulename is the correct value, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_CALLBACK_ERROR_0002", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_ERROR_0002';
@@ -653,12 +653,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_CALLBACK_ERROR_0003
      * @tc.number ACTS_START_ABILITY_CALLBACK_ERROR_0003
-     * @tc.name actsStartAbilityCallbackError0003
-     * @tc.desc Test the api: startAbility, BundleName does not pass in a value, AbilityName is the correct value, and ModuleName is the correct value, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, BundleName does not pass in a value, AbilityName is the correct value, and ModuleName is the correct value, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_CALLBACK_ERROR_0003", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_ERROR_0003';
@@ -705,12 +705,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_CALLBACK_ERROR_0006
      * @tc.number ACTS_START_ABILITY_CALLBACK_ERROR_0006
-     * @tc.name actsStartAbilityCallbackError0006
-     * @tc.desc Test the api: startAbility, want is empty, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility, want is empty, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_CALLBACK_ERROR_0006", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_ERROR_0006';
@@ -755,12 +755,12 @@ export default function StartAbilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_START_ABILITY_CALLBACK_ERROR_0007
      * @tc.number ACTS_START_ABILITY_CALLBACK_ERROR_0007
-     * @tc.name actsStartAbilityCallbackError0007
-     * @tc.desc Test the api: startAbility,want is undefined, expect it return an error named "startAbility failed".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test the api: startAbility,want is undefined, expect it return an error named "startAbility failed".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_START_ABILITY_CALLBACK_ERROR_0007", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_ERROR_0007';

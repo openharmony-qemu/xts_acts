@@ -42,13 +42,15 @@ export default function menuItemGroupDivider() {
       console.info("menuItemGroupDivider after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_menuItemGroupDivider_001
-     * @tc.desc      menuItemGroupDivider test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   menuItemGroupDivider_001
+     * @tc.number menuItemGroupDivider_001
+     * @tc.desc   menuItemGroupDivider_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('menuItemGroupDivider_001', Level.LEVEL2, async (done: Function) => {
       console.info('[menuItemGroupDivider_001] START');
 
@@ -64,13 +66,15 @@ export default function menuItemGroupDivider() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_menuItemGroupDivider_002
-     * @tc.desc      subMenuExpandingMode test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   menuItemGroupDivider_002
+     * @tc.number menuItemGroupDivider_002
+     * @tc.desc   menuItemGroupDivider_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('menuItemGroupDivider_002', Level.LEVEL2, async (done: Function) => {
       console.info('[menuItemGroupDivider_002] START');
 

@@ -68,9 +68,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getSignalInformation_Async_0400
-     * @tc.name    SlotId parameter input is -1, test getSignalInformation() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Async_0400
+     * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getSignalInformation_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         radio.getSignalInformation(SLOT_2, (err, data) => {
@@ -93,9 +96,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getNetworkState_Async_0700
-     * @tc.name    SlotId parameter input is -1, test getNetworkState() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getNetworkState_Async_0700
+     * @tc.number Telephony_NetworkSearch_getNetworkState_Async_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getNetworkState_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         radio.getNetworkState(SLOT_2, (err, data) => {

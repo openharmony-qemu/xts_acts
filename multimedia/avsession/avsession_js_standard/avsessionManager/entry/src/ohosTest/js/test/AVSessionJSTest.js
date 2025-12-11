@@ -93,14 +93,14 @@ export default function AVSessionJsTest() {
 			receivedParam2 = args;
 		}
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0100
-         * @tc.name      : dispatchSessionEvent - promise
-         * @tc.desc      : Testing call dispatchSessionEvent(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0100
+   * @tc.desc   Testing call dispatchSessionEvent(promise)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS, (err) => {
 				if (err) {
@@ -114,14 +114,14 @@ export default function AVSessionJsTest() {
 			});
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0200
-         * @tc.name      : dispatchSessionEvent - callback
-         * @tc.desc      : Testing call dispatchSessionEvent(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0200
+   * @tc.desc   Testing call dispatchSessionEvent(callback)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS).catch((err) => {
 				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_0200 error " + JSON.stringify(err));
@@ -132,14 +132,14 @@ export default function AVSessionJsTest() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0100
-         * @tc.name      : setExtras - callback
-         * @tc.desc      : Testing call setExtras(callback)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0100
+   * @tc.desc   Testing call setExtras(callback)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			session.setExtras(CUSTOM_EXTRAS, (err) => {
 				if (err) {
@@ -153,14 +153,14 @@ export default function AVSessionJsTest() {
 			});
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0200
-         * @tc.name      : setExtras - promise
-         * @tc.desc      : Testing call setExtras(promise)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0200
+   * @tc.desc   Testing call setExtras(promise)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await session.setExtras(CUSTOM_EXTRAS).catch((err) => {
 				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_0200 error " + JSON.stringify(err));
@@ -171,14 +171,14 @@ export default function AVSessionJsTest() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0100
-		 * @tc.name      : bind one callback on commonCommand event
-		 * @tc.desc      : Testing onCommonCommand callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0100
+   * @tc.desc   Testing onCommonCommand callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			session.on('commonCommand', commonCommandCallback1);
 			await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).catch((err) => {
@@ -202,14 +202,14 @@ export default function AVSessionJsTest() {
 			})
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200
-		 * @tc.name      : bind two callbacks on commonCommand event
-		 * @tc.desc      : Testing onCommonCommand callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200
+   * @tc.desc   Testing onCommonCommand callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
@@ -239,14 +239,14 @@ export default function AVSessionJsTest() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100
-		 * @tc.name      : bind two callbacks on commonCommand event, off one of them 
-		 * @tc.desc      : Testing offCommonCommand callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100
+   * @tc.desc   Testing offCommonCommand callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
@@ -272,14 +272,14 @@ export default function AVSessionJsTest() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200
-		 * @tc.name      : bind two callbacks on commonCommand event, off two of them 
-		 * @tc.desc      : Testing offCommonCommand callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200
+   * @tc.desc   Testing offCommonCommand callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
@@ -302,14 +302,14 @@ export default function AVSessionJsTest() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300
-		 * @tc.name      : bind two callbacks on commonCommand event, off all of them 
-		 * @tc.desc      : Testing offCommonCommand callback
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300
+   * @tc.desc   Testing offCommonCommand callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
@@ -332,14 +332,14 @@ export default function AVSessionJsTest() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICESYNC_0100
-         * @tc.name      : session getOutputDeviceSync
-         * @tc.desc      : Testing call session getOutputDeviceSync(sync)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-		 */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICESYNC_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICESYNC_0100
+   * @tc.desc   Testing call session getOutputDeviceSync(sync)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICESYNC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			try {
 				let outputDeviceInfo = session.getOutputDeviceSync();
@@ -351,13 +351,13 @@ export default function AVSessionJsTest() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0100
-         * @tc.name      : session castDisplayChange
-         * @tc.desc      : Testing call session castDisplayChange(CastDisplayState.STATE_ON|CastDisplayState.STATE_OFF)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0100
+         * @tc.desc   Testing call session castDisplayChange(CastDisplayState.STATE_ON|CastDisplayState.STATE_OFF)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const isExtendedDisplayCast = canIUse('SystemCapability.Multimedia.AVSession.ExtendedDisplayCast');
@@ -388,13 +388,13 @@ export default function AVSessionJsTest() {
         })
 
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0200
-         * @tc.name      : session castDisplayChange
-         * @tc.desc      : Testing call session castDisplayChange()
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0200
+         * @tc.desc   Testing call session castDisplayChange()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const isExtendedDisplayCast = canIUse('SystemCapability.Multimedia.AVSession.ExtendedDisplayCast');
@@ -424,13 +424,13 @@ export default function AVSessionJsTest() {
             }
         })
 		
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0300
-         * @tc.name      : session castDisplayChange
-         * @tc.desc      : Testing call session castDisplayChange()
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0300
+         * @tc.desc   Testing call session castDisplayChange()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const isExtendedDisplayCast = canIUse('SystemCapability.Multimedia.AVSession.ExtendedDisplayCast');
@@ -460,13 +460,13 @@ export default function AVSessionJsTest() {
             }
         })
 		
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0400
-         * @tc.name      : session castDisplayChange
-         * @tc.desc      : Testing call session castDisplayChange()
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0400
+         * @tc.desc   Testing call session castDisplayChange()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const isExtendedDisplayCast = canIUse('SystemCapability.Multimedia.AVSession.ExtendedDisplayCast');

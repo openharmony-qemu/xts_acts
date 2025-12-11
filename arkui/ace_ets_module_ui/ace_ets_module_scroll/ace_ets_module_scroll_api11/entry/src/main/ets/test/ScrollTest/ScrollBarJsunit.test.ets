@@ -43,6 +43,14 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ScrollBarJsunit_0100
+     * @tc.number ScrollBarJsunit_0100
+     * @tc.desc   ScrollBarJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ScrollBarJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the ScrollBar component
       console.info('[ScrollBarJsunit_0100] START');
@@ -57,6 +65,14 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ScrollBarJsunit_0200
+     * @tc.number ScrollBarJsunit_0200
+     * @tc.desc   ScrollBarJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ScrollBarJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Modify the direction of the ScrollBar component
       console.info('[ScrollBarJsunit_0200] START');
@@ -71,6 +87,14 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ScrollBarJsunit_0300
+     * @tc.number ScrollBarJsunit_0300
+     * @tc.desc   ScrollBarJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ScrollBarJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Modify the state of the ScrollBar component
       console.info('[ScrollBarJsunit_0300] START');
@@ -85,6 +109,14 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ScrollBarJsunit_0400
+     * @tc.number ScrollBarJsunit_0400
+     * @tc.desc   ScrollBarJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ScrollBarJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Modify the backgroundColor of the ScrollBar component
       console.info('[ScrollBarJsunit_0400] START');
@@ -99,6 +131,14 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ScrollBarJsunit_0500
+     * @tc.number ScrollBarJsunit_0500
+     * @tc.desc   ScrollBarJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ScrollBarJsunit_0500', Level.LEVEL1, async (done: Function) => {
       // Illegal modification of attribute value of the ScrollBar component
       console.info('[ScrollBarJsunit_0500] START');
@@ -119,6 +159,14 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ScrollBarJsunit_0600
+     * @tc.number ScrollBarJsunit_0600
+     * @tc.desc   ScrollBarJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ScrollBarJsunit_0600', Level.LEVEL1, async (done: Function) => {
       // Modify the direction of the Scroll component and ScrollBar component
       console.info('[ScrollBarJsunit_0600] START');

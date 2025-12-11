@@ -58,14 +58,14 @@ export default function webViewControllerRemoveCacheTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REMOVECACHE_0100
-    * @tc.name       : testRemoveCache001
-    * @tc.desc       : test removeCache true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testRemoveCache001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REMOVECACHE_0100
+     * @tc.desc   test removeCache true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRemoveCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testRemoveCache001", 148411)
       let isReturn = false;
@@ -75,14 +75,14 @@ export default function webViewControllerRemoveCacheTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REMOVECACHE_0200
-    * @tc.name       : testRemoveCache002
-    * @tc.desc       : test removeCache false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRemoveCache002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REMOVECACHE_0200
+     * @tc.desc   test removeCache false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRemoveCache002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRemoveCache002", 148411)
       Utils.registerEvent("testRemoveCache002", true, 148460, ()=>{isReturn = true});

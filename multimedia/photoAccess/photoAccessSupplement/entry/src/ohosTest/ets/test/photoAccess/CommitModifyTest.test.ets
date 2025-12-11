@@ -93,12 +93,12 @@ export default function CommitModifySuppTest() {
       };
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0100';
@@ -109,12 +109,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0200';
@@ -125,12 +125,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0300
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0300
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0300
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0300
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0300';
@@ -141,12 +141,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0400
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0400
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0400
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0400
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0400';
@@ -157,12 +157,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0500
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0500
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0500
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0500
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0500';
@@ -173,12 +173,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0600
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0600
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0600
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0600
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0600';
@@ -189,12 +189,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0700
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0700
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0700
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0700
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0700';
@@ -205,12 +205,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0800
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0800
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0800
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0800
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0800';
@@ -221,12 +221,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0900
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0900
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0900
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0900
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_0900';
@@ -237,12 +237,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1000
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1000
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1000
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1000';
@@ -253,12 +253,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1100';
@@ -269,12 +269,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1200';
@@ -285,12 +285,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1300
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1300
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1300
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1300
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1300';
@@ -301,12 +301,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1400
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1400
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1400
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1400
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1400';
@@ -317,12 +317,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1500
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1500
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1500
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1500
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1500';
@@ -333,12 +333,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1600
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1600
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1600
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1600
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1600';
@@ -349,12 +349,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1700
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1700
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1700
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1700
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1700';
@@ -365,12 +365,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1800
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1800
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1800
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1800
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1800';
@@ -381,12 +381,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1900
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1900
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1900
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1900
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_1900';
@@ -397,12 +397,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2000
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2000
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2000
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2000';
@@ -413,12 +413,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2100';
@@ -429,12 +429,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2200';
@@ -445,12 +445,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2300
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2300
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2300
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2300
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2300';
@@ -461,12 +461,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2400
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2400
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2400
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2400
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2400';
@@ -477,12 +477,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2500
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2500
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2500
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2500
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2500';
@@ -493,12 +493,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2600
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2600
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2600
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2600
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2600';
@@ -509,12 +509,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2700
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2700
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2700
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2700
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2700';
@@ -525,12 +525,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2800
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2800
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2800
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2800
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2800';
@@ -541,12 +541,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2900
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2900
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2900
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2900
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_2900';
@@ -557,12 +557,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3000
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3000
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3000
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3000';
@@ -573,12 +573,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3100';
@@ -589,12 +589,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_3200';
@@ -605,12 +605,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0100';
@@ -621,12 +621,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0200';
@@ -637,12 +637,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0300
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0300
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0300
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0300
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0300';
@@ -653,12 +653,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0400
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0400
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0400
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0400
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0400';
@@ -669,12 +669,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0500
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0500
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0500
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0500
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0500';
@@ -685,12 +685,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0600
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0600
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0600
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0600
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0600';
@@ -701,12 +701,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0700
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0700
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0700
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0700
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0700';
@@ -717,12 +717,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0800
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0800
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0800
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0800
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0800';
@@ -733,12 +733,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0900
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0900
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0900
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0900
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_0900';
@@ -749,12 +749,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1000
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1000
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1000
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1000';
@@ -765,12 +765,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1100';
@@ -781,12 +781,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1200';
@@ -797,12 +797,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1300
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1300
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1300
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1300
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1300';
@@ -813,12 +813,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1400
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1400
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1400
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1400
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1400';
@@ -829,12 +829,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1500
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1500
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1500
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1500
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1500';
@@ -845,12 +845,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1600
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1600
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1600
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1600
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1600';
@@ -861,12 +861,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1700
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1700
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1700
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1700
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1700';
@@ -877,12 +877,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1800
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1800
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1800
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1800
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1800';
@@ -893,12 +893,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1900
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1900
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1900
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1900
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_1900';
@@ -909,12 +909,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2000
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2000
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2000
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2000';
@@ -925,12 +925,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2100';
@@ -941,12 +941,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2200';
@@ -957,12 +957,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2300
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2300
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2300
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2300
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2300';
@@ -973,12 +973,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2400
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2400
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2400
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2400
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2400';
@@ -989,12 +989,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2500
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2500
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2500
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2500
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2500';
@@ -1005,12 +1005,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2600
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2600
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2600
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2600
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2600';
@@ -1021,12 +1021,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2700
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2700
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2700
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2700
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2700';
@@ -1037,12 +1037,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2800
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2800
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2800
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2800
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2800';
@@ -1053,12 +1053,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2900
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2900
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2900
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2900
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_2900';
@@ -1069,12 +1069,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3000
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3000
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3000
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3000';
@@ -1085,12 +1085,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3100
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3100
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3100
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3100
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3100';
@@ -1101,12 +1101,12 @@ export default function CommitModifySuppTest() {
     });
 
     /**
-     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3200
-     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3200
-     * @tc.desc       Test with commitModify
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3200
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3200
+     * @tc.desc   Test with commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_SENDABLE_PHOTO_ACCESS_COMMIT_MODIFY_PROMISE_3200';

@@ -64,12 +64,12 @@ export default function Download() {
 
 
     /**
+     * @tc.name   testWebView_setDownloadDelegate1000
      * @tc.number SUB_ACE_WEB_setDownloadDelegate_1000
-     * @tc.name testWebView_setDownloadDelegate1000
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testWebView_setDownloadDelegate1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("pause", 130860);
@@ -82,12 +82,12 @@ export default function Download() {
     })
 
     /**
+     * @tc.name   testWebView_setDownloadDelegate1001
      * @tc.number SUB_ACE_WEB_setDownloadDelegate_1001
-     * @tc.name testWebView_setDownloadDelegate1001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testWebView_setDownloadDelegate1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("state", 130860);
@@ -99,12 +99,12 @@ export default function Download() {
     })
 
     /**
+     * @tc.name   testWebView_setDownloadDelegate1002
      * @tc.number SUB_ACE_WEB_setDownloadDelegate_1002
-     * @tc.name testWebView_setDownloadDelegate1002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testWebView_setDownloadDelegate1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("state1", 130860);
@@ -116,12 +116,12 @@ export default function Download() {
     })
 
     /**
+     * @tc.name   testWebView_setDownloadDelegate1003
      * @tc.number SUB_ACE_WEB_setDownloadDelegate_1003
-     * @tc.name testWebView_setDownloadDelegate1003
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testWebView_setDownloadDelegate1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("setDownloadDelegateNotController", 130860);
@@ -133,12 +133,12 @@ export default function Download() {
     })
 
     /**
+     * @tc.name   testWebView_setDownloadDelegate1004
      * @tc.number SUB_ACE_WEB_setDownloadDelegate_1004
-     * @tc.name testWebView_setDownloadDelegate1004
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testWebView_setDownloadDelegate1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("startDownload1", 130860);

@@ -44,12 +44,12 @@ export default function Sim3Public() {
 
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetMaxSimCount_0100
-     * @tc.name   : testTelephonySimGetMaxSimCount0100
-     * @tc.desc   : Obtain the number of card slots.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonySimGetMaxSimCount0100
+     * @tc.number SUB_Telephony_Sim_GetMaxSimCount_0100
+     * @tc.desc   Obtain the number of card slots.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetMaxSimCount0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonySimGetMaxSimCount0100';
@@ -61,12 +61,12 @@ export default function Sim3Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_HasSimCard_0400
-     * @tc.name   : testTelephonySimHasSimCard0400
-     * @tc.desc   : Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonySimHasSimCard0400
+     * @tc.number SUB_Telephony_Sim_HasSimCard_0400
+     * @tc.desc   Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimHasSimCard0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonySimHasSimCard0400';
@@ -87,12 +87,12 @@ export default function Sim3Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_HasSimCard_0900
-     * @tc.name   : testTelephonySimHasSimCard0900
-     * @tc.desc   : Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous promise.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonySimHasSimCard0900
+     * @tc.number SUB_Telephony_Sim_HasSimCard_0900
+     * @tc.desc   Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimHasSimCard0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonySimHasSimCard0900';
@@ -118,12 +118,12 @@ export default function Sim3Public() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_HasSimCardSync_0300
-     * @tc.name   : testTelephonySimHasSimCardSync_static_0300
-     * @tc.desc   : Obtain the SIM card type for the specified slot. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   testTelephonySimHasSimCardSync_static_0300
+     * @tc.number SUB_Telephony_Sim_HasSimCardSync_0300
+     * @tc.desc   Obtain the SIM card type for the specified slot. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonySimHasSimCardSync_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonySimHasSimCardSync_static_0300';
@@ -141,7 +141,7 @@ export default function Sim3Public() {
           hilog.info(domain, tag, `${caseName} test end `);
           done();
         }
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         if (err?.code === 8300001) {
           hilog.info(domain, tag,`${caseName}	Invalid parameter value: err->${JSON.stringify(err)}`);

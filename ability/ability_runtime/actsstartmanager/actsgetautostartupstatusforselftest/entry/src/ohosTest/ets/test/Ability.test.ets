@@ -29,9 +29,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0100 
-     * @tc.name: Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0100 
-     * @tc.desc: getAutoStartupStatusForSelf return false or throw 801.
+     * @tc.name   Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0100
+     * @tc.number Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0100
+     * @tc.desc   getAutoStartupStatusForSelf return false or throw 801.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: Function) => {
@@ -59,9 +62,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0200 
-     * @tc.name: Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0200 
-     * @tc.desc: getAutoStartupStatusForSelf return false or throw 801 when call it in thread.
+     * @tc.name   Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0200
+     * @tc.number Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0200
+     * @tc.desc   getAutoStartupStatusForSelf return false or throw 801 when call it in thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: Function) => {
@@ -86,9 +92,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0300 
-     * @tc.name: Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0300 
-     * @tc.desc: getAutoStartupStatusForSelf return false or throw 801 when call it in isolated process.
+     * @tc.name   Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0300
+     * @tc.number Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0300
+     * @tc.desc   getAutoStartupStatusForSelf return false or throw 801 when call it in isolated process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Ability_AbilityRuntime_GetAutoStartupStatus_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: Function) => {

@@ -26,13 +26,13 @@ export default function commonAttrsTouchableTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0100
-     * @tc.name       : testCommonAttrsTouchable001
-     * @tc.desc       : testing touchable for commonAttrs with valid value true
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTouchable001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0100
+     * @tc.desc   testing touchable for commonAttrs with valid value true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTouchable001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`commonattrs/CommonAttrsTouchableTest`, done);
@@ -41,39 +41,39 @@ export default function commonAttrsTouchableTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0200
-     * @tc.name       : testCommonAttrsTouchable02
-     * @tc.desc       : testing touchable for commonAttrs with valid value false
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTouchable002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0200
+     * @tc.desc   testing touchable for commonAttrs with valid value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTouchable002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTouchable002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0300
-     * @tc.name       : testCommonAttrsTouchable003
-     * @tc.desc       : testing touchable for commonAttrs with invalid value-1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTouchable003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0300
+     * @tc.desc   testing touchable for commonAttrs with invalid value-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTouchable003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTouchable003()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0400
-     * @tc.name       : testCommonAttrsTouchable004
-     * @tc.desc       : testing resetAttribute touchable for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTouchable004
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TOUCHABLE_0400
+     * @tc.desc   testing resetAttribute touchable for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTouchable004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTouchable004()).assertEqual(0)

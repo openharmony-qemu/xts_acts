@@ -112,12 +112,12 @@ export default function AuxiliaryPictureSetMetadataTest() {
     });
 
     /**
-     * @tc.number    : AUXILIARY_PICTURE_SET_METADATA_001
-     * @tc.name      : auxiliaryPicture_setMetadata_promise_001
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   auxiliaryPicture_setMetadata_promise_001
+     * @tc.number AUXILIARY_PICTURE_SET_METADATA_001
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_setMetadata_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_setMetadata_promise_001';
@@ -128,12 +128,12 @@ export default function AuxiliaryPictureSetMetadataTest() {
     })
 
     /**
-     * @tc.number    : AUXILIARY_PICTURE_SET_METADATA_002
-     * @tc.name      : auxiliaryPicture_setMetadata_promise_002
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   auxiliaryPicture_setMetadata_promise_002
+     * @tc.number AUXILIARY_PICTURE_SET_METADATA_002
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_setMetadata_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_setMetadata_promise_002';
@@ -144,12 +144,12 @@ export default function AuxiliaryPictureSetMetadataTest() {
     })
 
     /**
-     * @tc.number    : AUXILIARY_PICTURE_SET_METADATA_003
-     * @tc.name      : auxiliaryPicture_setMetadata_abnormal_promise_001
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   auxiliaryPicture_setMetadata_abnormal_promise_001
+     * @tc.number AUXILIARY_PICTURE_SET_METADATA_003
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_setMetadata_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_setMetadata_abnormal_promise_001';
@@ -160,12 +160,12 @@ export default function AuxiliaryPictureSetMetadataTest() {
     })
 
     /**
-     * @tc.number    : AUXILIARY_PICTURE_SET_METADATA_005
-     * @tc.name      : auxiliaryPicture_setMetadata_abnormal_promise_002
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   auxiliaryPicture_setMetadata_abnormal_promise_002
+     * @tc.number AUXILIARY_PICTURE_SET_METADATA_005
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_setMetadata_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_setMetadata_abnormal_promise_002';
@@ -176,12 +176,12 @@ export default function AuxiliaryPictureSetMetadataTest() {
     })
 
     /**
-     * @tc.number    : AUXILIARY_PICTURE_SET_METADATA_006
-     * @tc.name      : auxiliaryPicture_setMetadata_abnormal_promise_003
-     * @tc.desc      : setMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   auxiliaryPicture_setMetadata_abnormal_promise_003
+     * @tc.number AUXILIARY_PICTURE_SET_METADATA_006
+     * @tc.desc   setMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_setMetadata_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_setMetadata_abnormal_promise_003';

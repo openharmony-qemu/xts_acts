@@ -112,12 +112,12 @@ export default function CameraInputTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpen0100
-     * @tc.name       : testOHCameraInputOpen0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputOpen0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpen0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputOpen0100', Level.LEVEL0, () => {
       createCameraInput()
@@ -126,12 +126,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpen0200
-     * @tc.name       : testOHCameraInputOpen0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputOpen0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputOpen0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputOpen0200', Level.LEVEL0, () => {
       createCameraInput()
@@ -140,12 +140,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputClose0100
-     * @tc.name       : testOHCameraInputClose0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputClose0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputClose0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputClose0100', Level.LEVEL0, () => {
       createCameraInput()
@@ -154,12 +154,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputClose0200
-     * @tc.name       : testOHCameraInputClose0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputClose0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputClose0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputClose0200', Level.LEVEL0, () => {
       createCameraInput()
@@ -168,12 +168,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRelease0100
-     * @tc.name       : testOHCameraInputRelease0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputRelease0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRelease0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputRelease0100', Level.LEVEL0, () => {
       createCameraInput()
@@ -182,12 +182,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRelease0200
-     * @tc.name       : testOHCameraInputRelease0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputRelease0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRelease0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputRelease0200', Level.LEVEL0, () => {
       createCameraInput()
@@ -196,12 +196,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterCallback0100
-     * @tc.name       : testOHCameraInputRegisterCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputRegisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterCallback0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputRegisterCallback0100', Level.LEVEL0, () => {
       createCameraInput()
@@ -210,12 +210,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterCallback0200
-     * @tc.name       : testOHCameraInputRegisterCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputRegisterCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterCallback0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputRegisterCallback0200', Level.LEVEL0, () => {
       createCameraInput()
@@ -224,12 +224,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterCallback0300
-     * @tc.name       : testOHCameraInputRegisterCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputRegisterCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterCallback0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputRegisterCallback0300', Level.LEVEL0, () => {
       createCameraInput()
@@ -238,12 +238,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnregisterCallback0100
-     * @tc.name       : testOHCameraInputUnregisterCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputUnregisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnregisterCallback0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputUnregisterCallback0100', Level.LEVEL0, () => {
       createCameraInput()
@@ -252,12 +252,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnregisterCallback0200
-     * @tc.name       : testOHCameraInputUnregisterCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputUnregisterCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnregisterCallback0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputUnregisterCallback0200', Level.LEVEL0, () => {
       createCameraInput()
@@ -266,12 +266,12 @@ export default function CameraInputTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnregisterCallback0300
-     * @tc.name       : testOHCameraInputUnregisterCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraInputUnregisterCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnregisterCallback0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraInputUnregisterCallback0300', Level.LEVEL0, () => {
       createCameraInput()

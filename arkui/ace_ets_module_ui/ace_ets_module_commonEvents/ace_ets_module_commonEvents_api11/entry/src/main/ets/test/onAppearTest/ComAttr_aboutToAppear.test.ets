@@ -56,12 +56,12 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("aboutToAppearTest after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_aboutToAppearTest_0100
-     * @tc.name      aboutToAppearTest
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   aboutToAppearTest_0100
+     * @tc.number SUB_ACE_RICHEDITOR_aboutToAppearTest_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('aboutToAppearTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[aboutToAppearTest_0100] START');
@@ -85,12 +85,12 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_aboutToAppearTest_0200
-     * @tc.name      aboutToAppearTest
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   aboutToAppearTest_0200
+     * @tc.number SUB_ACE_RICHEDITOR_aboutToAppearTest_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('aboutToAppearTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[aboutToAppearTest_0200] START');

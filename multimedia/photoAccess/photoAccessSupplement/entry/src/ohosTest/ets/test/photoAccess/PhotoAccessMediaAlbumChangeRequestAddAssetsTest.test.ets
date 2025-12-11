@@ -45,12 +45,12 @@ export default function PhotoAccessMediaAlbumChangeRequestAddAssetsTest() {
     });
 
     /**
-     * @tc.number     MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001
-     * @tc.name       MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001
-     * @tc.desc       202空数组情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001
+     * @tc.number MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001
+     * @tc.desc   202空数组情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ALBUM_CHANGE_REQUEST_ADD_ASSETS_001';
@@ -67,7 +67,7 @@ export default function PhotoAccessMediaAlbumChangeRequestAddAssetsTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG , testName, `addAssetsDemo failed with error: ${err.code}, ${err.message}`);
-        expect(err.code).assertEqual('14000011');
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG , testName, 'done begin call');
       done();

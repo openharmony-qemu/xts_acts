@@ -21,13 +21,13 @@ export default function refreshOnRefreshingTest() {
 
   describe('RefreshOnRefreshingTest', () => {
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_REFRESH_ONREFRESHING_0100
-     * @tc.name: testRefreshOnRefreshing001
-     * @tc.desc: testing onRefreshing for Refresh with red value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRefreshOnRefreshing001
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_ONREFRESHING_0100
+     * @tc.desc   testing onRefreshing for Refresh with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshOnRefreshing001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'RefreshOnRefreshingTest';

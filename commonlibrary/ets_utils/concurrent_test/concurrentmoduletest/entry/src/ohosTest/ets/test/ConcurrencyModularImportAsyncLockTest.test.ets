@@ -58,12 +58,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
     })
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0100
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0100
-     * @tc.name ConcurrencyModularImportAsyncLockTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -86,12 +86,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0200
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0200
-     * @tc.name ConcurrencyModularImportAsyncLockTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -114,12 +114,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0300
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0300
-     * @tc.name ConcurrencyModularImportAsyncLockTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -142,12 +142,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0400
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0400
-     * @tc.name ConcurrencyModularImportAsyncLockTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -170,12 +170,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0500
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0500
-     * @tc.name ConcurrencyModularImportAsyncLockTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -201,12 +201,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0600
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0600
-     * @tc.name ConcurrencyModularImportAsyncLockTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -232,12 +232,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0700
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0700
-     * @tc.name ConcurrencyModularImportAsyncLockTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -263,12 +263,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0800
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0800
-     * @tc.name ConcurrencyModularImportAsyncLockTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -287,12 +287,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest0900
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_0900
-     * @tc.name ConcurrencyModularImportAsyncLockTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -310,12 +310,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1000
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1000
-     * @tc.name ConcurrencyModularImportAsyncLockTest1000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -333,12 +333,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1100
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1100
-     * @tc.name ConcurrencyModularImportAsyncLockTest1100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -356,12 +356,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1200
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1200
-     * @tc.name ConcurrencyModularImportAsyncLockTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -387,12 +387,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1300
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1300
-     * @tc.name ConcurrencyModularImportAsyncLockTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -418,12 +418,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1400
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1400
-     * @tc.name ConcurrencyModularImportAsyncLockTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -449,12 +449,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1500
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1500
-     * @tc.name ConcurrencyModularImportAsyncLockTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -480,12 +480,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1600
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1600
-     * @tc.name ConcurrencyModularImportAsyncLockTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -511,12 +511,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1700
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1700
-     * @tc.name ConcurrencyModularImportAsyncLockTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -534,12 +534,12 @@ export default function ConcurrencyModularImportAsyncLockTest() {
       });
 
     /**
+     * @tc.name   ConcurrencyModularImportAsyncLockTest1800
      * @tc.number SUB_CONCURRENCY_MODULAR_IMPORT_ASYNCLOCK_TEST_1800
-     * @tc.name ConcurrencyModularImportAsyncLockTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ConcurrencyModularImportAsyncLockTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

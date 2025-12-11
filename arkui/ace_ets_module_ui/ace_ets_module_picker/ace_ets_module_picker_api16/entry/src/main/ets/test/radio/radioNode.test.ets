@@ -48,12 +48,12 @@ export default function radioNodeTest() {
     })
    
     /**
-     * @tc.number    radioNode0100
-     * @tc.name      radioNode0100
-     * @tc.desc      frameNode: createNoderadioToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   radioNode0100
+     * @tc.number radioNode0100
+     * @tc.desc   frameNode: createNoderadioToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('radioNode0100', Level.LEVEL1, async (done: Function) => {
 

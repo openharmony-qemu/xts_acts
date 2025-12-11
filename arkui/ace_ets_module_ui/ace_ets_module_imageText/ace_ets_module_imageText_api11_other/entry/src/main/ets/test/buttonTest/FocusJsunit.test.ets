@@ -45,6 +45,14 @@ export default function focusJsunit() {
       console.info("focus after each called");
     });
 
+    /**
+     * @tc.name   focusTest_0100
+     * @tc.number focusTest_0100
+     * @tc.desc   focusTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('focusTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('focusTest_0100 START');
       try {

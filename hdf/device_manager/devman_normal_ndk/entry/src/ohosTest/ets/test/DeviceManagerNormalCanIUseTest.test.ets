@@ -57,7 +57,6 @@ export default function DeviceManagerNormalCanIUseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testDeviceManagerNormalCanIUsek001
      * @tc.number SUB_Driver_Ext_DeviceManagerNormalCanIUse_0100
      * @tc.desc   verify DeviceManagerCanIUse any device

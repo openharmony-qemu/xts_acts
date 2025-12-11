@@ -137,7 +137,6 @@ export default function relationalStoreCloudSyncEtsTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStorePRIKeyType0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0200
      * @tc.desc   test PRIKeyType string
@@ -168,7 +167,6 @@ export default function relationalStoreCloudSyncEtsTest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStorePRIKeyType0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0100
      * @tc.desc   test PRIKeyType number
@@ -197,7 +195,6 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreUTCTime0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0300
      * @tc.desc   test UTCTime type
@@ -221,7 +218,6 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreModifyTime0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0500
      * @tc.desc   test ModifyTime type
@@ -248,7 +244,6 @@ export default function relationalStoreCloudSyncEtsTest() {
       console.log(TAG + "************* testRdbStoreModifyTime0010 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreProgress0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0800
      * @tc.desc   test Progress type
@@ -271,7 +266,6 @@ export default function relationalStoreCloudSyncEtsTest() {
       console.log(TAG + "************* testRdbStoreProgress0010 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreStatistic0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0900
      * @tc.desc   test Statistic
@@ -297,7 +291,6 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreTableDetails0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_1000
      * @tc.desc   test TableDetails
@@ -324,7 +317,6 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreProgressCode0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0600
      * @tc.desc   test ProgressCode
@@ -354,7 +346,6 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreProgressDetails0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0700
      * @tc.desc   test ProgressDetails

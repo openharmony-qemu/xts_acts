@@ -19,7 +19,7 @@ import Utils from '../../src/test/Util.test';
 import {OnFirstContentfulPaintEvent,Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog';
-import { Callback } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
@@ -50,7 +50,7 @@ struct webOnFirstContFour {
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;

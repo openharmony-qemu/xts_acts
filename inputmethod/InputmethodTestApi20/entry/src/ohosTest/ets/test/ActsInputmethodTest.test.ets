@@ -19,7 +19,6 @@ import testNapi from 'libentry.so'
 export default function ActsInputmethodTest() {
   describe('ActsInputmethodTest', () => {
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100
      * @tc.desc   test OH_AttachOptions_IsShowKeyboard Null Pointer
@@ -46,7 +45,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_AttachOptions_GetRequestKeyboardReason_0200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_AttachOptions_GetRequestKeyboardReason_0200
      * @tc.desc   test OH_AttachOptions_GetRequestKeyboardReason Null Pointer
@@ -73,7 +71,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodController_Attach_0300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodController_Attach_0300
      * @tc.desc   test OH_InputMethodController_Attach Null Pointer
@@ -100,7 +97,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodController_Detach_0400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodController_Detach_0400
      * @tc.desc   test OH_InputMethodController_Detach Null Pointer
@@ -127,7 +123,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0500
      * @tc.desc   test OH_CursorInfo_SetRect Null Pointer
@@ -154,7 +149,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_SetRect_0600
      * @tc.desc   test OH_CursorInfo_SetRect Ok
@@ -181,7 +175,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0700
      * @tc.desc   test OH_CursorInfo_GetRect Null Pointer
@@ -208,7 +201,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_CursorInfo_GetRect_0800
      * @tc.desc   test OH_CursorInfo_GetRect Ok
@@ -235,7 +227,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_0900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_0900
      * @tc.desc   test OH_InputMethodProxy_ShowKeyboard Null Pointer
@@ -262,7 +253,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_1000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowKeyboard_1000
      * @tc.desc   test OH_InputMethodProxy_ShowKeyboard Detached
@@ -289,7 +279,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1100
      * @tc.desc   test OH_InputMethodProxy_ShowTextInput Null Pointer
@@ -316,7 +305,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_ShowTextInput_1200
      * @tc.desc   test OH_InputMethodProxy_ShowTextInput Detached
@@ -343,7 +331,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1300
      * @tc.desc   test OH_InputMethodProxy_HideKeyboard Null Pointer
@@ -370,7 +357,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_HideKeyboard_1400
      * @tc.desc   test OH_InputMethodProxy_HideKeyboard Detached
@@ -397,7 +383,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1500
      * @tc.desc   test OH_InputMethodProxy_NotifySelectionChange Null Pointer
@@ -424,7 +409,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1600
      * @tc.desc   test OH_InputMethodProxy_NotifySelectionChange Detached
@@ -451,7 +435,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifySelectionChange_1700
      * @tc.desc   test OH_InputMethodProxy_NotifySelectionChange PARAMCHECK Error
@@ -478,7 +461,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1800
      * @tc.desc   test OH_InputMethodProxy_NotifyConfigurationChange Null Pointer
@@ -505,7 +487,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_1900
      * @tc.desc   test OH_InputMethodProxy_NotifyConfigurationChange Detached
@@ -532,7 +513,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_2000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyConfigurationChange_2000
      * @tc.desc   test OH_InputMethodProxy_NotifyConfigurationChange PARAMCHECK Error
@@ -559,7 +539,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2100
      * @tc.desc   test OH_InputMethodProxy_NotifyCursorUpdate Null Pointer
@@ -586,7 +565,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2200
      * @tc.desc   test OH_InputMethodProxy_NotifyCursorUpdate Detached
@@ -613,7 +591,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_NotifyCursorUpdate_2300
      * @tc.desc   test OH_InputMethodProxy_NotifyCursorUpdate PARAMCHECK Error
@@ -640,7 +617,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2400
      * @tc.desc   test OH_InputMethodProxy_SendPrivateCommand Null Pointer
@@ -667,7 +643,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2500
      * @tc.desc   test OH_InputMethodProxy_SendPrivateCommand Detached
@@ -694,7 +669,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_InputMethodProxy_SendPrivateCommand_2600
      * @tc.desc   test OH_InputMethodProxy_SendPrivateCommand PARAMCHECK Error
@@ -721,7 +695,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2700
      * @tc.desc   test OH_PrivateCommand_SetKey Null Pointer
@@ -748,7 +721,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetKey_2800
      * @tc.desc   test OH_PrivateCommand_SetKey OK
@@ -775,7 +747,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetBoolValue_2900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetBoolValue_2900
      * @tc.desc   test OH_PrivateCommand_SetBoolValue Null Pointer
@@ -802,7 +773,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetIntValue_3000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetIntValue_3000
      * @tc.desc   test OH_PrivateCommand_SetIntValue Null Pointer
@@ -829,7 +799,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetStrValue_3100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_SetStrValue_3100
      * @tc.desc   test OH_PrivateCommand_SetStrValue Null Pointer
@@ -856,7 +825,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3200
      * @tc.desc   test OH_PrivateCommand_GetKey Null Pointer
@@ -883,7 +851,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetKey_3300
      * @tc.desc   test OH_PrivateCommand_GetKey Ok
@@ -910,7 +877,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3400
      * @tc.desc   test OH_PrivateCommand_GetValueType Null Pointer
@@ -937,7 +903,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetValueType_3500
      * @tc.desc   test OH_PrivateCommand_GetValueType Ok
@@ -964,7 +929,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3600
      * @tc.desc   test OH_PrivateCommand_GetBoolValue Null Pointer
@@ -991,7 +955,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3700
      * @tc.desc   test OH_PrivateCommand_GetBoolValue Ok
@@ -1018,7 +981,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetBoolValue_3800
      * @tc.desc   test OH_PrivateCommand_GetBoolValue Query Failed
@@ -1045,7 +1007,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_3900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_3900
      * @tc.desc   test OH_PrivateCommand_GetIntValue Null Pointer
@@ -1072,7 +1033,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4000
      * @tc.desc   test OH_PrivateCommand_GetIntValue Ok
@@ -1099,7 +1059,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetIntValue_4100
      * @tc.desc   test OH_PrivateCommand_GetIntValue Query Failed
@@ -1126,7 +1085,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4200
      * @tc.desc   test OH_PrivateCommand_GetStrValue Null Pointer
@@ -1153,7 +1111,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4300
      * @tc.desc   test OH_PrivateCommand_GetStrValue Ok
@@ -1180,7 +1137,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_PrivateCommand_GetStrValue_4400
      * @tc.desc   test OH_PrivateCommand_GetStrValue Query Failed
@@ -1207,7 +1163,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500
      * @tc.desc   test OH_TextAvoidInfo_SetPositionY Null Pointer
@@ -1234,7 +1189,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4600
      * @tc.desc   test OH_TextAvoidInfo_SetPositionY Ok
@@ -1261,7 +1215,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4700
      * @tc.desc   test OH_TextAvoidInfo_SetHeight Null Pointer
@@ -1288,7 +1241,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetHeight_4800
      * @tc.desc   test OH_TextAvoidInfo_SetHeight Ok
@@ -1315,7 +1267,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_4900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_4900
      * @tc.desc   test OH_TextAvoidInfo_GetPositionY Null Pointer
@@ -1342,7 +1293,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_5000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetPositionY_5000
      * @tc.desc   test OH_TextAvoidInfo_GetPositionY Ok
@@ -1369,7 +1319,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5100
      * @tc.desc   test OH_TextAvoidInfo_GetHeight Null Pointer
@@ -1396,7 +1345,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_GetHeight_5200
      * @tc.desc   test OH_TextAvoidInfo_GetHeight Ok
@@ -1423,7 +1371,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5300
      * @tc.desc   test OH_TextConfig_SetInputType Null Pointer
@@ -1450,7 +1397,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetInputType_5400
      * @tc.desc   test OH_TextConfig_SetInputType Ok
@@ -1477,7 +1423,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5500
      * @tc.desc   test OH_TextConfig_SetEnterKeyType Null Pointer
@@ -1504,7 +1449,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetEnterKeyType_5600
      * @tc.desc   test OH_TextConfig_SetEnterKeyType Ok
@@ -1531,7 +1475,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5700
      * @tc.desc   test OH_TextConfig_SetPreviewTextSupport Null Pointer
@@ -1558,7 +1501,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPreviewTextSupport_5800
      * @tc.desc   test OH_TextConfig_SetPreviewTextSupport Ok
@@ -1585,7 +1527,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_5900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_5900
      * @tc.desc   test OH_TextConfig_SetSelection Null Pointer
@@ -1612,7 +1553,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_6000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetSelection_6000
      * @tc.desc   test OH_TextConfig_SetSelection Ok
@@ -1639,7 +1579,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6100
      * @tc.desc   test OH_TextConfig_SetWindowId Null Pointer
@@ -1666,7 +1605,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6200
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetWindowId_6200
      * @tc.desc   test OH_TextConfig_SetWindowId Ok
@@ -1693,7 +1631,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6300
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6300
      * @tc.desc   test OH_TextConfig_SetPlaceholder Null Pointer
@@ -1720,7 +1657,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6400
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetPlaceholder_6400
      * @tc.desc   test OH_TextConfig_SetPlaceholder Ok
@@ -1747,7 +1683,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6500
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6500
      * @tc.desc   test OH_TextConfig_SetAbilityName Null Pointer
@@ -1774,7 +1709,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6600
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_SetAbilityName_6600
      * @tc.desc   test OH_TextConfig_SetAbilityName Ok
@@ -1801,7 +1735,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6700
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6700
      * @tc.desc   test OH_TextConfig_GetInputType Null Pointer
@@ -1828,7 +1761,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6800
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetInputType_6800
      * @tc.desc   test OH_TextConfig_GetInputType Ok
@@ -1855,7 +1787,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_6900
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_6900
      * @tc.desc   test OH_TextConfig_GetEnterKeyType Null Pointer
@@ -1882,7 +1813,6 @@ export default function ActsInputmethodTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_7000
      * @tc.number SUB_InputMethod_Imf_SDK_OH_TextConfig_GetEnterKeyType_7000
      * @tc.desc   test OH_TextConfig_GetEnterKeyType Ok

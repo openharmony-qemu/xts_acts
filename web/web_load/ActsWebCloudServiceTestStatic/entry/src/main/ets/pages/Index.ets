@@ -8,6 +8,7 @@ import webView from '@ohos.web.webview';
 import { Utils } from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
+import { RecordData } from '@ohos.base';
 
 class TestObj {
   constructor() {
@@ -51,7 +52,7 @@ struct MyStateSample {
       hilog.info(0x0000, 'testTag', "web page valueChangeCallBack");
       if (eventData != null) {
         hilog.info(0x0000, 'testTag', "valueChangeCallBack=" + JSON.stringify(eventData));
-        const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+        const data = eventData.data as Record<string, RecordData>;
         if (data != null && data['ACTION'] != null) {
           try {
             this.clickEvent = String(data['ACTION']);

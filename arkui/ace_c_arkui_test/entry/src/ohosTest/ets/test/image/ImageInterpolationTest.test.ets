@@ -26,78 +26,78 @@ export default function imageInterpolationTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0100
-     * @tc.name       : testImageInterpolation001
-     * @tc.desc       : testing interpolation for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageInterpolation001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0100
+     * @tc.desc   testing interpolation for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageInterpolation001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageInterpolation001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0200
-     * @tc.name       : testImageInterpolation002
-     * @tc.desc       : testing interpolation for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageInterpolation002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0200
+     * @tc.desc   testing interpolation for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageInterpolation002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageInterpolation002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0300
-     * @tc.name       : testImageInterpolation003
-     * @tc.desc       : testing interpolation for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageInterpolation003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0300
+     * @tc.desc   testing interpolation for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageInterpolation003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageInterpolation003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0400
-     * @tc.name       : testImageInterpolation004
-     * @tc.desc       : testing interpolation for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageInterpolation004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0400
+     * @tc.desc   testing interpolation for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageInterpolation004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageInterpolation004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0500
-     * @tc.name       : testImageInterpolation005
-     * @tc.desc       : testing interpolation for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageInterpolation005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0500
+     * @tc.desc   testing interpolation for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageInterpolation005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageInterpolation005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0600
-     * @tc.name       : testImageInterpolation006
-     * @tc.desc       : testing interpolation for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageInterpolation006
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_INTERPOLATION_0600
+     * @tc.desc   testing interpolation for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageInterpolation006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageInterpolation006()).assertEqual(0)

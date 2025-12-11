@@ -25,7 +25,6 @@ export default function SixPointZeroResMgrStageTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSysResourceManager_0100
      * @tc.number SUB_GLOBAL_ResourceManager_getSysResourceManager_0100
      * @tc.desc   getSysResourceManager

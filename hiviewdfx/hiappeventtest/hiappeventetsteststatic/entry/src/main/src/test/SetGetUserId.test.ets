@@ -24,12 +24,12 @@ export default function SetGetUserIdTest() {
     hilog.info(domain, tag, 'describe start');
 
     /**
+     * @tc.name   testSetGetUserId01
      * @tc.number SUB_DFX_SetGetUserId_0100
-     * @tc.name testSetGetUserId01
-     * @tc.desc 验证多次setUserId，用户id名与值合法，getUserId获取userid值与设置一致
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证多次setUserId，用户id名与值合法，getUserId获取userid值与设置一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId01', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId01 start');
@@ -62,12 +62,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId02
      * @tc.number SUB_DFX_SetGetUserId_0200
-     * @tc.name testSetGetUserId02
-     * @tc.desc 验证setUserId，用户id名重复，用户id值更新
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserId，用户id名重复，用户id值更新
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId02', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId02 start');
@@ -86,12 +86,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId03
      * @tc.number SUB_DFX_SetGetUserId_0300
-     * @tc.name testSetGetUserId03
-     * @tc.desc 验证setUserId，用户id值为空字符，清除用户id
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserId，用户id值为空字符，清除用户id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId03', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId03 start');
@@ -110,12 +110,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId04
      * @tc.number SUB_DFX_SetGetUserId_0400
-     * @tc.name testSetGetUserId04
-     * @tc.desc 验证setUserId，用户id名为空字符串，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserId，用户id名为空字符串，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId04', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId04 start');
@@ -132,12 +132,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId05
      * @tc.number SUB_DFX_SetGetUserId_0500
-     * @tc.name testSetGetUserId05
-     * @tc.desc 验证setUserId，用户id名257字节，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserId，用户id名257字节，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId05', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId05 start');
@@ -158,12 +158,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId06
      * @tc.number SUB_DFX_SetGetUserId_0600
-     * @tc.name testSetGetUserId06
-     * @tc.desc 验证setUserId，用户id名数字开头，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserId，用户id名数字开头，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId06', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId06 start');
@@ -181,12 +181,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId07
      * @tc.number SUB_DFX_SetGetUserId_0700
-     * @tc.name testSetGetUserId07
-     * @tc.desc 验证setUserId，用户id值长度为257字节，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setUserId，用户id值长度为257字节，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId07', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId07 start');
@@ -207,12 +207,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId08
      * @tc.number SUB_DFX_SetGetUserId_0800
-     * @tc.name testSetGetUserId08
-     * @tc.desc 验证getUserId，用户id名为空，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getUserId，用户id名为空，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId08', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId08 start');
@@ -229,12 +229,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId09
      * @tc.number SUB_DFX_SetGetUserId_0900
-     * @tc.name testSetGetUserId09
-     * @tc.desc 验证getUserId，用户id名257字节，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getUserId，用户id名257字节，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId09', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId09 start');
@@ -255,12 +255,12 @@ export default function SetGetUserIdTest() {
     });
 
     /**
+     * @tc.name   testSetGetUserId10
      * @tc.number SUB_DFX_SetGetUserId_1000
-     * @tc.name testSetGetUserId10
-     * @tc.desc 验证getUserId，用户id名数字开头，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getUserId，用户id名数字开头，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetGetUserId10', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testSetGetUserId10 start');

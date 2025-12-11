@@ -45,6 +45,14 @@ export default function playModeJsunit() {
       console.info("playMode after each called");
     });
 
+    /**
+     * @tc.name   playModeTest_0100
+     * @tc.number playModeTest_0100
+     * @tc.desc   playModeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('playModeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('playModeTest_0100 START');
       await CommonFunc.sleep(1500);

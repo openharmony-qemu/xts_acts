@@ -54,14 +54,14 @@ export default function ListTest() {
       console.info("afterAll case");
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_0100
-    * @tc.name  : ArkUI_Stage_List_OnDigitalCrown_0100
-    * @tc.desc  : The OnDigitalCrown method for testing the listitem component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUI_Stage_List_OnDigitalCrown_0100
+     * @tc.number ArkUI_Stage_List_OnDigitalCrown_0100
+     * @tc.desc   The OnDigitalCrown method for testing the listitem component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_List_OnDigitalCrown_0100',  Level.LEVEL1, async (done: Function) => {
       // Verify the functions of the ListItem component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_0100] START');
@@ -76,14 +76,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_0200
-    * @tc.name  : ArkUI_Stage_List_OnDigitalCrown_0200
-    * @tc.desc  : The OnDigitalCrown method for testing the listitem component with undefine scene.
-    * @tc.level : Level 2
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUI_Stage_List_OnDigitalCrown_0200
+     * @tc.number ArkUI_Stage_List_OnDigitalCrown_0200
+     * @tc.desc   The OnDigitalCrown method for testing the listitem component with undefine scene.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_List_OnDigitalCrown_0200',  Level.LEVEL1, async (done: Function) => {
       // Verify the functions of the ListItem component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_0200] START');
@@ -98,14 +98,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_0300
-    * @tc.name  : ArkUI_Stage_List_OnDigitalCrown_0300
-    * @tc.desc  : The OnDigitalCrown method for testing the button component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUI_Stage_List_OnDigitalCrown_0300
+     * @tc.number ArkUI_Stage_List_OnDigitalCrown_0300
+     * @tc.desc   The OnDigitalCrown method for testing the button component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_List_OnDigitalCrown_0300',  Level.LEVEL1, async (done: Function) => {
       // Verify the functions of the button component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_0300] START');
@@ -120,14 +120,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_0400
-    * @tc.name  : ArkUI_Stage_List_OnDigitalCrown_0400
-    * @tc.desc  : The OnDigitalCrown method for testing the button component with undefine scene.
-    * @tc.level : Level 2
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUI_Stage_List_OnDigitalCrown_0400
+     * @tc.number ArkUI_Stage_List_OnDigitalCrown_0400
+     * @tc.desc   The OnDigitalCrown method for testing the button component with undefine scene.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_List_OnDigitalCrown_0400',  Level.LEVEL1, async (done: Function) => {
       // Verify the functions of the button component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_0400] START');
@@ -142,14 +142,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_0500
-    * @tc.name  : ArkUI_Stage_List_OnDigitalCrown_0500
-    * @tc.desc  : The OnDigitalCrown method for testing the text component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUI_Stage_List_OnDigitalCrown_0500
+     * @tc.number ArkUI_Stage_List_OnDigitalCrown_0500
+     * @tc.desc   The OnDigitalCrown method for testing the text component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_List_OnDigitalCrown_0500',  Level.LEVEL1, async (done: Function) => {
       // Verify the functions of the text component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_0500] START');
@@ -164,14 +164,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_0600
-    * @tc.name  : ArkUI_Stage_List_OnDigitalCrown_0600
-    * @tc.desc  : The OnDigitalCrown method for testing the text component with undefine scene.
-    * @tc.level : Level 2
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUI_Stage_List_OnDigitalCrown_0600
+     * @tc.number ArkUI_Stage_List_OnDigitalCrown_0600
+     * @tc.desc   The OnDigitalCrown method for testing the text component with undefine scene.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_List_OnDigitalCrown_0600',  Level.LEVEL1, async (done: Function) => {
       // Verify the functions of the text component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_0600] START');

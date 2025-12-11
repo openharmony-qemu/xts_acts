@@ -49,9 +49,12 @@ export default function flexWrapReverse_fixedParentChildLayoutWeight() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedLayoutWeight
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1600
-     * @tc.name testWrapReverseParentfixedLayoutWeight
-     * @tc.desc The layout space of the parent component is fixed, and the layoutweight is set for child component
+     * @tc.desc   The layout space of the parent component is fixed, and the layoutweight is set for child component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedLayoutWeight',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedLayoutWeight START');

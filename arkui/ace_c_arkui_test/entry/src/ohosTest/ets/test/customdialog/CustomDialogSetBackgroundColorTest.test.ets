@@ -26,52 +26,52 @@ export default function customDialogSetBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0100
-     * @tc.name       : testCustomDialogSetBackgroundColor001
-     * @tc.desc       : testing setBackgroundColor for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0100
+     * @tc.desc   testing setBackgroundColor for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0200
-     * @tc.name       : testCustomDialogSetBackgroundColor002
-     * @tc.desc       : testing setBackgroundColor for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0200
+     * @tc.desc   testing setBackgroundColor for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0300
-     * @tc.name       : testCustomDialogSetBackgroundColor003
-     * @tc.desc       : testing setBackgroundColor for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0300
+     * @tc.desc   testing setBackgroundColor for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetBackgroundColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0400
-     * @tc.name       : testCustomDialogSetBackgroundColor004
-     * @tc.desc       : testing setBackgroundColor for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetBackgroundColor004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETBACKGROUNDCOLOR_0400
+     * @tc.desc   testing setBackgroundColor for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetBackgroundColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetBackgroundColor004()).assertEqual(0)

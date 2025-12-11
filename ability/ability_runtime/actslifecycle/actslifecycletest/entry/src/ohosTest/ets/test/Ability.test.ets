@@ -47,11 +47,13 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
-     * @tc.desc    Callback verification for getTopAbility interface
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100
+     * @tc.desc   Callback verification for getTopAbility interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0100';
@@ -87,11 +89,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
-     * @tc.name    SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
-     * @tc.desc    Callback verification for getTopAbility interface
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
+     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600
+     * @tc.desc   Callback verification for getTopAbility interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0600';
@@ -133,11 +137,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
-     * @tc.name    SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
-     * @tc.desc    Callback verification for getTopAbility interface
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
+     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500
+     * @tc.desc   Callback verification for getTopAbility interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory_0500';

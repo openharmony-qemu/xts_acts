@@ -97,7 +97,6 @@ describe('relationalStoreResultSetTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
      * @tc.desc   resultSet getBlob normal test
@@ -129,7 +128,6 @@ describe('relationalStoreResultSetTest', () => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0010 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8300
      * @tc.desc   resultSet getRow normal test
@@ -160,7 +158,6 @@ describe('relationalStoreResultSetTest', () => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0020 end *************');
     })
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8500
      * @tc.desc   resultSet getRow normal test

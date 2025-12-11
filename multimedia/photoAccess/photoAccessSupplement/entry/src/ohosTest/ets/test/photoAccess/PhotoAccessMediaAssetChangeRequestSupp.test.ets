@@ -57,12 +57,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_001
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_001
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_001
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_001
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_001', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -77,12 +77,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_002
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_002
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_002
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_002
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_002', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -98,12 +98,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_003
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_003
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_003
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_003
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_003', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -118,12 +118,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_004
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_004
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_004
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_004
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_004', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -138,12 +138,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_005
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_005
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_005
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_005
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_005', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -159,12 +159,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_006
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_006
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_006
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_006
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_006', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -179,12 +179,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_007
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_007
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_007
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_007
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_007', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -200,12 +200,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_008
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_008
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_008
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_008
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_008', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -220,12 +220,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_009
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_009
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_009
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_009
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_009', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -240,12 +240,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_001
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_001
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_001
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_001
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_001', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -260,12 +260,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_002
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_002
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_002
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_002
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_002', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -281,12 +281,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_003
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_003
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_003
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_003
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_003', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -301,12 +301,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_004
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_004
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_004
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_004
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_004', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -321,12 +321,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_005
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_005
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_005
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_005
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_005', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -342,12 +342,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_006
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_006
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_006
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_006
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_006', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -362,12 +362,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_007
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_007
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_007
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_007
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_007', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -383,12 +383,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_008
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_008
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_008
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_008
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_13900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_008', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -403,12 +403,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_009
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_009
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_009
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_009
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_CreateImageAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_CreateVideoAssetRequest_009', Level.LEVEL0, async (done:Function)=> {
       try {
@@ -423,12 +423,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_001
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_001
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_001
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_001
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_001', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_001 start');
@@ -447,12 +447,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_002
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_002
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_002
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_002
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_002', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_002 start');
@@ -471,12 +471,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_003
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_003
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_003
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_003
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_003', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_003 start');
@@ -495,12 +495,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_004
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_004
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_004
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_004
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_004', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_004 start');
@@ -519,12 +519,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_005
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_005
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_005
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_005
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_005', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_005 start');
@@ -543,12 +543,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_006
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_006
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_006
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_006
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_006', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_006 start');
@@ -567,12 +567,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_007
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_007
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_007
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_007
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_007', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_007 start');
@@ -592,12 +592,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_008
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_008
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_008
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_008
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_008', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_008 start');
@@ -617,12 +617,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_009
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_009
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_009
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_009
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_009', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_009 start');
@@ -642,12 +642,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_010
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_010
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_010
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_010
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_010', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_010 start');
@@ -667,12 +667,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_011
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_011
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_011
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_011
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_011', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_011 start');
@@ -692,12 +692,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_012
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_012
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_012
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_012
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_012', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_012 start');
@@ -717,12 +717,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_0121
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_0121
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_0121
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_0121
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_0121', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_012 start');
@@ -743,12 +743,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
 
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_013
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_013
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_013
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_013
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_013', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_013 start');
@@ -768,12 +768,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_014
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_014
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_014
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_014
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_014', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_014 start');
@@ -793,12 +793,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_015
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_015
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_015
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_015
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_015', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_015 start');
@@ -818,12 +818,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_016
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_016
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_016
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_016
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_016', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_016 start');
@@ -843,12 +843,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_017
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_017
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_017
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_017
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_017', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_017 start');
@@ -868,12 +868,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_018
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_018
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_018
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_018
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_018', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_018 start');
@@ -891,12 +891,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_019
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_019
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_019
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_019
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_019', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_019 start');
@@ -914,12 +914,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_020
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_020
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_020
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_020
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_020', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_020 start');
@@ -941,12 +941,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_021
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_021
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_021
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_021
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_021', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_021 start');
@@ -968,12 +968,12 @@ export default function PhotoAccessMediaAssetChangeRequestSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_022
-     * @tc.name      : SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_022
-     * @tc.desc      : PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_022
+     * @tc.number SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_022
+     * @tc.desc   PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_error_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_022', Level.LEVEL0, async (done:Function)=> {
       console.info(TAG,'SUB_MEDIA_PHOTOACCESS_MediaAssetChangeRequest_createAssetRequest_022 start');

@@ -42,14 +42,14 @@ export default function TouchTestStrategy() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TOUCHTEST_TOUCHTESTSTRATEGY_0010
-    * @tc.name  : TouchTestStrategy_0100
-    * @tc.desc  : Specify the component to do touch test and follow the framework touch test.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   TouchTestStrategy_0100
+     * @tc.number SUB_ACE_TOUCHTEST_TOUCHTESTSTRATEGY_0010
+     * @tc.desc   Specify the component to do touch test and follow the framework touch test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TouchTestStrategy_0100', Level.LEVEL1, async (done: Function) => {
       console.info('TouchTestStrategy_0100 START');
       await CommonFunc.sleep(1000);

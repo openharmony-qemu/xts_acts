@@ -26,13 +26,12 @@ export default function AnimatorTest() {
       await Utils.pushPage(`AnimatorTest/AnimatorTest`, done);
     });
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_RESETANIMATOROPTION_0100
-     * @tc.name    : testOHArkUIAnimatorResetAnimatorOption0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorResetAnimatorOption0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_RESETANIMATOROPTION_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorResetAnimatorOption0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -50,13 +49,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_RESETANIMATOROPTION_0200
-     * @tc.name    : testOHArkUIAnimatorResetAnimatorOption0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorResetAnimatorOption0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_RESETANIMATOROPTION_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorResetAnimatorOption0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -74,13 +72,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_RESETANIMATOROPTION_0300
-     * @tc.name    : testOHArkUIAnimatorResetAnimatorOption0300
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorResetAnimatorOption0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_RESETANIMATOROPTION_0300
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorResetAnimatorOption0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -98,13 +95,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PLAY_0100
-     * @tc.name    : testOHArkUIAnimatorPlay0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorPlay0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PLAY_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorPlay0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -122,13 +118,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PLAY_0200
-     * @tc.name    : testOHArkUIAnimatorPlay0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorPlay0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PLAY_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorPlay0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -146,13 +141,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_FINISH_0100
-     * @tc.name    : testOHArkUIAnimatorFinish0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorFinish0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_FINISH_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorFinish0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -170,13 +164,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_FINISH_0200
-     * @tc.name    : testOHArkUIAnimatorFinish0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorFinish0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_FINISH_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorFinish0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -194,13 +187,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PAUSE_0100
-     * @tc.name    : testOHArkUIAnimatorPause0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorPause0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PAUSE_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorPause0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -218,13 +210,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PAUSE_0200
-     * @tc.name    : testOHArkUIAnimatorPause0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorPause0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_PAUSE_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorPause0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -242,13 +233,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_CANCEL_0100
-     * @tc.name    : testOHArkUIAnimatorCancel0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorCancel0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_CANCEL_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorCancel0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -266,13 +256,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_CANCEL_0200
-     * @tc.name    : testOHArkUIAnimatorCancel0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorCancel0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_CANCEL_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorCancel0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -290,13 +279,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_REVERSE_0100
-     * @tc.name    : testOHArkUIAnimatorReverse0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorReverse0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_REVERSE_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorReverse0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -314,13 +302,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_REVERSE_0200
-     * @tc.name    : testOHArkUIAnimatorReverse0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAnimatorReverse0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ANIMATOR_REVERSE_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAnimatorReverse0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -338,13 +325,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_COMBINE_0100
-     * @tc.name    : testOHArkUITransitionEffectCombine0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUITransitionEffectCombine0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_COMBINE_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUITransitionEffectCombine0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -362,13 +348,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_COMBINE_0200
-     * @tc.name    : testOHArkUITransitionEffectCombine0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUITransitionEffectCombine0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_COMBINE_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUITransitionEffectCombine0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -386,13 +371,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_SETANIMATION_0100
-     * @tc.name    : testOHArkUITransitionEffectSetAnimation0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUITransitionEffectSetAnimation0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_SETANIMATION_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUITransitionEffectSetAnimation0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -410,13 +394,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_SETANIMATION_0200
-     * @tc.name    : testOHArkUITransitionEffectSetAnimation0200
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUITransitionEffectSetAnimation0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_TRANSITIONEFFECT_SETANIMATION_0200
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUITransitionEffectSetAnimation0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -434,13 +417,12 @@ export default function AnimatorTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPOSEANIMATOR_0100
-     * @tc.name    : testDisposeAnimator0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testDisposeAnimator0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPOSEANIMATOR_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDisposeAnimator0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

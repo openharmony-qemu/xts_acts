@@ -26,15 +26,15 @@ export default function gestureInterrupterTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_GESTURE_INTERRUPTER_CASE_001
-     * @tc.name       : GestureInterrupterTest
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   GestureInterrupterTest
+     * @tc.number GestureInterrupterTest
+     * @tc.desc   GestureInterrupterTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GestureInterrupterTest', Level.LEVEL0, async (done: Function) => {
       let PAGE_TAG = 'GestureInterrupterTest';
       let PAGE_TAG5 = 'gestureInterrupterTest';

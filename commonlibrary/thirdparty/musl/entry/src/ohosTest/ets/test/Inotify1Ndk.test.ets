@@ -25,12 +25,12 @@ export default function inotify1NdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INOTIFY_INOTIFY_ADD_WATCH_0200
-     * @tc.name       : testMuslInotifyInotifyAddWatch002
-     * @tc.desc       : test inotify_add_watch
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslInotifyInotifyAddWatch002
+     * @tc.number SUB_THIRDPARTY_MUSL_INOTIFY_INOTIFY_ADD_WATCH_0200
+     * @tc.desc   test inotify_add_watch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInotifyInotifyAddWatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = inotify.inotifyAddWatch();
@@ -39,12 +39,12 @@ export default function inotify1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INOTIFY_INOTIFY_RM_WATCH_0200
-     * @tc.name       : testMuslInotifyInotifyRmWatch002
-     * @tc.desc       : test inotify_rm_watch
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslInotifyInotifyRmWatch002
+     * @tc.number SUB_THIRDPARTY_MUSL_INOTIFY_INOTIFY_RM_WATCH_0200
+     * @tc.desc   test inotify_rm_watch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInotifyInotifyRmWatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = inotify.inotifyRmWatch();

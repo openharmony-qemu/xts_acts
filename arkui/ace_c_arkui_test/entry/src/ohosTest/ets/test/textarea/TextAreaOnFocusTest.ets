@@ -25,13 +25,13 @@ export default function textAreaOnFocusTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ONFOCUS_0100
-     * @tc.name: testTextAreaOnFocus001
-     * @tc.desc: testing onfocus for textArea with red value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaOnFocus001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ONFOCUS_0100
+     * @tc.desc   testing onfocus for textArea with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaOnFocus001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TextAreaOnFocusTest';

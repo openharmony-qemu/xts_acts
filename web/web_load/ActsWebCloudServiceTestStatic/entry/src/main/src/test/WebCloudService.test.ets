@@ -48,12 +48,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBATTRIBUTE_ONPAGEBEGIN_0001
-         * @tc.name       : testOnPageBegin_static
-         * @tc.desc       : test OnPageBegin
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testOnPageBegin_static
+         * @tc.number SUB_WEB_WEBATTRIBUTE_ONPAGEBEGIN_0001
+         * @tc.desc   test OnPageBegin
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOnPageBegin_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnPageBegin", 10);
@@ -79,12 +79,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBATTRIBUTE_ONPAGEEND_0001
-         * @tc.name       : testOnPageEnd_static
-         * @tc.desc       : test OnPageEnd
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testOnPageEnd_static
+         * @tc.number SUB_WEB_WEBATTRIBUTE_ONPAGEEND_0001
+         * @tc.desc   test OnPageEnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOnPageEnd_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnPageEnd", 10);
@@ -109,12 +109,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBATTRIBUTE_ONPROGRESSCHANGE_0001
-         * @tc.name       : testOnProgressChange_static
-         * @tc.desc       : test OnProressChange
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testOnProgressChange_static
+         * @tc.number SUB_WEB_WEBATTRIBUTE_ONPROGRESSCHANGE_0001
+         * @tc.desc   test OnProressChange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOnProgressChange_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnProgressChange", 10);
@@ -139,12 +139,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBATTRIBUTE_ONLOADINTERCEPT_0001
-         * @tc.name       : testOnLoadIntercept_static
-         * @tc.desc       : test OnLoadIntercept
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testOnLoadIntercept_static
+         * @tc.number SUB_WEB_WEBATTRIBUTE_ONLOADINTERCEPT_0001
+         * @tc.desc   test OnLoadIntercept
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOnLoadIntercept_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnLoadIntercept", 10);
@@ -169,12 +169,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0001
-         * @tc.name       : testWebviewController_refresh_static
-         * @tc.desc       : test Refresh
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_refresh_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0001
+         * @tc.desc   test Refresh
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_refresh_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("Refresh", 10);
@@ -199,12 +199,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_STOP_0001
-         * @tc.name       : testWebviewController_stop_static
-         * @tc.desc       : test Stop
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_stop_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STOP_0001
+         * @tc.desc   test Stop
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_stop_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("Stop", 10);
@@ -228,12 +228,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_POSTURL_0001
-         * @tc.name       : testWebviewController_postUrl_static
-         * @tc.desc       : test PostUrl
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_postUrl_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_POSTURL_0001
+         * @tc.desc   test PostUrl
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_postUrl_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("PostUrl", 10);
@@ -258,12 +258,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETTITLE_0001
-         * @tc.name       : testWebviewController_loadData_getTitle_static
-         * @tc.desc       : test PostUrl
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_loadData_getTitle_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETTITLE_0001
+         * @tc.desc   test PostUrl
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_loadData_getTitle_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("LoadData", 10);
@@ -288,12 +288,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_URL_0001
-         * @tc.name       : testWebviewController_url_static
-         * @tc.desc       : test url
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_url_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_URL_0001
+         * @tc.desc   test url
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_url_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OriginalUrl", 10);
@@ -318,12 +318,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETLASTJAVASCRIPTPROXYCALLINGFRAMEURL_0001
-         * @tc.name       : testWebviewController_getLastJavascriptProxyCallingFrameUrl_static
-         * @tc.desc       : test GetLastJavascriptProxyCallingFrameUrl
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_getLastJavascriptProxyCallingFrameUrl_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETLASTJAVASCRIPTPROXYCALLINGFRAMEURL_0001
+         * @tc.desc   test GetLastJavascriptProxyCallingFrameUrl
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_getLastJavascriptProxyCallingFrameUrl_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("GetLastJavascriptProxyCallingFrameUrl", 10);
@@ -348,12 +348,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_BACKWARDANDFORWARD_0001
-         * @tc.name       : testWebviewController_backwardAndforward_static
-         * @tc.desc       : test BackwardAndForward
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_backwardAndforward_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKWARDANDFORWARD_0001
+         * @tc.desc   test BackwardAndForward
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_backwardAndforward_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("BackwardAndForward", 10);
@@ -379,12 +379,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARWEBSCHEMEHANDLER_0001
-         * @tc.name       : testWebviewController_clearWebSchemeHandler_static
-         * @tc.desc       : test ClearWebSchemeHandler
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebviewController_clearWebSchemeHandler_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARWEBSCHEMEHANDLER_0001
+         * @tc.desc   test ClearWebSchemeHandler
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebviewController_clearWebSchemeHandler_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("ClearWebSchemeHandler", 10);
@@ -409,12 +409,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_WEBSCHEMEHANDLERRESPONSE_0001
-         * @tc.name       : testWebview_webSchemeHandlerResponse_static
-         * @tc.desc       : test WebSchemeHandlerResponse
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebview_webSchemeHandlerResponse_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_WEBSCHEMEHANDLERRESPONSE_0001
+         * @tc.desc   test WebSchemeHandlerResponse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebview_webSchemeHandlerResponse_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("WebSchemeHandlerResponse", 10);
@@ -439,12 +439,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_WEBDOWNLOADITEM_0001
-         * @tc.name       : testWebview_webDownloadItem_static
-         * @tc.desc       : test WebDownloadItem
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebview_webDownloadItem_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_WEBDOWNLOADITEM_0001
+         * @tc.desc   test WebDownloadItem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebview_webDownloadItem_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("WebDownloadItem", 10);
@@ -469,12 +469,12 @@ export default function webCloudServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CONSTRUCTOR_0001
-         * @tc.name       : testWebview_Constructor_static
-         * @tc.desc       : test Constructor
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testWebview_Constructor_static
+         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CONSTRUCTOR_0001
+         * @tc.desc   test Constructor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testWebview_Constructor_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("Constructor", 10);

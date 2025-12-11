@@ -25,13 +25,13 @@ export default function nodeUtilMoveTestTestTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_MOVE_0100
-     * @tc.name       : testNodeUtilMove001
-     * @tc.desc       : testing move node
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeUtilMove001
+     * @tc.number SUB_ARKUI_CAPI_MOVE_0100
+     * @tc.desc   testing move node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeUtilMove001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestNodeUtilMove001';

@@ -64,7 +64,9 @@ export default class EmbeddableToUIAbility extends EmbeddableUIAbility {
         hilog.info(DOMAIN_NUMBER, TAG, 'this push data success embeddableUIAbility');
       }
     });
-    this.context.terminateSelf(()=>{});
+    setTimeout(() => { 
+      this.context.terminateSelf(); 
+    }, 500);
   }
 
   onBackground(): void {

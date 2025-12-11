@@ -110,7 +110,6 @@ export default function btManagerAdvertError401Test() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:46
            * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3000
            * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3000
            * @tc.desc   Test api 401 - parameters setting is null.
@@ -164,7 +163,6 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-           * @generated.time 2025-11-09 20:49:46
            * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3100
            * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3100
            * @tc.desc   Test api 401 - parameters setting is error type.
@@ -218,7 +216,6 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-           * @generated.time 2025-11-09 20:49:46
            * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3200
            * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3200
            * @tc.desc   Test api 401 - interval of setting is error type.
@@ -266,7 +263,6 @@ export default function btManagerAdvertError401Test() {
                })
 
                /**
-                * @generated.time 2025-11-09 20:49:46
                 * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3300
                 * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3300
                 * @tc.desc   Test api 401 - txPower of setting is error type.
@@ -314,7 +310,6 @@ export default function btManagerAdvertError401Test() {
                })
 
                /**
-                * @generated.time 2025-11-09 20:49:46
                 * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3400
                 * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3400
                 * @tc.desc   Test api 401 - connectable of setting is error type.
@@ -362,7 +357,6 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-           * @generated.time 2025-11-09 20:49:46
            * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3500
            * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3500
            * @tc.desc   Test api 401 - parameters advData is null.
@@ -399,7 +393,6 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-           * @generated.time 2025-11-09 20:49:46
            * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3600
            * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3600
            * @tc.desc   Test api 401 - serviceUuids of advData is null.
@@ -446,7 +439,6 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-           * @generated.time 2025-11-09 20:49:46
            * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3700
            * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3700
            * @tc.desc   Test api 401 - manufactureData of advData is null.
@@ -490,7 +482,6 @@ export default function btManagerAdvertError401Test() {
                })
 
           /**
-           * @generated.time 2025-11-09 20:49:46
            * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3800
            * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3800
            * @tc.desc   Test api 401 - serviceData of advData is null.
@@ -534,7 +525,6 @@ export default function btManagerAdvertError401Test() {
                })
 
                /**
-                * @generated.time 2025-11-09 20:49:46
                 * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3900
                 * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_3900
                 * @tc.desc   Test api 401 - manufactureValue of advData is error type.
@@ -577,7 +567,6 @@ export default function btManagerAdvertError401Test() {
                })
 
                /**
-                * @generated.time 2025-11-09 20:49:46
                 * @tc.name   SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_4000
                 * @tc.number SUB_COMMUNICATION_BTMANAGER_GATTADVERT_ERROR_4000
                 * @tc.desc   Test api 401 - serviceValue of advData is error type.

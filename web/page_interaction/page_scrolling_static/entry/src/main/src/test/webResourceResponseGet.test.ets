@@ -38,14 +38,14 @@ export default function webResourceResponseGet() {
       console.info('webResourceResponseGet beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTYPE_0100
-    * @tc.name       : testScrollTypeStatic001
-    * @tc.desc       : test ScrollType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testScrollTypeStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTYPE_0100
+     * @tc.desc   test ScrollType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testScrollType001', 10)
@@ -61,14 +61,14 @@ export default function webResourceResponseGet() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0100
-    * @tc.name       : testscrollByWithResultStatic001
-    * @tc.desc       : test ScrollByWithResult
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testscrollByWithResultStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0100
+     * @tc.desc   test ScrollByWithResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testscrollByWithResultStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testscrollByWithResult001', 10)
@@ -84,6 +84,14 @@ export default function webResourceResponseGet() {
         done();
       })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage3', 10)

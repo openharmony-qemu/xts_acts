@@ -82,7 +82,6 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PasteboardSetUnifiedData_0100
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_1900
      * @tc.desc   setUnifiedData getUnifiedData interface test
@@ -129,7 +128,6 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PasteboardSetUnifiedData_0200
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_2000
      * @tc.desc   setUnifiedDataSync getUnifiedDataSync interface test
@@ -177,7 +175,6 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PasteboardSetUnifiedData_0300
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_2100
      * @tc.desc   setUnifiedData getUnifiedDataSync interface test
@@ -223,7 +220,6 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PasteboardSetUnifiedData_0400
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_2200
      * @tc.desc   setUnifiedDataSync getUnifiedData interface test

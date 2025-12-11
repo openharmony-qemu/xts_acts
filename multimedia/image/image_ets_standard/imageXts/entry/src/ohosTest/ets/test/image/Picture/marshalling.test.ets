@@ -107,12 +107,12 @@ export default function PictureMarshallingTest() {
     });
 
     /**
-     * @tc.number    : PICTURE_MARSHALLING_001
-     * @tc.name      : picture_marshalling_promise_001
-     * @tc.desc      : picture_marshalling
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_marshalling_promise_001
+     * @tc.number PICTURE_MARSHALLING_001
+     * @tc.desc   picture_marshalling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_marshalling_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_marshalling_promise_001';

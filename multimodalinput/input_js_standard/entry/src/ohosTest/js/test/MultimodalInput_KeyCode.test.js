@@ -19,7 +19,6 @@ export default function MultimodalInput_KeyCode_test() {
   describe('MultimodalInput_KeyCode_test', function () {
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0010
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0010
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0010
@@ -36,7 +35,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0020
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0020
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0020
@@ -53,7 +51,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0030
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0030
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0030
@@ -70,7 +67,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0040
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0040
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0040
@@ -87,7 +83,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0050
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0050
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0050
@@ -104,7 +99,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0060
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0060
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0060
@@ -121,7 +115,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0070
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0070
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0070
@@ -138,7 +131,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0080
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0080
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0080
@@ -155,7 +147,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0090
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0090
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0090
@@ -172,7 +163,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0100
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0100
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0100
@@ -189,7 +179,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0110
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0110
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0110
@@ -206,7 +195,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0120
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0120
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0120
@@ -223,7 +211,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0130
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0130
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0130
@@ -240,7 +227,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0140
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0140
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0140
@@ -257,7 +243,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0150
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0150
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0150
@@ -274,7 +259,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0160
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0160
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0160
@@ -291,7 +275,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0170
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0170
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0170
@@ -308,7 +291,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0180
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0180
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0180
@@ -325,7 +307,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0190
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0190
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0190
@@ -342,7 +323,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0200
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0200
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0200
@@ -359,7 +339,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0210
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0210
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0210
@@ -376,7 +355,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0220
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0220
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0220
@@ -393,7 +371,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0230
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0230
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0230
@@ -410,7 +387,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0240
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0240
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0240
@@ -427,7 +403,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0250
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0250
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0250
@@ -445,7 +420,6 @@ export default function MultimodalInput_KeyCode_test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0260
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0260
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0260
@@ -462,7 +436,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0270
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0270
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0270
@@ -479,7 +452,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0280
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0280
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0280
@@ -496,7 +468,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0290
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0290
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0290
@@ -513,7 +484,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0300
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0300
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0300
@@ -530,7 +500,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0310
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0310
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0310
@@ -547,7 +516,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0320
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0320
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0320
@@ -564,7 +532,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0330
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0330
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0330
@@ -581,7 +548,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0340
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0340
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0340
@@ -598,7 +564,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0350
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0350
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0350
@@ -615,7 +580,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0360
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0360
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0360
@@ -632,7 +596,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0370
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0370
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0370
@@ -649,7 +612,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0380
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0380
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0380
@@ -666,7 +628,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0390
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0390
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0390
@@ -683,7 +644,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0400
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0400
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0400
@@ -700,7 +660,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0410
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0410
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0410
@@ -717,7 +676,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0420
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0420
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0420
@@ -734,7 +692,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0430
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0430
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0430
@@ -751,7 +708,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0440
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0440
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0440
@@ -768,7 +724,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0450
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0450
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0450
@@ -785,7 +740,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0460
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0460
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0460
@@ -802,7 +756,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0470
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0470
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0470
@@ -819,7 +772,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0480
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0480
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0480
@@ -836,7 +788,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0490
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0490
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0490
@@ -853,7 +804,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0500
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0500
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0500
@@ -870,7 +820,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0510
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0510
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0510
@@ -887,7 +836,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0520
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0520
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0520
@@ -904,7 +852,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0530
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0530
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0530
@@ -921,7 +868,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0540
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0540
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0540
@@ -938,7 +884,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0550
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0550
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0550
@@ -955,7 +900,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0560
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0560
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0560
@@ -972,7 +916,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0570
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0570
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0570
@@ -989,7 +932,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0580
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0580
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0580
@@ -1006,7 +948,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0590
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0590
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0590
@@ -1023,7 +964,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0600
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0600
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0600
@@ -1040,7 +980,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0610
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0610
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0610
@@ -1057,7 +996,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0620
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0620
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0620
@@ -1074,7 +1012,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0630
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0630
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0630
@@ -1091,7 +1028,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0640
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0640
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0640
@@ -1108,7 +1044,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0650
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0650
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0650
@@ -1125,7 +1060,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0660
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0660
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0660
@@ -1142,7 +1076,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0670
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0670
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0670
@@ -1159,7 +1092,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0680
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0680
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0680
@@ -1176,7 +1108,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0690
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0690
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0690
@@ -1193,7 +1124,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0700
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0700
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0700
@@ -1210,7 +1140,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0710
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0710
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0710
@@ -1227,7 +1156,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0720
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0720
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0720
@@ -1244,7 +1172,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0730
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0730
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0730
@@ -1261,7 +1188,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0740
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0740
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0740
@@ -1278,7 +1204,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0750
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0750
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0750
@@ -1295,7 +1220,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0760
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0760
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0760
@@ -1312,7 +1236,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0770
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0770
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0770
@@ -1329,7 +1252,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0780
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0780
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0780
@@ -1346,7 +1268,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0790
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0790
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0790
@@ -1363,7 +1284,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0800
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0800
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0800
@@ -1380,7 +1300,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0810
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0810
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0810
@@ -1397,7 +1316,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0820
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0820
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0820
@@ -1414,7 +1332,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0830
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0830
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0830
@@ -1431,7 +1348,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0840
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0840
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0840
@@ -1448,7 +1364,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0850
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0850
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0850
@@ -1465,7 +1380,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0860
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0860
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0860
@@ -1482,7 +1396,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0870
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0870
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0870
@@ -1499,7 +1412,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0880
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0880
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0880
@@ -1516,7 +1428,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0890
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0890
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0890
@@ -1533,7 +1444,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0900
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0900
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0900
@@ -1550,7 +1460,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0910
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0910
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0910
@@ -1567,7 +1476,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0920
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0920
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0920
@@ -1584,7 +1492,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0930
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0930
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0930
@@ -1601,7 +1508,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0940
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0940
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0940
@@ -1618,7 +1524,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0950
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0950
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0950
@@ -1635,7 +1540,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0960
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0960
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0960
@@ -1652,7 +1556,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0970
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0970
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0970
@@ -1669,7 +1572,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0980
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0980
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0980
@@ -1686,7 +1588,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0990
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0990
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_0990
@@ -1703,7 +1604,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_1000
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_1000
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_1000
@@ -1720,7 +1620,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_101
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_101
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_101
@@ -1737,7 +1636,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_102
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_102
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_102
@@ -1754,7 +1652,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_103
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_103
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_103
@@ -1771,7 +1668,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_104
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_104
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_104
@@ -1788,7 +1684,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_105
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_105
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_105
@@ -1805,7 +1700,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_106
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_106
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_106
@@ -1822,7 +1716,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_107
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_107
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_107
@@ -1839,7 +1732,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_108
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_108
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_108
@@ -1856,7 +1748,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_109
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_109
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_109
@@ -1873,7 +1764,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_110
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_110
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_110
@@ -1890,7 +1780,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_111
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_111
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_111
@@ -1907,7 +1796,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_112
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_112
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_112
@@ -1924,7 +1812,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_113
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_113
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_113
@@ -1941,7 +1828,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_114
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_114
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_114
@@ -1958,7 +1844,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_115
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_115
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_115
@@ -1975,7 +1860,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_116
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_116
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_116
@@ -1992,7 +1876,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_117
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_117
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_117
@@ -2009,7 +1892,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_118
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_118
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_118
@@ -2026,7 +1908,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_119
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_119
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_119
@@ -2043,7 +1924,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_120
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_120
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_120
@@ -2060,7 +1940,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_121
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_121
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_121
@@ -2077,7 +1956,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_122
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_122
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_122
@@ -2094,7 +1972,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_123
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_123
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_123
@@ -2111,7 +1988,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_124
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_124
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_124
@@ -2128,7 +2004,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_125
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_125
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_125
@@ -2145,7 +2020,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_126
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_126
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_126
@@ -2162,7 +2036,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_127
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_127
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_127
@@ -2179,7 +2052,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_128
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_128
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_128
@@ -2196,7 +2068,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_129
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_129
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_129
@@ -2213,7 +2084,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_130
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_130
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_130
@@ -2230,7 +2100,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_131
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_131
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_131
@@ -2247,7 +2116,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_132
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_132
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_132
@@ -2264,7 +2132,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_133
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_133
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_133
@@ -2281,7 +2148,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_134
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_134
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_134
@@ -2298,7 +2164,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_135
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_135
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_135
@@ -2315,7 +2180,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_136
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_136
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_136
@@ -2332,7 +2196,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_137
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_137
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_137
@@ -2349,7 +2212,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_138
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_138
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_138
@@ -2366,7 +2228,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_139
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_139
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_139
@@ -2383,7 +2244,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_140
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_140
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_140
@@ -2400,7 +2260,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_141
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_141
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_141
@@ -2417,7 +2276,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_142
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_142
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_142
@@ -2434,7 +2292,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_143
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_143
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_143
@@ -2451,7 +2308,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_144
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_144
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_144
@@ -2468,7 +2324,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_145
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_145
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_145
@@ -2485,7 +2340,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_146
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_146
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_146
@@ -2502,7 +2356,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_147
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_147
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_147
@@ -2519,7 +2372,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_148
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_148
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_148
@@ -2536,7 +2388,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_149
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_149
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_149
@@ -2553,7 +2404,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_150
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_150
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_150
@@ -2570,7 +2420,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_151
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_151
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_151
@@ -2587,7 +2436,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_152
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_152
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_152
@@ -2604,7 +2452,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_153
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_153
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_153
@@ -2621,7 +2468,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_154
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_154
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_154
@@ -2638,7 +2484,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_155
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_155
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_155
@@ -2655,7 +2500,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_156
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_156
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_156
@@ -2672,7 +2516,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_157
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_157
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_157
@@ -2689,7 +2532,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_158
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_158
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_158
@@ -2706,7 +2548,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_159
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_159
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_159
@@ -2723,7 +2564,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_160
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_160
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_160
@@ -2740,7 +2580,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_161
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_161
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_161
@@ -2757,7 +2596,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_162
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_162
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_162
@@ -2774,7 +2612,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_163
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_163
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_163
@@ -2791,7 +2628,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_164
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_164
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_164
@@ -2808,7 +2644,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_165
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_165
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_165
@@ -2825,7 +2660,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_166
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_166
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_166
@@ -2842,7 +2676,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_167
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_167
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_167
@@ -2859,7 +2692,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_168
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_168
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_168
@@ -2876,7 +2708,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_169
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_169
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_169
@@ -2893,7 +2724,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_170
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_170
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_170
@@ -2910,7 +2740,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_171
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_171
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_171
@@ -2927,7 +2756,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_172
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_172
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_172
@@ -2944,7 +2772,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_173
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_173
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_173
@@ -2961,7 +2788,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_174
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_174
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_174
@@ -2978,7 +2804,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_175
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_175
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_175
@@ -2995,7 +2820,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_178
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_178
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_178
@@ -3012,7 +2836,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_179
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_179
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_179
@@ -3029,7 +2852,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_180
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_180
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_180
@@ -3046,7 +2868,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_181
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_181
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_181
@@ -3063,7 +2884,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_182
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_182
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_182
@@ -3080,7 +2900,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_183
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_183
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_183
@@ -3097,7 +2916,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_184
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_184
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_184
@@ -3114,7 +2932,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_186
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_186
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_186
@@ -3131,7 +2948,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_188
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_188
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_188
@@ -3148,7 +2964,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_189
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_189
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_189
@@ -3165,7 +2980,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_190
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_190
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_190
@@ -3182,7 +2996,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_192
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_192
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_192
@@ -3199,7 +3012,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_193
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_193
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_193
@@ -3216,7 +3028,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_194
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_194
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_194
@@ -3233,7 +3044,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_195
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_195
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_195
@@ -3250,7 +3060,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_197
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_197
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_197
@@ -3267,7 +3076,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_198
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_198
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_198
@@ -3284,7 +3092,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_199
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_199
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_199
@@ -3301,7 +3108,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_200
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_200
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_200
@@ -3318,7 +3124,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_201
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_201
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_201
@@ -3335,7 +3140,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_203
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_203
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_203
@@ -3352,7 +3156,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_205
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_205
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_205
@@ -3369,7 +3172,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_206
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_206
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_206
@@ -3386,7 +3188,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_207
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_207
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_207
@@ -3403,7 +3204,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_208
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_208
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_208
@@ -3420,7 +3220,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_209
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_209
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_209
@@ -3437,7 +3236,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_210
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_210
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_210
@@ -3454,7 +3252,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_211
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_211
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_211
@@ -3471,7 +3268,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_212
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_212
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_212
@@ -3488,7 +3284,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_213
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_213
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_213
@@ -3505,7 +3300,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_214
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_214
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_214
@@ -3522,7 +3316,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_215
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_215
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_215
@@ -3539,7 +3332,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_216
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_216
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_216
@@ -3556,7 +3348,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_217
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_217
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_217
@@ -3573,7 +3364,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_218
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_218
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_218
@@ -3590,7 +3380,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_219
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_219
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_219
@@ -3607,7 +3396,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_221
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_221
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_221
@@ -3624,7 +3412,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_222
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_222
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_222
@@ -3641,7 +3428,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_223
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_223
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_223
@@ -3658,7 +3444,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_224
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_224
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_224
@@ -3675,7 +3460,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_226
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_226
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_226
@@ -3692,7 +3476,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_227
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_227
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_227
@@ -3709,7 +3492,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_228
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_228
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_228
@@ -3726,7 +3508,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_230
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_230
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_230
@@ -3743,7 +3524,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_231
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_231
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_231
@@ -3760,7 +3540,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_232
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_232
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_232
@@ -3777,7 +3556,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_233
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_233
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_233
@@ -3794,7 +3572,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_234
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_234
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_234
@@ -3811,7 +3588,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_235
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_235
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_235
@@ -3828,7 +3604,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_236
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_236
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_236
@@ -3845,7 +3620,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_237
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_237
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_237
@@ -3862,7 +3636,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_238
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_238
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_238
@@ -3879,7 +3652,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_239
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_239
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_239
@@ -3896,7 +3668,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_240
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_240
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_240
@@ -3913,7 +3684,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_241
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_241
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_241
@@ -3930,7 +3700,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_242
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_242
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_242
@@ -3947,7 +3716,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_243
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_243
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_243
@@ -3964,7 +3732,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_245
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_245
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_245
@@ -3981,7 +3748,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_246
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_246
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_246
@@ -3998,7 +3764,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_247
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_247
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_247
@@ -4015,7 +3780,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_248
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_248
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_248
@@ -4032,7 +3796,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_249
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_249
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_249
@@ -4049,7 +3812,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_250
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_250
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_250
@@ -4066,7 +3828,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_251
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_251
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_251
@@ -4083,7 +3844,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_252
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_252
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_252
@@ -4100,7 +3860,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_253
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_253
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_253
@@ -4117,7 +3876,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_255
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_255
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_255
@@ -4134,7 +3892,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_256
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_256
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_256
@@ -4151,7 +3908,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_257
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_257
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_257
@@ -4168,7 +3924,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_258
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_258
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_258
@@ -4185,7 +3940,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_259
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_259
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_259
@@ -4202,7 +3956,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_260
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_260
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_260
@@ -4219,7 +3972,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_261
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_261
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_261
@@ -4236,7 +3988,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_262
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_262
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_262
@@ -4253,7 +4004,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_263
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_263
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_263
@@ -4270,7 +4020,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_264
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_264
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_264
@@ -4287,7 +4036,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_265
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_265
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_265
@@ -4304,7 +4052,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_266
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_266
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_266
@@ -4321,7 +4068,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_267
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_267
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_267
@@ -4338,7 +4084,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_268
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_268
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_268
@@ -4355,7 +4100,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_269
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_269
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_269
@@ -4372,7 +4116,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_270
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_270
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_270
@@ -4389,7 +4132,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_271
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_271
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_271
@@ -4406,7 +4148,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_272
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_272
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_272
@@ -4423,7 +4164,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_273
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_273
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_273
@@ -4440,7 +4180,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_274
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_274
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_274
@@ -4457,7 +4196,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_275
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_275
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_275
@@ -4474,7 +4212,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_276
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_276
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_276
@@ -4491,7 +4228,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_277
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_277
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_277
@@ -4508,7 +4244,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_278
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_278
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_278
@@ -4525,7 +4260,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_279
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_279
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_279
@@ -4542,7 +4276,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_280
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_280
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_280
@@ -4559,7 +4292,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_282
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_282
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_282
@@ -4576,7 +4308,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_283
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_283
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_283
@@ -4593,7 +4324,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_284
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_284
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_284
@@ -4610,7 +4340,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_285
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_285
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_285
@@ -4627,7 +4356,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_286
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_286
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_286
@@ -4644,7 +4372,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_287
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_287
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_287
@@ -4661,7 +4388,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_288
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_288
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_288
@@ -4678,7 +4404,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_289
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_289
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_289
@@ -4695,7 +4420,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_290
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_290
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_290
@@ -4712,7 +4436,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_293
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_293
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_293
@@ -4729,7 +4452,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_294
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_294
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_294
@@ -4746,7 +4468,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_295
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_295
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_295
@@ -4763,7 +4484,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_296
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_296
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_296
@@ -4780,7 +4500,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_298
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_298
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_298
@@ -4797,7 +4516,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_299
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_299
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_299
@@ -4814,7 +4532,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_300
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_300
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_300
@@ -4831,7 +4548,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_301
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_301
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_301
@@ -4848,7 +4564,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_302
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_302
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_302
@@ -4865,7 +4580,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_303
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_303
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_303
@@ -4882,7 +4596,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_304
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_304
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_304
@@ -4899,7 +4612,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_305
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_305
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_305
@@ -4916,7 +4628,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_306
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_306
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_306
@@ -4933,7 +4644,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_307
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_307
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_307
@@ -4950,7 +4660,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_308
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_308
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_308
@@ -4967,7 +4676,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_309
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_309
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_309
@@ -4984,7 +4692,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_310
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_310
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_310
@@ -5001,7 +4708,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_311
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_311
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_311
@@ -5018,7 +4724,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_312
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_312
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_312
@@ -5035,7 +4740,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_313
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_313
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_313
@@ -5052,7 +4756,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_315
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_315
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_315
@@ -5069,7 +4772,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_316
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_316
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_316
@@ -5086,7 +4788,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_317
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_317
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_317
@@ -5103,7 +4804,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_318
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_318
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_318
@@ -5120,7 +4820,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_319
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_319
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_319
@@ -5137,7 +4836,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_320
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_320
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_320
@@ -5154,7 +4852,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_321
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_321
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_321
@@ -5171,7 +4868,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_322
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_322
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_322
@@ -5188,7 +4884,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_323
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_323
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_323
@@ -5205,7 +4900,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_324
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_324
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_324
@@ -5222,7 +4916,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_325
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_325
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_325
@@ -5239,7 +4932,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_326
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_326
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_326
@@ -5256,7 +4948,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_327
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_327
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_327
@@ -5273,7 +4964,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_328
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_328
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_328
@@ -5290,7 +4980,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_329
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_329
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_329
@@ -5307,7 +4996,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_330
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_330
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_330
@@ -5324,7 +5012,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_331
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_331
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_331
@@ -5341,7 +5028,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_332
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_332
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_332
@@ -5358,7 +5044,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_333
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_333
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_333
@@ -5375,7 +5060,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_334
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_334
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_334
@@ -5392,7 +5076,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_335
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_335
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_335
@@ -5409,7 +5092,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_336
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_336
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_336
@@ -5426,7 +5108,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_337
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_337
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_337
@@ -5443,7 +5124,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_338
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_338
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_338
@@ -5460,7 +5140,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_339
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_339
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_339
@@ -5477,7 +5156,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_340
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_340
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_340
@@ -5494,7 +5172,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_341
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_341
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_341
@@ -5511,7 +5188,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_342
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_342
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_342
@@ -5528,7 +5204,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_343
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_343
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_343
@@ -5545,7 +5220,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_344
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_344
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_344
@@ -5562,7 +5236,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_345
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_345
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_345
@@ -5579,7 +5252,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_346
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_346
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_346
@@ -5596,7 +5268,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_347
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_347
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_347
@@ -5613,7 +5284,6 @@ export default function MultimodalInput_KeyCode_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_348
      * @tc.number Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_348
      * @tc.desc   Multimodalinput_KeyCode_SUB_MMI_KeyCodeTest_348

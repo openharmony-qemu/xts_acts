@@ -22,9 +22,12 @@ export default function isDefaultApplicationTest() {
   describe('isDefaultApplicationTest', () => {
 
     /**
-     * @tc.number: Sub_Bms_Framework_Status_DefaultApp_0900
-     * @tc.name: isDefaultApplication Promise and Callback
-     * @tc.desc: No default image application is set. Query and return false
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_0900
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_0900
+     * @tc.desc   No default image application is set. Query and return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Status_DefaultApp_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       try {
@@ -53,9 +56,12 @@ export default function isDefaultApplicationTest() {
     });
 
     /**
-     * @tc.number: Sub_Bms_Framework_Status_DefaultApp_0650
-     * @tc.name: isDefaultApplication Promise
-     * @tc.desc: The parameter type is correct, the string format is incorrect, return false
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_0650
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_0650
+     * @tc.desc   The parameter type is correct, the string format is incorrect, return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Status_DefaultApp_0650', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       try {
@@ -75,9 +81,12 @@ export default function isDefaultApplicationTest() {
     });
 
     /**
-     * @tc.number: Sub_Bms_Framework_Status_DefaultApp_1150
-     * @tc.name: isDefaultApplication Promise
-     * @tc.desc: The parameter type is correct, the string format is incorrect, return false
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_1150
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_1150
+     * @tc.desc   The parameter type is correct, the string format is incorrect, return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_Status_DefaultApp_1150', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       try {
@@ -97,9 +106,12 @@ export default function isDefaultApplicationTest() {
     });
 
     /**
-     * @tc.number: Sub_Bms_Framework_Status_DefaultApp_1200
-     * @tc.name: test ApplicationType
-     * @tc.desc: ApplicationType is string
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_1200
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_1200
+     * @tc.desc   ApplicationType is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Status_DefaultApp_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       expect(typeof (defaultAppMgr.ApplicationType.BROWSER)).assertEqual("string");
@@ -132,9 +144,12 @@ export default function isDefaultApplicationTest() {
     });
 
     /**
-     * @tc.number: Sub_Bms_Framework_Status_DefaultApp_2550
-     * @tc.name: testIsDefaultApplicationNotExistedType
-     * @tc.desc: The parameter type is correct, the string format is incorrect, return false
+     * @tc.name   testIsDefaultApplicationNotExistedType
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_2550
+     * @tc.desc   The parameter type is correct, the string format is incorrect, return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsDefaultApplicationNotExistedType', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       try {
@@ -148,9 +163,12 @@ export default function isDefaultApplicationTest() {
     });
 
     /**
-     * @tc.number: SUB_BMS_DEFAULTAPP_QUERY_0053
-     * @tc.name: testIsDefaultApplicationNullType
-     * @tc.desc: The parameter type is null, the string format is incorrect, return false
+     * @tc.name   testIsDefaultApplicationNullType
+     * @tc.number SUB_BMS_DEFAULTAPP_QUERY_0053
+     * @tc.desc   The parameter type is null, the string format is incorrect, return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsDefaultApplicationNullType', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       try {
@@ -170,9 +188,12 @@ export default function isDefaultApplicationTest() {
     });
 
     /**
-     * @tc.number: SUB_BMS_DEFAULTAPP_QUERY_0053
-     * @tc.name: testIsDefaultApplicationUndefinedType
-     * @tc.desc: The parameter type is undefined, the string format is incorrect, return false
+     * @tc.name   testIsDefaultApplicationUndefinedType
+     * @tc.number SUB_BMS_DEFAULTAPP_QUERY_0053
+     * @tc.desc   The parameter type is undefined, the string format is incorrect, return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsDefaultApplicationUndefinedType', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       try {

@@ -58,10 +58,13 @@ export default function webViewOnScroll() {
       console.info("webViewOnScroll beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR3_API_0100
-     *tc.name testOnscroll
-     *tc.desc onscroll after scrollby 100,100
+    /**
+     * @tc.name   testOnscroll
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR3_API_0100
+     * @tc.desc   onscroll after scrollby 100,100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnscroll',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitOnscroll';
@@ -74,10 +77,13 @@ export default function webViewOnScroll() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR3_API_0200
-     *tc.name testOnscrollAgain
-     *tc.desc onscroll after scrollby -100,-100
+    /**
+     * @tc.name   testOnscrollAgain
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR3_API_0200
+     * @tc.desc   onscroll after scrollby -100,-100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnscrollAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitOnscrollAgain';
@@ -90,10 +96,13 @@ export default function webViewOnScroll() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0400
-     *tc.name testPageDown
-     *tc.desc Go pageDown
+    /**
+     * @tc.name   testPageDown
+     * @tc.number SUB_ACE_BASIC_ETS_API_0400
+     * @tc.desc   Go pageDown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPageDown',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitpageDown';
@@ -105,10 +114,13 @@ export default function webViewOnScroll() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0500
-     *tc.name testPageUp
-     *tc.desc Go pageUp
+    /**
+     * @tc.name   testPageUp
+     * @tc.number SUB_ACE_BASIC_ETS_API_0500
+     * @tc.desc   Go pageUp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPageUp',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitpageUp';
@@ -120,10 +132,13 @@ export default function webViewOnScroll() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTROLLERJSUNIT_API_0600
-     *tc.name testPageDownAgain
-     *tc.desc Go PageDown Again
+    /**
+     * @tc.name   testPageDownAgain
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTROLLERJSUNIT_API_0600
+     * @tc.desc   Go PageDown Again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPageDownAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitpageDownAgain';
@@ -135,10 +150,13 @@ export default function webViewOnScroll() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0700
-     *tc.name testPageUpAgain
-     *tc.desc Go PageUp again
+    /**
+     * @tc.name   testPageUpAgain
+     * @tc.number SUB_ACE_BASIC_ETS_API_0700
+     * @tc.desc   Go PageUp again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPageUpAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey = 'emitpageUpAgain';

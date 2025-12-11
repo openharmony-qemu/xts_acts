@@ -45,15 +45,13 @@ export default function fileIOCopy() {
 describe('fileIO_fs_copy', function () {
 
   /**
+   * @tc.name   fileIO_copy_async_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_0100
-   * @tc.name fileIO_copy_async_001
-   * @tc.desc Test copy() interfaces.Promise.
-   * Test file copied successfully by path.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */  
+   * @tc.desc   Test copy() interfaces.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_copy_async_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_001');
     let fpathTarget = await nextFileName('dst');
@@ -83,16 +81,14 @@ describe('fileIO_fs_copy', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   fileIO_copy_async_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_0200
-   * @tc.name fileIO_copy_async_002
-   * @tc.desc Test copy() interfaces.Promise.
-   * Test file copied successfully by path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */  
+   * @tc.desc   Test copy() interfaces.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_copy_async_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_002');
     let fpathTarget = fpath + 'dst';
@@ -115,16 +111,14 @@ describe('fileIO_fs_copy', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   fileIO_copy_async_003
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_0300
-   * @tc.name fileIO_copy_async_003
-   * @tc.desc Test copy() interfaces.Promise.
-   * The path point to nothing, no such file.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test copy() interfaces.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_copy_async_003', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_003');
     let fpathTarget = fpath + 'dst';
@@ -148,16 +142,14 @@ describe('fileIO_fs_copy', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   fileIO_copy_async_004
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_0400
-   * @tc.name fileIO_copy_async_004
-   * @tc.desc Test copy() interfaces.Promise.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test copy() interfaces.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_copy_async_004', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_004');
     let fpathTarget = fpath + 'dst';
@@ -175,15 +167,13 @@ describe('fileIO_fs_copy', function () {
    });
 
    /**
-   * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_0500
-   * @tc.name fileIO_copy_async_005
-   * @tc.desc Test copy() interfaces.Promise.
-   * Missing Parameter.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+    * @tc.name   fileIO_copy_async_005
+    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_0500
+    * @tc.desc   Test copy() interfaces.Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('fileIO_copy_async_005', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_005');
     let fpathTarget = fpath + 'dst';
@@ -206,16 +196,14 @@ describe('fileIO_fs_copy', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   fileIO_copy_async_006
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_0600
-   * @tc.name fileIO_copy_async_006
-   * @tc.desc Test copy() interfaces.Promise.
-   * Missing Parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test copy() interfaces.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_copy_async_006', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_006');
     let fpathTarget = fpath + 'dst';
@@ -233,15 +221,13 @@ describe('fileIO_fs_copy', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   fileIO_copy_async_007
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_0700
-   * @tc.name fileIO_copy_async_007
-   * @tc.desc Test copy() interfaces.callback.
-   * Test file copied successfully by path.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_copy_async_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_007');
@@ -276,14 +262,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_008
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_0800
-   * @tc.name fileIO_copy_async_008
-   * @tc.desc Test copy() interfaces.
-   * Test file copied successfully by path.callback without options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_copy_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_008');
@@ -311,15 +295,13 @@ describe('fileIO_fs_copy', function () {
     }
   });
 
-   /**
+  /**
+   * @tc.name   fileIO_copy_async_009
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_0900
-   * @tc.name fileIO_copy_async_009
-   * @tc.desc Test copy() interfaces.callback.
-   * The path point to nothing, no such file.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_009', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_009');
@@ -348,14 +330,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_010
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1000
-   * @tc.name fileIO_copy_async_010
-   * @tc.desc Test copy() interfaces.callback.
-   * Missing Parameter.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_010', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_010');
@@ -382,14 +362,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_011
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1100
-   * @tc.name fileIO_copy_async_011
-   * @tc.desc Test copy() interfaces.callback
-   * Test directory copied successfully by path.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_011', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_011';
@@ -427,14 +405,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_012
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1200
-   * @tc.name fileIO_copy_async_012
-   * @tc.desc Test copy() interfaces.
-   * Test directory copied successfully by path.callback without options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_012', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_012';
@@ -465,16 +441,14 @@ describe('fileIO_fs_copy', function () {
     }
   });
   
-  /**
-   * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1300
-   * @tc.name fileIO_copy_async_013
-   * @tc.desc Test copy() interfaces.Promise.
-   * Test directory copied successfully by path.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_copy_async_013
+    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1300
+    * @tc.desc   Test copy() interfaces.Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('fileIO_copy_async_013', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_013';
     let ddpath = dpath + '/srcDir_first';
@@ -506,14 +480,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_014
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1400
-   * @tc.name fileIO_copy_async_014
-   * @tc.desc Test copy() interfaces.
-   * Test directory copied successfully by path.Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_014', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_014';
@@ -539,14 +511,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_015
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1500
-   * @tc.name fileIO_copy_async_015
-   * @tc.desc Test copy() interfaces.
-   * Test file copied successfully by path.Promise without CopyOptions, TaskSignal.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_015', Level.LEVEL3, async function (done) {
    let fpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_015';
@@ -584,14 +554,12 @@ describe('fileIO_fs_copy', function () {
   }); 
 
   /**
+   * @tc.name   fileIO_copy_async_016
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1600
-   * @tc.name fileIO_copy_async_016
-   * @tc.desc Test copy() interfaces.
-   * Test file copied successfully by path.callback without CopyOptions, TaskSignal.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_016', Level.LEVEL3, async function (done) {
     let fpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_016';
@@ -632,14 +600,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_017
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1700
-   * @tc.name fileIO_copy_async_017
-   * @tc.desc Test copy() interfaces.
-   * The input parameter is invalid.callback without options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_copy_async_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_017');
@@ -663,14 +629,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_018
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1800
-   * @tc.name fileIO_copy_async_018
-   * @tc.desc Test copy() interfaces.
-   * Invalid argument.callback without options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_copy_async_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_copy_async_018');
@@ -693,14 +657,12 @@ describe('fileIO_fs_copy', function () {
   });
 
   /**
+   * @tc.name   fileIO_copy_async_019
    * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_1900
-   * @tc.name fileIO_copy_async_019
-   * @tc.desc Test copy() interfaces.callback
-   * Test directory copied successfully by path.Contains progressListener, processedSize, and totalSize parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test copy() interfaces.callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_019', Level.LEVEL3, async function (done) {
     let dpath = await nextFileName('fileIO_copy_async_019');

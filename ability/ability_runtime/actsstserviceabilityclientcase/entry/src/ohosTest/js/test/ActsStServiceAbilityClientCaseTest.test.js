@@ -64,11 +64,13 @@ describe('ActsStServiceAbilityTest', function () {
         }, gSetTimeout);
     })
 
-    /*
-     * @tc.number  ACTS_AAbilityStartSetting_0100
-     * @tc.name    The configured URI is started and the page is not configured
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_AAbilityStartSetting_0100
+     * @tc.number ACTS_AAbilityStartSetting_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_AAbilityStartSetting_0100", Level.LEVEL0, async function(done){
         console.info("ACTS_AlogMessage 1 ACTS_AAbilityStartSetting_0100-------------------");
@@ -102,12 +104,14 @@ describe('ActsStServiceAbilityTest', function () {
         }
     })
 
-   /*
-     * @tc.number  ACTS_AAbilityStartSettingNew_0200
-     * @tc.name    The configured URI is started and the page is not configured
-     * @tc.desc    Function test
-     * @tc.level   0
-     */
+   /**
+    * @tc.name   ACTS_AAbilityStartSettingNew_0200
+    * @tc.number ACTS_AAbilityStartSettingNew_0200
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it("ACTS_AAbilityStartSettingNew_0200", Level.LEVEL0, async function(done){
     console.info("ACTS_logMessage 1 ACTS_AAbilityStartSettingNew_0200-------------------");
     try{
@@ -140,11 +144,13 @@ describe('ActsStServiceAbilityTest', function () {
     }
 })
 
-/*
- * @tc.number  ACTS_AAbilityStartSettingNew_0300
- * @tc.name    The configured URI is started and the page is not configured
- * @tc.desc    Function test
- * @tc.level   0
+/**
+ * @tc.name   ACTS_AAbilityStartSettingNew_0300
+ * @tc.number ACTS_AAbilityStartSettingNew_0300
+ * @tc.desc   Function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 it("ACTS_AAbilityStartSettingNew_0300", Level.LEVEL0, async function(done){
     console.info("ACTS_logMessage 1 ACTS_AAbilityStartSettingNew_0300-------------------");
@@ -178,11 +184,13 @@ it("ACTS_AAbilityStartSettingNew_0300", Level.LEVEL0, async function(done){
     }
 })
 
-/*
- * @tc.number  ACTS_AAbilityStartSettingNew_0400
- * @tc.name    The configured URI is started and the page is not configured
- * @tc.desc    Function test
- * @tc.level   0
+/**
+ * @tc.name   ACTS_AAbilityStartSettingNew_0400
+ * @tc.number ACTS_AAbilityStartSettingNew_0400
+ * @tc.desc   Function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 it("ACTS_AAbilityStartSettingNew_0400", Level.LEVEL0, async function(done){
     console.info("ACTS_logMessage 1 ACTS_AAbilityStartSettingNew_0400-------------------");
@@ -216,11 +224,13 @@ it("ACTS_AAbilityStartSettingNew_0400", Level.LEVEL0, async function(done){
     }
 })
 
-/*
- * @tc.number  ACTS_AAbilityStartSettingNew_0500
- * @tc.name    The configured URI is started and the page is not configured
- * @tc.desc    Function test
- * @tc.level   0
+/**
+ * @tc.name   ACTS_AAbilityStartSettingNew_0500
+ * @tc.number ACTS_AAbilityStartSettingNew_0500
+ * @tc.desc   Function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 it("ACTS_AAbilityStartSettingNew_0500", Level.LEVEL0, async function(done){
     console.info("ACTS_--------ACTS_AAbilityStartSettingNew_0500------");
@@ -254,11 +264,13 @@ it("ACTS_AAbilityStartSettingNew_0500", Level.LEVEL0, async function(done){
     }
 })
 
-    /*
-     * @tc.number  ACTS_AAbilityStartSettingNew_0600
-     * @tc.name    Test abilityStartSettings instead of abilityStartSetting.
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_AAbilityStartSettingNew_0600
+     * @tc.number ACTS_AAbilityStartSettingNew_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_AAbilityStartSettingNew_0600", Level.LEVEL0, async function(done){
         console.info("ACTS_AlogMessage 1 ACTS_AAbilityStartSettingNew_0600-------------------");
@@ -292,11 +304,13 @@ it("ACTS_AAbilityStartSettingNew_0500", Level.LEVEL0, async function(done){
         }
     })
 
-    /*
-     * @tc.number  ACTS_AAbilityStartSettingNew_0700
-     * @tc.name    Set both abilityStartSetting and abilityStartSettings.
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_AAbilityStartSettingNew_0700
+     * @tc.number ACTS_AAbilityStartSettingNew_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_AAbilityStartSettingNew_0700", Level.LEVEL0, async function(done){
         console.info("ACTS_AlogMessage 1 ACTS_AAbilityStartSettingNew_0700-------------------");
@@ -331,11 +345,14 @@ it("ACTS_AAbilityStartSettingNew_0500", Level.LEVEL0, async function(done){
         }
     })
 
-    /*
-    * @tc.number: ACTS_AJsServiceAbility_0600
-    * @tc.name: featureAbility.ConnectAbility : Connects an ability to a Service ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_AJsServiceAbility_0600
+     * @tc.number ACTS_AJsServiceAbility_0600
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AJsServiceAbility_0600', Level.LEVEL0, async function (done) {
         console.log('ACTS_AJsServiceAbility_0600====<begin');
         try {
@@ -418,11 +435,14 @@ it("ACTS_AAbilityStartSettingNew_0500", Level.LEVEL0, async function(done){
         }
     })
 
-    /*
-    * @tc.number: ACTS_AJsServiceAbility_1400
-    * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_AJsServiceAbility_1400
+     * @tc.number ACTS_AJsServiceAbility_1400
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AJsServiceAbility_1400', Level.LEVEL0, async function (done) {
         console.log('ACTS_AJsServiceAbility_1400====<begin');
         try {

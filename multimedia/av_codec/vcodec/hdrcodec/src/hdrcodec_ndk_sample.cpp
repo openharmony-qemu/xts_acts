@@ -468,7 +468,6 @@ void HDRCodecNdkSample::ReleaseInFile()
 
 void HDRCodecNdkSample::WaitForEos()
 {
-    std::mutex mtx;
     unique_lock<mutex> lock(mtx);
     g_cv.wait(lock, []() {
         return !(g_isRunning.load());

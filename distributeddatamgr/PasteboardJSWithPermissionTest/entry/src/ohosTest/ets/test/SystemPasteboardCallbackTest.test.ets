@@ -75,7 +75,6 @@ export default function SystemPasteboardCallbackTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboardCallbackTest_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboardCallbackTest_0100
      * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption
@@ -132,7 +131,6 @@ export default function SystemPasteboardCallbackTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardMimeTypes_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardMimeTypes_0100
      * @tc.desc   Test pasteBoard progress single level path and no fileConflictOption

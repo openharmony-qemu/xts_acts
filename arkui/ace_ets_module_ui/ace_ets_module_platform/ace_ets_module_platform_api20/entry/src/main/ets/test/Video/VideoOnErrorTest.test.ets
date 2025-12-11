@@ -46,11 +46,13 @@ export default function VideoOnErrorTest() {
       await CommonFunc.sleep(1000);
       console.info("VideoOnErrorTest after each called");
     });
-/**
-     * @tc.number    VideoOnErrorTest_0100
-     * @tc.name      VideoOnErrorTest_0100
-     * @tc.desc      Test VideoOnErrorTest
-     * @tc.level     Level 1
+    /**
+     * @tc.name   VideoOnErrorTest_0100
+     * @tc.number VideoOnErrorTest_0100
+     * @tc.desc   Test VideoOnErrorTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('VideoOnErrorTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[VideoOnErrorTest_0100] START');

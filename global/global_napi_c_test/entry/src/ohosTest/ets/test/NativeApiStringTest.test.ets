@@ -34,7 +34,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase640100
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0100
      * @tc.desc   overriding error code
@@ -56,7 +55,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase640200
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0200
      * @tc.desc   overriding error code
@@ -78,7 +76,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase640300
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0300
      * @tc.desc   overriding error code
@@ -100,7 +97,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase640400
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetMediaBase64_0400
      * @tc.desc   overriding error code
@@ -122,7 +118,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64Data0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0100
      * @tc.desc   overriding error code
@@ -144,7 +139,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64Data0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0200
      * @tc.desc   overriding error code
@@ -166,7 +160,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64Data0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0300
      * @tc.desc   overriding error code
@@ -188,7 +181,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64Data0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATA_0400
      * @tc.desc   overriding error code
@@ -210,7 +202,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64ByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0100
      * @tc.desc   overriding error code
@@ -232,7 +223,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64ByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0200
      * @tc.desc   overriding error code
@@ -254,7 +244,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64ByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64BYNAME_0300
      * @tc.desc   overriding error code
@@ -276,7 +265,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64DataByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0100
      * @tc.desc   overriding error code
@@ -298,7 +286,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64DataByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0200
      * @tc.desc   overriding error code
@@ -320,7 +307,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaBase64DataByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABASE64DATABYNAME_0300
      * @tc.desc   overriding error code
@@ -342,7 +328,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMedia0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0100
      * @tc.desc   overriding error code
@@ -364,7 +349,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMedia0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0200
      * @tc.desc   overriding error code
@@ -386,7 +370,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMedia0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0300
      * @tc.desc   overriding error code
@@ -408,7 +391,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMedia0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIA_0400
      * @tc.desc   overriding error code
@@ -430,7 +412,6 @@ export default function abilityTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaData0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0100
      * @tc.desc   overriding error code
@@ -452,7 +433,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaData0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0200
      * @tc.desc   overriding error code
@@ -474,7 +454,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaData0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0300
      * @tc.desc   overriding error code
@@ -496,7 +475,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaData0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATA_0400
      * @tc.desc   overriding error code
@@ -518,7 +496,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0100
      * @tc.desc   overriding error code
@@ -540,7 +517,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0200
      * @tc.desc   overriding error code
@@ -562,7 +538,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIABYNAME_0300
      * @tc.desc   overriding error code
@@ -584,7 +559,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaDataByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0100
      * @tc.desc   overriding error code
@@ -606,7 +580,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaDataByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0200
      * @tc.desc   overriding error code
@@ -628,7 +601,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetMediaDataByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETMEDIADATABYNAME_0300
      * @tc.desc   overriding error code
@@ -650,7 +622,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptor0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0100
      * @tc.desc   overriding error code
@@ -672,7 +643,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptor0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0200
      * @tc.desc   overriding error code
@@ -694,7 +664,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptor0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0300
      * @tc.desc   overriding error code
@@ -716,7 +685,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptor0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTOR_0400
      * @tc.desc   overriding error code
@@ -738,7 +706,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorData0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0100
      * @tc.desc   overriding error code
@@ -760,7 +727,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorData0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0200
      * @tc.desc   overriding error code
@@ -782,7 +748,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorData0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0300
      * @tc.desc   overriding error code
@@ -804,7 +769,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorData0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATA_0400
      * @tc.desc   overriding error code
@@ -826,7 +790,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0100
      * @tc.desc   overriding error code
@@ -848,7 +811,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0200
      * @tc.desc   overriding error code
@@ -870,7 +832,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORBYNAME_0300
      * @tc.desc   overriding error code
@@ -892,7 +853,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorDataByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0100
      * @tc.desc   overriding error code
@@ -914,7 +874,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorDataByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0200
      * @tc.desc   overriding error code
@@ -936,7 +895,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDrawableDescriptorDataByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDRAWABLEDESCRIPTORDATABYNAME_0300
      * @tc.desc   overriding error code
@@ -958,7 +916,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbol0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0100
      * @tc.desc   overriding error code
@@ -980,7 +937,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbol0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0200
      * @tc.desc   overriding error code
@@ -1002,7 +958,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbol0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0300
      * @tc.desc   overriding error code
@@ -1024,7 +979,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbol0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0400
      * @tc.desc   overriding error code
@@ -1046,7 +1000,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbol0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSYMBOL_0500
      * @tc.desc   overriding error code
@@ -1068,7 +1021,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbolByName0100
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0100
      * @tc.desc   overriding error code
@@ -1090,7 +1042,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbolByName0200
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0200
      * @tc.desc   overriding error code
@@ -1112,7 +1063,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbolByName0300
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0300
      * @tc.desc   overriding error code
@@ -1134,7 +1084,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetSymbolByName0400
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetSymbolByName_0400
      * @tc.desc   overriding error code
@@ -1156,7 +1105,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetLocales0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALES_0100
      * @tc.desc   overriding error code
@@ -1178,7 +1126,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetLocales0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALES_0200
      * @tc.desc   overriding error code
@@ -1200,7 +1147,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetLocalesData0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALESDATA_0100
      * @tc.desc   overriding error code
@@ -1222,7 +1168,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetLocalesData0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETLOCALESDATA_0200
      * @tc.desc   overriding error code
@@ -1244,7 +1189,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfiguration0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETCONFIGURATION_0100
      * @tc.desc   overriding error code
@@ -1266,7 +1210,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetConfiguration0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETCONFIGURATION_0200
      * @tc.desc   overriding error code
@@ -1288,7 +1231,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetResourceConfiguration0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETRESOURCECONFIGURATION_0100
      * @tc.desc   overriding error code
@@ -1310,7 +1252,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestReleaseConfiguration0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASECONFIGURATION_0100
      * @tc.desc   overriding error code
@@ -1332,7 +1273,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestReleaseConfiguration0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASECONFIGURATION_0200
      * @tc.desc   overriding error code
@@ -1354,7 +1294,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetString0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0100
      * @tc.desc   overriding error code
@@ -1376,7 +1315,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetString0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0200
      * @tc.desc   overriding error code
@@ -1398,7 +1336,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetString0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0300
      * @tc.desc   overriding error code
@@ -1420,7 +1357,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetString0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0400
      * @tc.desc   overriding error code
@@ -1442,7 +1378,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetString0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0500
      * @tc.desc   overriding error code
@@ -1464,7 +1399,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0100
      * @tc.desc   overriding error code
@@ -1486,7 +1420,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0200
      * @tc.desc   overriding error code
@@ -1508,7 +1441,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0300
      * @tc.desc   overriding error code
@@ -1530,7 +1462,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0400
      * @tc.desc   overriding error code
@@ -1552,7 +1483,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArray0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0100
      * @tc.desc   overriding error code
@@ -1574,7 +1504,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArray0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0200
      * @tc.desc   overriding error code
@@ -1596,7 +1525,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArray0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0300
      * @tc.desc   overriding error code
@@ -1618,7 +1546,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArray0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0400
      * @tc.desc   overriding error code
@@ -1640,7 +1567,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArray0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0500
      * @tc.desc   overriding error code
@@ -1662,7 +1588,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArrayByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0100
      * @tc.desc   overriding error code
@@ -1684,7 +1609,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArrayByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0200
      * @tc.desc   overriding error code
@@ -1706,7 +1630,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArrayByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0300
      * @tc.desc   overriding error code
@@ -1728,7 +1651,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArrayByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAYBYNAME_0400
      * @tc.desc   overriding error code
@@ -1750,7 +1672,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestReleaseStringArray0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASESTRINGARRAY_0100
      * @tc.desc   overriding error code
@@ -1772,7 +1693,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestReleaseStringArray0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_RELEASESTRINGARRAY_0200
      * @tc.desc   overriding error code
@@ -1794,7 +1714,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralString0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0100
      * @tc.desc   overriding error code
@@ -1816,7 +1735,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralString0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0200
      * @tc.desc   overriding error code
@@ -1838,7 +1756,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralString0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0300
      * @tc.desc   overriding error code
@@ -1860,7 +1777,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralString0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0400
      * @tc.desc   overriding error code
@@ -1882,7 +1798,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralString0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRING_0500
      * @tc.desc   overriding error code
@@ -1904,7 +1819,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralStringByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0100
      * @tc.desc   overriding error code
@@ -1926,7 +1840,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralStringByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0200
      * @tc.desc   overriding error code
@@ -1948,7 +1861,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralStringByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0300
      * @tc.desc   overriding error code
@@ -1970,7 +1882,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetPluralStringByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETPLURALSTRINGBYNAME_0400
      * @tc.desc   overriding error code

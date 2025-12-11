@@ -34,6 +34,24 @@ import sendablePhotoAccessHelperGetObjectByPositionTest
   from './photoAccess/SendablePhotoAccessHelperGetObjectByPosition.test';
 import getThumbnailTestSupp from './photoAccess/PhotoAssetGetThumbnailSupp.test';
 import sendablePhotoAccessHelperSuppAllTest from './photoAccess/SendablePhotoGetBurstAssets.test';
+import PhotoAccessHelperGetRecentPhotoInfo
+  from './photoAccess/PhotoAccessHelperGetRecentPhotoInfo.test';
+import PhotoAccessHelperGetPhotoAccessHelper
+  from './photoAccess/PhotoAccessHelperGetPhotoAccessHelper.test';
+import PhotoAssetImageGetThumbnail from './photoAccess/PhotoAssetImageGetThumbnail.test';
+import PhotoAccessHelperPhotoAlbumChange from './photoAccess/PhotoAccessHelperPhotoAlbumChange.test';
+import MediaAlbumChangeRequestSetAlbumName from './photoAccess/MediaAlbumChangeRequestSetAlbumName.test';
+import MediaAssetChangeRequestSaveCameraPhoto from './photoAccess/MediaAssetChangeRequestSaveCameraPhoto.test';
+import PhotoShowAssetsCreationDialogTest from './photoAccess/PhotoAccessHelperShowAssetsCreationDialog.test';
+import PhotoCreateAssetWithShortTermPermissionTest
+  from './photoAccess/PhotoAccessHelperCreateAssetWithShortTermPermission.test';
+import GetBurstAssets from './photoAccess/GetBurstAssets.test';
+import getPhotoAccessHelper from './photoAccess/GetPhotoAccessHelper.test';
+import ShowAssetsCreationDialogMoreSuppTest from './photoAccess/showAssetsCreationDialog.test';
+import photoAccessHelperEnumImageFileType from './photoAccess/photoAccessHelperEnumImageFileType.test';
+import PhotoAccessHelperEnumAlbumKeys from './photoAccess/PhotoAccessHelperEnumAlbumKeys.test';
+import sendablePhotoAccessHelperGetAlbumsTest from './photoAccess/SendablePhotoAccessHelperAlbumEnum.test';
+import sendablePhotoAccessHelperCreateAssetTest from './photoAccess/SendablePhotoAccessHelperPhotoTypeEnum.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -70,4 +88,20 @@ export default function testsuite() {
   sendablePhotoAccessHelperGetObjectByPositionTest();
   getThumbnailTestSupp();
   sendablePhotoAccessHelperSuppAllTest();
+  PhotoAccessHelperGetPhotoAccessHelper();
+  PhotoAccessHelperGetRecentPhotoInfo();
+  PhotoAssetImageGetThumbnail();
+  PhotoAccessHelperPhotoAlbumChange();
+  MediaAlbumChangeRequestSetAlbumName();
+  MediaAssetChangeRequestSaveCameraPhoto();
+  PhotoShowAssetsCreationDialogTest();
+  PhotoCreateAssetWithShortTermPermissionTest();
+  GetBurstAssets();
+  getPhotoAccessHelper();
+  ShowAssetsCreationDialogMoreSuppTest();
+  photoAccessHelperEnumImageFileType();
+  PhotoAccessHelperEnumAlbumKeys();
+  sendablePhotoAccessHelperGetAlbumsTest();
+  sendablePhotoAccessHelperCreateAssetTest();
+
 }

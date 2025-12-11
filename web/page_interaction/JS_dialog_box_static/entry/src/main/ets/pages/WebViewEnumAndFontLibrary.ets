@@ -16,7 +16,7 @@ import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import {
   OnRenderExitedEvent,
   OnPageBeginEvent,
@@ -107,7 +107,7 @@ struct WebViewEnumAndFontLibrary {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

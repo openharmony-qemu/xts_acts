@@ -80,10 +80,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     })
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0100
-     * @tc.name: Check that context paths of different Ability in the same hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0100
+     * @tc.number SUB_AA_OpenHarmony_Context_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0100"
@@ -96,10 +98,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0200
-     * @tc.name: Check that context paths of different Ability in the same hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0200
+     * @tc.number SUB_AA_OpenHarmony_Context_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0200"
@@ -115,10 +119,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0300
-     * @tc.name: Check that context paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0300
+     * @tc.number SUB_AA_OpenHarmony_Context_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0300"
@@ -153,10 +159,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0400
-     * @tc.name: Check that ApplicationContext paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0400
+     * @tc.number SUB_AA_OpenHarmony_Context_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0400"
@@ -191,10 +199,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0500
-     * @tc.name: Check that ApplicationContext paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0500
+     * @tc.number SUB_AA_OpenHarmony_Context_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0500"
@@ -234,10 +244,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
 
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0600
-     * @tc.name: Check that context paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0600
+     * @tc.number SUB_AA_OpenHarmony_Context_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0600"
@@ -286,10 +298,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0700
-     * @tc.name: Check that context paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0700
+     * @tc.number SUB_AA_OpenHarmony_Context_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0700', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0700"
@@ -338,10 +352,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0800
-     * @tc.name: Check that ApplicationContext paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_0800
+     * @tc.number SUB_AA_OpenHarmony_Context_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0800', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0800"
@@ -407,10 +423,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0900
-     * @tc.name: Check that label paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 0
+     * @tc.name   SUB_AA_OpenHarmony_Context_0900
+     * @tc.number SUB_AA_OpenHarmony_Context_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_0900', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_0900"
@@ -422,10 +440,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_1000
-     * @tc.name: Check that label paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_1000
+     * @tc.number SUB_AA_OpenHarmony_Context_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_1000', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_1000"
@@ -438,10 +458,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_1100
-     * @tc.name: Check that label paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_1100
+     * @tc.number SUB_AA_OpenHarmony_Context_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_1100', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_1100"
@@ -456,10 +478,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_1200
-     * @tc.name: Check that label paths of different Ability in the different hap are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_1200
+     * @tc.number SUB_AA_OpenHarmony_Context_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_1200', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_1200"
@@ -499,10 +523,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_1300
-     * @tc.name: Call createBundleContext through context and pass in the wrong package
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_1300
+     * @tc.number SUB_AA_OpenHarmony_Context_1300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_1300', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_1300"
@@ -517,10 +543,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_1400
-     * @tc.name: Check that context paths of UIAbility and Isolated AppExtension are the same.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_1400
+     * @tc.number SUB_AA_OpenHarmony_Context_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_1400', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_1400";
@@ -554,10 +582,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_1500
-     * @tc.name: Check that file created in the extensionContext of isolated AppExtension sandbox can not be opened in UIAbility sanbox.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_1500
+     * @tc.number SUB_AA_OpenHarmony_Context_1500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_1500', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_1500"
@@ -582,10 +612,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
     });
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_1600
-     * @tc.name: Check that file created in the extensionAppContext of isolated AppExtension sandbox can not be opened in UIAbility sanbox.
-     * @tc.desc: Function test
-     * @tc.level 3
+     * @tc.name   SUB_AA_OpenHarmony_Context_1600
+     * @tc.number SUB_AA_OpenHarmony_Context_1600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Context_1600', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_AA_OpenHarmony_Context_1600"

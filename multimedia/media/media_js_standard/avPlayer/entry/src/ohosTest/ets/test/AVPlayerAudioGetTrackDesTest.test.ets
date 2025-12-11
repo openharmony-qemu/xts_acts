@@ -89,15 +89,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         // #endregion
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0100
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0100
-            * @tc.desc      : GetTrackDescription by callback in prepared state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0100
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0100', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`)
@@ -130,15 +130,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0100
-            * @tc.desc      : GetTrackDescription by promise in prepared state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0100
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0100', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -170,15 +170,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0200
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0200
-            * @tc.desc      : GetTrackDescription by callback in playing state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0200
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0200', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -213,15 +213,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0200
-            * @tc.desc      : GetTrackDescription by promise in playing state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0200
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0200', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -256,15 +256,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0300
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0300
-            * @tc.desc      : GetTrackDescription by callback in paused state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0300
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0300', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -302,15 +302,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0300
-            * @tc.desc      : GetTrackDescription by promise in paused state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0300
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0300', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -348,15 +348,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0400
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0400
-            * @tc.desc      : GetTrackDescription by callback in idle state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0400
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0400', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -382,15 +382,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0400
-            * @tc.desc      : GetTrackDescription by promise in idle state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0400
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0400', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -416,15 +416,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0500
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0500
-            * @tc.desc      : GetTrackDescription by callback in stopped state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0500
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0500', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -462,15 +462,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0500
-            * @tc.desc      : GetTrackDescription by promise in stopped state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0500
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0500', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -508,15 +508,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0600
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0600
-            * @tc.desc      : GetTrackDescription by callback in released state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0600
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_CALLBACK_0600', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);
@@ -559,15 +559,15 @@ export default function AVPlayerAudioGetTrackDesTest() {
         })
 
         // #region
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0600
-            * @tc.desc      : GetTrackDescription by promise in released state
-            * @tc.size      : MediumTest
-            * @tc.type      : Reliability test
-            * @tc.level     : Level1
-        */
         // #endregion
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0600
+         * @tc.desc   SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_GET_AUDIODEPTH_PROMISE_0600', Level.LEVEL0,async (done: Function) => {
             if(!avPlayer){
                 console.info(`avPlayer is null`);

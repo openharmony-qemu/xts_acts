@@ -85,12 +85,12 @@ export default function xmlDynamic1() {
     })
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0100
-     * @tc.name      : testXmlDynamicSerializer
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlDynamicSerializer
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlDynamicSerializer', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -119,12 +119,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0200
-     * @tc.name      : testSetComment
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetComment
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetComment', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -153,12 +153,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0300
-     * @tc.name      : testSetCdata
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetCdata
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetCdata', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -187,12 +187,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0400
-     * @tc.name      : testSetDocType
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetDocType
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDocType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0500
-     * @tc.name      : testSetDeclaration
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetDeclaration
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDeclaration', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -255,12 +255,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0600
-     * @tc.name      : testSetNamespace
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetNamespace
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetNamespace', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -289,12 +289,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0700
-     * @tc.name      : testSetText
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetText
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetText', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -323,12 +323,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0800
-     * @tc.name      : testAddEmptyElement
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAddEmptyElement
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAddEmptyElement', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -357,12 +357,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0900
-     * @tc.name      : testXmlSerializerConstructor
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlSerializerConstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_0900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSerializerConstructor', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -391,12 +391,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1000
-     * @tc.name      : testSetAttributes
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetAttributes
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAttributes', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -425,12 +425,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1100
-     * @tc.name      : testAddEmptyElement2
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAddEmptyElement2
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAddEmptyElement2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -459,12 +459,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1200
-     * @tc.name      : testSetDeclaration2
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetDeclaration2
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDeclaration2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -493,12 +493,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1300
-     * @tc.name      : testStartElement
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStartElement
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testStartElement', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -527,12 +527,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1400
-     * @tc.name      : testEndElement
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testEndElement
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testEndElement', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -562,12 +562,12 @@ export default function xmlDynamic1() {
 
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1600
-     * @tc.name      : testSetComment2
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetComment2
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetComment2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -596,12 +596,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1700
-     * @tc.name      : testSetCDATA
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetCDATA
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetCDATA', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -630,12 +630,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1800
-     * @tc.name      : testSetText2
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetText2
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetText2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -664,12 +664,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1900
-     * @tc.name      : testSetDocType2
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetDocType2
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_1900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDocType2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -698,12 +698,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2000
-     * @tc.name      : testXmlPullParser_Constructor
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlPullParser_Constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlPullParser_Constructor', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -732,12 +732,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2100
-     * @tc.name      : testXmlPullParser_parse
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testXmlPullParser_parse
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlPullParser_parse', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -766,12 +766,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2200
-     * @tc.name      : testParseInfo_getColumnNumber
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getColumnNumber
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getColumnNumber', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -800,12 +800,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2300
-     * @tc.name      : testParseInfo_getDepth
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getDepth
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getDepth', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -834,12 +834,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2400
-     * @tc.name      : testParseInfo_getLineNumber
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getLineNumber
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getLineNumber', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -868,12 +868,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2500
-     * @tc.name      : testParseOptions_supportDoctype
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseOptions_supportDoctype
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseOptions_supportDoctype', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -902,12 +902,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2600
-     * @tc.name      : testParseOptions_ignoreNameSpace
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseOptions_ignoreNameSpace
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseOptions_ignoreNameSpace', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -936,12 +936,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2700
-     * @tc.name      : testParseInfo_getName
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getName
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -970,12 +970,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2800
-     * @tc.name      : testParseInfo_getName_startDocument
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getName_startDocument
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getName_startDocument', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1004,12 +1004,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2900
-     * @tc.name      : testParseInfo_getNamespace
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getNamespace
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_2900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getNamespace', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1038,12 +1038,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3000
-     * @tc.name      : testParseInfo_getPrefix
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getPrefix
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getPrefix', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1072,12 +1072,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3100
-     * @tc.name      : testParseInfo_getText
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getText
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getText', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1106,12 +1106,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3200
-     * @tc.name      : testParseInfo_isEmptyElementTag
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_isEmptyElementTag
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_isEmptyElementTag', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1140,12 +1140,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3300
-     * @tc.name      : testParseInfo_isWhitespace
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_isWhitespace
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_isWhitespace', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1174,12 +1174,12 @@ export default function xmlDynamic1() {
       });
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3301
-     * @tc.name      : testParseInfo_getAttributeCount
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseInfo_getAttributeCount
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DYNAMICXML_3301
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseInfo_getAttributeCount', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

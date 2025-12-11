@@ -50,12 +50,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource01
      * @tc.number Sub_WEB_PrefetchResource_0100
-     * @tc.name testPrefetchResource01
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -90,12 +90,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource02
      * @tc.number Sub_WEB_PrefetchResource_0200
-     * @tc.name testPrefetchResource02
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -130,12 +130,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource03
      * @tc.number Sub_WEB_PrefetchResource_0300
-     * @tc.name testPrefetchResource03
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -171,12 +171,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource04
      * @tc.number Sub_WEB_PrefetchResource_0400
-     * @tc.name testPrefetchResource04
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -211,12 +211,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource05
      * @tc.number Sub_WEB_PrefetchResource_0500
-     * @tc.name testPrefetchResource05
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -252,12 +252,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource06
      * @tc.number Sub_WEB_PrefetchResource_0600
-     * @tc.name testPrefetchResource06
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -292,12 +292,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource09
      * @tc.number Sub_WEB_PrefetchResource_0900
-     * @tc.name testPrefetchResource09
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -332,12 +332,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource10
      * @tc.number Sub_WEB_PrefetchResource_1000
-     * @tc.name testPrefetchResource10
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -372,12 +372,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource11
      * @tc.number Sub_WEB_PrefetchResource_1100
-     * @tc.name testPrefetchResource11
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -412,12 +412,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource12
      * @tc.number Sub_WEB_PrefetchResource_1200
-     * @tc.name testPrefetchResource12
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -452,12 +452,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource13
      * @tc.number Sub_WEB_PrefetchResource_1300
-     * @tc.name Sub_WEB_PrefetchResource_1300
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -492,12 +492,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource14
      * @tc.number Sub_WEB_PrefetchResource_1400
-     * @tc.name testPrefetchResource14
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -532,12 +532,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource15
      * @tc.number Sub_WEB_PrefetchResource_1500
-     * @tc.name testPrefetchResource15
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -572,12 +572,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource16
      * @tc.number Sub_WEB_PrefetchResource_1600
-     * @tc.name testPrefetchResource16
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -612,12 +612,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource17
      * @tc.number Sub_WEB_PrefetchResource_1700
-     * @tc.name testPrefetchResource17
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -652,12 +652,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testPrefetchResource18
      * @tc.number Sub_WEB_PrefetchResource_1800
-     * @tc.name testPrefetchResource18
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

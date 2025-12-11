@@ -18,19 +18,35 @@ import commonEvent from "@ohos.commonEventManager"
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from "@ohos.base";
+import { Driver, ON, Component} from '@kit.TestKit';
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let subscriberInfo_MainAbility: commonEvent.CommonEventSubscribeInfo = {
   events: ["GetCurrentTopAbility"],
 };
+let driver = Driver.create();
 
 export default function abilityTest() {
   describe('ActsGetAbilityStateStageTest', () => {
+    beforeAll(async () => {
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
+    })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0200
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of the Ability in the BACKGROUND state
+    /**
+     * @tc.name   ACTS_GetAbilityState_0200
+     * @tc.number ACTS_GetAbilityState_0200
+     * @tc.desc   Get the status of the Ability in the BACKGROUND state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0200', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0200====');
@@ -95,10 +111,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0300
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of the Ability in the FOREGROUND state
+    /**
+     * @tc.name   ACTS_GetAbilityState_0300
+     * @tc.number ACTS_GetAbilityState_0300
+     * @tc.desc   Get the status of the Ability in the FOREGROUND state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0300', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0300====');
@@ -160,10 +179,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0500
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of an inactive or nonexistent Ability
+    /**
+     * @tc.name   ACTS_GetAbilityState_0500
+     * @tc.number ACTS_GetAbilityState_0500
+     * @tc.desc   Get the status of an inactive or nonexistent Ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0500', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0500====');
@@ -176,10 +198,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0600
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of the Ability in the uninitialized state
+    /**
+     * @tc.name   ACTS_GetAbilityState_0600
+     * @tc.number ACTS_GetAbilityState_0600
+     * @tc.desc   Get the status of the Ability in the uninitialized state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0600', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0600====');

@@ -79,9 +79,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingIdProp
-         * @tc.desc      ACE
+         * @tc.name   testRatingIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingIdProp', Level.LEVEL0, async function(done) {
             console.info('testRatingIdProp START');
@@ -97,9 +100,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingClassProp
-         * @tc.desc      ACE
+         * @tc.name   testRatingClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingClassProp', Level.LEVEL0, async function(done) {
             console.info('testRatingClassProp START');
@@ -115,9 +121,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingClassPropNone START');
@@ -135,9 +144,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingRefProp
-         * @tc.desc      ACE
+         * @tc.name   testRatingRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingRefProp', Level.LEVEL0, async function(done) {
             console.info('testRatingRefProp START');
@@ -154,9 +166,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingRefPropNone START');
@@ -174,9 +189,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRatingDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testRatingDisabledPropTrue START');
@@ -193,9 +211,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testRatingDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testRatingDisabledPropFalse START');
@@ -212,9 +233,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingDisabledPropNone START');
@@ -231,9 +255,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRatingFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testRatingFocusablePropTrue START');
@@ -250,9 +277,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testRatingFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testRatingFocusablePropFalse START');
@@ -269,9 +299,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingFocusablePropNone START');
@@ -288,9 +321,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDataProp
-         * @tc.desc      ACE
+         * @tc.name   testRatingDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDataProp', Level.LEVEL0, async function(done) {
             console.info('testRatingDataProp START');
@@ -308,9 +344,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingDataPropNone START');
@@ -328,9 +367,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testRatingClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testRatingClickEffectPropSmall START');
@@ -347,9 +389,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testRatingClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testRatingClickEffectPropMedium START');
@@ -366,9 +411,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testRatingClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testRatingClickEffectPropLarge START');
@@ -385,9 +433,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingClickEffectPropNone START');
@@ -405,9 +456,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testRatingDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testRatingDirPropRtl START');
@@ -424,9 +478,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testRatingDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testRatingDirPropLtr START');
@@ -443,9 +500,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testRatingDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testRatingDirPropAuto START');
@@ -462,9 +522,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingDirPropNone START');
@@ -481,9 +544,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testRatingForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingForPropNull', Level.LEVEL0, async function(done) {
             console.info('testRatingForPropNull START');
@@ -501,9 +567,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRatingForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingForPropOne', Level.LEVEL0, async function(done) {
             console.info('testRatingForPropOne START');
@@ -521,9 +590,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testRatingForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingForPropThree', Level.LEVEL0, async function(done) {
             console.info('testRatingForPropThree START');
@@ -541,9 +613,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRatingIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testRatingIfPropTrue START');
@@ -561,9 +636,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testRatingShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testRatingShowPropTrue START');
@@ -581,9 +659,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testRatingShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testRatingShowPropFalse START');
@@ -601,9 +682,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testRatingShowPropNone START');
@@ -621,9 +705,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingNumstars
-         * @tc.desc      ACE
+         * @tc.name   testRatingNumstars
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingNumstars', Level.LEVEL0, async function(done) {
             console.info('testRatingNumstars START');
@@ -641,9 +728,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingRating
-         * @tc.desc      ACE
+         * @tc.name   testRatingRating
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingRating', Level.LEVEL0, async function(done) {
             console.info('testRatingRating START');
@@ -661,9 +751,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingStepsize
-         * @tc.desc      ACE
+         * @tc.name   testRatingStepsize
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingStepsize', Level.LEVEL0, async function(done) {
             console.info('testRatingStepsize START');
@@ -681,9 +774,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingIndicatorFalse
-         * @tc.desc      ACE
+         * @tc.name   testRatingIndicatorFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingIndicatorFalse', Level.LEVEL0, async function(done) {
             console.info('testRatingIndicatorFalse START');
@@ -701,9 +797,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingIndicatorTrue
-         * @tc.desc      ACE
+         * @tc.name   testRatingIndicatorTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingIndicatorTrue', Level.LEVEL0, async function(done) {
             console.info('testRatingIndicatorTrue START');
@@ -721,9 +820,12 @@ export default function ratingPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingIndicatorNone
-         * @tc.desc      ACE
+         * @tc.name   testRatingIndicatorNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingIndicatorNone', Level.LEVEL0, async function(done) {
             console.info('testRatingIndicatorNone START');

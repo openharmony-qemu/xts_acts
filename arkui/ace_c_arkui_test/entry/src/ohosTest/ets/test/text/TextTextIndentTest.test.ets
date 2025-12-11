@@ -26,26 +26,26 @@ export default function textTextIndentTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTINDENT_0100
-     * @tc.name       : testTextTextIndent001
-     * @tc.desc       : testing textIndent for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextIndent001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTINDENT_0100
+     * @tc.desc   testing textIndent for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextIndent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextIndent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTINDENT_0200
-     * @tc.name       : testTextTextIndent002
-     * @tc.desc       : testing textIndent for text with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextIndent002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTINDENT_0200
+     * @tc.desc   testing textIndent for text with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextIndent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextIndent002()).assertEqual(0)

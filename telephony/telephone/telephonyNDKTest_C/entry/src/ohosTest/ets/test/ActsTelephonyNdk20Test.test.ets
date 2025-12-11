@@ -21,12 +21,12 @@ const OS_ACCOUNT_ERR_OK = 0;
 export default function ActsTelephonyNdk20Test() {
   describe('ActsTelephonyNdk20Test', () => {
     /**
+     * @tc.name   testOHTelephonyGetNetworkState0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATE0100
-     * @tc.name testOHTelephonyGetNetworkState0100
-     * @tc.desc Obtains the radio network state for given slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for given slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHTelephonyGetNetworkState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -44,12 +44,12 @@ export default function ActsTelephonyNdk20Test() {
       });
 
     /**
+     * @tc.name   testOH_Telephony_GetNetworkStateForSlot0101
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OH_TELEPHONY_GETNETWORKSTATEFORSLOT0101
-     * @tc.name testOH_Telephony_GetNetworkStateForSlot0101
-     * @tc.desc Obtains the radio network state for a specific slot id.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Obtains the radio network state for a specific slot id.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOH_Telephony_GetNetworkStateForSlot0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -67,12 +67,12 @@ export default function ActsTelephonyNdk20Test() {
       });
 
     /**
+     * @tc.name   testTelRadio0101
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO0101
-     * @tc.name testTelRadio0101
-     * @tc.desc Tests radio-related functionality.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio-related functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadio0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -89,12 +89,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRegState0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELREGSTATE0100
-     * @tc.name testTelRegState0100
-     * @tc.desc Tests network registration state (case 0100).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests network registration state (case 0100).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRegState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -111,12 +111,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRegState0101
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELREGSTATE0101
-     * @tc.name testTelRegState0101
-     * @tc.desc Tests network registration state (case 0101).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests network registration state (case 0101).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRegState0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -133,12 +133,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRegState0102
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELREGSTATE0102
-     * @tc.name testTelRegState0102
-     * @tc.desc Tests network registration state (case 0102).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests network registration state (case 0102).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRegState0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -155,12 +155,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRegState0103
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELREGSTATE0103
-     * @tc.name testTelRegState0103
-     * @tc.desc Tests network registration state (case 0103).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests network registration state (case 0103).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRegState0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -177,12 +177,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0100
-     * @tc.name testTelRadioTechnology0100
-     * @tc.desc Tests radio technology type (case 0100).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0100).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -199,12 +199,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0101
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0101
-     * @tc.name testTelRadioTechnology0101
-     * @tc.desc Tests radio technology type (case 0101).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0101).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -221,12 +221,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0102
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0102
-     * @tc.name testTelRadioTechnology0102
-     * @tc.desc Tests radio technology type (case 0102).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0102).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -243,12 +243,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0103
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0103
-     * @tc.name testTelRadioTechnology0103
-     * @tc.desc Tests radio technology type (case 0103).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0103).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -265,12 +265,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0104
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0104
-     * @tc.name testTelRadioTechnology0104
-     * @tc.desc Tests radio technology type (case 0104).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0104).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -287,12 +287,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0105
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0105
-     * @tc.name testTelRadioTechnology0105
-     * @tc.desc Tests radio technology type (case 0105).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0105).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -309,12 +309,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0106
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0106
-     * @tc.name testTelRadioTechnology0106
-     * @tc.desc Tests radio technology type (case 0106).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0106).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -331,12 +331,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0107
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0107
-     * @tc.name testTelRadioTechnology0107
-     * @tc.desc Tests radio technology type (case 0107).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0107).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -353,12 +353,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0108
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO TECHNOLOGY0108
-     * @tc.name testTelRadioTechnology0108
-     * @tc.desc Tests radio technology type (case 0108).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0108).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -374,12 +374,12 @@ export default function ActsTelephonyNdk20Test() {
       }
     })
     /**
+     * @tc.name   testTelRadioTechnology0109
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO_TECHNOLOGY0109
-     * @tc.name testTelRadioTechnology0109
-     * @tc.desc Tests radio technology type (case 0109).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0109).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -396,12 +396,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0110
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO_TECHNOLOGY0110
-     * @tc.name testTelRadioTechnology0110
-     * @tc.desc Tests radio technology type (case 0110).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0110).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -418,12 +418,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0111
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO_TECHNOLOGY0111
-     * @tc.name testTelRadioTechnology0111
-     * @tc.desc Tests radio technology type (case 0111).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0111).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -440,12 +440,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelRadioTechnology0112
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELRADIO_TECHNOLOGY0112
-     * @tc.name testTelRadioTechnology0112
-     * @tc.desc Tests radio technology type (case 0112).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests radio technology type (case 0112).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelRadioTechnology0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -462,12 +462,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelNsaState0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELNSA_STATE0100
-     * @tc.name testTelNsaState0100
-     * @tc.desc Tests NSA (Non-Standalone) network state (case 0100).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests NSA (Non-Standalone) network state (case 0100).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelNsaState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -484,12 +484,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelNsaState0101
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELNSA_STATE0101
-     * @tc.name testTelNsaState0101
-     * @tc.desc Tests NSA (Non-Standalone) network state (case 0101).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests NSA (Non-Standalone) network state (case 0101).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelNsaState0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -506,12 +506,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelNsaState0102
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELNSA_STATE0102
-     * @tc.name testTelNsaState0102
-     * @tc.desc Tests NSA (Non-Standalone) network state (case 0102).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests NSA (Non-Standalone) network state (case 0102).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelNsaState0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -528,12 +528,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelNsaState0103
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELNSA_STATE0103
-     * @tc.name testTelNsaState0103
-     * @tc.desc Tests NSA (Non-Standalone) network state (case 0103).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests NSA (Non-Standalone) network state (case 0103).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelNsaState0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -550,12 +550,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelNsaState0104
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELNSA_STATE0104
-     * @tc.name testTelNsaState0104
-     * @tc.desc Tests NSA (Non-Standalone) network state (case 0104).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests NSA (Non-Standalone) network state (case 0104).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelNsaState0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -572,12 +572,12 @@ export default function ActsTelephonyNdk20Test() {
     });
 
     /**
+     * @tc.name   testTelNsaState0105
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TELNSA_STATE0105
-     * @tc.name testTelNsaState0105
-     * @tc.desc Tests NSA (Non-Standalone) network state (case 0105).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Tests NSA (Non-Standalone) network state (case 0105).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelNsaState0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

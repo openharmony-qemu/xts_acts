@@ -43,12 +43,14 @@ export default function ListLanes02() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_038
-       * @tc.name  : ListLanes02_001
-       * @tc.desc  : set gutter to 10 and listDirection to Axis.Vertical
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   ListLanes02_001
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_038
+     * @tc.desc   set gutter to 10 and listDirection to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes02_001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes02_001] START');
@@ -63,12 +65,14 @@ export default function ListLanes02() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_043
-       * @tc.name  : ListLanes02_001
-       * @tc.desc  : set gutter to 10 and listDirection to Axis.Horizontal
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   ListLanes02_002
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_043
+     * @tc.desc   set gutter to 10 and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('ListLanes02_002',  Level.LEVEL0, async (done: Function) => {
     //
     //   console.info('[ListLanes02_002] START');

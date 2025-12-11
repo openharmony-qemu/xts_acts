@@ -42,13 +42,13 @@ export default function wholeWebPageDrawing() {
       console.info("web afterEach finish");
     })
 
-    /*
-     *@tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0100
-     *@tc.name wholeWebPageDrawing0100
-     *@tc.desc test wholeWebPageDrawing
-     *@tc.size : MediumTest
-     *@tc.type : Function
-     *@tc.level : Level 3
+    /**
+     * @tc.name   wholeWebPageDrawing0100
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0100
+     * @tc.desc   test wholeWebPageDrawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('wholeWebPageDrawing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

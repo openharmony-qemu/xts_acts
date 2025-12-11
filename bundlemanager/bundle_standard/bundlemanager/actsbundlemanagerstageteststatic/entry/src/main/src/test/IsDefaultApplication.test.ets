@@ -32,9 +32,12 @@ export default function isDefaultApplicationTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number  Sub_Bms_Framework_Status_DefaultApp_static_0900
-     * @tc.name    Sub_Bms_Framework_Status_DefaultApp_static_0900
-     * @tc.desc    No default image application is set. Query and return false
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_static_0900
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_static_0900
+     * @tc.desc   No default image application is set. Query and return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Framework_Status_DefaultApp_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -79,9 +82,12 @@ export default function isDefaultApplicationTest() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Status_DefaultApp_static_2550
-     * @tc.name    Sub_Bms_Framework_Status_DefaultApp_static_2550
-     * @tc.desc    The parameter type is correct, the string format is incorrect, return false
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_static_2550
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_static_2550
+     * @tc.desc   The parameter type is correct, the string format is incorrect, return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Framework_Status_DefaultApp_static_2550", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -100,9 +106,12 @@ export default function isDefaultApplicationTest() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Status_DefaultApp_static_1200
-     * @tc.name    Sub_Bms_Framework_Status_DefaultApp_static_1200
-     * @tc.desc    ApplicationType is string
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_static_1200
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_static_1200
+     * @tc.desc   ApplicationType is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Framework_Status_DefaultApp_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

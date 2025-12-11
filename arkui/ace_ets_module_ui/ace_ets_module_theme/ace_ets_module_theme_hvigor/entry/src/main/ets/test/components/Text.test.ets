@@ -69,13 +69,13 @@ export default function textThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsTextThemeColors_0100 
-      * @tc.name      : ActsTextThemeColors_0100
-      * @tc.desc      : Check system colors values of Text component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsTextThemeColors_0100
+     * @tc.number ActsTextThemeColors_0100
+     * @tc.desc   Check system colors values of Text component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsTextThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsTextThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -88,13 +88,13 @@ export default function textThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsTextThemeColors_0200 
-      * @tc.name      : ActsTextThemeColors_0200
-      * @tc.desc      : Check custom colors values of Text component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsTextThemeColors_0200
+     * @tc.number ActsTextThemeColors_0200
+     * @tc.desc   Check custom colors values of Text component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsTextThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsTextThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -109,14 +109,13 @@ export default function textThemeTest() {
     })
 
     /**
-      * @tc.number    : ActsTextThemeColors_0300 
-      * @tc.name      : ActsTextThemeColors_0300
-      * @tc.desc      : Check custom colors values of Text component
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */    
+     * @tc.name   ActsTextThemeColors_0300
+     * @tc.number ActsTextThemeColors_0300
+     * @tc.desc   Check custom colors values of Text component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsTextThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

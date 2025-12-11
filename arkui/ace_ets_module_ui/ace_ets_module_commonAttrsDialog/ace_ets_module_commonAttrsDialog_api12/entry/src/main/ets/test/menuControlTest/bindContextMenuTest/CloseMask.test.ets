@@ -44,12 +44,14 @@ export default function CloseMask() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : CloseMask_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   CloseMask_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CloseMask_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('CloseMask_0100 START');
       await CommonFunc.sleep(1000);

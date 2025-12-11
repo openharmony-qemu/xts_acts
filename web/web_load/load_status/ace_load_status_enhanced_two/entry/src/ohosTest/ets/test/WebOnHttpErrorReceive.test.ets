@@ -53,14 +53,14 @@ export default function webOnHttpErrorReceiveTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONHTTPERRORRECEIVE_0200
-    * @tc.name        : testOnHttpErrorReceive002
-    * @tc.desc        : test onHttpErrorReceive not callback when returned error code is 204
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testOnHttpErrorReceive002
+     * @tc.number SUB_WEB_ONHTTPERRORRECEIVE_0200
+     * @tc.desc   test onHttpErrorReceive not callback when returned error code is 204
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnHttpErrorReceive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testOnHttpErrorReceive002", 141701)
       let isReturn = false;
@@ -70,14 +70,14 @@ export default function webOnHttpErrorReceiveTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONHTTPERRORRECEIVE_0300
-    * @tc.name        : testOnHttpErrorReceive003
-    * @tc.desc        : test onHttpErrorReceive not callback when returned error code is 301
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testOnHttpErrorReceive003
+     * @tc.number SUB_WEB_ONHTTPERRORRECEIVE_0300
+     * @tc.desc   test onHttpErrorReceive not callback when returned error code is 301
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnHttpErrorReceive003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testOnHttpErrorReceive003", 141701)
       let isReturn = false;
@@ -87,14 +87,14 @@ export default function webOnHttpErrorReceiveTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONHTTPERRORRECEIVE_0400
-    * @tc.name        : testOnHttpErrorReceive004
-    * @tc.desc        : test onHttpErrorReceive callback when returned error code is 500
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnHttpErrorReceive004
+     * @tc.number SUB_WEB_ONHTTPERRORRECEIVE_0400
+     * @tc.desc   test onHttpErrorReceive callback when returned error code is 500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnHttpErrorReceive004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnHttpErrorReceive004", 141701)
       let isReturn = false;

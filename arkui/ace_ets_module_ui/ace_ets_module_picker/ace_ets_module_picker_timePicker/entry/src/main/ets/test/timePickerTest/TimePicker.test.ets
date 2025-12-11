@@ -55,12 +55,12 @@ export default function TimePickerTest() {
     });
 
     /**
-     * @tc.number: TimePicker_001
-     * @tc.name  : TimePicker_001
-     * @tc.desc  : To test the timePicker type
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePicker_001
+     * @tc.number TimePicker_001
+     * @tc.desc   To test the timePicker type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePicker_001', Level.LEVEL1, async (done: Function) => {
       console.info('[TimePicker_001] START');

@@ -45,12 +45,12 @@ export default function Rawfile0140() {
     });
 
     /**
-     * @tc.number    Rawfile0140
-     * @tc.name      Rawfile0140_001
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   Rawfile0140_001
+     * @tc.number Rawfile0140
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Rawfile0140_001', Level.LEVEL3, async (done: Function) => {
       console.info('[Rawfile0140_001] START');

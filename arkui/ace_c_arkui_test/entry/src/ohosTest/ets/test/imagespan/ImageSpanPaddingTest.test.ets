@@ -26,52 +26,52 @@ export default function imageSpanPaddingTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0100
-     * @tc.name: testImageSpanPadding001
-     * @tc.desc: testing padding for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanPadding001
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0100
+     * @tc.desc   testing padding for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanPadding001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanPadding001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0200
-     * @tc.name: testImageSpanPadding002
-     * @tc.desc: testing padding for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanPadding002
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0200
+     * @tc.desc   testing padding for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanPadding002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanPadding002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0300
-     * @tc.name: testImageSpanPadding003
-     * @tc.desc: testing padding for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanPadding003
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0300
+     * @tc.desc   testing padding for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanPadding003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanPadding003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0400
-     * @tc.name: testImageSpanPadding004
-     * @tc.desc: testing padding for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanPadding004
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_PADDING_0400
+     * @tc.desc   testing padding for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanPadding004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanPadding004()).assertEqual(0)

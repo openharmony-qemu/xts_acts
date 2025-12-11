@@ -82,9 +82,12 @@ export default function listItemGroupPropsJsTest() {
         // 通用属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupIdProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupIdProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupIdProp START');
@@ -100,9 +103,12 @@ export default function listItemGroupPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupClassProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupClassProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupClassProp START');
@@ -119,9 +125,12 @@ export default function listItemGroupPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupClassPropNone START');
@@ -139,9 +148,12 @@ export default function listItemGroupPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupRefProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupRefProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupRefProp START');
@@ -158,9 +170,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupRefPropNone START');
@@ -178,9 +193,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDisabledPropTrue START');
@@ -197,9 +215,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDisabledPropFalse START');
@@ -216,9 +237,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDisabledPropNone START');
@@ -235,9 +259,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupFocusablePropTrue START');
@@ -254,9 +281,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupFocusablePropFalse START');
@@ -273,9 +303,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupFocusablePropNone START');
@@ -292,9 +325,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDataProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDataProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDataProp START');
@@ -312,9 +348,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDataPropNone START');
@@ -332,9 +371,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupClickEffectPropSmall START');
@@ -351,9 +393,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupClickEffectPropMedium START');
@@ -370,9 +415,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupClickEffectPropLarge START');
@@ -389,9 +437,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupClickEffectPropNone START');
@@ -409,9 +460,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDirPropRtl START');
@@ -428,9 +482,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDirPropLtr START');
@@ -447,9 +504,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDirPropAuto START');
@@ -466,9 +526,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupDirPropNone START');
@@ -485,9 +548,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupForPropNull', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupForPropNull START');
@@ -505,9 +571,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupForPropOne', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupForPropOne START');
@@ -525,9 +594,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupForPropThree', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupForPropThree START');
@@ -545,9 +617,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupIfPropTrue START');
@@ -565,9 +640,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupShowPropTrue START');
@@ -585,9 +663,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupShowPropFalse START');
@@ -605,9 +686,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemGroupShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemGroupShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemGroupShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemGroupShowPropNone START');
@@ -627,9 +711,12 @@ export default function listItemGroupPropsJsTest() {
         // 特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistLitemGruopType
-         * @tc.desc      ACE
+         * @tc.name   testlistLitemGruopType
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistLitemGruopType', Level.LEVEL0, async function(done) {
             console.info('testlistLitemGruopType START');
@@ -647,9 +734,12 @@ export default function listItemGroupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistLitemGruopTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testlistLitemGruopTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistLitemGruopTypeNone', Level.LEVEL0, async function(done) {
             console.info('testlistLitemGruopTypeNone START');

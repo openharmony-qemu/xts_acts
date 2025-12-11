@@ -27,12 +27,12 @@ const LABEL_SIM_INFO: string = 'simInfo';
 export default function deviceInfoTest() {
   describe('deviceInfo_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0100
-     * @tc.name      : test_get_device_info_0100
-     * @tc.desc      : test deviceInfo getDeviceInfo with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0100
+     * @tc.desc   test deviceInfo getDeviceInfo with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0100", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);

@@ -98,7 +98,6 @@ export default function getColumnTypeErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSyncErrcode0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5000
      * @tc.desc   getColumnTypeSync errcode is 14800032
@@ -158,7 +157,6 @@ export default function getColumnTypeErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSyncErrcode0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5100
      * @tc.desc   getColumnTypeSync errcode is 14800033
@@ -216,7 +214,6 @@ export default function getColumnTypeErrcodeTest() {
       console.log(TAG + "************* testgetColumnTypeSyncErrcode0200 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeSyncErrcode0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5200
      * @tc.desc   getColumnTypeSync errcode is 14800027
@@ -275,7 +272,6 @@ export default function getColumnTypeErrcodeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeErrcode0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5300
      * @tc.desc   getColumnType errcode is 14800032
@@ -335,7 +331,6 @@ export default function getColumnTypeErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeErrcode0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5400
      * @tc.desc   getColumnType errcode is 14800033
@@ -393,7 +388,6 @@ export default function getColumnTypeErrcodeTest() {
       console.log(TAG + "************* testgetColumnTypeErrcode0200 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testgetColumnTypeErrcode0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5500
      * @tc.desc   getColumnType errcode is 14800027

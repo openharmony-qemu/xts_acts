@@ -26,26 +26,26 @@ export default function scrollBorderColorTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERCOLOR_0100
-     * @tc.name       : testScrollBorderColor001
-     * @tc.desc       : testing border color for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBorderColor001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERCOLOR_0100
+     * @tc.desc   testing border color for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BORDERCOLOR_0200
-     * @tc.name       : testScrollBorderColor002
-     * @tc.desc       : testing border color for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBorderColor002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BORDERCOLOR_0200
+     * @tc.desc   testing border color for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBorderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBorderColor002()).assertEqual(0)

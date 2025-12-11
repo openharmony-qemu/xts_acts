@@ -25,12 +25,12 @@ export default function fsuidNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FSUID_SETFSGID_0100
-     * @tc.name       : testMuslFsuidSetfsgid001
-     * @tc.desc       : test setfsgid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslFsuidSetfsgid001
+     * @tc.number SUB_THIRDPARTY_MUSL_FSUID_SETFSGID_0100
+     * @tc.desc   test setfsgid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFsuidSetfsgid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = fsuid.setfsgid();
@@ -39,12 +39,12 @@ export default function fsuidNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FSUID_SETFSUID_0100
-     * @tc.name       : testMuslFsuidSetfsuid001
-     * @tc.desc       : test setfsuid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslFsuidSetfsuid001
+     * @tc.number SUB_THIRDPARTY_MUSL_FSUID_SETFSUID_0100
+     * @tc.desc   test setfsuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFsuidSetfsuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = fsuid.setfsuid();

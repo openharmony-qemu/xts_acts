@@ -75,14 +75,14 @@ export default function abilityTest() {
     afterAll(() => {
     })
 
-    /*
-    * @tc.number  BackToCallerAbilityWithResultTest_0100
-    * @tc.name    BackToCallerAbilityWithResultTest_0100
-    * @tc.desc    A start B, B back to A with invalid request code.
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   BackToCallerAbilityWithResultTest_0100
+     * @tc.number BackToCallerAbilityWithResultTest_0100
+     * @tc.desc   A start B, B back to A with invalid request code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('BackToCallerAbilityWithResultTest_0100', Level.LEVEL0, async (done: Function) => {
       let TAG: string = 'BackToCallerAbilityWithResultTest_0100';
       log(TAG, '---------------testcase start---------------')
@@ -140,14 +140,14 @@ export default function abilityTest() {
       await clickDialog(TAG);
     });
 
-    /*
-    * @tc.number  BackToCallerAbilityWithResultTest_0200
-    * @tc.name    BackToCallerAbilityWithResultTest_0200
-    * @tc.desc    A start B, B back to A.
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   BackToCallerAbilityWithResultTest_0200
+     * @tc.number BackToCallerAbilityWithResultTest_0200
+     * @tc.desc   A start B, B back to A.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('BackToCallerAbilityWithResultTest_0200', Level.LEVEL0, async (done: Function) => {
       let TAG: string = 'BackToCallerAbilityWithResultTest_0200';
       log(TAG, '---------------testcase is start---------------')
@@ -206,14 +206,14 @@ export default function abilityTest() {
 
     });
 
-    /*
-    * @tc.number  BackToCallerAbilityWithResultTest_0300
-    * @tc.name    BackToCallerAbilityWithResultTest_0300
-    * @tc.desc    A start B, B start C, C back to B.
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   BackToCallerAbilityWithResultTest_0300
+     * @tc.number BackToCallerAbilityWithResultTest_0300
+     * @tc.desc   A start B, B start C, C back to B.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('BackToCallerAbilityWithResultTest_0300', Level.LEVEL0, async (done: Function) => {
       let TAG: string = 'BackToCallerAbilityWithResultTest_0300';
       log(TAG, '---------------testcase is start---------------')
@@ -274,14 +274,14 @@ export default function abilityTest() {
       await clickDialog(TAG);
     });
 
-    /*
-    * @tc.number  SetOnNewWantSkipScenarios_0100
-    * @tc.name    SetOnNewWantSkipScenarios_0100
-    * @tc.desc    SetOnNewWantSkipScenarios_0100
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SetOnNewWantSkipScenarios_0100
+     * @tc.number SetOnNewWantSkipScenarios_0100
+     * @tc.desc   SetOnNewWantSkipScenarios_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SetOnNewWantSkipScenarios_0100', Level.LEVEL0, async (done: Function) => {
       let TAG: string = 'SetOnNewWantSkipScenarios_0100';
       log(TAG, '---------------testcase is start---------------')

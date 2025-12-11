@@ -45,9 +45,12 @@ export default function row_TextLayoutWeightTest() {
       console.info("Row_TextLayoutWeightTest after each called");
     });
     /**
+     * @tc.name   testRowTextLayoutWeight
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1600
-     * @tc.name testRowTextLayoutWeight
-     * @tc.desc The layoutweight of the child components set to 1
+     * @tc.desc   The layoutweight of the child components set to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextLayoutWeight',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextLayoutWeight] START');

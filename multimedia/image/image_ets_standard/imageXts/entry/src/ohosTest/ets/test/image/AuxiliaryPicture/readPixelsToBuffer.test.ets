@@ -71,12 +71,12 @@ export default function AuxiliaryPictureReadPixelsToBufferTest() {
     });
 
     /**
-     * @tc.number    : AUXILIARY_PICTURE_READ_PIXELS_FROM_BUFFER_001
-     * @tc.name      : auxiliaryPicture_readPixelsToBuffer_promise_001
-     * @tc.desc      : readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   auxiliaryPicture_readPixelsToBuffer_promise_001
+     * @tc.number AUXILIARY_PICTURE_READ_PIXELS_FROM_BUFFER_001
+     * @tc.desc   readPixelsToBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_readPixelsToBuffer_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_readPixelsToBuffer_promise_001';
@@ -86,12 +86,12 @@ export default function AuxiliaryPictureReadPixelsToBufferTest() {
     })
 
     /**
-     * @tc.number    : AUXILIARY_PICTURE_READ_PIXELS_FROM_BUFFER_002
-     * @tc.name      : auxiliaryPicture_readPixelsToBuffer_promise_002
-     * @tc.desc      : readPixelsToBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   auxiliaryPicture_readPixelsToBuffer_promise_002
+     * @tc.number AUXILIARY_PICTURE_READ_PIXELS_FROM_BUFFER_002
+     * @tc.desc   readPixelsToBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_readPixelsToBuffer_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_readPixelsToBuffer_promise_002';

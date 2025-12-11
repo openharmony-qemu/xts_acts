@@ -45,12 +45,12 @@ export default function enumsVerticalAlignJsunit() {
     });
 
     /**
-     * @tc.number enumsVerticalAlignTest_0100
      * @tc.name   enumsVerticalAlignTest_0100
+     * @tc.number enumsVerticalAlignTest_0100
      * @tc.desc   test Row alignItems
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('enumsVerticalAlignTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('enumsVerticalAlignTest_0100 START');

@@ -44,12 +44,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_1300
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_1300
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_1300
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -67,12 +67,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_1400
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_1400
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_1400
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -90,12 +90,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_1500
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_1500
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_1500
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -120,12 +120,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_1600
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_1600
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_1600
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -143,12 +143,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_1700
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_1700
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_1700
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -166,12 +166,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_1800
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_1800
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_1800
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -196,12 +196,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_1900
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_1900
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_1900
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -219,12 +219,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_2000
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_2000
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_2000
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -242,12 +242,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_2100
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_2100
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_2100
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {
@@ -272,12 +272,12 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Select_CRLs_Func_2200
      * @tc.number SUB_Security_Cert_Framework_Select_CRLs_Func_2200
-     * @tc.name SUB_Security_Cert_Framework_Select_CRLs_Func_2200
-     * @tc.desc The X509 CRL FORMAT is FORMAT_PEM
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL FORMAT is FORMAT_PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const param: cert.X509CRLMatchParameters = {

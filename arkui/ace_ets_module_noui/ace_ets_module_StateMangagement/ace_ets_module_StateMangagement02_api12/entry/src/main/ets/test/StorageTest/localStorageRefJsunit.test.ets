@@ -43,12 +43,12 @@ export default function localStorageRefJsunit() {
       done();
     });
     /**
-     * @tc.number: localStorageRefJsunit_0100
-     * @tc.name: localStorageRefJsunit_0100
-     * @tc.desc: aceEtsTest_ref
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   localStorageRefJsunit_0100
+     * @tc.number localStorageRefJsunit_0100
+     * @tc.desc   aceEtsTest_ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localStorageRefJsunit_0100', Level.LEVEL0, async () => {
       console.info('localStorageRefJsunit001 START');

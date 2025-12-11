@@ -44,10 +44,12 @@ export default function menuBackgroundBlurStyle() {
     });
 
     /**
-     * @tc.number    SUB_ACE_menuBackgroundBlurStyle_0100
-     * @tc.name      menuBackgroundBlurStyle_0100
-     * @tc.desc      To test that the menuBackgroundBlurStyle decorator.
-     * @tc.level     Level 2
+     * @tc.name   menuBackgroundBlurStyle_0100
+     * @tc.number SUB_ACE_menuBackgroundBlurStyle_0100
+     * @tc.desc   To test that the menuBackgroundBlurStyle decorator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('menuBackgroundBlurStyle_0100', Level.LEVEL1, async (done: Function) => {
       console.info('menuBackgroundBlurStyle_0100 START');

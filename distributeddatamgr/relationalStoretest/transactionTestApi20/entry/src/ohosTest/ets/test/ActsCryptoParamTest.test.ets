@@ -19,7 +19,6 @@ import testNapi from 'libentry.so'
 export default function ActsCryptoParamTest() {
   describe('ActsCryptoParamTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDB_HMAC_SHA1_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDB_HMAC_SHA1_0100
      * @tc.desc   Test the failure scenario of enumeration value RDB_HMAC_SHA1.
@@ -43,7 +42,6 @@ export default function ActsCryptoParamTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDB_HMAC_SHA256_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDB_HMAC_SHA256_0200
      * @tc.desc   Test the failure scenario of enumeration value RDB_HMAC_SHA256.
@@ -67,7 +65,6 @@ export default function ActsCryptoParamTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDB_AES_256_GCM_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDB_AES_256_GCM_0300
      * @tc.desc   Test the failure scenario of enumeration value RDB_AES_256_GCM.
@@ -91,7 +88,6 @@ export default function ActsCryptoParamTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDB_KDF_SHA1_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDB_KDF_SHA1_0400
      * @tc.desc   Test the failure scenario of enumeration value RDB_KDF_SHA1.
@@ -115,7 +111,6 @@ export default function ActsCryptoParamTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDB_KDF_SHA256_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDB_KDF_SHA256_0500
      * @tc.desc   Test the failure scenario of enumeration value RDB_KDF_SHA256.

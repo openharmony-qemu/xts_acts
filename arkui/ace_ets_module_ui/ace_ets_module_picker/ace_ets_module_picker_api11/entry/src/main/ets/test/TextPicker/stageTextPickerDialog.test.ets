@@ -53,6 +53,14 @@ export default function stageTextPickerDialog() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   testTextPickerDialog001
+     * @tc.number testTextPickerDialog001
+     * @tc.desc   testTextPickerDialog001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextPickerDialog001', Level.LEVEL1, async (done: Function) => {
       console.info('testTextPickerDialog001 START');
       setTimeout(() => {
@@ -81,6 +89,14 @@ export default function stageTextPickerDialog() {
       }, 500)
     });
 
+    /**
+     * @tc.name   testTextPickerDialog002
+     * @tc.number testTextPickerDialog002
+     * @tc.desc   testTextPickerDialog002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextPickerDialog002', Level.LEVEL1, async (done: Function) => {
       console.info('testTextPickerDialog002 START');
       setTimeout(() => {
@@ -108,6 +124,14 @@ export default function stageTextPickerDialog() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   testTextPickerDialog003
+     * @tc.number testTextPickerDialog003
+     * @tc.desc   testTextPickerDialog003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextPickerDialog003', Level.LEVEL1, async (done: Function) => {
       console.info('testTextPickerDialog003 START');
       setTimeout(() => {

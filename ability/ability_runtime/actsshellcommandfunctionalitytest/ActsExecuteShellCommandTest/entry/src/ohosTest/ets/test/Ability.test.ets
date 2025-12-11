@@ -22,9 +22,12 @@ export default function abilityTest() {
     describe('ACTS_ExecuteShellCommandTest', () => {
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Callback_0100
-         * @tc.name: Execute a shell command without arguments (AsyncCallback).
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_ExecuteShellCommand_Callback_0100
+         * @tc.number ACTS_ExecuteShellCommand_Callback_0100
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Callback_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Callback_0100 --- start")
@@ -44,9 +47,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Callback_0200
-         * @tc.name: Execute shell command with timeout parameter (AsyncCallback)
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_ExecuteShellCommand_Callback_0200
+         * @tc.number ACTS_ExecuteShellCommand_Callback_0200
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Callback_0200', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Callback_0200 --- start")
@@ -69,9 +75,12 @@ export default function abilityTest() {
             }, 3000 )
         })
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Callback_0300
-         * @tc.name: Execute non-existing shell command (AsyncCallback).
-         * @tc.desc: Failed to execute shell command on authentication interface.
+         * @tc.name   ACTS_ExecuteShellCommand_Callback_0300
+         * @tc.number ACTS_ExecuteShellCommand_Callback_0300
+         * @tc.desc   Failed to execute shell command on authentication interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Callback_0300', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Callback_0300 --- start")
@@ -90,9 +99,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Callback_0400
-         * @tc.name: Execute shell command timeout (AsyncCallback)
-         * @tc.desc: The authentication interface executes the shell command timed out.
+         * @tc.name   ACTS_ExecuteShellCommand_Callback_0400
+         * @tc.number ACTS_ExecuteShellCommand_Callback_0400
+         * @tc.desc   The authentication interface executes the shell command timed out.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Callback_0400', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Callback_0400 --- start")
@@ -112,9 +124,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Callback_0500
-         * @tc.name: Invalid timeout parameter for executing shell command (AsyncCallback)
-         * @tc.desc: The timeout parameter for executing shell commands on the authentication interface is invalid.
+         * @tc.name   ACTS_ExecuteShellCommand_Callback_0500
+         * @tc.number ACTS_ExecuteShellCommand_Callback_0500
+         * @tc.desc   The timeout parameter for executing shell commands on the authentication interface is invalid.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Callback_0500', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Callback_0500 --- start")
@@ -134,9 +149,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Callback_0600
-         * @tc.name: The executed shell command parameter is null (AsyncCallback)
-         * @tc.desc: Failed to execute shell command on authentication interface.
+         * @tc.name   ACTS_ExecuteShellCommand_Callback_0600
+         * @tc.number ACTS_ExecuteShellCommand_Callback_0600
+         * @tc.desc   Failed to execute shell command on authentication interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Callback_0600', Level.LEVEL0, async (done:Function) => {
             let flag=true;
@@ -160,9 +178,12 @@ export default function abilityTest() {
 
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Callback_0700
-         * @tc.name: The timeout parameter of the execution is null (AsyncCallback)
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_ExecuteShellCommand_Callback_0700
+         * @tc.number ACTS_ExecuteShellCommand_Callback_0700
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Callback_0700', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_0700 --- start")
@@ -182,9 +203,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Promise_0100
-         * @tc.name: Execute a shell command without arguments (Promise).
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_ExecuteShellCommand_Promise_0100
+         * @tc.number ACTS_ExecuteShellCommand_Promise_0100
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Promise_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0100 --- start")
@@ -203,9 +227,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Promise_0200
-         * @tc.name: Execute shell command with timeout parameter (Promise)
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_ExecuteShellCommand_Promise_0200
+         * @tc.number ACTS_ExecuteShellCommand_Promise_0200
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Promise_0200', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0200 --- start")
@@ -229,9 +256,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Promise_0300
-         * @tc.name: Execute non-existing shell command (Promise).
-         * @tc.desc: Failed to execute shell command on authentication interface.
+         * @tc.name   ACTS_ExecuteShellCommand_Promise_0300
+         * @tc.number ACTS_ExecuteShellCommand_Promise_0300
+         * @tc.desc   Failed to execute shell command on authentication interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Promise_0300', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0300 --- start")
@@ -250,9 +280,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Promise_0400
-         * @tc.name: Execute shell command timeout (Promise)
-         * @tc.desc: The authentication interface executes the shell command timed out.
+         * @tc.name   ACTS_ExecuteShellCommand_Promise_0400
+         * @tc.number ACTS_ExecuteShellCommand_Promise_0400
+         * @tc.desc   The authentication interface executes the shell command timed out.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Promise_0400', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0400 --- start")
@@ -270,9 +303,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Promise_0500
-         * @tc.name: Invalid timeout parameter for executing shell command (Promise)
-         * @tc.desc: The timeout parameter for executing shell commands on the authentication interface is invalid.
+         * @tc.name   ACTS_ExecuteShellCommand_Promise_0500
+         * @tc.number ACTS_ExecuteShellCommand_Promise_0500
+         * @tc.desc   The timeout parameter for executing shell commands on the authentication interface is invalid.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Promise_0500', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0500 --- start")
@@ -290,9 +326,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Promise_0600
-         * @tc.name: The executed shell command parameter is null (Promise)
-         * @tc.desc: Failed to execute shell command on authentication interface.
+         * @tc.name   ACTS_ExecuteShellCommand_Promise_0600
+         * @tc.number ACTS_ExecuteShellCommand_Promise_0600
+         * @tc.desc   Failed to execute shell command on authentication interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Promise_0600', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0600 --- start")
@@ -324,9 +363,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ExecuteShellCommand_Promise_0700
-         * @tc.name: The timeout parameter of the execution is null (Promise)
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_ExecuteShellCommand_Promise_0700
+         * @tc.number ACTS_ExecuteShellCommand_Promise_0700
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ExecuteShellCommand_Promise_0700', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_ExecuteShellCommand_Promise_0700 --- start")

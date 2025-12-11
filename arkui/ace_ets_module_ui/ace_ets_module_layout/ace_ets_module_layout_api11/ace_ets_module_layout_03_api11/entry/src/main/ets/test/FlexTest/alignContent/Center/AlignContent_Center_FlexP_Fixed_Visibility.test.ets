@@ -52,13 +52,15 @@ export default function AlignContent_Center_FlexP_Fixed_Visibility() {
       console.info("AlignContent_Center_FlexP_Fixed_Visibility after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_1300
-     * @tc.name testAlignContentCenterFlexfixedVisibilityHidden
-     * @tc.desc The AlignContent property of the Flex component is set to FlexAlign. Center, and the visibility
-     *               property of the sub component is set to Visibility.Hidden.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexfixedVisibilityHidden
+     * @tc.number testAlignContentCenterFlexfixedVisibilityHidden
+     * @tc.desc   testAlignContentCenterFlexfixedVisibilityHidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexfixedVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexfixedVisibilityHidden START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -111,13 +113,15 @@ export default function AlignContent_Center_FlexP_Fixed_Visibility() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_1400
-     * @tc.name testAlignContentCenterFlexfixedVisibilityNone
-     * @tc.desc The AlignContent property of the Flex component is set to FlexAlign. Center, and the visibility
-     *               property of the sub component is set to Visibility.None
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexfixedVisibilityNone
+     * @tc.number testAlignContentCenterFlexfixedVisibilityNone
+     * @tc.desc   testAlignContentCenterFlexfixedVisibilityNone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexfixedVisibilityNone',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexfixedVisibilityNone START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

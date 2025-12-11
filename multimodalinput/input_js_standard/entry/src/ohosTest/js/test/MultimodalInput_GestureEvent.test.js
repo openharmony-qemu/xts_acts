@@ -22,7 +22,6 @@ export default function MultimodalInput_GestureEvent_test() {
   describe('MultimodalInput_GestureEvent_test', function () {
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_GestureEvent_SUB_MMI_GestureEventTest_001
      * @tc.number Multimodalinput_GestureEventTest_001
      * @tc.desc   GestureEvent interface On gesture type
@@ -39,7 +38,6 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_002
      * @tc.number Multimodalinput_GestureEventTest_002
      * @tc.desc   GestureEvent interface On gesture type
@@ -56,7 +54,6 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_003
      * @tc.number Multimodalinput_GestureEventTest_003
      * @tc.desc   GestureEvent interface On gesture type
@@ -73,7 +70,6 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_004
      * @tc.number Multimodalinput_GestureEventTest_004
      * @tc.desc   GestureEvent interface On gesture type
@@ -90,7 +86,6 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_GestureEvent_006
      * @tc.number Multimodalinput_GestureEventTest_006
      * @tc.desc   GestureEvent interface On gesture pinch
@@ -111,7 +106,6 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_Rotate_001
      * @tc.number Multimodalinput_GestureEventTest_007
      * @tc.desc   GestureEvent interface On gesture rotate
@@ -132,7 +126,6 @@ export default function MultimodalInput_GestureEvent_test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   Multimodalinput_GestureEvent_test_SUB_MMI_ThreeFingersTap_001
      * @tc.number Multimodalinput_GestureEventTest_008
      * @tc.desc   GestureEvent interface On gesture threeFingersTap

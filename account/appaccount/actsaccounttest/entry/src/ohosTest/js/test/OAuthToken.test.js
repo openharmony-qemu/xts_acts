@@ -26,16 +26,16 @@ const OWNERSELF = "com.example.actsaccounttest";
 export default function ActsAccountOAuthToken() {
     describe('ActsAccountOAuthToken', function () {
 
-        /*
-            * @tc.number    : testGetEntriesString101
-            * @tc.name      : Use getEntries get the value by mixing the string key
-            * @tc.desc      : Mixed strings value can be obtained correctly
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 1
-        */
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_9100
+         * @tc.number ActsAccountOAuthToken_9100
+         * @tc.desc   ActsAccountOAuthToken_9100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_9100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -90,6 +90,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_9000
+         * @tc.number ActsAccountOAuthToken_9000
+         * @tc.desc   ActsAccountOAuthToken_9000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_9000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -150,6 +158,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7100
+         * @tc.number ActsAccountOAuthToken_7100
+         * @tc.desc   ActsAccountOAuthToken_7100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountOAuthToken_7100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -207,6 +223,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7200
+         * @tc.number ActsAccountOAuthToken_7200
+         * @tc.desc   ActsAccountOAuthToken_7200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_7200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -238,6 +262,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7300
+         * @tc.number ActsAccountOAuthToken_7300
+         * @tc.desc   ActsAccountOAuthToken_7300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_7300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -284,6 +316,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7400
+         * @tc.number ActsAccountOAuthToken_7400
+         * @tc.desc   ActsAccountOAuthToken_7400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             var limitAuthType = '';
             for(var i = 0;i < AUTHTYPELENGTHLIMIT + 1; i++){
@@ -313,6 +353,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7500
+         * @tc.number ActsAccountOAuthToken_7500
+         * @tc.desc   ActsAccountOAuthToken_7500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             var limitAuthType = '';
             for(var i = 0;i < AUTHTYPELENGTHLIMIT + 1; i++){
@@ -338,6 +386,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7600
+         * @tc.number ActsAccountOAuthToken_7600
+         * @tc.desc   ActsAccountOAuthToken_7600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             var limitAuthType = '';
             for(var i = 0;i < AUTHTYPELENGTHLIMIT; i++){
@@ -366,6 +422,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7700
+         * @tc.number ActsAccountOAuthToken_7700
+         * @tc.desc   ActsAccountOAuthToken_7700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             var limitAuthType = '';
             for(var i = 0;i < AUTHTYPELENGTHLIMIT; i++){
@@ -388,6 +452,14 @@ export default function ActsAccountOAuthToken() {
 
 
         
+        /**
+         * @tc.name   ActsAccountOAuthToken_7800
+         * @tc.number ActsAccountOAuthToken_7800
+         * @tc.desc   ActsAccountOAuthToken_7800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_7800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -418,6 +490,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_7900
+         * @tc.number ActsAccountOAuthToken_7900
+         * @tc.desc   ActsAccountOAuthToken_7900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_7900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -437,6 +517,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_8000
+         * @tc.number ActsAccountOAuthToken_8000
+         * @tc.desc   ActsAccountOAuthToken_8000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_8000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -475,6 +563,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+    /**
+     * @tc.name   ActsAccountOAuthToken_8100
+     * @tc.number ActsAccountOAuthToken_8100
+     * @tc.desc   ActsAccountOAuthToken_8100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('ActsAccountOAuthToken_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
         var limitName = '';
         for(var i = 0;i < LENGTHLIMIT + 1; i++){
@@ -494,6 +590,14 @@ export default function ActsAccountOAuthToken() {
         })
     });
     
+    /**
+     * @tc.name   ActsAccountOAuthToken_8200
+     * @tc.number ActsAccountOAuthToken_8200
+     * @tc.desc   ActsAccountOAuthToken_8200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOAuthToken_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("====>ActsAccountOAuthToken_8200 start====");
         var appAccountManager = account.createAppAccountManager();
@@ -507,6 +611,14 @@ export default function ActsAccountOAuthToken() {
         });
     });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_8300
+         * @tc.number ActsAccountOAuthToken_8300
+         * @tc.desc   ActsAccountOAuthToken_8300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_8300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -523,6 +635,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_8400
+         * @tc.number ActsAccountOAuthToken_8400
+         * @tc.desc   ActsAccountOAuthToken_8400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_8400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -546,13 +666,13 @@ export default function ActsAccountOAuthToken() {
         });
 
         /**
-        * @tc.number   ActsAccountOAuthToken_8401
-        * @tc.name     ActsAccountOAuthToken_8401
-        * @tc.desc     Gets the local ID of the foreground OS account.
-        * @tc.level    Level3
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        */
+         * @tc.name   ActsAccountOAuthToken_8401
+         * @tc.number ActsAccountOAuthToken_8401
+         * @tc.desc   Gets the local ID of the foreground OS account.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_8401 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -573,13 +693,13 @@ export default function ActsAccountOAuthToken() {
         });
 
         /**
-        * @tc.number   ActsAccountOAuthToken_8501
-        * @tc.name     ActsAccountOAuthToken_8501
-        * @tc.desc     Gets the local ID of the foreground OS account.
-        * @tc.level    Level3
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        */
+         * @tc.name   ActsAccountOAuthToken_8501
+         * @tc.number ActsAccountOAuthToken_8501
+         * @tc.desc   Gets the local ID of the foreground OS account.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             var limitName = '';
             for(var i = 0;i < LENGTHLIMIT; i++){
@@ -610,6 +730,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_8500
+         * @tc.number ActsAccountOAuthToken_8500
+         * @tc.desc   ActsAccountOAuthToken_8500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             var limitName = '';
             for(var i = 0;i < LENGTHLIMIT; i++){
@@ -643,6 +771,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_8600
+         * @tc.number ActsAccountOAuthToken_8600
+         * @tc.desc   ActsAccountOAuthToken_8600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             var limitOwner = '';
             for(var i = 0;i < OWNERLENGTHLIMIT + 1; i++){
@@ -670,6 +806,14 @@ export default function ActsAccountOAuthToken() {
         });
         
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_8700
+         * @tc.number ActsAccountOAuthToken_8700
+         * @tc.desc   ActsAccountOAuthToken_8700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_8700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -693,6 +837,14 @@ export default function ActsAccountOAuthToken() {
         });
 
         
+        /**
+         * @tc.name   ActsAccountOAuthToken_8800
+         * @tc.number ActsAccountOAuthToken_8800
+         * @tc.desc   ActsAccountOAuthToken_8800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_8800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -715,6 +867,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_8900
+         * @tc.number ActsAccountOAuthToken_8900
+         * @tc.desc   ActsAccountOAuthToken_8900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_8900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -740,6 +900,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0100
+         * @tc.number ActsAccountOAuthToken_0100
+         * @tc.desc   ActsAccountOAuthToken_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountOAuthToken_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountOAuthToken_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -777,13 +945,13 @@ export default function ActsAccountOAuthToken() {
         });
 
         /**
-        * @tc.number   ActsAccountOAuthToken_0200
-        * @tc.name     ActsAccountOAuthToken_0200
-        * @tc.desc     Gets the local ID of the foreground OS account.
-        * @tc.level    Level0
-        * @tc.size     MediumTest
-        * @tc.type     Function
-        */
+         * @tc.name   ActsAccountOAuthToken_0200
+         * @tc.number ActsAccountOAuthToken_0200
+         * @tc.desc   Gets the local ID of the foreground OS account.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountOAuthToken_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountOAuthToken_0200 start====");
             let appAccountManager = account.createAppAccountManager();
@@ -814,6 +982,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0300
+         * @tc.number ActsAccountOAuthToken_0300
+         * @tc.desc   ActsAccountOAuthToken_0300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountOAuthToken_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -836,6 +1012,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0400
+         * @tc.number ActsAccountOAuthToken_0400
+         * @tc.desc   ActsAccountOAuthToken_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountOAuthToken_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -856,6 +1040,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0500
+         * @tc.number ActsAccountOAuthToken_0500
+         * @tc.desc   ActsAccountOAuthToken_0500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -869,6 +1061,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0600
+         * @tc.number ActsAccountOAuthToken_0600
+         * @tc.desc   ActsAccountOAuthToken_0600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountOAuthToken_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -885,6 +1085,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0700
+         * @tc.number ActsAccountOAuthToken_0700
+         * @tc.desc   ActsAccountOAuthToken_0700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountOAuthToken_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -928,6 +1136,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0800
+         * @tc.number ActsAccountOAuthToken_0800
+         * @tc.desc   ActsAccountOAuthToken_0800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountOAuthToken_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -953,6 +1169,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_0900
+         * @tc.number ActsAccountOAuthToken_0900
+         * @tc.desc   ActsAccountOAuthToken_0900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.info("====>ActsAccountOAuthToken_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -990,6 +1214,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1000
+         * @tc.number ActsAccountOAuthToken_1000
+         * @tc.desc   ActsAccountOAuthToken_1000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.info("====>ActsAccountOAuthToken_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1021,6 +1253,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1100
+         * @tc.number ActsAccountOAuthToken_1100
+         * @tc.desc   ActsAccountOAuthToken_1100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.info("====>ActsAccountOAuthToken_1100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1087,6 +1327,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1200
+         * @tc.number ActsAccountOAuthToken_1200
+         * @tc.desc   ActsAccountOAuthToken_1200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.info("====>ActsAccountOAuthToken_1200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1172,6 +1420,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1300
+         * @tc.number ActsAccountOAuthToken_1300
+         * @tc.desc   ActsAccountOAuthToken_1300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1202,6 +1458,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1400
+         * @tc.number ActsAccountOAuthToken_1400
+         * @tc.desc   ActsAccountOAuthToken_1400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_1400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1227,6 +1491,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1500
+         * @tc.number ActsAccountOAuthToken_1500
+         * @tc.desc   ActsAccountOAuthToken_1500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.info("====>ActsAccountOAuthToken_1500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1238,6 +1510,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1600
+         * @tc.number ActsAccountOAuthToken_1600
+         * @tc.desc   ActsAccountOAuthToken_1600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.info("====>ActsAccountOAuthToken_1600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1255,6 +1535,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1700
+         * @tc.number ActsAccountOAuthToken_1700
+         * @tc.desc   ActsAccountOAuthToken_1700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_1700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1266,6 +1554,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1800
+         * @tc.number ActsAccountOAuthToken_1800
+         * @tc.desc   ActsAccountOAuthToken_1800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_1800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1283,6 +1579,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_1900
+         * @tc.number ActsAccountOAuthToken_1900
+         * @tc.desc   ActsAccountOAuthToken_1900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_1900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1308,6 +1612,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2000
+         * @tc.number ActsAccountOAuthToken_2000
+         * @tc.desc   ActsAccountOAuthToken_2000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_2000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1332,6 +1644,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2100
+         * @tc.number ActsAccountOAuthToken_2100
+         * @tc.desc   ActsAccountOAuthToken_2100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_2100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1371,6 +1691,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2200
+         * @tc.number ActsAccountOAuthToken_2200
+         * @tc.desc   ActsAccountOAuthToken_2200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_2200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1402,6 +1730,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2300
+         * @tc.number ActsAccountOAuthToken_2300
+         * @tc.desc   ActsAccountOAuthToken_2300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_2300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1428,6 +1764,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2400
+         * @tc.number ActsAccountOAuthToken_2400
+         * @tc.desc   ActsAccountOAuthToken_2400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_2400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1451,6 +1795,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2500
+         * @tc.number ActsAccountOAuthToken_2500
+         * @tc.desc   ActsAccountOAuthToken_2500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_2500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1477,6 +1829,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2600
+         * @tc.number ActsAccountOAuthToken_2600
+         * @tc.desc   ActsAccountOAuthToken_2600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             console.info("====>ActsAccountOAuthToken_2600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1495,6 +1855,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2700
+         * @tc.number ActsAccountOAuthToken_2700
+         * @tc.desc   ActsAccountOAuthToken_2700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             var limitToken = '';
                 for (let i = 0; i < TOKENLENGTHLIMIT + 1; i++) {
@@ -1519,6 +1887,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2800
+         * @tc.number ActsAccountOAuthToken_2800
+         * @tc.desc   ActsAccountOAuthToken_2800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function(done) {
             var limitToken = '';
                 for (let i = 0; i < TOKENLENGTHLIMIT + 1; i++) {
@@ -1543,6 +1919,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_2900
+         * @tc.number ActsAccountOAuthToken_2900
+         * @tc.desc   ActsAccountOAuthToken_2900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function(done) {
             var limitToken = '';
                 for (let i = 0; i < TOKENLENGTHLIMIT; i++) {
@@ -1573,6 +1957,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_3000
+         * @tc.number ActsAccountOAuthToken_3000
+         * @tc.desc   ActsAccountOAuthToken_3000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountOAuthToken_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             var limitToken = '';
                 for (let i = 0; i < TOKENLENGTHLIMIT; i++) {
@@ -1594,6 +1986,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_3100
+         * @tc.number ActsAccountOAuthToken_3100
+         * @tc.desc   ActsAccountOAuthToken_3100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             var limitAuthType = '';
                 for (let i = 0; i < AUTHTYPELENGTHLIMIT + 1; i++) {
@@ -1618,6 +2018,14 @@ export default function ActsAccountOAuthToken() {
         });
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_3200
+         * @tc.number ActsAccountOAuthToken_3200
+         * @tc.desc   ActsAccountOAuthToken_3200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountOAuthToken_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
             var limitAuthType = '';
                 for (let i = 0; i < AUTHTYPELENGTHLIMIT + 1; i++) {
@@ -1643,6 +2051,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_3300
+         * @tc.number ActsAccountOAuthToken_3300
+         * @tc.desc   ActsAccountOAuthToken_3300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function(done) {
             var limitAuthType = '';
                 for (let i = 0; i < AUTHTYPELENGTHLIMIT + 1; i++) {
@@ -1667,6 +2083,14 @@ export default function ActsAccountOAuthToken() {
             });
         });
 
+        /**
+         * @tc.name   ActsAccountOAuthToken_3400
+         * @tc.number ActsAccountOAuthToken_3400
+         * @tc.desc   ActsAccountOAuthToken_3400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOAuthToken_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function(done) {
             var limitAuthType = '';
                 for (let i = 0; i < AUTHTYPELENGTHLIMIT + 1; i++) {
@@ -1692,11 +2116,14 @@ export default function ActsAccountOAuthToken() {
 
 
 
-            /*
-        * @tc.number     : ActsAccountOAuthToken_2700
-        * @tc.name       : Test oauth token in callback form
-        * @tc.desc       : 设置一个authType长度刚好为限制长度的token  查询
-        */
+            /**
+             * @tc.name   ActsAccountOAuthToken_3500
+             * @tc.number ActsAccountOAuthToken_2700
+             * @tc.desc   设置一个authType长度刚好为限制长度的token  查询
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL4
+             */
             it('ActsAccountOAuthToken_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function(done) {
                 console.info("====>ActsAccountOAuthToken_3500 start====");
                 var limitAuthType = '';
@@ -1727,18 +2154,16 @@ export default function ActsAccountOAuthToken() {
                 });
             });
             
-            /*
-            * @tc.number     : ActsAccountOAuthToken_2800
-            * @tc.name       : Test oauth token in promise form
-            * @tc.desc       : 设置一个authType长度刚好为限制长度的token
-            */
             
-            /*
-            * @tc.number     : ActsAccountOAuthToken_2900
-            * @tc.name       : Test oauth token in callback form
-            * @tc.desc       : Clear token parameter name is an empty string
-            */
             //测试 删除一个账号名为空的token callback方式
+            /**
+             * @tc.name   ActsAccountOAuthToken_4100
+             * @tc.number ActsAccountOAuthToken_4100
+             * @tc.desc   ActsAccountOAuthToken_4100
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('ActsAccountOAuthToken_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
                 console.info("====>ActsAccountOAuthToken_4100 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1751,12 +2176,15 @@ export default function ActsAccountOAuthToken() {
                 });
             });
             
-            /*
-            * @tc.number     : ActsAccountOAuthToken_3000
-            * @tc.name       : Test oauth token in promise form
-            * @tc.desc       : Clear token parameter name is an empty string
-            */
             //测试 删除一个账号名为空的token promise方式
+            /**
+             * @tc.name   ActsAccountOAuthToken_4200
+             * @tc.number ActsAccountOAuthToken_4200
+             * @tc.desc   ActsAccountOAuthToken_4200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('ActsAccountOAuthToken_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
                 console.info("====>ActsAccountOAuthToken_4200 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1773,11 +2201,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
             
-            /*
-            * @tc.number     : ActsAccountOAuthToken_3100
-            * @tc.name       : Test oauth token in callback form
-            * @tc.desc       : The clear token parameter name is a space string
-            */
+            /**
+             * @tc.name   ActsAccountOAuthToken_4300
+             * @tc.number ActsAccountOAuthToken_3100
+             * @tc.desc   The clear token parameter name is a space string
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('ActsAccountOAuthToken_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
                 console.info("====>ActsAccountOAuthToken_4300 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1790,11 +2221,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
             
-            /*
-            * @tc.number     : ActsAccountOAuthToken_3200
-            * @tc.name       : Test oauth token in promise form
-            * @tc.desc       : The clear token parameter name is a space string
-            */
+            /**
+             * @tc.name   ActsAccountOAuthToken_4400
+             * @tc.number ActsAccountOAuthToken_3200
+             * @tc.desc   The clear token parameter name is a space string
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('ActsAccountOAuthToken_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
                 console.info("====>ActsAccountOAuthToken_4400 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1811,11 +2245,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
-            /*
-            * @tc.number     : ActsAccountOAuthToken_3300
-            * @tc.name       : Test oauth token in callback form
-            * @tc.desc       : Clear the token parameter name exceeds the length limit of 1024 characters
-            */
+            /**
+             * @tc.name   ActsAccountOAuthToken_4500
+             * @tc.number ActsAccountOAuthToken_3300
+             * @tc.desc   Clear the token parameter name exceeds the length limit of 1024 characters
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('ActsAccountOAuthToken_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
                 console.info("====>ActsAccountOAuthToken_4500 start====");
                 var nameLimit = '';
@@ -1832,11 +2269,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
-            /*
-            * @tc.number     : ActsAccountOAuthToken_3400
-            * @tc.name       : Test oauth token in promise form
-            * @tc.desc       : Clear the token parameter name exceeds the length limit of 1024 characters
-            */
+            /**
+             * @tc.name   ActsAccountOAuthToken_4600
+             * @tc.number ActsAccountOAuthToken_3400
+             * @tc.desc   Clear the token parameter name exceeds the length limit of 1024 characters
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
             it('ActsAccountOAuthToken_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
                 console.info("====>ActsAccountOAuthToken_4600 start====");
                 var nameLimit = '';
@@ -1858,6 +2298,14 @@ export default function ActsAccountOAuthToken() {
             });
         
             //查询无效包名owner（为其他字符串时）账号的token callback方式
+            /**
+             * @tc.name   ActsAccountOAuthToken_4700
+             * @tc.number ActsAccountOAuthToken_4700
+             * @tc.desc   ActsAccountOAuthToken_4700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done) {
                 console.info("====>ActsAccountOAuthToken_4700 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1881,6 +2329,14 @@ export default function ActsAccountOAuthToken() {
             });
 
 
+            /**
+             * @tc.name   ActsAccountOAuthToken_3600
+             * @tc.number ActsAccountOAuthToken_3600
+             * @tc.desc   ActsAccountOAuthToken_3600
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL4
+             */
             it('ActsAccountOAuthToken_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
                 console.info("====>ActsAccountOAuthToken_3600 start====");
                 var limitAuthType = '';
@@ -1902,6 +2358,14 @@ export default function ActsAccountOAuthToken() {
             });
         
             
+            /**
+             * @tc.name   ActsAccountOAuthToken_3700
+             * @tc.number ActsAccountOAuthToken_3700
+             * @tc.desc   ActsAccountOAuthToken_3700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_3700 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1928,6 +2392,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
             
+            /**
+             * @tc.name   ActsAccountOAuthToken_3800
+             * @tc.number ActsAccountOAuthToken_3800
+             * @tc.desc   ActsAccountOAuthToken_3800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_3800 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1944,6 +2416,14 @@ export default function ActsAccountOAuthToken() {
                 done();
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_3900
+             * @tc.number ActsAccountOAuthToken_3900
+             * @tc.desc   ActsAccountOAuthToken_3900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_3900 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1970,6 +2450,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_4000
+             * @tc.number ActsAccountOAuthToken_4000
+             * @tc.desc   ActsAccountOAuthToken_4000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_4000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -1987,6 +2475,14 @@ export default function ActsAccountOAuthToken() {
             });
         
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_4800
+             * @tc.number ActsAccountOAuthToken_4800
+             * @tc.desc   ActsAccountOAuthToken_4800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_4800 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2006,6 +2502,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_4900
+             * @tc.number ActsAccountOAuthToken_4900
+             * @tc.desc   ActsAccountOAuthToken_4900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_4900 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2028,6 +2532,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5000
+             * @tc.number ActsAccountOAuthToken_5000
+             * @tc.desc   ActsAccountOAuthToken_5000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2047,6 +2559,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5100
+             * @tc.number ActsAccountOAuthToken_5100
+             * @tc.desc   ActsAccountOAuthToken_5100
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5100 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2069,6 +2589,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5200
+             * @tc.number ActsAccountOAuthToken_5200
+             * @tc.desc   ActsAccountOAuthToken_5200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5200 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2088,6 +2616,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5300
+             * @tc.number ActsAccountOAuthToken_5300
+             * @tc.desc   ActsAccountOAuthToken_5300
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5300 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2114,6 +2650,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5400
+             * @tc.number ActsAccountOAuthToken_5400
+             * @tc.desc   ActsAccountOAuthToken_5400
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5400 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2135,6 +2679,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5500
+             * @tc.number ActsAccountOAuthToken_5500
+             * @tc.desc   ActsAccountOAuthToken_5500
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5500 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2161,6 +2713,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5600
+             * @tc.number ActsAccountOAuthToken_5600
+             * @tc.desc   ActsAccountOAuthToken_5600
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5600 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2182,6 +2742,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5700
+             * @tc.number ActsAccountOAuthToken_5700
+             * @tc.desc   ActsAccountOAuthToken_5700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5700 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2208,6 +2776,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5800
+             * @tc.number ActsAccountOAuthToken_5800
+             * @tc.desc   ActsAccountOAuthToken_5800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5800 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2229,6 +2805,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_5900
+             * @tc.number ActsAccountOAuthToken_5900
+             * @tc.desc   ActsAccountOAuthToken_5900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_5900 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2253,6 +2837,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6000
+             * @tc.number ActsAccountOAuthToken_6000
+             * @tc.desc   ActsAccountOAuthToken_6000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_6000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2274,6 +2866,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6100
+             * @tc.number ActsAccountOAuthToken_6100
+             * @tc.desc   ActsAccountOAuthToken_6100
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_6100 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2298,6 +2898,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6200
+             * @tc.number ActsAccountOAuthToken_6200
+             * @tc.desc   ActsAccountOAuthToken_6200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_6200 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2319,6 +2927,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6300
+             * @tc.number ActsAccountOAuthToken_6300
+             * @tc.desc   ActsAccountOAuthToken_6300
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_6300 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2343,6 +2959,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6400
+             * @tc.number ActsAccountOAuthToken_6400
+             * @tc.desc   ActsAccountOAuthToken_6400
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_6400 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2364,6 +2988,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6500
+             * @tc.number ActsAccountOAuthToken_6500
+             * @tc.desc   ActsAccountOAuthToken_6500
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitToken = '';
                 for(var i = 0;i < TOKENLENGTHLIMIT + 1; i++){
@@ -2388,6 +3020,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6600
+             * @tc.number ActsAccountOAuthToken_6600
+             * @tc.desc   ActsAccountOAuthToken_6600
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitToken = '';
                 for(var i = 0;i < TOKENLENGTHLIMIT + 1; i++){
@@ -2411,6 +3051,14 @@ export default function ActsAccountOAuthToken() {
                 }
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6700
+             * @tc.number ActsAccountOAuthToken_6700
+             * @tc.desc   ActsAccountOAuthToken_6700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL4
+             */
             it('ActsAccountOAuthToken_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
                 var limitToken = '';
                 for(var i = 0;i < TOKENLENGTHLIMIT; i++){
@@ -2439,6 +3087,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6800
+             * @tc.number ActsAccountOAuthToken_6800
+             * @tc.desc   ActsAccountOAuthToken_6800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL4
+             */
             it('ActsAccountOAuthToken_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
                 var limitToken = '';
                 for(var i = 0;i < TOKENLENGTHLIMIT; i++){
@@ -2458,6 +3114,14 @@ export default function ActsAccountOAuthToken() {
                 done();
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_6900
+             * @tc.number ActsAccountOAuthToken_6900
+             * @tc.desc   ActsAccountOAuthToken_6900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_6900 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2493,6 +3157,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_7000
+             * @tc.number ActsAccountOAuthToken_7000
+             * @tc.desc   ActsAccountOAuthToken_7000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_7000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2511,6 +3183,14 @@ export default function ActsAccountOAuthToken() {
                 done();
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9200
+             * @tc.number ActsAccountOAuthToken_9200
+             * @tc.desc   ActsAccountOAuthToken_9200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_9200 start====");
             	var appAccountManager = account.createAppAccountManager();
@@ -2525,6 +3205,14 @@ export default function ActsAccountOAuthToken() {
             	})
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9300
+             * @tc.number ActsAccountOAuthToken_9300
+             * @tc.desc   ActsAccountOAuthToken_9300
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_9300 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2536,6 +3224,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9400
+             * @tc.number ActsAccountOAuthToken_9400
+             * @tc.desc   ActsAccountOAuthToken_9400
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_9400 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2547,6 +3243,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9500
+             * @tc.number ActsAccountOAuthToken_9500
+             * @tc.desc   ActsAccountOAuthToken_9500
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_9500 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2576,6 +3280,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9600
+             * @tc.number ActsAccountOAuthToken_9600
+             * @tc.desc   ActsAccountOAuthToken_9600
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_9600 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2601,6 +3313,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9700
+             * @tc.number ActsAccountOAuthToken_9700
+             * @tc.desc   ActsAccountOAuthToken_9700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_9700 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2611,6 +3331,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9800
+             * @tc.number ActsAccountOAuthToken_9800
+             * @tc.desc   ActsAccountOAuthToken_9800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limiOwner = '';
                 for(var i = 0;i < OWNERLENGTHLIMIT + 1; i++){
@@ -2625,6 +3353,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_9900
+             * @tc.number ActsAccountOAuthToken_9900
+             * @tc.desc   ActsAccountOAuthToken_9900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_9900 start====");
             	var appAccountManager = account.createAppAccountManager();
@@ -2657,6 +3393,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10000
+             * @tc.number ActsAccountOAuthToken_10000
+             * @tc.desc   ActsAccountOAuthToken_10000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2686,6 +3430,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10100
+             * @tc.number ActsAccountOAuthToken_10100
+             * @tc.desc   ActsAccountOAuthToken_10100
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10100 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2715,6 +3467,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10200
+             * @tc.number ActsAccountOAuthToken_10200
+             * @tc.desc   ActsAccountOAuthToken_10200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10200 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2738,6 +3498,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10300
+             * @tc.number ActsAccountOAuthToken_10300
+             * @tc.desc   ActsAccountOAuthToken_10300
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10300 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2768,6 +3536,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
             
+            /**
+             * @tc.name   ActsAccountOAuthToken_10400
+             * @tc.number ActsAccountOAuthToken_10400
+             * @tc.desc   ActsAccountOAuthToken_10400
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitBundleName = '';
                 for(var i = 0;i < OWNERLENGTHLIMIT + 1; i++){
@@ -2795,6 +3571,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10500
+             * @tc.number ActsAccountOAuthToken_10500
+             * @tc.desc   ActsAccountOAuthToken_10500
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10500 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2831,6 +3615,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10600
+             * @tc.number ActsAccountOAuthToken_10600
+             * @tc.desc   ActsAccountOAuthToken_10600
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10600 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2868,6 +3660,14 @@ export default function ActsAccountOAuthToken() {
             });
         
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10700
+             * @tc.number ActsAccountOAuthToken_10700
+             * @tc.desc   ActsAccountOAuthToken_10700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitAuthType = '';
                 for(var i = 0;i < AUTHTYPELENGTHLIMIT + 1; i++){
@@ -2901,6 +3701,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10800
+             * @tc.number ActsAccountOAuthToken_10800
+             * @tc.desc   ActsAccountOAuthToken_10800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10800 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2937,6 +3745,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_10900
+             * @tc.number ActsAccountOAuthToken_10900
+             * @tc.desc   ActsAccountOAuthToken_10900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_10900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_10900 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2947,6 +3763,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11000
+             * @tc.number ActsAccountOAuthToken_11000
+             * @tc.desc   ActsAccountOAuthToken_11000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_11000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2957,6 +3781,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11100
+             * @tc.number ActsAccountOAuthToken_11100
+             * @tc.desc   ActsAccountOAuthToken_11100
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitName = '';
                 for(var i = 0; i < LENGTHLIMIT + 1; i++){
@@ -2971,6 +3803,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11200
+             * @tc.number ActsAccountOAuthToken_11200
+             * @tc.desc   ActsAccountOAuthToken_11200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_11200 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2981,6 +3821,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11300
+             * @tc.number ActsAccountOAuthToken_11300
+             * @tc.desc   ActsAccountOAuthToken_11300
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_11300 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -2991,6 +3839,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11400
+             * @tc.number ActsAccountOAuthToken_11400
+             * @tc.desc   ActsAccountOAuthToken_11400
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_11400 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3001,6 +3857,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11500
+             * @tc.number ActsAccountOAuthToken_11500
+             * @tc.desc   ActsAccountOAuthToken_11500
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitName = '';
                 for(var i = 0; i < LENGTHLIMIT + 1; i++){
@@ -3015,6 +3879,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11600
+             * @tc.number ActsAccountOAuthToken_11600
+             * @tc.desc   ActsAccountOAuthToken_11600
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_11600 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3025,6 +3897,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11700
+             * @tc.number ActsAccountOAuthToken_11700
+             * @tc.desc   ActsAccountOAuthToken_11700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_11700 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3056,6 +3936,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11800
+             * @tc.number ActsAccountOAuthToken_11800
+             * @tc.desc   ActsAccountOAuthToken_11800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_11800 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3087,6 +3975,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_11900
+             * @tc.number ActsAccountOAuthToken_11900
+             * @tc.desc   ActsAccountOAuthToken_11900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_11900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitAuthType ='';
                 for(var i = 0; i < AUTHTYPELENGTHLIMIT + 1; i++){
@@ -3118,6 +4014,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12000
+             * @tc.number ActsAccountOAuthToken_12000
+             * @tc.desc   ActsAccountOAuthToken_12000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_12000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3149,6 +4053,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12100
+             * @tc.number ActsAccountOAuthToken_12100
+             * @tc.desc   ActsAccountOAuthToken_12100
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_12100 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3173,6 +4085,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12200
+             * @tc.number ActsAccountOAuthToken_12200
+             * @tc.desc   ActsAccountOAuthToken_12200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_12200 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3198,6 +4118,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12300
+             * @tc.number ActsAccountOAuthToken_12300
+             * @tc.desc   ActsAccountOAuthToken_12300
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitBundleName = '';
                 for(var i = 0; i < OWNERLENGTHLIMIT + 1; i++){
@@ -3226,6 +4154,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12400
+             * @tc.number ActsAccountOAuthToken_12400
+             * @tc.desc   ActsAccountOAuthToken_12400
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_12400 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3255,6 +4191,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12500
+             * @tc.number ActsAccountOAuthToken_12500
+             * @tc.desc   ActsAccountOAuthToken_12500
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_12500 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3284,6 +4228,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12600
+             * @tc.number ActsAccountOAuthToken_12600
+             * @tc.desc   ActsAccountOAuthToken_12600
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitAuthType ='';
                 for(var i = 0; i < AUTHTYPELENGTHLIMIT + 1; i++){
@@ -3317,6 +4269,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12700
+             * @tc.number ActsAccountOAuthToken_12700
+             * @tc.desc   ActsAccountOAuthToken_12700
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_12700 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3330,6 +4290,14 @@ export default function ActsAccountOAuthToken() {
                 })
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12800
+             * @tc.number ActsAccountOAuthToken_12800
+             * @tc.desc   ActsAccountOAuthToken_12800
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_12800 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3342,6 +4310,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_12900
+             * @tc.number ActsAccountOAuthToken_12900
+             * @tc.desc   ActsAccountOAuthToken_12900
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_12900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 var limitName = '';
                 for(var i = 0; i < LENGTHLIMIT + 1; i++){
@@ -3358,6 +4334,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_13000
+             * @tc.number ActsAccountOAuthToken_13000
+             * @tc.desc   ActsAccountOAuthToken_13000
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_13000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_13000 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3370,6 +4354,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_13100
+             * @tc.number ActsAccountOAuthToken_13100
+             * @tc.desc   ActsAccountOAuthToken_13100
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_13100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_13100 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3425,13 +4417,13 @@ export default function ActsAccountOAuthToken() {
             });
 
             /**
-            * @tc.number   ActsAccountOAuthToken_13101
-            * @tc.name     ActsAccountOAuthToken_13101
-            * @tc.desc     Gets the local ID of the foreground OS account.
-            * @tc.level    Level3
-            * @tc.size     MediumTest
-            * @tc.type     Function
-            */
+             * @tc.name   ActsAccountOAuthToken_13101
+             * @tc.number ActsAccountOAuthToken_13101
+             * @tc.desc   Gets the local ID of the foreground OS account.
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_13101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_13101 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3481,6 +4473,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_13200
+             * @tc.number ActsAccountOAuthToken_13200
+             * @tc.desc   ActsAccountOAuthToken_13200
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_13200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_13200 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3494,6 +4494,14 @@ export default function ActsAccountOAuthToken() {
                 });
             });
 			
+   /**
+    * @tc.name   ActsAccountOAuthToken_13201
+    * @tc.number ActsAccountOAuthToken_13201
+    * @tc.desc   ActsAccountOAuthToken_13201
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
 			it('ActsAccountOAuthToken_13201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 				console.info("====>ActsAccountOAuthToken_13201 start====");
 				var appAccountManager = account.createAppAccountManager();
@@ -3507,6 +4515,14 @@ export default function ActsAccountOAuthToken() {
 				});
 			});
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_13300
+             * @tc.number ActsAccountOAuthToken_13300
+             * @tc.desc   ActsAccountOAuthToken_13300
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_13300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_13300 start====");
                 var appAccountManager = account.createAppAccountManager();
@@ -3525,6 +4541,14 @@ export default function ActsAccountOAuthToken() {
                 done();
             });
         
+            /**
+             * @tc.name   ActsAccountOAuthToken_13400
+             * @tc.number ActsAccountOAuthToken_13400
+             * @tc.desc   ActsAccountOAuthToken_13400
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL3
+             */
             it('ActsAccountOAuthToken_13400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
                 console.info("====>ActsAccountOAuthToken_13400 start====");
                 var appAccountManager = account.createAppAccountManager();

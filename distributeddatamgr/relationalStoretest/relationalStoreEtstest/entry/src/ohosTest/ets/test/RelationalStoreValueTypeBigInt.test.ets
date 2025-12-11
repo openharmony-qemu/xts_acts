@@ -55,7 +55,6 @@ export default function RdbStoreValueTypeTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testValueType0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0100
      * @tc.desc   the value type BigInt(45)
@@ -99,7 +98,6 @@ export default function RdbStoreValueTypeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testValueType0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0200
      * @tc.desc   the value BigInt "15822401018187971961171"
@@ -142,7 +140,6 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0002 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testValueType0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0300
      * @tc.desc   the value update
@@ -202,7 +199,6 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0003 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testValueType0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0400
      * @tc.desc   the value delete
@@ -266,7 +262,6 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0004 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testValueType0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0500
      * @tc.desc   close database open database query
@@ -309,7 +304,6 @@ export default function RdbStoreValueTypeTest() {
       console.log(TAG + "************* testValueType0005 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testValueType0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BigIntAPITest_0600
      * @tc.desc   executesql update delete

@@ -26,65 +26,65 @@ export default function imageEnableAnalyzerTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0100
-     * @tc.name       : testImageEnableAnalyzer001
-     * @tc.desc       : testing imageEnableAnalyzer for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageEnableAnalyzer001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0100
+     * @tc.desc   testing imageEnableAnalyzer for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageEnableAnalyzer001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageEnableAnalyzer001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0200
-     * @tc.name       : testImageEnableAnalyzer002
-     * @tc.desc       : testing imageEnableAnalyzer for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageEnableAnalyzer002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0200
+     * @tc.desc   testing imageEnableAnalyzer for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageEnableAnalyzer002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageEnableAnalyzer002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0300
-     * @tc.name       : testImageEnableAnalyzer003
-     * @tc.desc       : testing imageEnableAnalyzer for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageEnableAnalyzer003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0300
+     * @tc.desc   testing imageEnableAnalyzer for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageEnableAnalyzer003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageEnableAnalyzer003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0400
-     * @tc.name       : testImageEnableAnalyzer004
-     * @tc.desc       : testing imageEnableAnalyzer for image with set/get attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageEnableAnalyzer004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0400
+     * @tc.desc   testing imageEnableAnalyzer for image with set/get attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageEnableAnalyzer004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageEnableAnalyzer004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0500
-     * @tc.name       : testImageEnableAnalyzer005
-     * @tc.desc       : testing imageEnableAnalyzer for image with set/get/reset attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageEnableAnalyzer005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ENABLEANALYZER_0500
+     * @tc.desc   testing imageEnableAnalyzer for image with set/get/reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageEnableAnalyzer005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageEnableAnalyzer005()).assertEqual(0)

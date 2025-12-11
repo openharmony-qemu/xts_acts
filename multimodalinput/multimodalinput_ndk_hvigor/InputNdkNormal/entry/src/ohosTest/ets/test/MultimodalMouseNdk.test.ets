@@ -35,7 +35,6 @@ export default function MultimodalMouseNdkTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0100
      * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0100
      * @tc.desc   OH_Input_GetPointerLocation Interface testing.
@@ -60,7 +59,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0200
      * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0200
      * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayId as nullptr.
@@ -85,7 +83,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0300
      * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0300
      * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayX as nullptr.
@@ -110,7 +107,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0400
      * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0400
      * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayY as nullptr.
@@ -135,7 +131,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0500
      * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0500
      * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayId displayX displayY as nullptr.
@@ -160,7 +155,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_RequestInjection_0100
      * @tc.number SUB_MMI_Input_Api_RequestInjection_0100
      * @tc.desc   OH_Input_RequestInjection Interface test.
@@ -185,7 +179,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_QueryAuthorizedStatus_0100
      * @tc.number SUB_MMI_Input_Api_QueryAuthorizedStatus_0100
      * @tc.desc   OH_Input_QueryAuthorizedStatus Interface test.
@@ -210,7 +203,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_InjectMouseEventGlobal_0100
      * @tc.number SUB_MMI_Input_Api_InjectMouseEventGlobal_0100
      * @tc.desc   OH_Input_InjectMouseEventGlobal Interface testing to set globalX globalY as 100.
@@ -235,7 +227,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_InjectMouseEventGlobal_0200
      * @tc.number SUB_MMI_Input_Api_InjectMouseEventGlobal_0200
      * @tc.desc   OH_Input_GetMouseEventGlobalX Interface testing to set globalX as 100.
@@ -260,7 +251,6 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MMI_Input_Api_InjectMouseEventGlobal_0300
      * @tc.number SUB_MMI_Input_Api_InjectMouseEventGlobal_0300
      * @tc.desc   OH_Input_GetMouseEventGlobalY Interface testing to set globalY as 100.

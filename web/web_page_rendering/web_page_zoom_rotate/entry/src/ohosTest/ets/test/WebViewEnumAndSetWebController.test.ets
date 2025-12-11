@@ -55,14 +55,14 @@ export default function WebViewEnumAndSetWebController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_OVERVIEWMODEACCESS_0100
-    * @tc.name       : testOverviewModeAccess001
-    * @tc.desc       : test OverviewModeAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOverviewModeAccess001
+     * @tc.number SUB_WEB_OVERVIEWMODEACCESS_0100
+     * @tc.desc   test OverviewModeAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOverviewModeAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOverviewModeAccessTrue", 153250)
       Utils.registerEvent("testOverviewModeAccess001", '0.25', 153260, done);

@@ -28,14 +28,14 @@ export default function SnapShotTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`snapshottest/snapShotTest`, done);
     });
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0100
-       * @tc.name       : testOHArkUIGetNodeSnapshot0100
-       * @tc.desc       : testing OH_ArkUI_GetNodeSnapshot interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNodeSnapshot0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0100
+     * @tc.desc   testing OH_ArkUI_GetNodeSnapshot interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNodeSnapshot0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -50,14 +50,14 @@ export default function SnapShotTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0200
-       * @tc.name       : testOHArkUIGetNodeSnapshot0200
-       * @tc.desc       : testing OH_ArkUI_GetNodeSnapshot interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNodeSnapshot0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0200
+     * @tc.desc   testing OH_ArkUI_GetNodeSnapshot interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNodeSnapshot0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -72,14 +72,14 @@ export default function SnapShotTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0300
-       * @tc.name       : testOHArkUIGetNodeSnapshot0300
-       * @tc.desc       : testing OH_ArkUI_GetNodeSnapshot interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNodeSnapshot0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNodeSnapshot_0300
+     * @tc.desc   testing OH_ArkUI_GetNodeSnapshot interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNodeSnapshot0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

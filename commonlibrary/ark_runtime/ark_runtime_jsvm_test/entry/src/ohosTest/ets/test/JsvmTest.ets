@@ -44,9 +44,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0001
-     * @tc.name      JsvmTest001
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest001
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0001
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest001 START');
@@ -55,9 +58,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0002
-     * @tc.name      JsvmTest002
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest002
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0002
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest002 START');
@@ -67,9 +73,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0003
-     * @tc.name      JsvmTest003
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest003
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0003
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest003 START');
@@ -79,9 +88,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0004
-     * @tc.name      JsvmTest004
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest004
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0004
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest004 START');
@@ -91,9 +103,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0005
-     * @tc.name      JsvmTest005
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest005
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0005
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest005 START');
@@ -103,9 +118,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0006
-     * @tc.name      JsvmTest005
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest006
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0006
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest006 START');
@@ -115,9 +133,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0007
-     * @tc.name      JsvmTest007
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest007
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0007
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest007 START');
@@ -127,9 +148,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0008
-     * @tc.name      JsvmTest008
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest008
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0008
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest008 START');
@@ -139,9 +163,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0009
-     * @tc.name      JsvmTest009
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest009
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0009
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmgTest009 START');
@@ -151,9 +178,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0010
-     * @tc.name      JsvmTest010
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest010
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0010
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest010 START');
@@ -163,9 +193,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0011
-     * @tc.name      JsvmTest011
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest011
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0011
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest011 START');
@@ -175,9 +208,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0012
-     * @tc.name      JsvmTest012
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest012
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0012
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest012 START');
@@ -187,9 +223,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0013
-     * @tc.name      JsvmTest013
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest013
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0013
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest013 START');
@@ -199,9 +238,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0014
-     * @tc.name      JsvmTest014
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest014
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0014
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest014 START');
@@ -211,9 +253,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0015
-     * @tc.name      JsvmTest015
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest015
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0015
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest015 START');
@@ -223,9 +268,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0016
-     * @tc.name      JsvmTest016
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest016
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0016
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest016 START');
@@ -235,9 +283,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0017
-     * @tc.name      JsvmTest017
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest017
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0017
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest017 START');
@@ -247,9 +298,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0018
-     * @tc.name      JsvmTest018
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest018
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0018
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest018 START');
@@ -259,9 +313,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0019
-     * @tc.name      JsvmTest019
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest019
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0019
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest019 START');
@@ -271,9 +328,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0020
-     * @tc.name      JsvmTest020
-     * @tc.desc      JsvmTest
+     * @tc.name   JSvmTest020
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0020
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JSvmTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest020 START');
@@ -283,9 +343,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0021
-     * @tc.name      JsvmTest021
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest021
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0021
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest021 START');
@@ -295,9 +358,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0022
-     * @tc.name      JsvmTest022
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest022
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0022
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest022 START');
@@ -307,9 +373,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0023
-     * @tc.name      JsvmTest023
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest023
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0023
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest023 START');
@@ -319,9 +388,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0024
-     * @tc.name      JsvmTest024
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest024
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0024
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest024 START');
@@ -331,9 +403,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0025
-     * @tc.name      JsvmTest025
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest025
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0025
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest025 START');
@@ -343,9 +418,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0026
-     * @tc.name      JsvmTest026
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest026
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0026
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest026 START');
@@ -355,9 +433,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0027
-     * @tc.name      JsvmTest027
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest027
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0027
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest027 START');
@@ -366,10 +447,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0028
-     * @tc.name      JsvmTest028
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest028
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0028
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest028 START');
@@ -378,10 +462,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0029
-     * @tc.name      JsvmTest029
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest029
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0029
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest029 START');
@@ -390,10 +477,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0030
-     * @tc.name      JsvmTest030
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest030
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0030
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest030 START');
@@ -402,10 +492,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0031
-     * @tc.name      JsvmTest031
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest031
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0031
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest031 START');
@@ -414,10 +507,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0032
-     * @tc.name      JsvmTest032
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest032
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0032
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest032 START');
@@ -426,10 +522,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0033
-     * @tc.name      JsvmTest033
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest033
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0033
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest033 START');
@@ -438,10 +537,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0034
-     * @tc.name      JsvmTest034
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest034
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0034
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest034 START');
@@ -450,10 +552,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0035
-     * @tc.name      JsvmTest035
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest035
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0035
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest035 START');
@@ -462,10 +567,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0036
-     * @tc.name      JsvmTest036
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest036
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0036
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest036 START');
@@ -474,10 +582,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0037
-     * @tc.name      JsvmTest037
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest037
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0037
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest037 START');
@@ -486,10 +597,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0038
-     * @tc.name      JsvmTest038
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest038
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0038
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest038 START');
@@ -498,10 +612,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0039
-     * @tc.name      JsvmTest039
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest039
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0039
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest039 START');
@@ -510,10 +627,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0040
-     * @tc.name      JsvmTest040
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest040
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0040
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest040 START');
@@ -522,10 +642,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0041
-     * @tc.name      JsvmTest041
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest041
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0041
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest041 START');
@@ -534,10 +657,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0042
-     * @tc.name      JsvmTest042
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest042
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0042
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest042 START');
@@ -546,10 +672,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0043
-     * @tc.name      JsvmTest043
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest043
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0043
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest043 START');
@@ -558,10 +687,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0044
-     * @tc.name      JsvmTest044
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest044
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0044
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest044 START');
@@ -570,10 +702,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0045
-     * @tc.name      JsvmTest045
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest045
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0045
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest045 START');
@@ -582,10 +717,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0046
-     * @tc.name      JsvmTest046
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest046
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0046
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest046 START');
@@ -594,10 +732,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0047
-     * @tc.name      JsvmTest047
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest047
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0047
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest047 START');
@@ -606,10 +747,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0048
-     * @tc.name      JsvmTest048
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest048
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0048
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest048 START');
@@ -618,10 +762,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-      /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0049
-     * @tc.name      JsvmTest049
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest049
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0049
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest049 START');
@@ -630,10 +777,13 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
       done();
     });
-     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0050
-     * @tc.name      JsvmTest050
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest050
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0050
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest050 START');
@@ -643,9 +793,12 @@ export default function JsvmJsunit() {
       done();
     });
     /**
+     * @tc.name   JsvmTest051
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0051
-     * @tc.name JsvmTest051
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"aaBC"`;
@@ -655,9 +808,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('aaBC');
     });
     /**
+     * @tc.name   JsvmTest052
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0052
-     * @tc.name JsvmTest052
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"--&% #$"`;
@@ -667,9 +823,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('--&% #$');
     });
     /**
+     * @tc.name   JsvmTest053
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0053
-     * @tc.name JsvmTest053
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"中国"`;
@@ -679,9 +838,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('中国');
     });
     /**
+     * @tc.name   JsvmTest054
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0054
-     * @tc.name JsvmTest054
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"123"`;
@@ -691,9 +853,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('123');
     });
     /**
+     * @tc.name   JsvmTest055
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0055
-     * @tc.name JsvmTest055
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"abc"`;
@@ -703,9 +868,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest056
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0056
-     * @tc.name JsvmTest056
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -714,9 +882,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('你好, World!, successes to create UTF-16 string!');
     });
     /**
+     * @tc.name   JsvmTest057
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0057
-     * @tc.name JsvmTest057
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -725,9 +896,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest058
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0058
-     * @tc.name JsvmTest058
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"ahello。"`;
@@ -737,9 +911,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('ahello。');
     });
     /**
+     * @tc.name   JsvmTest059
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0059
-     * @tc.name JsvmTest059
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"@#$%^&*()"`;
@@ -749,9 +926,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('@#$%^&*()');
     });
     /**
+     * @tc.name   JsvmTest060
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0060
-     * @tc.name JsvmTest060
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"中国"`;
@@ -761,9 +941,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('中国');
     });
     /**
+     * @tc.name   JsvmTest061
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0061
-     * @tc.name JsvmTest061
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"11"`;
@@ -773,9 +956,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('11');
     });
     /**
+     * @tc.name   JsvmTest062
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0062
-     * @tc.name JsvmTest062
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"abc"`;
@@ -785,9 +971,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest063
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0063
-     * @tc.name JsvmTest063
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -796,9 +985,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('Hello, World! éçñ, successes to create Latin1 string! 111');
     });
     /**
+     * @tc.name   JsvmTest064
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0064
-     * @tc.name JsvmTest064
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -807,9 +999,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest065
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0065
-     * @tc.name JsvmTest065
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"中文"`;
@@ -819,9 +1014,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('-');
     });
     /**
+     * @tc.name   JsvmTest066
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0066
-     * @tc.name JsvmTest066
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"111"`;
@@ -831,9 +1029,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('111');
     });
     /**
+     * @tc.name   JsvmTest067
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0067
-     * @tc.name JsvmTest067
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"ab"`;
@@ -843,9 +1044,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('ab');
     });
     /**
+     * @tc.name   JsvmTest068
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0068
-     * @tc.name JsvmTest068
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"~!@#$%^&*"`;
@@ -855,9 +1059,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('~!@#$%^&*');
     });
     /**
+     * @tc.name   JsvmTest069
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0069
-     * @tc.name JsvmTest069
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `"©"`;
@@ -867,9 +1074,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('©');
     });
     /**
+     * @tc.name   JsvmTest070
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0070
-     * @tc.name JsvmTest070
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -878,9 +1088,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('Sat Aug 05 2017 17:21:16 GMT+0800');
     });
     /**
+     * @tc.name   JsvmTest071
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0071
-     * @tc.name JsvmTest071
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -889,9 +1102,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Date).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest072
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0072
-     * @tc.name JsvmTest072
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -900,9 +1116,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest073
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0073
-     * @tc.name JsvmTest073
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -911,9 +1130,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).name).assertEqual('Hello OH_JSVM_CreateObject!');
     });
     /**
+     * @tc.name   JsvmTest074
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0074
-     * @tc.name JsvmTest074
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -922,9 +1144,12 @@ export default function JsvmJsunit() {
       expect(JSON.stringify(napitest.runJsVm(script))).assertEqual('{"name":"Hello OH_JSVM_CreateObject!"}');
     });
     /**
+     * @tc.name   JsvmTest075
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0075
-     * @tc.name JsvmTest075
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -933,9 +1158,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('-5555555555555555555');
     });
     /**
+     * @tc.name   JsvmTest076
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0076
-     * @tc.name JsvmTest076
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -944,9 +1172,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('bigint');
     });
     /**
+     * @tc.name   JsvmTest077
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0077
-     * @tc.name JsvmTest077
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -955,9 +1186,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest078
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0078
-     * @tc.name JsvmTest078
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -966,9 +1200,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest079
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0079
-     * @tc.name JsvmTest079
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -977,9 +1214,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest080
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0080
-     * @tc.name JsvmTest080
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -991,9 +1231,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).length).assertEqual(5);
     });
     /**
+     * @tc.name   JsvmTest081
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0081
-     * @tc.name JsvmTest081
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1005,9 +1248,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('0,1,2,3,4');
     });
     /**
+     * @tc.name   JsvmTest082
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0082
-     * @tc.name JsvmTest082
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1019,9 +1265,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest083
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0083
-     * @tc.name JsvmTest083
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1033,9 +1282,12 @@ export default function JsvmJsunit() {
       expect(Array.isArray(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest084
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0084
-     * @tc.name JsvmTest084
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = -1;
@@ -1048,9 +1300,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).length).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest085
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0085
-     * @tc.name JsvmTest085
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 0;
@@ -1063,9 +1318,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).length).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest086
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0086
-     * @tc.name JsvmTest086
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 5;
@@ -1078,9 +1336,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).length).assertEqual(5);
     });
     /**
+     * @tc.name   JsvmTest087
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0087
-     * @tc.name JsvmTest087
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 5;
@@ -1093,9 +1354,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('0,1,2,3,4');
     });
     /**
+     * @tc.name   JsvmTest088
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0088
-     * @tc.name JsvmTest088
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 5;
@@ -1108,9 +1372,12 @@ export default function JsvmJsunit() {
       expect(Array.isArray(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest089
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0089
-     * @tc.name JsvmTest089
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1122,9 +1389,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).byteLength).assertEqual(6);
     });
     /**
+     * @tc.name   JsvmTest090
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0090
-     * @tc.name JsvmTest090
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1136,9 +1406,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).byteLength).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest091
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0091
-     * @tc.name JsvmTest091
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1150,9 +1423,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof ArrayBuffer).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest092
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0092
-     * @tc.name JsvmTest092
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1164,9 +1440,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('[object ArrayBuffer]');
     });
     /**
+     * @tc.name   JsvmTest093
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0093
-     * @tc.name JsvmTest093
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1178,9 +1457,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(-20);
     });
     /**
+     * @tc.name   JsvmTest094
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0094
-     * @tc.name JsvmTest094
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1192,9 +1474,12 @@ export default function JsvmJsunit() {
       expect(Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest095
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0095
-     * @tc.name JsvmTest095
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 0;
@@ -1207,9 +1492,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest096
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0096
-     * @tc.name JsvmTest096
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 2147483647;
@@ -1222,9 +1510,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(2147483647);
     });
     /**
+     * @tc.name   JsvmTest097
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0097
-     * @tc.name JsvmTest097
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 2147483649;
@@ -1237,9 +1528,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(-2147483647);
     });
     /**
+     * @tc.name   JsvmTest098
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0098
-     * @tc.name JsvmTest098
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = -2147483648;
@@ -1252,9 +1546,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(-2147483648);
     });
     /**
+     * @tc.name   JsvmTest099
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0099
-     * @tc.name JsvmTest099
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = -2147483650;
@@ -1267,9 +1564,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(2147483646);
     });
     /**
+     * @tc.name   JsvmTest100
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0100
-     * @tc.name JsvmTest100
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 1;
@@ -1282,9 +1582,12 @@ export default function JsvmJsunit() {
       expect(Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest101
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0101
-     * @tc.name JsvmTest101
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1296,9 +1599,12 @@ export default function JsvmJsunit() {
       expect(Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest102
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0102
-     * @tc.name JsvmTest102
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1310,9 +1616,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(26);
     });
     /**
+     * @tc.name   JsvmTest103
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0103
-     * @tc.name JsvmTest103
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 1;
@@ -1325,9 +1634,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(1);
     });
     /**
+     * @tc.name   JsvmTest104
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0104
-     * @tc.name JsvmTest104
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = -1;
@@ -1340,9 +1652,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(4294967295);
     });
     /**
+     * @tc.name   JsvmTest105
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0105
-     * @tc.name JsvmTest105
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 4294967295;
@@ -1355,9 +1670,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(4294967295);
     });
     /**
+     * @tc.name   JsvmTest106
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0106
-     * @tc.name JsvmTest106
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 4294967296;
@@ -1370,9 +1688,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest107
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0107
-     * @tc.name JsvmTest107
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 3;
@@ -1385,9 +1706,12 @@ export default function JsvmJsunit() {
       expect(Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest108
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0108
-     * @tc.name JsvmTest108
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1399,9 +1723,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(2147483648);
     });
     /**
+     * @tc.name   JsvmTest109
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0109
-     * @tc.name JsvmTest109
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1413,9 +1740,12 @@ export default function JsvmJsunit() {
       expect(Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest110
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0110
-     * @tc.name JsvmTest110
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = -1;
@@ -1428,9 +1758,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(-1);
     });
     /**
+     * @tc.name   JsvmTest111
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0111
-     * @tc.name JsvmTest111
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = -9223372036854775808;
@@ -1443,9 +1776,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(-9223372036854775808);
     });
     /**
+     * @tc.name   JsvmTest112
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0112
-     * @tc.name JsvmTest112
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 9223372036854775807;
@@ -1458,9 +1794,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(9223372036854775807);
     });
     /**
+     * @tc.name   JsvmTest113
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0113
-     * @tc.name JsvmTest113
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 888;
@@ -1473,9 +1812,12 @@ export default function JsvmJsunit() {
       expect(Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest114
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0114
-     * @tc.name JsvmTest114
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 11;
@@ -1488,9 +1830,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('number');
     });
     /**
+     * @tc.name   JsvmTest115
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0115
-     * @tc.name JsvmTest115
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1502,9 +1847,12 @@ export default function JsvmJsunit() {
       expect(!Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest116
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0116
-     * @tc.name JsvmTest116
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1516,9 +1864,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(1.234);
     });
     /**
+     * @tc.name   JsvmTest117
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0117
-     * @tc.name JsvmTest117
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1530,9 +1881,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('number');
     });
     /**
+     * @tc.name   JsvmTest118
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0118
-     * @tc.name JsvmTest118
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = -110.0456;
@@ -1545,9 +1899,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(-110.0456);
     });
     /**
+     * @tc.name   JsvmTest119
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0119
-     * @tc.name JsvmTest119
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 1.456;
@@ -1560,9 +1917,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(1.456);
     });
     /**
+     * @tc.name   JsvmTest120
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0120
-     * @tc.name JsvmTest120
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 0.0000001;
@@ -1575,9 +1935,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0.0000001);
     });
     /**
+     * @tc.name   JsvmTest121
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0121
-     * @tc.name JsvmTest121
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let num = 1.5;
@@ -1590,9 +1953,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('number');
     });
     /**
+     * @tc.name   JsvmTest122
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0122
-     * @tc.name JsvmTest122
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = 1;
@@ -1606,9 +1972,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest123
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0123
-     * @tc.name JsvmTest123
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = 1;
@@ -1622,9 +1991,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest124
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0124
-     * @tc.name JsvmTest124
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '2';
@@ -1638,9 +2010,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest125
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0125
-     * @tc.name JsvmTest125
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '2';
@@ -1654,9 +2029,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest126
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0126
-     * @tc.name JsvmTest126
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `'a'`;
@@ -1667,9 +2045,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest127
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0127
-     * @tc.name JsvmTest127
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = true;
@@ -1682,9 +2063,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest128
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0128
-     * @tc.name JsvmTest128
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = 'true';
@@ -1697,9 +2081,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest129
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0129
-     * @tc.name JsvmTest129
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = 11;
@@ -1712,9 +2099,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest130
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0130
-     * @tc.name JsvmTest130
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = 'false';
@@ -1727,9 +2117,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest131
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0131
-     * @tc.name JsvmTest131
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = false;
@@ -1742,9 +2135,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest132
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0132
-     * @tc.name JsvmTest132
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1753,9 +2149,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('5555555555555555555');
     });
     /**
+     * @tc.name   JsvmTest133
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0133
-     * @tc.name JsvmTest133
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1764,9 +2163,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('bigint');
     });
     /**
+     * @tc.name   JsvmTest134
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0134
-     * @tc.name JsvmTest134
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1775,9 +2177,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('5555555555555555');
     });
     /**
+     * @tc.name   JsvmTest135
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0135
-     * @tc.name JsvmTest135
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1786,9 +2191,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('0');
     });
     /**
+     * @tc.name   JsvmTest136
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0136
-     * @tc.name JsvmTest136
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1797,9 +2205,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('bigint');
     });
     /**
+     * @tc.name   JsvmTest137
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0137
-     * @tc.name JsvmTest137
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1808,9 +2219,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('-5555555555555555555');
     });
     /**
+     * @tc.name   JsvmTest138
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0138
-     * @tc.name JsvmTest138
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1819,9 +2233,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('bigint');
     });
     /**
+     * @tc.name   JsvmTest139
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0139
-     * @tc.name JsvmTest139
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1830,9 +2247,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('-5555555555555555');
     });
     /**
+     * @tc.name   JsvmTest140
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0140
-     * @tc.name JsvmTest140
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1841,9 +2261,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('0');
     });
     /**
+     * @tc.name   JsvmTest141
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0141
-     * @tc.name JsvmTest141
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1852,9 +2275,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('5555555555555555');
     });
     /**
+     * @tc.name   JsvmTest142
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0142
-     * @tc.name JsvmTest142
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1863,9 +2289,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('bigint');
     });
     /**
+     * @tc.name   JsvmTest143
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0143
-     * @tc.name JsvmTest143
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1874,9 +2303,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('19055812547572553954576167314685144596492');
     });
     /**
+     * @tc.name   JsvmTest144
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0144
-     * @tc.name JsvmTest144
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1885,9 +2317,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('bigint');
     });
     /**
+     * @tc.name   JsvmTest145
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0145
-     * @tc.name JsvmTest145
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1897,9 +2332,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('0');
     });
     /**
+     * @tc.name   JsvmTest146
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0146
-     * @tc.name JsvmTest146
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1909,9 +2347,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('1');
     });
     /**
+     * @tc.name   JsvmTest147
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0147
-     * @tc.name JsvmTest147
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1920,9 +2361,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest148
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0148
-     * @tc.name JsvmTest148
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1931,9 +2375,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest149
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0149
-     * @tc.name JsvmTest149
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1942,9 +2389,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest150
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0150
-     * @tc.name JsvmTest150
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1953,9 +2403,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest151
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0151
-     * @tc.name JsvmTest151
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1964,9 +2417,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(null);
     });
     /**
+     * @tc.name   JsvmTest152
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0152
-     * @tc.name JsvmTest152
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1975,9 +2431,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest153
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0153
-     * @tc.name JsvmTest153
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1986,9 +2445,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).Row).assertEqual(1);
     });
     /**
+     * @tc.name   JsvmTest154
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0154
-     * @tc.name JsvmTest154
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -1997,9 +2459,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest155
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0155
-     * @tc.name JsvmTest155
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2008,9 +2473,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest156
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0156
-     * @tc.name JsvmTest156
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2019,9 +2487,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest157
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0157
-     * @tc.name JsvmTest157
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2030,9 +2501,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest158
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0158
-     * @tc.name JsvmTest158
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2041,9 +2515,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest159
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0159
-     * @tc.name JsvmTest159
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2052,9 +2529,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) > 0).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest160
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0160
-     * @tc.name JsvmTest1160
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2063,9 +2543,12 @@ export default function JsvmJsunit() {
       expect(Number.isInteger(napitest.runJsVm(script))).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest161
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0161
-     * @tc.name JsvmTest161
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let ARRAY_BUFFER = 1;
@@ -2075,9 +2558,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest162
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0162
-     * @tc.name JsvmTest162
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let ARRAY_LENGTH = 0;
@@ -2087,9 +2573,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(10);
     });
     /**
+     * @tc.name   JsvmTest163
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0163
-     * @tc.name JsvmTest163
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let ARRAY_BUFFER = 1;
@@ -2099,9 +2588,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof ArrayBuffer).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest164
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0164
-     * @tc.name JsvmTest164
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2110,9 +2602,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Int8Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest165
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0165
-     * @tc.name JsvmTest165
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2121,9 +2616,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Uint8Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest166
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0166
-     * @tc.name JsvmTest166
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2132,9 +2630,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Uint8ClampedArray).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest167
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0167
-     * @tc.name JsvmTest167
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2143,9 +2644,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Int16Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest168
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0168
-     * @tc.name JsvmTest168
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2154,9 +2658,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Uint16Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest169
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0169
-     * @tc.name JsvmTest169
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2165,9 +2672,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Int32Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest170
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0170
-     * @tc.name JsvmTest170
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2176,9 +2686,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Uint32Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest171
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0171
-     * @tc.name JsvmTest171
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2187,9 +2700,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Float32Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest172
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0172
-     * @tc.name JsvmTest172
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2198,9 +2714,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Float64Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest173
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0173
-     * @tc.name JsvmTest173
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2209,9 +2728,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof BigInt64Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest174
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0174
-     * @tc.name JsvmTest174
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2220,9 +2742,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof BigUint64Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest175
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0175
-     * @tc.name JsvmTest175
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       //  超出范围，默认是INT8_ARRAY
@@ -2232,9 +2757,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script) instanceof Int8Array).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest176
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0176
-     * @tc.name JsvmTest176
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_JSVM_INT8_ARRAY = 0;
@@ -2244,9 +2772,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest177
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0177
-     * @tc.name JsvmTest177
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_JSVM_INT8_ARRAY = 0;
@@ -2256,9 +2787,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest178
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0178
-     * @tc.name JsvmTest178
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_JSVM_INT8_ARRAY = 0;
@@ -2268,9 +2802,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest179
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0179
-     * @tc.name JsvmTest179
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_JSVM_INT8_ARRAY = 0;
@@ -2280,9 +2817,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest180
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0180
-     * @tc.name JsvmTest180
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_JSVM_INT8_ARRAY = 0;
@@ -2292,9 +2832,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest181
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0181
-     * @tc.name JsvmTest181
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let LENGTH = 1;
@@ -2304,9 +2847,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(5);
     });
     /**
+     * @tc.name   JsvmTest182
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0182
-     * @tc.name JsvmTest182
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_BUFFER = 2;
@@ -2316,9 +2862,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest183
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0183
-     * @tc.name JsvmTest183
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_BUFFER = 2;
@@ -2328,9 +2877,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest184
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0184
-     * @tc.name JsvmTest184
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_BUFFER = 2;
@@ -2340,9 +2892,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest185
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0185
-     * @tc.name JsvmTest185
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_BUFFER = 2;
@@ -2352,9 +2907,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest186
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0186
-     * @tc.name JsvmTest186
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_BUFFER = 2;
@@ -2364,9 +2922,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest187
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0187
-     * @tc.name JsvmTest187
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let BYTE_OFFSET = 3;
@@ -2376,9 +2937,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest188
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0188
-     * @tc.name JsvmTest188
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let BYTE_LENGTGH = 0;
@@ -2388,9 +2952,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(12);
     });
     /**
+     * @tc.name   JsvmTest189
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0189
-     * @tc.name JsvmTest189
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_ARRAYBUFFER = 1;
@@ -2400,9 +2967,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest190
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0190
-     * @tc.name JsvmTest190
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let IS_ARRAYBUFFER = 1;
@@ -2412,9 +2982,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest191
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0191
-     * @tc.name JsvmTest191
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let BYTE_OFFSET = '2';
@@ -2424,9 +2997,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(4);
     });
     /**
+     * @tc.name   JsvmTest192
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0192
-     * @tc.name JsvmTest192
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let BYTE_LENGTGH = 0;
@@ -2436,9 +3012,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(2);
     });
     /**
+     * @tc.name   JsvmTest193
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0193
-     * @tc.name JsvmTest193
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let BYTE_LENGTGH = 0;
@@ -2448,9 +3027,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(3);
     });
     /**
+     * @tc.name   JsvmTest194
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0194
-     * @tc.name JsvmTest194
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = 'new DataView(new Int8Array([2,5,3]).buffer)';
@@ -2461,9 +3043,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest195
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0195
-     * @tc.name JsvmTest195
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `'a'`;
@@ -2474,9 +3059,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest196
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0196
-     * @tc.name JsvmTest196
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `'中'`;
@@ -2487,9 +3075,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest197
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0197
-     * @tc.name JsvmTest197
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = 'new DataView(new Int8Array([2,5,3]).buffer)';
@@ -2500,9 +3091,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest198
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0198
-     * @tc.name JsvmTest198
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2511,9 +3105,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('set and get proto');
     });
     /**
+     * @tc.name   JsvmTest199
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0199
-     * @tc.name JsvmTest199
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2522,153 +3119,204 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest200
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0200
-     * @tc.name JsvmTest200
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `createReference();`;
       expect(JSON.stringify(napitest.runJsVm(script))).assertEqual('{"name":"CreateReference"}');
     });
     /**
+     * @tc.name   JsvmTest201
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0201
-     * @tc.name JsvmTest201
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `createReference();`;
       expect(napitest.runJsVm(script).name).assertEqual('CreateReference');
     });
     /**
+     * @tc.name   JsvmTest202
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0202
-     * @tc.name JsvmTest202
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `createReference();`;
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest203
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0203
-     * @tc.name JsvmTest203
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `useReference()`;
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest204
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0204
-     * @tc.name JsvmTest204
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `useReference()`;
       expect(napitest.runJsVm(script).name).assertEqual('UseReference');
     });
     /**
+     * @tc.name   JsvmTest205
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0205
-     * @tc.name JsvmTest205
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `useReference()`;
       expect(JSON.stringify(napitest.runJsVm(script))).assertEqual('{"name":"UseReference"}');
     });
     /**
+     * @tc.name   JsvmTest206
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0206
-     * @tc.name JsvmTest206
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `deleteReference()`;
       expect(napitest.runJsVm(script)).assertEqual('OH_JSVM_DeleteReference success');
     });
     /**
+     * @tc.name   JsvmTest207
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0207
-     * @tc.name JsvmTest207
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `deleteReference()`;
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest208
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0208
-     * @tc.name JsvmTest208
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `escapableHandleScopeTest()`;
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest209
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0209
-     * @tc.name JsvmTest209
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `escapableHandleScopeTest()`;
       expect(JSON.stringify(napitest.runJsVm(script))).assertEqual('{"name":"Test jsvm_escapable_handle_scope","id":"001"}');
     });
     /**
+     * @tc.name   JsvmTest210
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0210
-     * @tc.name JsvmTest210
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `escapableHandleScopeTest()`;
       expect(napitest.runJsVm(script).name).assertEqual('Test jsvm_escapable_handle_scope');
     });
     /**
+     * @tc.name   JsvmTest211
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0211
-     * @tc.name JsvmTest211
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `escapableHandleScopeTest()`;
       expect(napitest.runJsVm(script).id).assertEqual('001');
     });
     /**
+     * @tc.name   JsvmTest212
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0212
-     * @tc.name JsvmTest212
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `handleScopeTest()`;
       expect(JSON.stringify(napitest.runJsVm(script))).assertEqual('{"name":"test handleScope"}');
     });
     /**
+     * @tc.name   JsvmTest213
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0213
-     * @tc.name JsvmTest213
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `handleScopeTest()`;
       expect(napitest.runJsVm(script).name).assertEqual('test handleScope');
     });
     /**
+     * @tc.name   JsvmTest214
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0214
-     * @tc.name JsvmTest214
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `handleScopeTest()`;
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest215
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0215
-     * @tc.name JsvmTest215
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `handleScope()`;
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest216
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0216
-     * @tc.name JsvmTest216
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let obj = '{ data: 0, message: "hello world"}';
@@ -2678,9 +3326,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('data,message');
     });
     /**
+     * @tc.name   JsvmTest217
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0217
-     * @tc.name JsvmTest217
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arr = '["one", "two", "three", "four", "five"]';
@@ -2690,9 +3341,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('0,1,2,3,4');
     });
     /**
+     * @tc.name   JsvmTest218
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0218
-     * @tc.name JsvmTest218
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let obj = '{ data: 0, message: "hello world", 50: 1}';
@@ -2737,9 +3391,12 @@ export default function JsvmJsunit() {
    }
  `;
     /**
+     * @tc.name   JsvmTest219
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0219
-     * @tc.name JsvmTest219
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptGlobal + `\n` + `
@@ -2749,9 +3406,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('normal,writable,configurable,inherited');
     });
     /**
+     * @tc.name   JsvmTest220
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0220
-     * @tc.name JsvmTest220
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptGlobal + `\n` + `
@@ -2761,9 +3421,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('normal,unenumerable,writable');
     });
     /**
+     * @tc.name   JsvmTest221
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0221
-     * @tc.name JsvmTest221
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptGlobal + `\n` + `
@@ -2773,9 +3436,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('normal,configurable,inherited');
     });
     /**
+     * @tc.name   JsvmTest222
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0222
-     * @tc.name JsvmTest222
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptGlobal + `\n` + `
@@ -2785,9 +3451,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('normal,unenumerable,configurable');
     });
     /**
+     * @tc.name   JsvmTest223
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0223
-     * @tc.name JsvmTest223
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2797,9 +3466,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).code).assertEqual('hi');
     });
     /**
+     * @tc.name   JsvmTest224
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0224
-     * @tc.name JsvmTest224
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2809,9 +3481,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)[50]).assertEqual(12);
     });
     /**
+     * @tc.name   JsvmTest225
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0225
-     * @tc.name JsvmTest225
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2821,9 +3496,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).true).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest226
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0226
-     * @tc.name JsvmTest226
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2834,9 +3512,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script).object).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest227
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0227
-     * @tc.name JsvmTest227
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2850,9 +3531,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest228
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0228
-     * @tc.name JsvmTest228
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2862,9 +3546,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('hello world');
     });
     /**
+     * @tc.name   JsvmTest229
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0229
-     * @tc.name JsvmTest229
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2874,9 +3561,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest230
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0230
-     * @tc.name JsvmTest230
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2886,9 +3576,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest231
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0231
-     * @tc.name JsvmTest231
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2899,9 +3592,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest232
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0232
-     * @tc.name JsvmTest232
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -2929,9 +3625,12 @@ export default function JsvmJsunit() {
    }
  `;
     /**
+     * @tc.name   JsvmTest233
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0233
-     * @tc.name JsvmTest233
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptTrue: string = scriptProperty + `\n` + `
@@ -2941,9 +3640,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptTrue)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest234
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0234
-     * @tc.name JsvmTest234
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptTrue: string = scriptProperty + `\n` + `
@@ -2953,9 +3655,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptTrue)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest235
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0235
-     * @tc.name JsvmTest235
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptTrue: string = scriptProperty + `\n` + `
@@ -2965,9 +3670,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptTrue)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest236
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0236
-     * @tc.name JsvmTest236
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptTrue: string = scriptProperty + `\n` + `
@@ -2977,9 +3685,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptTrue)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest237
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0237
-     * @tc.name JsvmTest237
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptFalse: string = scriptProperty + `\n` + `
@@ -2989,9 +3700,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptFalse)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest238
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0238
-     * @tc.name JsvmTest238
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3006,9 +3720,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest239
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0239
-     * @tc.name JsvmTest239
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptTrue: string = scriptProperty + `\n` + `
@@ -3018,9 +3735,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptTrue)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest240
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0240
-     * @tc.name JsvmTest240
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptTrue: string = scriptProperty + `\n` + `
@@ -3030,9 +3750,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptTrue)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest241
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0241
-     * @tc.name JsvmTest241
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptFalse: string = scriptProperty + `\n` + `
@@ -3045,9 +3768,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptFalse)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest242
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0242
-     * @tc.name JsvmTest242
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptFalse: string = scriptProperty + `\n` + `
@@ -3058,9 +3784,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptFalse)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest243
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0243
-     * @tc.name JsvmTest243
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptProperty + `\n` + `
@@ -3071,9 +3800,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('5,normal,inherited');
     });
     /**
+     * @tc.name   JsvmTest245
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0244
-     * @tc.name JsvmTest245
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3087,9 +3819,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest246
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0246
-     * @tc.name JsvmTest246
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptProperty + `\n` + `
@@ -3099,9 +3834,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest247
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0247
-     * @tc.name JsvmTest247
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptProperty + `\n` + `
@@ -3111,9 +3849,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest248
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0248
-     * @tc.name JsvmTest248
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptProperty + `\n` + `
@@ -3123,9 +3864,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest249
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0249
-     * @tc.name JsvmTest249
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptProperty + `\n` + `
@@ -3135,9 +3879,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('name expected status.');
     });
     /**
+     * @tc.name   JsvmTest250
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0250
-     * @tc.name JsvmTest250
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = scriptProperty + `\n` + `
@@ -3147,9 +3894,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest251
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0251
-     * @tc.name JsvmTest251
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3164,9 +3914,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest252
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0252
-     * @tc.name JsvmTest252
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3175,9 +3928,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).message).assertEqual(1234);
     });
     /**
+     * @tc.name   JsvmTest253
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0253
-     * @tc.name JsvmTest253
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3187,9 +3943,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).name).assertEqual('strValue');
     });
     /**
+     * @tc.name   JsvmTest0254
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0254
-     * @tc.name JsvmTest0254
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3199,9 +3958,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).message).assertEqual('strValue');
     });
     /**
+     * @tc.name   JsvmTest0255
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0255
-     * @tc.name JsvmTest0255
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3212,9 +3974,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).message).not('strValue');
     });
     /**
+     * @tc.name   JsvmTest0256
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0256
-     * @tc.name JsvmTest0256
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3229,9 +3994,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest0257
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0257
-     * @tc.name JsvmTest0257
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3241,9 +4009,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('hello world');
     });
     /**
+     * @tc.name   JsvmTest0258
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0258
-     * @tc.name JsvmTest0258
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3253,9 +4024,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest0259
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0259
-     * @tc.name JsvmTest0259
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3265,9 +4039,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest0260
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0260
-     * @tc.name JsvmTest0260
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3278,9 +4055,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest0261
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0261
-     * @tc.name JsvmTest0261
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3295,9 +4075,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest0262
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0262
-     * @tc.name JsvmTest0262
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3308,9 +4091,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest0263
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0263
-     * @tc.name JsvmTest0263
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3321,9 +4107,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest0264
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0264
-     * @tc.name JsvmTest0264
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3334,9 +4123,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest0265
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0265
-     * @tc.name JsvmTest0265
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3351,9 +4143,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest0266
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0266
-     * @tc.name JsvmTest0266
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3362,9 +4157,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('2,3,4');
     });
     /**
+     * @tc.name   JsvmTest267
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0267
-     * @tc.name JsvmTest267
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3374,9 +4172,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)[1]).assertEqual('Hello world!');
     });
     /**
+     * @tc.name   JsvmTest268
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0268
-     * @tc.name JsvmTest268
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3386,9 +4187,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)[1]).assertEqual('Hello world!');
     });
     /**
+     * @tc.name   JsvmTest269
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0269
-     * @tc.name JsvmTest269
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3402,9 +4206,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest270
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0270
-     * @tc.name JsvmTest270
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3414,9 +4221,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(10);
     });
     /**
+     * @tc.name   JsvmTest271
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0271
-     * @tc.name JsvmTest271
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3426,9 +4236,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('hello');
     });
     /**
+     * @tc.name   JsvmTest272
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0272
-     * @tc.name JsvmTest272
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3438,9 +4251,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(null);
     });
     /**
+     * @tc.name   JsvmTest273
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0273
-     * @tc.name JsvmTest273
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3450,9 +4266,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest274
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0274
-     * @tc.name JsvmTest274
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3466,9 +4285,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest275
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0275
-     * @tc.name JsvmTest275
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptTrue: string = `
@@ -3478,9 +4300,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptTrue)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest276
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0276
-     * @tc.name JsvmTest276
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptFalse: string = `
@@ -3490,9 +4315,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptFalse)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest277
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0277
-     * @tc.name JsvmTest277
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptFalse: string = `
@@ -3502,9 +4330,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptFalse)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest278
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0278
-     * @tc.name JsvmTest278
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3518,9 +4349,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest279
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0279
-     * @tc.name JsvmTest279
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3530,9 +4364,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest280
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0280
-     * @tc.name JsvmTest280
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3542,9 +4379,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest281
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0281
-     * @tc.name JsvmTest281
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3554,9 +4394,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest282
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0282
-     * @tc.name JsvmTest282
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3566,9 +4409,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual('10,,world,true');
     });
     /**
+     * @tc.name   JsvmTest283
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0283
-     * @tc.name JsvmTest283
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3581,9 +4427,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest284
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0284
-     * @tc.name JsvmTest284
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptMethod: string = `
@@ -3593,9 +4442,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptMethod)).assertEqual(26);
     });
     /**
+     * @tc.name   JsvmTest285
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0285
-     * @tc.name JsvmTest285
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptString: string = `
@@ -3605,9 +4457,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptString)).assertEqual('Hello!');
     });
     /**
+     * @tc.name   JsvmTest286
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0286
-     * @tc.name JsvmTest286
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let scriptGetter: string = `
@@ -3617,9 +4472,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(scriptGetter)).assertEqual('Hello world!');
     });
     /**
+     * @tc.name   JsvmTest287
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0287
-     * @tc.name JsvmTest287
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3634,9 +4492,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest288
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0288
-     * @tc.name JsvmTest288
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3651,9 +4512,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest289
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0289
-     * @tc.name JsvmTest289
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3668,9 +4532,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest290
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0290
-     * @tc.name JsvmTest290
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3679,9 +4546,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(9);
     });
     /**
+     * @tc.name   JsvmTest291
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0291
-     * @tc.name JsvmTest291
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3694,9 +4564,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest292
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0292
-     * @tc.name JsvmTest292
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3705,9 +4578,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(1);
     });
     /**
+     * @tc.name   JsvmTest293
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0293
-     * @tc.name JsvmTest293
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3716,9 +4592,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(10.555);
     });
     /**
+     * @tc.name   JsvmTest294
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0294
-     * @tc.name JsvmTest294
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3731,9 +4610,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest295
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0295
-     * @tc.name JsvmTest295
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3743,9 +4625,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest296
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0296
-     * @tc.name JsvmTest296
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3755,9 +4640,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(null);
     });
     /**
+     * @tc.name   JsvmTest297
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0297
-     * @tc.name JsvmTest297
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3770,9 +4658,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest298
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0298
-     * @tc.name JsvmTest298
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3782,9 +4673,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('[1,2,3,4,5]');
     });
     /**
+     * @tc.name   JsvmTest299
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0299
-     * @tc.name JsvmTest299
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3794,9 +4688,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('{"data":0,"message":"hello world"}');
     });
     /**
+     * @tc.name   JsvmTest300
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0300
-     * @tc.name JsvmTest300
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3807,9 +4704,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('{"data":0,"message":"hello world","innerObj":{"info":123}}');
     });
     /**
+     * @tc.name   JsvmTest301
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0301
-     * @tc.name JsvmTest301
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3819,9 +4719,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('12.003');
     });
     /**
+     * @tc.name   JsvmTest302
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0302
-     * @tc.name JsvmTest302
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3834,9 +4737,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest303
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0303
-     * @tc.name JsvmTest303
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3848,9 +4754,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(10);
     });
     /**
+     * @tc.name   JsvmTest304
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0304
-     * @tc.name JsvmTest304
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3862,9 +4771,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('Hello World!');
     });
     /**
+     * @tc.name   JsvmTest305
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0305
-     * @tc.name JsvmTest305
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3876,9 +4788,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(52);
     });
     /**
+     * @tc.name   JsvmTest306
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0306
-     * @tc.name JsvmTest306
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3896,9 +4811,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest307
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0307
-     * @tc.name JsvmTest307
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3907,9 +4825,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(7);
     });
     /**
+     * @tc.name   JsvmTest308
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0308
-     * @tc.name JsvmTest308
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3923,9 +4844,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
     /**
+     * @tc.name   JsvmTest309
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0309
-     * @tc.name JsvmTest309
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3934,9 +4858,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(1);
     });
     /**
+     * @tc.name   JsvmTest310
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0310
-     * @tc.name JsvmTest310
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3945,9 +4872,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertTrue();
     });
     /**
+     * @tc.name   JsvmTest311
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0311
-     * @tc.name JsvmTest311
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3956,9 +4886,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('number');
     });
     /**
+     * @tc.name   JsvmTest312
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0312
-     * @tc.name JsvmTest312
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3967,9 +4900,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest313
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0313
-     * @tc.name JsvmTest313
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3978,9 +4914,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest314
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0314
-     * @tc.name JsvmTest314
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -3992,9 +4931,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest315
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0315
-     * @tc.name JsvmTest315
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4004,9 +4946,12 @@ export default function JsvmJsunit() {
     });
 
     /**
+     * @tc.name   JsvmTest316
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0316
-     * @tc.name JsvmTest316
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4024,9 +4969,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest317
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0317
-     * @tc.name JsvmTest317
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4045,9 +4993,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest318
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0318
-     * @tc.name JsvmTest318
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4070,9 +5021,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest319
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0319
-     * @tc.name JsvmTest319
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest319', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4090,9 +5044,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest320
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0320
-     * @tc.name JsvmTest320
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4118,9 +5075,12 @@ export default function JsvmJsunit() {
     });
 
     /**
+     * @tc.name   JsvmTest321
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0321
-     * @tc.name JsvmTest321
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest321', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '[1, 2, 3, 4, 5]';
@@ -4130,9 +5090,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest322
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0322
-     * @tc.name JsvmTest322
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest322', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '2,3,4,5';
@@ -4142,9 +5105,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest323
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0323
-     * @tc.name JsvmTest323
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest323', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4156,9 +5122,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest324
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0324
-     * @tc.name JsvmTest324
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest324', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4168,9 +5137,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest325
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0325
-     * @tc.name JsvmTest325
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest325', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4180,9 +5152,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest326
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0326
-     * @tc.name JsvmTest326
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest326', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4191,9 +5166,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest327
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0327
-     * @tc.name JsvmTest327
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest327', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4202,9 +5180,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest328
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0328
-     * @tc.name JsvmTest328
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest328', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4213,9 +5194,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest329
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0329
-     * @tc.name JsvmTest329
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest329', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4224,9 +5208,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest330
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0330
-     * @tc.name JsvmTest330
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4235,9 +5222,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest331
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0331
-     * @tc.name JsvmTest331
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest331', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4246,9 +5236,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest332
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0332
-     * @tc.name JsvmTest332
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest332', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4257,9 +5250,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest333
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0333
-     * @tc.name JsvmTest333
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest333', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4268,9 +5264,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest334
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0334
-     * @tc.name JsvmTest334
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest334', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4279,9 +5278,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest335
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0335
-     * @tc.name JsvmTest335
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest335', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4290,9 +5292,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest336
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0336
-     * @tc.name JsvmTest336
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest336', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4303,9 +5308,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest337
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0337
-     * @tc.name JsvmTest337
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest337', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4314,9 +5322,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest338
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0338
-     * @tc.name JsvmTest338
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest338', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4327,9 +5338,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest339
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0339
-     * @tc.name JsvmTest339
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest339', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4338,9 +5352,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest340
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0340
-     * @tc.name JsvmTest340
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4349,9 +5366,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest341
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0341
-     * @tc.name JsvmTest341
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest341', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4362,9 +5382,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest342
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0342
-     * @tc.name JsvmTest342
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest342', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4375,9 +5398,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest343
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0343
-     * @tc.name JsvmTest343
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest343', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4388,9 +5414,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest344
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0344
-     * @tc.name JsvmTest344
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4401,9 +5430,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest345
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0345
-     * @tc.name JsvmTest345
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest345', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4416,9 +5448,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest346
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0346
-     * @tc.name JsvmTest346
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest346', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4428,9 +5463,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest347
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0347
-     * @tc.name JsvmTest347
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4440,9 +5478,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest348
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0348
-     * @tc.name JsvmTest348
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4451,9 +5492,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(1);
     });
     /**
+     * @tc.name   JsvmTest349
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0349
-     * @tc.name JsvmTest349
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest349', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4462,9 +5506,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest350
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0350
-     * @tc.name JsvmTest350
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '123';
@@ -4474,9 +5521,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(123);
     });
     /**
+     * @tc.name   JsvmTest351
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0351
-     * @tc.name JsvmTest351
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest351', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let obj = `{ data : 1}`;
@@ -4486,9 +5536,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest352
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0352
-     * @tc.name JsvmTest352
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest352', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4497,9 +5550,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest353
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0353
-     * @tc.name JsvmTest353
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest353', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4508,9 +5564,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest354
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0354
-     * @tc.name JsvmTest354
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest354', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4519,9 +5578,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest355
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0355
-     * @tc.name JsvmTest355
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest355', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4530,9 +5592,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest356
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0356
-     * @tc.name JsvmTest356
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest356', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4541,9 +5606,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('22222');
     });
     /**
+     * @tc.name   JsvmTest357
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0357
-     * @tc.name JsvmTest357
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest357', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4552,9 +5620,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('true');
     });
     /**
+     * @tc.name   JsvmTest358
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0358
-     * @tc.name JsvmTest358
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest358', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4566,9 +5637,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest359
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0359
-     * @tc.name JsvmTest359
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest359', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4577,9 +5651,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('undefined');
     });
     /**
+     * @tc.name   JsvmTest360
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0360
-     * @tc.name JsvmTest360
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4588,9 +5665,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('null');
     });
     /**
+     * @tc.name   JsvmTest361
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0361
-     * @tc.name JsvmTest361
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest361', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4599,9 +5679,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest362
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0362
-     * @tc.name JsvmTest362
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest362', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4610,9 +5693,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest363
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0363
-     * @tc.name JsvmTest363
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest363', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4621,9 +5707,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest364
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0364
-     * @tc.name JsvmTest364
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest364', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4632,9 +5721,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest365
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0365
-     * @tc.name JsvmTest365
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest365', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4644,9 +5736,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest366
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0366
-     * @tc.name JsvmTest366
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest366', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4656,9 +5751,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest367
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0367
-     * @tc.name JsvmTest367
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest367', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4668,9 +5766,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest368
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0368
-     * @tc.name JsvmTest368
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest368', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4680,9 +5781,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest369
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0369
-     * @tc.name JsvmTest369
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest369', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4692,9 +5796,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest370
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0370
-     * @tc.name JsvmTest370
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4704,9 +5811,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest371
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0371
-     * @tc.name JsvmTest371
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest371', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4715,9 +5825,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest372
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0372
-     * @tc.name JsvmTest372
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest372', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4726,9 +5839,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest373
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0373
-     * @tc.name JsvmTest373
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest373', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4737,9 +5853,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest374
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0374
-     * @tc.name JsvmTest374
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest374', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4748,9 +5867,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest375
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0375
-     * @tc.name JsvmTest375
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest375', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4760,9 +5882,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('message');
     });
     /**
+     * @tc.name   JsvmTest376
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0376
-     * @tc.name JsvmTest376
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest376', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4772,9 +5897,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest377
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0377
-     * @tc.name JsvmTest377
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest377', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4786,9 +5914,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('object');
     });
     /**
+     * @tc.name   JsvmTest378
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0378
-     * @tc.name JsvmTest378
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest378', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4800,9 +5931,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script).name).assertEqual('apple');
     });
     /**
+     * @tc.name   JsvmTest379
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0379
-     * @tc.name JsvmTest379
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest379', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4816,9 +5950,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest380
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0380
-     * @tc.name JsvmTest380
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4832,9 +5969,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest381
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0381
-     * @tc.name JsvmTest381
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest381', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4849,9 +5989,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest382
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0382
-     * @tc.name JsvmTest382
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest382', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4866,9 +6009,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest383
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0383
-     * @tc.name JsvmTest383
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest383', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4877,9 +6023,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest384
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0384
-     * @tc.name JsvmTest384
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest384', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4888,9 +6037,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest385
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0385
-     * @tc.name JsvmTest385
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest385', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4899,9 +6051,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest386
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0386
-     * @tc.name JsvmTest386
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest386', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -4910,9 +6065,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('number');
     });
     /**
+     * @tc.name   JsvmTest387
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0387
-     * @tc.name JsvmTest387
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest387', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       class Obj {
@@ -4925,9 +6083,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest388
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0388
-     * @tc.name JsvmTest388
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest388', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       class Obj {
@@ -4940,9 +6101,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest389
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0389
-     * @tc.name JsvmTest389
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest389', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       class Obj {
@@ -4955,9 +6119,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest390
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0390
-     * @tc.name JsvmTest390
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       class Obj {
@@ -4970,34 +6137,46 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('boolean');
     });
     /**
+     * @tc.name   JsvmTest391
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0391
-     * @tc.name JsvmTest391
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest391', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `handleScopeFor()`;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest392
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0392
-     * @tc.name JsvmTest392
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest392', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(JSON.parse(napitest.runJsVm('defineClass')).name).assertEqual('lilei');
     });
     /**
+     * @tc.name   JsvmTest393
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0393
-     * @tc.name JsvmTest393
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest393', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof napitest.runJsVm('defineClass')).assertEqual('string');
     });
     /**
+     * @tc.name   JsvmTest394
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0394
-     * @tc.name JsvmTest394
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest394', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5006,9 +6185,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('generic failure status.');
     });
     /**
+     * @tc.name   JsvmTest395
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0395
-     * @tc.name JsvmTest395
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest395', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5017,9 +6199,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('generic failure status.');
     });
     /**
+     * @tc.name   JsvmTest396
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0396
-     * @tc.name JsvmTest396
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest396', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5028,9 +6213,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest397
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0397
-     * @tc.name JsvmTest397
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest397', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5039,9 +6227,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest398
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0398
-     * @tc.name JsvmTest398
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest398', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5050,9 +6241,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest399
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0399
-     * @tc.name JsvmTest399
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest399', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5064,10 +6258,13 @@ export default function JsvmJsunit() {
       };
       expect(napitest.runJsVm(script).toString()).assertEqual(expectedObject.toString());
     });
-	/**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0400
-     * @tc.name      JsvmTest400
-     * @tc.desc      JsvmTest
+    /**
+     * @tc.name   JsvmTest0400
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0400
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -5080,10 +6277,13 @@ export default function JsvmJsunit() {
         expect(e.message).assertEqual('HasError');
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0401
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0401
-     * @tc.name JsvmTest401
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5096,10 +6296,13 @@ export default function JsvmJsunit() {
         expect(e.message).assertEqual('');
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0402
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0402
-     * @tc.name JsvmTest0402
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5112,10 +6315,13 @@ export default function JsvmJsunit() {
         expect(e.message).assertEqual('has Error');
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0403
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0403
-     * @tc.name JsvmTest0403
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let errMessage = `\"has Error\"`;
@@ -5130,10 +6336,13 @@ export default function JsvmJsunit() {
         expect(e.message).assertEqual('has Error');
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0404
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0404
-     * @tc.name JsvmTest0404
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5147,10 +6356,13 @@ export default function JsvmJsunit() {
         expect(e instanceof TypeError).assertTrue();
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0405
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0405
-     * @tc.name JsvmTest0405
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let errMessage = `\"has Type Error\"`;
@@ -5165,10 +6377,13 @@ export default function JsvmJsunit() {
         expect(e instanceof TypeError).assertTrue();
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0406
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0406
-     * @tc.name JsvmTest0406
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5182,10 +6397,13 @@ export default function JsvmJsunit() {
         expect(e instanceof RangeError).assertTrue();
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0407
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0407
-     * @tc.name JsvmTest0407
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0407', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5199,10 +6417,13 @@ export default function JsvmJsunit() {
         expect(e.message).assertEqual('throw syntax error');
       }
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0408
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0408
-     * @tc.name JsvmTest0408
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0408', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5211,10 +6432,13 @@ export default function JsvmJsunit() {
        `;
       expect(napitest.runJsVm(script)).assertTrue();
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0409
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0409
-     * @tc.name JsvmTest0409
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0409', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5223,10 +6447,13 @@ export default function JsvmJsunit() {
        `;
       expect(napitest.runJsVm(script)).assertFalse();
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0410
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0410
-     * @tc.name JsvmTest0410
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5236,10 +6463,13 @@ export default function JsvmJsunit() {
        `;
       expect(napitest.runJsVm(script)).assertTrue();
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0411
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0411
-     * @tc.name JsvmTest0411
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0411', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5249,10 +6479,13 @@ export default function JsvmJsunit() {
        `;
       expect(napitest.runJsVm(script)).assertTrue();
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0412
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0412
-     * @tc.name JsvmTest0412
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0412', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5262,10 +6495,13 @@ export default function JsvmJsunit() {
        `;
       expect(napitest.runJsVm(script)).assertTrue();
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0413
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0413
-     * @tc.name JsvmTest0413
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0413', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =
@@ -5275,10 +6511,13 @@ export default function JsvmJsunit() {
        `;
       expect(napitest.runJsVm(script)).assertTrue();
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0414
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0414
-     * @tc.name JsvmTest0414
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0414', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5286,10 +6525,13 @@ export default function JsvmJsunit() {
       `;
       expect(napitest.runJsVm(script)).assertEqual('OH_JSVM_ThrowError');
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0415
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0415
-     * @tc.name JsvmTest0415
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5297,10 +6539,13 @@ export default function JsvmJsunit() {
       `;
       expect(napitest.runJsVm(script)).assertEqual('OH_JSVM_ThrowError');
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0416
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0416
-     * @tc.name JsvmTest0416
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0416', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string =`
@@ -5309,12 +6554,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(1);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0417
-     * @tc.name      JsvmTest0417
-     * @tc.desc      Test the functions of the OH_JSVM_SetInstanceData interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0417
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0417
+     * @tc.desc   Test the functions of the OH_JSVM_SetInstanceData interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0417', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5322,14 +6567,14 @@ export default function JsvmJsunit() {
       `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
-    /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0418
-     * @tc.name      JsvmTest0418
-     * @tc.desc      Test the functions of the OH_JSVM_GetInstanceData interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
+ /**
+  * @tc.name   JsvmTest0418
+  * @tc.number SUB_ACE_BASIC_ETS_JSVM_0418
+  * @tc.desc   Test the functions of the OH_JSVM_GetInstanceData interfaces.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('JsvmTest0418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
           getInstanceData()
@@ -5337,9 +6582,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest0419
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0419
-     * @tc.name JsvmTest0419
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0419', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '[0, 1, 2, 3, 4, 5]';
@@ -5349,9 +6597,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(6);
     });
     /**
+     * @tc.name   JsvmTest0420
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0420
-     * @tc.name JsvmTest0420
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '[]';
@@ -5361,9 +6612,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(0);
     });
     /**
+     * @tc.name   JsvmTest0421
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0421
-     * @tc.name JsvmTest0421
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0421', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = '1';
@@ -5373,9 +6627,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest0422
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0422
-     * @tc.name JsvmTest0422
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0422', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `'a'`;
@@ -5385,9 +6642,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest0423
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0423
-     * @tc.name JsvmTest0423
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0423', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `'中'`;
@@ -5397,9 +6657,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest0424
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0424
-     * @tc.name JsvmTest0424
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0424', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let data = `'￥%……&*'`;
@@ -5409,9 +6672,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(undefined);
     });
     /**
+     * @tc.name   JsvmTest0425
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0425
-     * @tc.name JsvmTest0425
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("JsvmTest0425", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5420,9 +6686,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
+     * @tc.name   JsvmTest0426
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0426
-     * @tc.name JsvmTest0426
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("JsvmTest0426", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5431,9 +6700,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest0427
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0427
-     * @tc.name JsvmTest0427
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("JsvmTest0427", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5442,9 +6714,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest0428
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0428
-     * @tc.name JsvmTest0428
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("JsvmTest0428", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5453,9 +6728,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
+     * @tc.name   JsvmTest0429
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0429
-     * @tc.name JsvmTest0429
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("JsvmTest0429", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5463,10 +6741,13 @@ export default function JsvmJsunit() {
       `;
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
-	/**
+    /**
+     * @tc.name   JsvmTest0430
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0430
-     * @tc.name JsvmTest0430
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5475,9 +6756,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual('你好, World!, successes to create UTF-8 string!');
     });
     /**
+     * @tc.name   JsvmTest0431
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0431
-     * @tc.name JsvmTest0431
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0431', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5485,10 +6769,13 @@ export default function JsvmJsunit() {
       `;
       expect(napitest.runJsVm(script).length).assertEqual(45);
     });
-	 /**
+    /**
+     * @tc.name   JsvmTest0432
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0432
-     * @tc.name JsvmTest0432
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0432', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5497,9 +6784,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('string');
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0433
-     * @tc.name      JsvmTest0433
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0433
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0433
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0433', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('JsvmTest0433 START');
@@ -5508,9 +6798,12 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0434
-     * @tc.name      JsvmTest0434
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0434
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0434
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0434', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('JsvmTest0434 START');
@@ -5519,9 +6812,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0435
-     * @tc.name      JsvmTest0435
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0435
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0435
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0435', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let rst: boolean = napitest.testHandleMicrotasks();
@@ -5529,9 +6825,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0436
-     * @tc.name      JsvmTest0436
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0436
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0436
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0436', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let rst: number = napitest.testMultithreadFunction();
@@ -5539,20 +6838,26 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(1);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0437
-     * @tc.name      JsvmTest0437
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0437
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0437
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0437', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         let rst: boolean = napitest.testJswmInterface();
         console.info('JsvmTest0437 testString result is:' + JSON.stringify(rst));
         expect(rst).assertEqual(true);
     });
-    /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0438
-     * @tc.name      JsvmTest0438
-     * @tc.desc      JsvmTest
-     */
+     /**
+      * @tc.name   JsvmTest0438
+      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0438
+      * @tc.desc   JsvmTest
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('JsvmTest0438', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
         var f = () => console.log('no constructable');
@@ -5561,9 +6866,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0439
-     * @tc.name      JsvmTest0439
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0439
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0439
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0439', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5572,9 +6880,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0440
-     * @tc.name      JsvmTest0440
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0440
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0440
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('JsvmTest0440 START');
@@ -5583,9 +6894,12 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0441
-     * @tc.name      JsvmTest0441
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0441
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0441
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0441', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('JsvmTest0441 START');
@@ -5594,9 +6908,12 @@ export default function JsvmJsunit() {
       expect(value).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0442
-     * @tc.name      JsvmTest0442
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0442
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0442
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0442', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5605,9 +6922,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("/ab+c/i");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0443
-     * @tc.name      JsvmTest0443
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0443
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0443
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0443', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5616,9 +6936,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("/[bc]at/g");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0444
-     * @tc.name      JsvmTest0444
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0444
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0444
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0444', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5627,9 +6950,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("/d{3}-d{2}-d{4}/m");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0445
-     * @tc.name      JsvmTest0445
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0445
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0445
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0445', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5638,9 +6964,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("/.at/y");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0446
-     * @tc.name      JsvmTest0446
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0446
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0446
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0446', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5649,9 +6978,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("/(.)hort/s");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0447
-     * @tc.name      JsvmTest0447
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0447
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0447
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0447', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5660,9 +6992,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("false");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0448
-     * @tc.name      JsvmTest0448
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0448
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0448
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0448', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5671,9 +7006,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("true");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0449
-     * @tc.name      JsvmTest0449
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0449
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0449
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0449', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5682,9 +7020,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("[object RegExp]");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0450
-     * @tc.name      JsvmTest0450
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0450
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0450
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5693,9 +7034,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("1");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0451
-     * @tc.name      JsvmTest0451
-     * @tc.desc      JsvmTest
+     * @tc.name   JsvmTest0451
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0451
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0451', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('JsvmTest0451 START');
@@ -5705,9 +7049,12 @@ export default function JsvmJsunit() {
     });
 
     /**
+     * @tc.name   JsvmTest0452
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0452
-     * @tc.name JsvmTest0452
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0452', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5721,9 +7068,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(70);
     });
     /**
+     * @tc.name   JsvmTest0453
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0453
-     * @tc.name JsvmTest0453
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0453', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5733,9 +7083,12 @@ export default function JsvmJsunit() {
       expect(typeof napitest.runJsVm(script)).assertEqual('undefined');
     });
     /**
+     * @tc.name   JsvmTest0454
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0454
-     * @tc.name JsvmTest0454
-     * @tc.desc JsvmTest
+     * @tc.desc   JsvmTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0454', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -5745,12 +7098,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(5);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0455
-     * @tc.name      JsvmTest0455
-     * @tc.desc      Test the function of the OH_JSVM_CreateMap interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0455
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0455
+     * @tc.desc   Test the function of the OH_JSVM_CreateMap interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0455', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5759,12 +7112,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("[object Map]");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0456
-     * @tc.name      JsvmTest0456
-     * @tc.desc      Test the function of the OH_JSVM_CreateMap interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0456
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0456
+     * @tc.desc   Test the function of the OH_JSVM_CreateMap interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0456', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5774,12 +7127,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("[object Map]");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0457
-     * @tc.name      JsvmTest0457
-     * @tc.desc      Test the function of the OH_JSVM_CreateMap interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0457
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0457
+     * @tc.desc   Test the function of the OH_JSVM_CreateMap interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0457', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5792,12 +7145,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(3);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0458
-     * @tc.name      JsvmTest0458
-     * @tc.desc      Test the function of the OH_JSVM_CreateMap interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0458
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0458
+     * @tc.desc   Test the function of the OH_JSVM_CreateMap interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0458', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5810,12 +7163,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual("val1");
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0459
-     * @tc.name      JsvmTest0459
-     * @tc.desc      Test the function of the OH_JSVM_CreateMap interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0459
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0459
+     * @tc.desc   Test the function of the OH_JSVM_CreateMap interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0459', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5828,12 +7181,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0460
-     * @tc.name      JsvmTest0460
-     * @tc.desc      Test the function of the OH_JSVM_CreateMap interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0460
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0460
+     * @tc.desc   Test the function of the OH_JSVM_CreateMap interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5847,12 +7200,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(false);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0461
-     * @tc.name      JsvmTest0461
-     * @tc.desc      Test the function of the OH_JSVM_CoerceToBigInt interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0461
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0461
+     * @tc.desc   Test the function of the OH_JSVM_CoerceToBigInt interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0461', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5861,12 +7214,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertTrue();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0462
-     * @tc.name      JsvmTest0462
-     * @tc.desc      Test the function of the OH_JSVM_CoerceToBigInt interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0462
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0462
+     * @tc.desc   Test the function of the OH_JSVM_CoerceToBigInt interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0462', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5875,12 +7228,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertTrue();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0463
-     * @tc.name      JsvmTest0463
-     * @tc.desc      Test the function of the OH_JSVM_CoerceToBigInt interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0463
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0463
+     * @tc.desc   Test the function of the OH_JSVM_CoerceToBigInt interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0463', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5889,12 +7242,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertTrue();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0464
-     * @tc.name      JsvmTest0464
-     * @tc.desc      Test the function of the OH_JSVM_CoerceToBigInt interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0464
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0464
+     * @tc.desc   Test the function of the OH_JSVM_CoerceToBigInt interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0464', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5904,12 +7257,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertTrue();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0465
-     * @tc.name      JsvmTest0465
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0465
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0465
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0465', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5919,12 +7272,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertTrue();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0466
-     * @tc.name      JsvmTest0466
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0466
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0466
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0466', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5934,12 +7287,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0467
-     * @tc.name      JsvmTest0467
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0467
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0467
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0467', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5948,12 +7301,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0468
-     * @tc.name      JsvmTest0468
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0468
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0468
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0468', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5962,12 +7315,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0469
-     * @tc.name      JsvmTest0469
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0469
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0469
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0469', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5976,12 +7329,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0470
-     * @tc.name      JsvmTest0470
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0470
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0470
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0470', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -5990,12 +7343,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0471
-     * @tc.name      JsvmTest0471
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0471
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0471
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0471', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -6004,12 +7357,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0472
-     * @tc.name      JsvmTest0472
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0472
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0472
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0472', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -6018,12 +7371,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0473
-     * @tc.name      JsvmTest0473
-     * @tc.desc      Test the function of the OH_JSVM_IsRegExp interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0473
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0473
+     * @tc.desc   Test the function of the OH_JSVM_IsRegExp interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0473', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let script: string = `
@@ -6032,12 +7385,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertFalse();
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0474
-     * @tc.name      JsvmTest0474
-     * @tc.desc      Test the function of the OH_JSVM_CompileScriptWithOptions interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0474
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0474
+     * @tc.desc   Test the function of the OH_JSVM_CompileScriptWithOptions interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0474', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: boolean = napitest.testCompileWithOption();
@@ -6045,12 +7398,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0475
-     * @tc.name      JsvmTest0475
-     * @tc.desc      Test the functions of the OH_JSVM_RetainScript and OH_JSVM_ReleaseScript interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0475
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0475
+     * @tc.desc   Test the functions of the OH_JSVM_RetainScript and OH_JSVM_ReleaseScript interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0475', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: boolean = napitest.testRetainScript();
@@ -6058,12 +7411,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0476
-     * @tc.name      JsvmTest0476
-     * @tc.desc      Test the function of the OH_JSVM_OpenInspectorWithName interface.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0476
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0476
+     * @tc.desc   Test the function of the OH_JSVM_OpenInspectorWithName interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0476', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: boolean = napitest.testOpenInspectorWithName();
@@ -6071,12 +7424,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0477
-     * @tc.name      JsvmTest0477
-     * @tc.desc      Test the function of ArrayBuffer interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0477
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0477
+     * @tc.desc   Test the function of ArrayBuffer interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0477', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.testArrayBuffer();
@@ -6084,12 +7437,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0478
-     * @tc.name      JsvmTest0478
-     * @tc.desc      Test the function of ArrayBuffer interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0478
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0478
+     * @tc.desc   Test the function of ArrayBuffer interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0478', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.testArrayBuffer2();
@@ -6097,12 +7450,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0479
-     * @tc.name      JsvmTest0479
-     * @tc.desc      Test the function of ArrayBuffer interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0479
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0479
+     * @tc.desc   Test the function of ArrayBuffer interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0479', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.testArrayBuffer3();
@@ -6110,12 +7463,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0480
-     * @tc.name      JsvmTest0480
-     * @tc.desc      Test the function of WasmOperator interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0480
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0480
+     * @tc.desc   Test the function of WasmOperator interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.testWasmOperator();
@@ -6123,12 +7476,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0481
-     * @tc.name      JsvmTest0481
-     * @tc.desc      Test the function of WebAssembly interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0481
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0481
+     * @tc.desc   Test the function of WebAssembly interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0481', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.wasmTest();
@@ -6136,12 +7489,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0482
-     * @tc.name      JsvmTest0482
-     * @tc.desc      Test the function of ArrayBuffer backing store interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0482
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0482
+     * @tc.desc   Test the function of ArrayBuffer backing store interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0482', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.arrayBufferBackingStoreTest();
@@ -6149,12 +7502,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0483
-     * @tc.name      JsvmTest0483
-     * @tc.desc      Test that when JSVM_Value is js code, return 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0483
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0483
+     * @tc.desc   Test that when JSVM_Value is js code, return 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0483', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6163,12 +7516,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0484
-     * @tc.name      JsvmTest0484
-     * @tc.desc      Test that when JSVM_Value is create code, return 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0484
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0484
+     * @tc.desc   Test that when JSVM_Value is create code, return 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0484', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6177,12 +7530,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0485
-     * @tc.name      JsvmTest0485
-     * @tc.desc      Test that when bufsize less than (char*) buf, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0485
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0485
+     * @tc.desc   Test that when bufsize less than (char*) buf, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0485', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6191,12 +7544,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0486
-     * @tc.name      JsvmTest0486
-     * @tc.desc      Test that when bufsize greater than or equal (char*) buf, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0486
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0486
+     * @tc.desc   Test that when bufsize greater than or equal (char*) buf, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0486', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6205,12 +7558,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0487
-     * @tc.name      JsvmTest0487
-     * @tc.desc      Test that when bufsize less than buf, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0487
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0487
+     * @tc.desc   Test that when bufsize less than buf, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0487', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6219,12 +7572,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0488
-     * @tc.name      JsvmTest0488
-     * @tc.desc      Test that when (char*) buf equal to bufsize, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0488
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0488
+     * @tc.desc   Test that when (char*) buf equal to bufsize, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0488', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6233,12 +7586,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0489
-     * @tc.name      JsvmTest0489
-     * @tc.desc      Test that when str is null, return 'not ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0489
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0489
+     * @tc.desc   Test that when str is null, return 'not ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0489', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6247,12 +7600,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0490
-     * @tc.name      JsvmTest0490
-     * @tc.desc      Test that when length less than str, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0490
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0490
+     * @tc.desc   Test that when length less than str, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0490', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6261,12 +7614,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0491
-     * @tc.name      JsvmTest0491
-     * @tc.desc      Test that when length equal to str, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0491
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0491
+     * @tc.desc   Test that when length equal to str, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0491', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6275,12 +7628,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0492
-     * @tc.name      JsvmTest0492
-     * @tc.desc      Test that when length greate than str, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0492
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0492
+     * @tc.desc   Test that when length greate than str, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0492', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6289,12 +7642,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0493
-     * @tc.name      JsvmTest0493
-     * @tc.desc      Test that when str(UTF16) is null, return 'not ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0493
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0493
+     * @tc.desc   Test that when str(UTF16) is null, return 'not ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0493', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6303,12 +7656,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0494
-     * @tc.name      JsvmTest0494
-     * @tc.desc      Test that when length less than str(UTF16), return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0494
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0494
+     * @tc.desc   Test that when length less than str(UTF16), return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0494', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6317,12 +7670,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0495
-     * @tc.name      JsvmTest0495
-     * @tc.desc      Test that when length equal to str(UTF16), return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0495
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0495
+     * @tc.desc   Test that when length equal to str(UTF16), return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0495', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6331,12 +7684,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0496
-     * @tc.name      JsvmTest0496
-     * @tc.desc      Test that when length greate than str(UTF16), return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0496
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0496
+     * @tc.desc   Test that when length greate than str(UTF16), return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0496', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6345,12 +7698,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0497
-     * @tc.name      JsvmTest0497
-     * @tc.desc      Test that when JSVM_Value is js code, return 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0497
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0497
+     * @tc.desc   Test that when JSVM_Value is js code, return 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0497', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6359,12 +7712,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0498
-     * @tc.name      JsvmTest0498
-     * @tc.desc      Test that when JSVM_Value is create code, return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0498
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0498
+     * @tc.desc   Test that when JSVM_Value is create code, return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0498', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6373,12 +7726,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0499
-     * @tc.name      JsvmTest0499
-     * @tc.desc      Test that when buf(UTF16) less than str(UTF16), return size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0499
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0499
+     * @tc.desc   Test that when buf(UTF16) less than str(UTF16), return size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0499', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6387,12 +7740,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0500
-     * @tc.name      JsvmTest0500
-     * @tc.desc      Test that when buf(UTF16) greater than or equal str(UTF16), return ‘ok’ and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0500
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0500
+     * @tc.desc   Test that when buf(UTF16) greater than or equal str(UTF16), return ‘ok’ and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6401,12 +7754,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0501
-     * @tc.name      JsvmTest0501
-     * @tc.desc      Test that when bufsize less than buf, return size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0501
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0501
+     * @tc.desc   Test that when bufsize less than buf, return size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6415,12 +7768,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0502
-     * @tc.name      JsvmTest0502
-     * @tc.desc      Test that when bufsize equal buf, return ‘ok’ and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0502
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0502
+     * @tc.desc   Test that when bufsize equal buf, return ‘ok’ and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0502', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6429,12 +7782,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0503
-     * @tc.name      JsvmTest0503
-     * @tc.desc      Test that when str is null, return 'not ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0503
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0503
+     * @tc.desc   Test that when str is null, return 'not ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0503', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6443,12 +7796,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0504
-     * @tc.name      JsvmTest0504
-     * @tc.desc      Test that when length less than str(Latin1), return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0504
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0504
+     * @tc.desc   Test that when length less than str(Latin1), return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0504', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6457,12 +7810,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0505
-     * @tc.name      JsvmTest0505
-     * @tc.desc      Test that when length equal to str(Latinl), return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0505
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0505
+     * @tc.desc   Test that when length equal to str(Latinl), return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0505', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6471,12 +7824,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0506
-     * @tc.name      JsvmTest0506
-     * @tc.desc      Test that when length greate than str(Latin1), return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0506
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0506
+     * @tc.desc   Test that when length greate than str(Latin1), return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0506', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6485,12 +7838,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0507
-     * @tc.name      JsvmTest0507
-     * @tc.desc      Test that when JSVM_Value is js code(Latin1), return 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0507
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0507
+     * @tc.desc   Test that when JSVM_Value is js code(Latin1), return 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0507', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6499,12 +7852,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0508
-     * @tc.name      JsvmTest0508
-     * @tc.desc      Test that when JSVM_Value is create code(Latin1), return 'ok' and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0508
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0508
+     * @tc.desc   Test that when JSVM_Value is create code(Latin1), return 'ok' and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0508', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6513,12 +7866,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0509
-     * @tc.name      JsvmTest0509
-     * @tc.desc      Test that when buf(Latin1) less than str(Latin1), return size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0509
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0509
+     * @tc.desc   Test that when buf(Latin1) less than str(Latin1), return size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0509', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6527,12 +7880,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0510
-     * @tc.name      JsvmTest0510
-     * @tc.desc      Test that when buf(Latin1) greater than or equal str(Latin1), return ‘ok’ and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0510
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0510
+     * @tc.desc   Test that when buf(Latin1) greater than or equal str(Latin1), return ‘ok’ and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6541,12 +7894,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0511
-     * @tc.name      JsvmTest0511
-     * @tc.desc      Test that when bufsize less than buf(Latin1), return size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0511
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0511
+     * @tc.desc   Test that when bufsize less than buf(Latin1), return size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0511', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6555,12 +7908,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0512
-     * @tc.name      JsvmTest0512
-     * @tc.desc      Test that when bufsize equal buf(Latin1), return ‘ok’ and size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0512
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0512
+     * @tc.desc   Test that when bufsize equal buf(Latin1), return ‘ok’ and size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0512', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6569,12 +7922,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0513
-     * @tc.name      JsvmTest0513
-     * @tc.desc      Test that when create utf8 string, return string is true.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0513
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0513
+     * @tc.desc   Test that when create utf8 string, return string is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0513', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6583,12 +7936,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0514
-     * @tc.name      JsvmTest0514
-     * @tc.desc      Test that when create utf16 string, return string is true.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0514
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0514
+     * @tc.desc   Test that when create utf16 string, return string is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0514', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6597,12 +7950,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0515
-     * @tc.name      JsvmTest0515
-     * @tc.desc      Test that when create Latin1 string, return string is true.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0515
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0515
+     * @tc.desc   Test that when create Latin1 string, return string is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0515', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6611,12 +7964,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0516
-     * @tc.name      JsvmTest0516
-     * @tc.desc      Test that when create utf8 string, receive utf16, return err code.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0516
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0516
+     * @tc.desc   Test that when create utf8 string, receive utf16, return err code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0516', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6624,13 +7977,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0517
-     * @tc.name      JsvmTest0517
-     * @tc.desc      Test that creat array with lenth 0, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0517
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0517
+     * @tc.desc   Test that creat array with lenth 0, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0517', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6638,13 +7991,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0518
-     * @tc.name      JsvmTest0518
-     * @tc.desc      Test that creat array with lenth 10, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0518
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0518
+     * @tc.desc   Test that creat array with lenth 10, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0518', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6652,13 +8005,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0519
-     * @tc.name      JsvmTest0519
-     * @tc.desc      Test that creat array with lenth UINT64_MAX, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0519
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0519
+     * @tc.desc   Test that creat array with lenth UINT64_MAX, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0519', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6666,13 +8019,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0520
-     * @tc.name      JsvmTest0520
-     * @tc.desc      Test that creat array with lenth 10, result is null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0520
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0520
+     * @tc.desc   Test that creat array with lenth 10, result is null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6680,13 +8033,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0521
-     * @tc.name      JsvmTest0521
-     * @tc.desc      Test that creat array object, result is nonnull, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0521
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0521
+     * @tc.desc   Test that creat array object, result is nonnull, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0521', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6694,13 +8047,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0522
-     * @tc.name      JsvmTest0522
-     * @tc.desc      Test that creat array with len 10, get array len is sucess. result is nonnull, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0522
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0522
+     * @tc.desc   Test that creat array with len 10, get array len is sucess. result is nonnull, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0522', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6708,13 +8061,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0523
-     * @tc.name      JsvmTest0523
-     * @tc.desc      Test that creat not array object, get array len is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0523
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0523
+     * @tc.desc   Test that creat not array object, get array len is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0523', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6722,13 +8075,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0524
-     * @tc.name      JsvmTest0524
-     * @tc.desc      Test that creat array len 4, get array the last parameter is NULL,return result is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0524
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0524
+     * @tc.desc   Test that creat array len 4, get array the last parameter is NULL,return result is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0524', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6736,13 +8089,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0525
-     * @tc.name      JsvmTest0525
-     * @tc.desc      Test that creat type array, type is INT8_ARRAY, obj is array, len 0, srclen <= tarlen, return result is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0525
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0525
+     * @tc.desc   Test that creat type array, type is INT8_ARRAY, obj is array, len 0, srclen <= tarlen, return result is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0525', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6750,13 +8103,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0526
-     * @tc.name      JsvmTest0526
-     * @tc.desc      Test that creat type array, type is INT8_ARRAY, obj is array, len 4, srclen <= tarlen, return result is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0526
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0526
+     * @tc.desc   Test that creat type array, type is INT8_ARRAY, obj is array, len 4, srclen <= tarlen, return result is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0526', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6764,13 +8117,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0527
-     * @tc.name      JsvmTest0527
-     * @tc.desc      Test that creat type array, type is UINT8_CLAMPED_ARRAY, obj is nullptr, len 4, srclen <= tarlen, return result is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0527
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0527
+     * @tc.desc   Test that creat type array, type is UINT8_CLAMPED_ARRAY, obj is nullptr, len 4, srclen <= tarlen, return result is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0527', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6778,13 +8131,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0528
-     * @tc.name      JsvmTest0528
-     * @tc.desc      Test that creat type array, type is JSVM_INT16_ARRAY, obj is other object, len 4, srclen <= tarlen, return result is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0528
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0528
+     * @tc.desc   Test that creat type array, type is JSVM_INT16_ARRAY, obj is other object, len 4, srclen <= tarlen, return result is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0528', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6792,13 +8145,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0529
-     * @tc.name      JsvmTest0529
-     * @tc.desc      Test that creat type array, type is UINT16_ARRAY, obj is arraybuffer, len 4, srclen > tarlen, return result is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0529
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0529
+     * @tc.desc   Test that creat type array, type is UINT16_ARRAY, obj is arraybuffer, len 4, srclen > tarlen, return result is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0529', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6806,13 +8159,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0530
-     * @tc.name      JsvmTest0530
-     * @tc.desc      Test that creat type array, type is INT32_ARRAY, obj is arraybuffer, len 2, srclen <= tarlen, return result is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0530
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0530
+     * @tc.desc   Test that creat type array, type is INT32_ARRAY, obj is arraybuffer, len 2, srclen <= tarlen, return result is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0530', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6820,13 +8173,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0531
-     * @tc.name      JsvmTest0531
-     * @tc.desc      Test that creat type array with INT32_ARRAY, len 4, srclen <= tarlen, get arraybuffer len is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0531
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0531
+     * @tc.desc   Test that creat type array with INT32_ARRAY, len 4, srclen <= tarlen, get arraybuffer len is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0531', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6834,13 +8187,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0532
-     * @tc.name      JsvmTest0532
-     * @tc.desc      Test that not creat type array, get arraybuffer len is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0532
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0532
+     * @tc.desc   Test that not creat type array, get arraybuffer len is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0532', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6848,13 +8201,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0533
-     * @tc.name      JsvmTest0533
-     * @tc.desc      Test that creat dataview,len 0,array buffer,srclen <= destlen, creat dataview is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0533
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0533
+     * @tc.desc   Test that creat dataview,len 0,array buffer,srclen <= destlen, creat dataview is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0533', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6862,13 +8215,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0534
-     * @tc.name      JsvmTest0534
-     * @tc.desc      Test that creat dataview,len 16,array buffer is nullptr, srclen <= destlen, creat dataview is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0534
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0534
+     * @tc.desc   Test that creat dataview,len 16,array buffer is nullptr, srclen <= destlen, creat dataview is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0534', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6876,13 +8229,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0535
-     * @tc.name      JsvmTest0535
-     * @tc.desc      Test that creat dataview,len 16,array buffer is nullptr, srclen <= destlen, creat dataview is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0535
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0535
+     * @tc.desc   Test that creat dataview,len 16,array buffer is nullptr, srclen <= destlen, creat dataview is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0535', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6890,13 +8243,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0536
-     * @tc.name      JsvmTest0536
-     * @tc.desc      Test that creat dataview,len 16,other object, srclen <= destlen, creat dataview is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0536
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0536
+     * @tc.desc   Test that creat dataview,len 16,other object, srclen <= destlen, creat dataview is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0536', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6904,13 +8257,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0537
-     * @tc.name      JsvmTest0537
-     * @tc.desc      Test that creat dataview,len 16,array buffer object, srclen > destlen, creat dataview is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0537
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0537
+     * @tc.desc   Test that creat dataview,len 16,array buffer object, srclen > destlen, creat dataview is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0537', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6918,13 +8271,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0538
-     * @tc.name      JsvmTest0538
-     * @tc.desc      Test that creat dataview,len 16,array buffer object, srclen > destlen, the last parameter is NULL, creat dataview is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0538
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0538
+     * @tc.desc   Test that creat dataview,len 16,array buffer object, srclen > destlen, the last parameter is NULL, creat dataview is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0538', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6932,13 +8285,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0539
-     * @tc.name      JsvmTest0539
-     * @tc.desc      Test that creat dataview,is dataview, get dataview info, result is true, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0539
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0539
+     * @tc.desc   Test that creat dataview,is dataview, get dataview info, result is true, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0539', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6946,13 +8299,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0540
-     * @tc.name      JsvmTest0540
-     * @tc.desc      Test that not creat dataview, get dataview info is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0540
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0540
+     * @tc.desc   Test that not creat dataview, get dataview info is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6960,13 +8313,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0541
-     * @tc.name      JsvmTest0541
-     * @tc.desc      Test that creat arraybuffer, set index 0,result is null,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0541
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0541
+     * @tc.desc   Test that creat arraybuffer, set index 0,result is null,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0541', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6974,13 +8327,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0542
-     * @tc.name      JsvmTest0542
-     * @tc.desc      Test that creat arraybuffer, set index 4,result is not null,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0542
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0542
+     * @tc.desc   Test that creat arraybuffer, set index 4,result is not null,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0542', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -6988,13 +8341,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0543
-     * @tc.name      JsvmTest0543
-     * @tc.desc      Test that creat Utf8 arraybuffer, set index 9,result is not null,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0543
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0543
+     * @tc.desc   Test that creat Utf8 arraybuffer, set index 9,result is not null,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0543', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7002,13 +8355,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0544
-     * @tc.name      JsvmTest0544
-     * @tc.desc      Test that creat Utf8 arraybuffer, set index 0,result is null,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0544
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0544
+     * @tc.desc   Test that creat Utf8 arraybuffer, set index 0,result is null,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0544', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7016,13 +8369,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0545
-     * @tc.name      JsvmTest0545
-     * @tc.desc      Test that creat dataview, set index is sizeof(obj),result is nonnull,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0545
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0545
+     * @tc.desc   Test that creat dataview, set index is sizeof(obj),result is nonnull,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0545', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7030,13 +8383,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0546
-     * @tc.name      JsvmTest0546
-     * @tc.desc      Test that creat not array object, set index 0,result is nonnull,return status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0546
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0546
+     * @tc.desc   Test that creat not array object, set index 0,result is nonnull,return status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0546', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7044,13 +8397,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0547
-     * @tc.name      JsvmTest0547
-     * @tc.desc      Test that creat not array object, set index 1,result is nonnull,return status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0547
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0547
+     * @tc.desc   Test that creat not array object, set index 1,result is nonnull,return status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0547', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7058,13 +8411,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0548
-     * @tc.name      JsvmTest0548
-     * @tc.desc      Test that set arraybuffer Element the property value is nonnull, get Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0548
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0548
+     * @tc.desc   Test that set arraybuffer Element the property value is nonnull, get Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0548', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7072,13 +8425,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0549
-     * @tc.name      JsvmTest0549
-     * @tc.desc      Test that set arraybuffer Element the property value is null, get Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0549
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0549
+     * @tc.desc   Test that set arraybuffer Element the property value is null, get Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0549', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7086,13 +8439,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0550
-     * @tc.name      JsvmTest0550
-     * @tc.desc      Test that set typedarray Element the property value is nonnull, get Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0550
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0550
+     * @tc.desc   Test that set typedarray Element the property value is nonnull, get Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7100,13 +8453,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0551
-     * @tc.name      JsvmTest0551
-     * @tc.desc      Test that set dataview Element the property value is nonnull, get Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0551
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0551
+     * @tc.desc   Test that set dataview Element the property value is nonnull, get Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0551', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7114,13 +8467,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0552
-     * @tc.name      JsvmTest0552
-     * @tc.desc      Test that set other object Element the property value is nonnull, get Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0552
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0552
+     * @tc.desc   Test that set other object Element the property value is nonnull, get Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0552', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7128,13 +8481,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0553
-     * @tc.name      JsvmTest0553
-     * @tc.desc      Test that not set Element, get Element status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0553
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0553
+     * @tc.desc   Test that not set Element, get Element status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0553', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7142,13 +8495,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0554
-     * @tc.name      JsvmTest0554
-     * @tc.desc      Test that arraybuffer set Element, has Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0554
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0554
+     * @tc.desc   Test that arraybuffer set Element, has Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0554', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7156,13 +8509,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0555
-     * @tc.name      JsvmTest0555
-     * @tc.desc      Test that Utf8 array set Element, has Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0555
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0555
+     * @tc.desc   Test that Utf8 array set Element, has Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0555', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7170,13 +8523,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0556
-     * @tc.name      JsvmTest0556
-     * @tc.desc      Test that dataview set Element, has Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0556
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0556
+     * @tc.desc   Test that dataview set Element, has Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0556', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7184,13 +8537,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0557
-     * @tc.name      JsvmTest0557
-     * @tc.desc      Test that utf8 array set Element, has Element status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0557
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0557
+     * @tc.desc   Test that utf8 array set Element, has Element status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0557', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7198,13 +8551,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0558
-     * @tc.name      JsvmTest0558
-     * @tc.desc      Test that array set Element, has Element index 0 status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0558
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0558
+     * @tc.desc   Test that array set Element, has Element index 0 status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0558', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7212,13 +8565,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0559
-     * @tc.name      JsvmTest0559
-     * @tc.desc      Test that array set Element, has Element index 0,result is null,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0559
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0559
+     * @tc.desc   Test that array set Element, has Element index 0,result is null,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0559', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7226,13 +8579,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0560
-     * @tc.name      JsvmTest0560
-     * @tc.desc      Test that arraybuffer set Element,delete Element index 0,result is nonnull,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0560
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0560
+     * @tc.desc   Test that arraybuffer set Element,delete Element index 0,result is nonnull,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7240,13 +8593,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0561
-     * @tc.name      JsvmTest0561
-     * @tc.desc      Test that typedarray set Element, delete Element index 0,result is nonnull,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0561
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0561
+     * @tc.desc   Test that typedarray set Element, delete Element index 0,result is nonnull,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0561', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7254,13 +8607,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0562
-     * @tc.name      JsvmTest0562
-     * @tc.desc      Test that dataview set Element, delete Element index 0,result is nonnull,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0562
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0562
+     * @tc.desc   Test that dataview set Element, delete Element index 0,result is nonnull,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0562', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7268,13 +8621,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0563
-     * @tc.name      JsvmTest0563
-     * @tc.desc      Test that not array set Element, delete Element index 0,result is nonnull,return status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0563
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0563
+     * @tc.desc   Test that not array set Element, delete Element index 0,result is nonnull,return status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0563', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7282,13 +8635,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0564
-     * @tc.name      JsvmTest0564
-     * @tc.desc      Test that not array set Element, delete Element index 0,result is nonnull,return status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0564
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0564
+     * @tc.desc   Test that not array set Element, delete Element index 0,result is nonnull,return status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0564', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7296,13 +8649,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0565
-     * @tc.name      JsvmTest0565
-     * @tc.desc      Test that arraybuffer set element value null, delete element index 0,result is nonnull,return status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0565
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0565
+     * @tc.desc   Test that arraybuffer set element value null, delete element index 0,result is nonnull,return status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0565', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7310,13 +8663,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0566
-     * @tc.name      JsvmTest0566
-     * @tc.desc      Test that creat array, get Array Length, set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0566
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0566
+     * @tc.desc   Test that creat array, get Array Length, set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0566', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7324,13 +8677,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0567
-     * @tc.name      JsvmTest0567
-     * @tc.desc      Test that creat array, get Array Length, not set index element,get element, delete element etc..,return status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0567
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0567
+     * @tc.desc   Test that creat array, get Array Length, not set index element,get element, delete element etc..,return status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0567', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7338,13 +8691,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0568
-     * @tc.name      JsvmTest0568
-     * @tc.desc      Test that creat type INT32 array, get Array Length, set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0568
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0568
+     * @tc.desc   Test that creat type INT32 array, get Array Length, set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0568', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7352,13 +8705,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0569
-     * @tc.name      JsvmTest0569
-     * @tc.desc      Test that creat type INT32 array, get Array Length, not set index element,get element, delete element etc..,return status is fail, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0569
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0569
+     * @tc.desc   Test that creat type INT32 array, get Array Length, not set index element,get element, delete element etc..,return status is fail, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0569', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7366,13 +8719,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0570
-     * @tc.name      JsvmTest0570
-     * @tc.desc      Test that creat dataview, get Array Length, set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0570
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0570
+     * @tc.desc   Test that creat dataview, get Array Length, set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7380,13 +8733,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0571
-     * @tc.name      JsvmTest0571
-     * @tc.desc      Test that creat dataview, get Array Length, not set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0571
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0571
+     * @tc.desc   Test that creat dataview, get Array Length, not set index element,get element, delete element etc..,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0571', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7394,13 +8747,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0572
-     * @tc.name      JsvmTest0572
-     * @tc.desc      Test that creat dataview, creat type array, get dataview info,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0572
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0572
+     * @tc.desc   Test that creat dataview, creat type array, get dataview info,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0572', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7408,13 +8761,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0573
-     * @tc.name      JsvmTest0573
-     * @tc.desc      Test that creat type array, repeat set at the same index, get element is right,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0573
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0573
+     * @tc.desc   Test that creat type array, repeat set at the same index, get element is right,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0573', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7422,13 +8775,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0574
-     * @tc.name      JsvmTest0574
-     * @tc.desc      Test that creat array, repeat set at the same index, get element is right,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0574
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0574
+     * @tc.desc   Test that creat array, repeat set at the same index, get element is right,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0574', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7436,13 +8789,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0575
-     * @tc.name      JsvmTest0575
-     * @tc.desc      Test that creat type array, set element, repeat get element is right,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0575
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0575
+     * @tc.desc   Test that creat type array, set element, repeat get element is right,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0575', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7450,13 +8803,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0576
-     * @tc.name      JsvmTest0576
-     * @tc.desc      Test that creat type array, set element, repeat delete element is right,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0576
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0576
+     * @tc.desc   Test that creat type array, set element, repeat delete element is right,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0576', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7464,13 +8817,13 @@ export default function JsvmJsunit() {
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
- /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0577
-     * @tc.name      JsvmTest0577
-     * @tc.desc      Test that creat type array, set element, delete different locations element is right,return status is sucess, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0577
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0577
+     * @tc.desc   Test that creat type array, set element, delete different locations element is right,return status is sucess, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0577', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7479,12 +8832,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0578
-     * @tc.name      JsvmTest0578
-     * @tc.desc      Test that when code is "0", msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0578
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0578
+     * @tc.desc   Test that when code is "0", msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0578', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7493,12 +8846,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0579
-     * @tc.name      JsvmTest0579
-     * @tc.desc      Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0579
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0579
+     * @tc.desc   Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0579', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7507,12 +8860,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0580
-     * @tc.name      JsvmTest0580
-     * @tc.desc      Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0580
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0580
+     * @tc.desc   Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7521,12 +8874,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0581
-     * @tc.name      JsvmTest0581
-     * @tc.desc      Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0581
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0581
+     * @tc.desc   Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0581', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7535,12 +8888,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0582
-     * @tc.name      JsvmTest0582
-     * @tc.desc      Test that when code is string, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0582
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0582
+     * @tc.desc   Test that when code is string, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0582', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7549,12 +8902,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0583
-     * @tc.name      JsvmTest0583
-     * @tc.desc      Test that when code is "0", msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0583
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0583
+     * @tc.desc   Test that when code is "0", msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0583', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7563,12 +8916,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0584
-     * @tc.name      JsvmTest0584
-     * @tc.desc      Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0584
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0584
+     * @tc.desc   Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0584', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7577,12 +8930,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0586
-     * @tc.name      JsvmTest0586
-     * @tc.desc      Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0586
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0586
+     * @tc.desc   Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0586', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7591,12 +8944,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0587
-     * @tc.name      JsvmTest0587
-     * @tc.desc      Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0587
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0587
+     * @tc.desc   Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0587', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7605,12 +8958,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0588
-     * @tc.name      JsvmTest0588
-     * @tc.desc      Test that when code is string, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0588
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0588
+     * @tc.desc   Test that when code is string, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0588', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7619,12 +8972,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0589
-     * @tc.name      JsvmTest0589
-     * @tc.desc      Test that when code is "0", msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0589
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0589
+     * @tc.desc   Test that when code is "0", msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0589', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7633,12 +8986,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0590
-     * @tc.name      JsvmTest0590
-     * @tc.desc      Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0590
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0590
+     * @tc.desc   Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0590', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7647,12 +9000,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0591
-     * @tc.name      JsvmTest0591
-     * @tc.desc      Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0591
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0591
+     * @tc.desc   Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0591', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7661,12 +9014,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0592
-     * @tc.name      JsvmTest0592
-     * @tc.desc      Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0592
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0592
+     * @tc.desc   Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0592', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7675,12 +9028,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0593
-     * @tc.name      JsvmTest0593
-     * @tc.desc      Test that when code is string, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0593
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0593
+     * @tc.desc   Test that when code is string, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0593', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7689,12 +9042,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0594
-     * @tc.name      JsvmTest0594
-     * @tc.desc      Test that when code is "0", msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0594
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0594
+     * @tc.desc   Test that when code is "0", msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0594', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7703,12 +9056,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0595
-     * @tc.name      JsvmTest0595
-     * @tc.desc      Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0595
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0595
+     * @tc.desc   Test that when code is negative number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0595', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7717,12 +9070,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0596
-     * @tc.name      JsvmTest0596
-     * @tc.desc      Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0596
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0596
+     * @tc.desc   Test that when code is positive number, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0596', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7731,12 +9084,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0597
-     * @tc.name      JsvmTest0597
-     * @tc.desc      Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0597
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0597
+     * @tc.desc   Test that when code is “0”, msg is not null, result is null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0597', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7745,12 +9098,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0598
-     * @tc.name      JsvmTest0598
-     * @tc.desc      Test that when code is string, msg is not null, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0598
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0598
+     * @tc.desc   Test that when code is string, msg is not null, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0598', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7759,12 +9112,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0599
-     * @tc.name      JsvmTest0599
-     * @tc.desc      Test that when error is int, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0599
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0599
+     * @tc.desc   Test that when error is int, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0599', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7773,12 +9126,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0600
-     * @tc.name      JsvmTest0600
-     * @tc.desc      Test that when error is 'CreateError', return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0600
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0600
+     * @tc.desc   Test that when error is 'CreateError', return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7787,12 +9140,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0601
-     * @tc.name      JsvmTest0601
-     * @tc.desc      Test that when error is CreateTypeError, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0601
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0601
+     * @tc.desc   Test that when error is CreateTypeError, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7801,12 +9154,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0602
-     * @tc.name      JsvmTest0602
-     * @tc.desc      Test that when error is CreateRangeError, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0602
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0602
+     * @tc.desc   Test that when error is CreateRangeError, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0602', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7815,12 +9168,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0603
-     * @tc.name      JsvmTest0603
-     * @tc.desc      Test that when error is CreateSyntaxError, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0603
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0603
+     * @tc.desc   Test that when error is CreateSyntaxError, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0603', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7829,12 +9182,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0604
-     * @tc.name      JsvmTest0604
-     * @tc.desc      Test that when error is javascript Error, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0604
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0604
+     * @tc.desc   Test that when error is javascript Error, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0604', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7843,12 +9196,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0605
-     * @tc.name      JsvmTest0605
-     * @tc.desc      Test that when code is not null, msg is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0605
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0605
+     * @tc.desc   Test that when code is not null, msg is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0605', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7857,12 +9210,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0606
-     * @tc.name      JsvmTest0606
-     * @tc.desc      Test that when code is nullptr, msg is not null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0606
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0606
+     * @tc.desc   Test that when code is nullptr, msg is not null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0606', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7871,12 +9224,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0607
-     * @tc.name      JsvmTest0607
-     * @tc.desc      Test that when code is not null, msg is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0607
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0607
+     * @tc.desc   Test that when code is not null, msg is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0607', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7885,12 +9238,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0608
-     * @tc.name      JsvmTest0608
-     * @tc.desc      Test that when code is not null, msg is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0608
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0608
+     * @tc.desc   Test that when code is not null, msg is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0608', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7899,12 +9252,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0609
-     * @tc.name      JsvmTest0609
-     * @tc.desc      Test that when code is nullptr, msg is not null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0609
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0609
+     * @tc.desc   Test that when code is nullptr, msg is not null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0609', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7913,12 +9266,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0610
-     * @tc.name      JsvmTest0610
-     * @tc.desc      Test that when code is not null, msg is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0610
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0610
+     * @tc.desc   Test that when code is not null, msg is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7927,12 +9280,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0611
-     * @tc.name      JsvmTest0611
-     * @tc.desc      Test that when code is not null, msg is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0611
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0611
+     * @tc.desc   Test that when code is not null, msg is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0611', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7941,12 +9294,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0612
-     * @tc.name      JsvmTest0612
-     * @tc.desc      Test that when code is nullptr, msg is not null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0612
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0612
+     * @tc.desc   Test that when code is nullptr, msg is not null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0612', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7955,12 +9308,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0613
-     * @tc.name      JsvmTest0613
-     * @tc.desc      Test that when code is not null, msg is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0613
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0613
+     * @tc.desc   Test that when code is not null, msg is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0613', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7969,12 +9322,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0614
-     * @tc.name      JsvmTest0614
-     * @tc.desc      Test that when code is not null, msg is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0614
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0614
+     * @tc.desc   Test that when code is not null, msg is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0614', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7983,12 +9336,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0615
-     * @tc.name      JsvmTest0615
-     * @tc.desc      Test that when code is nullptr, msg is not null, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0615
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0615
+     * @tc.desc   Test that when code is nullptr, msg is not null, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0615', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -7997,12 +9350,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0616
-     * @tc.name      JsvmTest0616
-     * @tc.desc      Test that when code is not null, msg is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0616
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0616
+     * @tc.desc   Test that when code is not null, msg is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0616', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8011,12 +9364,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0617
-     * @tc.name      JsvmTest0617
-     * @tc.desc      Test that when value is error, result is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0617
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0617
+     * @tc.desc   Test that when value is error, result is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0617', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8025,12 +9378,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0618
-     * @tc.name      JsvmTest0618
-     * @tc.desc      Test that when code is not error, result is not null, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0618
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0618
+     * @tc.desc   Test that when code is not error, result is not null, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0618', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8039,12 +9392,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0619
-     * @tc.name      JsvmTest0619
-     * @tc.desc      Test that when result is not null, there is error, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0619
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0619
+     * @tc.desc   Test that when result is not null, there is error, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0619', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8053,12 +9406,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0620
-     * @tc.name      JsvmTest0620
-     * @tc.desc      Test that when result is not null, there is not error, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0620
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0620
+     * @tc.desc   Test that when result is not null, there is not error, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0620', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8067,12 +9420,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0621
-     * @tc.name      JsvmTest0621
-     * @tc.desc      Test that when result is nullptr, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0621
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0621
+     * @tc.desc   Test that when result is nullptr, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0621', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8081,12 +9434,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0622
-     * @tc.name      JsvmTest0622
-     * @tc.desc      Test that when result is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0622
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0622
+     * @tc.desc   Test that when result is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0622', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8095,12 +9448,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0623
-     * @tc.name      JsvmTest0623
-     * @tc.desc      Test that when result is not null, there is error, return is 'ok', result is true.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0623
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0623
+     * @tc.desc   Test that when result is not null, there is error, return is 'ok', result is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0623', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8109,12 +9462,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0624
-     * @tc.name      JsvmTest0624
-     * @tc.desc      Test that when result is not null, there is not error, return is 'ok', result is false.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0624
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0624
+     * @tc.desc   Test that when result is not null, there is not error, return is 'ok', result is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0624', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8123,12 +9476,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0625
-     * @tc.name      JsvmTest0625
-     * @tc.desc      Test that when result is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0625
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0625
+     * @tc.desc   Test that when result is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0625', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8137,12 +9490,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0626
-     * @tc.name      JsvmTest0626
-     * @tc.desc      Test that when result is not null, there is error, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0626
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0626
+     * @tc.desc   Test that when result is not null, there is error, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0626', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8151,12 +9504,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0627
-     * @tc.name      JsvmTest0627
-     * @tc.desc      Test that when result is not null, there is not error, return is 'ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0627
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0627
+     * @tc.desc   Test that when result is not null, there is not error, return is 'ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0627', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8165,12 +9518,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0628
-     * @tc.name      JsvmTest0628
-     * @tc.desc      Test that when result is nullptr, return is 'n-ok'.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0628
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0628
+     * @tc.desc   Test that when result is nullptr, return is 'n-ok'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0628', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8179,12 +9532,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0629
-     * @tc.name      JsvmTest0629
-     * @tc.desc      Combination scenario: CreateError-> isError->Throw, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0629
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0629
+     * @tc.desc   Combination scenario: CreateError-> isError->Throw, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0629', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8193,12 +9546,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0630
-     * @tc.name      JsvmTest0630
-     * @tc.desc      Combination scenario: CreateTypeError-> isError->Throw, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0630
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0630
+     * @tc.desc   Combination scenario: CreateTypeError-> isError->Throw, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0630', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8207,12 +9560,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0631
-     * @tc.name      JsvmTest0631
-     * @tc.desc      Combination scenario: CreateRangeError-> isError->Throw, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0631
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0631
+     * @tc.desc   Combination scenario: CreateRangeError-> isError->Throw, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0631', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8221,12 +9574,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0632
-     * @tc.name      JsvmTest0632
-     * @tc.desc      Combination scenario: CreateSyntaxError-> isError->Throw, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0632
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0632
+     * @tc.desc   Combination scenario: CreateSyntaxError-> isError->Throw, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0632', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8235,12 +9588,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0633
-     * @tc.name      JsvmTest0633
-     * @tc.desc      Combination scenario: ThrowError, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0633
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0633
+     * @tc.desc   Combination scenario: ThrowError, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0633', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8249,12 +9602,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0634
-     * @tc.name      JsvmTest0634
-     * @tc.desc      Combination scenario: ThrowTypeError, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0634
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0634
+     * @tc.desc   Combination scenario: ThrowTypeError, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0634', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8263,12 +9616,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0635
-     * @tc.name      JsvmTest0635
-     * @tc.desc      Combination scenario: ThrowRangeError, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0635
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0635
+     * @tc.desc   Combination scenario: ThrowRangeError, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0635', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8277,12 +9630,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0636
-     * @tc.name      JsvmTest0636
-     * @tc.desc      Combination scenario: ThrowSyntaxError, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0636
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0636
+     * @tc.desc   Combination scenario: ThrowSyntaxError, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0636', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8291,13 +9644,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0637
-     * @tc.name      JsvmTest0637
-     * @tc.desc      Combination scenario: CreateError-> isError->Throw->IsExceptionPending is true
-     * -> GetAndClearLastException-> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0637
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0637
+     * @tc.desc   Combination scenario: CreateError-> isError->Throw->IsExceptionPending is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0637', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8306,13 +9658,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0638
-     * @tc.name      JsvmTest0638
-     * @tc.desc      Combination scenario: CreateTypeError-> isError->Throw->IsExceptionPending is true
-     * -> GetAndClearLastException -> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0638
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0638
+     * @tc.desc   Combination scenario: CreateTypeError-> isError->Throw->IsExceptionPending is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0638', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8321,13 +9672,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0639
-     * @tc.name      JsvmTest0639
-     * @tc.desc      Combination scenario: CreateRangeError-> isError->Throw->IsExceptionPending is true
-     * -> GetAndClearLastException -> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0639
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0639
+     * @tc.desc   Combination scenario: CreateRangeError-> isError->Throw->IsExceptionPending is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0639', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8336,13 +9686,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0640
-     * @tc.name      JsvmTest0640
-     * @tc.desc      Combination scenario: ThrowSyntaxErrorr-> isError->Throw->IsExceptionPending is true
-     * -> GetAndClearLastException -> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0640
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0640
+     * @tc.desc   Combination scenario: ThrowSyntaxErrorr-> isError->Throw->IsExceptionPending is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8351,13 +9700,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0641
-     * @tc.name      JsvmTest0641
-     * @tc.desc      Combination scenario: ThrowError->IsExceptionPending is true -> GetAndClearLastException
-     * -> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0641
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0641
+     * @tc.desc   Combination scenario: ThrowError->IsExceptionPending is true -> GetAndClearLastException
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0641', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8366,13 +9714,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0642
-     * @tc.name      JsvmTest0642
-     * @tc.desc      Combination scenario: ThrowTypeError->IsExceptionPending is true -> GetAndClearLastException
-     *  -> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0642
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0642
+     * @tc.desc   Combination scenario: ThrowTypeError->IsExceptionPending is true -> GetAndClearLastException
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0642', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8381,13 +9728,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0643
-     * @tc.name      JsvmTest0643
-     * @tc.desc      Combination scenario: ThrowRangeError->IsExceptionPending is true -> GetAndClearLastException
-     * -> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0643
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0643
+     * @tc.desc   Combination scenario: ThrowRangeError->IsExceptionPending is true -> GetAndClearLastException
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0643', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8396,13 +9742,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0644
-     * @tc.name      JsvmTest0644
-     * @tc.desc      Combination scenario: ThrowSyntaxError->IsExceptionPending is true -> GetAndClearLastException
-     * -> IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0644
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0644
+     * @tc.desc   Combination scenario: ThrowSyntaxError->IsExceptionPending is true -> GetAndClearLastException
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0644', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8411,12 +9756,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0645
-     * @tc.name      JsvmTest0645
-     * @tc.desc      Combination scenario: CreateError->GetAndClearLastException->isError is true, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0645
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0645
+     * @tc.desc   Combination scenario: CreateError->GetAndClearLastException->isError is true, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0645', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8425,12 +9770,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0646
-     * @tc.name      JsvmTest0646
-     * @tc.desc      Combination scenario: CreateTypeError->GetAndClearLastException->isError is true, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0646
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0646
+     * @tc.desc   Combination scenario: CreateTypeError->GetAndClearLastException->isError is true, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0646', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8439,12 +9784,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0647
-     * @tc.name      JsvmTest0647
-     * @tc.desc      Combination scenario: CreateRangeError->GetAndClearLastException->isError is true, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0647
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0647
+     * @tc.desc   Combination scenario: CreateRangeError->GetAndClearLastException->isError is true, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0647', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8453,12 +9798,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0648
-     * @tc.name      JsvmTest0648
-     * @tc.desc      Combination scenario: CreateSyntaxErrorr->GetAndClearLastException->isError is true, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0648
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0648
+     * @tc.desc   Combination scenario: CreateSyntaxErrorr->GetAndClearLastException->isError is true, return ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0648', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8467,13 +9812,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0649
-     * @tc.name      JsvmTest0649
-     * @tc.desc      Combination scenario: ThrowError->ThrowTypeError->IsExceptionPending is true
-     * -> GetAndClearLastException-> IsExceptionPending is true, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0649
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0649
+     * @tc.desc   Combination scenario: ThrowError->ThrowTypeError->IsExceptionPending is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0649', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8482,13 +9826,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0650
-     * @tc.name      JsvmTest0650
-     * @tc.desc      Combination scenario: ThrowRangeError->ThrowSyntaxError->IsExceptionPending is true
-     * -> GetAndClearLastException-> IsExceptionPending is true, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0650
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0650
+     * @tc.desc   Combination scenario: ThrowRangeError->ThrowSyntaxError->IsExceptionPending is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8497,13 +9840,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0651
-     * @tc.name      JsvmTest0651
-     * @tc.desc      Combination scenario: ThrowTypeError->ThrowRangeError->ThrowError->ThrowSyntaxError
-     * ->IsExceptionPending is true->GetAndClearLastException(four) ->IsExceptionPending is false, return ok.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0651
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0651
+     * @tc.desc   Combination scenario: ThrowTypeError->ThrowRangeError->ThrowError->ThrowSyntaxError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0651', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8512,12 +9854,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0652
-     * @tc.name      JsvmTest0652
-     * @tc.desc      when object is null, key is not null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0652
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0652
+     * @tc.desc   when object is null, key is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0652', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8526,12 +9868,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0653
-     * @tc.name      JsvmTest0653
-     * @tc.desc      when object is not null, key is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0653
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0653
+     * @tc.desc   when object is not null, key is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0653', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8541,12 +9883,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0654
-     * @tc.name      JsvmTest0654
-     * @tc.desc      when object is null, key is not null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0654
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0654
+     * @tc.desc   when object is null, key is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0654', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8556,12 +9898,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0655
-     * @tc.name      JsvmTest0655
-     * @tc.desc      when object is not null, key is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0655
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0655
+     * @tc.desc   when object is not null, key is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0655', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8571,12 +9913,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0656
-     * @tc.name      JsvmTest0656
-     * @tc.desc      when object is not null, key is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0656
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0656
+     * @tc.desc   when object is not null, key is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0656', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8586,12 +9928,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0657
-     * @tc.name      JsvmTest0657
-     * @tc.desc      when object is null, key is not null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0657
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0657
+     * @tc.desc   when object is null, key is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0657', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8601,12 +9943,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0658
-     * @tc.name      JsvmTest0658
-     * @tc.desc      when property is setProperty, return 'false'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0658
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0658
+     * @tc.desc   when property is setProperty, return 'false'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0658', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8616,12 +9958,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0659
-     * @tc.name      JsvmTest0659
-     * @tc.desc      when object is null, key is not null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0659
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0659
+     * @tc.desc   when object is null, key is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0659', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8631,12 +9973,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0660
-     * @tc.name      JsvmTest0660
-     * @tc.desc      when object is not null, key is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0660
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0660
+     * @tc.desc   when object is not null, key is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0660', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8646,12 +9988,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0661
-     * @tc.name      JsvmTest0661
-     * @tc.desc      when object is not null, get n-on exist key, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0661
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0661
+     * @tc.desc   when object is not null, get n-on exist key, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0661', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8661,12 +10003,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0662
-     * @tc.name      JsvmTest0662
-     * @tc.desc      when object is null, utf8name is not null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0662
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0662
+     * @tc.desc   when object is null, utf8name is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0662', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8676,12 +10018,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0663
-     * @tc.name      JsvmTest0663
-     * @tc.desc      when object is not null, utf8name is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0663
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0663
+     * @tc.desc   when object is not null, utf8name is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0663', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8691,12 +10033,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0664
-     * @tc.name      JsvmTest0664
-     * @tc.desc      when object is not null, utf8name is non exist value, return 'ok' and result is false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0664
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0664
+     * @tc.desc   when object is not null, utf8name is non exist value, return 'ok' and result is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0664', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8706,12 +10048,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0665
-     * @tc.name      JsvmTest0665
-     * @tc.desc      when object is not null, utf8name is exist value, return 'ok' and result is true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0665
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0665
+     * @tc.desc   when object is not null, utf8name is exist value, return 'ok' and result is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0665', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8721,12 +10063,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0666
-     * @tc.name      JsvmTest0666
-     * @tc.desc      when object is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0666
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0666
+     * @tc.desc   when object is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0666', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8736,12 +10078,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0667
-     * @tc.name      JsvmTest0667
-     * @tc.desc      when object is not null, propertyCount is 0, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0667
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0667
+     * @tc.desc   when object is not null, propertyCount is 0, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0667', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8751,12 +10093,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0668
-     * @tc.name      JsvmTest0668
-     * @tc.desc      when properties is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0668
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0668
+     * @tc.desc   when properties is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0668', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8766,12 +10108,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0669
-     * @tc.name      JsvmTest0669
-     * @tc.desc      when properties is effective, return 'ok' and successful definition
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0669
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0669
+     * @tc.desc   when properties is effective, return 'ok' and successful definition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0669', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8781,13 +10123,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0670
-     * @tc.name      JsvmTest0670
-     * @tc.desc      Combination scenario: setProperty one property->setProperty once more->getProperty->getProperty again
-     * -> hasProperty-> hasProperty again ->deleteProperty->deleteProperty again
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0670
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0670
+     * @tc.desc   Combination scenario: setProperty one property->setProperty once more->getProperty->getProperty again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0670', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8797,13 +10138,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0671
-     * @tc.name      JsvmTest0671
-     * @tc.desc      Combination scenario: setProperty two properties->hasProperty two ->getProperty two
-     * ->deleteProperty one property ->hasProperty ->getProperty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0671
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0671
+     * @tc.desc   Combination scenario: setProperty two properties->hasProperty two ->getProperty two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0671', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8813,13 +10153,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0672
-     * @tc.name      JsvmTest0672
-     * @tc.desc      Combination scenario: setProperty two properties->hasProperty two ->getProperty two
-     * ->deleteProperty one property ->hasProperty delete property ->getProperty delete property
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0672
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0672
+     * @tc.desc   Combination scenario: setProperty two properties->hasProperty two ->getProperty two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0672', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8829,13 +10168,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0673
-     * @tc.name      JsvmTest0673
-     * @tc.desc      Combination scenario: setProperty two properties->hasProperty two ->getProperty two
-     * ->deleteProperty one property ->setProperty ->hasProperty ->getProperty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0673
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0673
+     * @tc.desc   Combination scenario: setProperty two properties->hasProperty two ->getProperty two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0673', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8845,13 +10183,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0674
-     * @tc.name      JsvmTest0674
-     * @tc.desc      namedProperty组合: SetNamedProperty -> setProperty -> GetNamedProperty -> GetNamedProperty
-     *               -> HasNamedProperty -> HasNamedProperty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0674
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0674
+     * @tc.desc   namedProperty组合: SetNamedProperty -> setProperty -> GetNamedProperty -> GetNamedProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0674', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8861,13 +10198,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0675
-     * @tc.name      JsvmTest0675
-     * @tc.desc      Combination scenario: setProperty two properties->hasProperty two ->getProperty two
-     * ->deleteProperty one property ->setProperty ->hasProperty ->getProperty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0675
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0675
+     * @tc.desc   Combination scenario: setProperty two properties->hasProperty two ->getProperty two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0675', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8876,12 +10212,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0676
-     * @tc.name      JsvmTest0676
-     * @tc.desc      result is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0676
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0676
+     * @tc.desc   result is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0676', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8890,12 +10226,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0677
-     * @tc.name      JsvmTest0677
-     * @tc.desc      result is not null, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0677
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0677
+     * @tc.desc   result is not null, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0677', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8904,12 +10240,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0678
-     * @tc.name      JsvmTest0678
-     * @tc.desc      value is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0678
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0678
+     * @tc.desc   value is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0678', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8918,12 +10254,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0679
-     * @tc.name      JsvmTest0679
-     * @tc.desc      value is not null, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0679
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0679
+     * @tc.desc   value is not null, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0679', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8933,12 +10269,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0680
-     * @tc.name      JsvmTest0680
-     * @tc.desc      value is not null, type is JSVM_NULL, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0680
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0680
+     * @tc.desc   value is not null, type is JSVM_NULL, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0680', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8948,12 +10284,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0681
-     * @tc.name      JsvmTest0681
-     * @tc.desc      value is not null, type is JSVM_BOOLEAN, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0681
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0681
+     * @tc.desc   value is not null, type is JSVM_BOOLEAN, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0681', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8963,12 +10299,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0682
-     * @tc.name      JsvmTest0682
-     * @tc.desc      value is not null, type is JSVM_NUMBER, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0682
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0682
+     * @tc.desc   value is not null, type is JSVM_NUMBER, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0682', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8978,12 +10314,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0683
-     * @tc.name      JsvmTest0683
-     * @tc.desc      value is not null, type is JSVM_STRING, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0683
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0683
+     * @tc.desc   value is not null, type is JSVM_STRING, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0683', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -8993,12 +10329,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0684
-     * @tc.name      JsvmTest0684
-     * @tc.desc      value is not null, type is JSVM_SYMBOL, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0684
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0684
+     * @tc.desc   value is not null, type is JSVM_SYMBOL, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0684', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9008,12 +10344,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0685
-     * @tc.name      JsvmTest0685
-     * @tc.desc      value is not null, type is JSVM_OBJECT, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0685
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0685
+     * @tc.desc   value is not null, type is JSVM_OBJECT, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0685', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9023,12 +10359,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0686
-     * @tc.name      JsvmTest0686
-     * @tc.desc      value is not null, type is JSVM_FUNCTION, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0686
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0686
+     * @tc.desc   value is not null, type is JSVM_FUNCTION, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0686', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9039,12 +10375,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0687
-     * @tc.name      JsvmTest0687
-     * @tc.desc      value is not null, type is JSVM_EXTERNAL, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0687
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0687
+     * @tc.desc   value is not null, type is JSVM_EXTERNAL, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0687', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9053,12 +10389,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0688
-     * @tc.name      JsvmTest0688
-     * @tc.desc      value is not null, type is JSVM_BIGINT, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0688
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0688
+     * @tc.desc   value is not null, type is JSVM_BIGINT, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0688', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9068,12 +10404,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0689
-     * @tc.name      JsvmTest0689
-     * @tc.desc      value is not null, result is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0689
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0689
+     * @tc.desc   value is not null, result is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0689', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9082,12 +10418,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0690
-     * @tc.name      JsvmTest0690
-     * @tc.desc      value is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0690
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0690
+     * @tc.desc   value is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0690', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9096,12 +10432,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0691
-     * @tc.name      JsvmTest0691
-     * @tc.desc      value is not null, object is not connected with typeTag, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0691
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0691
+     * @tc.desc   value is not null, object is not connected with typeTag, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0691', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9111,12 +10447,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0692
-     * @tc.name      JsvmTest0692
-     * @tc.desc      value is not null, object is connected with typeTag, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0692
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0692
+     * @tc.desc   value is not null, object is connected with typeTag, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0692', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9126,12 +10462,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0693
-     * @tc.name      JsvmTest0693
-     * @tc.desc      value is not null, typeTag is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0693
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0693
+     * @tc.desc   value is not null, typeTag is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0693', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9141,12 +10477,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0694
-     * @tc.name      JsvmTest0694
-     * @tc.desc      value is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0694
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0694
+     * @tc.desc   value is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0694', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9155,12 +10491,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0695
-     * @tc.name      JsvmTest0695
-     * @tc.desc      value is not null, object is not connected with typeTag, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0695
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0695
+     * @tc.desc   value is not null, object is not connected with typeTag, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0695', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9170,12 +10506,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0696
-     * @tc.name      JsvmTest0696
-     * @tc.desc      value is not null, object is connected with typeTag, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0696
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0696
+     * @tc.desc   value is not null, object is connected with typeTag, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0696', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9185,12 +10521,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0697
-     * @tc.name      JsvmTest0697
-     * @tc.desc      value is not null, typeTag is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0697
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0697
+     * @tc.desc   value is not null, typeTag is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0697', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9200,12 +10536,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0698
-     * @tc.name      JsvmTest0698
-     * @tc.desc      value is not null, typeTag is not null, result is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0698
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0698
+     * @tc.desc   value is not null, typeTag is not null, result is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0698', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9215,13 +10551,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0699
-     * @tc.name      JsvmTest0699
-     * @tc.desc      Combination: createObject -> Typeof -> GetPrototype -> TypeTagObject -> CheckObjectTypeTag
-     *               -> CheckObjectTypeTag -> Instanceof -> ObjectFreeze -> SetNamedProperty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0699
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0699
+     * @tc.desc   Combination: createObject -> Typeof -> GetPrototype -> TypeTagObject -> CheckObjectTypeTag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0699', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9232,13 +10567,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0700
-     * @tc.name      JsvmTest0700
-     * @tc.desc      Combination: CreateSymbol -> SymbolFor -> SymbolFor -> Typeof -> GetPrototype -> TypeTagObject
-     *               -> CheckObjectTypeTag -> ObjectSeal -> SetNamedProperty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0700
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0700
+     * @tc.desc   Combination: CreateSymbol -> SymbolFor -> SymbolFor -> Typeof -> GetPrototype -> TypeTagObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9247,12 +10581,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0702
-     * @tc.name      JsvmTest0702
-     * @tc.desc      options is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0702
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0702
+     * @tc.desc   options is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0702', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9261,12 +10595,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0703
-     * @tc.name      JsvmTest0703
-     * @tc.desc      options is JSVM_InitOptions, vm is not null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0703
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0703
+     * @tc.desc   options is JSVM_InitOptions, vm is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0703', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9275,12 +10609,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0704
-     * @tc.name      JsvmTest0704
-     * @tc.desc      options is null, vm is not null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0704
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0704
+     * @tc.desc   options is null, vm is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0704', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9289,12 +10623,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0705
-     * @tc.name      JsvmTest0705
-     * @tc.desc      create vm, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0705
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0705
+     * @tc.desc   create vm, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0705', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9303,12 +10637,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0706
-     * @tc.name      JsvmTest0706
-     * @tc.desc      vm is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0706
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0706
+     * @tc.desc   vm is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0706', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9317,12 +10651,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0708
-     * @tc.name      JsvmTest0708
-     * @tc.desc      create vm, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0708
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0708
+     * @tc.desc   create vm, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0708', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9331,12 +10665,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0709
-     * @tc.name      JsvmTest0709
-     * @tc.desc      create vm, and create more scope, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0709
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0709
+     * @tc.desc   create vm, and create more scope, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0709', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9345,12 +10679,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0711
-     * @tc.name      JsvmTest0711
-     * @tc.desc      create vm -> open VMScope, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0711
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0711
+     * @tc.desc   create vm -> open VMScope, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0711', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9359,12 +10693,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0712
-     * @tc.name      JsvmTest0712
-     * @tc.desc      continuously close the same scope, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0712
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0712
+     * @tc.desc   continuously close the same scope, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0712', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9373,12 +10707,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0713
-     * @tc.name      JsvmTest0713
-     * @tc.desc      create JSVM_PropertyDescriptor array, propertycount is 0, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0713
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0713
+     * @tc.desc   create JSVM_PropertyDescriptor array, propertycount is 0, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0713', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9387,12 +10721,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0714
-     * @tc.name      JsvmTest0714
-     * @tc.desc      create JSVM_PropertyDescriptor array, propertycount is the size, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0714
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0714
+     * @tc.desc   create JSVM_PropertyDescriptor array, propertycount is the size, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0714', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9401,12 +10735,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0715
-     * @tc.name      JsvmTest0715
-     * @tc.desc      create env, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0715
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0715
+     * @tc.desc   create env, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0715', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9415,12 +10749,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0716
-     * @tc.name      JsvmTest0716
-     * @tc.desc      env is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0716
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0716
+     * @tc.desc   env is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0716', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9429,12 +10763,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0717
-     * @tc.name      JsvmTest0717
-     * @tc.desc      env is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0717
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0717
+     * @tc.desc   env is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0717', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9443,12 +10777,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0718
-     * @tc.name      JsvmTest0718
-     * @tc.desc      env is not null, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0718
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0718
+     * @tc.desc   env is not null, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0718', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9457,12 +10791,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0719
-     * @tc.name      JsvmTest0719
-     * @tc.desc      called OpenEnvScope two, return 'ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0719
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0719
+     * @tc.desc   called OpenEnvScope two, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0719', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9471,12 +10805,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0721
-     * @tc.name      JsvmTest0721
-     * @tc.desc      scope is null, return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0721
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0721
+     * @tc.desc   scope is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0721', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9485,12 +10819,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0723
-     * @tc.name      JsvmTest0723
-     * @tc.desc      env adn scope is ok, close scope two, the first return 'ok', second return 'n-ok'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0723
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0723
+     * @tc.desc   env adn scope is ok, close scope two, the first return 'ok', second return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0723', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9499,13 +10833,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0724
-     * @tc.name      JsvmTest0724
-     * @tc.desc      Combination: Init -> create vm ->open vm scope->create env->open env scope -> open handlescope
-     *               -> close handlescope -> close env scope -> destroy env -> close vm scope -> destroy vm
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0724
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0724
+     * @tc.desc   Combination: Init -> create vm ->open vm scope->create env->open env scope -> open handlescope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0724', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9514,11 +10847,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0725
-     * @tc.name      JsvmTest0725
-     * @tc.desc      time is null, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0725
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0725
+     * @tc.desc   time is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0725', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9527,11 +10861,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0726
-     * @tc.name      JsvmTest0726
-     * @tc.desc      time is ok, get ok, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0726
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0726
+     * @tc.desc   time is ok, get ok, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0726', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9540,11 +10875,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0727
-     * @tc.name      JsvmTest0727
-     * @tc.desc      value is null, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0727
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0727
+     * @tc.desc   value is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0727', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9553,11 +10889,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0728
-     * @tc.name      JsvmTest0728
-     * @tc.desc      create ok, get ok, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0728
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0728
+     * @tc.desc   create ok, get ok, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0728', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9566,11 +10903,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0729
-     * @tc.name      JsvmTest0729
-     * @tc.desc      create ok, get ok, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0729
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0729
+     * @tc.desc   create ok, get ok, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0729', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9579,11 +10917,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0730
-     * @tc.name      JsvmTest0730
-     * @tc.desc      vm is null, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0730
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0730
+     * @tc.desc   vm is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0730', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9592,11 +10931,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0731
-     * @tc.name      JsvmTest0731
-     * @tc.desc      vm is null, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0731
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0731
+     * @tc.desc   vm is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0731', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9605,11 +10945,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0732
-     * @tc.name      JsvmTest0732
-     * @tc.desc      pump -> perform, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0732
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0732
+     * @tc.desc   pump -> perform, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0732', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9618,11 +10959,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0733
-     * @tc.name      JsvmTest0733
-     * @tc.desc      string is null, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0733
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0733
+     * @tc.desc   string is null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0733', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9631,11 +10973,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0734
-     * @tc.name      JsvmTest0734
-     * @tc.desc      string is error, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0734
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0734
+     * @tc.desc   string is error, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0734', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9644,11 +10987,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0735
-     * @tc.name      JsvmTest0735
-     * @tc.desc      string is ok, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0735
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0735
+     * @tc.desc   string is ok, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0735', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9657,11 +11001,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0736
-     * @tc.name      JsvmTest0736
-     * @tc.desc      jsonObject is nullptr, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0736
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0736
+     * @tc.desc   jsonObject is nullptr, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0736', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9670,11 +11015,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0737
-     * @tc.name      JsvmTest0737
-     * @tc.desc      jsonObject is object, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0737
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0737
+     * @tc.desc   jsonObject is object, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0737', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9683,11 +11029,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0738
-     * @tc.name      JsvmTest0738
-     * @tc.desc      jsonObject is TypedArray, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0738
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0738
+     * @tc.desc   jsonObject is TypedArray, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0738', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9696,11 +11043,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0739
-     * @tc.name      JsvmTest0739
-     * @tc.desc      Combination: JsonStringify -> JsonParse, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0739
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0739
+     * @tc.desc   Combination: JsonStringify -> JsonParse, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0739', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9709,11 +11057,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0740
-     * @tc.name      JsvmTest0740
-     * @tc.desc      Combination: JsonStringify -> JsonParse, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0740
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0740
+     * @tc.desc   Combination: JsonStringify -> JsonParse, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9722,11 +11071,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0741
-     * @tc.name      JsvmTest0741
-     * @tc.desc      lhs is int, rhs is int, result is nullptr, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0741
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0741
+     * @tc.desc   lhs is int, rhs is int, result is nullptr, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0741', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9735,11 +11085,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0742
-     * @tc.name      JsvmTest0742
-     * @tc.desc      lhs is double, rhs is int, result is not null, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0742
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0742
+     * @tc.desc   lhs is double, rhs is int, result is not null, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0742', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9748,11 +11099,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0743
-     * @tc.name      JsvmTest0743
-     * @tc.desc      lhs is nullptr, rhs is nullptr, result is not null, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0743
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0743
+     * @tc.desc   lhs is nullptr, rhs is nullptr, result is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0743', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9761,11 +11113,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0744
-     * @tc.name      JsvmTest0744
-     * @tc.desc      lhs is undefined, rhs is undefined, result is not null, return 'n-ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0744
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0744
+     * @tc.desc   lhs is undefined, rhs is undefined, result is not null, return 'n-ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0744', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9776,11 +11129,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0745
-     * @tc.name      JsvmTest0745
-     * @tc.desc      lhs is set, rhs is set, result is not null, same value, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0745
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0745
+     * @tc.desc   lhs is set, rhs is set, result is not null, same value, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0745', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9792,11 +11146,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0746
-     * @tc.name      JsvmTest0746
-     * @tc.desc      lhs is boolean, rhs is boolean, result is not null, same value, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0746
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0746
+     * @tc.desc   lhs is boolean, rhs is boolean, result is not null, same value, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0746', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9807,11 +11162,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0747
-     * @tc.name      JsvmTest0747
-     * @tc.desc      lhs is string, rhs is string, result is not null, same value, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0747
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0747
+     * @tc.desc   lhs is string, rhs is string, result is not null, same value, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0747', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9822,11 +11178,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0748
-     * @tc.name      JsvmTest0748
-     * @tc.desc      lhs is symbol, rhs is symbol, result is not null, same value, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0748
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0748
+     * @tc.desc   lhs is symbol, rhs is symbol, result is not null, same value, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0748', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9838,11 +11195,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0749
-     * @tc.name      JsvmTest0749
-     * @tc.desc      lhs is function, rhs is function, result is not null, same value, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0749
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0749
+     * @tc.desc   lhs is function, rhs is function, result is not null, same value, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0749', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9855,11 +11213,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0750
-     * @tc.name      JsvmTest0750
-     * @tc.desc      lhs is bigint, rhs is bigint, result is not null, same value, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0750
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0750
+     * @tc.desc   lhs is bigint, rhs is bigint, result is not null, same value, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9870,11 +11229,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0751
-     * @tc.name      JsvmTest0751
-     * @tc.desc      lhs is regexp, rhs is regexp, result is not null, same value, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0751
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0751
+     * @tc.desc   lhs is regexp, rhs is regexp, result is not null, same value, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0751', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9886,11 +11246,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0752
-     * @tc.name      JsvmTest0752
-     * @tc.desc      lhs is set, rhs is set, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0752
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0752
+     * @tc.desc   lhs is set, rhs is set, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0752', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9901,11 +11262,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0753
-     * @tc.name      JsvmTest0753
-     * @tc.desc      lhs is boolean, rhs is boolean, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0753
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0753
+     * @tc.desc   lhs is boolean, rhs is boolean, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0753', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9916,11 +11278,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0754
-     * @tc.name      JsvmTest0754
-     * @tc.desc      lhs is string, rhs is string, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0754
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0754
+     * @tc.desc   lhs is string, rhs is string, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0754', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9931,11 +11294,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0755
-     * @tc.name      JsvmTest0755
-     * @tc.desc      lhs is symbol, rhs is symbol, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0755
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0755
+     * @tc.desc   lhs is symbol, rhs is symbol, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0755', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9946,11 +11310,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0756
-     * @tc.name      JsvmTest0756
-     * @tc.desc      lhs is function, rhs is function, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0756
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0756
+     * @tc.desc   lhs is function, rhs is function, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0756', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9963,11 +11328,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0757
-     * @tc.name      JsvmTest0757
-     * @tc.desc      lhs is bigint, rhs is bigint, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0757
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0757
+     * @tc.desc   lhs is bigint, rhs is bigint, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0757', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9978,11 +11344,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0758
-     * @tc.name      JsvmTest0758
-     * @tc.desc      lhs is regexp, rhs is regexp, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0758
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0758
+     * @tc.desc   lhs is regexp, rhs is regexp, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0758', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -9993,11 +11360,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0759
-     * @tc.name      JsvmTest0759
-     * @tc.desc      lhs is null, rhs is null, result is not null, different values, return 'ok'
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0759
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0759
+     * @tc.desc   lhs is null, rhs is null, result is not null, different values, return 'ok'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0759', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10008,12 +11376,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0760
-     * @tc.name      JsvmTest0760
-     * @tc.desc      Test the function of Trace interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0760
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0760
+     * @tc.desc   Test the function of Trace interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0760', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.traceTest();
@@ -10021,12 +11389,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0761
-     * @tc.name      JsvmTest0761
-     * @tc.desc      Test the function of Wrapper Object.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0761
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0761
+     * @tc.desc   Test the function of Wrapper Object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0761', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.wrapperObjectTest();
@@ -10034,12 +11402,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0762
-     * @tc.name      JsvmTest0762
-     * @tc.desc      Test the function of Well-Known Symbols.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0762
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0762
+     * @tc.desc   Test the function of Well-Known Symbols.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0762', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.wellKnownSymbolsTest();
@@ -10047,12 +11415,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0763
-     * @tc.name      JsvmTest0763
-     * @tc.desc      Test OH_JSVM_DefineClassWithOptions.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0763
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0763
+     * @tc.desc   Test OH_JSVM_DefineClassWithOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0763', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.defineClassWithOptionsTest();
@@ -10060,12 +11428,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0764
-     * @tc.name      JsvmTest0764
-     * @tc.desc      Test the handler for exceptions.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0764
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0764
+     * @tc.desc   Test the handler for exceptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0764', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.triggerExceptionsTest();
@@ -10073,12 +11441,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0765
-     * @tc.name      JsvmTest0765
-     * @tc.desc      Test the handler for gc.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0765
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0765
+     * @tc.desc   Test the handler for gc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0765', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.triggerGCTest();
@@ -10086,12 +11454,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
         });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0766
-     * @tc.name      JsvmTest0766
-     * @tc.desc      Test the function of SetMicrotaskPolicy.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0766
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0766
+     * @tc.desc   Test the function of SetMicrotaskPolicy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0766', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.SetMicrotaskPolicy();
@@ -10099,12 +11467,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0767
-     * @tc.name      JsvmTest0767
-     * @tc.desc      Test the function of PromiseRegisterHandler.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0767
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0767
+     * @tc.desc   Test the function of PromiseRegisterHandler.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0767', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.PromiseRegisterHandler();
@@ -10112,12 +11480,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0768
-     * @tc.name      JsvmTest0768
-     * @tc.desc      Test the function of ProxyTest.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0768
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0768
+     * @tc.desc   Test the function of ProxyTest.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0768', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.ProxyTest();
@@ -10125,12 +11493,12 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0769
-     * @tc.name      JsvmTest0769
-     * @tc.desc      Test the function of private interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0769
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0769
+     * @tc.desc   Test the function of private interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0769', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.privateTest();
@@ -10138,25 +11506,25 @@ export default function JsvmJsunit() {
       expect(rst).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0770
-     * @tc.name      JsvmTest0770
-     * @tc.desc      Test the function of external string interfaces.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   JsvmTest0770
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0770
+     * @tc.desc   Test the function of external string interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JsvmTest0770', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rst: number = napitest.externalStringTest();
       console.info('JsvmTest0770 testString result is:' + JSON.stringify(rst));
       expect(rst).assertEqual(0);
     });
-        /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0771
-     * @tc.name      JsvmTest0771
-     * @tc.desc      Create arraybuffer byteLength 0 and data NULL and result not null, rst ok
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   JsvmTest0771
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0771
+     * @tc.desc   Create arraybuffer byteLength 0 and data NULL and result not null, rst ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0771', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10166,12 +11534,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0772
-     * @tc.name      JsvmTest0772
-     * @tc.desc      Create arraybuffer byteLength > 0 and data not null and result not null, rst ok
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0772
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0772
+     * @tc.desc   Create arraybuffer byteLength > 0 and data not null and result not null, rst ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0772', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10181,11 +11549,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0773
-     * @tc.name      JsvmTest0773
-     * @tc.desc      Create arraybuffer byteLength JSVM_AUTO_LENGTH and data not null and result not null, rst ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0773
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0773
+     * @tc.desc   Create arraybuffer byteLength JSVM_AUTO_LENGTH and data not null and result not null, rst ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0773', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10195,11 +11564,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0774
-     * @tc.name      JsvmTest0774
-     * @tc.desc      Create arraybuffer byteLength 10 and data not null and result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0774
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0774
+     * @tc.desc   Create arraybuffer byteLength 10 and data not null and result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0774', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10209,11 +11579,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0775
-     * @tc.name      JsvmTest0775
-     * @tc.desc      Get arraybuffer, arraybuffer obj,Obtain expected data and byteLength
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0775
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0775
+     * @tc.desc   Get arraybuffer, arraybuffer obj,Obtain expected data and byteLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0775', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10223,11 +11594,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0776
-     * @tc.name      JsvmTest0776
-     * @tc.desc      Get arraybuffer, not arraybuffer obj, get information failure
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0776
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0776
+     * @tc.desc   Get arraybuffer, not arraybuffer obj, get information failure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0776', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10237,11 +11609,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0777
-     * @tc.name      JsvmTest0777
-     * @tc.desc      Is arraybuffer judge, value arraybuffer obj + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0777
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0777
+     * @tc.desc   Is arraybuffer judge, value arraybuffer obj + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0777', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10251,11 +11624,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0778
-     * @tc.name      JsvmTest0778
-     * @tc.desc      Is arraybuffer judge, value not arraybuffer obj + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0778
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0778
+     * @tc.desc   Is arraybuffer judge, value not arraybuffer obj + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0778', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10265,11 +11639,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0779
-     * @tc.name      JsvmTest0779
-     * @tc.desc      Is arraybuffer judge, value arraybuffer obj + result null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0779
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0779
+     * @tc.desc   Is arraybuffer judge, value arraybuffer obj + result null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0779', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10279,11 +11654,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0780
-     * @tc.name      JsvmTest0780
-     * @tc.desc      Detach arraybuffer, arraybuffer obj,binding typedarray
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0780
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0780
+     * @tc.desc   Detach arraybuffer, arraybuffer obj,binding typedarray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0780', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10293,11 +11669,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0781
-     * @tc.name      JsvmTest0781
-     * @tc.desc      Detach arraybuffer, arraybuffer obj, binding dataview
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0781
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0781
+     * @tc.desc   Detach arraybuffer, arraybuffer obj, binding dataview
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0781', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10307,11 +11684,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0782
-     * @tc.name      JsvmTest0782
-     * @tc.desc      Detach arraybuffer, not arraybuffer obj
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0782
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0782
+     * @tc.desc   Detach arraybuffer, not arraybuffer obj
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0782', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10321,11 +11699,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0783
-     * @tc.name      JsvmTest0783
-     * @tc.desc      Is detach arraybuffer, arraybuffer obj binding typedarray + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0783
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0783
+     * @tc.desc   Is detach arraybuffer, arraybuffer obj binding typedarray + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0783', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10335,11 +11714,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0784
-     * @tc.name      JsvmTest0784
-     * @tc.desc      Is detach arraybuffer, arraybuffer obj binding dataview + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0784
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0784
+     * @tc.desc   Is detach arraybuffer, arraybuffer obj binding dataview + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0784', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10349,11 +11729,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0785
-     * @tc.name      JsvmTest0785
-     * @tc.desc      Is detach arraybuffer, arraybuffer obj detach obj + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0785
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0785
+     * @tc.desc   Is detach arraybuffer, arraybuffer obj detach obj + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0785', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10363,11 +11744,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0786
-     * @tc.name      JsvmTest0786
-     * @tc.desc      Is detach arraybuffer, value not arraybuffer obj + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0786
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0786
+     * @tc.desc   Is detach arraybuffer, value not arraybuffer obj + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0786', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10377,11 +11759,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0787
-     * @tc.name      JsvmTest0787
-     * @tc.desc      Is detach arraybuffer, value arraybuffer obj + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0787
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0787
+     * @tc.desc   Is detach arraybuffer, value arraybuffer obj + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0787', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10391,13 +11774,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0788
-     * @tc.name      JsvmTest0788
-     * @tc.desc      createArraybuffer Createarraybuffer -> IsArraybuffer，true -> 
-     * createTypedarray -> GetArraybufferInfo -> IsTypedarray, true -> IsDetachedArraybuffer，false 
-     *-> DetachArraybuffer -> IsTypedarray, false -> IsDetachedArraybuffer,true
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0788
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0788
+     * @tc.desc   createArraybuffer Createarraybuffer -> IsArraybuffer，true ->
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0788', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10407,11 +11789,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0789
-     * @tc.name      JsvmTest0789
-     * @tc.desc      Create Int32, value int32_max + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0789
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0789
+     * @tc.desc   Create Int32, value int32_max + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0789', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10421,11 +11804,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0790
-     * @tc.name      JsvmTest0790
-     * @tc.desc      Create Int32, value int32_min + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0790
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0790
+     * @tc.desc   Create Int32, value int32_min + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0790', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10435,11 +11819,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0791
-     * @tc.name      JsvmTest0791
-     * @tc.desc      Create Int32, value 0 + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0791
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0791
+     * @tc.desc   Create Int32, value 0 + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0791', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10449,11 +11834,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0792
-     * @tc.name      JsvmTest0792
-     * @tc.desc      Create Int32, value 0 + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0792
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0792
+     * @tc.desc   Create Int32, value 0 + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0792', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10463,11 +11849,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0793
-     * @tc.name      JsvmTest0793
-     * @tc.desc      Create Uint32, value uint32_max + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0793
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0793
+     * @tc.desc   Create Uint32, value uint32_max + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0793', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10477,11 +11864,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0794
-     * @tc.name      JsvmTest0794
-     * @tc.desc      Create Uint32, value 1 + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0794
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0794
+     * @tc.desc   Create Uint32, value 1 + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0794', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10491,11 +11879,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0795
-     * @tc.name      JsvmTest0795
-     * @tc.desc      Create Uint32, value 0 + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0795
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0795
+     * @tc.desc   Create Uint32, value 0 + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0795', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10505,11 +11894,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0796
-     * @tc.name      JsvmTest0796
-     * @tc.desc      Create Uint32, value 0 + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0796
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0796
+     * @tc.desc   Create Uint32, value 0 + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0796', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10519,11 +11909,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0797
-     * @tc.name      JsvmTest0797
-     * @tc.desc      Create int64, value int64_max + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0797
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0797
+     * @tc.desc   Create int64, value int64_max + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0797', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10533,11 +11924,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0798
-     * @tc.name      JsvmTest0798
-     * @tc.desc      Create int64, value int64_min + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0798
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0798
+     * @tc.desc   Create int64, value int64_min + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0798', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10547,11 +11939,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0799
-     * @tc.name      JsvmTest0799
-     * @tc.desc      Create int64, value 0 + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0799
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0799
+     * @tc.desc   Create int64, value 0 + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0799', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10561,11 +11954,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0800
-     * @tc.name      JsvmTest0800
-     * @tc.desc      Create int64, value 0 + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0800
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0800
+     * @tc.desc   Create int64, value 0 + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10575,11 +11969,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0801
-     * @tc.name      JsvmTest0801
-     * @tc.desc      Create double, value double_max + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0801
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0801
+     * @tc.desc   Create double, value double_max + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10589,11 +11984,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0802
-     * @tc.name      JsvmTest0802
-     * @tc.desc      Create double, value double_min + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0802
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0802
+     * @tc.desc   Create double, value double_min + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0802', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10603,11 +11999,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0803
-     * @tc.name      JsvmTest0803
-     * @tc.desc      Create double, value 0 + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0803
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0803
+     * @tc.desc   Create double, value 0 + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0803', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10617,11 +12014,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0804
-     * @tc.name      JsvmTest0804
-     * @tc.desc      Create double, value 0 + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0804
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0804
+     * @tc.desc   Create double, value 0 + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0804', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10631,11 +12029,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0805
-     * @tc.name      JsvmTest0805
-     * @tc.desc      Get uint32, not uint32 value
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0805
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0805
+     * @tc.desc   Get uint32, not uint32 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0805', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10645,11 +12044,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0806
-     * @tc.name      JsvmTest0806
-     * @tc.desc      Get int32, not int32 value
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0806
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0806
+     * @tc.desc   Get int32, not int32 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0806', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10659,11 +12059,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0807
-     * @tc.name      JsvmTest0807
-     * @tc.desc      Get int64, not int64 value
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0807
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0807
+     * @tc.desc   Get int64, not int64 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0807', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10673,11 +12074,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0808
-     * @tc.name      JsvmTest0808
-     * @tc.desc      Get double, not double value
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0808
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0808
+     * @tc.desc   Get double, not double value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0808', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10687,12 +12089,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0809
-     * @tc.name      JsvmTest0809
-     * @tc.desc      CreateInt32 value -> GetValueUint32 int32 convert uint32 ->GetValueInt32 -> 
-     * GetValueInt64 int32 convert int64 -> GetValueDouble int32 convert double
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0809
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0809
+     * @tc.desc   CreateInt32 value -> GetValueUint32 int32 convert uint32 ->GetValueInt32 ->
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0809', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10702,12 +12104,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0810
-     * @tc.name      JsvmTest0810
-     * @tc.desc      CreateUint32 value -> GetValueUint32 -> GetValueInt32 uint32 convert int32 -> 
-     * GetValueInt64 uint32 convert int64 -> GetValueDouble uint32 convert double
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0810
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0810
+     * @tc.desc   CreateUint32 value -> GetValueUint32 -> GetValueInt32 uint32 convert int32 ->
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10717,12 +12119,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0811
-     * @tc.name      JsvmTest0811
-     * @tc.desc      CreateInt64 -> GetValueUint32 int64 convert uint32 ->GetValueInt32 int64 convert int32 ->
-     * GetValueInt64 int64->GetValueDouble int64 convert double
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0811
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0811
+     * @tc.desc   CreateInt64 -> GetValueUint32 int64 convert uint32 ->GetValueInt32 int64 convert int32 ->
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0811', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10732,12 +12134,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0812
-     * @tc.name      JsvmTest0812
-     * @tc.desc      CreateDouble -> GetValueUint32 double convert uint32 -> GetValueInt32 double convert int32 ->
-     * GetValueInt64 double convert int64 -> GetValueDouble double value
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0812
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0812
+     * @tc.desc   CreateDouble -> GetValueUint32 double convert uint32 -> GetValueInt32 double convert int32 ->
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0812', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10747,11 +12149,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0813
-     * @tc.name      JsvmTest0813
-     * @tc.desc      Create bigint int64, value int64_max + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0813
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0813
+     * @tc.desc   Create bigint int64, value int64_max + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0813', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10761,11 +12164,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0814
-     * @tc.name      JsvmTest0814
-     * @tc.desc      Create bigint int64, value int64_min + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0814
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0814
+     * @tc.desc   Create bigint int64, value int64_min + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0814', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10775,11 +12179,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0815
-     * @tc.name      JsvmTest0815
-     * @tc.desc      Create bigint int64, value 0 + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0815
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0815
+     * @tc.desc   Create bigint int64, value 0 + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0815', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10789,11 +12194,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0816
-     * @tc.name      JsvmTest0816
-     * @tc.desc      Create bigint int64, value 0 + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0816
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0816
+     * @tc.desc   Create bigint int64, value 0 + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0816', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10803,11 +12209,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0817
-     * @tc.name      JsvmTest0817
-     * @tc.desc      Create bigint Uint64, value uint64_max + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0817
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0817
+     * @tc.desc   Create bigint Uint64, value uint64_max + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0817', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10817,11 +12224,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0818
-     * @tc.name      JsvmTest0818
-     * @tc.desc      Create bigint Uint64, value 0 + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0818
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0818
+     * @tc.desc   Create bigint Uint64, value 0 + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0818', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10831,11 +12239,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0819
-     * @tc.name      JsvmTest0819
-     * @tc.desc      Create bigint Uint64, value 0 + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0819
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0819
+     * @tc.desc   Create bigint Uint64, value 0 + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0819', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10845,11 +12254,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0820
-     * @tc.name      JsvmTest0820
-     * @tc.desc      Create bigint Words, signBit 0 + wordCount 3 + words {uint64_max,0,1} + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0820
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0820
+     * @tc.desc   Create bigint Words, signBit 0 + wordCount 3 + words {uint64_max,0,1} + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0820', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10859,11 +12269,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0821
-     * @tc.name      JsvmTest0821
-     * @tc.desc      Create bigint Words, signBit not 0 + wordCount 3 + words {uint64_max,0,1} + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0821
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0821
+     * @tc.desc   Create bigint Words, signBit not 0 + wordCount 3 + words {uint64_max,0,1} + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0821', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10873,11 +12284,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0822
-     * @tc.name      JsvmTest0822
-     * @tc.desc      Create bigint Words, signBit 0 + wordCount 0 + words {uint64_max,0,1} + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0822
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0822
+     * @tc.desc   Create bigint Words, signBit 0 + wordCount 0 + words {uint64_max,0,1} + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0822', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10887,11 +12299,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0823
-     * @tc.name      JsvmTest0823
-     * @tc.desc      Create bigint Words, signBit 0 + wordCount 4 + words {uint64_max,0,1} + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0823
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0823
+     * @tc.desc   Create bigint Words, signBit 0 + wordCount 4 + words {uint64_max,0,1} + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0823', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10901,11 +12314,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0824
-     * @tc.name      JsvmTest0824
-     * @tc.desc      Create bigint Words, signBit 0 + wordCount 3 + words {uint64_max,0,1} + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0824
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0824
+     * @tc.desc   Create bigint Words, signBit 0 + wordCount 3 + words {uint64_max,0,1} + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0824', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10915,11 +12329,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0825
-     * @tc.name      JsvmTest0825
-     * @tc.desc      Get bigint Int64, "value int64_max+1" + result nogt null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0825
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0825
+     * @tc.desc   Get bigint Int64, "value int64_max+1" + result nogt null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0825', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10929,11 +12344,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0826
-     * @tc.name      JsvmTest0826
-     * @tc.desc      Get bigint Int64, "value int64_max" + result not null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0826
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0826
+     * @tc.desc   Get bigint Int64, "value int64_max" + result not null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0826', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10943,11 +12359,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0827
-     * @tc.name      JsvmTest0827
-     * @tc.desc      Get bigint Int64, "value int64_min" + result not null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0827
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0827
+     * @tc.desc   Get bigint Int64, "value int64_min" + result not null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0827', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10957,11 +12374,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0828
-     * @tc.name      JsvmTest0828
-     * @tc.desc      Get bigint Int64, "value int64_min-1" + result not null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0828
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0828
+     * @tc.desc   Get bigint Int64, "value int64_min-1" + result not null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0828', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10971,11 +12389,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0829
-     * @tc.name      JsvmTest0829
-     * @tc.desc      Get bigint Int64, "value int64_max" + result NULL + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0829
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0829
+     * @tc.desc   Get bigint Int64, "value int64_max" + result NULL + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0829', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10985,11 +12404,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0830
-     * @tc.name      JsvmTest0830
-     * @tc.desc      Get bigint Int64, "value int64_max" + result not null + lossless NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0830
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0830
+     * @tc.desc   Get bigint Int64, "value int64_max" + result not null + lossless NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0830', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -10999,11 +12419,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0831
-     * @tc.name      JsvmTest0831
-     * @tc.desc      Get bigint Uint64, "value Uint64_max+1" + result not null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0831
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0831
+     * @tc.desc   Get bigint Uint64, "value Uint64_max+1" + result not null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0831', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11013,11 +12434,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0832
-     * @tc.name      JsvmTest0832
-     * @tc.desc      Get bigint Uint64, "value Uint64_max" + result not null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0832
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0832
+     * @tc.desc   Get bigint Uint64, "value Uint64_max" + result not null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0832', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11027,11 +12449,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0833
-     * @tc.name      JsvmTest0833
-     * @tc.desc      Get bigint Uint64, "value 0" + result not null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0833
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0833
+     * @tc.desc   Get bigint Uint64, "value 0" + result not null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0833', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11041,11 +12464,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0834
-     * @tc.name      JsvmTest0834
-     * @tc.desc      Get bigint Uint64, "value -1" + result not null + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0834
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0834
+     * @tc.desc   Get bigint Uint64, "value -1" + result not null + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0834', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11055,11 +12479,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0835
-     * @tc.name      JsvmTest0835
-     * @tc.desc      Get bigint Uint64, "value 0" + result NULL + lossless not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0835
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0835
+     * @tc.desc   Get bigint Uint64, "value 0" + result NULL + lossless not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0835', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11069,11 +12494,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0836
-     * @tc.name      JsvmTest0836
-     * @tc.desc      Get bigint Uint64, "value 0" + result not null + lossless NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0836
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0836
+     * @tc.desc   Get bigint Uint64, "value 0" + result not null + lossless NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0836', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11083,11 +12509,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0837
-     * @tc.name      JsvmTest0837
-     * @tc.desc      Get bigint Words, value is BigInt + signBit/wordCount/words not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0837
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0837
+     * @tc.desc   Get bigint Words, value is BigInt + signBit/wordCount/words not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0837', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11097,11 +12524,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0838
-     * @tc.name      JsvmTest0838
-     * @tc.desc      Get bigint Words, value is BigInt + signBit NULL + wordCount not null + words not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0838
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0838
+     * @tc.desc   Get bigint Words, value is BigInt + signBit NULL + wordCount not null + words not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0838', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11111,11 +12539,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0839
-     * @tc.name      JsvmTest0839
-     * @tc.desc      Get bigint Words, value is BigInt + signBit not null + wordCount NULL + words not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0839
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0839
+     * @tc.desc   Get bigint Words, value is BigInt + signBit not null + wordCount NULL + words not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0839', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11125,11 +12554,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0840
-     * @tc.name      JsvmTest0840
-     * @tc.desc      Get bigint Words, value is BigInt + signBit not null + wordCount not null + words NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0840
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0840
+     * @tc.desc   Get bigint Words, value is BigInt + signBit not null + wordCount not null + words NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0840', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11139,11 +12569,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0841
-     * @tc.name      JsvmTest0841
-     * @tc.desc      Get bigint Words, value is BigInt + signBit NULL + wordCount not null + words NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0841
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0841
+     * @tc.desc   Get bigint Words, value is BigInt + signBit NULL + wordCount not null + words NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0841', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11153,13 +12584,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0842
-     * @tc.name      JsvmTest0842
-     * @tc.desc      APICombination:CreateBigintInt64 -> GetValueBigintInt64 Same as 
-     * the input value of int64 -> GetValueBigintUint64-> GetValueBigintWords signBit 
-     * Return the actual value,wordCount is 1, words Return the actual value
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0842
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0842
+     * @tc.desc   APICombination:CreateBigintInt64 -> GetValueBigintInt64 Same as
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0842', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11169,12 +12599,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0843
-     * @tc.name      JsvmTest0843
-     * @tc.desc      CreateBigintUint64 -> GetValueBigintUint64 -> GetValueBigintInt64 -> 
-     * GetValueBigintWords -> signBit is 0,wordCount is 1, words return actual value
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0843
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0843
+     * @tc.desc   CreateBigintUint64 -> GetValueBigintUint64 -> GetValueBigintInt64 ->
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0843', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11184,13 +12614,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0844
-     * @tc.name      JsvmTest0844
-     * @tc.desc      CreateBigintWords uint64 argc <-> Js Bigint -> GetValueBigintInt64,
-     * compare values -> GetValueBigintUint64 -> GetValueBigintWords,
-     * signBit actual symbol value,wordCount is argc length, words actual value.
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0844
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0844
+     * @tc.desc   CreateBigintWords uint64 argc <-> Js Bigint -> GetValueBigintInt64,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0844', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11200,11 +12629,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0845
-     * @tc.name      JsvmTest0845
-     * @tc.desc      New instance,Constructor is a constructor with input parameters，argc、argv normal，result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0845
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0845
+     * @tc.desc   New instance,Constructor is a constructor with input parameters，argc、argv normal，result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0845', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11214,11 +12644,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0846
-     * @tc.name      JsvmTest0846
-     * @tc.desc      New instance,Constructor is not a constructor，argc\argv nullptr, result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0846
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0846
+     * @tc.desc   New instance,Constructor is not a constructor，argc\argv nullptr, result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0846', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11228,11 +12659,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0847
-     * @tc.name      JsvmTest0847
-     * @tc.desc      Get new Target,cbinfo not null + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0847
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0847
+     * @tc.desc   Get new Target,cbinfo not null + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0847', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11242,11 +12674,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0848
-     * @tc.name      JsvmTest0848
-     * @tc.desc      Get new Target,cbinfo NULL , result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0848
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0848
+     * @tc.desc   Get new Target,cbinfo NULL , result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0848', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11256,11 +12689,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0849
-     * @tc.name      JsvmTest0849
-     * @tc.desc      Get new Target,cbinfo not null，result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0849
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0849
+     * @tc.desc   Get new Target,cbinfo not null，result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0849', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11270,12 +12704,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0850
-     * @tc.name      JsvmTest0850
-     * @tc.desc      Define class,name not null + length <= utf8name + 
-     * properties not null + propertyCount <= properties + result
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0850
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0850
+     * @tc.desc   Define class,name not null + length <= utf8name +
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11285,12 +12719,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0851
-     * @tc.name      JsvmTest0851
-     * @tc.desc      Define class,name not null + length <= utf8name + 
-     * properties NULL+ propertyCount 0 + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0851
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0851
+     * @tc.desc   Define class,name not null + length <= utf8name +
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0851', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11300,12 +12734,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0852
-     * @tc.name      JsvmTest0852
-     * @tc.desc      jsobject + nativeObject + finalizeCb + 
-     * finalizeHint + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0852
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0852
+     * @tc.desc   jsobject + nativeObject + finalizeCb +
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0852', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11315,12 +12749,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0853
-     * @tc.name      JsvmTest0853
-     * @tc.desc      jsobject|nativeObject not null + finalizeCb NULL
-     * + finalizeHint NULL + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0853
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0853
+     * @tc.desc   jsobject|nativeObject not null + finalizeCb NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0853', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11330,12 +12764,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0854
-     * @tc.name      JsvmTest0854
-     * @tc.desc      jsobject NULL + nativeObject not null +
-     * finalizeCb NULL + finalizeHint NULL + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0854
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0854
+     * @tc.desc   jsobject NULL + nativeObject not null +
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0854', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11345,12 +12779,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0855
-     * @tc.name      JsvmTest0855
-     * @tc.desc      jsobject not null + nativeObject NULL +
-     * finalizeCb NULL + finalizeHint NULL + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0855
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0855
+     * @tc.desc   jsobject not null + nativeObject NULL +
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0855', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11360,12 +12794,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0856
-     * @tc.name      JsvmTest0856
-     * @tc.desc      JsObject has been wrapped with other 
-     * object instances + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0856
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0856
+     * @tc.desc   JsObject has been wrapped with other
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0856', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11375,12 +12809,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0857
-     * @tc.name      JsvmTest0857
-     * @tc.desc      JsObject is not wrapped with other 
-     * object instances + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0857
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0857
+     * @tc.desc   JsObject is not wrapped with other
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0857', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11390,11 +12824,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0858
-     * @tc.name      JsvmTest0858
-     * @tc.desc      jsObject NULL + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0858
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0858
+     * @tc.desc   jsObject NULL + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0858', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11404,11 +12839,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0859
-     * @tc.name      JsvmTest0859
-     * @tc.desc      JsObject has been wrapped with other object instances + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0859
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0859
+     * @tc.desc   JsObject has been wrapped with other object instances + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0859', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11418,11 +12854,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0860
-     * @tc.name      JsvmTest0860
-     * @tc.desc      JsObject has been wrapped with other object instances + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0860
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0860
+     * @tc.desc   JsObject has been wrapped with other object instances + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0860', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11432,11 +12869,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0861
-     * @tc.name      JsvmTest0861
-     * @tc.desc      JsObject is not wrapped with other object instances + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0861
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0861
+     * @tc.desc   JsObject is not wrapped with other object instances + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0861', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11446,11 +12884,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0862
-     * @tc.name      JsvmTest0862
-     * @tc.desc      jsObject NULL + result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0862
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0862
+     * @tc.desc   jsObject NULL + result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0862', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11460,11 +12899,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0863
-     * @tc.name      JsvmTest0863
-     * @tc.desc      JsObject has been wrapped with other object instances + result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0863
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0863
+     * @tc.desc   JsObject has been wrapped with other object instances + result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0863', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11474,11 +12914,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0864
-     * @tc.name      JsvmTest0864
-     * @tc.desc      defineClass -> NewInstance -> Wrap -> Unwrap ok -> RemoveWrap -> unwrap fail
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0864
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0864
+     * @tc.desc   defineClass -> NewInstance -> Wrap -> Unwrap ok -> RemoveWrap -> unwrap fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0864', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11488,13 +12929,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0865
-     * @tc.name      JsvmTest0865
-     * @tc.desc      recv nullptr,CreateFunction without input parameters, 
-     * argc 0, argv nullptr, result not null，return 0, result is consistent
-     * with the expected value of the function in CreateFunction
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0865
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0865
+     * @tc.desc   recv nullptr,CreateFunction without input parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0865', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11504,13 +12944,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0866
-     * @tc.name      JsvmTest0866
-     * @tc.desc      recv undefined, CreateFunction without input parameters,
-     * argc 0, argv nullptr, result not null,return 0, result is consistent
-     * with the expected value of the function in CreateFunction
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0866
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0866
+     * @tc.desc   recv undefined, CreateFunction without input parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0866', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11520,13 +12959,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0867
-     * @tc.name      JsvmTest0867
-     * @tc.desc      recv undefined,CreateFunction without input parameters,
-     * argc 0, argv nullptr, result not null,return 0, result is consistent
-     * with the expected value of the function in CreateFunction
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0867
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0867
+     * @tc.desc   recv undefined,CreateFunction without input parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0867', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11536,13 +12974,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0868
-     * @tc.name      JsvmTest0868
-     * @tc.desc      recv global,CreateFunction without input parameters,
-     * argc 0,argv nullptr,result not null,return 0,result is consistent
-     * with the expected value of the function in CreateFunction
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0868
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0868
+     * @tc.desc   recv global,CreateFunction without input parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0868', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11552,13 +12989,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0869
-     * @tc.name      JsvmTest0869
-     * @tc.desc      recv global,CreateFunction interface that requires one
-     * input parameter, argc 1,argv not null,len 1, result not null,
-     * return 0,result is consistent with the expected value of the function in CreateFunction
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0869
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0869
+     * @tc.desc   recv global,CreateFunction interface that requires one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0869', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11568,13 +13004,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0870
-     * @tc.name      JsvmTest0870
-     * @tc.desc      recv global,CreateFunction interface that requires 
-     * one input parameter, argc 2， argv len 2， result not null,return 0,
-     * result is consistent with the expected value of the function in CreateFunction
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0870
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0870
+     * @tc.desc   recv global,CreateFunction interface that requires
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0870', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11584,13 +13019,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0871
-     * @tc.name      JsvmTest0871
-     * @tc.desc      recv global,CreateFunction interface that requires
-     * two input parameters, argc 2,argv len 2,result not null
-     * return 0,The result cannot be obtained normally
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0871
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0871
+     * @tc.desc   recv global,CreateFunction interface that requires
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0871', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11600,13 +13034,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0872
-     * @tc.name      JsvmTest0872
-     * @tc.desc      recv global,CreateFunction interface that requires
-     * two input parameters, argc 1, argv len 1， result not null,
-     * return 0,The result cannot be obtained normally
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0872
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0872
+     * @tc.desc   recv global,CreateFunction interface that requires
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0872', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11616,13 +13049,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0873
-     * @tc.name      JsvmTest0873
-     * @tc.desc      recv global,The function obtained from JS code that 
-     * requires one input parameter,argc 1,argv len 1,result not null,
-     * return 0,The result is consistent with the expected value of the function in CreateFunction
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0873
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0873
+     * @tc.desc   recv global,The function obtained from JS code that
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0873', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11632,12 +13064,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0874
-     * @tc.name      JsvmTest0874
-     * @tc.desc      utf8name nullptr,length=0,set callback，data is null,result not null
-     * return 0,func name is nullptr
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0874
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0874
+     * @tc.desc   utf8name nullptr,length=0,set callback，data is null,result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0874', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11647,13 +13079,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0875
-     * @tc.name      JsvmTest0875
-     * @tc.desc      utf8name not null,length>=utf8name,set callback,data null,result not null
-     * return 0,funcname len = utf8name len
-     * return 0,func name is nullptr
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0875
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0875
+     * @tc.desc   utf8name not null,length>=utf8name,set callback,data null,result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0875', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11663,13 +13094,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0876
-     * @tc.name      JsvmTest0876
-     * @tc.desc      utf8name not null,length<utf8name,set callback,data null,result not null
-     * return 0,funcname len = length
-     * return 0,func name is nullptr
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0876
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0876
+     * @tc.desc   utf8name not null,length<utf8name,set callback,data null,result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0876', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11679,13 +13109,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0877
-     * @tc.name      JsvmTest0877
-     * @tc.desc      utf8name not null,length>=utf8name,set callback,data not null,
-     * result not null, return 0
-     * return 0,func name is nullptr
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0877
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0877
+     * @tc.desc   utf8name not null,length>=utf8name,set callback,data not null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0877', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11695,12 +13124,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0878
-     * @tc.name      JsvmTest0878
-     * @tc.desc      utf8name not null,length>=utf8name,set callback,data not null,
-     * result nullptr, return not 0
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0878
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0878
+     * @tc.desc   utf8name not null,length>=utf8name,set callback,data not null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0878', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11710,12 +13139,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0879
-     * @tc.name      JsvmTest0879
-     * @tc.desc      utf8name not null,length=utf8name,set callback is nullptr,data null,result not null
-     * retrun 0,error
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0879
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0879
+     * @tc.desc   utf8name not null,length=utf8name,set callback is nullptr,data null,result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0879', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11725,13 +13154,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0880
-     * @tc.name      JsvmTest0880
-     * @tc.desc      cbinfo is callback cbinfo,argc NULL,argv NULL,thisArg null,data not null,
-     * return 0, returnval is consistent with the data passed to 
-     * the callback function in the CreateFunction interface
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0880
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0880
+     * @tc.desc   cbinfo is callback cbinfo,argc NULL,argv NULL,thisArg null,data not null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0880', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11741,12 +13169,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0881
-     * @tc.name      JsvmTest0881
-     * @tc.desc      cbinfo is callback cbinfo, argc NULL，argv NULL， thisArg not null，data NULL
-     * return 0, The objects mounted by thisArg and Callfunction are consistent
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0881
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0881
+     * @tc.desc   cbinfo is callback cbinfo, argc NULL，argv NULL， thisArg not null，data NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0881', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11756,13 +13184,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0882
-     * @tc.name      JsvmTest0882
-     * @tc.desc      cbinfo is callback cbinfo,argc not null,argv not null,
-     * argv len -> argc set len,thisArg,data NULL
-     * return 0, argc elements the same as input，argv index>argc，result undefined
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0882
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0882
+     * @tc.desc   cbinfo is callback cbinfo,argc not null,argv not null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0882', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11772,12 +13199,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0883
-     * @tc.name      JsvmTest0883
-     * @tc.desc      cbinfo is callback cbinfo,argc not null,argv not null,argv len > argc len,thisArg,data NULL
-     * return 0, argv index>argc,undefined
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0883
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0883
+     * @tc.desc   cbinfo is callback cbinfo,argc not null,argv not null,argv len > argc len,thisArg,data NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0883', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11787,12 +13214,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0884
-     * @tc.name      JsvmTest0884
-     * @tc.desc      cbinfo is callback cbinfo,argc not null,argv not null,argv len = argc,thisArg,
-     * data NULL, return 0,argc = argv
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0884
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0884
+     * @tc.desc   cbinfo is callback cbinfo,argc not null,argv not null,argv len = argc,thisArg,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0884', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11802,12 +13229,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0885
-     * @tc.name      JsvmTest0885
-     * @tc.desc      value is function, isFunction not null
-     * return 0，isFunction true
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0885
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0885
+     * @tc.desc   value is function, isFunction not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0885', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11817,12 +13244,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0886
-     * @tc.name      JsvmTest0886
-     * @tc.desc      value is not function, isFunction not null
-     * return 0，isFunction false
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0886
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0886
+     * @tc.desc   value is not function, isFunction not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0886', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11832,12 +13259,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0887
-     * @tc.name      JsvmTest0887
-     * @tc.desc      value nullptr, isFunction not null
-     * return not 0
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0887
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0887
+     * @tc.desc   value nullptr, isFunction not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0887', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11847,12 +13274,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0888
-     * @tc.name      JsvmTest0888
-     * @tc.desc      value function, isFunction nullptr
-     * return not 0
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0888
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0888
+     * @tc.desc   value function, isFunction nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0888', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11862,11 +13289,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0889
-     * @tc.name      JsvmTest0889
-     * @tc.desc      Open handle scope,env null,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0889
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0889
+     * @tc.desc   Open handle scope,env null,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0889', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11876,11 +13304,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0890
-     * @tc.name      JsvmTest0890
-     * @tc.desc      Open handle scope,env not null,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0890
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0890
+     * @tc.desc   Open handle scope,env not null,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11890,11 +13319,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0891
-     * @tc.name      JsvmTest0891
-     * @tc.desc      Open handle scope,env not null，call this interface twice，first ok, second ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0891
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0891
+     * @tc.desc   Open handle scope,env not null，call this interface twice，first ok, second ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0891', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11904,12 +13334,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0892
-     * @tc.name      JsvmTest0892
-     * @tc.desc      Open handle scope,open two scope，create jsvm value,
-     * close one scope,expected inability to access jsvm value again
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0892
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0892
+     * @tc.desc   Open handle scope,open two scope，create jsvm value,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0892', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11919,11 +13349,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0893
-     * @tc.name      JsvmTest0893
-     * @tc.desc      Close handle scope,scope nullptr,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0893
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0893
+     * @tc.desc   Close handle scope,scope nullptr,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0893', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11933,11 +13364,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0894
-     * @tc.name      JsvmTest0894
-     * @tc.desc      Close handle scope,Call this interface after opening,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0894
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0894
+     * @tc.desc   Close handle scope,Call this interface after opening,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0894', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11947,11 +13379,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0895
-     * @tc.name      JsvmTest0895
-     * @tc.desc      Open and close handle scope,open twice,close twice,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0895
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0895
+     * @tc.desc   Open and close handle scope,open twice,close twice,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0895', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11961,11 +13394,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0896
-     * @tc.name      JsvmTest0896
-     * @tc.desc      Open and close handle scope,open,close twice,first ok, second not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0896
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0896
+     * @tc.desc   Open and close handle scope,open,close twice,first ok, second not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0896', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11975,11 +13409,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0897
-     * @tc.name      JsvmTest0897
-     * @tc.desc      Open escapable handle scope,env null,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0897
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0897
+     * @tc.desc   Open escapable handle scope,env null,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0897', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -11989,11 +13424,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0898
-     * @tc.name      JsvmTest0898
-     * @tc.desc      Open escapable handle scope,env not null,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0898
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0898
+     * @tc.desc   Open escapable handle scope,env not null,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0898', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12003,11 +13439,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0899
-     * @tc.name      JsvmTest0899
-     * @tc.desc      Open escapable handle scope,env not null,call twice func,first ok, second ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0899
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0899
+     * @tc.desc   Open escapable handle scope,env not null,call twice func,first ok, second ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0899', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12017,11 +13454,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0900
-     * @tc.name      JsvmTest0900
-     * @tc.desc      Close escapable handle scope,scope nullptr,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0900
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0900
+     * @tc.desc   Close escapable handle scope,scope nullptr,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12031,11 +13469,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0901
-     * @tc.name      JsvmTest0901
-     * @tc.desc      Close escapable handle scope,open,call func,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0901
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0901
+     * @tc.desc   Close escapable handle scope,open,call func,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12045,11 +13484,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0902
-     * @tc.name      JsvmTest0902
-     * @tc.desc      Close escapable handle scope,not open,call func,failed
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0902
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0902
+     * @tc.desc   Close escapable handle scope,not open,call func,failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0902', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12059,11 +13499,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0903
-     * @tc.name      JsvmTest0903
-     * @tc.desc      not call OpenEscapableHandleScope,call this func,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0903
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0903
+     * @tc.desc   not call OpenEscapableHandleScope,call this func,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0903', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12073,11 +13514,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0904
-     * @tc.name      JsvmTest0904
-     * @tc.desc      scope null,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0904
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0904
+     * @tc.desc   scope null,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0904', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12087,11 +13529,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0905
-     * @tc.name      JsvmTest0905
-     * @tc.desc      Open escapable handle scope,open,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0905
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0905
+     * @tc.desc   Open escapable handle scope,open,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0905', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12101,11 +13544,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0906
-     * @tc.name      JsvmTest0906
-     * @tc.desc      escapee obj null,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0906
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0906
+     * @tc.desc   escapee obj null,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0906', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12115,11 +13559,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0907
-     * @tc.name      JsvmTest0907
-     * @tc.desc      escapee valid value，return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0907
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0907
+     * @tc.desc   escapee valid value，return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0907', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12129,11 +13574,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0908
-     * @tc.name      JsvmTest0908
-     * @tc.desc      EscapeHandle combination test:open twice,call close,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0908
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0908
+     * @tc.desc   EscapeHandle combination test:open twice,call close,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0908', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12143,11 +13589,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0909
-     * @tc.name      JsvmTest0909
-     * @tc.desc      open,call close twice,first ok, second not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0909
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0909
+     * @tc.desc   open,call close twice,first ok, second not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0909', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12157,11 +13604,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0910
-     * @tc.name      JsvmTest0910
-     * @tc.desc      value nullptr,call test func,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0910
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0910
+     * @tc.desc   value nullptr,call test func,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12171,11 +13619,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0911
-     * @tc.name      JsvmTest0911
-     * @tc.desc      jsvm value is normal data,initialRefcount 0,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0911
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0911
+     * @tc.desc   jsvm value is normal data,initialRefcount 0,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0911', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12185,11 +13634,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0912
-     * @tc.name      JsvmTest0912
-     * @tc.desc      jsvm value is normal data,initialRefcount 1,return ok,result not nullptr
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0912
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0912
+     * @tc.desc   jsvm value is normal data,initialRefcount 1,return ok,result not nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0912', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12199,11 +13649,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0913
-     * @tc.name      JsvmTest0913
-     * @tc.desc      ref null,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0913
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0913
+     * @tc.desc   ref null,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0913', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12213,11 +13664,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0914
-     * @tc.name      JsvmTest0914
-     * @tc.desc      create ref,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0914
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0914
+     * @tc.desc   create ref,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0914', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12227,11 +13679,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0915
-     * @tc.name      JsvmTest0915
-     * @tc.desc      ref nullptr, return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0915
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0915
+     * @tc.desc   ref nullptr, return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0915', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12241,11 +13694,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0916
-     * @tc.name      JsvmTest0916
-     * @tc.desc      create ref,increase citation count，return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0916
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0916
+     * @tc.desc   create ref,increase citation count，return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0916', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12255,11 +13709,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0917
-     * @tc.name      JsvmTest0917
-     * @tc.desc      repeated call,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0917
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0917
+     * @tc.desc   repeated call,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0917', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12269,11 +13724,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0918
-     * @tc.name      JsvmTest0918
-     * @tc.desc      ref nullptr,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0918
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0918
+     * @tc.desc   ref nullptr,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0918', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12283,11 +13739,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0919
-     * @tc.name      JsvmTest0919
-     * @tc.desc      create ref,call this func,reduce the number of citations,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0919
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0919
+     * @tc.desc   create ref,call this func,reduce the number of citations,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0919', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12297,11 +13754,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0920
-     * @tc.name      JsvmTest0920
-     * @tc.desc      repeate call,call the test interface when the ref reference count is 0,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0920
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0920
+     * @tc.desc   repeate call,call the test interface when the ref reference count is 0,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12311,11 +13769,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0921
-     * @tc.name      JsvmTest0921
-     * @tc.desc      ref nullptr,return ok,result nullptr
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0921
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0921
+     * @tc.desc   ref nullptr,return ok,result nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0921', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12325,11 +13784,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0922
-     * @tc.name      JsvmTest0922
-     * @tc.desc      create ref,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0922
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0922
+     * @tc.desc   create ref,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0922', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12339,13 +13799,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0923
-     * @tc.name      JsvmTest0923
-     * @tc.desc      open handlescope -- create obj -- create reference 
-     * -- increase citation count -- reduce citation count --get reference info
-     * -- delete reference -- get reference, no result -- close handlescope
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0923
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0923
+     * @tc.desc   open handlescope -- create obj -- create reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0923', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12355,14 +13814,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0924
-     * @tc.name      JsvmTest0924
-     * @tc.desc      open escapehandlescope -- create obj -- escapehanle --
-     * create reference -- increase citation count -- reduce
-     * citation count -- get reference info -- get reference,
-     * no result -- delete reference -- closed escapehandlescope
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0924
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0924
+     * @tc.desc   open escapehandlescope -- create obj -- escapehanle --
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0924', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12372,11 +13829,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0925
-     * @tc.name      JsvmTest0925
-     * @tc.desc      create multiple reference,delete multiple referencee,result normal
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0925
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0925
+     * @tc.desc   create multiple reference,delete multiple referencee,result normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0925', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12386,11 +13844,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0926
-     * @tc.name      JsvmTest0926
-     * @tc.desc      changeInBytes 0 +result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0926
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0926
+     * @tc.desc   changeInBytes 0 +result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0926', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12400,11 +13859,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0927
-     * @tc.name      JsvmTest0927
-     * @tc.desc      changeInBytes 1024*1024 +result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0927
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0927
+     * @tc.desc   changeInBytes 1024*1024 +result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0927', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12414,11 +13874,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0928
-     * @tc.name      JsvmTest0928
-     * @tc.desc      changeInBytes 1024*1024*1024 +result not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0928
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0928
+     * @tc.desc   changeInBytes 1024*1024*1024 +result not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0928', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12428,11 +13889,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0929
-     * @tc.name      JsvmTest0929
-     * @tc.desc      changeInBytes 1024*1024 +result NULL
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0929
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0929
+     * @tc.desc   changeInBytes 1024*1024 +result NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0929', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12442,11 +13904,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0930
-     * @tc.name      JsvmTest0930
-     * @tc.desc      JSVM_MEMORY_PRESSURE_LEVEL_NONE    no pressure
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0930
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0930
+     * @tc.desc   JSVM_MEMORY_PRESSURE_LEVEL_NONE    no pressure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12456,11 +13919,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0931
-     * @tc.name      JsvmTest0931
-     * @tc.desc      JSVM_MEMORY_PRESSURE_LEVEL_MODERATE    moderate pressure
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0931
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0931
+     * @tc.desc   JSVM_MEMORY_PRESSURE_LEVEL_MODERATE    moderate pressure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0931', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12470,11 +13934,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0932
-     * @tc.name      JsvmTest0932
-     * @tc.desc      JSVM_MEMORY_PRESSURE_LEVEL_CRITICAL    critical pressure
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0932
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0932
+     * @tc.desc   JSVM_MEMORY_PRESSURE_LEVEL_CRITICAL    critical pressure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0932', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12484,12 +13949,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0933
-     * @tc.name      JsvmTest0933
-     * @tc.desc      AdjustExternalMemory allocation of 1GB memory -> 
-     * MemoryPressureNotification(JSVM_MEMORY_PRESSURE_LEVEL_CRITICAL)
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0933
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0933
+     * @tc.desc   AdjustExternalMemory allocation of 1GB memory ->
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0933', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12499,11 +13964,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0934
-     * @tc.name      JsvmTest0934
-     * @tc.desc      value null,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0934
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0934
+     * @tc.desc   value null,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0934', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12513,11 +13979,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0935
-     * @tc.name      JsvmTest0935
-     * @tc.desc      input promise,return ok,result true
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0935
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0935
+     * @tc.desc   input promise,return ok,result true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0935', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12527,11 +13994,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0936
-     * @tc.name      JsvmTest0936
-     * @tc.desc      input not promise,return ok,result false
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0936
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0936
+     * @tc.desc   input not promise,return ok,result false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0936', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12541,11 +14009,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0937
-     * @tc.name      JsvmTest0937
-     * @tc.desc      JS Create promise obj,return ok，result is true
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0937
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0937
+     * @tc.desc   JS Create promise obj,return ok，result is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0937', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12555,11 +14024,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0938
-     * @tc.name      JsvmTest0938
-     * @tc.desc      call this func,return ok, deferred and promise not null
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0938
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0938
+     * @tc.desc   call this func,return ok, deferred and promise not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0938', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12569,11 +14039,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0939
-     * @tc.name      JsvmTest0939
-     * @tc.desc      create deferred and promise,call this func,resolution true,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0939
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0939
+     * @tc.desc   create deferred and promise,call this func,resolution true,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0939', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12583,11 +14054,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0940
-     * @tc.name      JsvmTest0940
-     * @tc.desc      create deferred and promise,call this func,resolution false, return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0940
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0940
+     * @tc.desc   create deferred and promise,call this func,resolution false, return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12598,11 +14070,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0941
-     * @tc.name      JsvmTest0941
-     * @tc.desc      CreatePromise create deferred and promise,call this func,rejection true, return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0941
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0941
+     * @tc.desc   CreatePromise create deferred and promise,call this func,rejection true, return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0941', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12612,12 +14085,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0942
-     * @tc.name      JsvmTest0942
-     * @tc.desc      CreatePromise create deferred and promise,
-     * call this func, rejection false, return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0942
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0942
+     * @tc.desc   CreatePromise create deferred and promise,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0942', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12628,11 +14101,12 @@ export default function JsvmJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0943
-     * @tc.name      JsvmTest0943
-     * @tc.desc      create -- is -- resolve result normal
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0943
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0943
+     * @tc.desc   create -- is -- resolve result normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0943', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12642,11 +14116,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0944
-     * @tc.name      JsvmTest0944
-     * @tc.desc      call this func,return jsvm ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0944
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0944
+     * @tc.desc   call this func,return jsvm ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0944', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12656,11 +14131,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0945
-     * @tc.name      JsvmTest0945
-     * @tc.desc      call func,return jsvm ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0945
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0945
+     * @tc.desc   call func,return jsvm ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0945', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12670,11 +14146,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0946
-     * @tc.name      JsvmTest0946
-     * @tc.desc      getversion -- getvminfo ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0946
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0946
+     * @tc.desc   getversion -- getvminfo ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0946', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12684,11 +14161,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0947
-     * @tc.name      JsvmTest0947
-     * @tc.desc      Call the interface to be tested,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0947
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0947
+     * @tc.desc   Call the interface to be tested,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0947', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12698,11 +14176,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0948
-     * @tc.name      JsvmTest0948
-     * @tc.desc      Call the interface to be tested,return ok,result not nullptr
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0948
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0948
+     * @tc.desc   Call the interface to be tested,return ok,result not nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0948', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12712,11 +14191,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0949
-     * @tc.name      JsvmTest0949
-     * @tc.desc      call OH_JSVM_StartCpuProfiler,Call the interface to be tested,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0949
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0949
+     * @tc.desc   call OH_JSVM_StartCpuProfiler,Call the interface to be tested,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0949', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12726,11 +14206,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0950
-     * @tc.name      JsvmTest0950
-     * @tc.desc      stream nullptr,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0950
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0950
+     * @tc.desc   stream nullptr,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12740,11 +14221,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0951
-     * @tc.name      JsvmTest0951
-     * @tc.desc      host nullptr,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0951
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0951
+     * @tc.desc   host nullptr,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0951', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12754,11 +14236,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0952
-     * @tc.name      JsvmTest0952
-     * @tc.desc      host valid value, port as a negative number, return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0952
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0952
+     * @tc.desc   host valid value, port as a negative number, return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0952', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12768,11 +14251,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0953
-     * @tc.name      JsvmTest0953
-     * @tc.desc      host valid value,port 65536,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0953
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0953
+     * @tc.desc   host valid value,port 65536,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0953', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12782,11 +14266,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0954
-     * @tc.name      JsvmTest0954
-     * @tc.desc      no open inspectors in the env,call test func,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0954
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0954
+     * @tc.desc   no open inspectors in the env,call test func,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0954', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12796,11 +14281,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0955
-     * @tc.name      JsvmTest0955
-     * @tc.desc      an open inspector in the env,call test func,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0955
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0955
+     * @tc.desc   an open inspector in the env,call test func,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0955', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12810,12 +14296,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0956
-     * @tc.name      JsvmTest0956
-     * @tc.desc      there are multiple open inspectors in the env,
-     * call test func,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0956
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0956
+     * @tc.desc   there are multiple open inspectors in the env,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0956', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12825,11 +14311,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0957
-     * @tc.name      JsvmTest0957
-     * @tc.desc      pid is a valid value,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0957
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0957
+     * @tc.desc   pid is a valid value,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0957', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12839,11 +14326,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0958
-     * @tc.name      JsvmTest0958
-     * @tc.desc      pid is empty,return not ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0958
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0958
+     * @tc.desc   pid is empty,return not ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0958', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
@@ -12853,11 +14341,12 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_JSVM_0959
-     * @tc.name      JsvmTest0959
-     * @tc.desc      open and close debug option,return ok
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   JsvmTest0959
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0959
+     * @tc.desc   open and close debug option,return ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('JsvmTest0959', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let rst: number = napitest.testSetDebugOption();

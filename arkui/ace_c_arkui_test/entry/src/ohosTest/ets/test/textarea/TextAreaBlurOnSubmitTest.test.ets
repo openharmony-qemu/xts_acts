@@ -26,39 +26,39 @@ export default function textAreaBlurOnSubmitTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_BLURONSUBMIT_0100
-     * @tc.name: testTextAreaBlurOnSubmit001
-     * @tc.desc: testing BlurOnSubmit for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaBlurOnSubmit001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_BLURONSUBMIT_0100
+     * @tc.desc   testing BlurOnSubmit for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaBlurOnSubmit001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaBlurOnSubmit001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_BLURONSUBMIT_0200
-     * @tc.name: testTextAreaBlurOnSubmit002
-     * @tc.desc: testing BlurOnSubmit for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaBlurOnSubmit002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_BLURONSUBMIT_0200
+     * @tc.desc   testing BlurOnSubmit for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaBlurOnSubmit002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaBlurOnSubmit002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_BLURONSUBMIT_0300
-     * @tc.name: testTextAreaBlurOnSubmit003
-     * @tc.desc: testing BlurOnSubmit for textArea with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaBlurOnSubmit003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_BLURONSUBMIT_0300
+     * @tc.desc   testing BlurOnSubmit for textArea with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaBlurOnSubmit003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaBlurOnSubmit003()).assertEqual(0)

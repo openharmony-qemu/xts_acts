@@ -75,9 +75,12 @@ void HwEncBFuncTest::TearDown()
 
 namespace {
 /**
- * @tc.number    : VIDEO_HW_ENCODE_B_FUNC_001
- * @tc.name      : VIDEO_HW_ENCODE_B_FUNC_001
- * @tc.desc      :     test
+ * @tc.name   VIDEO_HW_ENCODE_B_FUNC_001
+ * @tc.number VIDEO_HW_ENCODE_B_FUNC_001
+ * @tc.desc   test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_001, TestSize.Level2)
 {
@@ -108,9 +111,12 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_001, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_B_FUNC_002
- * @tc.name      : VIDEO_HW_ENCODE_B_FUNC_002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_B_FUNC_002
+ * @tc.number VIDEO_HW_ENCODE_B_FUNC_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_002, TestSize.Level2)
 {
@@ -141,9 +147,12 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_002, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_B_FUNC_003
- * @tc.name      : VIDEO_HW_ENCODE_B_FUNC_003
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_B_FUNC_003
+ * @tc.number VIDEO_HW_ENCODE_B_FUNC_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_003, TestSize.Level2)
 {
@@ -174,9 +183,12 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_003, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_B_FUNC_004
- * @tc.name      : VIDEO_HW_ENCODE_B_FUNC_004
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_B_FUNC_004
+ * @tc.number VIDEO_HW_ENCODE_B_FUNC_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_004, TestSize.Level2)
 {
@@ -209,9 +221,12 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_004, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_B_FUNC_005
- * @tc.name      : VIDEO_HW_ENCODE_B_FUNC_005
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_B_FUNC_005
+ * @tc.number VIDEO_HW_ENCODE_B_FUNC_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_005, TestSize.Level2)
 {
@@ -244,9 +259,12 @@ HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_005, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_B_FUNC_006
- * @tc.name      : VIDEO_HW_ENCODE_B_FUNC_006
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_B_FUNC_006
+ * @tc.number VIDEO_HW_ENCODE_B_FUNC_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncBFuncTest, VIDEO_HW_ENCODE_B_FUNC_006, TestSize.Level2)
 {

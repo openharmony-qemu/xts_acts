@@ -42,11 +42,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         done();
     })
 
-    /*
-    * @tc.number: ACTS_AcquireDataAbilityHelper_0100
-    * @tc.name: GetDataAbilityHelper : Connects an ability to a Service ability
-    * @tc.desc: Check the return value of the interface ()
-    */
+    /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0100
+     * @tc.number ACTS_AcquireDataAbilityHelper_0100
+     * @tc.desc   Check the return value of the interface ()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AcquireDataAbilityHelper_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_AcquireDataAbilityHelper_0100====<begin');
         console.debug("=ACTS_AcquireDataAbilityHelper_0100 dataAbilityUri====>" + dataAbilityUri)
@@ -67,11 +70,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         done();
     })
 
-    /*
-    * @tc.number: ACTS_Insert_0100
-    * @tc.name: Insert : Indicates the path of the data to operate
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Insert_0100
+     * @tc.number ACTS_Insert_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Insert_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Insert_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -100,11 +106,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_BatchInsert_0100
-    * @tc.name: Inserts multiple data records into the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_BatchInsert_0100
+     * @tc.number ACTS_BatchInsert_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_BatchInsert_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_BatchInsert_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -135,11 +144,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Query_0100
-    * @tc.name: Queries one or more data records in the database
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Query_0100
+     * @tc.number ACTS_Query_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Query_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Query_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -171,11 +183,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Update_0100
-    * @tc.name: Updates one or more data records in the database.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Update_0100
+     * @tc.number ACTS_Update_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Update_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Update_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -210,11 +225,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_Delete_0100
-    * @tc.name: Deletes one or more data records. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by Promise)
-    */
+    /**
+     * @tc.name   ACTS_Delete_0100
+     * @tc.number ACTS_Delete_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_Delete_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_Delete_0100====<begin');
         expect(typeof (DAHelper)).assertEqual("object");
@@ -247,11 +265,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_OpenFile_0100
-    * @tc.name: Opens a file. This method should be implemented by a Data ability.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_OpenFile_0100
+     * @tc.number ACTS_OpenFile_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_OpenFile_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_OpenFile_0100====<begin');
         var mode = "r";
@@ -277,11 +298,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_NormalizeUri_0100
-    * @tc.name: Converts the given uri that refer to the Data ability into a normalized URI.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_NormalizeUri_0100
+     * @tc.number ACTS_NormalizeUri_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_NormalizeUri_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_NormalizeUri_0100====<begin');
         let ret = false;
@@ -311,11 +335,14 @@ describe('ActsDataAbilityHelperPermissionTest', function () {
         }
     })
 
-    /*
-    * @tc.number: ACTS_DenormalizeUri_0100
-    * @tc.name: Converts the given normalized uri generated by normalizeUri into a denormalized one.
-    * @tc.desc: Check the return value of the interface (by promise)
-    */
+    /**
+     * @tc.name   ACTS_DenormalizeUri_0100
+     * @tc.number ACTS_DenormalizeUri_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DenormalizeUri_0100', Level.LEVEL0, async function (done) {
         console.log('ACTS_DenormalizeUri_0100====<begin');
         let ret = false;

@@ -43,14 +43,14 @@ export default function webViewController() {
       console.info('beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0100
-    * @tc.name       : testOnOverScrollStatic001
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testOnOverScrollStatic001
+     * @tc.number SUB_WEB_ONOVERSCROLL_0100
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnOverScrollStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(3000)
@@ -68,14 +68,14 @@ export default function webViewController() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0200
-    * @tc.name       : testOnOverScrollStatic002
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testOnOverScrollStatic002
+     * @tc.number SUB_WEB_ONOVERSCROLL_0200
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnOverScrollStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnOverScroll002', 10)
@@ -93,14 +93,14 @@ export default function webViewController() {
 
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0300
-    * @tc.name       : testOnOverScrollStatic003
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testOnOverScrollStatic003
+     * @tc.number SUB_WEB_ONOVERSCROLL_0300
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnOverScrollStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnOverScroll003', 10)
@@ -117,14 +117,14 @@ export default function webViewController() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0400
-    * @tc.name       : testOnOverScrollStatic004
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testOnOverScrollStatic004
+     * @tc.number SUB_WEB_ONOVERSCROLL_0400
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnOverScrollStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnOverScroll004', 10)

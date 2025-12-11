@@ -48,10 +48,12 @@ export default function VideoReset3() {
     });
 
     /**
-     * @tc.number    VideoReset3_0100
-     * @tc.name      VideoReset3_0100
-     * @tc.desc      Test video reset
-     * @tc.level     Level 2
+     * @tc.name   VideoReset3_0100
+     * @tc.number VideoReset3_0100
+     * @tc.desc   Test video reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VideoReset3_0100', Level.LEVEL2, async  (done:Function) =>{
       console.info('[VideoReset3_0100] START');

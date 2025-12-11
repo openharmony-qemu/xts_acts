@@ -49,12 +49,12 @@ export default function gridScrollbarColor() {
     });
 
     /**
+     * @tc.name   test_grid_scrollBarColor_001
      * @tc.number test_grid_scrollBarColor_001
-     * @tc.name   Test the properties of components
      * @tc.desc   input type resource[#FFFFFF00] ,return #FFFFFF00
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_grid_scrollBarColor_001', Level.LEVEL0, async (done: Function) => {
       console.info('test_grid_scrollBarColor_001 START');

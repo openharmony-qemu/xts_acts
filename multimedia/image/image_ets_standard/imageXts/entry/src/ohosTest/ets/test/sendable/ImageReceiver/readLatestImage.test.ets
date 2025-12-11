@@ -85,12 +85,12 @@ export default function sendableImageReceiverReadLatestImageTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_READ_LATEST_IMAGE_001
-     * @tc.name      : imageReceiver_readLatestImage_sendable_promise_001
-     * @tc.desc      : imageReceiver_readLatestImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageReceiver_readLatestImage_sendable_promise_001
+     * @tc.number IMAGE_RECEIVER_READ_LATEST_IMAGE_001
+     * @tc.desc   imageReceiver_readLatestImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageReceiver_readLatestImage_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageReceiver_readLatestImage_sendable_promise_001';
@@ -103,12 +103,12 @@ export default function sendableImageReceiverReadLatestImageTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_READ_NEXT_IMAGE_001
-     * @tc.name      : imageReceiver_readNextImage_sendable_promise_001
-     * @tc.desc      : imageReceiver_readNextImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageReceiver_readNextImage_sendable_promise_001
+     * @tc.number IMAGE_RECEIVER_READ_NEXT_IMAGE_001
+     * @tc.desc   imageReceiver_readNextImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageReceiver_readNextImage_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageReceiver_readNextImage_sendable_promise_001';

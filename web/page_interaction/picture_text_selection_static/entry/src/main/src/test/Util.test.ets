@@ -15,6 +15,7 @@
 import emitter from '@ohos.events.emitter';
 import { expect } from '../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static async msSleep(count: int): Promise<int> {
@@ -37,7 +38,7 @@ export default class Utils {
     try {
       console.info('Entry emitEvent, actualValue = ' + actualValue);
 
-      const tempData: Record<string, boolean | string | Int | object> = {
+      const tempData: Record<string, RecordData> = {
         'ACTION': actualValue as object
       };
 
@@ -49,7 +50,7 @@ export default class Utils {
         eventId: eventId,
         priority: emitter.EventPriority.LOW
       }
-      const actionValue = (backData.data as Record<string, boolean | string | Int | object>)['ACTION'];
+      const actionValue = (backData.data as Record<string, RecordData>)['ACTION'];
       console.info('webFlag start to emit action state, ackData.data[\'ACTION\'] = ' + String(actionValue));
       emitter.emit(backEvent, backData);
       await Utils.msSleep(2000)
@@ -87,7 +88,7 @@ export default class Utils {
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: Int, done: () => void) {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done,
       (backData: emitter.EventData, expected: Object) => {
-        const data = backData?.data as Record<string, boolean | string | Int | object>;
+        const data = backData?.data as Record<string, RecordData>;
         const action = data['ACTION'];
         console.info(`Begin to assert [${action}] Equal [${expected}]`);
         expect(action).assertEqual(expected);

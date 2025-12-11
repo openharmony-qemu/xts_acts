@@ -86,7 +86,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_Event_Test_0001
          * @tc.number SUB_Communication_WiFi_Event_Test_0001
          * @tc.desc   Test wifiStateChange callback
@@ -114,7 +113,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_Event_Test_0002
          * @tc.number SUB_Communication_WiFi_Event_Test_0002
          * @tc.desc   Test wifiConnectionChange callback
@@ -142,7 +140,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_Event_Test_0003
          * @tc.number SUB_Communication_WiFi_Event_Test_0003
          * @tc.desc   Test wifiScanStateChange  callback
@@ -173,7 +170,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_Event_Test_0004
          * @tc.number SUB_Communication_WiFi_Event_Test_0004
          * @tc.desc   Test wifiRssiChange callback
@@ -201,7 +197,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_Event_Test_0005
          * @tc.number SUB_Communication_WiFi_Event_Test_0005
          * @tc.desc   Test hotspotStateChange api.
@@ -229,7 +224,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0008
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0008
          * @tc.desc   Test enableHotspot api.
@@ -262,7 +256,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0009
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0009
          * @tc.desc   Test disableHotspot api.
@@ -295,7 +288,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0010
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0010
          * @tc.desc   Test getSupportedPowerMode api.
@@ -331,7 +323,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0011
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0011
          * @tc.desc   Test getSupportedPowerMode api.
@@ -377,7 +368,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0012
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0012
          * @tc.desc   Test getPowerMode api.
@@ -413,7 +403,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0013
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0013
          * @tc.desc   Test getPowerMode api.
@@ -459,7 +448,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0014
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0014
          * @tc.desc   Test setPowerMode api.
@@ -492,7 +480,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WifiManagerExt_PowerMode_0100
          * @tc.number SUB_Communication_WifiManagerExt_PowerMode_0100
          * @tc.desc   Test setPowerMode api.

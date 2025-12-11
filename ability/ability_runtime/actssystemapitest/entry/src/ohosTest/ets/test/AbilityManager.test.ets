@@ -24,10 +24,12 @@ export default function abilityManagerTest() {
   describe('abilityManagerTest', () => {
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0100
-     * @tc.name: callback form updateConfiguration system interface interception test
-     * @tc.desc: Test the third-party application call updateConfiguration will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0100
+     * @tc.number System_API_Test_Ability_Manager_0100
+     * @tc.desc   Test the third-party application call updateConfiguration will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0100';
@@ -42,10 +44,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0200
-     * @tc.name: promise form updateConfiguration system interface interception test
-     * @tc.desc: Test the third-party application call updateConfiguration will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0200
+     * @tc.number System_API_Test_Ability_Manager_0200
+     * @tc.desc   Test the third-party application call updateConfiguration will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0200';
@@ -66,10 +70,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0300
-     * @tc.name: callback form getAbilityRunningInfos public interface interception test
-     * @tc.desc: Test the third-party application without permission call getAbilityRunningInfos only get self info
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0300
+     * @tc.number System_API_Test_Ability_Manager_0300
+     * @tc.desc   Test the third-party application without permission call getAbilityRunningInfos only get self info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0300';
@@ -82,10 +88,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0400
-     * @tc.name: promise form getAbilityRunningInfos public interface interception test
-     * @tc.desc: Test the third-party application without permission call getAbilityRunningInfos only get self info
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0400
+     * @tc.number System_API_Test_Ability_Manager_0400
+     * @tc.desc   Test the third-party application without permission call getAbilityRunningInfos only get self info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0400';
@@ -109,10 +117,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0500
-     * @tc.name: callback form getExtensionRunningInfos system interface interception test
-     * @tc.desc: Test the third-party application call getExtensionRunningInfos will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0500
+     * @tc.number System_API_Test_Ability_Manager_0500
+     * @tc.desc   Test the third-party application call getExtensionRunningInfos will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0500';
@@ -125,10 +135,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0600
-     * @tc.name: promise form getExtensionRunningInfos system interface interception test
-     * @tc.desc: Test the third-party application call getExtensionRunningInfos will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0600
+     * @tc.number System_API_Test_Ability_Manager_0600
+     * @tc.desc   Test the third-party application call getExtensionRunningInfos will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0600';
@@ -147,10 +159,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0700
-     * @tc.name: callback form getTopAbility system interface interception test
-     * @tc.desc: Test the third-party application call getTopAbility will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0700
+     * @tc.number System_API_Test_Ability_Manager_0700
+     * @tc.desc   Test the third-party application call getTopAbility will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0700';
@@ -166,10 +180,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0800
-     * @tc.name: promise form getTopAbility system interface interception test
-     * @tc.desc: Test the third-party application call getTopAbility will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0800
+     * @tc.number System_API_Test_Ability_Manager_0800
+     * @tc.desc   Test the third-party application call getTopAbility will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Ability_Manager_0800';
@@ -183,10 +199,12 @@ export default function abilityManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Ability_Manager_0900
-     * @tc.name: abilityState cover
-     * @tc.desc: cover all value of abilityState
-     * @tc.level 3
+     * @tc.name   System_API_Test_Ability_Manager_0900
+     * @tc.number System_API_Test_Ability_Manager_0900
+     * @tc.desc   cover all value of abilityState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Ability_Manager_0900', Level.LEVEL0, (done: Function) => {
       let tag = `System_API_Test_Ability_Manager_0900`;

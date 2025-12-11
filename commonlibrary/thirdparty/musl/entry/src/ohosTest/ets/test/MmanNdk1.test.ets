@@ -25,12 +25,12 @@ export default function mmanNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MMAP_0100
-     * @tc.name       : testMuslMmanMmap001
-     * @tc.desc       : test mmap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMmap001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MMAP_0100
+     * @tc.desc   test mmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMmap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(mman.mmap()).assertEqual(0);

@@ -27,12 +27,12 @@ export default function pwdNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PWD_SETPWENT_0100
-     * @tc.name       : testMuslPwdSetpwent001
-     * @tc.desc       : test setpwent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslPwdSetpwent001
+     * @tc.number SUB_THIRDPARTY_MUSL_PWD_SETPWENT_0100
+     * @tc.desc   test setpwent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPwdSetpwent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = pwd.setpwent();
@@ -41,24 +41,24 @@ export default function pwdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PWD_ENDPWENT_0100
-     * @tc.name       : testMuslPwdEndPWent001
-     * @tc.desc       : test endpwent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslPwdEndPWent001
+     * @tc.number SUB_THIRDPARTY_MUSL_PWD_ENDPWENT_0100
+     * @tc.desc   test endpwent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPwdEndPWent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(pwd.endpwent()).assertEqual(0);
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_PWD_GETPWENT_0100
-     * @tc.name     : testMuslPwdGetpwent001
-     * @tc.desc     : test getpwent
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslPwdGetpwent001
+     * @tc.number SUB_THIRDPARTY_MUSL_PWD_GETPWENT_0100
+     * @tc.desc   test getpwent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPwdGetpwent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = pwd.getpwent();
@@ -67,12 +67,12 @@ export default function pwdNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_PWD_GETPWNAM_0100
-     * @tc.name     : testMuslPwdGetpwnam001
-     * @tc.desc     : test getpwnam
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslPwdGetpwnam001
+     * @tc.number SUB_THIRDPARTY_MUSL_PWD_GETPWNAM_0100
+     * @tc.desc   test getpwnam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPwdGetpwnam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = pwd.getpwnam();
@@ -81,12 +81,12 @@ export default function pwdNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_PWD_GETPWNAM_R_0100
-     * @tc.name     : testMuslPwdGetpwnamR001
-     * @tc.desc     : test getpwnam_r
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslPwdGetpwnamR001
+     * @tc.number SUB_THIRDPARTY_MUSL_PWD_GETPWNAM_R_0100
+     * @tc.desc   test getpwnam_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPwdGetpwnamR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = pwd.getpwnamR();
@@ -96,12 +96,12 @@ export default function pwdNdkTest() {
 
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_PWD_GETPWUID_0100
-     * @tc.name     : testMuslPwdGetpwuid001
-     * @tc.desc     : test getpwuid
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslPwdGetpwuid001
+     * @tc.number SUB_THIRDPARTY_MUSL_PWD_GETPWUID_0100
+     * @tc.desc   test getpwuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPwdGetpwuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = pwd.getpwuid();
@@ -110,12 +110,12 @@ export default function pwdNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_PWD_GETPWUID_R_0100
-     * @tc.name     : testMuslPwdGetpwuidR001
-     * @tc.desc     : test getpwuid_r
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslPwdGetpwuidR001
+     * @tc.number SUB_THIRDPARTY_MUSL_PWD_GETPWUID_R_0100
+     * @tc.desc   test getpwuid_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPwdGetpwuidR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = pwd.getpwuidR();

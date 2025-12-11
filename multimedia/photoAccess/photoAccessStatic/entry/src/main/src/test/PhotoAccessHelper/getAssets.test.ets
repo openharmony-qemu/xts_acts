@@ -160,12 +160,12 @@ export default function getAssetsTest() {
     //image
     //callback
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0000
-      * @tc.name    getAssets_callback_static_000
-      * @tc.desc    getAssets image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getAssets_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0000
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -175,12 +175,12 @@ export default function getAssetsTest() {
         await getAssetsCallbackTest(done, testNum, fetchOps, expectCount);
       });
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0100
-      * @tc.name    getAssets_callback_static_001
-      * @tc.desc    getAssets image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getAssets_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0100
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -190,12 +190,12 @@ export default function getAssetsTest() {
         await getAssetsCallbackTest(done, testNum, fetchOps, expectCount);
       });
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0300
-      * @tc.name    getAssets_callback_static_003
-      * @tc.desc    getAssets image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getAssets_callback_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0300
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAssets_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -204,12 +204,12 @@ export default function getAssetsTest() {
       });
     //promise
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0000
-      * @tc.name    getAssets_promise_static_000
-      * @tc.desc    getAssets image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getAssets_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0000
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -219,12 +219,12 @@ export default function getAssetsTest() {
         await getAssetsPromiseTest(done, testNum, fetchOps, expectCount);
       });
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0100
-      * @tc.name    getAssets_promise_static_001
-      * @tc.desc    getAssets image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getAssets_promise_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0100
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -234,12 +234,12 @@ export default function getAssetsTest() {
         await getAssetsPromiseTest(done, testNum, fetchOps, expectCount);
       });
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0300
-      * @tc.name    getAssets_promise_static_003
-      * @tc.desc    getAssets image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getAssets_promise_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0300
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAssets_promise_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -249,12 +249,12 @@ export default function getAssetsTest() {
     //video
     //callback
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0400
-      * @tc.name    getAssets_callback_static_004
-      * @tc.desc    getAssets video
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getAssets_callback_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_STATIC_0400
+     * @tc.desc   getAssets video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_callback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -265,12 +265,12 @@ export default function getAssetsTest() {
       });
     //promise
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0400
-      * @tc.name    getAssets_promise_static_004
-      * @tc.desc    getAssets video
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getAssets_promise_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_STATIC_0400
+     * @tc.desc   getAssets video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

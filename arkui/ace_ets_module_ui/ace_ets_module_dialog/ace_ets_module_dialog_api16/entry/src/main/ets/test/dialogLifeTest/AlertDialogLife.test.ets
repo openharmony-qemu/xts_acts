@@ -43,6 +43,14 @@ export default function AlertDialogLifeTest() {
     });
 
 
+    /**
+     * @tc.name   AlertDialogLife_0001
+     * @tc.number AlertDialogLife_0001
+     * @tc.desc   AlertDialogLife_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('AlertDialogLife_0001', Level.LEVEL2, async (done: Function) => {
       console.info('AlertDialogLife_0001 START');
       await CommonFunc.sleep(1000);

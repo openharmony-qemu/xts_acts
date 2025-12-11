@@ -25,12 +25,12 @@ export default function fenvNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FENV_FETESTEXCEPT_0100
-     * @tc.name       : testMuslFEnvFeTestExcept001
-     * @tc.desc       : test fetestexcept
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslFEnvFeTestExcept001
+     * @tc.number SUB_THIRDPARTY_MUSL_FENV_FETESTEXCEPT_0100
+     * @tc.desc   test fetestexcept
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFEnvFeTestExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 0;
@@ -40,12 +40,12 @@ export default function fenvNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FENV_FESETROUND_0100
-     * @tc.name       : testMuslFEnvFeSetRound001
-     * @tc.desc       : test fesetround
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslFEnvFeSetRound001
+     * @tc.number SUB_THIRDPARTY_MUSL_FENV_FESETROUND_0100
+     * @tc.desc   test fesetround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFEnvFeSetRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 0x800000;
@@ -55,12 +55,12 @@ export default function fenvNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FENV_FESETEXCEPTFLAG_0100
-     * @tc.name       : testMuslFEnvFeSetExceptFlag001
-     * @tc.desc       : test fesetexceptflag
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslFEnvFeSetExceptFlag001
+     * @tc.number SUB_THIRDPARTY_MUSL_FENV_FESETEXCEPTFLAG_0100
+     * @tc.desc   test fesetexceptflag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFEnvFeSetExceptFlag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -70,12 +70,12 @@ export default function fenvNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FENV_FERAISEEXCEPT_0100
-     * @tc.name       : testMuslFEnvFeRaiseExcept001
-     * @tc.desc       : test feraiseexcept
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslFEnvFeRaiseExcept001
+     * @tc.number SUB_THIRDPARTY_MUSL_FENV_FERAISEEXCEPT_0100
+     * @tc.desc   test feraiseexcept
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFEnvFeRaiseExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -85,12 +85,12 @@ export default function fenvNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FENV_FECLEAREXCEPT_0100
-     * @tc.name       : testMuslFEnvFeClearExcept001
-     * @tc.desc       : test feclearexcept
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslFEnvFeClearExcept001
+     * @tc.number SUB_THIRDPARTY_MUSL_FENV_FECLEAREXCEPT_0100
+     * @tc.desc   test feclearexcept
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFEnvFeClearExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 0;

@@ -26,91 +26,91 @@ export default function radioCheckedTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0100
-     * @tc.name       : testRadioChecked001
-     * @tc.desc       : testing Checked for radio with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioChecked001
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0100
+     * @tc.desc   testing Checked for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioChecked001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioChecked001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0200
-     * @tc.name       : testRadioChecked002
-     * @tc.desc       : testing Checked for radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioChecked002
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0200
+     * @tc.desc   testing Checked for radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioChecked002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioChecked002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0300
-     * @tc.name       : testRadioChecked003
-     * @tc.desc       : testing Checked for radio with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioChecked003
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0300
+     * @tc.desc   testing Checked for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioChecked003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioChecked003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0400
-     * @tc.name       : testRadioChecked004
-     * @tc.desc       : testing Checked for radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioChecked004
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0400
+     * @tc.desc   testing Checked for radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioChecked004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioChecked004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0500
-     * @tc.name       : testRadioChecked005
-     * @tc.desc       : testing Checked for radio with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioChecked005
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0500
+     * @tc.desc   testing Checked for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioChecked005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioChecked005()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0600
-     * @tc.name       : testRadioChecked006
-     * @tc.desc       : testing Checked for radio with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioChecked006
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0600
+     * @tc.desc   testing Checked for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioChecked006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioChecked006()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0700
-     * @tc.name       : testRadioChecked007
-     * @tc.desc       : testing Checked for radio with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioChecked007
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0700
+     * @tc.desc   testing Checked for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioChecked007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioChecked007()).assertEqual(0)

@@ -18,8 +18,12 @@ group("ActsAceEtsModuleScrollTest") {
   if (ace_engine_feature_wearable) {
     deps = [
       "ace_ets_module_arcScroll_api18:ActsAceEtsModuleArcScrollApi18Test",
-      "ace_ets_module_grid:ActsAceEtsModuleGridTest",
-      "ace_ets_module_list:ActsAceEtsModuleListTest",
+      "ace_ets_module_scroll_arcScroll:ActsAceEtsModuleScrollArcScrollTest",
+      "ace_ets_module_scroll_grid:ActsAceEtsModuleScrollGridTest",
+      "ace_ets_module_scroll_grid02:ActsAceEtsModuleScrollGrid02Test",
+      "ace_ets_module_scroll_list:ActsAceEtsModuleScrollListTest",
+      "ace_ets_module_scroll_list02:ActsAceEtsModuleScrollList02Test",
+      "ace_ets_module_scroll_list03:ActsAceEtsModuleScrollList03Test",
       "ace_ets_module_scroll_api11:ActsAceEtsModuleScrollApi11Test",
       "ace_ets_module_scroll_api12:ActsAceEtsModuleScrollApi12Test",
       "ace_ets_module_scroll_api13:ActsAceEtsModuleScrollApi13Test",
@@ -30,15 +34,22 @@ group("ActsAceEtsModuleScrollTest") {
       "ace_ets_module_scroll_api20:ActsAceEtsModuleScrollApi20Test",
       "ace_ets_module_scroll_api21:ActsAceEtsModuleScrollApi21Test",
       "ace_ets_module_scroll_api22:ActsAceEtsModuleScrollApi22Test",
-      "ace_ets_module_scroll01:ActsAceEtsModuleScroll01Test",
+      "ace_ets_module_scroll_refresh:ActsAceEtsModuleScrollRefreshTest",
+      "ace_ets_module_scroll_scroll01:ActsAceEtsModuleScrollScroll01Test",
+      "ace_ets_module_scroll_waterflow:ActsAceEtsModuleScrollWaterFlowTest",
       "ace_ets_module_swiper_api11:ActsAceEtsModuleSwiperApi11Test",
-      "ace_ets_module_waterflow:ActsAceEtsModuleWaterFlowTest",
     ]
   } else {
     deps = [
       "ace_ets_module_arcScroll_api18:ActsAceEtsModuleArcScrollApi18Test",
-      "ace_ets_module_grid:ActsAceEtsModuleGridTest",
-      "ace_ets_module_list:ActsAceEtsModuleListTest",
+      "ace_ets_module_scroll_arcScroll:ActsAceEtsModuleScrollArcScrollTest",
+      "ace_ets_module_scroll_grid:ActsAceEtsModuleScrollGridTest",
+      "ace_ets_module_scroll_grid02:ActsAceEtsModuleScrollGrid02Test",
+      "ace_ets_module_scroll_list:ActsAceEtsModuleScrollListTest",
+      "ace_ets_module_scroll_list02:ActsAceEtsModuleScrollList02Test",
+      "ace_ets_module_scroll_list03:ActsAceEtsModuleScrollList03Test",
+      "ace_ets_module_scroll_nowear_scroll:ActsAceEtsModuleScrollNowearScrollTest",
+      "ace_ets_module_scroll_nowear_waterflow:ActsAceEtsModuleScrollNowearWaterFlowTest",
       "ace_ets_module_scroll_api11:ActsAceEtsModuleScrollApi11Test",
       "ace_ets_module_scroll_api12:ActsAceEtsModuleScrollApi12Test",
       "ace_ets_module_scroll_api13:ActsAceEtsModuleScrollApi13Test",
@@ -58,9 +69,10 @@ group("ActsAceEtsModuleScrollTest") {
       "ace_ets_module_scroll_nowear_api18:ActsAceEtsModuleScrollNowearApi18Test",
       "ace_ets_module_scroll_nowear_api20:ActsAceEtsModuleScrollNowearApi20Test",
       "ace_ets_module_scroll_nowear_api21:ActsAceEtsModuleScrollNowearApi21Test",
-      "ace_ets_module_scroll01:ActsAceEtsModuleScroll01Test",
+      "ace_ets_module_scroll_refresh:ActsAceEtsModuleScrollRefreshTest",
+      "ace_ets_module_scroll_scroll01:ActsAceEtsModuleScrollScroll01Test",
+      "ace_ets_module_scroll_waterflow:ActsAceEtsModuleScrollWaterFlowTest",
       "ace_ets_module_swiper_api11:ActsAceEtsModuleSwiperApi11Test",
-      "ace_ets_module_waterflow:ActsAceEtsModuleWaterFlowTest",
     ]
   }
 }

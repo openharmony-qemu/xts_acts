@@ -50,9 +50,12 @@ export default function column_AlignItems_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnAlignItemsChangeParentHorizontalAlignStart
      * @tc.number SUB_ACE_COLUMN_ALIGNITEMS_CHANGEPARENT_TEST_0100
-     * @tc.name testColumnAlignItemsChangeParentHorizontalAlignStart
-     * @tc.desc The parent component is bound to alignItems property HorizontalAlign.Start. Other parameters are default
+     * @tc.desc   The parent component is bound to alignItems property HorizontalAlign.Start. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnAlignItemsChangeParentHorizontalAlignStart',  Level.LEVEL0, async () => {
       console.info('new testColumnAlignItemsChangeParentHorizontalAlignStart START');
@@ -95,9 +98,12 @@ export default function column_AlignItems_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnAlignItemsChangeParentHorizontalAlignEnd
      * @tc.number SUB_ACE_COLUMN_ALIGNITEMS_CHANGEPARENT_TEST_0200
-     * @tc.name testColumnAlignItemsChangeParentHorizontalAlignEnd
-     * @tc.desc The parent component is bound to alignItems property HorizontalAlign.End. Other parameters are default
+     * @tc.desc   The parent component is bound to alignItems property HorizontalAlign.End. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnAlignItemsChangeParentHorizontalAlignEnd',  Level.LEVEL0, async () => {
       console.info('new testColumnAlignItemsChangeParentHorizontalAlignEnd START');

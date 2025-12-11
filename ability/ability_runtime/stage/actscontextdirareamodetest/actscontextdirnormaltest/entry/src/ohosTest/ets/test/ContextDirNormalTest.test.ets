@@ -98,25 +98,23 @@ export default function ContextDirNormalTest() {
       await sleep(300);
     })
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0100
-     * @tc.name       : Test the third-party application obtains AbilityContext under the same application and module, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0100
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0100';
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' --start');
       try {
-        await abilityDelegator.getCurrentTopAbility().then((ability) => {
-          let context = ability.context;
-          context.area = contextConstant.AreaMode.EL3;
-          areaMode = "el3";
-          let result = checkContextDir(context, 'entry');
-          expect(result).assertTrue();
-          done();
-        })
+        let context = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        context.area = contextConstant.AreaMode.EL3;
+        areaMode = "el3";
+        let result = checkContextDir(context, 'entry');
+        expect(result).assertTrue();
+        done();
       } catch (e) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
         expect().assertFail();
@@ -125,25 +123,23 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0200
-     * @tc.name       : Test the third-party application obtains AbilityContext under the same application and module, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0200
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0200';
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' --start');
       try {
-        await abilityDelegator.getCurrentTopAbility().then((ability) => {
-          let context = ability.context;
-          context.area = contextConstant.AreaMode.EL4;
-          areaMode = "el4";
-          let result = checkContextDir(context, 'entry');
-          expect(result).assertTrue();
-          done();
-        })
+        let context = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        context.area = contextConstant.AreaMode.EL4;
+        areaMode = "el4";
+        let result = checkContextDir(context, 'entry');
+        expect(result).assertTrue();
+        done();
       } catch (e) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
         expect().assertFail();
@@ -152,12 +148,12 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0300
-     * @tc.name       : Test the third-party application obtains AbilityContext under the same application but different modules, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0300
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0300';
@@ -187,12 +183,12 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0400
-     * @tc.name       : Test the third-party application obtains AbilityContext under the same application but different modules, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0400
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityContext_Dir_Normal_0400';
@@ -223,13 +219,13 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0500
-     * @tc.name       : Test the third-party application obtains ModuleContext under the same application but different modules, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */ 
+     * @tc.name   SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0500
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0500';
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' --start');
@@ -249,12 +245,12 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0600
-     * @tc.name       : Test the third-party application obtains ModuleContext under the same application but different modules, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0600
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ModuleContext_Dir_Normal_0600';
@@ -275,12 +271,12 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0700
-     * @tc.name       : Test the third-party application obtains ApplicationContext under the same application, sets the area to EL3.
-     * @tc.desc       : The sandbox path is correct and contains el3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_Dir_0700
+     * @tc.desc   The sandbox path is correct and contains el3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0700';
@@ -302,12 +298,12 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0800
-     * @tc.name       : Test the third-party application obtains ApplicationContext under the same application, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0800
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_ApplicationContext_Dir_Normal_0800';
@@ -329,12 +325,12 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_0900
-     * @tc.name       : Test the third-party application obtains AbilityStageContext under the same application and module, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_0900
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_0900
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_0900', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_0900';
@@ -355,12 +351,12 @@ export default function ContextDirNormalTest() {
     })
 
     /**
-     * @tc.number     : SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_1000
-     * @tc.name       : Test the third-party application obtains AbilityStageContext under the same application and module, sets the area to EL4.
-     * @tc.desc       : The sandbox path is correct and contains el4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_1000
+     * @tc.number SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_1000
+     * @tc.desc   The sandbox path is correct and contains el4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_1000', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityStageContext_Dir_Normal_1000';

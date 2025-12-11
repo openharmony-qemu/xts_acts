@@ -41,6 +41,14 @@ export default function APITextBackgroundStyleJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   APITextBackgroundStyleJsunit_0100
+     * @tc.number APITextBackgroundStyleJsunit_0100
+     * @tc.desc   APITextBackgroundStyleJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APITextBackgroundStyleJsunit_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('APITextBackgroundStyleJsunit_0100 START');

@@ -28,12 +28,12 @@ export default function windowErrCode1300002_1() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
     })
     /**
-     * @tc.number     : testMoveWindowToAsyncPromiseErrCode1300002_0100
-     * @tc.name       : testMoveWindowToAsyncPromiseErrCode1300002_0100
-     * @tc.desc       : testMoveWindowToAsyncPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testMoveWindowToAsyncPromiseErrCode1300002_0100
+     * @tc.number testMoveWindowToAsyncPromiseErrCode1300002_0100
+     * @tc.desc   testMoveWindowToAsyncPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToAsyncPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testMoveWindowToAsyncPromiseErrCode1300002_0100";
@@ -69,12 +69,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testMoveWindowToGlobalPromiseErrCode1300002_0100
-     * @tc.name       : testMoveWindowToGlobalPromiseErrCode1300002_0100
-     * @tc.desc       : testMoveWindowToGlobalPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testMoveWindowToGlobalPromiseErrCode1300002_0100
+     * @tc.number testMoveWindowToGlobalPromiseErrCode1300002_0100
+     * @tc.desc   testMoveWindowToGlobalPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToGlobalPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testMoveWindowToGlobalPromiseErrCode1300002_0100";
@@ -110,12 +110,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testMoveWindowToGlobalPromiseErrCode1300002_0200
-     * @tc.name       : testMoveWindowToGlobalPromiseErrCode1300002_0200
-     * @tc.desc       : testMoveWindowToGlobalPromiseErrCode1300002_0200
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testMoveWindowToGlobalPromiseErrCode1300002_0200
+     * @tc.number testMoveWindowToGlobalPromiseErrCode1300002_0200
+     * @tc.desc   testMoveWindowToGlobalPromiseErrCode1300002_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToGlobalPromiseErrCode1300002_0200', Level.LEVEL3, async (done: Function) => {
       let caseName = "testMoveWindowToGlobalPromiseErrCode1300002_0200";
@@ -154,12 +154,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testGetGlobalRectErrCode1300002_0100
-     * @tc.name       : testGetGlobalRectErrCode1300002_0100
-     * @tc.desc       : testGetGlobalRectErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetGlobalRectErrCode1300002_0100
+     * @tc.number testGetGlobalRectErrCode1300002_0100
+     * @tc.desc   testGetGlobalRectErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetGlobalRectErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testGetGlobalRectErrCode1300002_0100";
@@ -191,12 +191,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testGetWindowDensityInfoErrCode1300002_0100
-     * @tc.name       : testGetWindowDensityInfoErrCode1300002_0100
-     * @tc.desc       : testGetWindowDensityInfoErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetWindowDensityInfoErrCode1300002_0100
+     * @tc.number testGetWindowDensityInfoErrCode1300002_0100
+     * @tc.desc   testGetWindowDensityInfoErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowDensityInfoErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testGetWindowDensityInfoErrCode1300002_0100";
@@ -228,12 +228,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
-     * @tc.name       : testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
-     * @tc.desc       : testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
+     * @tc.number testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
+     * @tc.desc   testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100";
@@ -273,12 +273,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testGetWindowSystemBarPropertiesErrCode1300002_0100
-     * @tc.name       : testGetWindowSystemBarPropertiesErrCode1300002_0100
-     * @tc.desc       : testGetWindowSystemBarPropertiesErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetWindowSystemBarPropertiesErrCode1300002_0100
+     * @tc.number testGetWindowSystemBarPropertiesErrCode1300002_0100
+     * @tc.desc   testGetWindowSystemBarPropertiesErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowSystemBarPropertiesErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testGetWindowSystemBarPropertiesErrCode1300002_0100";
@@ -310,12 +310,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testIsGestureBackEnabledErrCode1300002_0100
-     * @tc.name       : testIsGestureBackEnabledErrCode1300002_0100
-     * @tc.desc       : testIsGestureBackEnabledErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testIsGestureBackEnabledErrCode1300002_0100
+     * @tc.number testIsGestureBackEnabledErrCode1300002_0100
+     * @tc.desc   testIsGestureBackEnabledErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsGestureBackEnabledErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testIsGestureBackEnabledErrCode1300002_0100";
@@ -347,12 +347,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testLoadContentByNameCallbackErrCode1300002_0100
-     * @tc.name       : testLoadContentByNameCallbackErrCode1300002_0100
-     * @tc.desc       : testLoadContentByNameCallbackErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testLoadContentByNameCallbackErrCode1300002_0100
+     * @tc.number testLoadContentByNameCallbackErrCode1300002_0100
+     * @tc.desc   testLoadContentByNameCallbackErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContentByNameCallbackErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testLoadContentByNameCallbackErrCode1300002_0100";
@@ -393,12 +393,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testLoadContentByNamePromiseErrCode1300002_0100
-     * @tc.name       : testLoadContentByNamePromiseErrCode1300002_0100
-     * @tc.desc       : testLoadContentByNamePromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testLoadContentByNamePromiseErrCode1300002_0100
+     * @tc.number testLoadContentByNamePromiseErrCode1300002_0100
+     * @tc.desc   testLoadContentByNamePromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContentByNamePromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testLoadContentByNamePromiseErrCode1300002_0100";
@@ -435,12 +435,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOnDisplayIdChangeErrCode1300002_0100
-     * @tc.name       : testOnDisplayIdChangeErrCode1300002_0100
-     * @tc.desc       : testOnDisplayIdChangeErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnDisplayIdChangeErrCode1300002_0100
+     * @tc.number testOnDisplayIdChangeErrCode1300002_0100
+     * @tc.desc   testOnDisplayIdChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnDisplayIdChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnDisplayIdChangeErrCode1300002_0100";
@@ -473,12 +473,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOffDisplayIdChangeErrCode1300002_0100
-     * @tc.name       : testOffDisplayIdChangeErrCode1300002_0100
-     * @tc.desc       : testOffDisplayIdChangeErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffDisplayIdChangeErrCode1300002_0100
+     * @tc.number testOffDisplayIdChangeErrCode1300002_0100
+     * @tc.desc   testOffDisplayIdChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffDisplayIdChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffDisplayIdChangeErrCode1300002_0100";
@@ -511,12 +511,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOnWindowVisibilityChangeErrCode1300002_0100
-     * @tc.name       : testOnWindowVisibilityChangeErrCode1300002_0100
-     * @tc.desc       : testOnWindowVisibilityChangeErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnWindowVisibilityChangeErrCode1300002_0100
+     * @tc.number testOnWindowVisibilityChangeErrCode1300002_0100
+     * @tc.desc   testOnWindowVisibilityChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowVisibilityChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnWindowVisibilityChangeErrCode1300002_0100";
@@ -549,12 +549,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOnSystemDensityChangeErrCode1300002_0100
-     * @tc.name       : testOnSystemDensityChangeErrCode1300002_0100
-     * @tc.desc       : testOnSystemDensityChangeErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnSystemDensityChangeErrCode1300002_0100
+     * @tc.number testOnSystemDensityChangeErrCode1300002_0100
+     * @tc.desc   testOnSystemDensityChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnSystemDensityChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnSystemDensityChangeErrCode1300002_0100";
@@ -587,12 +587,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOffSystemDensityChangeErrCode1300002_0100
-     * @tc.name       : testOffSystemDensityChangeErrCode1300002_0100
-     * @tc.desc       : testOffSystemDensityChangeErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffSystemDensityChangeErrCode1300002_0100
+     * @tc.number testOffSystemDensityChangeErrCode1300002_0100
+     * @tc.desc   testOffSystemDensityChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffSystemDensityChangeErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffSystemDensityChangeErrCode1300002_0100";
@@ -625,12 +625,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOnNoInteractionDetectedErrCode1300002_0100
-     * @tc.name       : testOnNoInteractionDetectedErrCode1300002_0100
-     * @tc.desc       : testOnNoInteractionDetectedErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnNoInteractionDetectedErrCode1300002_0100
+     * @tc.number testOnNoInteractionDetectedErrCode1300002_0100
+     * @tc.desc   testOnNoInteractionDetectedErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnNoInteractionDetectedErrCode1300002_0100";
@@ -663,12 +663,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOffNoInteractionDetectedErrCode1300002_0100
-     * @tc.name       : testOffNoInteractionDetectedErrCode1300002_0100
-     * @tc.desc       : testOffNoInteractionDetectedErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffNoInteractionDetectedErrCode1300002_0100
+     * @tc.number testOffNoInteractionDetectedErrCode1300002_0100
+     * @tc.desc   testOffNoInteractionDetectedErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffNoInteractionDetectedErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffNoInteractionDetectedErrCode1300002_0100";
@@ -701,12 +701,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOnSubWindowCloseErrCode1300002_0100
-     * @tc.name       : testOnSubWindowCloseErrCode1300002_0100
-     * @tc.desc       : testOnSubWindowCloseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnSubWindowCloseErrCode1300002_0100
+     * @tc.number testOnSubWindowCloseErrCode1300002_0100
+     * @tc.desc   testOnSubWindowCloseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnSubWindowCloseErrCode1300002_0100";
@@ -739,12 +739,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testOffSubWindowCloseErrCode1300002_0100
-     * @tc.name       : testOffSubWindowCloseErrCode1300002_0100
-     * @tc.desc       : testOffSubWindowCloseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffSubWindowCloseErrCode1300002_0100
+     * @tc.number testOffSubWindowCloseErrCode1300002_0100
+     * @tc.desc   testOffSubWindowCloseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffSubWindowCloseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffSubWindowCloseErrCode1300002_0100";
@@ -777,12 +777,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testSetWindowTopmostPromiseErrCode1300002_0100
-     * @tc.name       : testSetWindowTopmostPromiseErrCode1300002_0100
-     * @tc.desc       : testSetWindowTopmostPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowTopmostPromiseErrCode1300002_0100
+     * @tc.number testSetWindowTopmostPromiseErrCode1300002_0100
+     * @tc.desc   testSetWindowTopmostPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTopmostPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowTopmostPromiseErrCode1300002_0100";
@@ -818,12 +818,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testSetAspectRatioCallbackErrCode1300002_0100
-     * @tc.name       : testSetAspectRatioCallbackErrCode1300002_0100
-     * @tc.desc       : testSetAspectRatioCallbackErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetAspectRatioCallbackErrCode1300002_0100
+     * @tc.number testSetAspectRatioCallbackErrCode1300002_0100
+     * @tc.desc   testSetAspectRatioCallbackErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatioCallbackErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetAspectRatioCallbackErrCode1300002_0100";
@@ -863,12 +863,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testSetAspectRatioPromiseErrCode1300002_0100
-     * @tc.name       : testSetAspectRatioPromiseErrCode1300002_0100
-     * @tc.desc       : testSetAspectRatioPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetAspectRatioPromiseErrCode1300002_0100
+     * @tc.number testSetAspectRatioPromiseErrCode1300002_0100
+     * @tc.desc   testSetAspectRatioPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatioPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetAspectRatioPromiseErrCode1300002_0100";
@@ -904,12 +904,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testResetAspectRatioCallbackErrCode1300002_0100
-     * @tc.name       : testResetAspectRatioCallbackErrCode1300002_0100
-     * @tc.desc       : testResetAspectRatioCallbackErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testResetAspectRatioCallbackErrCode1300002_0100
+     * @tc.number testResetAspectRatioCallbackErrCode1300002_0100
+     * @tc.desc   testResetAspectRatioCallbackErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetAspectRatioCallbackErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testResetAspectRatioCallbackErrCode1300002_0100";
@@ -949,12 +949,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testResetAspectRatioPromiseErrCode1300002_0100
-     * @tc.name       : testResetAspectRatioPromiseErrCode1300002_0100
-     * @tc.desc       : testResetAspectRatioPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testResetAspectRatioPromiseErrCode1300002_0100
+     * @tc.number testResetAspectRatioPromiseErrCode1300002_0100
+     * @tc.desc   testResetAspectRatioPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetAspectRatioPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testResetAspectRatioPromiseErrCode1300002_0100";
@@ -990,12 +990,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testMinimizeCallbackErrCode1300002_0100
-     * @tc.name       : testMinimizeCallbackErrCode1300002_0100
-     * @tc.desc       : testMinimizeCallbackErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testMinimizeCallbackErrCode1300002_0100
+     * @tc.number testMinimizeCallbackErrCode1300002_0100
+     * @tc.desc   testMinimizeCallbackErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMinimizeCallbackErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testMinimizeCallbackErrCode1300002_0100";
@@ -1035,12 +1035,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testMinimizePromiseErrCode1300002_0100
-     * @tc.name       : testMinimizePromiseErrCode1300002_0100
-     * @tc.desc       : testMinimizePromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testMinimizePromiseErrCode1300002_0100
+     * @tc.number testMinimizePromiseErrCode1300002_0100
+     * @tc.desc   testMinimizePromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMinimizePromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testMinimizePromiseErrCode1300002_0100";
@@ -1076,12 +1076,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testMaximizePromiseErrCode1300002_0100
-     * @tc.name       : testMaximizePromiseErrCode1300002_0100
-     * @tc.desc       : testMaximizePromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testMaximizePromiseErrCode1300002_0100
+     * @tc.number testMaximizePromiseErrCode1300002_0100
+     * @tc.desc   testMaximizePromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMaximizePromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testMaximizePromiseErrCode1300002_0100";
@@ -1117,12 +1117,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testSetResizeByDragEnabledCallbackErrCode1300002_0100
-     * @tc.name       : testSetResizeByDragEnabledCallbackErrCode1300002_0100
-     * @tc.desc       : testSetResizeByDragEnabledCallbackErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetResizeByDragEnabledCallbackErrCode1300002_0100
+     * @tc.number testSetResizeByDragEnabledCallbackErrCode1300002_0100
+     * @tc.desc   testSetResizeByDragEnabledCallbackErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetResizeByDragEnabledCallbackErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetResizeByDragEnabledCallbackErrCode1300002_0100";
@@ -1162,12 +1162,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testSetResizeByDragEnabledPromiseErrCode1300002_0100
-     * @tc.name       : testSetResizeByDragEnabledPromiseErrCode1300002_0100
-     * @tc.desc       : testSetResizeByDragEnabledPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetResizeByDragEnabledPromiseErrCode1300002_0100
+     * @tc.number testSetResizeByDragEnabledPromiseErrCode1300002_0100
+     * @tc.desc   testSetResizeByDragEnabledPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetResizeByDragEnabledPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetResizeByDragEnabledPromiseErrCode1300002_0100";
@@ -1203,12 +1203,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testGetWindowLimitsErrCode1300002_0100
-     * @tc.name       : testGetWindowLimitsErrCode1300002_0100
-     * @tc.desc       : testGetWindowLimitsErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetWindowLimitsErrCode1300002_0100
+     * @tc.number testGetWindowLimitsErrCode1300002_0100
+     * @tc.desc   testGetWindowLimitsErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowLimitsErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testGetWindowLimitsErrCode1300002_0100";
@@ -1240,12 +1240,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testSetWindowLimitsPromiseErrCode1300002_0100
-     * @tc.name       : testSetWindowLimitsPromiseErrCode1300002_0100
-     * @tc.desc       : testSetWindowLimitsPromiseErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowLimitsPromiseErrCode1300002_0100
+     * @tc.number testSetWindowLimitsPromiseErrCode1300002_0100
+     * @tc.desc   testSetWindowLimitsPromiseErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimitsPromiseErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowLimitsPromiseErrCode1300002_0100";
@@ -1287,12 +1287,12 @@ export default function windowErrCode1300002_1() {
       }
     })
     /**
-     * @tc.number     : testKeepKeyboardOnFocusErrCode1300002_0100
-     * @tc.name       : testKeepKeyboardOnFocusErrCode1300002_0100
-     * @tc.desc       : testKeepKeyboardOnFocusErrCode1300002_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testKeepKeyboardOnFocusErrCode1300002_0100
+     * @tc.number testKeepKeyboardOnFocusErrCode1300002_0100
+     * @tc.desc   testKeepKeyboardOnFocusErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testKeepKeyboardOnFocusErrCode1300002_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testKeepKeyboardOnFocusErrCode1300002_0100";

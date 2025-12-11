@@ -47,10 +47,13 @@ export default function uitestComponentTest() {
     })
 
 
-    /*
-     * @tc.number: UiTest_API16_018
-     * @tc.name: testScrollSearchHorizontal_static
-     * @tc.desc: scroll horizontally on this UiComponent to find matched UiComponent.
+    /**
+     * @tc.name   testScrollSearchHorizontal_static
+     * @tc.number UiTest_API16_018
+     * @tc.desc   scroll horizontally on this UiComponent to find matched UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testScrollSearchHorizontal_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testScrollSearchHorizontal_static start`);
@@ -104,11 +107,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0014
-    * @tc.name: testDragTo_static
-    * @tc.desc: drag this UiComponent to the bounds rect of target UiComponent.
-    */
+    /**
+     * @tc.name   testDragTo_static
+     * @tc.number uitestComponentTest_0014
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDragTo_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDragTo_static start`);
       try {

@@ -25,12 +25,12 @@ export default function auxv1NdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AUXV_GETAUXVAL_0100
-     * @tc.name       : testMuslAuxvGetauxval001
-     * @tc.desc       : test getauxval
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslAuxvGetauxval001
+     * @tc.number SUB_THIRDPARTY_MUSL_AUXV_GETAUXVAL_0100
+     * @tc.desc   test getauxval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslAuxvGetauxval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = auxv.getauxval(0);
@@ -39,12 +39,12 @@ export default function auxv1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_AUXV_GETAUXVAL_0200
-     * @tc.name       : testMuslAuxvGetauxval002
-     * @tc.desc       : test getauxval
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslAuxvGetauxval002
+     * @tc.number SUB_THIRDPARTY_MUSL_AUXV_GETAUXVAL_0200
+     * @tc.desc   test getauxval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslAuxvGetauxval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = auxv.getauxval(-1);

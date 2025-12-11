@@ -21,12 +21,12 @@ export default function customConfigTest() {
       console.log('*************start customConfigTest*************');
 
       /**
-       * @tc.number    : testGetChannelID_0010
-       * @tc.name      : Get ChannelID with value
-       * @tc.desc      : test GetChannelID
-       * @tc.size      : MEDIUM
-       * @tc.type      : Function
-       * @tc.level     : Level 0
+       * @tc.name   testGetChannelID_0010
+       * @tc.number testGetChannelID_0010
+       * @tc.desc   test GetChannelID
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testGetChannelID_0010', Level.LEVEL0, () => {
           let paramValue: string = "Test-Hw";

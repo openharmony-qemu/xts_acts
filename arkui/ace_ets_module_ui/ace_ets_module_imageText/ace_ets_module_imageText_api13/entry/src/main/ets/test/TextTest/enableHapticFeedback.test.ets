@@ -43,12 +43,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0010
-     * @tc.name      EnableHapticFeedbackTest_0010
-     * @tc.desc      get Text enableHapticFeedback: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0010
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0010
+     * @tc.desc   get Text enableHapticFeedback: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0010] START');
@@ -61,12 +61,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0020
-     * @tc.name      EnableHapticFeedbackTest_0020
-     * @tc.desc      set Text enableHapticFeedback: true
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0020
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0020
+     * @tc.desc   set Text enableHapticFeedback: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0020] START');
@@ -79,12 +79,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0030
-     * @tc.name      EnableHapticFeedbackTest_0030
-     * @tc.desc      set Text enableHapticFeedback: false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0030
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0030
+     * @tc.desc   set Text enableHapticFeedback: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0030] START');
@@ -103,12 +103,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0040
-     * @tc.name      EnableHapticFeedbackTest_0040
-     * @tc.desc      set Text enableHapticFeedback: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0040
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0040
+     * @tc.desc   set Text enableHapticFeedback: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0040] START');
@@ -127,12 +127,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0050
-     * @tc.name      EnableHapticFeedbackTest_0050
-     * @tc.desc      get TextInput enableHapticFeedback: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0050
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0050
+     * @tc.desc   get TextInput enableHapticFeedback: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0050] START');
@@ -145,12 +145,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0060
-     * @tc.name      EnableHapticFeedbackTest_0060
-     * @tc.desc      set TextInput enableHapticFeedback: true
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0060
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0060
+     * @tc.desc   set TextInput enableHapticFeedback: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0060] START');
@@ -163,12 +163,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0070
-     * @tc.name      EnableHapticFeedbackTest_0030
-     * @tc.desc      set TextInput enableHapticFeedback: false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0070
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0070
+     * @tc.desc   set TextInput enableHapticFeedback: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0070', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0070] START');
@@ -187,12 +187,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0080
-     * @tc.name      EnableHapticFeedbackTest_0080
-     * @tc.desc      set TextInput enableHapticFeedback: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0080
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0080
+     * @tc.desc   set TextInput enableHapticFeedback: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0080', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0080] START');
@@ -211,12 +211,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0090
-     * @tc.name      EnableHapticFeedbackTest_0090
-     * @tc.desc      get TextArea enableHapticFeedback: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0090
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0090
+     * @tc.desc   get TextArea enableHapticFeedback: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0090', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0090] START');
@@ -229,12 +229,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0100
-     * @tc.name      EnableHapticFeedbackTest_0100
-     * @tc.desc      set TextArea enableHapticFeedback: true
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0100
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0100
+     * @tc.desc   set TextArea enableHapticFeedback: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0100] START');
@@ -247,12 +247,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0110
-     * @tc.name      EnableHapticFeedbackTest_0110
-     * @tc.desc      set TextArea enableHapticFeedback: false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0110
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0110
+     * @tc.desc   set TextArea enableHapticFeedback: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0110', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0110] START');
@@ -271,12 +271,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0120
-     * @tc.name      EnableHapticFeedbackTest_0120
-     * @tc.desc      set TextArea enableHapticFeedback: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0120
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0120
+     * @tc.desc   set TextArea enableHapticFeedback: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0120', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0120] START');
@@ -295,12 +295,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0130
-     * @tc.name      EnableHapticFeedbackTest_0130
-     * @tc.desc      get Search enableHapticFeedback: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0130
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0130
+     * @tc.desc   get Search enableHapticFeedback: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0130', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0130] START');
@@ -313,12 +313,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0140
-     * @tc.name      EnableHapticFeedbackTest_0140
-     * @tc.desc      set Search enableHapticFeedback: true
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0140
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0140
+     * @tc.desc   set Search enableHapticFeedback: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0140', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0140] START');
@@ -331,12 +331,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0150
-     * @tc.name      EnableHapticFeedbackTest_0150
-     * @tc.desc      set Search enableHapticFeedback: false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0150
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0150
+     * @tc.desc   set Search enableHapticFeedback: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0150', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0150] START');
@@ -355,12 +355,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0160
-     * @tc.name      EnableHapticFeedbackTest_0160
-     * @tc.desc      set Search enableHapticFeedback: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0160
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0160
+     * @tc.desc   set Search enableHapticFeedback: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0160', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0160] START');
@@ -379,12 +379,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0170
-     * @tc.name      EnableHapticFeedbackTest_0170
-     * @tc.desc      get RichEditor enableHapticFeedback: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0170
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0170
+     * @tc.desc   get RichEditor enableHapticFeedback: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0170', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0170] START');
@@ -397,12 +397,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0180
-     * @tc.name      EnableHapticFeedbackTest_0180
-     * @tc.desc      set RichEditor enableHapticFeedback: true
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0180
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0180
+     * @tc.desc   set RichEditor enableHapticFeedback: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0180', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0180] START');
@@ -415,12 +415,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0190
-     * @tc.name      EnableHapticFeedbackTest_0190
-     * @tc.desc      set RichEditor enableHapticFeedback: false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0190
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0190
+     * @tc.desc   set RichEditor enableHapticFeedback: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0190', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0190] START');
@@ -439,12 +439,12 @@ export default function EnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_EnableHapticFeedbackTest_0200
-     * @tc.name      EnableHapticFeedbackTest_0200
-     * @tc.desc      set RichEditor enableHapticFeedback: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   EnableHapticFeedbackTest_0200
+     * @tc.number SUB_ACE_EnableHapticFeedbackTest_0200
+     * @tc.desc   set RichEditor enableHapticFeedback: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableHapticFeedbackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[EnableHapticFeedbackTest_0200] START');

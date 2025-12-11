@@ -25,12 +25,12 @@ export default function fenvNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FENV_FEGETEXCEPTFLAG_0100
-     * @tc.name       : testMuslFEnvFeGetExceptFlag001
-     * @tc.desc       : test fegetexceptflag
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslFEnvFeGetExceptFlag001
+     * @tc.number SUB_THIRDPARTY_MUSL_FENV_FEGETEXCEPTFLAG_0100
+     * @tc.desc   test fegetexceptflag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFEnvFeGetExceptFlag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(fenvndk.fegetexceptflag()).assertEqual(0);

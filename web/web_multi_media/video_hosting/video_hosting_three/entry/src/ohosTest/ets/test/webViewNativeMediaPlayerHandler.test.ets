@@ -55,14 +55,14 @@ export default function webViewNativeMediaPlayerHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handlePlaybackRateChanged_API_0001
-    * @tc.name       : testWebViewNativeMediaPlayerHandlePlaybackRateChanged
-    * @tc.desc       : test handlePlaybackRateChanged
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandlePlaybackRateChanged
+     * @tc.number SUB_ACE_WEB_handlePlaybackRateChanged_API_0001
+     * @tc.desc   test handlePlaybackRateChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebViewNativeMediaPlayerHandlePlaybackRateChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let emitKey = "emitWebViewNativeMediaPlayerHandlePlaybackRateChanged";
@@ -74,14 +74,14 @@ export default function webViewNativeMediaPlayerHandler() {
         sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
       })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleTimeUpdate_API_0002
-    * @tc.name       : testWebViewNativeMediaPlayerHandleTimeUpdate
-    * @tc.level      : Level 1
-    * @tc.desc       : test handleTimeUpdate
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    **/
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleTimeUpdate
+     * @tc.number SUB_ACE_WEB_handleTimeUpdate_API_0002
+     * @tc.desc   test handleTimeUpdate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleTimeUpdate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleTimeUpdate";
       Utils.emitEvent(emitKey, 300200)
@@ -92,14 +92,14 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleBufferedEndTimeChanged_API_0003
-    * @tc.name       : testWebViewNativeMediaPlayerHandleBufferedEndTimeChanged
-    * @tc.desc       : test handleBufferedEndTimeChanged
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleBufferedEndTimeChanged
+     * @tc.number SUB_ACE_WEB_handleBufferedEndTimeChanged_API_0003
+     * @tc.desc   test handleBufferedEndTimeChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleBufferedEndTimeChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleBufferedEndTimeChanged";
       Utils.emitEvent(emitKey, 300200)
@@ -110,14 +110,14 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleDurationChanged_API_0004
-    * @tc.name       : testWebViewNativeMediaPlayerHandleDurationChanged
-    * @tc.desc       : test handleDurationChanged
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleDurationChanged
+     * @tc.number SUB_ACE_WEB_handleDurationChanged_API_0004
+     * @tc.desc   test handleDurationChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleDurationChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleDurationChanged";
       Utils.emitEvent(emitKey, 300200)
@@ -128,14 +128,14 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleVideoSizeChanged_API_0005
-    * @tc.name       : testWebViewNativeMediaPlayerHandleVideoSizeChanged
-    * @tc.desc       : test handleVideoSizeChanged
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleVideoSizeChanged
+     * @tc.number SUB_ACE_WEB_handleVideoSizeChanged_API_0005
+     * @tc.desc   test handleVideoSizeChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleVideoSizeChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleVideoSizeChanged";
       Utils.emitEvent(emitKey, 300200)
@@ -146,14 +146,14 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleSeeking_API_0006
-    * @tc.name       : testWebViewNativeMediaPlayerHandleSeeking
-    * @tc.desc       : test handleSeeking
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleSeeking
+     * @tc.number SUB_ACE_WEB_handleSeeking_API_0006
+     * @tc.desc   test handleSeeking
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleSeeking', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleSeeking";
       Utils.emitEvent(emitKey, 300200)
@@ -164,14 +164,14 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleSeekFinished_API_0007
-    * @tc.name       : testWebViewNativeMediaPlayerHandleSeekFinished
-    * @tc.desc       : test handleSeekFinished
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleSeekFinished
+     * @tc.number SUB_ACE_WEB_handleSeekFinished_API_0007
+     * @tc.desc   test handleSeekFinished
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleSeekFinished', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleSeekFinished";
       Utils.emitEvent(emitKey, 300200)
@@ -182,14 +182,14 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleVolumeChanged_API_0008
-    * @tc.name       : testWebViewNativeMediaPlayerHandleVolumeChanged
-    * @tc.desc       : test handleVolumeChanged
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleVolumeChanged
+     * @tc.number SUB_ACE_WEB_handleVolumeChanged_API_0008
+     * @tc.desc   test handleVolumeChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleVolumeChanged', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleVolumeChanged";
       Utils.emitEvent(emitKey, 300200)
@@ -201,14 +201,14 @@ export default function webViewNativeMediaPlayerHandler() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_handleEnded_API_0009
-    * @tc.name       : testWebViewNativeMediaPlayerHandleEnded
-    * @tc.desc       : test handleEnded
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleEnded
+     * @tc.number SUB_ACE_WEB_handleEnded_API_0009
+     * @tc.desc   test handleEnded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerHandleEnded', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleEnded";
       Utils.emitEvent(emitKey, 300200)
@@ -219,13 +219,13 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_handleError_API_0009
-     * @tc.name       : testWebViewNativeMediaPlayerHandleError
-     * @tc.desc       : test handleError
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerHandleError
+     * @tc.number SUB_ACE_WEB_handleError_API_0009
+     * @tc.desc   test handleError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerHandleError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerHandleError";
@@ -238,13 +238,13 @@ export default function webViewNativeMediaPlayerHandler() {
     })
 
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_seek_API_0002
-     * @tc.name       : testWebViewNativeMediaSetSeekTwo
-     * @tc.desc       : test seek
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaSetSeekTwo
+     * @tc.number SUB_ACE_WEB_seek_API_0002
+     * @tc.desc   test seek
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaSetSeekTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeVideoSetSeek";
@@ -257,13 +257,13 @@ export default function webViewNativeMediaPlayerHandler() {
     })
 
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_setVolume_API_0002
-     * @tc.name       : testWebViewNativeMediaSetVolumeTwo
-     * @tc.desc       : test setVolume
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaSetVolumeTwo
+     * @tc.number SUB_ACE_WEB_setVolume_API_0002
+     * @tc.desc   test setVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaSetVolumeTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaSetVolume";
@@ -275,13 +275,13 @@ export default function webViewNativeMediaPlayerHandler() {
       sendEventByKey('webViewNativeMediaPlayerHandler', 10, '');
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_mediaInfo_API_0002
-     * @tc.name       : testWebViewNativeMediaMediaInfoTwo
-     * @tc.desc       : test embedID,mediaType,mediaSrcList,surfaceInfo,controlsShown,controlList,posterUrl,preload,attributes
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaMediaInfoTwo
+     * @tc.number SUB_ACE_WEB_mediaInfo_API_0002
+     * @tc.desc   test embedID,mediaType,mediaSrcList,surfaceInfo,controlsShown,controlList,posterUrl,preload,attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaMediaInfoTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey="emitWebViewNativeMediaMediaInfo"

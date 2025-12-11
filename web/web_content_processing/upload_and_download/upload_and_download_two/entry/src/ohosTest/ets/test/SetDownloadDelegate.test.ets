@@ -62,12 +62,12 @@ export default function SetDownloadDelegate() {
     })
 
     /**
+     * @tc.name   testWebView_onDownloadFinish1003
      * @tc.number SUB_ACE_WEB_onDownloadFinish_1003
-     * @tc.name testWebView_onDownloadFinish1003
-     * @tc.desc test onDownloadFinish
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_onDownloadFinish1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       router.pushUrl({
@@ -83,12 +83,12 @@ export default function SetDownloadDelegate() {
     })
 
     /**
+     * @tc.name   testWebView_onDownloadFinish1004
      * @tc.number SUB_ACE_WEB_onDownloadFinish_1004
-     * @tc.name testWebView_onDownloadFinish1004
-     * @tc.desc test onDownloadFinish
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_onDownloadFinish1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -104,12 +104,12 @@ export default function SetDownloadDelegate() {
     })
 
     /**
+     * @tc.name   testWebView_onDownloadFinish1005
      * @tc.number SUB_ACE_WEB_onDownloadFinish_1005
-     * @tc.name testWebView_onDownloadFinish1005
-     * @tc.desc test onDownloadFinish
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_onDownloadFinish1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({

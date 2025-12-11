@@ -62,12 +62,12 @@ export default function MediaAssetManagerCancelRequestTest() {
 
 
     /**
-     * @tc.number      cancel_Request_abnormal_promise_0001
-     * @tc.name        cancel_Request_abnormal_promise_0001
-     * @tc.desc        cancelRequest
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   cancel_Request_abnormal_promise_0001
+     * @tc.number cancel_Request_abnormal_promise_0001
+     * @tc.desc   cancelRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_Request_abnormal_promise_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_Request_abnormal_promise_0001';
@@ -80,12 +80,12 @@ export default function MediaAssetManagerCancelRequestTest() {
     })
 
     /**
-     * @tc.number      cancel_Request_abnormal_promise_0002
-     * @tc.name        cancel_Request_abnormal_promise_0002
-     * @tc.desc        cancelRequest
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   cancel_Request_abnormal_promise_0002
+     * @tc.number cancel_Request_abnormal_promise_0002
+     * @tc.desc   cancelRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_Request_abnormal_promise_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_Request_abnormal_promise_0002';
@@ -98,12 +98,12 @@ export default function MediaAssetManagerCancelRequestTest() {
     })
 
     /**
-     * @tc.number      cancel_Request_abnormal_promise_0004
-     * @tc.name        cancel_Request_abnormal_promise_0004
-     * @tc.desc        cancelRequest
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   cancel_Request_abnormal_promise_0004
+     * @tc.number cancel_Request_abnormal_promise_0004
+     * @tc.desc   cancelRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_Request_abnormal_promise_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_Request_abnormal_promise_0004';
@@ -116,12 +116,12 @@ export default function MediaAssetManagerCancelRequestTest() {
     })
 
     /**
-     * @tc.number      cancel_Request_abnormal_promise_0005
-     * @tc.name        cancel_Request_abnormal_promise_0005
-     * @tc.desc        cancelRequest
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   cancel_Request_abnormal_promise_0005
+     * @tc.number cancel_Request_abnormal_promise_0005
+     * @tc.desc   cancelRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_Request_abnormal_promise_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_Request_abnormal_promise_0005';
@@ -134,12 +134,12 @@ export default function MediaAssetManagerCancelRequestTest() {
     })
 
     /**
-     * @tc.number      cancel_Request_abnormal_promise_0006
-     * @tc.name        cancel_Request_abnormal_promise_0006
-     * @tc.desc        cancelRequest
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   cancel_Request_abnormal_promise_0006
+     * @tc.number cancel_Request_abnormal_promise_0006
+     * @tc.desc   cancelRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_Request_abnormal_promise_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_Request_abnormal_promise_0006';

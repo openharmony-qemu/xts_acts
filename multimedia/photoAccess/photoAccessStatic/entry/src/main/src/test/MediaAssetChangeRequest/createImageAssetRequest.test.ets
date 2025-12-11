@@ -27,12 +27,12 @@ export default function createImageAssetRequest() {
   describe("createImageAssetRequest", (): void => {
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CREATE_IMAGE_ASSET_REQUEST_STATIC_0000
-      * @tc.name    create_image_asset_request_static_000
-      * @tc.desc    create image asset request with invalid fileUri
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   create_image_asset_request_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_IMAGE_ASSET_REQUEST_STATIC_0000
+     * @tc.desc   create image asset request with invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("create_image_asset_request_static_000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

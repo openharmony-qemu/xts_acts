@@ -73,8 +73,9 @@ export default class RestoreWindowStage extends EmbeddableUIAbility {
       key--;
       hilog.info(0x0000, 'testTAG', '%{public}s', 'restoreWindowStage is fail');
     }
-    this.context.terminateSelf(()=>{
-    });
+    setTimeout(() => { 
+      this.context.terminateSelf(); 
+    }, 500);
   }
 
   onBackground(): void {

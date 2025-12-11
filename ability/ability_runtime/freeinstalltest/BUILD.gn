@@ -17,8 +17,6 @@ group("freeinstalltest") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "connectabilityfatest/actsfreeinstallconnectabilityfatest:ActsFreeInstallConnectAbilityFaTest",
-      "connectabilityfatest/connectdifferentapplication:ConnectDifferentApplication",
       "mockservice:MockService",
       "mockservicetimeout:MockServiceTimeout",
       "startabilityfatest/actsstartabilitynotargetbundlelistfatest:ActsStartAbilityNoTargetBundleListFaTest",

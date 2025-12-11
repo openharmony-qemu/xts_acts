@@ -23,7 +23,6 @@ export default function abilityTest() {
     describe("caniusetest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_GLOBAL_CANIUSE_STATIC_0100
          * @tc.number SUB_GLOBAL_CANIUSE_STATIC_0100
          * @tc.desc   Check canIUs

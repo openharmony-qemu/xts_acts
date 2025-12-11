@@ -45,6 +45,14 @@ export default function scrollBarJsunitt() {
       console.info("scrollBar after each called");
     });
 
+    /**
+     * @tc.name   testScrollBar001
+     * @tc.number testScrollBar001
+     * @tc.desc   testScrollBar001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollBar001', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar001] START');
       await CommonFunc.sleep(2000);
@@ -56,6 +64,14 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+    /**
+     * @tc.name   testScrollBar002
+     * @tc.number testScrollBar002
+     * @tc.desc   testScrollBar002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollBar002', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar002] START');
       let object: ESObject = {
@@ -85,6 +101,14 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+    /**
+     * @tc.name   testScrollBar003
+     * @tc.number testScrollBar003
+     * @tc.desc   testScrollBar003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollBar003', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar003] START');
       await CommonFunc.sleep(2000);
@@ -96,6 +120,14 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+    /**
+     * @tc.name   testScrollBar004
+     * @tc.number testScrollBar004
+     * @tc.desc   testScrollBar004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollBar004', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar004] START');
       try {
@@ -122,6 +154,14 @@ export default function scrollBarJsunitt() {
       done();
     });
 
+    /**
+     * @tc.name   testScrollBar005
+     * @tc.number testScrollBar005
+     * @tc.desc   testScrollBar005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollBar005', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar005] START');
       try {

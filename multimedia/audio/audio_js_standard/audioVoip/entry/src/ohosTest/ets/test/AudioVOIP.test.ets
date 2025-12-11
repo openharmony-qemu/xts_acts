@@ -445,12 +445,12 @@ export default function audioVoip() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_PLAY_0100
-     * @tc.name      : AudioRenderer-Set1-Media
-     * @tc.desc      : AudioRenderer with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_PLAY_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_PLAY_0100
+     * @tc.desc   AudioRenderer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_PLAY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -482,12 +482,12 @@ export default function audioVoip() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_REC_0100
-     * @tc.name      : AudioCapturer-Set1-Media
-     * @tc.desc      : AudioCapturer with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_0100
+     * @tc.desc   AudioCapturer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -517,12 +517,12 @@ export default function audioVoip() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOIP_RECPLAY_0100
-     * @tc.name      : AudioCapturer-Set1-Media
-     * @tc.desc      : AudioCapturer with parameter set 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_RECPLAY_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_RECPLAY_0100
+     * @tc.desc   AudioCapturer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_RECPLAY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 

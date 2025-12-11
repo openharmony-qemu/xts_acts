@@ -48,10 +48,12 @@ export default function FocusScopeId5() {
     });
 
     /**
+     * @tc.name   FocusScopeId5_0100
      * @tc.number FocusScopeId5_0100
-     * @tc.name FocusScopeId5_0100
-     * @tc.desc Support for mixed focusing of focus groups and ordinary components
-     * @tc.level Level 2
+     * @tc.desc   Support for mixed focusing of focus groups and ordinary components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusScopeId5_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[FocusScopeId5_0100] START');

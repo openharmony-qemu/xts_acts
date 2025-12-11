@@ -46,12 +46,14 @@ export default function tapGestureTest() {
       console.info('tapGesture after each called');
     });
 
-    /* *
-    * @tc.number
-    * @tc.name  : TapGesture1_0100
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   TapGesture1_0200
+     * @tc.number TapGesture1_0200
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TapGesture1_0200', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('TapGesture1_0200 START');
@@ -69,12 +71,14 @@ export default function tapGestureTest() {
       done();
     });
 
-    /* *
-    * @tc.number
-    * @tc.name  : TapGesture1_0200
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   TapGesture1_0200
+     * @tc.number TapGesture1_0200
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TapGesture1_0200', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('TapGesture1_0200 START');

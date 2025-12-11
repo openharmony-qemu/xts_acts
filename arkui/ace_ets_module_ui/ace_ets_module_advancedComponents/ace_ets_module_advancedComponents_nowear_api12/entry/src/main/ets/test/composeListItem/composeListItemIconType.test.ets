@@ -50,12 +50,12 @@ export default function composeListItemIconType() {
     })
 
     /**
-     * @tc.number composeListItemIconType
      * @tc.name   composeListItemIconType_0100
+     * @tc.number composeListItemIconType
      * @tc.desc   Test composeListItemIconType
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemIconType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[composeListItemIconType_0100] START');

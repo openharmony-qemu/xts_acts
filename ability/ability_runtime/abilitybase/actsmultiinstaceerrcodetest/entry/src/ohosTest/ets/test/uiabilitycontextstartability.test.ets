@@ -43,13 +43,13 @@ export default function openLinkTest() {
       }, 1000);
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0200
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000076
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0200
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0200
+     * @tc.desc   Expect: 16000076
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0200 start');
@@ -77,13 +77,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0400
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000079
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0400
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0400
+     * @tc.desc   Expect: 16000079
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0400 start');
@@ -112,13 +112,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0700
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000076
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0700
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0700
+     * @tc.desc   Expect: 16000076
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0700 start');
@@ -150,13 +150,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0900
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000078
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0900
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0900
+     * @tc.desc   Expect: 16000078
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0900 start');
@@ -188,13 +188,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1800
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000078
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1800
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1800
+     * @tc.desc   Expect: 16000078
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1800 start');
@@ -242,13 +242,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1900
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000077
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1900
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1900
+     * @tc.desc   Expect: 16000077
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1900 start');
@@ -300,13 +300,13 @@ export default function openLinkTest() {
     })
 
     
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_UIAbilityContextError_0500
-     * @tc.name   : To verify the scenario where error code 16000077 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContextError_0500
+     * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContextError_0500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIAbilityContextError_0500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityRuntime_UIAbilityContextError_0500 start');
@@ -357,13 +357,13 @@ export default function openLinkTest() {
     })
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_UIAbilityContextError_1500
-     * @tc.name   : To verify the scenario where error code 16000077 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContextError_1500
+     * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContextError_1500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIAbilityContextError_1500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityRuntime_UIAbilityContextError_1500 start');
@@ -417,13 +417,13 @@ export default function openLinkTest() {
     })
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_UIAbilityContextError_2500
-     * @tc.name   : To verify the scenario where error code 16000077 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIAbilityContextError_2500
+     * @tc.number SUB_Ability_AbilityRuntime_UIAbilityContextError_2500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIAbilityContextError_2500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityRuntime_UIAbilityContextError_2500 start');
@@ -492,13 +492,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityRuntime_UIAbilityContextError_2500 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_0400
-     * @tc.name   : To verify the scenario where error code 16000076 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_0400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_0400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_0400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_0400 start');
@@ -530,13 +530,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_0400 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_1400
-     * @tc.name   : To verify the scenario where error code 16000076 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_1400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_1400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_1400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1400 start');
@@ -570,13 +570,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1400 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_2400
-     * @tc.name   : To verify the scenario where error code 16000076 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_2400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_2400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_2400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_2400 start');
@@ -616,13 +616,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_2400 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_3600
-     * @tc.name   : To verify the scenario where error code 16000076 is returned when the startAbilityByCall interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_3600
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_3600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_3600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_3600 start');
@@ -661,13 +661,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_3600 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_0700
-     * @tc.name   : To verify the scenario where error code 16000079 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_0700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_0700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_0700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_0700 start');
@@ -700,13 +700,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_0700 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_1700
-     * @tc.name   : To verify the scenario where error code 16000079 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_1700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_1700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_1700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1700 start');
@@ -742,13 +742,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_1700 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_2700
-     * @tc.name   : To verify the scenario where error code 16000079 is returned when the startAbilityForResult interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_2700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_2700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_2700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_2700 start');
@@ -790,13 +790,13 @@ export default function openLinkTest() {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_2700 end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContextError_3900
-     * @tc.name   : To verify the scenario where error code 16000079 is returned when the startAbilityByCall interface is invoked
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContextError_3900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContextError_3900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContextError_3900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_3900 start');

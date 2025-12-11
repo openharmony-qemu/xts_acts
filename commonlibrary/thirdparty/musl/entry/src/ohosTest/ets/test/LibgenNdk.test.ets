@@ -25,12 +25,12 @@ export default function libgenNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_LIBGEN_BASENAME_0100
-     * @tc.name       : testMuslLibgenBasename001
-     * @tc.desc       : test basename
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslLibgenBasename001
+     * @tc.number SUB_THIRDPARTY_MUSL_LIBGEN_BASENAME_0100
+     * @tc.desc   test basename
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslLibgenBasename001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;

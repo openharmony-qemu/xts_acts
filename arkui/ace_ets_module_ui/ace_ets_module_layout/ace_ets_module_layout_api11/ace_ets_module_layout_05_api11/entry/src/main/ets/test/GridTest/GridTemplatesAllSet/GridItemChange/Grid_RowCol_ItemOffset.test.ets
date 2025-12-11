@@ -45,9 +45,12 @@ export default function grid_RowCol_ItemOffsetTest() {
       console.info("Grid_RowCol_ItemOffsetTest after each called");
     });
     /**
+     * @tc.name   testGridRowColItemOffset
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0400
-     * @tc.name testGridRowColItemOffset
-     * @tc.desc The second griditem set offset to {x:20,y:20}
+     * @tc.desc   The second griditem set offset to {x:20,y:20}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemOffset',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemOffset] START');

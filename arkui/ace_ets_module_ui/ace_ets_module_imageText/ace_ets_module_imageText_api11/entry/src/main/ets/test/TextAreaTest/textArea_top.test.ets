@@ -43,12 +43,14 @@ export default function textArea_top() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Top_001
-    * @tc.name  : testSearch
-    * @tc.desc  : When textArea is at the top, clicking on the top of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_top_001
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Top_001
+     * @tc.desc   When textArea is at the top, clicking on the top of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_top_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_top_001] START');
@@ -80,12 +82,14 @@ export default function textArea_top() {
 
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Top_002
-    * @tc.name  : testSearch
-    * @tc.desc  : When textArea is at the top, clicking on the middle of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_top_002
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Top_002
+     * @tc.desc   When textArea is at the top, clicking on the middle of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_top_002', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_top_002] START');
@@ -118,12 +122,14 @@ export default function textArea_top() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Top_003
-    * @tc.name  : testSearch
-    * @tc.desc  : When textArea is at the top, clicking on the bottom of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_top_003
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Top_003
+     * @tc.desc   When textArea is at the top, clicking on the bottom of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_top_003', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_top_003] START');

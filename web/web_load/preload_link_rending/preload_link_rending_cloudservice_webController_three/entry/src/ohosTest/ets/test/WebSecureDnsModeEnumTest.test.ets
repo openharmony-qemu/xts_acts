@@ -58,14 +58,14 @@ export default function webSecureDnsModeEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_SECUREDNSMODE_ENUM_0100
-    * @tc.name        : testWebSecureDnsModeEnum001
-    * @tc.desc        : test the value of SecureDnsMode.OFF is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebSecureDnsModeEnum001
+     * @tc.number SUB_WEB_SECUREDNSMODE_ENUM_0100
+     * @tc.desc   test the value of SecureDnsMode.OFF is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebSecureDnsModeEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebSecureDnsModeEnum001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -76,14 +76,14 @@ export default function webSecureDnsModeEnumTest() {
       }
     })
 
-    /*
-    * @tc.number      : SUB_WEB_SECUREDNSMODE_ENUM_0200
-    * @tc.name        : testWebSecureDnsModeEnum002
-    * @tc.desc        : test the value of SecureDnsMode.AUTO is 1
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebSecureDnsModeEnum002
+     * @tc.number SUB_WEB_SECUREDNSMODE_ENUM_0200
+     * @tc.desc   test the value of SecureDnsMode.AUTO is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebSecureDnsModeEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebSecureDnsModeEnum002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -94,14 +94,14 @@ export default function webSecureDnsModeEnumTest() {
       }
     })
 
-    /*
-    * @tc.number      : SUB_WEB_SECUREDNSMODE_ENUM_0300
-    * @tc.name        : testWebSecureDnsModeEnum003
-    * @tc.desc        : test the value of SecureDnsMode.SECURE_ONLY is 2
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebSecureDnsModeEnum003
+     * @tc.number SUB_WEB_SECUREDNSMODE_ENUM_0300
+     * @tc.desc   test the value of SecureDnsMode.SECURE_ONLY is 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebSecureDnsModeEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebSecureDnsModeEnum003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

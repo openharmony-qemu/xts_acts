@@ -50,12 +50,12 @@ export default function selectTitleBarSymbolTest() {
     })
 
     /**
-     * @tc.number selectTitleBarSymbolPage
      * @tc.name   selectTitleBarSymbolPage_0100
+     * @tc.number selectTitleBarSymbolPage
      * @tc.desc   Test selectTitleBarSymbolPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('selectTitleBarSymbolPage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('[selectTitleBarSymbolPage_0100] START');

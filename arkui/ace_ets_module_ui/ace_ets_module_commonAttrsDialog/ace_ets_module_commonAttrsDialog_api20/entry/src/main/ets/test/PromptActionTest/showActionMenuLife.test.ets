@@ -49,14 +49,13 @@ export default function ShowActionMenuLife() {
             console.info('PromptAction after each called');
         })
 
-        /* 
-         * @tc.number: showActionMenu_0010
-         * @tc.name  : showActionMenu_0010
-         * @tc.desc  : open actionMenu,call onWillAppear and onDidAppear;close contextMenu,call onWillDisappear and
-         *             onDidDisappear
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+        /**
+         * @tc.name   showActionMenu_0010
+         * @tc.number showActionMenu_0010
+         * @tc.desc   open actionMenu,call onWillAppear and onDidAppear;close contextMenu,call onWillDisappear and
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('showActionMenu_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             console.info('[showActionMenu_0010] START');

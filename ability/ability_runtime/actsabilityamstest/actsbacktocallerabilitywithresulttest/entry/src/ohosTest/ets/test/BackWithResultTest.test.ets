@@ -32,12 +32,12 @@ export default function BackWithResultTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_BackWithResult_3000
-     * @tc.name      : Test backToCallerAbleWithResult when abilityResult is undefined
-     * @tc.desc      : Verify that the backToCallerAbleWithResult is invalid when abilityResult is undefined
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_3000
+     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_3000
+     * @tc.desc   Verify that the backToCallerAbleWithResult is invalid when abilityResult is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_BackWithResult_3000', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_3000';
@@ -60,12 +60,12 @@ export default function BackWithResultTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_BackWithResult_2900
-     * @tc.name      : Test backToCallerAbleWithResult when requestCode is undefined
-     * @tc.desc      : Verify that the backToCallerAbleWithResult is invalid when requestCode is undefined
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_2900
+     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_2900
+     * @tc.desc   Verify that the backToCallerAbleWithResult is invalid when requestCode is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_BackWithResult_2900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_2900';
@@ -93,12 +93,12 @@ export default function BackWithResultTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_BackWithResult_2900
-     * @tc.name      : Test backToCallerAbleWithResult when requestCode is undefined
-     * @tc.desc      : Verify that the backToCallerAbleWithResult is invalid when requestCode is invalid
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_2800
+     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_2900
+     * @tc.desc   Verify that the backToCallerAbleWithResult is invalid when requestCode is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_BackWithResult_2800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_2800';

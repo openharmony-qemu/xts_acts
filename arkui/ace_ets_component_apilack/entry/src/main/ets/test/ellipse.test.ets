@@ -44,10 +44,13 @@ export default function ellipseNeJsunit() {
       console.info("ellipseNe after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testellipseNe0001
-     * @tc.desic         aceellipseNeEtsTest0001
+    /**
+     * @tc.name   testellipseNe0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testellipseNe0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testellipseNe0001', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0001 START');
@@ -61,10 +64,13 @@ export default function ellipseNeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testellipseNe0002
-     * @tc.desic         aceellipseNeEtsTest0002
+    /**
+     * @tc.name   testellipseNe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testellipseNe0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testellipseNe0002', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0002 START');

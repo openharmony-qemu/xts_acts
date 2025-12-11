@@ -48,12 +48,12 @@ export default function gestureInterceptionEnhancementTest() {
     });
 
     /**
-     * @tc.number    gestureInterceptionEnhancementTest_0010
-     * @tc.name      gestureInterceptionEnhancementTest
-     * @tc.desc      check the tabs nest scroll when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gestureInterceptionEnhancementTest_0010
+     * @tc.number gestureInterceptionEnhancementTest_0010
+     * @tc.desc   check the tabs nest scroll when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gestureInterceptionEnhancementTest_0010', Level.LEVEL0, async (done: Function) => {
         console.info('gestureInterceptionEnhancementTest_0010 START');
@@ -91,12 +91,12 @@ export default function gestureInterceptionEnhancementTest() {
 
 
     /**
-     * @tc.number    gestureInterceptionEnhancementTest_0020
-     * @tc.name      gestureInterceptionEnhancementTest
-     * @tc.desc      check the tabs nest scroll when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gestureInterceptionEnhancementTest_0020
+     * @tc.number gestureInterceptionEnhancementTest_0020
+     * @tc.desc   check the tabs nest scroll when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gestureInterceptionEnhancementTest_0020', Level.LEVEL0, async (done: Function) => {
         console.info('gestureInterceptionEnhancementTest_0020 START');
@@ -137,13 +137,13 @@ export default function gestureInterceptionEnhancementTest() {
         done();
     });
 
-     /**
-     * @tc.number    gestureInterceptionEnhancementTest_0030
-     * @tc.name      gestureInterceptionEnhancementTest
-     * @tc.desc      check the callback trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   gestureInterceptionEnhancementTest_0030
+     * @tc.number gestureInterceptionEnhancementTest_0030
+     * @tc.desc   check the callback trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gestureInterceptionEnhancementTest_0030', Level.LEVEL0, async (done: Function) => {
         console.info('gestureInterceptionEnhancementTest_0030 START');

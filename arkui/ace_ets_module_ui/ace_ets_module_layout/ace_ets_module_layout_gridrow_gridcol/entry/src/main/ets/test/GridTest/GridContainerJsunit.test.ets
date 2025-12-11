@@ -55,9 +55,12 @@ export default function gridContainerJsunit() {
       console.info("GridContainer after each called");
     });
     /**
+     * @tc.name   testGridContainer010
      * @tc.number SUB_ACE_BASIC_ETS_API_0830
-     * @tc.name testGridContainer010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridContainer010',  Level.LEVEL0, async (done: Function) => {
       console.info('new GridContainer0 START');
@@ -72,9 +75,12 @@ export default function gridContainerJsunit() {
     });
 
     /**
+     * @tc.name   testGridContainer020
      * @tc.number SUB_ACE_BASIC_ETS_API_0840
-     * @tc.name testGridContainer020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridContainer020',  Level.LEVEL0, async (done: Function) => {
       console.info('new GridContainer1 START');
@@ -88,9 +94,12 @@ export default function gridContainerJsunit() {
     });
 
     /**
+     * @tc.name   testGridContainer030
      * @tc.number SUB_ACE_BASIC_ETS_API_0850
-     * @tc.name testGridContainer030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridContainer030',  Level.LEVEL0, async (done: Function) => {
       console.info('new GridContainer2 START');
@@ -104,9 +113,12 @@ export default function gridContainerJsunit() {
     });
 
     /**
+     * @tc.name   testGridContainer040
      * @tc.number SUB_ACE_BASIC_ETS_API_0860
-     * @tc.name testGridContainer040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridContainer040',  Level.LEVEL0, async (done: Function) => {
       console.info('new GridContainer3 START');
@@ -120,9 +132,12 @@ export default function gridContainerJsunit() {
     });
 
     /**
+     * @tc.name   testGridContainer050
      * @tc.number SUB_ACE_BASIC_ETS_API_0870
-     * @tc.name testGridContainer050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridContainer050',  Level.LEVEL0, async (done: Function) => {
       console.info('new GridContainer4 START');

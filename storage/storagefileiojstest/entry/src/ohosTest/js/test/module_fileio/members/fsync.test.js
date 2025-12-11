@@ -23,13 +23,12 @@ export default function fileioFsync() {
 describe('fileio_fsync', function () {
 
   /**
+   * @tc.name   fileio_test_fsync_sync_000
    * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_0000
-   * @tc.name fileio_test_fsync_sync_000
-   * @tc.desc Test fsyncSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsyncSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fsync_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_fsync_sync_000');
@@ -47,13 +46,12 @@ describe('fileio_fsync', function () {
   });
 
   /**
+   * @tc.name   fileio_test_fsync_sync_001
    * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_0010
-   * @tc.name fileio_test_fsync_sync_001
-   * @tc.desc Test fsyncSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsyncSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fsync_sync_001', Level.LEVEL0, function () {
     try {
@@ -65,13 +63,12 @@ describe('fileio_fsync', function () {
   });
 
   /**
+   * @tc.name   fileio_test_fsync_async_000
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_000
-   * @tc.name fileio_test_fsync_sync_000
-   * @tc.desc Test fsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fsync_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_fsync_async_000');
@@ -90,13 +87,12 @@ describe('fileio_fsync', function () {
   });
 
   /**
+   * @tc.name   fileio_test_fsync_async_001
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_001
-   * @tc.name fileio_test_fsync_sync_001
-   * @tc.desc Test fsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fsync_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_fsync_sync_001');
@@ -116,13 +112,12 @@ describe('fileio_fsync', function () {
   });
 
   /**
+   * @tc.name   fileio_test_fsync_async_002
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_002
-   * @tc.name fileio_test_fsync_sync_002
-   * @tc.desc Test fsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fsync_async_002', Level.LEVEL0, async function (done) {
     try {

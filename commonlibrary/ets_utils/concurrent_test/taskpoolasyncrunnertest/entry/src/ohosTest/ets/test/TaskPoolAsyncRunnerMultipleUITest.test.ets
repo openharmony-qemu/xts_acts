@@ -48,12 +48,12 @@ export default function taskPoolAsyncRunnerMultipleUITest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleUITest0100
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_MULTIPLE_UI_TEST_0100
-     * @tc.name taskPoolAsyncRunnerMultipleUITest0100
-     * @tc.desc test task ui
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task ui
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleUITest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleUITest0100';
@@ -88,12 +88,12 @@ export default function taskPoolAsyncRunnerMultipleUITest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerMultipleUITest0200
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_MULTIPLE_UI_TEST_0200
-     * @tc.name taskPoolAsyncRunnerMultipleUITest0200
-     * @tc.desc test task ui&await
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task ui&await
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerMultipleUITest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'taskPoolAsyncRunnerMultipleUITest0200';

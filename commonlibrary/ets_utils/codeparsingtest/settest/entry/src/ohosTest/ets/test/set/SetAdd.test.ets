@@ -57,12 +57,12 @@ export default function SetAddTest() {
     })
 
     /**
+     * @tc.name   SetAddTest001
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0100
-     * @tc.name SetAddTest001
-     * @tc.desc Add single lowercase string to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add single lowercase string to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<string>();
@@ -72,12 +72,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest002
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0200
-     * @tc.name SetAddTest002
-     * @tc.desc Add single uppercase string to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add single uppercase string to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<string>();
@@ -87,12 +87,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest003
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0300
-     * @tc.name SetAddTest003
-     * @tc.desc Add positive integer to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add positive integer to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<number>();
@@ -102,12 +102,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest004
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0400
-     * @tc.name SetAddTest004
-     * @tc.desc Add negative integer to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add negative integer to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<number>();
@@ -117,12 +117,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest005
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0500
-     * @tc.name SetAddTest005
-     * @tc.desc Add positive floating-point number to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add positive floating-point number to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<number>();
@@ -132,12 +132,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest006
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0600
-     * @tc.name SetAddTest006
-     * @tc.desc Add negative floating-point number to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add negative floating-point number to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<number>();
@@ -147,12 +147,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest007
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0700
-     * @tc.name SetAddTest007
-     * @tc.desc Add boolean true to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add boolean true to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<boolean>();
@@ -162,12 +162,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest008
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0800
-     * @tc.name SetAddTest008
-     * @tc.desc Add boolean false to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add boolean false to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<boolean>();
@@ -177,12 +177,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest009
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_0900
-     * @tc.name SetAddTest009
-     * @tc.desc Add null to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add null to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<null | object>();
@@ -192,12 +192,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest010
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1000
-     * @tc.name SetAddTest010
-     * @tc.desc Add undefined to empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Add undefined to empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetAddTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<undefined | object>();
@@ -207,12 +207,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest011
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1100
-     * @tc.name SetAddTest011
-     * @tc.desc Add duplicate strings to Set (should ignore duplicates)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add duplicate strings to Set (should ignore duplicates)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -222,12 +222,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest012
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1200
-     * @tc.name SetAddTest012
-     * @tc.desc Add duplicate numbers to Set (should ignore duplicates)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add duplicate numbers to Set (should ignore duplicates)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -237,12 +237,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest013
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1300
-     * @tc.name SetAddTest013
-     * @tc.desc Add string "7" and number 7 (should treat as distinct)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add string "7" and number 7 (should treat as distinct)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string | number>();
@@ -252,12 +252,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest014
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1400
-     * @tc.name SetAddTest014
-     * @tc.desc Add boolean true and number 1 (should treat as distinct)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add boolean true and number 1 (should treat as distinct)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<boolean | number>();
@@ -267,12 +267,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest015
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1500
-     * @tc.name SetAddTest015
-     * @tc.desc Add 0 and -0 (should treat as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add 0 and -0 (should treat as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -282,12 +282,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest016
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1600
-     * @tc.name SetAddTest016
-     * @tc.desc Add multiple NaN values (should treat as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add multiple NaN values (should treat as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -297,12 +297,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest017
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1700
-     * @tc.name SetAddTest017
-     * @tc.desc Add empty string and space string (should treat as distinct)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add empty string and space string (should treat as distinct)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -312,12 +312,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest018
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1800
-     * @tc.name SetAddTest018
-     * @tc.desc Add tab and newline characters (should treat as distinct)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add tab and newline characters (should treat as distinct)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -327,12 +327,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest019
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_1900
-     * @tc.name SetAddTest019
-     * @tc.desc Add Infinity and -Infinity (should treat as distinct)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add Infinity and -Infinity (should treat as distinct)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -342,12 +342,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest020
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2000
-     * @tc.name SetAddTest020
-     * @tc.desc Add max safe integer and its next value (should treat as distinct)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add max safe integer and its next value (should treat as distinct)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -358,12 +358,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest021
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2100
-     * @tc.name SetAddTest021
-     * @tc.desc Add two distinct plain objects (by reference)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add two distinct plain objects (by reference)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -378,12 +378,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest022
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2200
-     * @tc.name SetAddTest022
-     * @tc.desc Add same plain object twice (should ignore duplicate)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add same plain object twice (should ignore duplicate)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -397,12 +397,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest023
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2300
-     * @tc.name SetAddTest023
-     * @tc.desc Add two distinct arrays (by reference)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add two distinct arrays (by reference)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<number[]>();
@@ -414,12 +414,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest024
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2400
-     * @tc.name SetAddTest024
-     * @tc.desc Add same array twice (should ignore duplicate)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add same array twice (should ignore duplicate)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<number[]>();
@@ -430,12 +430,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest025
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2500
-     * @tc.name SetAddTest025
-     * @tc.desc Add two distinct Date objects with same time
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add two distinct Date objects with same time
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<Date>();
@@ -447,12 +447,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest026
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2600
-     * @tc.name SetAddTest026
-     * @tc.desc Add two distinct RegExp objects with same pattern
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add two distinct RegExp objects with same pattern
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<RegExp>();
@@ -464,12 +464,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest027
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2700
-     * @tc.name SetAddTest027
-     * @tc.desc Add two distinct Symbol values with same description
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add two distinct Symbol values with same description
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetAddTest027();
@@ -478,12 +478,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest028
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2800
-     * @tc.name SetAddTest028
-     * @tc.desc Add two BigInt values with same numeric value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add two BigInt values with same numeric value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<bigint>();
@@ -495,12 +495,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest029
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_2900
-     * @tc.name SetAddTest029
-     * @tc.desc Use method chaining to add multiple distinct values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Use method chaining to add multiple distinct values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<string | number | boolean | null>();
@@ -510,12 +510,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest030
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3000
-     * @tc.name SetAddTest030
-     * @tc.desc Verify add() returns the original Set instance for chaining
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify add() returns the original Set instance for chaining
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<string>();
@@ -525,12 +525,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest031
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3100
-     * @tc.name SetAddTest031
-     * @tc.desc Add string with Unicode characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add string with Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -540,12 +540,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest032
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3200
-     * @tc.name SetAddTest032
-     * @tc.desc Add string with emojis
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add string with emojis
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -555,12 +555,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest033
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3300
-     * @tc.name SetAddTest033
-     * @tc.desc Add very large positive integer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add very large positive integer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -570,12 +570,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest034
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3400
-     * @tc.name SetAddTest034
-     * @tc.desc Add very small negative integer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add very small negative integer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -585,12 +585,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest035
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3500
-     * @tc.name SetAddTest035
-     * @tc.desc Add number with high precision decimal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add number with high precision decimal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -600,12 +600,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest036
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3600
-     * @tc.name SetAddTest036
-     * @tc.desc Add string representation of number and number
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add string representation of number and number
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number | string>();
@@ -615,12 +615,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest037
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3700
-     * @tc.name SetAddTest037
-     * @tc.desc Add boolean false and 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add boolean false and 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<boolean | number>();
@@ -630,12 +630,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest038
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3800
-     * @tc.name SetAddTest038
-     * @tc.desc Add multiple mixed primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add multiple mixed primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const set = new Set<string | number | boolean | null | undefined>();
@@ -645,12 +645,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest039
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_3900
-     * @tc.name SetAddTest039
-     * @tc.desc Add hexadecimal and decimal equivalents
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add hexadecimal and decimal equivalents
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -660,12 +660,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest040
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4000
-     * @tc.name SetAddTest040
-     * @tc.desc Add octal and decimal equivalents
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add octal and decimal equivalents
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -675,12 +675,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest041
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4100
-     * @tc.name SetAddTest041
-     * @tc.desc Add binary and decimal equivalents
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add binary and decimal equivalents
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -690,12 +690,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest042
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4200
-     * @tc.name SetAddTest042
-     * @tc.desc Add exponential notation numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add exponential notation numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -705,12 +705,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest043
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4300
-     * @tc.name SetAddTest043
-     * @tc.desc Add string with leading zeros and number
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add string with leading zeros and number
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number | string>();
@@ -720,12 +720,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest044
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4400
-     * @tc.name SetAddTest044
-     * @tc.desc Add empty string and string with zero
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add empty string and string with zero
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -735,12 +735,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest045
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4500
-     * @tc.name SetAddTest045
-     * @tc.desc Add Infinity and large number
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add Infinity and large number
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -750,12 +750,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest046
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4600
-     * @tc.name SetAddTest046
-     * @tc.desc Add -Infinity and very small number
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add -Infinity and very small number
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -765,12 +765,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest047
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4700
-     * @tc.name SetAddTest047
-     * @tc.desc Add Number.MIN_VALUE
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add Number.MIN_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -780,12 +780,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest048
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4800
-     * @tc.name SetAddTest048
-     * @tc.desc Add Number.EPSILON
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add Number.EPSILON
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -795,12 +795,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest049
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_4900
-     * @tc.name SetAddTest049
-     * @tc.desc Add mixed case strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add mixed case strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -810,12 +810,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest050
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5000
-     * @tc.name SetAddTest050
-     * @tc.desc Add strings with whitespace variations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add strings with whitespace variations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -825,12 +825,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest051
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5100
-     * @tc.name SetAddTest051
-     * @tc.desc Add nested objects with same structure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add nested objects with same structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -848,12 +848,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest052
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5200
-     * @tc.name SetAddTest052
-     * @tc.desc Add objects after modifying their properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add objects after modifying their properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -868,12 +868,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest053
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5300
-     * @tc.name SetAddTest053
-     * @tc.desc Add arrays with same elements in different order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add arrays with same elements in different order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<number[]>();
@@ -885,12 +885,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest054
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5400
-     * @tc.name SetAddTest054
-     * @tc.desc Add arrays after modifying their contents
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add arrays after modifying their contents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<number[]>();
@@ -902,12 +902,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest055
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5500
-     * @tc.name SetAddTest055
-     * @tc.desc Add Map objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add Map objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<Map<string, string>>();
@@ -921,12 +921,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest056
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5600
-     * @tc.name SetAddTest056
-     * @tc.desc Add Set objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add Set objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<Set<number>>();
@@ -938,12 +938,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest057
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5700
-     * @tc.name SetAddTest057
-     * @tc.desc Add functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<Function>();
@@ -955,12 +955,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest058
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5800
-     * @tc.name SetAddTest058
-     * @tc.desc Add class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<MyClass>();
@@ -978,12 +978,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest059
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_5900
-     * @tc.name SetAddTest059
-     * @tc.desc Add typed arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<Uint8Array>();
@@ -995,12 +995,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest060
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6000
-     * @tc.name SetAddTest060
-     * @tc.desc Add DataView objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add DataView objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<DataView>();
@@ -1014,12 +1014,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest061
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6100
-     * @tc.name SetAddTest061
-     * @tc.desc Add RegExp with different flags
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add RegExp with different flags
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<RegExp>();
@@ -1031,12 +1031,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest062
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6200
-     * @tc.name SetAddTest062
-     * @tc.desc Add Date objects with different times
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add Date objects with different times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<Date>();
@@ -1048,12 +1048,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest063
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6300
-     * @tc.name SetAddTest063
-     * @tc.desc Add Symbol.for with same key
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add Symbol.for with same key
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetAddTest063();
@@ -1062,12 +1062,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest064
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6400
-     * @tc.name SetAddTest064
-     * @tc.desc Add BigInt with different values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add BigInt with different values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set<bigint>();
@@ -1079,12 +1079,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest065
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6500
-     * @tc.name SetAddTest065
-     * @tc.desc Add objects with Symbols as properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add objects with Symbols as properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetAddTest065();
@@ -1093,12 +1093,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest066
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6600
-     * @tc.name SetAddTest066
-     * @tc.desc Add proxied objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add proxied objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -1113,12 +1113,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest067
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6700
-     * @tc.name SetAddTest067
-     * @tc.desc Add frozen objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetAddTest067();
@@ -1127,12 +1127,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest068
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6800
-     * @tc.name SetAddTest068
-     * @tc.desc Add sealed objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add sealed objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetAddTest068();
@@ -1141,12 +1141,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest069
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_6900
-     * @tc.name SetAddTest069
-     * @tc.desc Add arrays with object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add arrays with object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetAddTest069();
@@ -1155,12 +1155,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest070
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7000
-     * @tc.name SetAddTest070
-     * @tc.desc Add WeakMap objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add WeakMap objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{}
@@ -1176,12 +1176,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest071
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7100
-     * @tc.name SetAddTest071
-     * @tc.desc Add very large number of elements
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add very large number of elements
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest071', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
@@ -1194,12 +1194,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest072
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7200
-     * @tc.name SetAddTest072
-     * @tc.desc Add elements to pre-initialized Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to pre-initialized Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2, 3]);
@@ -1209,12 +1209,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest073
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7300
-     * @tc.name SetAddTest073
-     * @tc.desc Add elements to Set created from array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to Set created from array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -1225,12 +1225,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest074
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7400
-     * @tc.name SetAddTest074
-     * @tc.desc Add elements to Set created from another Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to Set created from another Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const originalSet = new Set([1, 2, 3]);
@@ -1241,12 +1241,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest075
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7500
-     * @tc.name SetAddTest075
-     * @tc.desc Add elements in chain after other operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add elements in chain after other operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
@@ -1258,12 +1258,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest076
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7600
-     * @tc.name SetAddTest076
-     * @tc.desc Add same value after deleting it
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add same value after deleting it
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -1275,12 +1275,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest077
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7700
-     * @tc.name SetAddTest077
-     * @tc.desc Add elements to cleared Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to cleared Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2, 3]);
@@ -1291,12 +1291,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest078
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7800
-     * @tc.name SetAddTest078
-     * @tc.desc Add elements to Set with spread operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to Set with spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = SetAddTest078() as (number | number[])[]
@@ -1305,12 +1305,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest079
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_7900
-     * @tc.name SetAddTest079
-     * @tc.desc Add elements in various ways to same Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements in various ways to same Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -1327,12 +1327,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest080
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8000
-     * @tc.name SetAddTest080
-     * @tc.desc Add elements to Set and check iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to Set and check iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -1348,12 +1348,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest081
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8100
-     * @tc.name SetAddTest081
-     * @tc.desc Add Symbol.iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetAddTest081();
@@ -1362,12 +1362,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest082
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8200
-     * @tc.name SetAddTest082
-     * @tc.desc Add Symbol.toStringTag
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add Symbol.toStringTag
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetAddTest082();
@@ -1376,12 +1376,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest083
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8300
-     * @tc.name SetAddTest083
-     * @tc.desc Add non-primitive values in large quantity
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add non-primitive values in large quantity
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest083', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1402,12 +1402,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest084
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8400
-     * @tc.name SetAddTest084
-     * @tc.desc Add elements with same JSON representation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add elements with same JSON representation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1425,12 +1425,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest085
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8500
-     * @tc.name SetAddTest085
-     * @tc.desc Add elements and check with Array.from
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements and check with Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -1441,12 +1441,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest086
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8600
-     * @tc.name SetAddTest086
-     * @tc.desc Add elements and check with Set.prototype.values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements and check with Set.prototype.values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -1457,12 +1457,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest087
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8700
-     * @tc.name SetAddTest087
-     * @tc.desc Add elements to Set and check with forEach
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to Set and check with forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -1482,12 +1482,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest088
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8800
-     * @tc.name SetAddTest088
-     * @tc.desc Add elements and check with Set.prototype.entries
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements and check with Set.prototype.entries
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<string>();
@@ -1500,12 +1500,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest089
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_8900
-     * @tc.name SetAddTest089
-     * @tc.desc Add elements to nested Sets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add elements to nested Sets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const outerSet = new Set<Set<number>>();
@@ -1523,12 +1523,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest090
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9000
-     * @tc.name SetAddTest090
-     * @tc.desc Add and check elements in a Set created with a custom iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add and check elements in a Set created with a custom iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetAddTest090();
@@ -1538,12 +1538,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest091
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9100
-     * @tc.name SetAddTest091
-     * @tc.desc Add elements to Set and check with Array.includes
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to Set and check with Array.includes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = SetAddTest091() as string[];
@@ -1553,12 +1553,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest092
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9200
-     * @tc.name SetAddTest092
-     * @tc.desc Add elements and check size after various operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements and check size after various operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -1580,12 +1580,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest093
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9300
-     * @tc.name SetAddTest093
-     * @tc.desc Add elements with same string representation but different types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements with same string representation but different types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const set = new Set<string | number | bigint>();
@@ -1596,24 +1596,24 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest094
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9400
-     * @tc.name SetAddTest094
-     * @tc.desc Add elements to Set and check with Object.is
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add elements to Set and check with Object.is
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetAddTest094()).assertEqual(true);
     });
 
     /**
+     * @tc.name   SetAddTest095
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9500
-     * @tc.name SetAddTest095
-     * @tc.desc Add element and then replace with similar element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add element and then replace with similar element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -1633,12 +1633,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest096
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9600
-     * @tc.name SetAddTest096
-     * @tc.desc Add elements to Set in different scopes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add elements to Set in different scopes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = SetAddTest096();
@@ -1648,24 +1648,24 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest097
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9700
-     * @tc.name SetAddTest097
-     * @tc.desc Add elements to Set and check with JSON.stringify
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to Set and check with JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(SetAddTest097()).assertDeepEquals([1,"two",true]);
     });
 
     /**
+     * @tc.name   SetAddTest098
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9800
-     * @tc.name SetAddTest098
-     * @tc.desc Add elements to multiple Sets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Add elements to multiple Sets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetAddTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const set1 = new Set<string>();
@@ -1681,12 +1681,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest099
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_9900
-     * @tc.name SetAddTest099
-     * @tc.desc Add elements to Set and check after structural cloning
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Add elements to Set and check after structural cloning
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const originalSet = new Set<number | string | boolean>();
@@ -1699,12 +1699,12 @@ export default function SetAddTest() {
     });
 
     /**
+     * @tc.name   SetAddTest100
      * @tc.number SUB_BUILTINS_SET_ADD_TEST_10000
-     * @tc.name SetAddTest100
-     * @tc.desc Comprehensive test with mixed element types
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test with mixed element types
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('SetAddTest100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = SetAddTest100();

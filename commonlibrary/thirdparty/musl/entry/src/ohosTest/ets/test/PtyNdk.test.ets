@@ -25,12 +25,12 @@ export default function ptyNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PTY_FORKPTY_0100
-     * @tc.name       : testMuslTimeForkpty001
-     * @tc.desc       : test forkpty
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeForkpty001
+     * @tc.number SUB_THIRDPARTY_MUSL_PTY_FORKPTY_0100
+     * @tc.desc   test forkpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeForkpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;
@@ -39,12 +39,12 @@ export default function ptyNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PTY_OPENPTY_0100
-     * @tc.name       : testMuslPtyOpenpty001
-     * @tc.desc       : openpty
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslPtyOpenpty001
+     * @tc.number SUB_THIRDPARTY_MUSL_PTY_OPENPTY_0100
+     * @tc.desc   openpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPtyOpenpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = pty.openpty();

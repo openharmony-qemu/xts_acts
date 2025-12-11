@@ -44,12 +44,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPTEMPLATETYPE_ENUM_0100
-     * @tc.name      : testPipTemplateTypeEnum
-     * @tc.desc      : PictureInPicture_PipTemplateType枚举值校验
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPipTemplateTypeEnum
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPTEMPLATETYPE_ENUM_0100
+     * @tc.desc   PictureInPicture_PipTemplateType枚举值校验
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipTemplateTypeEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testPipTemplateTypeEnum';
@@ -69,12 +69,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPCONTROLGROUP_ENUM_0100
-     * @tc.name      : testPipControlGroupEnum
-     * @tc.desc      : PictureInPicture_PipControlGroup 枚举值校验
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPipControlGroupEnum
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPCONTROLGROUP_ENUM_0100
+     * @tc.desc   PictureInPicture_PipControlGroup 枚举值校验
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipControlGroupEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testPipControlGroupEnum';
@@ -91,12 +91,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPCONTROLTYPE_ENUM_0100
-     * @tc.name      : testPipControlTypeEnum
-     * @tc.desc      : PictureInPicture_PipControlType 枚举值校验
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPipControlTypeEnum
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPCONTROLTYPE_ENUM_0100
+     * @tc.desc   PictureInPicture_PipControlType 枚举值校验
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipControlTypeEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testPipControlTypeEnum';
@@ -113,12 +113,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPCONTROLSTATUS_ENUM_0100
-     * @tc.name      : testPipControlStatusEnum
-     * @tc.desc      : PictureInPicture_PipControlStatus枚举值校验
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPipControlStatusEnum
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_PIPCONTROLSTATUS_ENUM_0100
+     * @tc.desc   PictureInPicture_PipControlStatus枚举值校验
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipControlStatusEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testPipControlStatusEnum';
@@ -135,12 +135,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_0100
-     * @tc.name      : testCreatePip
-     * @tc.desc      : 验证创建画中画控制器	OH_PictureInPicture_CreatePip
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreatePip
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_0100
+     * @tc.desc   验证创建画中画控制器	OH_PictureInPicture_CreatePip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreatePip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testCreatePip';
@@ -166,12 +166,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_ERRORCODE_0100
-     * @tc.name      : testCreatePip_ControllerId_Nullptr
-     * @tc.desc      : 验证创建画中画控制器,controllerid传nullptr报错误码1300016
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreatePip_ControllerId_Nullptr
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_ERRORCODE_0100
+     * @tc.desc   验证创建画中画控制器,controllerid传nullptr报错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreatePip_ControllerId_Nullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testCreatePip_ControllerId_Nullptr';
@@ -197,12 +197,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_ERRORCODE_0200
-     * @tc.name      : testCreatePip_SetPipMainWindowId_Zero
-     * @tc.desc      : OH_PictureInPicture_SetPipMainWindowId时窗口id传0，CREATEPIP时会报1300016
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreatePip_SetPipMainWindowId_Zero
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_ERRORCODE_0200
+     * @tc.desc   OH_PictureInPicture_SetPipMainWindowId时窗口id传0，CREATEPIP时会报1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreatePip_SetPipMainWindowId_Zero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testCreatePip_SetPipMainWindowId_Zero';
@@ -228,12 +228,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_ERRORCODE_0300
-     * @tc.name      : testCreatePip_SetErrPipTemplateType
-     * @tc.desc      : 创建画中画控制器时，通话模板传视频的控件，创建画中画报错
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreatePip_SetErrPipTemplateType
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_CREATEPIP_ERRORCODE_0300
+     * @tc.desc   创建画中画控制器时，通话模板传视频的控件，创建画中画报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreatePip_SetErrPipTemplateType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testCreatePip_SetErrPipTemplateType';
@@ -259,12 +259,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_STARTPIP_0100
-     * @tc.name      : testStartStopPip
-     * @tc.desc      : 验证开启、关闭画中画
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStartStopPip
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_STARTPIP_0100
+     * @tc.desc   验证开启、关闭画中画
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartStopPip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testStartStopPip';
@@ -290,12 +290,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_STARTPIP_ERRORCODE_0100
-     * @tc.name      : testStartPipRepeat
-     * @tc.desc      : 验证画中画重复开启报1300015
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testStartPipRepeat
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_STARTPIP_ERRORCODE_0100
+     * @tc.desc   验证画中画重复开启报1300015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartPipRepeat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testStartPipRepeat';
@@ -321,12 +321,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_STOPPIP_ERRORCODE_0100
-     * @tc.name      : testStopPipRepeat
-     * @tc.desc      : 验证画中画重复关闭报1300012
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testStopPipRepeat
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_STOPPIP_ERRORCODE_0100
+     * @tc.desc   验证画中画重复关闭报1300012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStopPipRepeat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testStopPipRepeat';
@@ -352,12 +352,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_DELETEPIP_0100
-     * @tc.name      : testDeletePipWithStopPip
-     * @tc.desc      : 验证画中画关闭后可以删除控制器
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDeletePipWithStopPip
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_DELETEPIP_0100
+     * @tc.desc   验证画中画关闭后可以删除控制器
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeletePipWithStopPip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testDeletePipWithStopPip';
@@ -383,12 +383,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_DELETEPIP_0200
-     * @tc.name      : testDeletePipWithoutStopPip
-     * @tc.desc      : 验证画中画未关闭删除控制器报错误码1300016
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDeletePipWithoutStopPip
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_DELETEPIP_0200
+     * @tc.desc   验证画中画未关闭删除控制器报错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDeletePipWithoutStopPip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDeletePipWithoutStopPip';
@@ -414,12 +414,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_UPDATE_CONTENTSIZE_0100
-     * @tc.name      : testUpdatePipContentSize
-     * @tc.desc      : 验证动态更新画中画尺寸
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUpdatePipContentSize
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_UPDATE_CONTENTSIZE_0100
+     * @tc.desc   验证动态更新画中画尺寸
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUpdatePipContentSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUpdatePipContentSize';
@@ -445,12 +445,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_UPDATE_PIP_CONTROLSTATUS_0100
-     * @tc.name      : testUpdatePipContentStatus
-     * @tc.desc      : 更新画中画控件功能状态
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUpdatePipContentStatus
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_UPDATE_PIP_CONTROLSTATUS_0100
+     * @tc.desc   更新画中画控件功能状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUpdatePipContentStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUpdatePipContentStatus';
@@ -476,12 +476,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_SET_PIPCONTROLENABLED_0100
-     * @tc.name      : testUpdatePipContentEnabled
-     * @tc.desc      : 设置画中画功能键开启/禁用
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUpdatePipContentEnabled
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_SET_PIPCONTROLENABLED_0100
+     * @tc.desc   设置画中画功能键开启/禁用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUpdatePipContentEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUpdatePipContentEnabled';
@@ -507,12 +507,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0100
-     * @tc.name      : testRegisterStartPipCallback
-     * @tc.desc      : 注册画中画启动回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegisterStartPipCallback
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0100
+     * @tc.desc   注册画中画启动回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegisterStartPipCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testRegisterStartPipCallback';
@@ -538,12 +538,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0200
-     * @tc.name      : testTwoRegisterStartPipCallback
-     * @tc.desc      : 注册两个画中画启动回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTwoRegisterStartPipCallback
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0200
+     * @tc.desc   注册两个画中画启动回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTwoRegisterStartPipCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testTwoRegisterStartPipCallback';
@@ -569,12 +569,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0300
-     * @tc.name      : testUnregisterStartPipCallback
-     * @tc.desc      : 注册两个画中画启动回调，取消其中一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testUnregisterStartPipCallback
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0300
+     * @tc.desc   注册两个画中画启动回调，取消其中一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterStartPipCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testUnregisterStartPipCallback';
@@ -600,12 +600,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0400
-     * @tc.name      : testUnregisterAllStartPipCallbacks
-     * @tc.desc      : 注册两个画中画启动回调，取消所有回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnregisterAllStartPipCallbacks
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSTARTPIP_0400
+     * @tc.desc   注册两个画中画启动回调，取消所有回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnregisterAllStartPipCallbacks', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUnregisterAllStartPipCallbacks';
@@ -631,12 +631,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0100
-     * @tc.name      : testRegisterResizeListener
-     * @tc.desc      : 注册画中画尺寸变化回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegisterResizeListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0100
+     * @tc.desc   注册画中画尺寸变化回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegisterResizeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testRegisterResizeListener';
@@ -662,12 +662,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0200
-     * @tc.name      : testTwoRegisterResizeListener
-     * @tc.desc      : 注册两个画中画尺寸变化回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTwoRegisterResizeListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0200
+     * @tc.desc   注册两个画中画尺寸变化回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTwoRegisterResizeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testTwoRegisterResizeListener';
@@ -693,12 +693,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0300
-     * @tc.name      : testUnregisterResizeListener
-     * @tc.desc      : 注册两个画中画尺寸变化回调，取消其中一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testUnregisterResizeListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0300
+     * @tc.desc   注册两个画中画尺寸变化回调，取消其中一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterResizeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testUnregisterResizeListener';
@@ -724,12 +724,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0400
-     * @tc.name      : testUnregisterAllResizeListeners
-     * @tc.desc      : 注册两个画中画尺寸变化回调，取消所有回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnregisterAllResizeListeners
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERSIZELISTENER_0400
+     * @tc.desc   注册两个画中画尺寸变化回调，取消所有回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnregisterAllResizeListeners', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUnregisterAllResizeListeners';
@@ -755,12 +755,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERCONTROLEVENTLISTENER_0100
-     * @tc.name      : testRegisterControlEventListener
-     * @tc.desc      : 注册画中画控件状态变化回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegisterControlEventListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERCONTROLEVENTLISTENER_0100
+     * @tc.desc   注册画中画控件状态变化回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegisterControlEventListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testRegisterControlEventListener';
@@ -786,12 +786,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERCONTROLEVENTLISTENER_0200
-     * @tc.name      : testUnregisterControlEventListener
-     * @tc.desc      : 	注册两个画中画控件状态变化回调，取消其中一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnregisterControlEventListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERCONTROLEVENTLISTENER_0200
+     * @tc.desc   注册两个画中画控件状态变化回调，取消其中一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnregisterControlEventListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUnregisterControlEventListener';
@@ -817,12 +817,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERCONTROLEVENTLISTENER_0300
-     * @tc.name      : testUnregisterAllControlEventListeners
-     * @tc.desc      : 注册两个控件状态变化回调、取消全部
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnregisterAllControlEventListeners
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERCONTROLEVENTLISTENER_0300
+     * @tc.desc   注册两个控件状态变化回调、取消全部
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnregisterAllControlEventListeners', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUnregisterAllControlEventListeners';
@@ -848,12 +848,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0100
-     * @tc.name      : testRegisterLifeCycleListener
-     * @tc.desc      : 注册画中画生命周期回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRegisterLifeCycleListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0100
+     * @tc.desc   注册画中画生命周期回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegisterLifeCycleListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testRegisterLifeCycleListener';
@@ -879,12 +879,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0200
-     * @tc.name      : testTwoRegisterLifeCycleListener
-     * @tc.desc      : 注册两个画中画生命周期回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTwoRegisterLifeCycleListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0200
+     * @tc.desc   注册两个画中画生命周期回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTwoRegisterLifeCycleListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testTwoRegisterLifeCycleListener';
@@ -910,12 +910,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0300
-     * @tc.name      : testUnregisterLifeCycleListener
-     * @tc.desc      : 注册两个画中画生命周期回调，取消其中一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnregisterLifeCycleListener
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0300
+     * @tc.desc   注册两个画中画生命周期回调，取消其中一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnregisterLifeCycleListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUnregisterLifeCycleListener';
@@ -941,12 +941,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0400
-     * @tc.name      : testUnregisterAllLifeCycleListeners
-     * @tc.desc      : 注册两个画中画生命周期回调，取消所有回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnregisterAllLifeCycleListeners
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_REGISTERLIFECIRCLE_0400
+     * @tc.desc   注册两个画中画生命周期回调，取消所有回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnregisterAllLifeCycleListeners', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUnregisterAllLifeCycleListeners';
@@ -972,12 +972,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_SET_INITIAL_RECT_0100
-     * @tc.name      : testSetPipInitialSurfaceRect
-     * @tc.desc      : 设置画中画启动动画初始位置和大小
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetPipInitialSurfaceRect
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_SET_INITIAL_RECT_0100
+     * @tc.desc   设置画中画启动动画初始位置和大小
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetPipInitialSurfaceRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testSetPipInitialSurfaceRect';
@@ -1003,12 +1003,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_SET_INITIAL_RECT_ERRORCODE_0100
-     * @tc.name      : testSetPipInitialSurfaceRectwithInvalidWidth
-     * @tc.desc      : 设置画中画启动动画初始位置和大小错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetPipInitialSurfaceRectwithInvalidWidth
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_SET_INITIAL_RECT_ERRORCODE_0100
+     * @tc.desc   设置画中画启动动画初始位置和大小错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetPipInitialSurfaceRectwithInvalidWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = 'testSetPipInitialSurfaceRectwithInvalidWidth';
@@ -1034,12 +1034,12 @@ export default function PipWindowNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_PIP_NDK_UNSET_INITIAL_RECT_ERRORCODE_0100
-     * @tc.name      : testUnsetPipInitialSurfaceRect
-     * @tc.desc      : 取消设置画中画启动动画初始位置和大小
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnsetPipInitialSurfaceRect
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_UNSET_INITIAL_RECT_ERRORCODE_0100
+     * @tc.desc   取消设置画中画启动动画初始位置和大小
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnsetPipInitialSurfaceRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testUnsetPipInitialSurfaceRect';

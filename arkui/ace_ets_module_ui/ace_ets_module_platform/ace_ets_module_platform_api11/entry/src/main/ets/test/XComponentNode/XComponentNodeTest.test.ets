@@ -70,12 +70,12 @@ export default function XComponentNodeTest() {
     })
 
     /**
+     * @tc.name   XComponentNodeTest_0010
      * @tc.number XComponentNodeTest_0010
-     * @tc.name XComponentNodeTest_0010
-     * @tc.desc test XComponentNode onCreate
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test XComponentNode onCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('XComponentNodeTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('XComponentNodeTest_0010 START');
@@ -87,13 +87,13 @@ export default function XComponentNodeTest() {
       done();
     });
 
-        /**
+    /**
+     * @tc.name   XComponentNodeTest_0020
      * @tc.number XComponentNodeTest_0020
-     * @tc.name XComponentNodeTest_0020
-     * @tc.desc test XComponentNode changeRenderType
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test XComponentNode changeRenderType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('XComponentNodeTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('XComponentNodeTest_0020 START');

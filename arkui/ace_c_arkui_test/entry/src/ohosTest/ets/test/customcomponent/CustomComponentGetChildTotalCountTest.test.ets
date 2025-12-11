@@ -26,37 +26,37 @@ export default function customComponentGetChildTotalCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_TOTAL_COUNT_0001
-     * @tc.name       : testCustomComponentGetChildTotalCount001
-     * @tc.desc       : testing height for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetChildTotalCount001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_TOTAL_COUNT_0001
+     * @tc.desc   testing height for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetChildTotalCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetChildTotalCount001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_TOTAL_COUNT_0200
-     * @tc.name       : testCustomComponentGetChildTotalCount002
-     * @tc.desc       : testing height for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetChildTotalCount002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_TOTAL_COUNT_0200
+     * @tc.desc   testing height for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetChildTotalCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetChildTotalCount002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_TOTAL_COUNT_0300
-     * @tc.name       : testCustomComponentGetChildTotalCount003
-     * @tc.desc       : testing height for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetChildTotalCount003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_TOTAL_COUNT_0300
+     * @tc.desc   testing height for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetChildTotalCount003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetChildTotalCount003()).assertEqual(0)

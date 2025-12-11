@@ -65,12 +65,12 @@ void HwEncFunc2NdkTest::SetUpTestCase()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0)
+    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != 0)
         cout << "memcpy failed" << endl;
     cout << "codecname: " << g_codecName << endl;
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0)
+    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != 0)
         cout << "memcpy failed" << endl;
     cout << "codecname_hevc: " << g_codecNameHEVC << endl;
 }
@@ -108,9 +108,12 @@ bool IsSupportRgba1010102Format()
     return false;
 }
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3100
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3100
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3100
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3100, TestSize.Level2)
 {
@@ -132,9 +135,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3200
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3200
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3200
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3200, TestSize.Level2)
 {
@@ -152,9 +158,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3300
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3300
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3300
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3300, TestSize.Level2)
 {
@@ -174,9 +183,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3400
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3400
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3400
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3400, TestSize.Level2)
 {
@@ -196,9 +208,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3500
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3500
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3500
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3500, TestSize.Level2)
 {
@@ -221,9 +236,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3600
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3600
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3600
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3600, TestSize.Level2)
 {
@@ -239,9 +257,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3700
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3700
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3700
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3700, TestSize.Level2)
 {
@@ -257,9 +278,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3800
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3800
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3800
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3800, TestSize.Level2)
 {
@@ -276,9 +300,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_3900
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_3900
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_3900
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3900, TestSize.Level2)
 {
@@ -295,9 +322,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_3900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4000
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4000
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4000
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4000, TestSize.Level2)
 {
@@ -316,9 +346,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4100
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4100
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4100
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4100, TestSize.Level2)
 {
@@ -337,9 +370,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4200
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4200
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4200
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4200, TestSize.Level2)
 {
@@ -386,9 +422,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4300
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4300
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4300
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4300, TestSize.Level2)
 {
@@ -407,9 +446,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4400
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4400
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4400
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4400, TestSize.Level2)
 {
@@ -428,9 +470,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4500
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4500
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4500
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4500, TestSize.Level2)
 {
@@ -484,9 +529,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4600
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4600
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4600
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4600, TestSize.Level2)
 {
@@ -506,9 +554,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4700
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4700
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4700
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4700, TestSize.Level2)
 {
@@ -527,9 +578,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4800
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4800
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4800
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4800, TestSize.Level2)
 {
@@ -548,9 +602,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_4900
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_4900
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_4900
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4900, TestSize.Level2)
 {
@@ -575,9 +632,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_4900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_5000
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_5000
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_5000
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5000, TestSize.Level2)
 {
@@ -595,9 +655,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_5100
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_5100
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_5100
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5100, TestSize.Level2)
 {
@@ -613,9 +676,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_8700
- * @tc.name      : VIDEO_ENCODE_CAPABILITY_8700
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_8700
+ * @tc.number VIDEO_ENCODE_CAPABILITY_8700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_8700, TestSize.Level2)
 {
@@ -642,9 +708,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_8700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_8800
- * @tc.name      : VIDEO_ENCODE_CAPABILITY_8800
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_8800
+ * @tc.number VIDEO_ENCODE_CAPABILITY_8800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_8800, TestSize.Level2)
 {
@@ -671,9 +740,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_8800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_8900
- * @tc.name      : VIDEO_ENCODE_CAPABILITY_8900
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_8900
+ * @tc.number VIDEO_ENCODE_CAPABILITY_8900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_8900, TestSize.Level2)
 {
@@ -705,9 +777,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_8900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_9000
- * @tc.name      : VIDEO_ENCODE_CAPABILITY_9000
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_9000
+ * @tc.number VIDEO_ENCODE_CAPABILITY_9000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_9000, TestSize.Level2)
 {
@@ -730,9 +805,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_CAPABILITY_9000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_5500
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_5500
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_5500
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5500, TestSize.Level2)
 {
@@ -758,9 +836,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_5600
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_5600
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_5600
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5600, TestSize.Level2)
 {
@@ -782,9 +863,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_5700
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_5700
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_5700
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5700, TestSize.Level2)
 {
@@ -806,9 +890,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_5800
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_5800
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_5800
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5800, TestSize.Level2)
 {
@@ -835,9 +922,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_5900
- * @tc.name      : VIDEO_ENCODE_HEVC_CAPABILITY_5900
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_5900
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5900, TestSize.Level2)
 {
@@ -860,9 +950,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_5900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0010
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0010
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0010, TestSize.Level2)
 {
@@ -876,9 +969,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0010, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0020
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0020
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0020
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0020, TestSize.Level2)
 {
@@ -894,9 +990,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0020, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0030
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0030
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0030
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0030, TestSize.Level2)
 {
@@ -912,9 +1011,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0030, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0040
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0040
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0040
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0040, TestSize.Level2)
 {
@@ -928,9 +1030,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0040, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0050
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0050
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0050
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0050
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0050, TestSize.Level2)
 {
@@ -947,9 +1052,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0050, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0070
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0070
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0070
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0070
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0070, TestSize.Level2)
 {
@@ -966,9 +1074,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0070, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0080
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0080
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0080
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0080
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0080, TestSize.Level2)
 {
@@ -985,9 +1096,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0080, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0090
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0090
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0090
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0090
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0090, TestSize.Level2)
 {
@@ -1007,9 +1121,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0090, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0100
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0100
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0100
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0100, TestSize.Level2)
 {
@@ -1026,9 +1143,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0110
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0110
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0110
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0110
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0110, TestSize.Level2)
 {
@@ -1047,9 +1167,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0110, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0120
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0120
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0120
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0120
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0120, TestSize.Level2)
 {
@@ -1068,9 +1191,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0120, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0130
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0130
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0130
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0130
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0130, TestSize.Level0)
 {
@@ -1089,9 +1215,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0130, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0140
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0140
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0140
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0140
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0140, TestSize.Level1)
 {
@@ -1110,9 +1239,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0140, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0150
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0150
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0150
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0150
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0150, TestSize.Level1)
 {
@@ -1131,9 +1263,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0150, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0160
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0160
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0160
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0160
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0160, TestSize.Level1)
 {
@@ -1152,9 +1287,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0160, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0210
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0210
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0210
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0210
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0210, TestSize.Level0)
 {
@@ -1173,9 +1311,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0210, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0220
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0220
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0220
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0220
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0220, TestSize.Level1)
 {
@@ -1194,9 +1335,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0220, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0230
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0230
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0230
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0230
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0230, TestSize.Level1)
 {
@@ -1215,9 +1359,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0230, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0240
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0240
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0240
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0240
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0240, TestSize.Level1)
 {
@@ -1236,9 +1383,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0240, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0360
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0360
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0360
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0360
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0360, TestSize.Level0)
 {
@@ -1257,9 +1407,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0360, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0370
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0370
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0370
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0370
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0370, TestSize.Level1)
 {
@@ -1278,9 +1431,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0370, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0380
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0380
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0380
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0380
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0380, TestSize.Level0)
 {
@@ -1299,9 +1455,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0380, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0390
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0390
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0390
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0390
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0390, TestSize.Level1)
 {
@@ -1320,9 +1479,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0390, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0400
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0400
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0400
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0400, TestSize.Level2)
 {
@@ -1341,9 +1503,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_SYNC_FUNC_0410
- * @tc.name      : VIDEO_ENCODE_SYNC_FUNC_0410
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_SYNC_FUNC_0410
+ * @tc.number VIDEO_ENCODE_SYNC_FUNC_0410
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0410, TestSize.Level2)
 {
@@ -1362,9 +1527,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_SYNC_FUNC_0410, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0010
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0010
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0010, TestSize.Level1)
 {
@@ -1390,9 +1558,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0020
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0020
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0020
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0020, TestSize.Level0)
 {
@@ -1418,9 +1589,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0020, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0030
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0030
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0030
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0030, TestSize.Level0)
 {
@@ -1446,9 +1620,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0030, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0040
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0040
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0040
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0040, TestSize.Level1)
 {
@@ -1474,9 +1651,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0040, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0110
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0110
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0110
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0110
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0110, TestSize.Level2)
 {
@@ -1505,9 +1685,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0110, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0130
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0130
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0130
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0130
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0130, TestSize.Level2)
 {
@@ -1537,9 +1720,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0130, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0150
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0150
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0150
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0150
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0150, TestSize.Level2)
 {
@@ -1564,9 +1750,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0150, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0170
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0170
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0170
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0170
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0170, TestSize.Level2)
 {
@@ -1590,9 +1779,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0170, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0180
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0180
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0180
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0180
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0180, TestSize.Level2)
 {
@@ -1616,9 +1808,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0180, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_RGBA1010102_0190
- * @tc.name      : VIDEO_ENCODE_RGBA1010102_0190
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_RGBA1010102_0190
+ * @tc.number VIDEO_ENCODE_RGBA1010102_0190
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0190, TestSize.Level2)
 {
@@ -1642,9 +1837,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0190, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_PIXE_FORMAT_0010
- * @tc.name      : 264 pixelformat query key
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_PIXE_FORMAT_0010
+ * @tc.number VIDEO_ENCODE_PIXE_FORMAT_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_PIXE_FORMAT_0010, TestSize.Level2)
 {

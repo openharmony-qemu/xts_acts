@@ -49,12 +49,12 @@ export default function setKeyProcessingModeTest() {
 
 
     /**
-     * @tc.number    setKeyProcessingModeTest_0100
-     * @tc.name      setKeyProcessingModeTest_0100
-     * @tc.desc      Test setKeyProcessingMode   FOCUS_NAVIGATION
-     * @tc.level     Level 1
-     * @tc.type      Function
-     * @tc.size      MediumTest
+     * @tc.name   setKeyProcessingModeTest_0100
+     * @tc.number setKeyProcessingModeTest_0100
+     * @tc.desc   Test setKeyProcessingMode   FOCUS_NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setKeyProcessingModeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('setKeyProcessingModeTest_0100 START');
@@ -78,12 +78,12 @@ export default function setKeyProcessingModeTest() {
     });
 
     /**
-     * @tc.number    setKeyProcessingModeTest_0200
-     * @tc.name      setKeyProcessingModeTest_0200
-     * @tc.desc      Test setKeyProcessingMode   ANCESTOR_EVENT
-     * @tc.level     Level 1
-     * @tc.type      Function
-     * @tc.size      MediumTest
+     * @tc.name   setKeyProcessingModeTest_0200
+     * @tc.number setKeyProcessingModeTest_0200
+     * @tc.desc   Test setKeyProcessingMode   ANCESTOR_EVENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setKeyProcessingModeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('setKeyProcessingModeTest_0200 START');
@@ -107,12 +107,12 @@ export default function setKeyProcessingModeTest() {
     });
 
     /**
-     * @tc.number    setKeyProcessingModeTest_0300
-     * @tc.name      setKeyProcessingModeTest_0300
-     * @tc.desc      Test setKeyProcessingMode  undefined
-     * @tc.level     Level 1
-     * @tc.type      Function
-     * @tc.size      MediumTest
+     * @tc.name   setKeyProcessingModeTest_0300
+     * @tc.number setKeyProcessingModeTest_0300
+     * @tc.desc   Test setKeyProcessingMode  undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setKeyProcessingModeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('setKeyProcessingModeTest_0300 START');

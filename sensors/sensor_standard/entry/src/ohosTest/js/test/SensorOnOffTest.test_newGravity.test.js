@@ -90,14 +90,14 @@ describe("SensorJsTest_sensor_42", function () {
     let invalid  = -1;
     let TAG  = '';
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0010
-    * @tc.name: newGravity_SensorJsTest001
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 0
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0010
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("newGravity_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('---------newGravity_SensorJsTest001--------------');
         TAG  = 'newGravity_SensorJsTest001'
@@ -121,14 +121,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0020
-    * @tc.name: newGravity_SensorJsTest002
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0020
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest002--------------');
         TAG  = 'newGravity_SensorJsTest002'
@@ -153,14 +153,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0030
-    * @tc.name: newGravity_SensorJsTest003
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0030
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest003--------------');
         TAG  = 'newGravity_SensorJsTest003'
@@ -193,14 +193,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0040
-    * @tc.name: newGravity_SensorJsTest004
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0040
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest004--------------');
         TAG  = 'newGravity_SensorJsTest004'
@@ -227,14 +227,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0050
-    * @tc.name: newGravity_SensorJsTest005
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0050
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest005--------------');
         TAG  = 'newGravity_SensorJsTest005'
@@ -276,14 +276,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0060
-    * @tc.name: newGravity_SensorJsTest006
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0060
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest006'
         try{
@@ -307,14 +307,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0070
-    * @tc.name: newGravity_SensorJsTest007
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0070
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest007'
         function onceSensorCallback(data) {
@@ -346,14 +346,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0080
-    * @tc.name: newGravity_SensorJsTest008
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0080
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest008'
         function onceSensorCallback(data) {
@@ -389,14 +389,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0090
-    * @tc.name: newGravity_SensorJsTest009
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0090
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest009'
         try{
@@ -423,14 +423,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0100
-    * @tc.name: newGravity_SensorJsTest010
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest010
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0100
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest010'
         function onSensorCallback(data) {
@@ -469,14 +469,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0110
-    * @tc.name: newGravity_SensorJsTest011
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest011
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0110
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest011'
         function onSensorCallback(data) {
@@ -508,14 +508,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0120
-    * @tc.name: newGravity_SensorJsTest012
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest012
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0120
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest012'
         try{
@@ -570,13 +570,13 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_GRAVITY_JSTest_0130
-    * @tc.name: newGravity_SensorJsTest013
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    /**
+     * @tc.name   newGravity_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_GRAVITY_JSTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("newGravity_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         TAG  = 'newGravity_SensorJsTest013'
@@ -604,14 +604,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0140
-    * @tc.name: newGravity_SensorJsTest014
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0140
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest014'
         console.info('---------newGravity_SensorJsTest014--------------');
@@ -667,14 +667,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0150
-    * @tc.name: newGravity_SensorJsTest015
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest015
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0150
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest015--------------');
         TAG  = 'newGravity_SensorJsTest015'
@@ -730,14 +730,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0160
-    * @tc.name: newGravity_SensorJsTest016
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0160
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest016--------------');
         TAG  = 'newGravity_SensorJsTest016'
@@ -781,14 +781,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0170
-    * @tc.name: newGravity_SensorJsTest017
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0170
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newGravity_SensorJsTest017--------------');
         TAG  = 'newGravity_SensorJsTest017'
@@ -825,14 +825,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0180
-    * @tc.name: newGravity_SensorJsTest018
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0180
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newGravity_SensorJsTest018--------------');
         TAG  = 'newGravity_SensorJsTest018'
@@ -869,14 +869,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0190
-    * @tc.name: newGravity_SensorJsTest019
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest019
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0190
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newGravity_SensorJsTest019--------------');
         TAG  = 'newGravity_SensorJsTest019'
@@ -906,14 +906,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0200
-    * @tc.name: newGravity_SensorJsTest020
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest020
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0200
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newGravity_SensorJsTest020--------------');
         TAG  = 'newGravity_SensorJsTest020'
@@ -944,14 +944,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0210
-    * @tc.name: newGravity_SensorJsTest021
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest021
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0210
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("newGravity_SensorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('---------newGravity_SensorJsTest021--------------');
         TAG  = 'newGravity_SensorJsTest021'
@@ -975,14 +975,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0220
-    * @tc.name: newGravity_SensorJsTest022
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest022
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0220
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest022'
         try{
@@ -1018,14 +1018,14 @@ describe("SensorJsTest_sensor_42", function () {
         done();
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0230
-    * @tc.name: newGravity_SensorJsTest023
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest023
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0230
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest023--------------');
         TAG  = 'newGravity_SensorJsTest023'
@@ -1061,14 +1061,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0240
-    * @tc.name: newGravity_SensorJsTest024
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest024
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0240
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest024--------------');
         TAG  = 'newGravity_SensorJsTest024'
@@ -1099,14 +1099,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0250
-    * @tc.name: newGravity_SensorJsTest025
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest025
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0250
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG  = 'newGravity_SensorJsTest025'
         try{
@@ -1142,14 +1142,14 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-    * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0260
-    * @tc.name: newGravity_SensorJsTest026
-    * @tc.desc: Functional Use Cases
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   newGravity_SensorJsTest026
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0260
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("newGravity_SensorJsTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newGravity_SensorJsTest026--------------');
         TAG  = 'newGravity_SensorJsTest026'
@@ -1183,13 +1183,13 @@ describe("SensorJsTest_sensor_42", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWGRAVITY_JsTest_0270
-     * @tc.name: newGravity_SensorJsTest027
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newGravity_SensorJsTest027
+     * @tc.number SUB_SensorsSystem_NEWGRAVITY_JsTest_0270
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newGravity_SensorJsTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newGravity_SensorJsTest027--------------');

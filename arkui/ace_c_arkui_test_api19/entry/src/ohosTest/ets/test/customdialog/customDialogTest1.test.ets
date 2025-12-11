@@ -31,14 +31,14 @@ export default function customDialogTest1() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_CUSTOMDIALOG_0200
-    * @tc.name: customDialogTest1_0010
-    * @tc.desc: To test the properties of the updateDialog
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   customDialogTest1_0010
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_0200
+     * @tc.desc   To test the properties of the updateDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('customDialogTest1_0010', Level.LEVEL1, async (done: Function) => {
       console.info('customDialogTest1_0010  START');
       await Utils.sleep(500);

@@ -40,12 +40,12 @@ export default function typeNodechildrenMainSizeTest() {
       done();
     });
     /**
-     * @tc.number    childrenMainSizeTest_0100
-     * @tc.name      childrenMainSizeTest_0100
-     * @tc.desc      TypedFrameNode: childrenMainSize
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   childrenMainSizeTest_0100
+     * @tc.number childrenMainSizeTest_0100
+     * @tc.desc   TypedFrameNode: childrenMainSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('childrenMainSizeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('childrenMainSizeTest_0100 START');
@@ -65,12 +65,12 @@ export default function typeNodechildrenMainSizeTest() {
       done();
     });
     /**
-     * @tc.number    childrenMainSizeTest_0200
-     * @tc.name      childrenMainSizeTest_0200
-     * @tc.desc      TypedFrameNode: childrenMainSize
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   childrenMainSizeTest_0200
+     * @tc.number childrenMainSizeTest_0200
+     * @tc.desc   TypedFrameNode: childrenMainSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('childrenMainSizeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('childrenMainSizeTest_0100 START');

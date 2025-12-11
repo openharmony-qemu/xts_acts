@@ -47,9 +47,12 @@ export default function Grid_Row_Breakpoints_Negative() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowBreakpoints_Negative_0100
      * @tc.number SUB_ACE_GRIDROWBREAKPOTINS_Negative_0100
-     * @tc.name testBreakpoints
-     * @tc.desc The breakpoint range value cannot be negative
+     * @tc.desc   The breakpoint range value cannot be negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowBreakpoints_Negative_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowBreakpoints_Negative_0100 START');

@@ -98,6 +98,14 @@ export default function audioInterrupt() {
     afterAll(() => {
       console.info('audioRenderInterrupt: afterAll: Test suite-level cleanup condition');
     });
+    /**
+     * @tc.name   SUB_AUDIO_INTERRUPT_001
+     * @tc.number SUB_AUDIO_INTERRUPT_001
+     * @tc.desc   SUB_AUDIO_INTERRUPT_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AUDIO_INTERRUPT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,

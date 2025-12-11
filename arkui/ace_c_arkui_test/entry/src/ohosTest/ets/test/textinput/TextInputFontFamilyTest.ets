@@ -26,26 +26,26 @@ export default function textInputFontFamilyTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_FONTFAMILY_0100
-     * @tc.name       : testTextInputFontFamily001
-     * @tc.desc       : testing fontFamily for TextInput with HarmonyOS Sans value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontFamily001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FONTFAMILY_0100
+     * @tc.desc   testing fontFamily for TextInput with HarmonyOS Sans value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontFamily001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontFamily001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_FONTFAMILY_0200
-     * @tc.name       : testTextInputFontFamily002
-     * @tc.desc       : testing fontFamily for TextInput with HarmonyOS Sans STR_AREA value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontFamily002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FONTFAMILY_0200
+     * @tc.desc   testing fontFamily for TextInput with HarmonyOS Sans STR_AREA value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontFamily002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontFamily002()).assertEqual(0)

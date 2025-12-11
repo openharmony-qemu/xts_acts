@@ -64,9 +64,12 @@ static struct OH_Huks_Param g_hkdfFinishParams001[] = {
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 /**
- * @tc.name: HuksDeriveHKDFTest.Security_HUKS_NAPI_Derive_hkdf_0100
- * @tc.desc: alg-HKDF pur-Derive dig-SHA256 KEY_SIZE-128
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Derive_hkdf_0100
+ * @tc.number Security_HUKS_NAPI_Derive_hkdf_0100
+ * @tc.desc   alg-HKDF pur-Derive dig-SHA256 KEY_SIZE-128
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HuksDeriveHKDFTest, Security_HUKS_NAPI_Derive_hkdf_0100, TestSize.Level1)
 {

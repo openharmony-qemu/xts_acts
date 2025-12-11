@@ -46,9 +46,12 @@ void BuildModel(OH_NNModel *model, const OHNNGraphArgs &graphArgs)
 } // namespace
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0100
- * @tc.desc: 创建Tensor，TensorDesc为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0100
+ * @tc.desc   创建Tensor，TensorDesc为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0100, Function | MediumTest | Level0)
 {
@@ -59,9 +62,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0100, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0200
- * @tc.desc: 创建Tensor，deviceId=0，设备找到，创建成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0200
+ * @tc.desc   创建Tensor，deviceId=0，设备找到，创建成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0200, Function | MediumTest | Level0)
 {
@@ -75,9 +81,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0200, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0300
- * @tc.desc: 创建Tensor，成功创建
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0300
+ * @tc.desc   创建Tensor，成功创建
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0300, Function | MediumTest | Level0)
 {
@@ -92,9 +101,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensor_0300, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0100
- * @tc.desc: 根据size创建Tensor，TensorDesc为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0100
+ * @tc.desc   根据size创建Tensor，TensorDesc为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0100, Function | MediumTest | Level0)
 {
@@ -106,9 +118,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0100, Fu
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0200
- * @tc.desc: 根据size创建Tensor，size = 0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0200
+ * @tc.desc   根据size创建Tensor，size = 0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0200, Function | MediumTest | Level0)
 {
@@ -123,9 +138,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0200, Fu
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0300
- * @tc.desc: 根据size创建Tensor，size < tensor size
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0300
+ * @tc.desc   根据size创建Tensor，size < tensor size
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0300, Function | MediumTest | Level0)
 {
@@ -142,9 +160,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithSize_0300, Fu
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0100
- * @tc.desc: 通过fd根据size创建Tensor，TensorDesc为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0100
+ * @tc.desc   通过fd根据size创建Tensor，TensorDesc为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0100, Function | MediumTest | Level0)
 {
@@ -165,9 +186,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0100, Func
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0200
- * @tc.desc: 通过fd根据size创建Tensor，fd = -1
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0200
+ * @tc.desc   通过fd根据size创建Tensor，fd = -1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0200, Function | MediumTest | Level0)
 {
@@ -184,9 +208,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0200, Func
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0300
- * @tc.desc: 通过fd根据size创建Tensor，size = 0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0300
+ * @tc.desc   通过fd根据size创建Tensor，size = 0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0300, Function | MediumTest | Level0)
 {
@@ -208,9 +235,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0300, Func
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0400
- * @tc.desc: 通过fd根据size创建Tensor，size = offset
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0400
+ * @tc.desc   通过fd根据size创建Tensor，size = offset
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0400, Function | MediumTest | Level0)
 {
@@ -233,9 +263,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0400, Func
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0500
- * @tc.desc: 通过fd根据size创建Tensor，size-offset < tensorDescBytesize
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0500
+ * @tc.desc   通过fd根据size创建Tensor，size-offset < tensorDescBytesize
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0500, Function | MediumTest | Level0)
 {
@@ -260,9 +293,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0500, Func
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0600
- * @tc.desc: 通过fd根据size创建Tensor，size-offset = tensorDescBytesize
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0600
+ * @tc.desc   通过fd根据size创建Tensor，size-offset = tensorDescBytesize
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0600, Function | MediumTest | Level0)
 {
@@ -291,9 +327,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_CreateTensorWithFd_0600, Func
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0100
- * @tc.desc: 获取databuffer，tensor为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0100
+ * @tc.desc   获取databuffer，tensor为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0100, Function | MediumTest | Level0)
 {
@@ -301,9 +340,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0100, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0200
- * @tc.desc: 获取databuffer，返回正确
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0200
+ * @tc.desc   获取databuffer，返回正确
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0200, Function | MediumTest | Level0)
 {
@@ -319,9 +361,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetDataBuffer_0200, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_Destroy_0100
- * @tc.desc: 销毁tensor，tensor为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_Destroy_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_Destroy_0100
+ * @tc.desc   销毁tensor，tensor为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_Destroy_0100, Function | MediumTest | Level0)
 {
@@ -329,9 +374,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_Destroy_0100, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_Destroy_0200
- * @tc.desc: 销毁tensor，tensor为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_Destroy_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_Destroy_0200
+ * @tc.desc   销毁tensor，tensor为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_Destroy_0200, Function | MediumTest | Level0)
 {
@@ -340,9 +388,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_Destroy_0200, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0100
- * @tc.desc: 获取TensorDesc，tensor为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0100
+ * @tc.desc   获取TensorDesc，tensor为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0100, Function | MediumTest | Level0)
 {
@@ -350,9 +401,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0100, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0200
- * @tc.desc: 获取TensorDesc，返回正确
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0200
+ * @tc.desc   获取TensorDesc，返回正确
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0200, Function | MediumTest | Level0)
 {
@@ -368,9 +422,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetTensorDesc_0200, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetSize_0100
- * @tc.desc: 获取SIZE，tensor为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetSize_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetSize_0100
+ * @tc.desc   获取SIZE，tensor为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0100, Function | MediumTest | Level0)
 {
@@ -379,9 +436,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0100, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetSize_0200
- * @tc.desc: 获取SIZE，OH_NNTensor_Create创建
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetSize_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetSize_0200
+ * @tc.desc   获取SIZE，OH_NNTensor_Create创建
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0200, Function | MediumTest | Level0)
 {
@@ -398,9 +458,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0200, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetSize_0300
- * @tc.desc: 获取SIZE，OH_NNTensor_CreateWithSize创建
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetSize_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetSize_0300
+ * @tc.desc   获取SIZE，OH_NNTensor_CreateWithSize创建
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0300, Function | MediumTest | Level0)
 {
@@ -420,9 +483,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0300, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetSize_0400
- * @tc.desc: 获取SIZE，OH_NNTensor_CreateWithFd创建
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetSize_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetSize_0400
+ * @tc.desc   获取SIZE，OH_NNTensor_CreateWithFd创建
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0400, Function | MediumTest | Level0)
 {
@@ -452,9 +518,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetSize_0400, Function | Medi
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetFd_0100
- * @tc.desc: 获取Fd，tensor为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetFd_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetFd_0100
+ * @tc.desc   获取Fd，tensor为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetFd_0100, Function | MediumTest | Level0)
 {
@@ -463,9 +532,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetFd_0100, Function | Medium
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetFd_0200
- * @tc.desc: 获取Fd，返回成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetFd_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetFd_0200
+ * @tc.desc   获取Fd，返回成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetFd_0200, Function | MediumTest | Level0)
 {
@@ -482,9 +554,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetFd_0200, Function | Medium
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetOffset_0100
- * @tc.desc: 获取offset，tensor为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetOffset_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetOffset_0100
+ * @tc.desc   获取offset，tensor为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetOffset_0100, Function | MediumTest | Level0)
 {
@@ -493,9 +568,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetOffset_0100, Function | Me
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetOffset_0200
- * @tc.desc: 获取offset，返回成功，offset = 0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetOffset_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetOffset_0200
+ * @tc.desc   获取offset，返回成功，offset = 0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetOffset_0200, Function | MediumTest | Level0)
 {
@@ -513,9 +591,12 @@ HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetOffset_0200, Function | Me
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Tensor_GetOffset_0300
- * @tc.desc: 获取offset，通过OH_NNTensor_CreateWithFd创建，返回成功，offset = 设置值
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Tensor_GetOffset_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Tensor_GetOffset_0300
+ * @tc.desc   获取offset，通过OH_NNTensor_CreateWithFd创建，返回成功，offset = 设置值
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(TensorTest, SUB_AI_NNRt_Func_North_Tensor_GetOffset_0300, Function | MediumTest | Level0)
 {

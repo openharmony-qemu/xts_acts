@@ -43,12 +43,12 @@ export default function IsAfterLastTest () {
 
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_IS_AFTER_LAST_0200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_IS_AFTER_LAST_0200
-     * @tc.desc     PhotoAccessHelper_showAssetsCreationDialog
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_IS_AFTER_LAST_0200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_IS_AFTER_LAST_0200
+     * @tc.desc   PhotoAccessHelper_showAssetsCreationDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_PHOTO_ACCESS_HELPER_IS_AFTER_LAST_0200", Level.LEVEL0, async (done: Function) => {
       const testNum = "SUB_PHOTO_ACCESS_HELPER_IS_AFTER_LAST_0200";

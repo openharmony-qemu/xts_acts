@@ -19,5 +19,5 @@ ohos_js_app_static_suite("ActsSimManagerFunctionStaticTest") {
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsSimManagerFunctionStaticTest"
   subsystem_name = "telephony"
-  part_name = "sim_manager"
+  part_name = "core_service"
 }

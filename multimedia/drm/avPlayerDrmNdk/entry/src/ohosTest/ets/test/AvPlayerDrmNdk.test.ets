@@ -42,12 +42,12 @@ export default function AVPlayerNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_DRM_0100
-     * @tc.name       : Test_AVPlayer_SetMediaKeySystemInfoCallback
-     * @tc.desc       : test OH_AVPlayer_SetMediaKeySystemInfoCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVPLAYER_DRM_0100
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_DRM_0100
+     * @tc.desc   test OH_AVPlayer_SetMediaKeySystemInfoCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVPLAYER_DRM_0100', Level.LEVEL0, async (done: Function) => {
       let filePath= "/data/storage/el2/base/haps/entry/files/ChinaDRMLab_Promo_210525-264-30-1080P-10000K.sm4c.ts";
@@ -62,12 +62,12 @@ export default function AVPlayerNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_DRM_0200
-     * @tc.name       : Test_AVPlayer_GetMediaKeySystemInfoCallback
-     * @tc.desc       : test OH_AVPlayer_GetMediaKeySystemInfoCallback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVPLAYER_DRM_0200
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_DRM_0200
+     * @tc.desc   test OH_AVPlayer_GetMediaKeySystemInfoCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVPLAYER_DRM_0200', Level.LEVEL0, async (done: Function) => {
       let filePath= "/data/storage/el2/base/haps/entry/files/ChinaDRMLab_Promo_210525-264-30-1080P-10000K.sm4c.ts";
@@ -82,12 +82,12 @@ export default function AVPlayerNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_DRM_0300
-     * @tc.name       : Test_AVPlayer_SetDecryptionConfig
-     * @tc.desc       : test OH_AVPlayer_SetDecryptionConfig
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   SUB_MULTIMEIDA_AVPLAYER_DRM_0300
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_DRM_0300
+     * @tc.desc   test OH_AVPlayer_SetDecryptionConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEIDA_AVPLAYER_DRM_0300', Level.LEVEL0, async (done: Function) => {
       let filePath= "/data/storage/el2/base/haps/entry/files/ChinaDRMLab_Promo_210525-264-30-1080P-10000K.sm4c.ts";
@@ -102,12 +102,12 @@ export default function AVPlayerNdkTest() {
       done();
     });
       /**
-       * @tc.number     : SUB_MULTIMEIDA_AUDIOCODEC_DRM_0100
-       * @tc.name       : test OH_AudioCodec_SetDecryptionConfig
-       * @tc.desc       : test Test_AudioCodec_SetDecryptionConfig
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
+       * @tc.name   SUB_MULTIMEIDA_AUDIOCODEC_DRM_0100
+       * @tc.number SUB_MULTIMEIDA_AUDIOCODEC_DRM_0100
+       * @tc.desc   test Test_AudioCodec_SetDecryptionConfig
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEIDA_AUDIOCODEC_DRM_0100', Level.LEVEL0, async (done: Function) => {
         let result: number = avplayer.Test_AudioCodec_SetDecryptionConfig("ptr", "ptr", 0);
@@ -115,12 +115,12 @@ export default function AVPlayerNdkTest() {
         done();
       });
       /**
-       * @tc.number     : SUB_MULTIMEIDA_VIDEOCODEC_DRM_0100
-       * @tc.name       : test Test_VideoDecoder_SetDecryptionConfig
-       * @tc.desc       : handle: string;  buff: string
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
+       * @tc.name   SUB_MULTIMEIDA_VIDEOCODEC_DRM_0100
+       * @tc.number SUB_MULTIMEIDA_VIDEOCODEC_DRM_0100
+       * @tc.desc   handle: string;  buff: string
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEIDA_VIDEOCODEC_DRM_0100', Level.LEVEL0, async (done: Function) => {
         let result: number = avplayer.Test_VideoDecoder_SetDecryptionConfig("ptr", "ptr", 0);
@@ -128,12 +128,12 @@ export default function AVPlayerNdkTest() {
         done();
       });
       /**
-       * @tc.number     : SUB_MULTIMEIDA_AVDEMUXER_0100
-       * @tc.name       : test AVDemuxer_SetMediaKeySystemInfoCallback
-       * @tc.desc       : test OH_AVDemuxer_SetMediaKeySystemInfoCallback
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
+       * @tc.name   SUB_MULTIMEIDA_AVDEMUXER_0100
+       * @tc.number SUB_MULTIMEIDA_AVDEMUXER_0100
+       * @tc.desc   test OH_AVDemuxer_SetMediaKeySystemInfoCallback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEIDA_AVDEMUXER_0100', Level.LEVEL0, async (done: Function) => {
         let result: number = avplayer.TestAVDemuxer_SetMediaKeySystemInfoCallback("ptr", "ptr");
@@ -141,12 +141,12 @@ export default function AVPlayerNdkTest() {
         done();
       });
       /**
-       * @tc.number     : SUB_MULTIMEIDA_AVDEMUXER_0200
-       * @tc.name       : test AVDemuxer_SetDemuxerMediaKeySystemInfoCallback
-       * @tc.desc       : test OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
+       * @tc.name   SUB_MULTIMEIDA_AVDEMUXER_0200
+       * @tc.number SUB_MULTIMEIDA_AVDEMUXER_0200
+       * @tc.desc   test OH_AVDemuxer_SetDemuxerMediaKeySystemInfoCallback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEIDA_AVDEMUXER_0200', Level.LEVEL0, async (done: Function) => {
         let result: number = avplayer.TestAVDemuxer_SetDemuxerMediaKeySystemInfoCallback("ptr", "ptr");
@@ -154,12 +154,12 @@ export default function AVPlayerNdkTest() {
         done();
       });
       /**
-       * @tc.number     : SUB_MULTIMEIDA_AVDEMUXER_0300
-       * @tc.name       : test OH_AVDemuxer_GetMediaKeySystemInfo
-       * @tc.desc       : test TestAVDemuxer_GetMediaKeySystemInfo
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
+       * @tc.name   SUB_MULTIMEIDA_AVDEMUXER_0300
+       * @tc.number SUB_MULTIMEIDA_AVDEMUXER_0300
+       * @tc.desc   test TestAVDemuxer_GetMediaKeySystemInfo
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEIDA_AVDEMUXER_0300', Level.LEVEL0, async (done: Function) => {
         let result: number = avplayer.TestAVDemuxer_GetMediaKeySystemInfo("ptr", "ptr");

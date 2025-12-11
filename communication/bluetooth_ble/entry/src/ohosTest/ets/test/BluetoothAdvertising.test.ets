@@ -150,7 +150,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0100
      * @tc.desc   Test bluetoothBle api11
@@ -222,7 +221,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0200
      * @tc.desc   Test bluetoothBle api11
@@ -277,7 +275,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0300
      * @tc.desc   Test bluetoothBle api11
@@ -317,7 +314,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0400
      * @tc.desc   Test bluetoothBle api11
@@ -357,7 +353,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0500
      * @tc.desc   Test bluetoothBle api11
@@ -397,7 +392,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0900
      * @tc.desc   Test bluetoothBle api11
@@ -436,7 +430,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1000
      * @tc.desc   Test bluetoothBle api11
@@ -506,7 +499,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1100
      * @tc.desc   Test bluetoothBle api11
@@ -577,7 +569,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1200
      * @tc.desc   Test bluetoothBle api11
@@ -625,7 +616,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1300
      * @tc.desc   Test bluetoothBle api11
@@ -679,7 +669,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1400
      * @tc.desc   Test bluetoothBle api11
@@ -747,7 +736,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1500
      * @tc.desc   Test bluetoothBle api11
@@ -798,7 +786,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1600
      * @tc.desc   Test bluetoothBle api11
@@ -835,7 +822,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1800
      * @tc.desc   Test bluetoothBle api11
@@ -857,7 +843,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1900
      * @tc.desc   Test bluetoothBle api11
@@ -894,7 +879,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1700
      * @tc.desc   Test bluetoothBle api11
@@ -924,7 +908,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2000
      * @tc.desc   Test errorCode 2900010
@@ -973,7 +956,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2100
      * @tc.desc   Test errorCode 2900010
@@ -1024,7 +1006,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2200
      * @tc.desc   Test errorCode 2900010
@@ -1091,7 +1072,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2300
      * @tc.desc   Test errorCode 2902055
@@ -1136,7 +1116,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2400
      * @tc.desc   Test errorCode 2902055
@@ -1166,7 +1145,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2500
      * @tc.desc   Test errorCode 2902055
@@ -1211,7 +1189,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2600
      * @tc.desc   Test errorCode 2902055
@@ -1241,7 +1218,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2700
      * @tc.desc   Test errorCode 2902055
@@ -1283,7 +1259,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2800
      * @tc.desc   Test errorCode 2902055
@@ -1309,7 +1284,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2900
      * @tc.desc   Test errorCode 2902054
@@ -1356,7 +1330,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_3000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_3000
      * @tc.desc   Test errorCode 2902054
@@ -1405,7 +1378,6 @@ export default function bluetoothAdvertisingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_3100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_3100
      * @tc.desc   Test errorCode 2902054

@@ -147,6 +147,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
         beforeEach(function () {
             resetOptions();
         });
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SHA_1001
+         * @tc.number Security_HUKS_Hmac_API8_SHA_1001
+         * @tc.desc   Security_HUKS_Hmac_API8_SHA_1001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SHA_1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSHA256KeyAlias001";
             let HuksOptions = {
@@ -162,6 +170,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SHA_1002
+         * @tc.number Security_HUKS_Hmac_API8_SHA_1002
+         * @tc.desc   Security_HUKS_Hmac_API8_SHA_1002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SHA_1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSHA256KeyAlias002";
             let HuksOptions = {
@@ -175,6 +191,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             await publicHmacGenFunc(srcKeyAlias, HuksOptions, "abort");
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SHA_1003
+         * @tc.number Security_HUKS_Hmac_API8_SHA_1003
+         * @tc.desc   Security_HUKS_Hmac_API8_SHA_1003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SHA_1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSHA256KeyAlias003";
             let HuksOptions = {
@@ -188,6 +212,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             await publicHmacGenFunc(srcKeyAlias, HuksOptions, "finish");
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SHA_1004
+         * @tc.number Security_HUKS_Hmac_API8_SHA_1004
+         * @tc.desc   Security_HUKS_Hmac_API8_SHA_1004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SHA_1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSHA256KeyAlias004";
             let HuksOptions = {
@@ -201,6 +233,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             await publicHmacGenFunc(srcKeyAlias, HuksOptions, "abort");
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SM3_001
+         * @tc.number Security_HUKS_Hmac_API8_SM3_001
+         * @tc.desc   Security_HUKS_Hmac_API8_SM3_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SM3_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSM3KeyAlias001";
             let HuksOptions = {
@@ -216,6 +256,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SM3_002
+         * @tc.number Security_HUKS_Hmac_API8_SM3_002
+         * @tc.desc   Security_HUKS_Hmac_API8_SM3_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SM3_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSM3KeyAlias002";
             let HuksOptions = {
@@ -229,6 +277,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             await publicHmacGenFunc(srcKeyAlias, HuksOptions, "abort");
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SM3_003
+         * @tc.number Security_HUKS_Hmac_API8_SM3_003
+         * @tc.desc   Security_HUKS_Hmac_API8_SM3_003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SM3_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSM3KeyAlias003";
             let HuksOptions = {
@@ -242,6 +298,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             await publicHmacGenFunc(srcKeyAlias, HuksOptions, "finish");
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_SM3_004
+         * @tc.number Security_HUKS_Hmac_API8_SM3_004
+         * @tc.desc   Security_HUKS_Hmac_API8_SM3_004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("Security_HUKS_Hmac_API8_SM3_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "testHmacDigestSM3KeyAlias004";
             let HuksOptions = {
@@ -255,6 +319,14 @@ export default function SecurityHuksHmacCallbackJsunit() {
             await publicHmacGenFunc(srcKeyAlias, HuksOptions, "abort");
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_Hmac_API8_DigestSHA1_001
+         * @tc.number Security_HUKS_Hmac_API8_DigestSHA1_001
+         * @tc.desc   Security_HUKS_Hmac_API8_DigestSHA1_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Hmac_API8_DigestSHA1_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testHmacDigestSHA1KeyAlias001';
             let first = new Array(HuksHmac.HuksTagDigestSHA1);

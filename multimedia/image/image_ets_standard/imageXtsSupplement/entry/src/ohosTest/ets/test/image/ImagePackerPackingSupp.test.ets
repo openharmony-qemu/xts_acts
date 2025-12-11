@@ -73,12 +73,12 @@ export default function ImageImagePackerPackingSupp() {
 
 
     /**
-     * @tc.number     image_Packer_packing_Supp_001
-     * @tc.name       image_Packer_packing_Supp_001
-     * @tc.desc       ImagePacker,packing,source:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_001
+     * @tc.number image_Packer_packing_Supp_001
+     * @tc.desc   ImagePacker,packing,source:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_001';
@@ -106,12 +106,12 @@ export default function ImageImagePackerPackingSupp() {
     })
 
     /**
-     * @tc.number     image_Packer_packing_Supp_002
-     * @tc.name       image_Packer_packing_Supp_002
-     * @tc.desc       ImagePacker,packing,source:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_002
+     * @tc.number image_Packer_packing_Supp_002
+     * @tc.desc   ImagePacker,packing,source:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_002';
@@ -138,12 +138,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_003
-     * @tc.name       image_Packer_packing_Supp_003
-     * @tc.desc       ImagePacker,packing,source:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_003
+     * @tc.number image_Packer_packing_Supp_003
+     * @tc.desc   ImagePacker,packing,source:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_003';
@@ -171,12 +171,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_004
-     * @tc.name       image_Packer_packing_Supp_004
-     * @tc.desc       ImagePacker,packing,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_004
+     * @tc.number image_Packer_packing_Supp_004
+     * @tc.desc   ImagePacker,packing,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_004';
@@ -202,12 +202,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_005
-     * @tc.name       image_Packer_packing_Supp_005
-     * @tc.desc       ImagePacker,packing,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_005
+     * @tc.number image_Packer_packing_Supp_005
+     * @tc.desc   ImagePacker,packing,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_005';
@@ -233,12 +233,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_006
-     * @tc.name       image_Packer_packing_Supp_006
-     * @tc.desc       ImagePacker,packing,packOpts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_006
+     * @tc.number image_Packer_packing_Supp_006
+     * @tc.desc   ImagePacker,packing,packOpts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_006';
@@ -265,12 +265,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_007
-     * @tc.name       image_Packer_packing_Supp_007
-     * @tc.desc       ImagePacker,imageResource:null,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_007
+     * @tc.number image_Packer_packing_Supp_007
+     * @tc.desc   ImagePacker,imageResource:null,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_007';
@@ -296,12 +296,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_008
-     * @tc.name       image_Packer_packing_Supp_008
-     * @tc.desc       ImagePacker,imageResource:null,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_008
+     * @tc.number image_Packer_packing_Supp_008
+     * @tc.desc   ImagePacker,imageResource:null,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_008';
@@ -327,12 +327,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_009
-     * @tc.name       image_Packer_packing_Supp_009
-     * @tc.desc       ImagePacker,imageResource:undefined,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_009
+     * @tc.number image_Packer_packing_Supp_009
+     * @tc.desc   ImagePacker,imageResource:undefined,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_009';
@@ -358,12 +358,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_010
-     * @tc.name       image_Packer_packing_Supp_010
-     * @tc.desc       ImagePacker,imageResource:'',packOpts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_010
+     * @tc.number image_Packer_packing_Supp_010
+     * @tc.desc   ImagePacker,imageResource:'',packOpts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_010';
@@ -391,12 +391,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Supp_011
-     * @tc.name       image_Packer_packing_Supp_011
-     * @tc.desc       ImagePacker,imageResource:undefined,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Supp_011
+     * @tc.number image_Packer_packing_Supp_011
+     * @tc.desc   ImagePacker,imageResource:undefined,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Supp_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Supp_011';
@@ -424,12 +424,12 @@ export default function ImageImagePackerPackingSupp() {
 
 
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_001
-     * @tc.name       image_Packer_packing_Promise_Supp_001
-     * @tc.desc       ImagePacker,packing,source:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_001
+     * @tc.number image_Packer_packing_Promise_Supp_001
+     * @tc.desc   ImagePacker,packing,source:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_001';
@@ -455,12 +455,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_002
-     * @tc.name       image_Packer_packing_Promise_Supp_002
-     * @tc.desc       ImagePacker,packing,source:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_002
+     * @tc.number image_Packer_packing_Promise_Supp_002
+     * @tc.desc   ImagePacker,packing,source:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_002';
@@ -486,12 +486,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_003
-     * @tc.name       image_Packer_packing_Promise_Supp_003
-     * @tc.desc       ImagePacker,packing,source:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_003
+     * @tc.number image_Packer_packing_Promise_Supp_003
+     * @tc.desc   ImagePacker,packing,source:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_003';
@@ -518,12 +518,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_004
-     * @tc.name       image_Packer_packing_Promise_Supp_004
-     * @tc.desc       ImagePacker,packing,packOpts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_004
+     * @tc.number image_Packer_packing_Promise_Supp_004
+     * @tc.desc   ImagePacker,packing,packOpts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_004';
@@ -549,12 +549,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_005
-     * @tc.name       image_Packer_packing_Promise_Supp_005
-     * @tc.desc       ImagePacker,packing,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_005
+     * @tc.number image_Packer_packing_Promise_Supp_005
+     * @tc.desc   ImagePacker,packing,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_005';
@@ -580,12 +580,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_006
-     * @tc.name       image_Packer_packing_Promise_Supp_006
-     * @tc.desc       ImagePacker,packing,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_006
+     * @tc.number image_Packer_packing_Promise_Supp_006
+     * @tc.desc   ImagePacker,packing,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_006';
@@ -610,12 +610,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_007
-     * @tc.name       image_Packer_packing_Promise_Supp_007
-     * @tc.desc       ImagePacker,imageResource:null,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_007
+     * @tc.number image_Packer_packing_Promise_Supp_007
+     * @tc.desc   ImagePacker,imageResource:null,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_007';
@@ -640,12 +640,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_008
-     * @tc.name       image_Packer_packing_Promise_Supp_008
-     * @tc.desc       ImagePacker,imageResource:null,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_008
+     * @tc.number image_Packer_packing_Promise_Supp_008
+     * @tc.desc   ImagePacker,imageResource:null,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_008';
@@ -670,12 +670,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_009
-     * @tc.name       image_Packer_packing_Promise_Supp_009
-     * @tc.desc       ImagePacker,imageResource:undefined,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_009
+     * @tc.number image_Packer_packing_Promise_Supp_009
+     * @tc.desc   ImagePacker,imageResource:undefined,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_009';
@@ -700,12 +700,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_010
-     * @tc.name       image_Packer_packing_Promise_Supp_010
-     * @tc.desc       ImagePacker,imageResource:'',packOpts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_010
+     * @tc.number image_Packer_packing_Promise_Supp_010
+     * @tc.desc   ImagePacker,imageResource:'',packOpts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_010';
@@ -732,12 +732,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packing_Promise_Supp_011
-     * @tc.name       image_Packer_packing_Promise_Supp_011
-     * @tc.desc       ImagePacker,imageResource:undefined,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packing_Promise_Supp_011
+     * @tc.number image_Packer_packing_Promise_Supp_011
+     * @tc.desc   ImagePacker,imageResource:undefined,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packing_Promise_Supp_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packing_Promise_Supp_011';
@@ -764,12 +764,12 @@ export default function ImageImagePackerPackingSupp() {
 
 
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_001
-     * @tc.name       image_Packer_packToData_Promise_Supp_001
-     * @tc.desc       ImagePacker,packToData,source:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_001
+     * @tc.number image_Packer_packToData_Promise_Supp_001
+     * @tc.desc   ImagePacker,packToData,source:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_001';
@@ -795,12 +795,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_002
-     * @tc.name       image_Packer_packToData_Promise_Supp_002
-     * @tc.desc       ImagePacker,packToData,source:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_002
+     * @tc.number image_Packer_packToData_Promise_Supp_002
+     * @tc.desc   ImagePacker,packToData,source:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_002';
@@ -826,12 +826,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_003
-     * @tc.name       image_Packer_packToData_Promise_Supp_003
-     * @tc.desc       ImagePacker,packing,source:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_003
+     * @tc.number image_Packer_packToData_Promise_Supp_003
+     * @tc.desc   ImagePacker,packing,source:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_003';
@@ -858,12 +858,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_004
-     * @tc.name       image_Packer_packToData_Promise_Supp_004
-     * @tc.desc       ImagePacker,packing,packOpts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_004
+     * @tc.number image_Packer_packToData_Promise_Supp_004
+     * @tc.desc   ImagePacker,packing,packOpts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_004';
@@ -889,12 +889,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_005
-     * @tc.name       image_Packer_packToData_Promise_Supp_005
-     * @tc.desc       ImagePacker,packing,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_005
+     * @tc.number image_Packer_packToData_Promise_Supp_005
+     * @tc.desc   ImagePacker,packing,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_005';
@@ -920,12 +920,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_006
-     * @tc.name       image_Packer_packToData_Promise_Supp_006
-     * @tc.desc       ImagePacker,packing,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_006
+     * @tc.number image_Packer_packToData_Promise_Supp_006
+     * @tc.desc   ImagePacker,packing,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_006';
@@ -950,12 +950,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_007
-     * @tc.name       image_Packer_packToData_Promise_Supp_007
-     * @tc.desc       ImagePacker,imageResource:null,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_007
+     * @tc.number image_Packer_packToData_Promise_Supp_007
+     * @tc.desc   ImagePacker,imageResource:null,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_007';
@@ -980,12 +980,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_008
-     * @tc.name       image_Packer_packToData_Promise_Supp_008
-     * @tc.desc       ImagePacker,imageResource:null,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_008
+     * @tc.number image_Packer_packToData_Promise_Supp_008
+     * @tc.desc   ImagePacker,imageResource:null,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_008';
@@ -1010,12 +1010,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_009
-     * @tc.name       image_Packer_packToData_Promise_Supp_009
-     * @tc.desc       ImagePacker,imageResource:undefined,packOpts:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_009
+     * @tc.number image_Packer_packToData_Promise_Supp_009
+     * @tc.desc   ImagePacker,imageResource:undefined,packOpts:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_009';
@@ -1040,12 +1040,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_010
-     * @tc.name       image_Packer_packToData_Promise_Supp_010
-     * @tc.desc       ImagePacker,imageResource:'',packOpts:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_010
+     * @tc.number image_Packer_packToData_Promise_Supp_010
+     * @tc.desc   ImagePacker,imageResource:'',packOpts:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_010';
@@ -1072,12 +1072,12 @@ export default function ImageImagePackerPackingSupp() {
       }
     })
     /**
-     * @tc.number     image_Packer_packToData_Promise_Supp_011
-     * @tc.name       image_Packer_packToData_Promise_Supp_011
-     * @tc.desc       ImagePacker,imageResource:undefined,packOpts:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_Packer_packToData_Promise_Supp_011
+     * @tc.number image_Packer_packToData_Promise_Supp_011
+     * @tc.desc   ImagePacker,imageResource:undefined,packOpts:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_Packer_packToData_Promise_Supp_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_Packer_packToData_Promise_Supp_011';

@@ -40,12 +40,12 @@ export default function positionTypeTest () {
     });
 
     /**
-     * @tc.number    : Sub_MediaLibrary_PhotoAccess_PositionType_001
-     * @tc.name      : getAsset_by_positionType_001
-     * @tc.desc      : getAsset by positionType: local
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_by_positionType_001
+     * @tc.number Sub_MediaLibrary_PhotoAccess_PositionType_001
+     * @tc.desc   getAsset by positionType: local
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAsset_by_positionType_001', Level.LEVEL0, async (done: Function) => {
       const testNum: string = 'getAsset_by_positionType_001';
@@ -65,12 +65,12 @@ export default function positionTypeTest () {
     });
 
     /**
-     * @tc.number    : Sub_MediaLibrary_PhotoAccess_PositionType_002
-     * @tc.name      : getAsset_by_positionType_002
-     * @tc.desc      : getAsset by positionType: cloud
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_by_positionType_002
+     * @tc.number Sub_MediaLibrary_PhotoAccess_PositionType_002
+     * @tc.desc   getAsset by positionType: cloud
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getAsset_by_positionType_002', Level.LEVEL3, async (done: Function) => {
       const testNum: string = 'getAsset_by_positionType_002';
@@ -90,12 +90,12 @@ export default function positionTypeTest () {
     });
 
     /**
-     * @tc.number    : Sub_MediaLibrary_PhotoAccess_PositionType_003
-     * @tc.name      : getAsset_by_positionType_003
-     * @tc.desc      : getAsset by positionType: local and cloud
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAsset_by_positionType_003
+     * @tc.number Sub_MediaLibrary_PhotoAccess_PositionType_003
+     * @tc.desc   getAsset by positionType: local and cloud
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getAsset_by_positionType_003', Level.LEVEL3, async (done: Function) => {
       const testNum: string = 'getAsset_by_positionType_003';
@@ -116,12 +116,12 @@ export default function positionTypeTest () {
 
 
     /**
-     * @tc.number    : Sub_MediaLibrary_PhotoAccess_PositionType_004
-     * @tc.name      : getAllAsset_position_001
-     * @tc.desc      : get all asset position value
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAllAsset_position_001
+     * @tc.number Sub_MediaLibrary_PhotoAccess_PositionType_004
+     * @tc.desc   get all asset position value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getAllAsset_position_001', Level.LEVEL3, async (done: Function) => {
       const testNum: string = 'getAllAsset_position_001';

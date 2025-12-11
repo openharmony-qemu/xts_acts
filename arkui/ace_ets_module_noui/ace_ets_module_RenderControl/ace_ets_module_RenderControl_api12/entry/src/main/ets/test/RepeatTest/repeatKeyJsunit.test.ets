@@ -46,9 +46,12 @@ export default function repeatKeyJsunit() {
     });
 
     /**
+     * @tc.name   RepeatKey001
      * @tc.number RepeatKey001
-     * @tc.name RepeatKey001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatKey001', Level.LEVEL0, async () => {
       console.info('RepeatKey001 START');
@@ -57,9 +60,12 @@ export default function repeatKeyJsunit() {
     });
 
     /**
+     * @tc.name   RepeatKey002
      * @tc.number RepeatKey002
-     * @tc.name RepeatKey002
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatKey002', Level.LEVEL0, async () => {
       console.info('RepeatKey001 START');

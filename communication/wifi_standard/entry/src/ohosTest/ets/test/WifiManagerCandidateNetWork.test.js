@@ -117,7 +117,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0001
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0001
          * @tc.desc   Test add OPEN and WEP CandidateConfig Promise API functionality.
@@ -203,7 +202,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0002
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0002
          * @tc.desc   Test add PSK CandidateConfig and removeCandidateConfig Promise API functionality.
@@ -300,7 +298,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0003
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0003
          * @tc.desc   Test add SAE CandidateConfig Promise API functionality.
@@ -350,7 +347,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0004
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0004
          * @tc.desc   Test add MAX CandidateConfig and removeall CandidateConfig.
@@ -423,7 +419,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0005
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0005
          * @tc.desc   Test add CandidateConfig and removeCandidateConfig callback API functionality.
@@ -494,7 +489,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0006
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0006
          * @tc.desc   Test connect To CandidateConfig API functionality.
@@ -557,7 +551,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFiManager_WapiPskType_0100
          * @tc.number SUB_Communication_WiFiManager_WapiPskType_0100
          * @tc.desc   Test WapiPskType API functionality
@@ -582,7 +575,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0007
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0007
          * @tc.desc   Connect to a specified candidate hotspot by networkId, and wait for user respond result
@@ -720,7 +712,6 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0008
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0008
          * @tc.desc   test connectToCandidateConfigWithUserAction result errorCode 2501007

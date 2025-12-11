@@ -56,13 +56,13 @@ export default function webONHttpErrorReceiveIframe() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEBERRORRECV_API_0300
-     * @tc.name       : testOnHttpErrorReceiveByIframeHtmlWebc
-     * @tc.desc       : test interface of onHttpErrorReceive with parameter used by html file with iframe
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testOnHttpErrorReceiveByIframeHtmlWebc
+     * @tc.number SUB_ACE_BASIC_ETS_WEBERRORRECV_API_0300
+     * @tc.desc   test interface of onHttpErrorReceive with parameter used by html file with iframe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnHttpErrorReceiveByIframeHtmlWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnHttpErrorReceiveByIframeHtmlWebc", EVENT_ID_SET_EMIT_KEY);

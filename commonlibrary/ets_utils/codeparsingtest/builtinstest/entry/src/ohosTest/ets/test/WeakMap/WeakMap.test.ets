@@ -17,12 +17,12 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 export default function WeakMapTest() {
   describe('weakMapTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0100
-     * @tc.name       : testWeakMap0001
-     * @tc.desc       : Test the function of the weakMap function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWeakMap0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0100
+     * @tc.desc   Test the function of the weakMap function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeakMap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testWeakMap0001";
@@ -38,12 +38,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0200
-     * @tc.name       : testWeakMap0002
-     * @tc.desc       : Test the function of the weakMap Symbol.iterator.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMap0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0200
+     * @tc.desc   Test the function of the weakMap Symbol.iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMap0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMap0002";
@@ -60,12 +60,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0300
-     * @tc.name       : testWeakMapDelete0001
-     * @tc.desc       : Test the function of the WeakMap.prototype.delete().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapDelete0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0300
+     * @tc.desc   Test the function of the WeakMap.prototype.delete().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapDelete0001";
@@ -80,12 +80,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0400
-     * @tc.name       : testWeakMapDelete0002
-     * @tc.desc       : Test the function of the WeakMap.prototype.delete().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapDelete0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0400
+     * @tc.desc   Test the function of the WeakMap.prototype.delete().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapDelete0002";
@@ -101,12 +101,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0500
-     * @tc.name       : testWeakDelete0005
-     * @tc.desc       : Test the function of the WeakMap.prototype.delete().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapDelete0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0500
+     * @tc.desc   Test the function of the WeakMap.prototype.delete().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapDelete0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapDelete0005";
@@ -127,12 +127,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0600
-     * @tc.name       : testWeakMapGet0001
-     * @tc.desc       : Test the function of the ccc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapGet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0600
+     * @tc.desc   Test the function of the ccc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapGet0001";
@@ -150,12 +150,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0700
-     * @tc.name       : testWeakMapGet0002
-     * @tc.desc       : Test the function of the WeakMap.prototype.get()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapGet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0700
+     * @tc.desc   Test the function of the WeakMap.prototype.get()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapGet0002";
@@ -174,12 +174,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0800
-     * @tc.name       : testWeakMapGet0003
-     * @tc.desc       : Test the function of the WeakMap.prototype.get()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapGet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0800
+     * @tc.desc   Test the function of the WeakMap.prototype.get()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapGet0003";
@@ -212,12 +212,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0900
-     * @tc.name       : testWeakMapGet0005
-     * @tc.desc       : Test the function of the WeakMap.prototype.get().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapGet0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_0900
+     * @tc.desc   Test the function of the WeakMap.prototype.get().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapGet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapGet0005";
@@ -231,12 +231,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1000
-     * @tc.name       : testWeakMapGet0006
-     * @tc.desc       : Test the function of the WeakMap.prototype.get().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapGet0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1000
+     * @tc.desc   Test the function of the WeakMap.prototype.get().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapGet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapGet0006";
@@ -251,12 +251,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1100
-     * @tc.name       : testWeakMapGet0007
-     * @tc.desc       : Test the function of the WeakMap.prototype.get().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapGet0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1100
+     * @tc.desc   Test the function of the WeakMap.prototype.get().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapGet0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapGet0007";
@@ -277,12 +277,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1200
-     * @tc.name       : testWeakMapGet0008
-     * @tc.desc       : Test the function of the WeakMap.prototype.get()
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapGet0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1200
+     * @tc.desc   Test the function of the WeakMap.prototype.get()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapGet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapGet0008";
@@ -297,12 +297,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1300
-     * @tc.name       : testWeakMapHas0001
-     * @tc.desc       : Test the function of the Interface WeakMap.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1300
+     * @tc.desc   Test the function of the Interface WeakMap.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testWeakMapHas0001';
@@ -316,12 +316,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1400
-     * @tc.name       : testWeakMapHas0002
-     * @tc.desc       : Test the function of the Interface WeakMap.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1400
+     * @tc.desc   Test the function of the Interface WeakMap.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testWeakMapHas0002';
@@ -337,12 +337,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1500
-     * @tc.name       : testWeakMapHas0003
-     * @tc.desc       : Test the function of the Interface WeakMap.has().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1500
+     * @tc.desc   Test the function of the Interface WeakMap.has().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testWeakMapHas0003';
@@ -366,12 +366,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1600
-     * @tc.name       : testWeakMapHas0004
-     * @tc.desc       : Test the function of the Interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapHas0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1600
+     * @tc.desc   Test the function of the Interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testWeakMapHas0004';
@@ -390,12 +390,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1700
-     * @tc.name       : testWeakMapHas0006
-     * @tc.desc       : Test the function of the Interface has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapHas0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1700
+     * @tc.desc   Test the function of the Interface has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapHas0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapHas0006";
@@ -413,12 +413,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1800
-     * @tc.name       : testWeakMapSet0001
-     * @tc.desc       : Test the function of the Interface set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1800
+     * @tc.desc   Test the function of the Interface set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapSet0001";
@@ -436,12 +436,12 @@ export default function WeakMapTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1900
-     * @tc.name       : testWeakMapSet0004
-     * @tc.desc       : Test the function of the Interface set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakMapSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAKMAP_1900
+     * @tc.desc   Test the function of the Interface set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakMapSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakMapSet0004";

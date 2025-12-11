@@ -33,7 +33,6 @@ export default function rdbCryptoParamNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_DestroyCryptoParam0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_DestroyCryptoParam_0100
      * @tc.desc   OH_Rdb_DestroyCryptoParam0100
@@ -50,7 +49,6 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_CreateCryptoParam0200
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0300
      * @tc.desc   OH_Rdb_CreateCryptoParam0200
@@ -67,7 +65,6 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_CreateCryptoParam0300
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0400
      * @tc.desc   OH_Rdb_CreateCryptoParam0300
@@ -84,7 +81,6 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_CreateCryptoParam0400
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0500
      * @tc.desc   OH_Rdb_CreateCryptoParam0400
@@ -101,7 +97,6 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_CreateCryptoParam0500
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0600
      * @tc.desc   OH_Rdb_CreateCryptoParam0500
@@ -118,7 +113,6 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_CreateCryptoParam0600
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0700
      * @tc.desc   OH_Rdb_CreateCryptoParam0600
@@ -135,7 +129,6 @@ export default function rdbCryptoParamNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_CreateCryptoParam0700
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_CreateCryptoParam_0800
      * @tc.desc   OH_Rdb_CreateCryptoParam0700

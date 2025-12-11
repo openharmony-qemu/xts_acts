@@ -31,14 +31,12 @@ export default function fileIORmdir() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_rmdir start');
 
     /**
+     * @tc.name   fileIO_test_rmdir_sync_static_000
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0000
-     * @tc.name fileIO_test_rmdir_sync_static_000
-     * @tc.desc Test rmdirSync() interface.
-     * Recursively delete all files and subfolders in a directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test rmdirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_000 start');
@@ -66,14 +64,12 @@ export default function fileIORmdir() {
     });
 
     /**
+     * @tc.name   fileIO_test_rmdir_sync_static_001
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0100
-     * @tc.name fileIO_test_rmdir_sync_static_001
-     * @tc.desc Test rmdirSync() interface.
-     * Invalid path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test rmdirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_001 start');
@@ -88,14 +84,12 @@ export default function fileIORmdir() {
     });
 
     /**
+     * @tc.name   fileIO_test_rmdir_sync_static_002
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0200
-     * @tc.name fileIO_test_rmdir_sync_static_002
-     * @tc.desc Test rmdirSync() interface.
-     * The path contains ../, normal call.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test rmdirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_002 start');
@@ -112,14 +106,12 @@ export default function fileIORmdir() {
     });
 
     /**
+     * @tc.name   fileIO_test_rmdir_async_static_000
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0000
-     * @tc.name fileIO_test_rmdir_async_static_000
-     * @tc.desc Test rmdir() interface. Promise.
-     * Recursively delete all files and subfolders in a directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test rmdir() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_000 start');
@@ -148,14 +140,12 @@ export default function fileIORmdir() {
     });
 
     /**
+     * @tc.name   fileIO_test_rmdir_async_static_001
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0100
-     * @tc.name fileIO_test_rmdir_async_static_001
-     * @tc.desc Test rmdir() interface. Callback.
-     * Recursively delete all files and subfolders in a directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test rmdir() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_001 start');
@@ -185,14 +175,12 @@ export default function fileIORmdir() {
     });
 
     /**
+     * @tc.name   fileIO_test_rmdir_async_static_002
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0200
-     * @tc.name fileIO_test_rmdir_async_static_002
-     * @tc.desc Test rmdir() interface. Promise.
-     * Invalid path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test rmdir() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_002 start');
@@ -208,14 +196,12 @@ export default function fileIORmdir() {
     });
 
     /**
+     * @tc.name   fileIO_test_rmdir_async_static_003
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0300
-     * @tc.name fileIO_test_rmdir_async_static_003
-     * @tc.desc Test rmdir() interface. Callback.
-     * Invalid path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test rmdir() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_003 start');
@@ -235,14 +221,12 @@ export default function fileIORmdir() {
     });
 
     /**
+     * @tc.name   fileIO_test_rmdir_async_static_004
      * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0400
-     * @tc.name fileIO_test_rmdir_async_static_004
-     * @tc.desc Test rmdirSync() interface. Promise.
-     * The path contains ../, normal call.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test rmdirSync() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_rmdir_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_004 start');

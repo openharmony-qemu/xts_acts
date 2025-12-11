@@ -76,12 +76,12 @@ export default function EsimNoPermissionPublic() {
     })
 
     /**
-     * @tc.number    : SUB_Telephony_Esim_AddProfile_1700
-     * @tc.name      : testTelephonyEsimAddProfile1700
-     * @tc.desc      : Starts a page through an ability, on which users can touch the button to download a profile.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonyEsimAddProfile1700
+     * @tc.number SUB_Telephony_Esim_AddProfile_1700
+     * @tc.desc   Starts a page through an ability, on which users can touch the button to download a profile.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyEsimAddProfile1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimAddProfile1700';

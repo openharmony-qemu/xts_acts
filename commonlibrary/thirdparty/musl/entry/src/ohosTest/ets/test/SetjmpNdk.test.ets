@@ -25,12 +25,12 @@ export default function muslSetJmpNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SETJMP_SETJMP_0100
-     * @tc.name       : testMuslSetJmpSetJmp001
-     * @tc.desc       : test setjmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSetJmpSetJmp001
+     * @tc.number SUB_THIRDPARTY_MUSL_SETJMP_SETJMP_0100
+     * @tc.desc   test setjmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSetJmpSetJmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = setjmp.setJmp();
@@ -39,12 +39,12 @@ export default function muslSetJmpNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SETJMP_SIGLONGJMP_0100
-     * @tc.name       : testMuslSetJmpSigLongJmp001
-     * @tc.desc       : test siglongjmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSetJmpSigLongJmp001
+     * @tc.number SUB_THIRDPARTY_MUSL_SETJMP_SIGLONGJMP_0100
+     * @tc.desc   test siglongjmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSetJmpSigLongJmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = setjmp.sigLongJmp();
@@ -53,12 +53,12 @@ export default function muslSetJmpNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SETJMP_SIGSETJMP_0100
-     * @tc.name       : testMuslSetJmpSigSetJmp001
-     * @tc.desc       : test sigsetjmp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSetJmpSigSetJmp001
+     * @tc.number SUB_THIRDPARTY_MUSL_SETJMP_SIGSETJMP_0100
+     * @tc.desc   test sigsetjmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSetJmpSigSetJmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = setjmp.sigSetJmp();

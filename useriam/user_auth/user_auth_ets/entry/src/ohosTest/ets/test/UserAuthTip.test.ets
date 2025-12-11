@@ -25,7 +25,6 @@ export default function UserAuthTipTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_skip_0190
      * @tc.number SUB_Security_userIam_authWidget_Func_skip_0190
      * @tc.desc   authWidget
@@ -64,7 +63,6 @@ export default function UserAuthTipTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_0031
      * @tc.number SUB_Security_userIam_authWidget_Func_Tip_0031
      * @tc.desc   authWidget
@@ -86,7 +84,6 @@ export default function UserAuthTipTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_0032
      * @tc.number SUB_Security_userIam_authWidget_Func_Tip_0032
      * @tc.desc   authWidget

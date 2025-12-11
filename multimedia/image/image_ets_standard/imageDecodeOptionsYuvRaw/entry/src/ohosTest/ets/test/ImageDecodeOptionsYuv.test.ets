@@ -310,15 +310,12 @@ export default function imageDecodeOptionsYuvTest() {
     })
     
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0100
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_8_JPEG_444
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0100
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0100", Level.LEVEL0, async (done: Function) => {
       try{
@@ -337,15 +334,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0200
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_8_NV21_JPEG_ODD_440
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0200
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0200", Level.LEVEL0, async (done: Function) => {
       try{
@@ -364,15 +358,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0300
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_8_NV21_JPEG_422
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0300
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0300", Level.LEVEL0, async (done: Function) => {
       try{
@@ -391,15 +382,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0400
-     * @tc.name      : Test_createPixelMap_decodingOptions_asyncCallback_pixelFormat_8_NV21_JPEG_ODD_420
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0400
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0400
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0400", Level.LEVEL0, async (done: Function) => {
       try{
@@ -418,15 +406,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0500
-     * @tc.name      : Test_createPixelMap_decodingOptions_asyncCallback_pixelFormat_8_NV21_JPEG_411
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0500
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0500
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0500", Level.LEVEL0, async (done: Function) => {
       try{
@@ -445,15 +430,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0600
-     * @tc.name      : Test_createPixelMap_decodingOptions_asyncCallback_pixelFormat_8_NV21_JPEG_ODD_400
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0600
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0600
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0600", Level.LEVEL0, async (done: Function) => {
       try{
@@ -472,15 +454,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0700
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_9_NV12_JPEG_444
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0700
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0700
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0700", Level.LEVEL0, async (done: Function) => {
       try{
@@ -499,15 +478,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0800
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_9_NV12_JPEG_ODD_440
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0800
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0800
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0800", Level.LEVEL0, async (done: Function) => {
       try{
@@ -526,15 +502,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0900
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_9_NV12_JPEG_422
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0900
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0900
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_0900", Level.LEVEL0, async (done: Function) => {
       try{
@@ -553,15 +526,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1000
-     * @tc.name      : Test_createPixelMap_decodingOptions_asyncCallback_pixelFormat_9_NV12_JPEG_ODD_420
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1000
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1000
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1000", Level.LEVEL0, async (done: Function) => {
       try{
@@ -581,15 +551,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1100
-     * @tc.name      : Test_createPixelMap_decodingOptions_asyncCallback_pixelFormat_9_NV12_JPEG_411
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1100
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1100", Level.LEVEL0, async (done: Function) => {
       try{
@@ -608,15 +575,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1200
-     * @tc.name      : Test_createPixelMap_decodingOptions_asyncCallback_pixelFormat_9_NV12_JPEG_ODD_400
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1200
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_1200", Level.LEVEL0, async (done: Function) => {
       try{
@@ -635,15 +599,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0100
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_8_JPEG_I_I_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0100
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -662,15 +623,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0200
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_9_JPEG_I_I_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0200
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0200", Level.LEVEL0, async (done: Function) => {
       try {
@@ -689,15 +647,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0300
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_8_JPEG_I_odd_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0300
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0300
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0300", Level.LEVEL0, async (done: Function) => {
       try {
@@ -716,15 +671,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0400
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_9_JPEG_I_odd_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0400
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0400
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0400", Level.LEVEL0, async (done: Function) => {
       try {
@@ -743,15 +695,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0500
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_8_JPEG_odd_I_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0500
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0500
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0500", Level.LEVEL0, async (done: Function) => {
       try {
@@ -770,15 +719,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0600
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_9_JPEG_odd_I_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0600
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0600
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0600", Level.LEVEL0, async (done: Function) => {
       try {
@@ -797,15 +743,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0700
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_8_JPEG_ODD_odd_odd_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0700
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0700
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0700", Level.LEVEL0, async (done: Function) => {
       try {
@@ -824,15 +767,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0800
-     * @tc.name      : Test_createPixelMap_decodingOptions_pixelFormat_9_JPEG_odd_odd_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0800
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0800
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0800", Level.LEVEL0, async (done: Function) => {
       try {
@@ -851,15 +791,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0900
-     * @tc.name      : Test_createPixelMap_decodingOptions_MULL_pixelFormat_JPEG_I_I_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0900
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0900
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_0900", Level.LEVEL0, async (done: Function) => {
       try {
@@ -877,15 +814,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1000
-     * @tc.name      : Test_createPixelMap_decodingOptions_MULL_pixelFormat_JPEG_I_odd_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1000
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1000
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1000", Level.LEVEL0, async (done: Function) => {
       try {
@@ -903,15 +837,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1100
-     * @tc.name      : Test_createPixelMap_decodingOptions_MULL_pixelFormat_JPEG_odd_I_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1100
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1100
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -929,15 +860,12 @@ export default function imageDecodeOptionsYuvTest() {
     });
 
     /**
-     * @tc.number    : SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1200
-     * @tc.name      : Test_createPixelMap_decodingOptions_MULL_pixelFormat_JPEG_odd_odd_311
-     * @tc.desc      : 1.create imageSource
-     *                 2.set index and DecodeOptions
-     *                 3.create PixelMap
-     *                 4.callback return undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1200
+     * @tc.number SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1200
+     * @tc.desc   1.create imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_1200", Level.LEVEL0, async (done: Function) => {
       try {

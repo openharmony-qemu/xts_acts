@@ -20,24 +20,24 @@ import { test2021_05_ans } from './test2021_05'
 export default function es2021Test() {
   describe('ES2021Test', () => {
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0001
-     * @tc.name      : testReplaceAll
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testReplaceAll
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0001
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testReplaceAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect('abbbaab'.replaceAll('b', 'x')).assertEqual("axxxaax");
       expect('abbbaab'.replaceAll(/b/g, 'x')).assertEqual("axxxaax");
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0002
-     * @tc.name      : testPromise.any Success
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPromise.any Success
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0002
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromise.any Success', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const Promise1: Promise<string> = new Promise((resolve, reject) => {
@@ -58,12 +58,12 @@ export default function es2021Test() {
         })
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0003
-     * @tc.name      : testPromise.any Error
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPromise.any Error
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0003
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromise.any Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const Promise1: Promise<string> = new Promise((resolve, reject) => {
@@ -85,12 +85,12 @@ export default function es2021Test() {
         })
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0004
-     * @tc.name      : testLogicalAssignment
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testLogicalAssignment
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0004
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLogicalAssignment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let a = 0;
@@ -105,24 +105,24 @@ export default function es2021Test() {
       expect(c).assertEqual("hello")
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0005
-     * @tc.name      : testNumberSeparator
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testNumberSeparator
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0005
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNumberSeparator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(1_1).assertEqual(11)
       expect(1_1n).assertEqual(11n)
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0006
-     * @tc.name      : testWeakRef
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWeakRef
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0006
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeakRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2021_05_ans).assertEqual("21")

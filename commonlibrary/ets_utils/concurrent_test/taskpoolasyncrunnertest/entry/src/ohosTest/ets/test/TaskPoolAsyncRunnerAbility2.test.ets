@@ -92,12 +92,12 @@ export default function taskPoolAsyncRunnerAbility2() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility3100
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3100
-     * @tc.name taskPoolAsyncRunnerAbility3100
-     * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -132,12 +132,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility3200
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3200
-     * @tc.name taskPoolAsyncRunnerAbility3200
-     * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 5 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 5 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -191,12 +191,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility3300
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3300
-     * @tc.name taskPoolAsyncRunnerAbility3300
-     * @tc.desc Create two tasks with Float32Array parameters and Float32Array return values, and execute them 5 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with Float32Array parameters and Float32Array return values, and execute them 5 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -231,12 +231,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility3500
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3500
-     * @tc.name taskPoolAsyncRunnerAbility3500
-     * @tc.desc Create two tasks with ArrayBuffer parameters and ArrayBuffer return values, and execute them 5 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with ArrayBuffer parameters and ArrayBuffer return values, and execute them 5 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -275,12 +275,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility3700
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3700
-     * @tc.name taskPoolAsyncRunnerAbility3700
-     * @tc.desc Create two tasks with SharedArrayBuffer parameters and SharedArrayBuffer return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with SharedArrayBuffer parameters and SharedArrayBuffer return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -315,12 +315,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility3900
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3900
-     * @tc.name taskPoolAsyncRunnerAbility3900
-     * @tc.desc Create two tasks with ConcatArray parameters and ConcatArray return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with ConcatArray parameters and ConcatArray return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -355,12 +355,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4000
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4000
-     * @tc.name taskPoolAsyncRunnerAbility4000
-     * @tc.desc Create two tasks with ConcatArray parameters and ConcatArray return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with ConcatArray parameters and ConcatArray return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -414,12 +414,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4100
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4100
-     * @tc.name taskPoolAsyncRunnerAbility4100
-     * @tc.desc Create two tasks with BitVector parameters and BitVector return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with BitVector parameters and BitVector return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -454,12 +454,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4200
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4200
-     * @tc.name taskPoolAsyncRunnerAbility4200
-     * @tc.desc Create two tasks with BitVector parameters and BitVector return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with BitVector parameters and BitVector return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -513,12 +513,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4300
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4300
-     * @tc.name taskPoolAsyncRunnerAbility4300
-     * @tc.desc Create two tasks with union parameters and union return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with union parameters and union return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -554,12 +554,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4400
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4400
-     * @tc.name taskPoolAsyncRunnerAbility4400
-     * @tc.desc Create two tasks with union parameters and union return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with union parameters and union return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -614,12 +614,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4500
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4500
-     * @tc.name taskPoolAsyncRunnerAbility4500
-     * @tc.desc Create two tasks with enum parameters and enum return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with enum parameters and enum return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -652,12 +652,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4600
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4600
-     * @tc.name taskPoolAsyncRunnerAbility4600
-     * @tc.desc Create two tasks with enum parameters and enum return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with enum parameters and enum return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -709,12 +709,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4700
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4700
-     * @tc.name taskPoolAsyncRunnerAbility4700
-     * @tc.desc Create two tasks with ASON parameters and ASON return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with ASON parameters and ASON return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -749,12 +749,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4800
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4800
-     * @tc.name taskPoolAsyncRunnerAbility4800
-     * @tc.desc Create two tasks with ASON parameters and ASON return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with ASON parameters and ASON return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -809,12 +809,12 @@ export default function taskPoolAsyncRunnerAbility2() {
 
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility4900
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_4900
-     * @tc.name taskPoolAsyncRunnerAbility4900
-     * @tc.desc Create two tasks with AsyncLock parameters and AsyncLock return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with AsyncLock parameters and AsyncLock return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -851,12 +851,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility5000
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_5000
-     * @tc.name taskPoolAsyncRunnerAbility5000
-     * @tc.desc Create two tasks with AsyncLock parameters and AsyncLock return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with AsyncLock parameters and AsyncLock return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -912,12 +912,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility5100
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_5100
-     * @tc.name taskPoolAsyncRunnerAbility5100
-     * @tc.desc Create two tasks with class parameters and class return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with class parameters and class return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -956,12 +956,12 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerAbility5200
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_5200
-     * @tc.name taskPoolAsyncRunnerAbility5200
-     * @tc.desc Create two tasks with SendableClass parameters and SendableClass return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create two tasks with SendableClass parameters and SendableClass return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerAbility5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {

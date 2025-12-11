@@ -43,12 +43,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100
-     * @tc.name Test createAsyKeyGenerator with wrong BrainPool, process is fail
-     * @tc.desc 1. AsyKeyGenerator with algName BrainPool
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. AsyKeyGenerator with algName BrainPool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100: started.");
@@ -65,13 +65,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300
-     * @tc.name Test getAsyKeySpec with BrainPool, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300: started.");
@@ -98,13 +97,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500: started.");
@@ -121,13 +119,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600: started.");
@@ -144,13 +141,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700: started.");
@@ -167,13 +163,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800: started.");
@@ -190,13 +185,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900: started.");
@@ -213,13 +207,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000: started.");
@@ -236,13 +229,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100: started.");
@@ -259,13 +251,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200: started.");
@@ -282,13 +273,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300: started.");
@@ -305,13 +295,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400: started.");
@@ -328,13 +317,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500: started.");
@@ -351,13 +339,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600: started.");
@@ -374,13 +361,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700: started.");
@@ -397,13 +383,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800
-     * @tc.name Test convertKey with BrainPoolGenerator, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
-     * @tc.desc 3. Test interface with AsyncCallback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800: started.");
@@ -420,13 +405,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level4
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900: started.");
@@ -443,13 +427,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000: started.");
@@ -466,13 +449,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100: started.");
@@ -489,13 +471,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200: started.");
@@ -512,13 +493,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300: started.");
@@ -535,13 +515,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400: started.");
@@ -558,13 +537,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500
-     * @tc.name Test generateKeyPair with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
-     * @tc.desc 3. Test interface with AsyncCallback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500: started.");
@@ -581,13 +559,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600
-     * @tc.name Test generateKeyPair with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName BrainPool
-     * @tc.desc 3. Test interface with AsyncCallback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500: started.");
@@ -606,13 +583,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700
-     * @tc.name Test generateKeyPair with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
-     * @tc.desc 3. Test interface with AsyncCallback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700: started.");
@@ -631,13 +607,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800: started.");
@@ -654,13 +629,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900: started.");
@@ -677,13 +651,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000: started.");
@@ -700,13 +673,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100: started.");
@@ -723,13 +695,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200: started.");
@@ -746,13 +717,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300: started.");
@@ -769,13 +739,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400
-     * @tc.name Test generatePriKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512r1
-     * @tc.desc 3. Test interface with Callback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400: started.");
@@ -792,13 +761,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500: started.");
@@ -815,13 +783,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600: started.");
@@ -838,13 +805,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700: started.");
@@ -861,13 +827,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800: started.");
@@ -884,13 +849,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900: started.");
@@ -907,13 +871,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000: started.");
@@ -930,13 +893,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100
-     * @tc.name Test generatePubKey with BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512t1
-     * @tc.desc 3. Test interface with Callback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100: started.");
@@ -953,13 +915,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200: started.");
@@ -977,13 +938,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP192t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300: started.");
@@ -1001,13 +961,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP224t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400: started.");
@@ -1025,13 +984,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP256t1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500: started.");
@@ -1049,13 +1007,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP320r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600: started.");
@@ -1073,13 +1030,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP384r1
-     * @tc.desc 3. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700: started.");
@@ -1097,13 +1053,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800
-     * @tc.name Test generatePubKey with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP512r1
-     * @tc.desc 3. Test interface with Callback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   3. Test interface with Callback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800: started.");
@@ -1121,12 +1076,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5000
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5000
-     * @tc.name Test createAsyGeneratorBySpec with error BrainPool spec, process is successful
-     * @tc.desc 1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. AsyKeyGenerator with algName ECC_BrainPoolP160r1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5000: started.");
@@ -1153,12 +1108,12 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5200
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5200
-     * @tc.name Test algName,format with BrainPool. Promsie style. Process success
-     * @tc.desc AsyKeyGenerator with algName ECC_BrainPoolP160r1
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with algName ECC_BrainPoolP160r1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5200";

@@ -64,12 +64,12 @@ const ExpectTrue = (n: boolean) => {
 export default function HttpMultiFormDataListTest() {
   describe("HttpMultiFormDataListTest", () => {
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0100
-     * @tc.name  : testHttpMultiFormDataList0100
-     * @tc.desc  : test multiFormDataList with contentType(text/plain) hasData
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0100
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0100
+     * @tc.desc   test multiFormDataList with contentType(text/plain) hasData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0100";
@@ -110,12 +110,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0200
-     * @tc.name  : testHttpMultiFormDataList0200
-     * @tc.desc  : test multiFormDataList with contentType(text/plain) hasData
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0200
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0200
+     * @tc.desc   test multiFormDataList with contentType(text/plain) hasData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0200";
@@ -154,12 +154,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0300
-     * @tc.name  : testHttpMultiFormDataList0300
-     * @tc.desc  : test multiFormDataList with contentType(image/png) hasData
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0300
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0300
+     * @tc.desc   test multiFormDataList with contentType(image/png) hasData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0300";
@@ -200,12 +200,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0400
-     * @tc.name  : testHttpMultiFormDataList0400
-     * @tc.desc  : test multiFormDataList with contentType(text/plain) no data
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0400
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0400
+     * @tc.desc   test multiFormDataList with contentType(text/plain) no data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0400",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0400";
@@ -249,12 +249,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0500
-     * @tc.name  : testHttpMultiFormDataList0500
-     * @tc.desc  : test multiFormDataList with no data
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0500
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0500
+     * @tc.desc   test multiFormDataList with no data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0500";
@@ -306,12 +306,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0600
-     * @tc.name  : testHttpMultiFormDataList0600
-     * @tc.desc  : test multiFormDataList with no data
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0600
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0600
+     * @tc.desc   test multiFormDataList with no data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0600",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0600";
@@ -359,12 +359,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0700
-     * @tc.name  : testHttpMultiFormDataList0700
-     * @tc.desc  : test multiFormDataList with  filePath and data
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0700
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0700
+     * @tc.desc   test multiFormDataList with  filePath and data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0700",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0700";
@@ -419,12 +419,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0800
-     * @tc.name  : testHttpMultiFormDataList0800
-     * @tc.desc  : test multiFormDataList with  filePath and data
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0800
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0800
+     * @tc.desc   test multiFormDataList with  filePath and data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0800",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0800";
@@ -474,12 +474,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0900
-     * @tc.name  : testHttpMultiFormDataList0900
-     * @tc.desc  : test multiFormDataList with  filePath
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList0900
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0900
+     * @tc.desc   test multiFormDataList with  filePath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList0900",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList0900";
@@ -532,12 +532,12 @@ export default function HttpMultiFormDataListTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_1000
-     * @tc.name  : testHttpMultiFormDataList1000
-     * @tc.desc  : test multiFormDataList with  filePath
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpMultiFormDataList1000
+     * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_1000
+     * @tc.desc   test multiFormDataList with  filePath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpMultiFormDataList1000",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       let caseName: string = "testHttpMultiFormDataList1000";

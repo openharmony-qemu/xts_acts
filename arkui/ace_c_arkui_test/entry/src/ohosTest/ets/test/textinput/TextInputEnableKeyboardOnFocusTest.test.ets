@@ -26,39 +26,39 @@ export default function textInputEnableKeyboardOnFocusTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENABLEKEYBOARDONFOCUS_0001
-     * @tc.name: testTextInputEnableKeyboardOnFocus001
-     * @tc.desc: testing enableKeyboardOnFocus for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnableKeyboardOnFocus001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLEKEYBOARDONFOCUS_0001
+     * @tc.desc   testing enableKeyboardOnFocus for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnableKeyboardOnFocus001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnableKeyboardOnFocus001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENABLEKEYBOARDONFOCUS_0002
-     * @tc.name: testTextInputEnableKeyboardOnFocus002
-     * @tc.desc: testing enableKeyboardOnFocus for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnableKeyboardOnFocus002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLEKEYBOARDONFOCUS_0002
+     * @tc.desc   testing enableKeyboardOnFocus for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnableKeyboardOnFocus002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnableKeyboardOnFocus002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENABLEKEYBOARDONFOCUS_0003
-     * @tc.name: testTextInputEnableKeyboardOnFocus003
-     * @tc.desc: testing enableKeyboardOnFocus for textInput with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextInputEnableKeyboardOnFocus003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLEKEYBOARDONFOCUS_0003
+     * @tc.desc   testing enableKeyboardOnFocus for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnableKeyboardOnFocus003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnableKeyboardOnFocus003()).assertEqual(0)

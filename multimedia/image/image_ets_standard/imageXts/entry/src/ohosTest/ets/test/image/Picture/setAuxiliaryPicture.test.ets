@@ -92,12 +92,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number    : PICTURE_SET_AUXILIARY_PICTURE_001
-     * @tc.name      : picture_setAuxiliaryPicture_promise_001
-     * @tc.desc      : setAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_setAuxiliaryPicture_promise_001
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_001
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_setAuxiliaryPicture_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_setAuxiliaryPicture_promise_001';
@@ -107,12 +107,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_SET_AUXILIARY_PICTURE_002
-     * @tc.name      : picture_setAuxiliaryPicture_promise_002
-     * @tc.desc      : setAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_setAuxiliaryPicture_promise_002
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_002
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_setAuxiliaryPicture_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_setAuxiliaryPicture_promise_002';
@@ -122,12 +122,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_SET_AUXILIARY_PICTURE_003
-     * @tc.name      : picture_setAuxiliaryPicture_abnormal_promise_001
-     * @tc.desc      : setAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_setAuxiliaryPicture_abnormal_promise_001
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_003
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_setAuxiliaryPicture_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_setAuxiliaryPicture_abnormal_promise_001';
@@ -138,12 +138,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_SET_AUXILIARY_PICTURE_004
-     * @tc.name      : picture_setAuxiliaryPicture_abnormal_promise_002
-     * @tc.desc      : setAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_setAuxiliaryPicture_abnormal_promise_002
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_004
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_setAuxiliaryPicture_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_setAuxiliaryPicture_abnormal_promise_002';
@@ -154,12 +154,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_SET_AUXILIARY_PICTURE_005
-     * @tc.name      : picture_setAuxiliaryPicture_abnormal_promise_003
-     * @tc.desc      : setAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_setAuxiliaryPicture_abnormal_promise_003
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_005
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_setAuxiliaryPicture_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_setAuxiliaryPicture_abnormal_promise_003';

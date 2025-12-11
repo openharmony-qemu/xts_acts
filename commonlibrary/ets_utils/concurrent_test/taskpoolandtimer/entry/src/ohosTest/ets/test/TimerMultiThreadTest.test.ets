@@ -48,12 +48,12 @@ export default function timerMultiThreadTest() {
     })
 
     /**
+     * @tc.name   timerMultiThreadTest1001
      * @tc.number SUB_TIMER_MULTI_THREAD_TEST_0100
-     * @tc.name timerMultiThreadTest1001
-     * @tc.desc main thread timer
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   main thread timer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('timerMultiThreadTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function timerMultiThreadTest() {
       });
 
     /**
+     * @tc.name   timerMultiThreadTest1002
      * @tc.number SUB_TIMER_MULTI_THREAD_TEST_0200
-     * @tc.name timerMultiThreadTest1002
-     * @tc.desc subThread timer
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   subThread timer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('timerMultiThreadTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -85,12 +85,12 @@ export default function timerMultiThreadTest() {
       });
 
     /**
+     * @tc.name   timerMultiThreadTest1004
      * @tc.number SUB_TIMER_MULTI_THREAD_TEST_0400
-     * @tc.name timerMultiThreadTest1004
-     * @tc.desc overThread timer
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   overThread timer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('timerMultiThreadTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -106,12 +106,12 @@ export default function timerMultiThreadTest() {
       });
 
     /**
+     * @tc.name   timerMultiThreadTest1005
      * @tc.number SUB_TIMER_MULTI_THREAD_TEST_0500
-     * @tc.name timerMultiThreadTest1005
-     * @tc.desc subTimer clear
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   subTimer clear
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('timerMultiThreadTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -128,12 +128,12 @@ export default function timerMultiThreadTest() {
       });
 
     /**
+     * @tc.name   timerMultiThreadTest1006
      * @tc.number SUB_TIMER_MULTI_THREAD_TEST_0600
-     * @tc.name timerMultiThreadTest1006
-     * @tc.desc mainTimer clear
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   mainTimer clear
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('timerMultiThreadTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (done: Function) => {

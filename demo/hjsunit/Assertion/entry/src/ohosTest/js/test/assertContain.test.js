@@ -16,7 +16,6 @@ import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertContain', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertContainSuccessOnString
      * @tc.number assertContainSuccessOnString
      * @tc.desc   assertContainSuccessOnString
@@ -30,7 +29,6 @@ describe('assertContain', function () {
         expect(a).assertContain(b)
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertContainSuccessOnArray
      * @tc.number assertContainSuccessOnArray
      * @tc.desc   assertContainSuccessOnArray
@@ -44,7 +42,6 @@ describe('assertContain', function () {
         expect(a).assertContain(b)
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertContainFailOnString
      * @tc.number assertContainFailOnString
      * @tc.desc   assertContainFailOnString
@@ -58,7 +55,6 @@ describe('assertContain', function () {
         expect(a).assertContain(b)
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertContainFailOnArray
      * @tc.number assertContainFailOnArray
      * @tc.desc   assertContainFailOnArray

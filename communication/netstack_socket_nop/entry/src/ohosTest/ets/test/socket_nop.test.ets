@@ -35,7 +35,6 @@ export default function socketNopTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Listen_NetAddress_Promise_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Listen_NetAddress_Promise_Nop
      * @tc.desc   Using the on method without permission
@@ -69,7 +68,6 @@ export default function socketNopTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Listen_NetAddress_Callback_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Listen_NetAddress_Callback_Nop
      * @tc.desc   Using the on method without permission
@@ -104,7 +102,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Close_Callback_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Close_Callback_Nop
      * @tc.desc   Using the on method without permission
@@ -134,7 +131,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Bind_NetAddress_Callback_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Bind_NetAddress_Callback_Nop
      * @tc.desc   Using the on method without permission
@@ -169,7 +165,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Bind_NetAddress_Promise_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Bind_NetAddress_Promise_Nop
      * @tc.desc   Using the on method without permission
@@ -203,7 +198,6 @@ export default function socketNopTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Callback_Nop
      * @tc.number SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Callback_Nop
      * @tc.desc   Using the on method without permission
@@ -233,7 +227,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Promise_Nop
      * @tc.number SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Promise_Nop
      * @tc.desc   Using the on method without permission
@@ -261,7 +254,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_GetState_SocketStateBase_Promise_Nop
      * @tc.number SUB_Communication_NetStack_Socket_GetState_SocketStateBase_Promise_Nop
      * @tc.desc   Using the on method without permission
@@ -289,7 +281,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Close_Promise_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Close_Promise_Nop
      * @tc.desc   Using the on method without permission
@@ -317,7 +308,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Callback_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Callback_Nop
      * @tc.desc   Using the on method without permission
@@ -364,7 +354,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Promise_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Promise_Nop
      * @tc.desc   Using the on method without permission
@@ -412,7 +401,6 @@ export default function socketNopTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Callback_Nop
      * @tc.number SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Callback_Nop
      * @tc.desc   Using the on method without permission
@@ -449,7 +437,6 @@ export default function socketNopTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:43
      * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Callback_Nop
      * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Callback_Nop
      * @tc.desc   Using the on method without permission
@@ -483,7 +470,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_Send_TCPSendOptions_Promise_Nop
    * @tc.number SUB_Communication_NetStack_Socket_Send_TCPSendOptions_Promise_Nop
    * @tc.desc   Using the on method without permission
@@ -514,7 +500,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_GetState_Callback_Nop
    * @tc.number SUB_Communication_NetStack_Socket_GetState_Callback_Nop
    * @tc.desc   Using the on method without permission
@@ -547,7 +532,6 @@ export default function socketNopTest() {
 
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Promise_Nop
    * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Promise_Nop
    * @tc.desc   Using the on method without permission
@@ -582,7 +566,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Promise_Nop
    * @tc.number SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Promise_Nop
    * @tc.desc   Using the on method without permission
@@ -617,7 +600,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_Connect_TCPConnectOptions_Callback_Nop
    * @tc.number SUB_Communication_NetStack_Socket_Connect_TCPConnectOptions_Callback_Nop
    * @tc.desc   Using the on method without permission
@@ -654,7 +636,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop
    * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop
    * @tc.desc   Using the on method without permission
@@ -694,7 +675,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_Send_TCPConnectOptions_Callback_Nop
    * @tc.number SUB_Communication_NetStack_Socket_Send_TCPConnectOptions_Callback_Nop
    * @tc.desc   Using the on method without permission
@@ -727,7 +707,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop
    * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop
    * @tc.desc   Using the on method without permission
@@ -769,7 +748,6 @@ export default function socketNopTest() {
   });
 
   /**
-   * @generated.time 2025-11-09 20:49:43
    * @tc.name   SUB_Communication_NetStack_Socket_Connect_TCPSendOptions_Promise_Nop
    * @tc.number SUB_Communication_NetStack_Socket_Connect_TCPSendOptions_Promise_Nop
    * @tc.desc   Using the on method without permission

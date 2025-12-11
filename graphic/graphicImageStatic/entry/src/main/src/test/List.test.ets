@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import graphicImagePixelMap from './GraphicImagePixelMap.test';
+import graphicImagePixelMap2 from './GraphicImagePixelMap2.test';
 export default function testsuite() {
   graphicImagePixelMap();
+  graphicImagePixelMap2();
 }

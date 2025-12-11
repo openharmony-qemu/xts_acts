@@ -71,11 +71,13 @@ export default function StartAbilityTest() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_FA_StartAbility_2600
-     * @tc.name: startAbility: NoTargetBundleList,free install successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_FA_StartAbility_2600
+     * @tc.number FreeInstall_FA_StartAbility_2600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_StartAbility_2600", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_StartAbility_2600-------------");
@@ -102,11 +104,13 @@ export default function StartAbilityTest() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_FA_StartAbility_2700
-     * @tc.name: startAbility: NoTargetBundleList and yuanzihua already installed,startAbility successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_FA_StartAbility_2700
+     * @tc.number FreeInstall_FA_StartAbility_2700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_StartAbility_2700", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_StartAbility_2700-------------");

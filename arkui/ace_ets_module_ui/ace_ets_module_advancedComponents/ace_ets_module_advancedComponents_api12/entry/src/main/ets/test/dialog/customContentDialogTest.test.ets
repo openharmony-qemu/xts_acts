@@ -49,12 +49,12 @@ export default function customContentDialogTest() {
     })
 
     /**
+     * @tc.name   customContentDialogTest_0100
      * @tc.number customContentDialogTest
-     * @tc.name   customContentDialogTest
      * @tc.desc   Test customContentDialog
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('customContentDialogTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[customContentDialogTest_0100] START');

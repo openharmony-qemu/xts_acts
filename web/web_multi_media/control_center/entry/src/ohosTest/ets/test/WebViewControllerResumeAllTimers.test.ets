@@ -57,14 +57,14 @@ export default function webViewControllerResumeAllTimers() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_RESUMEALLTIMERS_0100
-    * @tc.name       : testResumeAllTimers001
-    * @tc.desc       : test ResumeAllTimers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+      /**
+       * @tc.name   resumeAllTimers0100
+       * @tc.number SUB_WEB_RESUMEALLTIMERS_0100
+       * @tc.desc   test ResumeAllTimers
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('resumeAllTimers0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("resumeAllTimers0100", 132680)
       Utils.registerBaseEvent("resumeAllTimers0100", true, 132690, done,
@@ -74,14 +74,14 @@ export default function webViewControllerResumeAllTimers() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_RESUMEALLTIMERS_0200
-    * @tc.name       : testResumeAllTimers002
-    * @tc.desc       : test ResumeAllTimers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   resumeAllTimers0200
+     * @tc.number SUB_WEB_RESUMEALLTIMERS_0200
+     * @tc.desc   test ResumeAllTimers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('resumeAllTimers0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("resumeAllTimers0200", 132680)
       Utils.registerBaseEvent("resumeAllTimers0200", true, 132700, done,
@@ -91,14 +91,14 @@ export default function webViewControllerResumeAllTimers() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_RESUMEALLTIMERS_0300
-    * @tc.name       : testResumeAllTimers003
-    * @tc.desc       : test ResumeAllTimers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   resumeAllTimers0300
+     * @tc.number SUB_WEB_RESUMEALLTIMERS_0300
+     * @tc.desc   test ResumeAllTimers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('resumeAllTimers0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("resumeAllTimers0300", 132680)
       Utils.registerBaseEvent("resumeAllTimers0300", true, 132710, done,
@@ -108,14 +108,14 @@ export default function webViewControllerResumeAllTimers() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_RESUMEALLTIMERS_0400
-    * @tc.name       : testResumeAllTimers004
-    * @tc.desc       : test ResumeAllTimers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   resumeAllTimers0400
+     * @tc.number SUB_WEB_RESUMEALLTIMERS_0400
+     * @tc.desc   test ResumeAllTimers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('resumeAllTimers0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("resumeAllTimers0400", 132680)
       Utils.registerBaseEvent("resumeAllTimers0400", true, 132720, done,
@@ -125,14 +125,14 @@ export default function webViewControllerResumeAllTimers() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_RESUMEALLTIMERS_0500
-    * @tc.name       : testResumeAllTimers005
-    * @tc.desc       : test ResumeAllTimers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   resumeAllTimers0500
+     * @tc.number SUB_WEB_RESUMEALLTIMERS_0500
+     * @tc.desc   test ResumeAllTimers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('resumeAllTimers0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("resumeAllTimers0500", 132680)
       Utils.registerBaseEvent("resumeAllTimers0500", true, 132730, done,
@@ -142,14 +142,14 @@ export default function webViewControllerResumeAllTimers() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_RESUMEALLTIMERS_0600
-    * @tc.name       : testResumeAllTimers006
-    * @tc.desc       : test ResumeAllTimers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   resumeAllTimers0600
+     * @tc.number SUB_WEB_RESUMEALLTIMERS_0600
+     * @tc.desc   test ResumeAllTimers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('resumeAllTimers0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("resumeAllTimers0600", 132680)
       Utils.registerBaseEvent("resumeAllTimers0600", true, 132740, done,
@@ -159,14 +159,14 @@ export default function webViewControllerResumeAllTimers() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerResumeAllTimers');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_RESUMEALLTIMERS_0700
-    * @tc.name       : testResumeAllTimers007
-    * @tc.desc       : test ResumeAllTimers
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   resumeAllTimers0700
+     * @tc.number SUB_WEB_RESUMEALLTIMERS_0700
+     * @tc.desc   test ResumeAllTimers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('resumeAllTimers0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("resumeAllTimers0700", 132680)
       Utils.registerBaseEvent("resumeAllTimers0700", true, 132750, done,

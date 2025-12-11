@@ -100,12 +100,12 @@ export default function PictureGetMetadataTest() {
     });
 
     /**
-     * @tc.number    : PICTURE_GET_METADATA_001
-     * @tc.name      : picture_getMetadata_promise_001
-     * @tc.desc      : getMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getMetadata_promise_001
+     * @tc.number PICTURE_GET_METADATA_001
+     * @tc.desc   getMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_getMetadata_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getMetadata_promise_001';
@@ -115,12 +115,12 @@ export default function PictureGetMetadataTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_GET_METADATA_002
-     * @tc.name      : picture_getMetadata_promise_002
-     * @tc.desc      : getMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getMetadata_promise_002
+     * @tc.number PICTURE_GET_METADATA_002
+     * @tc.desc   getMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_getMetadata_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getMetadata_promise_002';
@@ -130,12 +130,12 @@ export default function PictureGetMetadataTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_GET_METADATA_003
-     * @tc.name      : picture_getMetadata_promise_003
-     * @tc.desc      : getMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getMetadata_promise_003
+     * @tc.number PICTURE_GET_METADATA_003
+     * @tc.desc   getMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_getMetadata_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getMetadata_promise_003';
@@ -145,12 +145,12 @@ export default function PictureGetMetadataTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_GET_METADATA_004
-     * @tc.name      : picture_getMetadata_abnormal_promise_001
-     * @tc.desc      : getMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getMetadata_abnormal_promise_001
+     * @tc.number PICTURE_GET_METADATA_004
+     * @tc.desc   getMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_getMetadata_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getMetadata_abnormal_promise_001';
@@ -160,12 +160,12 @@ export default function PictureGetMetadataTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_GET_METADATA_005
-     * @tc.name      : picture_getMetadata_abnormal_promise_002
-     * @tc.desc      : getMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getMetadata_abnormal_promise_002
+     * @tc.number PICTURE_GET_METADATA_005
+     * @tc.desc   getMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_getMetadata_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getMetadata_abnormal_promise_002';
@@ -175,12 +175,12 @@ export default function PictureGetMetadataTest() {
     })
 
     /**
-     * @tc.number    : PICTURE_GET_METADATA_006
-     * @tc.name      : picture_getMetadata_abnormal_promise_003
-     * @tc.desc      : getMetadata
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getMetadata_abnormal_promise_003
+     * @tc.number PICTURE_GET_METADATA_006
+     * @tc.desc   getMetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('picture_getMetadata_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getMetadata_abnormal_promise_003';

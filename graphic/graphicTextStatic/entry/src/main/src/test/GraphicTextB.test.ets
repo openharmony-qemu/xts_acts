@@ -46,12 +46,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testFontWidthStatic
-     * @tc.name      : testFontWidthStatic
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFontWidthStatic
+     * @tc.number testFontWidthStatic
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -77,12 +77,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testTextHeightBehaviorStatic
-     * @tc.name      : testTextHeightBehaviorStatic
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextHeightBehaviorStatic
+     * @tc.number testTextHeightBehaviorStatic
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextHeightBehaviorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -104,12 +104,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testTextStyleStatic_3
-     * @tc.name      : testTextStyleStatic_3
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextStyleStatic_3
+     * @tc.number testTextStyleStatic_3
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyleStatic_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -190,12 +190,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testParagraphStyleStatic_2
-     * @tc.name      : testParagraphStyleStatic_2
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testParagraphStyleStatic_2
+     * @tc.number testParagraphStyleStatic_2
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParagraphStyleStatic_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -286,12 +286,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testPaintOnPathStatic
-     * @tc.name      : testPaintOnPathStatic
-     * @tc.desc      : To test interface paintOnPath of Paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPaintOnPathStatic
+     * @tc.number testPaintOnPathStatic
+     * @tc.desc   To test interface paintOnPath of Paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPaintOnPathStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -324,12 +324,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testClearCachesStatic
-     * @tc.name      : testClearCachesStatic
-     * @tc.desc      : To test interface clearCaches of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testClearCachesStatic
+     * @tc.number testClearCachesStatic
+     * @tc.desc   To test interface clearCaches of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearCachesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -352,12 +352,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testTextStyle_FontVariationStatic
-     * @tc.name      : testTextStyle_FontVariationStatic
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextStyle_FontVariationStatic
+     * @tc.number testTextStyle_FontVariationStatic
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyle_FontVariationStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -444,12 +444,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testStrutStyle_leadingStatic
-     * @tc.name      : testStrutStyle_leadingStatic
-     * @tc.desc      : To test interface StrutStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStrutStyle_leadingStatic
+     * @tc.number testStrutStyle_leadingStatic
+     * @tc.desc   To test interface StrutStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStrutStyle_leadingStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -545,12 +545,12 @@ export default function GraphicTextBTest() {
     })
 
     /**
-     * @tc.number    : testGetLongestLineWithIndentStatic
-     * @tc.name      : testGetLongestLineWithIndentStatic
-     * @tc.desc      : To test interface getLongestLineWithIndent.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLongestLineWithIndentStatic
+     * @tc.number testGetLongestLineWithIndentStatic
+     * @tc.desc   To test interface getLongestLineWithIndent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetLongestLineWithIndentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

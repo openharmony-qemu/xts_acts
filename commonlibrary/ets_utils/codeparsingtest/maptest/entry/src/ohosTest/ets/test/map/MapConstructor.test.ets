@@ -84,12 +84,12 @@ export default function MapConstructorTest() {
     })
 
     /**
+     * @tc.name   MapConstructorTest001
      * @tc.number MAP_CONSTRUCTOR_TEST_001
-     * @tc.name MapConstructorTest001
-     * @tc.desc Create empty Map using constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create empty Map using constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<number, number> = new Map();
@@ -97,12 +97,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest002
      * @tc.number MAP_CONSTRUCTOR_TEST_002
-     * @tc.name MapConstructorTest002
-     * @tc.desc Create Map from array of key-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map from array of key-value pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([['a', 1], ['b', 2]]);
@@ -110,12 +110,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest003
      * @tc.number MAP_CONSTRUCTOR_TEST_003
-     * @tc.name MapConstructorTest003
-     * @tc.desc Create Map from another Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map from another Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original = new Map([['key', 'value']]);
@@ -124,12 +124,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest004
      * @tc.number MAP_CONSTRUCTOR_TEST_004
-     * @tc.name MapConstructorTest004
-     * @tc.desc Create Map from Set with key-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map from Set with key-value pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('MapConstructorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const map:Map<ESObject,ESObject> = MapConstructorTest004()
@@ -137,12 +137,12 @@ export default function MapConstructorTest() {
     // });
 
     /**
+     * @tc.name   MapConstructorTest005
      * @tc.number MAP_CONSTRUCTOR_TEST_005
-     * @tc.name MapConstructorTest005
-     * @tc.desc Create Map from object with iterable interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map from object with iterable interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = MapConstructorTest005()
@@ -150,12 +150,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest006
      * @tc.number MAP_CONSTRUCTOR_TEST_006
-     * @tc.name MapConstructorTest006
-     * @tc.desc Map constructor without new throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map constructor without new throws error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let errorThrown = MapConstructorTest006();
@@ -163,12 +163,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest007
      * @tc.number MAP_CONSTRUCTOR_TEST_007
-     * @tc.name MapConstructorTest007
-     * @tc.desc Create Map with null as parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map with null as parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, string>(null);
@@ -176,12 +176,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest008
      * @tc.number MAP_CONSTRUCTOR_TEST_008
-     * @tc.name MapConstructorTest008
-     * @tc.desc Create Map with undefined as parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map with undefined as parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, string>(undefined);
@@ -189,12 +189,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest009
      * @tc.number MAP_CONSTRUCTOR_TEST_009
-     * @tc.name MapConstructorTest009
-     * @tc.desc Create Map with number as parameter (non-iterable)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map with number as parameter (non-iterable)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let errorThrown = MapConstructorTest009()
@@ -202,12 +202,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest010
      * @tc.number MAP_CONSTRUCTOR_TEST_010
-     * @tc.name MapConstructorTest010
-     * @tc.desc Create Map with string as parameter (iterable)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map with string as parameter (iterable)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('MapConstructorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   let map:Map<string,ESObject> = MapConstructorTest010()
@@ -216,12 +216,12 @@ export default function MapConstructorTest() {
     // });
 
     /**
+     * @tc.name   MapConstructorTest011
      * @tc.number MAP_CONSTRUCTOR_TEST_011
-     * @tc.name MapConstructorTest011
-     * @tc.desc Map with boolean keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with boolean keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[true, 'yes'], [false, 'no']]);
@@ -230,12 +230,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest012
      * @tc.number MAP_CONSTRUCTOR_TEST_012
-     * @tc.name MapConstructorTest012
-     * @tc.desc Map with number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[1, 'one'], [2, 'two']]);
@@ -244,12 +244,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest013
      * @tc.number MAP_CONSTRUCTOR_TEST_013
-     * @tc.name MapConstructorTest013
-     * @tc.desc Map with object keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with object keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1 = MapConstructorObject();
@@ -260,12 +260,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest014
      * @tc.number MAP_CONSTRUCTOR_TEST_014
-     * @tc.name MapConstructorTest014
-     * @tc.desc Map with NaN as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with NaN as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[NaN, 'not a number']]);
@@ -273,12 +273,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest015
      * @tc.number MAP_CONSTRUCTOR_TEST_015
-     * @tc.name MapConstructorTest015
-     * @tc.desc Map with symbol keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with symbol keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const sym1 = MapConstructorSymbol('key1');
@@ -289,12 +289,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest016
      * @tc.number MAP_CONSTRUCTOR_TEST_016
-     * @tc.name MapConstructorTest016
-     * @tc.desc Map with mixed key types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with mixed key types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = MapConstructorObject();
@@ -314,12 +314,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest017
      * @tc.number MAP_CONSTRUCTOR_TEST_017
-     * @tc.name MapConstructorTest017
-     * @tc.desc Map with duplicate primitive keys in iterable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with duplicate primitive keys in iterable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([['a', 1], ['a', 2], ['a', 3]]);
@@ -328,12 +328,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest018
      * @tc.number MAP_CONSTRUCTOR_TEST_018
-     * @tc.name MapConstructorTest018
-     * @tc.desc Map with duplicate object keys in iterable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with duplicate object keys in iterable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = MapConstructorObject();
@@ -343,12 +343,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest019
      * @tc.number MAP_CONSTRUCTOR_TEST_019
-     * @tc.name MapConstructorTest019
-     * @tc.desc Map with nested arrays as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with nested arrays as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1 = [1, 2];
@@ -360,12 +360,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest020
      * @tc.number MAP_CONSTRUCTOR_TEST_020
-     * @tc.name MapConstructorTest020
-     * @tc.desc Create Map from array-like object with length property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map from array-like object with length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('MapConstructorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const map:Map<string,number> = MapConstructorTest020();
@@ -373,12 +373,12 @@ export default function MapConstructorTest() {
     // });
 
     /**
+     * @tc.name   MapConstructorTest021
      * @tc.number MAP_CONSTRUCTOR_TEST_021
-     * @tc.name MapConstructorTest021
-     * @tc.desc Create Map from generator function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map from generator function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = MapConstructorTest021();
@@ -387,12 +387,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest022
      * @tc.number MAP_CONSTRUCTOR_TEST_022
-     * @tc.name MapConstructorTest022
-     * @tc.desc Check Map.prototype.constructor property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check Map.prototype.constructor property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = new Map();
@@ -400,12 +400,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest023
      * @tc.number MAP_CONSTRUCTOR_TEST_023
-     * @tc.name MapConstructorTest023
-     * @tc.desc Check Map is instance of Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check Map is instance of Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = new Map();
@@ -413,12 +413,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest024
      * @tc.number MAP_CONSTRUCTOR_TEST_024
-     * @tc.name MapConstructorTest024
-     * @tc.desc Check Map is instance of Object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check Map is instance of Object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = new Map();
@@ -426,24 +426,24 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest025
      * @tc.number MAP_CONSTRUCTOR_TEST_025
-     * @tc.name MapConstructorTest025
-     * @tc.desc Check Map.prototype is object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check Map.prototype is object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(typeof MapConstructorPrototype()).assertEqual('object');
     });
 
     /**
+     * @tc.name   MapConstructorTest026
      * @tc.number MAP_CONSTRUCTOR_TEST_026
-     * @tc.name MapConstructorTest026
-     * @tc.desc Create Map with Date objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map with Date objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1 = new Date(2020, 0, 1);
@@ -455,12 +455,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest027
      * @tc.number MAP_CONSTRUCTOR_TEST_027
-     * @tc.name MapConstructorTest027
-     * @tc.desc Create Map with RegExp objects as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map with RegExp objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex1 = /test/;
@@ -472,12 +472,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest028
      * @tc.number MAP_CONSTRUCTOR_TEST_028
-     * @tc.name MapConstructorTest028
-     * @tc.desc Create large Map with 1000 entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create large Map with 1000 entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = MapConstructorTest028();
@@ -486,12 +486,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest029
      * @tc.number MAP_CONSTRUCTOR_TEST_029
-     * @tc.name MapConstructorTest029
-     * @tc.desc Map constructor with non-array iterable entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map constructor with non-array iterable entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = MapConstructorTest029();
@@ -500,12 +500,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest030
      * @tc.number MAP_CONSTRUCTOR_TEST_030
-     * @tc.name MapConstructorTest030
-     * @tc.desc Map constructor with iterable containing non-entry elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map constructor with iterable containing non-entry elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('MapConstructorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const map = MapConstructorTest030();
@@ -514,12 +514,12 @@ export default function MapConstructorTest() {
     // });
 
     /**
+     * @tc.name   MapConstructorTest031
      * @tc.number MAP_CONSTRUCTOR_TEST_031
-     * @tc.name MapConstructorTest031
-     * @tc.desc Map with key as Map instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Map instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const val = MapConstructorTest031();
@@ -527,12 +527,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest032
      * @tc.number MAP_CONSTRUCTOR_TEST_032
-     * @tc.name MapConstructorTest032
-     * @tc.desc Map with key as Set instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Set instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 
@@ -541,12 +541,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest033
      * @tc.number MAP_CONSTRUCTOR_TEST_033
-     * @tc.name MapConstructorTest033
-     * @tc.desc Map with key as Function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const keyFunc = () => {
@@ -556,12 +556,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest034
      * @tc.number MAP_CONSTRUCTOR_TEST_034
-     * @tc.name MapConstructorTest034
-     * @tc.desc Check Map.prototype.size is a getter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check Map.prototype.size is a getter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const descriptor = MapConstructorTest034();
@@ -570,12 +570,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest035
      * @tc.number MAP_CONSTRUCTOR_TEST_035
-     * @tc.name MapConstructorTest035
-     * @tc.desc Create Map from another Map with same entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create Map from another Map with same entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original: Map<ESObject, ESObject> = MapConstructorTest035();
@@ -587,12 +587,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest036
      * @tc.number MAP_CONSTRUCTOR_TEST_036
-     * @tc.name MapConstructorTest036
-     * @tc.desc Map with numeric string vs number keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with numeric string vs number keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<ESObject, ESObject> = MapConstructorTest036();
@@ -602,12 +602,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest037
      * @tc.number MAP_CONSTRUCTOR_TEST_037
-     * @tc.name MapConstructorTest037
-     * @tc.desc Map with key as null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[null, 'null value']]);
@@ -615,12 +615,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest038
      * @tc.number MAP_CONSTRUCTOR_TEST_038
-     * @tc.name MapConstructorTest038
-     * @tc.desc Map with key as undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[undefined, 'undefined value']]);
@@ -628,12 +628,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest039
      * @tc.number MAP_CONSTRUCTOR_TEST_039
-     * @tc.name MapConstructorTest039
-     * @tc.desc Map with key as Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Infinity, 'infinity value']]);
@@ -641,12 +641,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest040
      * @tc.number MAP_CONSTRUCTOR_TEST_040
-     * @tc.name MapConstructorTest040
-     * @tc.desc Map with key as -Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as -Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[-Infinity, 'negative infinity value']]);
@@ -654,12 +654,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest041
      * @tc.number MAP_CONSTRUCTOR_TEST_041
-     * @tc.name MapConstructorTest041
-     * @tc.desc Map constructor with iterable that modifies itself during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map constructor with iterable that modifies itself during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 
@@ -668,12 +668,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest042
      * @tc.number MAP_CONSTRUCTOR_TEST_042
-     * @tc.name MapConstructorTest042
-     * @tc.desc Map with key as bigint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as bigint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const key = 123n;
@@ -682,12 +682,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest043
      * @tc.number MAP_CONSTRUCTOR_TEST_043
-     * @tc.name MapConstructorTest043
-     * @tc.desc Map with same numeric bigint and number as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with same numeric bigint and number as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<ESObject, ESObject> = MapConstructorTest043();
@@ -697,12 +697,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest044
      * @tc.number MAP_CONSTRUCTOR_TEST_044
-     * @tc.name MapConstructorTest044
-     * @tc.desc Map with empty string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([['', 'empty string']]);
@@ -710,12 +710,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest045
      * @tc.number MAP_CONSTRUCTOR_TEST_045
-     * @tc.name MapConstructorTest045
-     * @tc.desc Map with whitespace string keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with whitespace string keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[' ', 'space'], ['\t', 'tab'], ['\n', 'newline']]);
@@ -725,12 +725,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest046
      * @tc.number MAP_CONSTRUCTOR_TEST_046
-     * @tc.name MapConstructorTest046
-     * @tc.desc Map with special character keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with special character keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([['!', 'exclamation'], ['@', 'at'], ['#', 'hash']]);
@@ -740,12 +740,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest047
      * @tc.number MAP_CONSTRUCTOR_TEST_047
-     * @tc.name MapConstructorTest047
-     * @tc.desc Map with Unicode character keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with Unicode character keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([['€', 'euro'], ['π', 'pi'], ['😊', 'smile']]);
@@ -755,12 +755,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest048
      * @tc.number MAP_CONSTRUCTOR_TEST_048
-     * @tc.name MapConstructorTest048
-     * @tc.desc Map constructor with sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map constructor with sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('MapConstructorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const map:Map<ESObject,ESObject> = MapConstructorTest048();
@@ -770,12 +770,12 @@ export default function MapConstructorTest() {
     // });
 
     /**
+     * @tc.name   MapConstructorTest049
      * @tc.number MAP_CONSTRUCTOR_TEST_049
-     * @tc.name MapConstructorTest049
-     * @tc.desc Map with key as WeakMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as WeakMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = MapConstructorTest049();
@@ -783,12 +783,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest050
      * @tc.number MAP_CONSTRUCTOR_TEST_050
-     * @tc.name MapConstructorTest050
-     * @tc.desc Map with key as WeakSet
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as WeakSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const keyWeakSet = new WeakSet();
@@ -797,12 +797,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest051
      * @tc.number MAP_CONSTRUCTOR_TEST_051
-     * @tc.name MapConstructorTest051
-     * @tc.desc Map with key as ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const buffer = new ArrayBuffer(8);
@@ -811,12 +811,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest052
      * @tc.number MAP_CONSTRUCTOR_TEST_052
-     * @tc.name MapConstructorTest052
-     * @tc.desc Map with key as DataView
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as DataView
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const view = new DataView(new ArrayBuffer(8));
@@ -825,12 +825,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest053
      * @tc.number MAP_CONSTRUCTOR_TEST_053
-     * @tc.name MapConstructorTest053
-     * @tc.desc Map with key as TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const typedArray = new Uint8Array([1, 2, 3]);
@@ -839,12 +839,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest054
      * @tc.number MAP_CONSTRUCTOR_TEST_054
-     * @tc.name MapConstructorTest054
-     * @tc.desc Map constructor with iterable that throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map constructor with iterable that throws error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 
@@ -854,12 +854,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest055
      * @tc.number MAP_CONSTRUCTOR_TEST_055
-     * @tc.name MapConstructorTest055
-     * @tc.desc Map with key as Error object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Error object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const error = new Error('test');
@@ -868,12 +868,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest056
      * @tc.number MAP_CONSTRUCTOR_TEST_056
-     * @tc.name MapConstructorTest056
-     * @tc.desc Map with key as Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const promise = Promise.resolve();
@@ -882,12 +882,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest057
      * @tc.number MAP_CONSTRUCTOR_TEST_057
-     * @tc.name MapConstructorTest057
-     * @tc.desc Map with key as Proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const target = MapConstructorObject();
@@ -897,12 +897,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest058
      * @tc.number MAP_CONSTRUCTOR_TEST_058
-     * @tc.name MapConstructorTest058
-     * @tc.desc Map with key as class instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as class instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class MyClass {
@@ -914,12 +914,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest059
      * @tc.number MAP_CONSTRUCTOR_TEST_059
-     * @tc.name MapConstructorTest059
-     * @tc.desc Map with key as generator object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as generator object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = MapConstructorTest059();
@@ -927,12 +927,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest060
      * @tc.number MAP_CONSTRUCTOR_TEST_060
-     * @tc.name MapConstructorTest060
-     * @tc.desc Map with key as regex result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as regex result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const result = /t(e)st/.exec('test');
@@ -945,12 +945,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest061
      * @tc.number MAP_CONSTRUCTOR_TEST_061
-     * @tc.name MapConstructorTest061
-     * @tc.desc Map with key as arguments object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as arguments object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const args = MapConstructorTest061();
@@ -959,12 +959,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest062
      * @tc.number MAP_CONSTRUCTOR_TEST_062
-     * @tc.name MapConstructorTest062
-     * @tc.desc Map with circular reference as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with circular reference as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = MapConstructorObject();
@@ -975,12 +975,12 @@ export default function MapConstructorTest() {
 
 
     /**
+     * @tc.name   MapConstructorTest064
      * @tc.number MAP_CONSTRUCTOR_TEST_064
-     * @tc.name MapConstructorTest064
-     * @tc.desc Map constructor with iterable that returns non-objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map constructor with iterable that returns non-objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('MapConstructorTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const map:Map<ESObject,ESObject> = MapConstructorTest064();
@@ -988,12 +988,12 @@ export default function MapConstructorTest() {
     // });
 
     /**
+     * @tc.name   MapConstructorTest065
      * @tc.number MAP_CONSTRUCTOR_TEST_065
-     * @tc.name MapConstructorTest065
-     * @tc.desc Map with key as Math object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Math object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Math, 'math value']]);
@@ -1001,12 +1001,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest066
      * @tc.number MAP_CONSTRUCTOR_TEST_066
-     * @tc.name MapConstructorTest066
-     * @tc.desc Map with key as JSON object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as JSON object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[JSON, 'json value']]);
@@ -1014,12 +1014,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest067
      * @tc.number MAP_CONSTRUCTOR_TEST_067
-     * @tc.name MapConstructorTest067
-     * @tc.desc Map with key as Array constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Array, 'array constructor']]);
@@ -1027,12 +1027,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest068
      * @tc.number MAP_CONSTRUCTOR_TEST_068
-     * @tc.name MapConstructorTest068
-     * @tc.desc Map with key as Object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Object, 'object constructor']]);
@@ -1040,12 +1040,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest069
      * @tc.number MAP_CONSTRUCTOR_TEST_069
-     * @tc.name MapConstructorTest069
-     * @tc.desc Map with key as Function constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Function constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Function, 'function constructor']]);
@@ -1053,12 +1053,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest070
      * @tc.number MAP_CONSTRUCTOR_TEST_070
-     * @tc.name MapConstructorTest070
-     * @tc.desc Map with key as Number constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Number constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Number, 'number constructor']]);
@@ -1066,12 +1066,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest071
      * @tc.number MAP_CONSTRUCTOR_TEST_071
-     * @tc.name MapConstructorTest071
-     * @tc.desc Map with key as String constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as String constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[String, 'string constructor']]);
@@ -1079,12 +1079,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest072
      * @tc.number MAP_CONSTRUCTOR_TEST_072
-     * @tc.name MapConstructorTest072
-     * @tc.desc Map with key as Boolean constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Boolean constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Boolean, 'boolean constructor']]);
@@ -1092,12 +1092,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest073
      * @tc.number MAP_CONSTRUCTOR_TEST_073
-     * @tc.name MapConstructorTest073
-     * @tc.desc Map with key as Symbol function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Symbol function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Symbol, 'symbol function']]);
@@ -1105,12 +1105,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest074
      * @tc.number MAP_CONSTRUCTOR_TEST_074
-     * @tc.name MapConstructorTest074
-     * @tc.desc Map with key as Date constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Date constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Date, 'date constructor']]);
@@ -1118,12 +1118,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest075
      * @tc.number MAP_CONSTRUCTOR_TEST_075
-     * @tc.name MapConstructorTest075
-     * @tc.desc Map with key as RegExp constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as RegExp constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[RegExp, 'regexp constructor']]);
@@ -1131,12 +1131,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest076
      * @tc.number MAP_CONSTRUCTOR_TEST_076
-     * @tc.name MapConstructorTest076
-     * @tc.desc Map with key as Error constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Error constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Error, 'error constructor']]);
@@ -1144,12 +1144,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest077
      * @tc.number MAP_CONSTRUCTOR_TEST_077
-     * @tc.name MapConstructorTest077
-     * @tc.desc Map with key as Map constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Map constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Map, 'map constructor']]);
@@ -1157,12 +1157,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest078
      * @tc.number MAP_CONSTRUCTOR_TEST_078
-     * @tc.name MapConstructorTest078
-     * @tc.desc Map with key as Set constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Set constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Set, 'set constructor']]);
@@ -1170,12 +1170,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest079
      * @tc.number MAP_CONSTRUCTOR_TEST_079
-     * @tc.name MapConstructorTest079
-     * @tc.desc Map with key as WeakMap constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as WeakMap constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[WeakMap, 'weakmap constructor']]);
@@ -1183,12 +1183,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest080
      * @tc.number MAP_CONSTRUCTOR_TEST_080
-     * @tc.name MapConstructorTest080
-     * @tc.desc Map with key as WeakSet constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as WeakSet constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[WeakSet, 'weakset constructor']]);
@@ -1196,12 +1196,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest081
      * @tc.number MAP_CONSTRUCTOR_TEST_081
-     * @tc.name MapConstructorTest081
-     * @tc.desc Map with key as Promise constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Promise constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Promise, 'promise constructor']]);
@@ -1209,12 +1209,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest082
      * @tc.number MAP_CONSTRUCTOR_TEST_082
-     * @tc.name MapConstructorTest082
-     * @tc.desc Map with key as Proxy constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Proxy constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Proxy, 'proxy constructor']]);
@@ -1222,12 +1222,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest083
      * @tc.number MAP_CONSTRUCTOR_TEST_083
-     * @tc.name MapConstructorTest083
-     * @tc.desc Map with key as Reflect object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Reflect object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = MapConstructorTest083();
@@ -1235,12 +1235,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest084
      * @tc.number MAP_CONSTRUCTOR_TEST_084
-     * @tc.name MapConstructorTest084
-     * @tc.desc Map with key as Intl object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Intl object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = MapConstructorTest084();
@@ -1248,12 +1248,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest085
      * @tc.number MAP_CONSTRUCTOR_TEST_085
-     * @tc.name MapConstructorTest085
-     * @tc.desc Map with key as Atomics object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Atomics object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       if (typeof Atomics !== 'undefined') {
@@ -1265,12 +1265,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest086
      * @tc.number MAP_CONSTRUCTOR_TEST_086
-     * @tc.name MapConstructorTest086
-     * @tc.desc Map with key as SharedArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       if (typeof SharedArrayBuffer !== 'undefined') {
@@ -1282,12 +1282,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest087
      * @tc.number MAP_CONSTRUCTOR_TEST_087
-     * @tc.name MapConstructorTest087
-     * @tc.desc Map with key as DataView constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as DataView constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[DataView, 'data view constructor']]);
@@ -1295,12 +1295,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest088
      * @tc.number MAP_CONSTRUCTOR_TEST_088
-     * @tc.name MapConstructorTest088
-     * @tc.desc Map with key as ArrayBuffer constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as ArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[ArrayBuffer, 'array buffer constructor']]);
@@ -1308,12 +1308,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest089
      * @tc.number MAP_CONSTRUCTOR_TEST_089
-     * @tc.name MapConstructorTest089
-     * @tc.desc Map with key as Uint8Array constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Uint8Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Uint8Array, 'uint8 array constructor']]);
@@ -1321,12 +1321,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest090
      * @tc.number MAP_CONSTRUCTOR_TEST_090
-     * @tc.name MapConstructorTest090
-     * @tc.desc Map with key as Float64Array constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as Float64Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map([[Float64Array, 'float64 array constructor']]);
@@ -1334,12 +1334,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest093
      * @tc.number MAP_CONSTRUCTOR_TEST_093
-     * @tc.name MapConstructorTest093
-     * @tc.desc Map with key as console object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as console object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       if (typeof console !== 'undefined') {
@@ -1351,12 +1351,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest101
      * @tc.number MAP_CONSTRUCTOR_TEST_101
-     * @tc.name MapConstructorTest101
-     * @tc.desc Map with key as a frozen object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as a frozen object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const frozen = MapConstructorTest101();
@@ -1365,12 +1365,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest102
      * @tc.number MAP_CONSTRUCTOR_TEST_102
-     * @tc.name MapConstructorTest102
-     * @tc.desc Map with key as a sealed object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as a sealed object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const sealed = MapConstructorObject();
@@ -1380,12 +1380,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest103
      * @tc.number MAP_CONSTRUCTOR_TEST_103
-     * @tc.name MapConstructorTest103
-     * @tc.desc Map with key as an immutable object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as an immutable object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const immutable = MapConstructorTest103()
@@ -1394,12 +1394,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest104
      * @tc.number MAP_CONSTRUCTOR_TEST_104
-     * @tc.name MapConstructorTest104
-     * @tc.desc Map with key as a primitive wrapper object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as a primitive wrapper object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const numObj = new Number(123);
@@ -1409,12 +1409,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest105
      * @tc.number MAP_CONSTRUCTOR_TEST_105
-     * @tc.name MapConstructorTest105
-     * @tc.desc Map with key as a string object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as a string object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const strObj = new String('test');
@@ -1424,12 +1424,12 @@ export default function MapConstructorTest() {
     });
 
     /**
+     * @tc.name   MapConstructorTest106
      * @tc.number MAP_CONSTRUCTOR_TEST_106
-     * @tc.name MapConstructorTest106
-     * @tc.desc Map with key as a boolean object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with key as a boolean object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapConstructorTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const boolObj = new Boolean(true);

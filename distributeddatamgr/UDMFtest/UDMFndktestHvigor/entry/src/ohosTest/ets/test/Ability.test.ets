@@ -21,7 +21,6 @@ let TAG = '[testLog-ets]';
 export default function pasteboardNdkTest() {
   describe('pasteboardNdkTest', async (done: Function) => {
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0100
      * @tc.desc   OH_UdmfData_GetPrimaryPlainText_0001
@@ -37,7 +36,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0100 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0200
      * @tc.desc   OH_UdmfData_GetPrimaryPlainText_0003
@@ -53,7 +51,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0200 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0300
      * @tc.desc   OH_UdmfData_GetPrimaryPlainText_0005
@@ -69,7 +66,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0300 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0400
      * @tc.desc   OH_UdmfData_GetPrimaryPlainText_0006
@@ -85,7 +81,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0400 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0500
      * @tc.desc   OH_UdmfData_GetPrimaryPlainText_0007
@@ -101,7 +96,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0500 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0600
      * @tc.desc   OH_UdmfData_GetPrimaryHtml_0001
@@ -117,7 +111,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0600 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0700
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0700
      * @tc.desc   OH_UdmfData_GetPrimaryHtml_0003
@@ -133,7 +126,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0700 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0800
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0800
      * @tc.desc   OH_UdmfData_GetPrimaryHtml_0005
@@ -149,7 +141,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0800 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0900
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0900
      * @tc.desc   OH_UdmfData_GetPrimaryHtml_0006
@@ -165,7 +156,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_0900 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1000
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1000
      * @tc.desc   OH_UdmfData_GetPrimaryHtml_0007
@@ -181,7 +171,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1000 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1100
      * @tc.desc   OH_UdmfData_GetRecordCount001
@@ -197,7 +186,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1100 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1200
      * @tc.desc   OH_UdmfData_GetRecordCount003
@@ -213,7 +201,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1200 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1300
      * @tc.desc   OH_UdmfData_GetRecordCount004
@@ -229,7 +216,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1300 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1400
      * @tc.desc   OH_UdmfData_GetRecordCount005
@@ -245,7 +231,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1400 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1500
      * @tc.desc   OH_UdmfData_GetRecord001
@@ -261,7 +246,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1500 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1600
      * @tc.desc   OH_UdmfData_GetRecord004
@@ -277,7 +261,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1600 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1700
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1700
      * @tc.desc   OH_UdmfData_GetRecord005
@@ -293,7 +276,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1700 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1800
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1800
      * @tc.desc   OH_UdmfData_GetRecord006
@@ -309,7 +291,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1800 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1900
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1900
      * @tc.desc   OH_UdmfData_GetRecord007
@@ -325,7 +306,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_1900 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2000
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2000
      * @tc.desc   OH_UdmfData_GetRecord008
@@ -341,7 +321,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2000 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2100
      * @tc.desc   OH_UdmfData_GetRecord009
@@ -357,7 +336,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2100 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2200
      * @tc.desc   OH_UdmfData_GetRecord010
@@ -373,7 +351,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2200 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2300
      * @tc.desc   OH_UdmfData_GetRecord011
@@ -389,7 +366,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2300 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2400
      * @tc.desc   OH_UdmfData_IsLocal001
@@ -405,7 +381,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2400 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2500
      * @tc.desc   OH_UdmfData_IsLocal003
@@ -421,7 +396,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2500 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2600
      * @tc.desc   OH_UdmfRecord_AddArrayBuffer001
@@ -437,7 +411,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2600 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2700
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2700
      * @tc.desc   OH_UdmfRecord_AddArrayBuffer003
@@ -453,7 +426,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2700 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2800
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2800
      * @tc.desc   OH_UdmfRecord_AddArrayBuffer005
@@ -469,7 +441,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2800 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2900
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2900
      * @tc.desc   OH_UdmfRecord_AddArrayBuffer006
@@ -485,7 +456,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_2900 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3000
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3000
      * @tc.desc   OH_UdmfRecord_AddArrayBuffer007
@@ -501,7 +471,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3000 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3100
      * @tc.desc   OH_UdmfRecord_AddArrayBuffer008
@@ -517,7 +486,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3100 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3200
      * @tc.desc   OH_UdmfRecord_GetArrayBuffer001
@@ -533,7 +501,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3200 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3300
      * @tc.desc   OH_UdmfRecord_GetArrayBuffer002
@@ -549,7 +516,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3300 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3400
      * @tc.desc   OH_UdsArrayBuffer_Create_001
@@ -565,7 +531,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3400 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3500
      * @tc.desc   OH_UdsArrayBuffer_SetData_001
@@ -581,7 +546,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3500 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3600
      * @tc.desc   OH_UdsArrayBuffer_SetData_002
@@ -597,7 +561,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3600 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3700
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3700
      * @tc.desc   OH_UdsArrayBuffer_SetData_003
@@ -613,7 +576,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3700 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3800
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3800
      * @tc.desc   OH_UdsArrayBuffer_SetData_004
@@ -629,7 +591,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3800 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3900
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3900
      * @tc.desc   OH_UdsArrayBuffer_SetData_005
@@ -645,7 +606,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_3900 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4000
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4000
      * @tc.desc   OH_UdsArrayBuffer_GetData001
@@ -661,7 +621,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4000 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4100
      * @tc.desc   OH_UdmfRecord_GetFileUri001
@@ -677,7 +636,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4100 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4200
      * @tc.desc   OH_UdmfRecord_GetFileUri002
@@ -693,7 +651,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4200 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4300
      * @tc.desc   OH_UdmfRecord_GetFileUri003
@@ -709,7 +666,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4300 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4400
      * @tc.desc   OH_UdmfRecord_GetPixelMap001
@@ -725,7 +681,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4400 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4500
      * @tc.desc   OH_UdmfRecord_GetPixelMap002
@@ -741,7 +696,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4500 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4600
      * @tc.desc   OH_UdmfRecord_GetPixelMap003
@@ -757,7 +711,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4600 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4700
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4700
      * @tc.desc   OH_UdsFileUri_Create001
@@ -773,7 +726,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4700 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4800
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4800
      * @tc.desc   OH_UdsFileUri_GetType001
@@ -789,7 +741,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4800 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4900
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4900
      * @tc.desc   OH_UdsFileUri_GetType002
@@ -805,7 +756,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_4900 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5000
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5000
      * @tc.desc   OH_UdsFileUri_GetFileUri001
@@ -822,7 +772,6 @@ export default function pasteboardNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5100
      * @tc.desc   OH_UdsFileUri_GetFileUri002
@@ -838,7 +787,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5000 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5300
      * @tc.desc   OH_UdsFileUri_GetFileType001
@@ -854,7 +802,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5300 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5400
      * @tc.desc   OH_UdsFileUri_GetFileType002
@@ -870,7 +817,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5400 key is : ' + result, 'aa');
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5500
      * @tc.desc   OH_UdsFileUri_SetFileUri_0100
@@ -886,7 +832,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5500 result= : ' + JSON.stringify(result));
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5600
      * @tc.desc   OH_UdsFileUri_SetFileType_0100
@@ -902,7 +847,6 @@ export default function pasteboardNdkTest() {
         TAG + 'SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5600 result= : ' + JSON.stringify(result));
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5700
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5700
      * @tc.desc   OH_UdsPixelMap_Create_0100
@@ -920,7 +864,6 @@ export default function pasteboardNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5800
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5800
      * @tc.desc   OH_UdsPixelMap_GetType_0100
@@ -937,7 +880,6 @@ export default function pasteboardNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5900
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_5900
      * @tc.desc   OH_UdsPixelMap_SetPixelMap_0100
@@ -955,7 +897,6 @@ export default function pasteboardNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6000
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6000
      * @tc.desc   OH_UdmfRecordProvider_Destroy0100
@@ -974,7 +915,6 @@ export default function pasteboardNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6100
      * @tc.desc   OH_UdmfRecordProvider_Destroy0200
@@ -991,7 +931,6 @@ export default function pasteboardNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6200
      * @tc.desc   OH_UdmfRecordProvider_Create001
@@ -1011,7 +950,6 @@ export default function pasteboardNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6300
      * @tc.desc   OH_UdmfRecordProvider_SetData0100
@@ -1030,7 +968,6 @@ export default function pasteboardNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6400
      * @tc.desc   OH_UdmfRecordProvider_SetData0200
@@ -1048,7 +985,6 @@ export default function pasteboardNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6500
      * @tc.desc   OH_UdmfRecord_SetProvider0100
@@ -1066,7 +1002,6 @@ export default function pasteboardNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_PasteboardUdmfNdkAPITest_6600
      * @tc.desc   OH_UdmfRecord_SetProvider0200

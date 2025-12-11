@@ -45,9 +45,12 @@ export default function AlignCenter_AddMargin() {
       console.info("AlignCenter_AddMargin after each called");
     });
     /**
+     * @tc.name   testFlexAlignCenterFlexMargin
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_0500
-     * @tc.name testFlexAlignCenterFlexMargin
-     * @tc.desc the margin of parent component set to 20
+     * @tc.desc   the margin of parent component set to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterFlexMargin',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterFlexMargin] START');

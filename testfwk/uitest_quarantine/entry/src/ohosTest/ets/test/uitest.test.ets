@@ -90,10 +90,13 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uiTest_20002
-     * @tc.name: testDragBetween
-     * @tc.desc: drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+    /**
+     * @tc.name   testDragBetween
+     * @tc.number uiTest_20002
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDragBetween', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'testDragBetween start');
@@ -114,11 +117,14 @@ export default function UiTest() {
       console.log(TestTag, 'testDragBetween over');
     })
 
-    /*
-    * @tc.number: uiTest_20003
-    * @tc.name: testNewMouseDrag
-    * @tc.desc: drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
-    */
+    /**
+     * @tc.name   testNewMouseDrag
+     * @tc.number uiTest_20003
+     * @tc.desc   drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNewMouseDrag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'testNewMouseDrag start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -139,10 +145,13 @@ export default function UiTest() {
       console.log(TestTag, 'testNewMouseDrag over');
     })
 
-    /*
-     * @tc.number: uiTest_20021
-     * @tc.name: testPressHomeWithId
-     * @tc.desc: pressHome test
+    /**
+     * @tc.name   testPressHomeWithId
+     * @tc.number uiTest_20021
+     * @tc.desc   pressHome test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPressHomeWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'testPressHomeWithId start');
@@ -172,11 +181,14 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: UiTest_API16_018
-    * @tc.name: testScrollSearchHorizontal
-    * @tc.desc: scroll horizontally on this UiComponent to find matched UiComponent.
-    */
+    /**
+     * @tc.name   testScrollSearchHorizontal
+     * @tc.number UiTest_API16_018
+     * @tc.desc   scroll horizontally on this UiComponent to find matched UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollSearchHorizontal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'testScrollSearchHorizontal start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -227,11 +239,14 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-    * @tc.number: uiTest_11003
-    * @tc.name: testMouseDrag
-    * @tc.desc: drag on the screen between the specified points by mouse.
-    */
+    /**
+     * @tc.name   testMouseDrag
+     * @tc.number uiTest_11003
+     * @tc.desc   drag on the screen between the specified points by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseDrag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
@@ -250,6 +265,28 @@ export default function UiTest() {
 	  await driver.mouseDrag(point1, point2)
     })
 
+    /**
+     * @tc.name   testWindowAttr
+     * @tc.number uiTest_11007
+     * @tc.desc   find window by WindowFilter and get it's active status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,active:true,title:''})
+      await window.focus()
+      await driver.delayMs(waitUiReadyMs)
+      let isActive = await window.isActive()
+      expect(isActive == true).assertTrue()
+      let uitestWindow = await driver.findWindow({active: false})
+      let isActive1 = await uitestWindow.isActive()
+      expect(isActive1).assertFalse();
+      await stopApplication('com.uitestScene.acts')
+    })
+
   })
 
   describe('UiTest_API10', () =>  {
@@ -265,10 +302,13 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uiTest_10002
-     * @tc.name: testFling
-     * @tc.desc: inject fling on the device display.
+    /**
+     * @tc.name   testFling
+     * @tc.number uiTest_10002
+     * @tc.desc   inject fling on the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -320,10 +360,13 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uiTest_9023
-     * @tc.name: testTriggerCombineKeys
-     * @tc.desc: press two or three key combinations
+    /**
+     * @tc.name   testTriggerCombineKeys
+     * @tc.number uiTest_9023
+     * @tc.desc   press two or three key combinations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTriggerCombineKeys', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -358,10 +401,13 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uiTest_9049
-     * @tc.name: testDisplayRotation
-     * @tc.desc: get the rotation of the device display and set it.
+    /**
+     * @tc.name   testDisplayRotation
+     * @tc.number uiTest_9049
+     * @tc.desc   get the rotation of the device display and set it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -411,9 +457,12 @@ export default function UiTest() {
     })
 
     /**
+     * @tc.name   testGetDisplayRotationWithId
      * @tc.number uiTest_9060
-     * @tc.name testGetDisplayRotationWithId
-     * @tc.desc getDisplayRotation test
+     * @tc.desc   getDisplayRotation test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'testGetDisplayRotationWithId start');
@@ -466,10 +515,13 @@ export default function UiTest() {
       console.log(TestTag, 'testGetDisplayRotationWithId over');
     })
 
-    /*
-     * @tc.number: uiTest_9050
-     * @tc.name: testSetDisplayRotationEnabled
-     * @tc.desc: enable/disable the rotation of device display.
+    /**
+     * @tc.name   testSetDisplayRotationEnabled
+     * @tc.number uiTest_9050
+     * @tc.desc   enable/disable the rotation of device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDisplayRotationEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -488,10 +540,13 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uiTest_9052
-     * @tc.name: testPressHome
-     * @tc.desc: press the home key.
+    /**
+     * @tc.name   testPressHome
+     * @tc.number uiTest_9052
+     * @tc.desc   press the home key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPressHome', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -503,10 +558,13 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uiTest_9054
-     * @tc.name: testDrag
-     * @tc.desc: drag on the screen between the specified points.
+    /**
+     * @tc.name   testDrag
+     * @tc.number uiTest_9054
+     * @tc.desc   drag on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDrag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -525,10 +583,13 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uiTest_9055
-     * @tc.name: testDragTos
-     * @tc.desc: drag this UiComponent to the bounds rect of target UiComponent.
+    /**
+     * @tc.name   testDragTo
+     * @tc.number uiTest_9055
+     * @tc.desc   drag this UiComponent to the bounds rect of target UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDragTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -542,6 +603,33 @@ export default function UiTest() {
       await driver.delayMs(waitUiReadyMs)
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text == null).assertTrue()
+      await stopApplication('com.uitestScene.acts')
+    })
+
+    /**
+     * @tc.name   testWindowAttr
+     * @tc.number uiTest_9056
+     * @tc.desc   set the focused status of this UiWindow.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,actived:true,title:''})
+      await window.focus()
+      await driver.delayMs(waitUiReadyMs)
+      let isFocused = await window.isFocused()
+      let isActived = await window.isActived()
+      expect(isFocused == true).assertTrue()
+      expect(isActived == true).assertTrue()
+      let focusedWindow = await driver.findWindow({focused: false})
+      let falseFocused = await focusedWindow.isFocused()
+      expect(falseFocused).assertFalse()
+      let activedWindow = await driver.findWindow({actived: false})
+      let falseActived = await activedWindow.isActived()
+      expect(falseActived).assertFalse()
       await stopApplication('com.uitestScene.acts')
     })
   })

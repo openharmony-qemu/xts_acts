@@ -42,13 +42,13 @@ export default function albumCommitModifyTest () {
 
     //callback
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0000
-      * @tc.name      : album_commitModify_callback_000
-      * @tc.desc      : album change new name
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
-    */
+     * @tc.name   album_commitModify_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0000
+     * @tc.desc   album change new name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('album_commitModify_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_commitModify_callback_000';
       try {
@@ -80,14 +80,14 @@ export default function albumCommitModifyTest () {
       }
     })
 
-    /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0100
-      * @tc.name      : album_commitModify_callback_001
-      * @tc.desc      : album commitModify with no change
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+       /**
+        * @tc.name   album_commitModify_callback_001
+        * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0100
+        * @tc.desc   album commitModify with no change
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
        it('album_commitModify_callback_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_callback_001';
       try {
@@ -109,13 +109,13 @@ export default function albumCommitModifyTest () {
     })
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0200
-      * @tc.name      : album_commitModify_callback_002
-      * @tc.desc      : album commitModify with invalid long albumName
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   album_commitModify_callback_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0200
+     * @tc.desc   album commitModify with invalid long albumName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('album_commitModify_callback_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_callback_002';
       try {
@@ -134,13 +134,13 @@ export default function albumCommitModifyTest () {
     })
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0300
-      * @tc.name      : album_commitModify_callback_003
-      * @tc.desc      : album commitModify containing invalid characters
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   album_commitModify_callback_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0300
+     * @tc.desc   album commitModify containing invalid characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('album_commitModify_callback_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_callback_003';
       try {
@@ -177,13 +177,13 @@ export default function albumCommitModifyTest () {
 
     //promise
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0000
-      * @tc.name      : album_commitModify_promise_000
-      * @tc.desc      : album change new name
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
-    */
+     * @tc.name   album_commitModify_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0000
+     * @tc.desc   album change new name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('album_commitModify_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_commitModify_promise_000';
       try {
@@ -206,13 +206,13 @@ export default function albumCommitModifyTest () {
     })
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0100
-      * @tc.name      : album_commitModify_promise_001
-      * @tc.desc      : album commitModify with no change
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   album_commitModify_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0100
+     * @tc.desc   album commitModify with no change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('album_commitModify_promise_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_001';
       try {
@@ -227,13 +227,13 @@ export default function albumCommitModifyTest () {
     })
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0200
-      * @tc.name      : album_commitModify_promise_002
-      * @tc.desc      : album commitModify with invalid long albumName
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   album_commitModify_promise_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0200
+     * @tc.desc   album commitModify with invalid long albumName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('album_commitModify_promise_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_002';
       try {
@@ -249,13 +249,13 @@ export default function albumCommitModifyTest () {
     })
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0300
-      * @tc.name      : album_commitModify_promise_003
-      * @tc.desc      : album commitModify with containing characters
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   album_commitModify_promise_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0300
+     * @tc.desc   album commitModify with containing characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('album_commitModify_promise_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_003';
       try {

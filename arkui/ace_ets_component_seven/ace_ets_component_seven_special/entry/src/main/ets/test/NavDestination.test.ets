@@ -42,12 +42,12 @@ export default function navDestinationJsunit() {
     });
 
     /**
+     * @tc.name   testNavDestination
      * @tc.number testNavDestination
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavDestination', Level.LEVEL0, async (done: Function) => {
       console.info('[testNavDestination] START');

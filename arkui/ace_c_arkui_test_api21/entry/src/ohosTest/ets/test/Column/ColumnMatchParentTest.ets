@@ -47,6 +47,14 @@ export default function ColumnMatchParentTest() {
       console.info("ColumnMatchParent after each called");
     });
 
+    /**
+     * @tc.name   ColumnMatchParentTest_0100
+     * @tc.number ColumnMatchParentTest_0100
+     * @tc.desc   ColumnMatchParentTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ColumnMatchParentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnMatchParentTest_0100] START');
       await Utils.sleep(2000);

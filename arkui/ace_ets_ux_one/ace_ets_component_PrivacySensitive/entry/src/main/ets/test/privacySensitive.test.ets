@@ -36,14 +36,14 @@ export default function TextPrivacySensitive() {
       done();
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Text_privacySensitive_0100
-    *@tc.name       : Text privacySensitive interface
-    *@tc.desc       : test text privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Text_privacySensitive_0100
+     * @tc.number ArkUIHDS_Text_privacySensitive_0100
+     * @tc.desc   test text privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Text_privacySensitive_0100', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Text_privacySensitive_0100 START');
       setTimeout(() => {
@@ -63,14 +63,14 @@ export default function TextPrivacySensitive() {
       }, 500)
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Text_privacySensitive_0200
-    *@tc.name       : Text privacySensitive interface
-    *@tc.desc       : test text privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Text_privacySensitive_0200
+     * @tc.number ArkUIHDS_Text_privacySensitive_0200
+     * @tc.desc   test text privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Text_privacySensitive_0200', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Text_privacySensitive_0200 START');
       setTimeout(() => {
@@ -90,14 +90,14 @@ export default function TextPrivacySensitive() {
       }, 500)
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Text_privacySensitive_0300
-    *@tc.name       : Text privacySensitive interface
-    *@tc.desc       : test text privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Text_privacySensitive_0300
+     * @tc.number ArkUIHDS_Text_privacySensitive_0300
+     * @tc.desc   test text privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Text_privacySensitive_0300', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Text_privacySensitive_0300 START');
       setTimeout(() => {
@@ -117,14 +117,14 @@ export default function TextPrivacySensitive() {
       }, 500)
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Text_privacySensitive_0400
-    *@tc.name       : Text privacySensitive interface
-    *@tc.desc       : test text privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Text_privacySensitive_0400
+     * @tc.number ArkUIHDS_Text_privacySensitive_0400
+     * @tc.desc   test text privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Text_privacySensitive_0400', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Text_privacySensitive_0400 START');
       setTimeout(() => {
@@ -144,14 +144,14 @@ export default function TextPrivacySensitive() {
       }, 500)
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Image_privacySensitive_0100
-    *@tc.name       : Image privacySensitive interface
-    *@tc.desc       : test Image privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Image_privacySensitive_0100
+     * @tc.number ArkUIHDS_Image_privacySensitive_0100
+     * @tc.desc   test Image privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Image_privacySensitive_0100', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Image_privacySensitive_0100 START');
       setTimeout(() => {
@@ -171,14 +171,14 @@ export default function TextPrivacySensitive() {
       }, 500)
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Image_privacySensitive_0200
-    *@tc.name       : Image privacySensitive interface
-    *@tc.desc       : test Image privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Image_privacySensitive_0200
+     * @tc.number ArkUIHDS_Image_privacySensitive_0200
+     * @tc.desc   test Image privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Image_privacySensitive_0200', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Image_privacySensitive_0200 START');
       setTimeout(() => {
@@ -198,14 +198,14 @@ export default function TextPrivacySensitive() {
       }, 500)
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Image_privacySensitive_0300
-    *@tc.name       : Image privacySensitive interface
-    *@tc.desc       : test Image privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Image_privacySensitive_0300
+     * @tc.number ArkUIHDS_Image_privacySensitive_0300
+     * @tc.desc   test Image privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Image_privacySensitive_0300', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Image_privacySensitive_0300 START');
       setTimeout(() => {
@@ -225,14 +225,14 @@ export default function TextPrivacySensitive() {
       }, 500)
     });
 
-    /*
-    *@tc.number     : ArkUIHDS_Image_privacySensitive_0400
-    *@tc.name       : Image privacySensitive interface
-    *@tc.desc       : test Image privacySensitive
-    *@tc.size       : MediumTest
-    *@tc.type       : Function
-    *@tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ArkUIHDS_Image_privacySensitive_0400
+     * @tc.number ArkUIHDS_Image_privacySensitive_0400
+     * @tc.desc   test Image privacySensitive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUIHDS_Image_privacySensitive_0400', Level.LEVEL1, (done: Function) => {
       console.info('ArkUIHDS_Image_privacySensitive_0400 START');
       setTimeout(() => {

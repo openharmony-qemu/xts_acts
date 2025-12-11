@@ -63,28 +63,28 @@ export default function webMessagePortIsExtentionTypeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBMESSAGEPORT_ISEXTENTIONTYPE_0100
-    * @tc.name        : testIsExtentionType001
-    * @tc.desc        : test isExtentionType
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testIsExtentionType001
+     * @tc.number SUB_WEB_WEBMESSAGEPORT_ISEXTENTIONTYPE_0100
+     * @tc.desc   test isExtentionType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testIsExtentionType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testIsExtentionType001", 170360)
       Utils.registerEvent("testIsExtentionType001", "401", 170370, done);
       sendEventByKey('IsExtentionTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CREATEWEBMESSAGEPORTS_RETURN_ARRAY_0100
-    * @tc.name        : testCreateWebMessagePortsReturnArrayLengthEqual0
-    * @tc.desc        : test createWebMessagePorts return array length equal 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testCreateWebMessagePortsReturnArrayLengthEqual0
+     * @tc.number SUB_WEB_CREATEWEBMESSAGEPORTS_RETURN_ARRAY_0100
+     * @tc.desc   test createWebMessagePorts return array length equal 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testCreateWebMessagePortsReturnArrayLengthEqual0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testCreateWebMessagePortsReturnArrayLengthEqual0", 170360)
       Utils.registerBaseEvent('testCreateWebMessagePortsReturnArrayLengthEqual0', 0, 2510228, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -93,14 +93,14 @@ export default function webMessagePortIsExtentionTypeTest() {
       sendEventByKey('IsExtentionTypeButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CREATEWEBMESSAGEPORTS_RETURN_ARRAY_0200
-    * @tc.name        : testCreateWebMessagePortsReturnArrayLengthLarger0
-    * @tc.desc        : test createWebMessagePorts return array length larger 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testCreateWebMessagePortsReturnArrayLengthLarger0
+     * @tc.number SUB_WEB_CREATEWEBMESSAGEPORTS_RETURN_ARRAY_0200
+     * @tc.desc   test createWebMessagePorts return array length larger 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testCreateWebMessagePortsReturnArrayLengthLarger0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testCreateWebMessagePortsReturnArrayLengthLarger0", 170360)
       Utils.registerBaseEvent('testCreateWebMessagePortsReturnArrayLengthLarger0', 0, 25102209, done, (backData: events_emitter.EventData, expected: Object) => {

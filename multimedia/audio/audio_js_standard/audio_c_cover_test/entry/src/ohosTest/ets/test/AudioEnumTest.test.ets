@@ -47,12 +47,12 @@ export default function AudioEnumTest() {
     })
 
     /**
+     * @tc.name   testMultimediaAudioStreamEncodingTypeAudioVivid0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_ENCODINGTYPEAUDIOVIVID_0100
-     * @tc.name testMultimediaAudioStreamEncodingTypeAudioVivid0100
-     * @tc.desc Test AUDIOSTREAM_ENCODING_TYPE_AUDIOVIVID.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_ENCODING_TYPE_AUDIOVIVID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamEncodingTypeAudioVivid0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -71,12 +71,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamEncodingTypeEAc30100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_ENCODINGTYPEEAC3_0100
-     * @tc.name testMultimediaAudioStreamEncodingTypeEAc30100
-     * @tc.desc Testing AUDIOSTREAM_ENCODING_TYPE_E_AC3.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Testing AUDIOSTREAM_ENCODING_TYPE_E_AC3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamEncodingTypeEAc30100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -95,12 +95,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamDirectPlaybackBitstreamSupport0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_DIRECT_PLAYBACK_BITSTREAM_SUPPORTED_0100
-     * @tc.name testMultimediaAudioStreamDirectPlaybackBitstreamSupport0100
-     * @tc.desc Test AUDIOSTREAM_DIRECT_PLAYBACK_BITSTREAM_SUPPORTED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_DIRECT_PLAYBACK_BITSTREAM_SUPPORTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamDirectPlaybackBitstreamSupport0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -119,12 +119,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamDirectPlaybackPcmSupport0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_DIRECT_PLAYBACK_PCM_SUPPORTED_0100
-     * @tc.name testMultimediaAudioStreamDirectPlaybackPcmSupport0100
-     * @tc.desc Test AUDIOSTREAM_DIRECT_PLAYBACK_PCM_SUPPORTED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_DIRECT_PLAYBACK_PCM_SUPPORTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamDirectPlaybackPcmSupport0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -143,12 +143,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamStateInvalid0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_STATE_INVALID_0100
-     * @tc.name testMultimediaAudioStreamStateInvalid0100
-     * @tc.desc Test AUDIOSTREAM_STATE_INVALID.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_STATE_INVALID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamStateInvalid0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -167,12 +167,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamStateNew0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_STATE_NEW_0100
-     * @tc.name testMultimediaAudioStreamStateNew0100
-     * @tc.desc Test AUDIOSTREAM_STATE_NEW.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_STATE_NEW.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamStateNew0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -191,12 +191,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamStatePrepared0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_STATE_PREPARED_0100
-     * @tc.name testMultimediaAudioStreamStatePrepared0100
-     * @tc.desc Test AUDIOSTREAM_STATE_PREPARED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_STATE_PREPARED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamStatePrepared0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -215,12 +215,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamStateRunning0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_STATE_RUNNING_0100
-     * @tc.name testMultimediaAudioStreamStateRunning0100
-     * @tc.desc Test AUDIOSTREAM_STATE_RUNNING.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_STATE_RUNNING.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamStateRunning0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -239,12 +239,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamStateStopped0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_STATE_STOPPED_0100
-     * @tc.name testMultimediaAudioStreamStateStopped0100
-     * @tc.desc Test AUDIOSTREAM_STATE_STOPPED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_STATE_STOPPED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamStateStopped0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -263,12 +263,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamStateRelease0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_STATE_RELEASED_0100
-     * @tc.name testMultimediaAudioStreamStateRelease0100
-     * @tc.desc Test AUDIOSTREAM_STATE_RELEASED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_STATE_RELEASED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamStateRelease0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -287,12 +287,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamStatePaused0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_STATE_PAUSED_0100
-     * @tc.name testMultimediaAudioStreamStatePaused0100
-     * @tc.desc Test AUDIOSTREAM_STATE_PAUSED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_STATE_PAUSED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamStatePaused0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -311,12 +311,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSourceTypeUnprocessed0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SOURCE_TYPE_UNPROCESSED_0100
-     * @tc.name testMultimediaAudioStreamSourceTypeUnprocessed0100
-     * @tc.desc Test AUDIOSTREAM_SOURCE_TYPE_UNPROCESSED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_SOURCE_TYPE_UNPROCESSED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSourceTypeUnprocessed0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -335,12 +335,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSourceTypeLive0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SOURCE_TYPE_LIVE_0100
-     * @tc.name testMultimediaAudioStreamSourceTypeLive0100
-     * @tc.desc Test AUDIOSTREAM_SOURCE_TYPE_LIVE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_SOURCE_TYPE_LIVE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSourceTypeLive0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -359,12 +359,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamEffectDefault0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_EFFECT_DEFAULT_0100
-     * @tc.name testMultimediaAudioStreamEffectDefault0100
-     * @tc.desc Test EFFECT_DEFAULT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test EFFECT_DEFAULT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamEffectDefault0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -383,12 +383,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamFastStatusNormal0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_FAST_STATUS_NORMAL_0100
-     * @tc.name testMultimediaAudioStreamFastStatusNormal0100
-     * @tc.desc Test AUDIOSTREAM_FASTSTATUS_NORMAL.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_FASTSTATUS_NORMAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamFastStatusNormal0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -407,12 +407,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamFastStatusFast0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_FAST_STATUS_Fast_0100
-     * @tc.name testMultimediaAudioStreamFastStatusFast0100
-     * @tc.desc Test AUDIOSTREAM_FASTSTATUS_FAST.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_FASTSTATUS_FAST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamFastStatusFast0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -431,12 +431,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSceneRinging0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SCENE_RINGING_0100
-     * @tc.name testMultimediaAudioStreamSceneRinging0100
-     * @tc.desc Test AUDIO_SCENE_RINGING.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SCENE_RINGING.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSceneRinging0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -455,12 +455,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamScenePhoneCall0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SCENE_PHONE_CALL_0100
-     * @tc.name testMultimediaAudioStreamScenePhoneCall0100
-     * @tc.desc Test AUDIO_SCENE_PHONE_CALL.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SCENE_PHONE_CALL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamScenePhoneCall0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -479,12 +479,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamSceneVoiceChat0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SCENE_VOICE_CHAT_0100
-     * @tc.name testMultimediaAudioStreamSceneVoiceChat0100
-     * @tc.desc Test AUDIO_SCENE_VOICE_CHAT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SCENE_VOICE_CHAT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamSceneVoiceChat0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -503,12 +503,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRingerModeSilent0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RINGER_MODE_SILENT_0100
-     * @tc.name testMultimediaAudioRingerModeSilent0100
-     * @tc.desc Test AUDIO_RINGER_MODE_SILENT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_RINGER_MODE_SILENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRingerModeSilent0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -527,12 +527,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioRingerModeVibrate0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RINGER_MODE_VIBRATE_0100
-     * @tc.name testMultimediaAudioRingerModeVibrate0100
-     * @tc.desc Test AUDIO_RINGER_MODE_VIBRATE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_RINGER_MODE_VIBRATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioRingerModeVibrate0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -551,12 +551,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceRoleInput0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_ROLE_INPUT_0100
-     * @tc.name testMultimediaAudioDeviceRoleInput0100
-     * @tc.desc Test AUDIO_DEVICE_ROLE_INPUT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_ROLE_INPUT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceRoleInput0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -575,12 +575,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeWiredHeadphones0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_WIRED_HEADPHONES_0100
-     * @tc.name testMultimediaAudioDeviceTypeWiredHeadphones0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_WIRED_HEADPHONES.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_WIRED_HEADPHONES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeWiredHeadphones0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -599,12 +599,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeBluetoothSco0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_BLUETOOTH_SCO_0100
-     * @tc.name testMultimediaAudioDeviceTypeBluetoothSco0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_BLUETOOTH_SCO.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_BLUETOOTH_SCO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeBluetoothSco0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -623,12 +623,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeBluetoothA2dp0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_BLUETOOTH_A2DP_0100
-     * @tc.name testMultimediaAudioDeviceTypeBluetoothA2dp0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_BLUETOOTH_A2DP.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_BLUETOOTH_A2DP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeBluetoothA2dp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -647,12 +647,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeMic0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_MIC_0100
-     * @tc.name testMultimediaAudioDeviceTypeMic0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_MIC.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_MIC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeMic0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -671,12 +671,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeUsbHeadset0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_USB_HEADSET_0100
-     * @tc.name testMultimediaAudioDeviceTypeUsbHeadset0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_USB_HEADSET.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_USB_HEADSET.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeUsbHeadset0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -695,12 +695,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeDisplayPort0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_DISPLAY_PORT_0100
-     * @tc.name testMultimediaAudioDeviceTypeDisplayPort0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_DISPLAY_PORT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_DISPLAY_PORT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeDisplayPort0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -719,12 +719,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeRemoteCast0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_REMOTE_CAST_0100
-     * @tc.name testMultimediaAudioDeviceTypeRemoteCast0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_REMOTE_CAST.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_REMOTE_CAST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeRemoteCast0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -743,12 +743,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeUsbDevice0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_USB_DEVICE_0100
-     * @tc.name testMultimediaAudioDeviceTypeUsbDevice0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_USB_DEVICE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_USB_DEVICE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeUsbDevice0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -767,12 +767,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeAccessory0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_ACCESSORY_0100
-     * @tc.name testMultimediaAudioDeviceTypeAccessory0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_ACCESSORY.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_ACCESSORY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeAccessory0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -791,12 +791,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeHdmi0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_HDMI_0100
-     * @tc.name testMultimediaAudioDeviceTypeHdmi0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_HDMI.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_HDMI.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeHdmi0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -815,12 +815,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeLineDigital0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_LINE_DIGITAL_0100
-     * @tc.name testMultimediaAudioDeviceTypeLineDigital0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_LINE_DIGITAL.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_LINE_DIGITAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeLineDigital0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -839,12 +839,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeHearingAid0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_HEARING_AID_0100
-     * @tc.name testMultimediaAudioDeviceTypeHearingAid0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_HEARING_AID.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_HEARING_AID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeHearingAid0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -863,12 +863,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceTypeNearlink0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_TYPE_NEARLINK_0100
-     * @tc.name testMultimediaAudioDeviceTypeNearlink0100
-     * @tc.desc Test AUDIO_DEVICE_TYPE_NEARLINK.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_TYPE_NEARLINK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceTypeNearlink0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -887,12 +887,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceUsageMediaInput0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_USAGE_MEDIA_INPUT_0100
-     * @tc.name testMultimediaAudioDeviceUsageMediaInput0100
-     * @tc.desc Test AUDIO_DEVICE_USAGE_MEDIA_INPUT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_USAGE_MEDIA_INPUT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceUsageMediaInput0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -911,12 +911,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceUsageMediaAll0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_USAGE_MEDIA_ALL_0100
-     * @tc.name testMultimediaAudioDeviceUsageMediaAll0100
-     * @tc.desc Test AUDIO_DEVICE_USAGE_MEDIA_ALL.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_USAGE_MEDIA_ALL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceUsageMediaAll0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -935,12 +935,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceUsageCallOutput0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_USAGE_CALL_OUTPUT_0100
-     * @tc.name testMultimediaAudioDeviceUsageCallOutput0100
-     * @tc.desc Test AUDIO_DEVICE_USAGE_CALL_OUTPUT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_USAGE_CALL_OUTPUT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceUsageCallOutput0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -959,12 +959,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceUsageCallInput0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_USAGE_CALL_INPUT_0100
-     * @tc.name testMultimediaAudioDeviceUsageCallInput0100
-     * @tc.desc Test AUDIO_DEVICE_USAGE_CALL_INPUT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_USAGE_CALL_INPUT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceUsageCallInput0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -983,12 +983,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceUsageCallAll0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_USAGE_CALL_ALL_0100
-     * @tc.name testMultimediaAudioDeviceUsageCallAll0100
-     * @tc.desc Test AUDIO_DEVICE_USAGE_CALL_ALL.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_USAGE_CALL_ALL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceUsageCallAll0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1007,12 +1007,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamEventRoutingChanged0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_EVENT_ROUTING_CHANGE_0100
-     * @tc.name testMultimediaAudioStreamEventRoutingChanged0100
-     * @tc.desc Test AUDIOSTREAM_EVENT_ROUTING_CHANGED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_EVENT_ROUTING_CHANGED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamEventRoutingChanged0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1031,12 +1031,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptForce0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_FORCE_0100
-     * @tc.name testMultimediaAudioStreamInterruptForce0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_FORCE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_FORCE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptForce0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1055,12 +1055,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptShare0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_SHARE_0100
-     * @tc.name testMultimediaAudioStreamInterruptShare0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_SHARE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_SHARE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptShare0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1079,12 +1079,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintNone0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_NONE_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintNone0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_NONE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_NONE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintNone0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1103,12 +1103,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintResume0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_RESUME_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintResume0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_RESUME.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_RESUME.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintResume0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1127,12 +1127,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintPause0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_PAUSE_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintPause0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_PAUSE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_PAUSE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintPause0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1151,12 +1151,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintStop0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_STOP_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintStop0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_STOP.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_STOP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintStop0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1175,12 +1175,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintDuck0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_DUCK_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintDuck0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_DUCK.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_DUCK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintDuck0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1199,12 +1199,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintUnduck0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_UNDUCK_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintUnduck0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_UNDUCK.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_UNDUCK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintUnduck0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1223,12 +1223,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintMute0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_MUTE_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintMute0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_MUTE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_MUTE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintMute0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1247,12 +1247,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamInterruptHintUnmute0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_INTERRUPT_HINT_UNMUTE_0100
-     * @tc.name testMultimediaAudioStreamInterruptHintUnmute0100
-     * @tc.desc Test AUDIOSTREAM_INTERRUPT_HINT_UNMUTE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIOSTREAM_INTERRUPT_HINT_UNMUTE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamInterruptHintUnmute0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1271,12 +1271,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamReasonUnknown0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_EVENT_REASON_UNKNOWN_0100
-     * @tc.name testMultimediaAudioStreamReasonUnknown0100
-     * @tc.desc Test REASON_UNKNOWN.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test REASON_UNKNOWN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamReasonUnknown0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1295,12 +1295,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamReasonOldDeviceAvailable0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_EVENT_REASON_NEW_DEVICE_AVAILABLE_0100
-     * @tc.name testMultimediaAudioStreamReasonOldDeviceAvailable0100
-     * @tc.desc Test REASON_NEW_DEVICE_AVAILABLE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test REASON_NEW_DEVICE_AVAILABLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamReasonOldDeviceAvailable0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1319,12 +1319,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamReasonOldDeviceUnavailable0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_EVENT_REASON_OLD_DEVICE_UNAVAILABLE_0100
-     * @tc.name testMultimediaAudioStreamReasonOldDeviceUnavailable0100
-     * @tc.desc Test REASON_OLD_DEVICE_UNAVAILABLE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test REASON_OLD_DEVICE_UNAVAILABLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamReasonOldDeviceUnavailable0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1343,12 +1343,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamReasonOverrode0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_EVENT_REASON_OVERRODE_0100
-     * @tc.name testMultimediaAudioStreamReasonOverrode0100
-     * @tc.desc Test REASON_OVERRODE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test REASON_OVERRODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamReasonOverrode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1367,12 +1367,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamReasonSessionActivated0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_REASON_SESSION_ACTIVATED_0100
-     * @tc.name testMultimediaAudioStreamReasonSessionActivated0100
-     * @tc.desc Test REASON_SESSION_ACTIVATED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test REASON_SESSION_ACTIVATED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamReasonSessionActivated0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1391,12 +1391,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioStreamReasonStreamPriorityChanged0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_REASON_STREAM_PRIORITY_CHANGED_0100
-     * @tc.name testMultimediaAudioStreamReasonStreamPriorityChanged0100
-     * @tc.desc Test REASON_STREAM_PRIORITY_CHANGED.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test REASON_STREAM_PRIORITY_CHANGED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioStreamReasonStreamPriorityChanged0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1415,12 +1415,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioDeviceChangeTypeDisconnect0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_CHANGE_TYPE_DISCONNECT_0100
-     * @tc.name testMultimediaAudioDeviceChangeTypeDisconnect0100
-     * @tc.desc Test AUDIO_DEVICE_CHANGE_TYPE_DISCONNECT.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_DEVICE_CHANGE_TYPE_DISCONNECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioDeviceChangeTypeDisconnect0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1439,12 +1439,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangeHintResume0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_SESSION_STATE_CHANGE_HINT_RESUME_0100
-     * @tc.name testMultimediaAudioSessionStateChangeHintResume0100
-     * @tc.desc Test AUDIO_SESSION_STATE_CHANGE_HINT_RESUME.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_RESUME.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangeHintResume0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1463,12 +1463,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangeHintPause0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_PAUSE_0100
-     * @tc.name testMultimediaAudioSessionStateChangeHintPause0100
-     * @tc.desc Test AUDIO_SESSION_STATE_CHANGE_HINT_PAUSE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_PAUSE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangeHintPause0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1487,12 +1487,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangeHintStop0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STOP_0100
-     * @tc.name testMultimediaAudioSessionStateChangeHintStop0100
-     * @tc.desc Test AUDIO_SESSION_STATE_CHANGE_HINT_STOP.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_STOP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangeHintStop0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1511,12 +1511,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangeHintTimeOutStop0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_TIME_OUT_STOP_0100
-     * @tc.name testMultimediaAudioSessionStateChangeHintTimeOutStop0100
-     * @tc.desc Test AUDIO_SESSION_STATE_CHANGE_HINT_TIME_OUT_STOP.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_TIME_OUT_STOP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangeHintTimeOutStop0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1535,12 +1535,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangeHintDuck0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_DUCK_0100
-     * @tc.name testMultimediaAudioSessionStateChangeHintDuck0100
-     * @tc.desc Test AUDIO_SESSION_STATE_CHANGE_HINT_DUCK.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_DUCK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangeHintDuck0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1559,12 +1559,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangeHintUnduck0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_UNDUCK_0100
-     * @tc.name testMultimediaAudioSessionStateChangeHintUnduck0100
-     * @tc.desc Test AUDIO_SESSION_STATE_CHANGE_HINT_UNDUCK.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_UNDUCK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangeHintUnduck0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1583,12 +1583,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaDeviceChangeRecommendToContinue0100
      * @tc.number SUB_MULTIMEDIA_DEVICE_CHANGE_RECOMMEND_TO_CONTINUE_0100
-     * @tc.name testMultimediaDeviceChangeRecommendToContinue0100
-     * @tc.desc Test DEVICE_CHANGE_RECOMMEND_TO_CONTINUE.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test DEVICE_CHANGE_RECOMMEND_TO_CONTINUE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaDeviceChangeRecommendToContinue0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1607,12 +1607,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaDeviceChangeRecommendToStop0100
      * @tc.number SUB_MULTIMEDIA_DEVICE_CHANGE_RECOMMEND_TO_STOP_0100
-     * @tc.name testMultimediaDeviceChangeRecommendToStop0100
-     * @tc.desc Test DEVICE_CHANGE_RECOMMEND_TO_STOP.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test DEVICE_CHANGE_RECOMMEND_TO_STOP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaDeviceChangeRecommendToStop0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1631,12 +1631,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangedEvent0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_EVENT_0100
-     * @tc.name testMultimediaAudioSessionStateChangedEvent0100
-     * @tc.desc Test OH_AudioSession_StateChangedEvent.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test OH_AudioSession_StateChangedEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangedEvent0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1655,12 +1655,12 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   testMultimediaAudioSessionStateChangedEventStateChangeHint0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_EVENT_STATE_CHANGE_HINT_0100
-     * @tc.name testMultimediaAudioSessionStateChangedEventStateChangeHint0100
-     * @tc.desc Test stateChangeHint.
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Test stateChangeHint.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMultimediaAudioSessionStateChangedEventStateChangeHint0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

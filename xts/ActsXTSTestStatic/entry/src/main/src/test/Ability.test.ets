@@ -255,7 +255,6 @@ export default function abilityTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_Accuracy_static
          * @tc.number Test_Accuracy_static
          * @tc.desc   精度测试示例代码
@@ -280,7 +279,6 @@ export default function abilityTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_from_file_error_code_static_001
          * @tc.number Test_load_model_from_file_error_code_static_001
          * @tc.desc   正常场景：错误码新增看护，看护loadModelFromFile错误码1000000
@@ -308,7 +306,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_from_file_error_code_static_002
          * @tc.number Test_load_model_from_file_error_code_static_002
          * @tc.desc   正常场景：错误码新增看护，看护loadModelFromFile错误码1000001
@@ -337,7 +334,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_train_model_from_buffer_error_code_static_001
          * @tc.number Test_load_train_model_from_buffer_error_code_static_001
          * @tc.desc   正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000010
@@ -366,7 +362,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_train_model_from_buffer_error_code_static_002
          * @tc.number Test_load_train_model_from_buffer_error_code_static_002
          * @tc.desc   正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000001
@@ -395,7 +390,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_train_model_from_buffer_error_code_static_003
          * @tc.number Test_load_train_model_from_buffer_error_code_static_003
          * @tc.desc   正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000011
@@ -424,7 +418,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_train_model_from_fd_error_code_static_001
          * @tc.number Test_load_train_model_from_fd_error_code_static_001
          * @tc.desc   正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000001
@@ -454,7 +447,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_train_model_from_fd_error_code_static_002
          * @tc.number Test_load_train_model_from_fd_error_code_static_002
          * @tc.desc   正常场景：错误码新增看护，看护loadTrainModelFromBuffer错误码1000012
@@ -484,7 +476,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_setdata_error_code_static_001
          * @tc.number Test_setdata_error_code_static_001
          * @tc.desc   正常场景：错误码新增看护，看护setData错误码1000013
@@ -521,7 +512,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0001
          * @tc.desc   loadTrainModelFromFile参数3个
@@ -604,7 +594,6 @@ export default function abilityTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFile_parameter_static_0002
          * @tc.desc   loadTrainModelFromFile参数2个
@@ -681,7 +670,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0001
          * @tc.desc   loadTrainModelFromBuffer参数3个
@@ -765,7 +753,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_parameter_static_0002
          * @tc.desc   loadTrainModelFromBuffer参数2个
@@ -843,7 +830,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0001
          * @tc.desc   loadTrainModelFromFd参数3个
@@ -928,7 +914,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_parameter_static_0002
          * @tc.desc   loadTrainModelFromFd参数2个
@@ -1008,7 +993,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0001
          * @tc.desc   exportModel参数4个
@@ -1055,7 +1039,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0002
          * @tc.desc   exportModel参数2个
@@ -1131,7 +1114,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0003
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_parameter_static_0003
          * @tc.desc   exportModel参数3个
@@ -1209,7 +1191,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_parameter_static_0002
          * @tc.desc   exportWeightsCollaborateWithMicro参数2个
@@ -1266,7 +1247,6 @@ export default function abilityTest() {
 
 		
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_path_resize_emulator_static_005
          * @tc.number Test_load_model_param_model_path_resize_emulator_static_005
          * @tc.desc   异常场景：模拟器，ModelResize，shape值有负数
@@ -1294,7 +1274,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromBuffer_static_0001
          * @tc.desc   正常场景：通过path加载模型，执行1轮训练并对比精度
@@ -1369,7 +1348,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_loadTrainModelFromFd_static_0001
          * @tc.desc   正常场景：通过path加载模型，执行1轮训练并对比精度
@@ -1445,7 +1423,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_learningRate_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_learningRate_static_0001
          * @tc.desc   正常场景：设置学习率为0.01
@@ -1521,7 +1498,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_learningRate_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_learningRate_static_0002
          * @tc.desc   正常场景：设置学习率为1000.0
@@ -1597,7 +1573,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_setupVirtualBatch_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_setupVirtualBatch_static_0001
          * @tc.desc   设置虚拟batch_size为2
@@ -1675,7 +1650,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_updateWeights_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_updateWeights_static_0002
          * @tc.desc   正常场景：更新权重后导出训练图，再获取权重
@@ -1753,7 +1727,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_static_0001
          * @tc.desc   正常场景：训练model导出推理图后对比精度
@@ -1828,7 +1801,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_static_0002
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_static_0002
          * @tc.desc   正常场景：quantization_type为OH_AI_NO_QUANT
@@ -1903,7 +1875,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_static_0003
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_static_0003
          * @tc.desc   正常场景：quantization_type为OH_AI_WEIGHT_QUANT
@@ -1978,7 +1949,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_static_0004
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_static_0004
          * @tc.desc   正常场景：quantization_type为OH_AI_FULL_QUANT
@@ -2053,7 +2023,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportModel_static_0005
          * @tc.number SUB_AI_MindSpore_ArkTS_exportModel_static_0005
          * @tc.desc   正常场景：export_inference_only为false
@@ -2151,7 +2120,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0001
          * @tc.number SUB_AI_MindSpore_ArkTS_exportWeightsCollaborateWithMicro_static_0001
          * @tc.desc   正常场景：训练model更新并导出micro权重
@@ -2205,7 +2173,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_path_model_static_002
          * @tc.number Test_load_model_param_model_path_model_static_002
          * @tc.desc   正常场景：多输入模型
@@ -2280,7 +2247,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_path_model_static_003
          * @tc.number Test_load_model_param_model_path_model_static_003
          * @tc.desc   正常场景：输入为uint8模型
@@ -2335,7 +2301,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_path_model_static_004
          * @tc.number Test_load_model_param_model_path_model_static_004
          * @tc.desc   正常场景：多输入单输出
@@ -2427,7 +2392,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_path_callback_static
          * @tc.number Test_load_model_param_model_path_callback_static
          * @tc.desc   正常场景：调用loadModelFromFile callback接口设置context
@@ -2485,7 +2449,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_buffer_callback_static
          * @tc.number Test_load_model_param_model_buffer_callback_static
          * @tc.desc   正常场景：调用loadModelFromBuffer callback接口设置context
@@ -2553,7 +2516,6 @@ export default function abilityTest() {
         })
             
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_fd_callback_static
          * @tc.number Test_load_model_param_model_fd_callback_static
          * @tc.desc   正常场景：调用loadModelFromFd callback接口设置context
@@ -2620,7 +2582,6 @@ export default function abilityTest() {
         })
             
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_path_callback_no_context_static
          * @tc.number Test_load_model_param_model_path_callback_no_context_static
          * @tc.desc   正常场景：调用loadModelFromFile callback接口未设置context
@@ -2677,7 +2638,6 @@ export default function abilityTest() {
         })
             
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_buffer_callback_no_context_static
          * @tc.number Test_load_model_param_model_buffer_callback_no_context_static
          * @tc.desc   正常场景：调用loadModelFromBuffer callback接口未设置context
@@ -2735,7 +2695,6 @@ export default function abilityTest() {
         })
             
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_fd_callback_no_context_static
          * @tc.number Test_load_model_param_model_fd_callback_no_context_static
          * @tc.desc   正常场景：调用loadModelFromFd callback接口未设置context
@@ -2793,7 +2752,6 @@ export default function abilityTest() {
         })
             
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_enumerated_value_static
          * @tc.number Test_enumerated_value_static
          * @tc.desc   正常场景：头文件枚举值测试
@@ -2840,7 +2798,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_buffer_callback_emulator_static
          * @tc.number Test_load_model_param_model_buffer_callback_emulator_static
          * @tc.desc   正常场景：模拟器，调用loadModelFromBuffer callback接口设置context
@@ -2904,7 +2861,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_path_callback_no_context_emulator_static
          * @tc.number Test_load_model_param_model_path_callback_no_context_emulator_static
          * @tc.desc   正常场景：模拟器，调用loadModelFromFile callback接口未设置context
@@ -2962,7 +2918,6 @@ export default function abilityTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Test_load_model_param_model_fd_callback_no_context_emulator_static
          * @tc.number Test_load_model_param_model_fd_callback_no_context_emulator_static
          * @tc.desc   正常场景：模拟器，调用loadModelFromFd callback接口未设置context

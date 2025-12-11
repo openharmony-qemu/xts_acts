@@ -41,12 +41,12 @@ export default function list() {
     })
 
     /**
+     * @tc.name   ListJsunit_0100
      * @tc.number ListJsunit_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollSnapAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollSnapAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0100] START');
@@ -60,12 +60,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0101
      * @tc.number ListJsunit_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set lanes values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set lanes values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0101', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0101] START');
@@ -79,12 +79,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0102
      * @tc.number ListJsunit_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Set friction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set friction values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0102', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0102] START');
@@ -98,12 +98,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0103
      * @tc.number ListJsunit_0103
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableScrollInteraction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableScrollInteraction values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0103', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0103] START');
@@ -117,12 +117,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0105
      * @tc.number ListJsunit_0105
-     * @tc.name Test the properties of components
-     * @tc.desc Set chainAnimationOptions values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set chainAnimationOptions values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0105', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0105] START');
@@ -136,12 +136,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0106
      * @tc.number ListJsunit_0106
-     * @tc.name Test the properties of components
-     * @tc.desc Set alignListItem values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set alignListItem values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0106', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0106] START');
@@ -155,12 +155,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0107
      * @tc.number ListJsunit_0107
-     * @tc.name Test the properties of components
-     * @tc.desc Set listDirection values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set listDirection values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0107', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0107] START');
@@ -174,12 +174,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0108
      * @tc.number ListJsunit_0108
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollBar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0108', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0108] START');
@@ -193,12 +193,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0109
      * @tc.number ListJsunit_0109
-     * @tc.name Test the properties of components
-     * @tc.desc Set edgeEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set edgeEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0109', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0109] START');
@@ -212,12 +212,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0110
      * @tc.number ListJsunit_0110
-     * @tc.name Test the properties of components
-     * @tc.desc Set divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set divider values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0110', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0110] START');
@@ -234,12 +234,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0111
      * @tc.number ListJsunit_0111
-     * @tc.name Test the properties of components
-     * @tc.desc Set editMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set editMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0111', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0111] START');
@@ -253,12 +253,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0112
      * @tc.number ListJsunit_0112
-     * @tc.name Test the properties of components
-     * @tc.desc Set multiSelectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set multiSelectable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0112', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0112] START');
@@ -272,12 +272,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0113
      * @tc.number ListJsunit_0113
-     * @tc.name Test the properties of components
-     * @tc.desc Set cachedCount values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set cachedCount values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0113', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0113] START');
@@ -291,12 +291,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0114
      * @tc.number ListJsunit_0114
-     * @tc.name Test the properties of components
-     * @tc.desc Set chainAnimation values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set chainAnimation values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0114', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0114] START');
@@ -310,12 +310,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0115
      * @tc.number ListJsunit_0115
-     * @tc.name Test the properties of components
-     * @tc.desc Set sticky values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set sticky values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0115', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0115] START');
@@ -329,12 +329,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0116
      * @tc.number ListJsunit_0116
-     * @tc.name Test the properties of components
-     * @tc.desc Set contentEndOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set contentEndOffset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0116', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0116] START');
@@ -348,12 +348,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0117
      * @tc.number ListJsunit_0117
-     * @tc.name Test the properties of components
-     * @tc.desc Set contentStartOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set contentStartOffset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0117', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0117] START');
@@ -367,12 +367,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0118
      * @tc.number ListJsunit_0118
-     * @tc.name Test the properties of components
-     * @tc.desc Change lanes values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change lanes values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0118', Level.LEVEL0, async (done: Function) => {
       console.info('ListJsunit_0118 START');

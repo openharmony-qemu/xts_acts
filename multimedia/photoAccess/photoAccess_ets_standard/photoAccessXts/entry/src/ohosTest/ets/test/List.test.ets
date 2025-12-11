@@ -80,10 +80,6 @@ import registerChangeTest from './photoAccessHelper/photoAccessHelper/registerCh
 import releaseTest from './photoAccessHelper/photoAccessHelper/release.test';
 import MediaAssetChangeRequestConstructorTest from './photoAccessHelper/MediaAssetChangeRequest/constructor.test';
 import provisionResourcesTest from './provisionResources.test';
-import PhotoAccessHelperGetRecentPhotoInfo
-  from './photoAccessHelper/photoAccessHelper/PhotoAccessHelperGetRecentPhotoInfo.test';
-import PhotoAccessHelperGetPhotoAccessHelper
-  from './photoAccessHelper/photoAccessHelper/PhotoAccessHelperGetPhotoAccessHelper.test';
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -160,6 +156,4 @@ export default function testsuite() {
   MovingPhotoGetUriTest();
   MovingPhotoRequestContentTest();
   MediaAssetChangeRequestDeleteAssetsTest();
-  PhotoAccessHelperGetRecentPhotoInfo();
-  PhotoAccessHelperGetPhotoAccessHelper();
 }

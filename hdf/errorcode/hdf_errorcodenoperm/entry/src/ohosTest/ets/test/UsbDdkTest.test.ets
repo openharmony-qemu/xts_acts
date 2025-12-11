@@ -27,7 +27,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_Release_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_Release_0100
      * @tc.desc   Test OH_Usb_Release interface USB_DDK_INVALID_OPERATION(27400002)
@@ -49,7 +48,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_ReleaseResource_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_ReleaseResource_0100
      * @tc.desc   Test OH_Usb_ReleaseResource interface USB_DDK_INVALID_OPERATION(27400002)
@@ -71,7 +69,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_ReleaseResource_0200
      * @tc.number SUB_Driver_Ext_OH_Usb_ReleaseResource_0200
      * @tc.desc   Test OH_Usb_ReleaseResource interface USB_DDK_NO_PERM(201)
@@ -93,7 +90,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_GetDeviceDescriptor_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_GetDeviceDescriptor_0100
      * @tc.desc   Test OH_Usb_GetDeviceDescriptor interface USB_DDK_NO_PERM(201)
@@ -115,7 +111,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_GetConfigDescriptor_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_GetConfigDescriptor_0100
      * @tc.desc   Test OH_Usb_GetConfigDescriptor interface USB_DDK_NO_PERM(201)
@@ -137,7 +132,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_FreeConfigDescriptor_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_FreeConfigDescriptor_0100
      * @tc.desc   Test OH_Usb_FreeConfigDescriptor interface USB_DDK_NO_PERM(201)
@@ -159,7 +153,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_ClaimInterface_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_ClaimInterface_0100
      * @tc.desc   Test OH_Usb_ClaimInterface interface USB_DDK_NO_PERM(201)
@@ -181,7 +174,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_ReleaseInterface_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_ReleaseInterface_0100
      * @tc.desc   Test OH_Usb_ReleaseInterface interface USB_DDK_NO_PERM(201)
@@ -203,7 +195,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_SelectInterfaceSetting_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_SelectInterfaceSetting_0100
      * @tc.desc   Test OH_Usb_SelectInterfaceSetting interface USB_DDK_NO_PERM(201)
@@ -225,7 +216,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_GetCurrentInterfaceSetting_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_GetCurrentInterfaceSetting_0100
      * @tc.desc   Test OH_Usb_GetCurrentInterfaceSetting interface USB_DDK_NO_PERM(201)
@@ -247,7 +237,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_SendControlReadRequest_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_SendControlReadRequest_0100
      * @tc.desc   Test OH_Usb_SendControlReadRequest interface USB_DDK_NO_PERM(201)
@@ -269,7 +258,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_SendControlWriteRequest_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_SendControlWriteRequest_0100
      * @tc.desc   Test OH_Usb_SendControlWriteRequest interface USB_DDK_NO_PERM(201)
@@ -291,7 +279,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_CreateDeviceMemMap_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_CreateDeviceMemMap_0100
      * @tc.desc   Test OH_Usb_CreateDeviceMemMap interface USB_DDK_NO_PERM(201)
@@ -313,7 +300,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_DestroyDeviceMemMap_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_DestroyDeviceMemMap_0100
      * @tc.desc   Test OH_Usb_DestroyDeviceMemMap interface USB_DDK_NO_PERM(201)
@@ -335,7 +321,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testOH_Usb_GetDevices_0100
      * @tc.number SUB_Driver_Ext_OH_Usb_GetDevices_0100
      * @tc.desc   Test OH_Usb_GetDevices interface USB_DDK_NO_PERM(201)
@@ -357,7 +342,6 @@ export default function UsbDDkNoPermTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUSB_DDK_INVALID_OPERATION_0100
      * @tc.number SUB_Driver_Ext_USB_DDK_INVALID_OPERATION_0100
      * @tc.desc   Test UsbDdkErrCode interface USB_DDK_INVALID_OPERATION

@@ -42,12 +42,12 @@ export default function bindControllerList() {
     });
 
     /**
-     * @tc.number    bindControllerList_0100
-     * @tc.name      bindControllerList_0100
-     * @tc.desc      frameNode: test bindController error code for List
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   bindControllerList_0100
+     * @tc.number bindControllerList_0100
+     * @tc.desc   frameNode: test bindController error code for List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerList_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerList_0100 START');
@@ -65,12 +65,12 @@ export default function bindControllerList() {
     });
 
     /**
-     * @tc.number    bindControllerList_0200
-     * @tc.name      bindControllerList_0200
-     * @tc.desc      frameNode: test bindController error code for List
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindControllerList_0200
+     * @tc.number bindControllerList_0200
+     * @tc.desc   frameNode: test bindController error code for List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerList_0200', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerList_0200 START');

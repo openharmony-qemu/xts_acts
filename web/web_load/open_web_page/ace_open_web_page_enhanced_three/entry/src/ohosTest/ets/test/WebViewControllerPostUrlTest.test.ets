@@ -58,14 +58,14 @@ export default function webViewControllerPostUrlTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0100
-    * @tc.name       : testWebViewControllerPostUrl001
-    * @tc.desc       : test postUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerPostUrl001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0100
+     * @tc.desc   test postUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerPostUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -75,14 +75,14 @@ export default function webViewControllerPostUrlTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0200
-    * @tc.name       : testWebViewControllerPostUrl002
-    * @tc.desc       : test postUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerPostUrl002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0200
+     * @tc.desc   test postUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerPostUrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -92,14 +92,14 @@ export default function webViewControllerPostUrlTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0300
-    * @tc.name       : testWebViewControllerPostUrl003
-    * @tc.desc       : test postUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerPostUrl003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0300
+     * @tc.desc   test postUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerPostUrl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -109,14 +109,14 @@ export default function webViewControllerPostUrlTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0400
-    * @tc.name       : testWebViewControllerPostUrl004
-    * @tc.desc       : test postUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerPostUrl004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0400
+     * @tc.desc   test postUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerPostUrl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl004", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -126,14 +126,14 @@ export default function webViewControllerPostUrlTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0500
-    * @tc.name       : testWebViewControllerPostUrl005
-    * @tc.desc       : test postUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerPostUrl005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0500
+     * @tc.desc   test postUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerPostUrl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl005", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -143,14 +143,14 @@ export default function webViewControllerPostUrlTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0600
-    * @tc.name       : testWebViewControllerPostUrl006
-    * @tc.desc       : test postUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewControllerPostUrl006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLE_RPOSTURL_0600
+     * @tc.desc   test postUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewControllerPostUrl006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         Utils.emitEvent("testWebViewControllerPostUrl006", EVENT_ID_SET_EMIT_KEY);
         let isReturn = false;

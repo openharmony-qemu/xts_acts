@@ -377,14 +377,6 @@ AsymCipherSpec g_asymCipherSpec[] = {
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkAsymCipherNapiTest, ASYMKEY_ASYM_CIPHER_TEST, ::testing::ValuesIn(g_asymCipherSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0100
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest/ASYMKEY_ASYM_CIPHER_TEST.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0100/x
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(ASYMKEY_ASYM_CIPHER_TEST, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0100, TestSize.Level0)
 {
     AsymCipherSpec AsymCipherData = GetParam();
@@ -428,14 +420,6 @@ AsymSegmentCipherSpec g_asymSegmentCipherSpec[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkAsymCipherNapiTest, ASYMKEY_ASYM_SEG_CIPHER_TEST, ::testing::ValuesIn(g_asymSegmentCipherSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0200
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest/ASYMKEY_ASYM_SEG_CIPHER_TEST.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0200/x
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(ASYMKEY_ASYM_SEG_CIPHER_TEST, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0200, TestSize.Level0)
 {
     AsymSegmentCipherSpec AsymCipherData = GetParam();
@@ -546,13 +530,13 @@ static void OHTEST_DoSM2DecryptCipher(const char *algoName, OH_CryptoKeyPair *ke
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0300
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0300
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0300
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0300, TestSize.Level0)
 {
     const char *algoName = "SM2_256";
@@ -585,13 +569,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0400
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0400
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0400
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0400, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -623,13 +607,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0500
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0500
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0500
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0500, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -660,13 +644,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0600
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0600
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0600
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0600
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0600, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -697,13 +681,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0700
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0700
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0700
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0700, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -744,13 +728,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0800
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0800
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0800
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0800, TestSize.Level0)
 {
     const char *algoName1 = "RSA512";
@@ -792,13 +776,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0900
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0900
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0900
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0900
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_0900, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -842,13 +826,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1000
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1000
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1000
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1000
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1000, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -890,13 +874,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1100
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1100
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1100
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1100
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1100, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -936,13 +920,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1200
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1200
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1200
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1200, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -982,13 +966,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1300
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1300
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1300
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1300, TestSize.Level0)
 {
     const char *algoName = "RSA512";
@@ -1029,13 +1013,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1400
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1400
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1400
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1400, TestSize.Level0)
 {
     const char *algoName = "SM2_256";
@@ -1072,13 +1056,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1500
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1500
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1500
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1500, TestSize.Level0)
 {
     OH_CryptoSm2CiphertextSpec *spec = nullptr;
@@ -1144,13 +1128,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1600
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1600
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1600
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1600
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1600, TestSize.Level0)
 {
     OH_CryptoSm2CiphertextSpec *spec = nullptr;
@@ -1181,13 +1165,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1700
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1700
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1700
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1700, TestSize.Level0)
 {
     OH_CryptoSm2CiphertextSpec *spec = nullptr;
@@ -1219,13 +1203,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1800
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1800
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1800
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1800, TestSize.Level0)
 {
     OH_CryptoSm2CiphertextSpec *spec = nullptr;
@@ -1256,13 +1240,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1900
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1900
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1900
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1900
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_1900, TestSize.Level0)
 {
     OH_CryptoSm2CiphertextSpec *spec = nullptr;
@@ -1293,13 +1277,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2000
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2000
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2000
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2000
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2000, TestSize.Level0)
 {
     OH_CryptoSm2CiphertextSpec *spec = nullptr;
@@ -1357,13 +1341,13 @@ HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2100
-* @tc.name OHCryptoFrameworkAsymCipherNapiTest.SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2100
-* @tc.desc algorithm is Asym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2100
+ * @tc.number SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2100
+ * @tc.desc   algorithm is Asym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkAsymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_AsymCiphery_Test_2100, TestSize.Level0)
 {
     OH_CryptoSm2CiphertextSpec *spec = nullptr;

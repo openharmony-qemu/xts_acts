@@ -45,12 +45,12 @@ export default function arrayJoinTestTest() {
 
 
     /**
+     * @tc.name   JoinDefaultSeparatorTest001
      * @tc.number SUB_ARRAY_JOIN_TEST_001
-     * @tc.name JoinDefaultSeparatorTest001
-     * @tc.desc 验证join使用默认分隔符（逗号）时，基本类型元素正确拼接为字符串
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join使用默认分隔符（逗号）时，基本类型元素正确拼接为字符串
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinDefaultSeparatorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test001_JoinDefaultSeparator();
@@ -58,12 +58,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinCustomSeparatorTest002
      * @tc.number SUB_ARRAY_JOIN_TEST_002
-     * @tc.name JoinCustomSeparatorTest002
-     * @tc.desc 验证join使用自定义分隔符（短横线）时，字符串元素正确拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join使用自定义分隔符（短横线）时，字符串元素正确拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinCustomSeparatorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test002_JoinCustomSeparator();
@@ -71,12 +71,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithUndefinedNullAndHoleTest003
      * @tc.number SUB_ARRAY_JOIN_TEST_003
-     * @tc.name JoinWithUndefinedNullAndHoleTest003
-     * @tc.desc 验证join处理含undefined、null、空槽的数组时，均转为空字符串拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理含undefined、null、空槽的数组时，均转为空字符串拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithUndefinedNullAndHoleTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test003_JoinWithUndefinedNullAndHole();
@@ -84,12 +84,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinEmptyArrayTest004
      * @tc.number SUB_ARRAY_JOIN_TEST_004
-     * @tc.name JoinEmptyArrayTest004
-     * @tc.desc 验证空数组调用join时，无论分隔符为何，均返回空字符串
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证空数组调用join时，无论分隔符为何，均返回空字符串
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinEmptyArrayTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test004_JoinEmptyArray();
@@ -97,12 +97,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinSingleElementArrayTest005
      * @tc.number SUB_ARRAY_JOIN_TEST_005
-     * @tc.name JoinSingleElementArrayTest005
-     * @tc.desc 验证单元素数组调用join时，忽略分隔符，返回元素的字符串形式
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证单元素数组调用join时，忽略分隔符，返回元素的字符串形式
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinSingleElementArrayTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test005_JoinSingleElementArray();
@@ -110,12 +110,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithUndefinedNullSeparatorTest007
      * @tc.number SUB_ARRAY_JOIN_TEST_007
-     * @tc.name JoinWithUndefinedNullSeparatorTest007
-     * @tc.desc 验证join的分隔符为undefined或null时，自动转为空字符串，元素无分隔拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join的分隔符为undefined或null时，自动转为空字符串，元素无分隔拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithUndefinedNullSeparatorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test007_JoinWithUndefinedNullSeparator();
@@ -123,12 +123,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinOnArrayLikeTest008
      * @tc.number SUB_ARRAY_JOIN_TEST_008
-     * @tc.name JoinOnArrayLikeTest008
-     * @tc.desc 验证类数组对象通过Array.prototype.join.call调用时，按整数索引拼接元素
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证类数组对象通过Array.prototype.join.call调用时，按整数索引拼接元素
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinOnArrayLikeTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test008_JoinOnArrayLike();
@@ -136,12 +136,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithSpecialValuesTest009
      * @tc.number SUB_ARRAY_JOIN_TEST_009
-     * @tc.name JoinWithSpecialValuesTest009
-     * @tc.desc 验证join处理特殊值（NaN/Infinity/Symbol）时，转为对应字符串后拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理特殊值（NaN/Infinity/Symbol）时，转为对应字符串后拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithSpecialValuesTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test009_JoinWithSpecialValues();
@@ -149,12 +149,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithDeepNestedArraysTest010
      * @tc.number SUB_ARRAY_JOIN_TEST_010
-     * @tc.name JoinWithDeepNestedArraysTest010
-     * @tc.desc 验证join处理多层嵌套数组时，递归调用toString扁平化后拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理多层嵌套数组时，递归调用toString扁平化后拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithDeepNestedArraysTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test010_JoinWithDeepNestedArrays();
@@ -162,12 +162,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithEmptyStringSeparatorTest011
      * @tc.number SUB_ARRAY_JOIN_TEST_011
-     * @tc.name JoinWithEmptyStringSeparatorTest011
-     * @tc.desc 验证join使用空字符串作为分隔符时，所有元素无缝拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join使用空字符串作为分隔符时，所有元素无缝拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithEmptyStringSeparatorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test011_JoinWithEmptyStringSeparator();
@@ -175,12 +175,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithMultiCharSeparatorTest012
      * @tc.number SUB_ARRAY_JOIN_TEST_012
-     * @tc.name JoinWithMultiCharSeparatorTest012
-     * @tc.desc 验证join使用多字符作为分隔符时，按完整字符串进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join使用多字符作为分隔符时，按完整字符串进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithMultiCharSeparatorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test012_JoinWithMultiCharSeparator();
@@ -188,12 +188,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithTemplateStringsTest013
      * @tc.number SUB_ARRAY_JOIN_TEST_013
-     * @tc.name JoinWithTemplateStringsTest013
-     * @tc.desc 验证join处理包含模板字符串的数组时，按其字符串值进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含模板字符串的数组时，按其字符串值进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithTemplateStringsTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test013_JoinWithTemplateStrings();
@@ -201,12 +201,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithNumberSeparatorTest014
      * @tc.number SUB_ARRAY_JOIN_TEST_014
-     * @tc.name JoinWithNumberSeparatorTest014
-     * @tc.desc 验证join的分隔符为数字时，隐式转换为字符串后进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join的分隔符为数字时，隐式转换为字符串后进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithNumberSeparatorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test014_JoinWithNumberSeparator();
@@ -214,12 +214,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithBooleanSeparatorTest015
      * @tc.number SUB_ARRAY_JOIN_TEST_015
-     * @tc.name JoinWithBooleanSeparatorTest015
-     * @tc.desc 验证join的分隔符为布尔值时，隐式转换为字符串后进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join的分隔符为布尔值时，隐式转换为字符串后进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithBooleanSeparatorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test015_JoinWithBooleanSeparator();
@@ -227,12 +227,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithBooleanElementsTest016
      * @tc.number SUB_ARRAY_JOIN_TEST_016
-     * @tc.name JoinWithBooleanElementsTest016
-     * @tc.desc 验证join处理包含布尔值的数组时，将其转换为 "true" 或 "false" 后拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含布尔值的数组时，将其转换为 "true" 或 "false" 后拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithBooleanElementsTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test016_JoinWithBooleanElements();
@@ -240,12 +240,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithEmptyArrayElementsTest017
      * @tc.number SUB_ARRAY_JOIN_TEST_017
-     * @tc.name JoinWithEmptyArrayElementsTest017
-     * @tc.desc 验证join处理包含空数组元素的数组时，将空数组转为空字符串后拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含空数组元素的数组时，将空数组转为空字符串后拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithEmptyArrayElementsTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test017_JoinWithEmptyArrayElements();
@@ -253,12 +253,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeDiscontinuousTest018
      * @tc.number SUB_ARRAY_JOIN_TEST_018
-     * @tc.name JoinArrayLikeDiscontinuousTest018
-     * @tc.desc 验证join处理索引不连续的类数组对象时，跳过空槽进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理索引不连续的类数组对象时，跳过空槽进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeDiscontinuousTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test018_JoinArrayLikeDiscontinuous();
@@ -266,12 +266,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithZeroWidthSpaceTest019
      * @tc.number SUB_ARRAY_JOIN_TEST_019
-     * @tc.name JoinWithZeroWidthSpaceTest019
-     * @tc.desc 验证join处理包含零宽度空格的数组时，按普通字符拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含零宽度空格的数组时，按普通字符拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithZeroWidthSpaceTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test019_JoinWithZeroWidthSpace();
@@ -279,12 +279,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithObjectSeparatorTest020
      * @tc.number SUB_ARRAY_JOIN_TEST_020
-     * @tc.name JoinWithObjectSeparatorTest020
-     * @tc.desc 验证join的分隔符为对象时，调用其 toString() 方法后进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join的分隔符为对象时，调用其 toString() 方法后进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithObjectSeparatorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test020_JoinWithObjectSeparator();
@@ -292,12 +292,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithNullElementsTest021
      * @tc.number SUB_ARRAY_JOIN_TEST_021
-     * @tc.name JoinWithNullElementsTest021
-     * @tc.desc 验证join处理包含null元素的数组时，将null转为空字符串后拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含null元素的数组时，将null转为空字符串后拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithNullElementsTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test021_JoinWithNullElements();
@@ -305,12 +305,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeZeroLengthTest022
      * @tc.number SUB_ARRAY_JOIN_TEST_022
-     * @tc.name JoinArrayLikeZeroLengthTest022
-     * @tc.desc 验证join处理length为0的类数组对象时，返回空字符串
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理length为0的类数组对象时，返回空字符串
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeZeroLengthTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test022_JoinArrayLikeZeroLength();
@@ -318,12 +318,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithUndefinedElementsTest023
      * @tc.number SUB_ARRAY_JOIN_TEST_023
-     * @tc.name JoinWithUndefinedElementsTest023
-     * @tc.desc 验证join处理包含undefined元素的数组时，将undefined转为空字符串后拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含undefined元素的数组时，将undefined转为空字符串后拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithUndefinedElementsTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test023_JoinWithUndefinedElements();
@@ -331,12 +331,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithFunctionSeparatorTest024
      * @tc.number SUB_ARRAY_JOIN_TEST_024
-     * @tc.name JoinWithFunctionSeparatorTest024
-     * @tc.desc 验证join的分隔符为函数时，调用其 toString() 方法后进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join的分隔符为函数时，调用其 toString() 方法后进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithFunctionSeparatorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test024_JoinWithFunctionSeparator();
@@ -344,12 +344,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithSingleElementArrayElementsTest025
      * @tc.number SUB_ARRAY_JOIN_TEST_025
-     * @tc.name JoinWithSingleElementArrayElementsTest025
-     * @tc.desc 验证join处理包含单元素数组的数组时，将其扁平化后拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含单元素数组的数组时，将其扁平化后拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithSingleElementArrayElementsTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test025_JoinWithSingleElementArrayElements();
@@ -357,12 +357,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeWithNonEnumerableTest026
      * @tc.number SUB_ARRAY_JOIN_TEST_026
-     * @tc.name JoinArrayLikeWithNonEnumerableTest026
-     * @tc.desc 验证join处理含不可枚举属性的类数组对象时，忽略不可枚举属性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理含不可枚举属性的类数组对象时，忽略不可枚举属性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeWithNonEnumerableTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test026_JoinArrayLikeWithNonEnumerable();
@@ -370,12 +370,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithEscapeCharactersTest027
      * @tc.number SUB_ARRAY_JOIN_TEST_027
-     * @tc.name JoinWithEscapeCharactersTest027
-     * @tc.desc 验证join处理包含换行符和制表符的数组时，按普通字符拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含换行符和制表符的数组时，按普通字符拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithEscapeCharactersTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test027_JoinWithEscapeCharacters();
@@ -383,12 +383,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinEmptyArrayWithUndefinedSeparatorTest028
      * @tc.number SUB_ARRAY_JOIN_TEST_028
-     * @tc.name JoinEmptyArrayWithUndefinedSeparatorTest028
-     * @tc.desc 验证空数组使用undefined作为分隔符调用join时，返回空字符串
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证空数组使用undefined作为分隔符调用join时，返回空字符串
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinEmptyArrayWithUndefinedSeparatorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test028_JoinEmptyArrayWithUndefinedSeparator();
@@ -396,12 +396,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinHugeArrayTest029
      * @tc.number SUB_ARRAY_JOIN_TEST_029
-     * @tc.name JoinHugeArrayTest029
-     * @tc.desc 验证join在处理超大数组（100,000个元素）时的基本功能和性能边界
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   验证join在处理超大数组（100,000个元素）时的基本功能和性能边界
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('JoinHugeArrayTest029', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = await ArrayJoinTestUtils.test029_JoinHugeArray();
@@ -409,12 +409,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithCustomObjectToStringTest030
      * @tc.number SUB_ARRAY_JOIN_TEST_030
-     * @tc.name JoinWithCustomObjectToStringTest030
-     * @tc.desc 验证join处理包含覆盖了toString()方法的自定义对象时，调用其自定义方法进行拼接
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证join处理包含覆盖了toString()方法的自定义对象时，调用其自定义方法进行拼接
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithCustomObjectToStringTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test030_JoinWithCustomObjectToString();
@@ -422,12 +422,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithNewlineSeparatorTest031
      * @tc.number SUB_ARRAY_JOIN_TEST_031
-     * @tc.name JoinWithNewlineSeparatorTest031
-     * @tc.desc Verify that join uses a single newline character `\n` as the separator.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join uses a single newline character `\n` as the separator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithNewlineSeparatorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test031_JoinWithNewlineSeparator();
@@ -435,12 +435,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithTabSeparatorTest032
      * @tc.number SUB_ARRAY_JOIN_TEST_032
-     * @tc.name JoinWithTabSeparatorTest032
-     * @tc.desc Verify that join uses a single tab character `\t` as the separator.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join uses a single tab character `\t` as the separator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithTabSeparatorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test032_JoinWithTabSeparator();
@@ -448,12 +448,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithZeroWidthNonJoinerSeparatorTest033
      * @tc.number SUB_ARRAY_JOIN_TEST_033
-     * @tc.name JoinWithZeroWidthNonJoinerSeparatorTest033
-     * @tc.desc Verify that join uses a zero-width non-joiner (ZWNJ) character as the separator.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join uses a zero-width non-joiner (ZWNJ) character as the separator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithZeroWidthNonJoinerSeparatorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test033_JoinWithZeroWidthNonJoinerSeparator();
@@ -461,12 +461,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithMultiByteCharactersTest034
      * @tc.number SUB_ARRAY_JOIN_TEST_034
-     * @tc.name JoinWithMultiByteCharactersTest034
-     * @tc.desc Verify that join correctly handles and concatenates multi-byte UTF-8 characters (e.g., CJK).
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join correctly handles and concatenates multi-byte UTF-8 characters (e.g., CJK).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithMultiByteCharactersTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test034_JoinWithMultiByteCharacters();
@@ -474,12 +474,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeWithNonNumericLengthTest036
      * @tc.number SUB_ARRAY_JOIN_TEST_036
-     * @tc.name JoinArrayLikeWithNonNumericLengthTest036
-     * @tc.desc Verify that join treats a non-numeric length property on an array-like object as 0.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join treats a non-numeric length property on an array-like object as 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeWithNonNumericLengthTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test036_JoinArrayLikeWithNonNumericLength();
@@ -487,12 +487,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeLengthGreaterThanIndicesTest037
      * @tc.number SUB_ARRAY_JOIN_TEST_037
-     * @tc.name JoinArrayLikeLengthGreaterThanIndicesTest037
-     * @tc.desc Verify that join iterates up to `length - 1` on array-like objects, treating missing indices as empty strings.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join iterates up to `length - 1` on array-like objects, treating missing indices as empty strings.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeLengthGreaterThanIndicesTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test037_JoinArrayLikeLengthGreaterThanIndices();
@@ -500,12 +500,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayOfArraysTest038
      * @tc.number SUB_ARRAY_JOIN_TEST_038
-     * @tc.name JoinArrayOfArraysTest038
-     * @tc.desc Verify that joining an array of arrays uses the outer separator and the inner arrays' default toString.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that joining an array of arrays uses the outer separator and the inner arrays' default toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayOfArraysTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test038_JoinArrayOfArrays();
@@ -513,12 +513,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithMapTest039
      * @tc.number SUB_ARRAY_JOIN_TEST_039
-     * @tc.name JoinWithMapTest039
-     * @tc.desc Verify that join works correctly in combination with the map method to format numbers.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly in combination with the map method to format numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithMapTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test039_JoinWithMap();
@@ -526,12 +526,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithObjectGetterToStringTest040
      * @tc.number SUB_ARRAY_JOIN_TEST_040
-     * @tc.name JoinWithObjectGetterToStringTest040
-     * @tc.desc Verify that join correctly invokes a custom toString getter function on an object element.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join correctly invokes a custom toString getter function on an object element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithObjectGetterToStringTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test040_JoinWithObjectGetterToString();
@@ -539,12 +539,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithEmojiSeparatorTest041
      * @tc.number SUB_ARRAY_JOIN_TEST_041
-     * @tc.name JoinWithEmojiSeparatorTest041
-     * @tc.desc Verify that join uses an emoji character as the separator.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join uses an emoji character as the separator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithEmojiSeparatorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test041_JoinWithEmojiSeparator();
@@ -553,12 +553,12 @@ export default function arrayJoinTestTest() {
 
 
     /**
+     * @tc.name   JoinWithMapObjectsTest043
      * @tc.number SUB_ARRAY_JOIN_TEST_043
-     * @tc.name JoinWithMapObjectsTest043
-     * @tc.desc Verify that join converts Map objects to their string representation "[object Map]".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts Map objects to their string representation "[object Map]".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithMapObjectsTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test043_JoinWithMapObjects();
@@ -566,12 +566,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeWithNegativeLengthTest044
      * @tc.number SUB_ARRAY_JOIN_TEST_044
-     * @tc.name JoinArrayLikeWithNegativeLengthTest044
-     * @tc.desc Verify that join treats a negative length property on an array-like object as 0.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join treats a negative length property on an array-like object as 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeWithNegativeLengthTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test044_JoinArrayLikeWithNegativeLength();
@@ -579,12 +579,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinIntoHugeStringTest045
      * @tc.number SUB_ARRAY_JOIN_TEST_045
-     * @tc.name JoinIntoHugeStringTest045
-     * @tc.desc Verify that join can handle concatenating into an extremely large string without crashing.
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that join can handle concatenating into an extremely large string without crashing.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('JoinIntoHugeStringTest045', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = await ArrayJoinTestUtils.test045_JoinIntoHugeString();
@@ -592,12 +592,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAsCallbackTest046
      * @tc.number SUB_ARRAY_JOIN_TEST_046
-     * @tc.name JoinAsCallbackTest046
-     * @tc.desc Verify that the join method can be passed as a callback to other functions like forEach.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that the join method can be passed as a callback to other functions like forEach.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAsCallbackTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test046_JoinAsCallback();
@@ -605,12 +605,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithLocalizedNumberStringTest047
      * @tc.number SUB_ARRAY_JOIN_TEST_047
-     * @tc.name JoinWithLocalizedNumberStringTest047
-     * @tc.desc Verify that join correctly handles a number string formatted with toLocaleString.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join correctly handles a number string formatted with toLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithLocalizedNumberStringTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test047_JoinWithLocalizedNumberString();
@@ -618,12 +618,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinOnNonArrayLikeTest048
      * @tc.number SUB_ARRAY_JOIN_TEST_048
-     * @tc.name JoinOnNonArrayLikeTest048
-     * @tc.desc Verify that attempting to call join on a non-array-like object (e.g., null) throws a TypeError.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that attempting to call join on a non-array-like object (e.g., null) throws a TypeError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinOnNonArrayLikeTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test048_JoinOnNonArrayLike();
@@ -631,12 +631,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithSetObjectsTest049
      * @tc.number SUB_ARRAY_JOIN_TEST_049
-     * @tc.name JoinWithSetObjectsTest049
-     * @tc.desc Verify that join converts Set objects to their string representation "[object Set]".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts Set objects to their string representation "[object Set]".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithSetObjectsTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test049_JoinWithSetObjects();
@@ -644,12 +644,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithInfinityElementsTest050
      * @tc.number SUB_ARRAY_JOIN_TEST_050
-     * @tc.name JoinWithInfinityElementsTest050
-     * @tc.desc Verify that join converts Infinity and -Infinity elements to their respective string representations.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts Infinity and -Infinity elements to their respective string representations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithInfinityElementsTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test050_JoinWithInfinityElements();
@@ -657,12 +657,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithPromiseObjectsTest051
      * @tc.number SUB_ARRAY_JOIN_TEST_051
-     * @tc.name JoinWithPromiseObjectsTest051
-     * @tc.desc Verify that join converts Promise objects to their string representation "[object Promise]".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts Promise objects to their string representation "[object Promise]".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithPromiseObjectsTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test051_JoinWithPromiseObjects();
@@ -670,12 +670,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAfterFilterTest052
      * @tc.number SUB_ARRAY_JOIN_TEST_052
-     * @tc.name JoinAfterFilterTest052
-     * @tc.desc Verify that join works correctly on the result of filtering out falsy values.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on the result of filtering out falsy values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAfterFilterTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test052_JoinAfterFilter();
@@ -683,12 +683,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithRegExpSeparatorTest053
      * @tc.number SUB_ARRAY_JOIN_TEST_053
-     * @tc.name JoinWithRegExpSeparatorTest053
-     * @tc.desc Verify that a regular expression object used as a separator is converted to its string literal.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that a regular expression object used as a separator is converted to its string literal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithRegExpSeparatorTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test053_JoinWithRegExpSeparator();
@@ -696,12 +696,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithErrorObjectsTest054
      * @tc.number SUB_ARRAY_JOIN_TEST_054
-     * @tc.name JoinWithErrorObjectsTest054
-     * @tc.desc Verify that join converts Error objects to their string representation "Error: message".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts Error objects to their string representation "Error: message".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithErrorObjectsTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test054_JoinWithErrorObjects();
@@ -709,12 +709,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAfterFlatMapTest055
      * @tc.number SUB_ARRAY_JOIN_TEST_055
-     * @tc.name JoinAfterFlatMapTest055
-     * @tc.desc Verify that join works correctly on the result of Array.prototype.flatMap.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on the result of Array.prototype.flatMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAfterFlatMapTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test055_JoinAfterFlatMap();
@@ -722,12 +722,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeWithLargeLengthTest056
      * @tc.number SUB_ARRAY_JOIN_TEST_056
-     * @tc.name JoinArrayLikeWithLargeLengthTest056
-     * @tc.desc Verify that join handles array-like objects with very large length values.
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that join handles array-like objects with very large length values.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('JoinArrayLikeWithLargeLengthTest056', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = await ArrayJoinTestUtils.test056_JoinArrayLikeWithLargeLength();
@@ -735,12 +735,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithScientificNotationSeparatorTest057
      * @tc.number SUB_ARRAY_JOIN_TEST_057
-     * @tc.name JoinWithScientificNotationSeparatorTest057
-     * @tc.desc Verify that a string in scientific notation used as a separator is handled correctly.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that a string in scientific notation used as a separator is handled correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithScientificNotationSeparatorTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test057_JoinWithScientificNotationSeparator();
@@ -748,12 +748,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithWeakCollectionsTest058
      * @tc.number SUB_ARRAY_JOIN_TEST_058
-     * @tc.name JoinWithWeakCollectionsTest058
-     * @tc.desc Verify that join converts WeakMap and WeakSet objects to their string representations.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts WeakMap and WeakSet objects to their string representations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithWeakCollectionsTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test058_JoinWithWeakCollections();
@@ -761,12 +761,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithSliceTest059
      * @tc.number SUB_ARRAY_JOIN_TEST_059
-     * @tc.name JoinWithSliceTest059
-     * @tc.desc Verify that join works correctly on a subset of an array obtained via slice.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on a subset of an array obtained via slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithSliceTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test059_JoinWithSlice();
@@ -774,12 +774,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeWithFractionalLengthTest060
      * @tc.number SUB_ARRAY_JOIN_TEST_060
-     * @tc.name JoinArrayLikeWithFractionalLengthTest060
-     * @tc.desc Verify that a fractional length on an array-like object is truncated when using join.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that a fractional length on an array-like object is truncated when using join.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeWithFractionalLengthTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test060_JoinArrayLikeWithFractionalLength();
@@ -787,12 +787,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithJsonStringSeparatorTest061
      * @tc.number SUB_ARRAY_JOIN_TEST_061
-     * @tc.name JoinWithJsonStringSeparatorTest061
-     * @tc.desc Verify that a JSON string used as a separator is handled correctly.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that a JSON string used as a separator is handled correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithJsonStringSeparatorTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test061_JoinWithJsonStringSeparator();
@@ -800,12 +800,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithBuiltInObjectsTest062
      * @tc.number SUB_ARRAY_JOIN_TEST_062
-     * @tc.name JoinWithBuiltInObjectsTest062
-     * @tc.desc Verify that join converts built-in objects like Atomics and Reflect to their string representations.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts built-in objects like Atomics and Reflect to their string representations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithBuiltInObjectsTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test062_JoinWithBuiltInObjects();
@@ -813,12 +813,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAfterConcatTest063
      * @tc.number SUB_ARRAY_JOIN_TEST_063
-     * @tc.name JoinAfterConcatTest063
-     * @tc.desc Verify that join works correctly on the result of concatenating two arrays.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on the result of concatenating two arrays.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAfterConcatTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test063_JoinAfterConcat();
@@ -826,12 +826,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeUnorderedIndicesTest064
      * @tc.number SUB_ARRAY_JOIN_TEST_064
-     * @tc.name JoinArrayLikeUnorderedIndicesTest064
-     * @tc.desc Verify that join iterates indices in ascending order regardless of property definition order.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join iterates indices in ascending order regardless of property definition order.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeUnorderedIndicesTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test064_JoinArrayLikeUnorderedIndices();
@@ -839,12 +839,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithStringUndefinedSeparatorTest065
      * @tc.number SUB_ARRAY_JOIN_TEST_065
-     * @tc.name JoinWithStringUndefinedSeparatorTest065
-     * @tc.desc Verify that the string "undefined" is treated as a literal separator.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that the string "undefined" is treated as a literal separator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithStringUndefinedSeparatorTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test065_JoinWithStringUndefinedSeparator();
@@ -853,12 +853,12 @@ export default function arrayJoinTestTest() {
 
 
     /**
+     * @tc.name   JoinAllUndefinedElementsTest067
      * @tc.number SUB_ARRAY_JOIN_TEST_067
-     * @tc.name JoinAllUndefinedElementsTest067
-     * @tc.desc Verify that joining an array with all undefined elements results in separators only.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that joining an array with all undefined elements results in separators only.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAllUndefinedElementsTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test067_JoinAllUndefinedElements();
@@ -866,12 +866,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinArrayLikeWithSymbolIndexTest068
      * @tc.number SUB_ARRAY_JOIN_TEST_068
-     * @tc.name JoinArrayLikeWithSymbolIndexTest068
-     * @tc.desc Verify that Symbol indices on array-like objects are ignored by join.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that Symbol indices on array-like objects are ignored by join.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinArrayLikeWithSymbolIndexTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test068_JoinArrayLikeWithSymbolIndex();
@@ -879,12 +879,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithWhitespaceSeparatorTest069
      * @tc.number SUB_ARRAY_JOIN_TEST_069
-     * @tc.name JoinWithWhitespaceSeparatorTest069
-     * @tc.desc Verify that separators with leading and trailing whitespace are preserved.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that separators with leading and trailing whitespace are preserved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithWhitespaceSeparatorTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test069_JoinWithWhitespaceSeparator();
@@ -892,12 +892,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinMixedSpecialValuesTest070
      * @tc.number SUB_ARRAY_JOIN_TEST_070
-     * @tc.name JoinMixedSpecialValuesTest070
-     * @tc.desc End-to-end test verifying join handles a complex array with mixed value types.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   End-to-end test verifying join handles a complex array with mixed value types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('JoinMixedSpecialValuesTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = await ArrayJoinTestUtils.test070_JoinMixedSpecialValues();
@@ -905,12 +905,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinNullSeparatorAndElementsTest071
      * @tc.number SUB_ARRAY_JOIN_TEST_071
-     * @tc.name JoinNullSeparatorAndElementsTest071
-     * @tc.desc Verify that both null separator and null elements are converted to empty strings.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that both null separator and null elements are converted to empty strings.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinNullSeparatorAndElementsTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test071_JoinNullSeparatorAndElements();
@@ -918,12 +918,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAfterReverseTest072
      * @tc.number SUB_ARRAY_JOIN_TEST_072
-     * @tc.name JoinAfterReverseTest072
-     * @tc.desc Verify that join works correctly on the result of reversing an array.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on the result of reversing an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAfterReverseTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test072_JoinAfterReverse();
@@ -931,12 +931,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithZeroSeparatorTest073
      * @tc.number SUB_ARRAY_JOIN_TEST_073
-     * @tc.name JoinWithZeroSeparatorTest073
-     * @tc.desc Verify that the number 0 used as a separator is converted to the string "0".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that the number 0 used as a separator is converted to the string "0".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithZeroSeparatorTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test073_JoinWithZeroSeparator();
@@ -944,12 +944,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinFromArrayFromTest074
      * @tc.number SUB_ARRAY_JOIN_TEST_074
-     * @tc.name JoinFromArrayFromTest074
-     * @tc.desc Verify that join works correctly on an array created from a string using Array.from.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on an array created from a string using Array.from.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinFromArrayFromTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test074_JoinFromArrayFrom();
@@ -957,12 +957,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithEmptyArraySeparatorTest075
      * @tc.number SUB_ARRAY_JOIN_TEST_075
-     * @tc.name JoinWithEmptyArraySeparatorTest075
-     * @tc.desc Verify that an empty array used as a separator is converted to an empty string.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that an empty array used as a separator is converted to an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithEmptyArraySeparatorTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test075_JoinWithEmptyArraySeparator();
@@ -970,12 +970,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithStringObjectsTest076
      * @tc.number SUB_ARRAY_JOIN_TEST_076
-     * @tc.name JoinWithStringObjectsTest076
-     * @tc.desc Verify that join converts String objects to their primitive string values.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts String objects to their primitive string values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithStringObjectsTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test076_JoinWithStringObjects();
@@ -983,12 +983,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAfterFillTest077
      * @tc.number SUB_ARRAY_JOIN_TEST_077
-     * @tc.name JoinAfterFillTest077
-     * @tc.desc Verify that join works correctly on an array filled with a single value using Array.prototype.fill.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on an array filled with a single value using Array.prototype.fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAfterFillTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test077_JoinAfterFill();
@@ -996,12 +996,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithExtremeNumbersTest078
      * @tc.number SUB_ARRAY_JOIN_TEST_078
-     * @tc.name JoinWithExtremeNumbersTest078
-     * @tc.desc Verify that join converts Number.MAX_VALUE and Number.MIN_VALUE to their string representations.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts Number.MAX_VALUE and Number.MIN_VALUE to their string representations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithExtremeNumbersTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test078_JoinWithExtremeNumbers();
@@ -1009,12 +1009,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithMultiLineSeparatorTest079
      * @tc.number SUB_ARRAY_JOIN_TEST_079
-     * @tc.name JoinWithMultiLineSeparatorTest079
-     * @tc.desc Verify that join handles a multi-line template literal as a separator correctly.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join handles a multi-line template literal as a separator correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithMultiLineSeparatorTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test079_JoinWithMultiLineSeparator();
@@ -1022,12 +1022,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAllEmptyStringsTest080
      * @tc.number SUB_ARRAY_JOIN_TEST_080
-     * @tc.name JoinAllEmptyStringsTest080
-     * @tc.desc Verify that joining an array where all elements are empty strings results in separators only.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that joining an array where all elements are empty strings results in separators only.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAllEmptyStringsTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test080_JoinAllEmptyStrings();
@@ -1035,12 +1035,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAfterSortTest081
      * @tc.number SUB_ARRAY_JOIN_TEST_081
-     * @tc.name JoinAfterSortTest081
-     * @tc.desc Verify that join works correctly on the result of sorting an array of numbers.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on the result of sorting an array of numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAfterSortTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test081_JoinAfterSort();
@@ -1048,12 +1048,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinUndefinedSeparatorAndElementsTest082
      * @tc.number SUB_ARRAY_JOIN_TEST_082
-     * @tc.name JoinUndefinedSeparatorAndElementsTest082
-     * @tc.desc Verify that both undefined separator and undefined elements are converted to empty strings.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that both undefined separator and undefined elements are converted to empty strings.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinUndefinedSeparatorAndElementsTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test082_JoinUndefinedSeparatorAndElements();
@@ -1061,12 +1061,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithNumberObjectsTest083
      * @tc.number SUB_ARRAY_JOIN_TEST_083
-     * @tc.name JoinWithNumberObjectsTest083
-     * @tc.desc Verify that join converts Number objects to their primitive number values.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts Number objects to their primitive number values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithNumberObjectsTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test083_JoinWithNumberObjects();
@@ -1074,12 +1074,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinAfterFlatTest084
      * @tc.number SUB_ARRAY_JOIN_TEST_084
-     * @tc.name JoinAfterFlatTest084
-     * @tc.desc Verify that join works correctly on the result of flattening a deeply nested array.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly on the result of flattening a deeply nested array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinAfterFlatTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test084_JoinAfterFlat();
@@ -1087,12 +1087,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithHtmlEntitySeparatorTest085
      * @tc.number SUB_ARRAY_JOIN_TEST_085
-     * @tc.name JoinWithHtmlEntitySeparatorTest085
-     * @tc.desc Verify that a string containing HTML entities used as a separator is handled correctly.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that a string containing HTML entities used as a separator is handled correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithHtmlEntitySeparatorTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test085_JoinWithHtmlEntitySeparator();
@@ -1100,12 +1100,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinSingleEmptyStringElementTest086
      * @tc.number SUB_ARRAY_JOIN_TEST_086
-     * @tc.name JoinSingleEmptyStringElementTest086
-     * @tc.desc Verify that joining an array with a single empty string element returns an empty string.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that joining an array with a single empty string element returns an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinSingleEmptyStringElementTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test086_JoinSingleEmptyStringElement();
@@ -1113,12 +1113,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithSymbolSeparatorTest087
      * @tc.number SUB_ARRAY_JOIN_TEST_087
-     * @tc.name JoinWithSymbolSeparatorTest087
-     * @tc.desc Verify that attempting to use a Symbol as a separator throws a TypeError.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that attempting to use a Symbol as a separator throws a TypeError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithSymbolSeparatorTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test087_JoinWithSymbolSeparator();
@@ -1126,12 +1126,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinSparseArrayWithHolesTest088
      * @tc.number SUB_ARRAY_JOIN_TEST_088
-     * @tc.name JoinSparseArrayWithHolesTest088
-     * @tc.desc Verify that joining a sparse array with only empty slots returns an empty string.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that joining a sparse array with only empty slots returns an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinSparseArrayWithHolesTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test088_JoinSparseArrayWithHoles();
@@ -1139,12 +1139,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithLongStringElementsTest089
      * @tc.number SUB_ARRAY_JOIN_TEST_089
-     * @tc.name JoinWithLongStringElementsTest089
-     * @tc.desc Verify that join can handle concatenation of very long string elements.
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that join can handle concatenation of very long string elements.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('JoinWithLongStringElementsTest089', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = await ArrayJoinTestUtils.test089_JoinWithLongStringElements();
@@ -1152,12 +1152,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithFlatMapStringsTest092
      * @tc.number SUB_ARRAY_JOIN_TEST_092
-     * @tc.name JoinWithFlatMapStringsTest092
-     * @tc.desc Verify that join works correctly with flatMap to split and rejoin strings.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly with flatMap to split and rejoin strings.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithFlatMapStringsTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test092_JoinWithFlatMapStrings();
@@ -1165,12 +1165,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithNonBmpSeparatorTest093
      * @tc.number SUB_ARRAY_JOIN_TEST_093
-     * @tc.name JoinWithNonBmpSeparatorTest093
-     * @tc.desc Verify that join correctly handles emoji and other non-BMP Unicode characters as separators.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join correctly handles emoji and other non-BMP Unicode characters as separators.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithNonBmpSeparatorTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test093_JoinWithNonBmpSeparator();
@@ -1178,12 +1178,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithArrayBuffersTest094
      * @tc.number SUB_ARRAY_JOIN_TEST_094
-     * @tc.name JoinWithArrayBuffersTest094
-     * @tc.desc Verify that join converts ArrayBuffer objects to their string representation "[object ArrayBuffer]".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts ArrayBuffer objects to their string representation "[object ArrayBuffer]".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithArrayBuffersTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test094_JoinWithArrayBuffers();
@@ -1191,12 +1191,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithReduceTest095
      * @tc.number SUB_ARRAY_JOIN_TEST_095
-     * @tc.name JoinWithReduceTest095
-     * @tc.desc Verify that join can be emulated using the reduce method.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join can be emulated using the reduce method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithReduceTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test095_JoinWithReduce();
@@ -1204,12 +1204,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithSharedArrayBufferTest096
      * @tc.number SUB_ARRAY_JOIN_TEST_096
-     * @tc.name JoinWithSharedArrayBufferTest096
-     * @tc.desc Verify that join converts SharedArrayBuffer objects to their string representation.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts SharedArrayBuffer objects to their string representation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithSharedArrayBufferTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test096_JoinWithSharedArrayBuffer();
@@ -1217,12 +1217,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithZeroWidthSpaceSeparatorTest097
      * @tc.number SUB_ARRAY_JOIN_TEST_097
-     * @tc.name JoinWithZeroWidthSpaceSeparatorTest097
-     * @tc.desc Verify that a zero-width space character used as a separator is preserved.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that a zero-width space character used as a separator is preserved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithZeroWidthSpaceSeparatorTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test097_JoinWithZeroWidthSpaceSeparator();
@@ -1230,12 +1230,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithDataViewsTest098
      * @tc.number SUB_ARRAY_JOIN_TEST_098
-     * @tc.name JoinWithDataViewsTest098
-     * @tc.desc Verify that join converts DataView objects to their string representation "[object DataView]".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts DataView objects to their string representation "[object DataView]".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithDataViewsTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test098_JoinWithDataViews();
@@ -1243,12 +1243,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithArrayWithTest099
      * @tc.number SUB_ARRAY_JOIN_TEST_099
-     * @tc.name JoinWithArrayWithTest099
-     * @tc.desc Verify that join works correctly with the Array.prototype.with method to replace elements.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly with the Array.prototype.with method to replace elements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithArrayWithTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test099_JoinWithArrayWith();
@@ -1256,12 +1256,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithTypedArraysTest100
      * @tc.number SUB_ARRAY_JOIN_TEST_100
-     * @tc.name JoinWithTypedArraysTest100
-     * @tc.desc Verify that join converts typed array objects (e.g., BigInt64Array) to their string representation.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts typed array objects (e.g., BigInt64Array) to their string representation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithTypedArraysTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test100_JoinWithTypedArrays();
@@ -1269,12 +1269,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithStringNaNSeparatorTest101
      * @tc.number SUB_ARRAY_JOIN_TEST_101
-     * @tc.name JoinWithStringNaNSeparatorTest101
-     * @tc.desc Verify that the string "NaN" is treated as a literal separator.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that the string "NaN" is treated as a literal separator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithStringNaNSeparatorTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test101_JoinWithStringNaNSeparator();
@@ -1282,12 +1282,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithWeakRefsTest102
      * @tc.number SUB_ARRAY_JOIN_TEST_102
-     * @tc.name JoinWithWeakRefsTest102
-     * @tc.desc Verify that join converts WeakRef objects to their string representation "[object WeakRef]".
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts WeakRef objects to their string representation "[object WeakRef]".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithWeakRefsTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test102_JoinWithWeakRefs();
@@ -1295,12 +1295,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithDeletedElementTest103
      * @tc.number SUB_ARRAY_JOIN_TEST_103
-     * @tc.name JoinWithDeletedElementTest103
-     * @tc.desc Verify that join treats an array element deleted with the `delete` operator as an empty string.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join treats an array element deleted with the `delete` operator as an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithDeletedElementTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test103_JoinWithDeletedElement();
@@ -1308,12 +1308,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithFinalizationRegistriesTest104
      * @tc.number SUB_ARRAY_JOIN_TEST_104
-     * @tc.name JoinWithFinalizationRegistriesTest104
-     * @tc.desc Verify that join converts FinalizationRegistry objects to their string representation.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts FinalizationRegistry objects to their string representation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithFinalizationRegistriesTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test104_JoinWithFinalizationRegistries();
@@ -1321,12 +1321,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithLongSeparatorTest105
      * @tc.number SUB_ARRAY_JOIN_TEST_105
-     * @tc.name JoinWithLongSeparatorTest105
-     * @tc.desc Verify that join can handle very long separator strings efficiently.
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that join can handle very long separator strings efficiently.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('JoinWithLongSeparatorTest105', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const result = await ArrayJoinTestUtils.test105_JoinWithLongSeparator();
@@ -1334,12 +1334,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithLargeBigIntTest108
      * @tc.number SUB_ARRAY_JOIN_TEST_108
-     * @tc.name JoinWithLargeBigIntTest108
-     * @tc.desc Verify that join converts very large BigInt values to their string representations correctly.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join converts very large BigInt values to their string representations correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithLargeBigIntTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test108_JoinWithLargeBigInt();
@@ -1347,12 +1347,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithForOfLoopTest109
      * @tc.number SUB_ARRAY_JOIN_TEST_109
-     * @tc.name JoinWithForOfLoopTest109
-     * @tc.desc Verify that join works correctly with results collected from a for...of loop.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that join works correctly with results collected from a for...of loop.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithForOfLoopTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test109_JoinWithForOfLoop();
@@ -1360,12 +1360,12 @@ export default function arrayJoinTestTest() {
     });
 
     /**
+     * @tc.name   JoinWithPositiveAndNegativeZeroTest110
      * @tc.number SUB_ARRAY_JOIN_TEST_110
-     * @tc.name JoinWithPositiveAndNegativeZeroTest110
-     * @tc.desc Verify that both +0 and -0 are converted to the string "0" when joined.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that both +0 and -0 are converted to the string "0" when joined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('JoinWithPositiveAndNegativeZeroTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await ArrayJoinTestUtils.test110_JoinWithPositiveAndNegativeZero();

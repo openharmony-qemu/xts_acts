@@ -10,6 +10,7 @@
         "MainAbility/pages/SideBarContainer/SideBarContainerDivider/SideBarContainerDivider",
 	    "MainAbility/pages/SideBarContainer/sideBar",
         "MainAbility/pages/SideBarContainer/sidebar2",
-        "MainAbility/pages/SideBarContainer/sideBar3"
+        "MainAbility/pages/SideBarContainer/sideBar3",
+        "MainAbility/pages/SideBarContainer/SidebarType"
     ]
 }

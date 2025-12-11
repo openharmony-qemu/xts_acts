@@ -26,39 +26,39 @@ export default function stackScaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SCALE_0100
-     * @tc.name       : testStackScale001
-     * @tc.desc       : testing scale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackScale001
+     * @tc.number SUB_ARKUI_CAPI_STACK_SCALE_0100
+     * @tc.desc   testing scale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackScale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SCALE_0200
-     * @tc.name       : testStackScale002
-     * @tc.desc       : testing scale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackScale002
+     * @tc.number SUB_ARKUI_CAPI_STACK_SCALE_0200
+     * @tc.desc   testing scale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackScale002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SCALE_0300
-     * @tc.name       : testStackScale003
-     * @tc.desc       : testing scale for stack with negative value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackScale003
+     * @tc.number SUB_ARKUI_CAPI_STACK_SCALE_0300
+     * @tc.desc   testing scale for stack with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackScale003()).assertEqual(0)

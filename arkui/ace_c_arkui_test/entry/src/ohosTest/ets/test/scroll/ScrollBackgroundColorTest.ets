@@ -26,39 +26,39 @@ export default function scrollBackgroundColorTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BACKGROUNDCOLOR_0100
-     * @tc.name       : testScrollBackgroundColor001
-     * @tc.desc       : testing background Color for scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing background Color for scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBackgroundColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BACKGROUNDCOLOR_0200
-     * @tc.name       : testScrollBackgroundColor002
-     * @tc.desc       : testing background Color for scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing background Color for scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBackgroundColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BACKGROUNDCOLOR_0300
-     * @tc.name       : testScrollBackgroundColor003
-     * @tc.desc       : testing background Color for scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing background Color for scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBackgroundColor003()).assertEqual(0)

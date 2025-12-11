@@ -45,9 +45,12 @@ export default function pushUrl20() {
     });
 
     /**
+     * @tc.name   pushUrl20_0100
      * @tc.number pushUrl20_0100
-     * @tc.name testPushUrl
-     * @tc.desc
+     * @tc.desc   pushUrl20_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pushUrl20_0100', Level.LEVEL2, async (done: Function) => {
       console.info('pushUrl20_0100 START');

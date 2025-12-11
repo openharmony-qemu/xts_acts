@@ -48,12 +48,12 @@ export default function SpecialCharTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0100
-     * @tc.name       : testBufferAllocSpecial0001
-     * @tc.desc       : Testing the Buffer interface Alloc with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAllocSpecial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0100
+     * @tc.desc   Testing the Buffer interface Alloc with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAllocSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferAllocSpecial0001";
@@ -68,12 +68,12 @@ export default function SpecialCharTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0200
-     * @tc.name       : testBufferByteLengthSpecial0002
-     * @tc.desc       : Testing the Buffer interface ByteLength with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLengthSpecial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0200
+     * @tc.desc   Testing the Buffer interface ByteLength with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLengthSpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferByteLengthSpecial0002";
@@ -88,12 +88,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0300
-     * @tc.name       : testBufferIsBufferSpecial0003
-     * @tc.desc       : Testing the Buffer interface IsBuffer with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferIsBufferSpecial0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0300
+     * @tc.desc   Testing the Buffer interface IsBuffer with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIsBufferSpecial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferIsBufferSpecial0003";
@@ -108,12 +108,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0400
-     * @tc.name       : testBufferIsEncodingSpecial0004
-     * @tc.desc       : Testing the Buffer interface IsEncoding with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferIsEncodingSpecial0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0400
+     * @tc.desc   Testing the Buffer interface IsEncoding with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferIsEncodingSpecial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferIsEncodingSpecial0004";
@@ -128,12 +128,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0500
-     * @tc.name       : testBufferFillSpecial0005
-     * @tc.desc       : Testing the Buffer interface Fill with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferFillSpecial0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0500
+     * @tc.desc   Testing the Buffer interface Fill with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferFillSpecial0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testBufferFillSpecial0005";
@@ -148,12 +148,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0600
-     * @tc.name       : testBufferIncludesSpecial0006
-     * @tc.desc       : Testing the Buffer interface Includes with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludesSpecial0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0600
+     * @tc.desc   Testing the Buffer interface Includes with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludesSpecial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIncludesSpecial0006";
@@ -170,12 +170,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0700
-     * @tc.name       : testBufferIndexOfSpecial0007
-     * @tc.desc       : Testing the Buffer interface IndexOf with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOfSpecial0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0700
+     * @tc.desc   Testing the Buffer interface IndexOf with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOfSpecial0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferIndexOfSpecial0007";
@@ -192,12 +192,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0800
-     * @tc.name       : testBufferlastIndexOfSpecial0008
-     * @tc.desc       : Testing the Buffer interface lastIndexOf with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferlastIndexOfSpecial0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0800
+     * @tc.desc   Testing the Buffer interface lastIndexOf with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferlastIndexOfSpecial0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferlastIndexOfSpecial0008";
@@ -214,12 +214,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0900
-     * @tc.name       : testBufferToJSONSpecial0009
-     * @tc.desc       : Testing the Buffer interface ToJSON with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToJSONSpecial0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0900
+     * @tc.desc   Testing the Buffer interface ToJSON with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToJSONSpecial0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferToJSONSpecial0009";
@@ -236,12 +236,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1000
-     * @tc.name       : testBufferToStringSpecial0010
-     * @tc.desc       : Testing the Buffer interface ToString with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToStringSpecial0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1000
+     * @tc.desc   Testing the Buffer interface ToString with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToStringSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferToStringSpecial0010";
@@ -257,12 +257,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1100
-     * @tc.name       : testBufferWriteSpecial0011
-     * @tc.desc       : Testing the Buffer interface Write with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteSpecial0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1100
+     * @tc.desc   Testing the Buffer interface Write with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteSpecial0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBufferWriteSpecial0011";
@@ -278,12 +278,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1200
-     * @tc.name       : testBufferTextSpecial0012
-     * @tc.desc       : Testing the Buffer interface text with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTextSpecial0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1200
+     * @tc.desc   Testing the Buffer interface text with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTextSpecial0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = "testBufferTextSpecial0012";
@@ -299,12 +299,12 @@ export default function SpecialCharTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0100
-     * @tc.name       : testBuilintsStringConstructorSpecial0001
-     * @tc.desc       : Testing the Buffer interface String with String
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringConstructorSpecial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0100
+     * @tc.desc   Testing the Buffer interface String with String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringConstructorSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringConstructorSpecial0001";
@@ -321,12 +321,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0200
-     * @tc.name       : testBuilintsStringRawSpecial0002
-     * @tc.desc       : Testing the Buffer interface String with Raw
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringRawSpecial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0200
+     * @tc.desc   Testing the Buffer interface String with Raw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringRawSpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringRawSpecial0002";
@@ -344,12 +344,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0300
-     * @tc.name       : testBuilintsStringPrototypeCharAtSpecial0003
-     * @tc.desc       : Testing the Buffer interface String with PrototypeCharAt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeCharAtSpecial0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0300
+     * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeCharAtSpecial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeCharAtSpecial0003";
@@ -364,12 +364,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0400
-     * @tc.name       : testBuilintsStringPrototypeCharCodeAtSpecial0004
-     * @tc.desc       : Testing the Buffer interface String with PrototypeCharAt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeCharCodeAtSpecial0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0400
+     * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeCharCodeAtSpecial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeCharCodeAtSpecial0004";
@@ -384,12 +384,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0500
-     * @tc.name       : testBuilintsStringPrototypeCharCodeAtSpecial0005
-     * @tc.desc       : Testing the Buffer interface String with PrototypeCharAt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeCharCodeAtSpecial0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0500
+     * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeCharCodeAtSpecial0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeCharCodeAtSpecial0005";
@@ -404,12 +404,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0600
-     * @tc.name       : testBuilintsStringPrototypeConcatSpecial0006
-     * @tc.desc       : Testing the Buffer interface String with PrototypeConcat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeConcatSpecial0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0600
+     * @tc.desc   Testing the Buffer interface String with PrototypeConcat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeConcatSpecial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeConcatSpecial0006";
@@ -424,12 +424,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0700
-     * @tc.name       : testBuilintsStringPrototypeEndsWithSpecial0007
-     * @tc.desc       : Testing the Buffer interface String with PrototypeEndsWith
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeEndsWithSpecial0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0700
+     * @tc.desc   Testing the Buffer interface String with PrototypeEndsWith
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeEndsWithSpecial0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeEndsWithSpecial0007";
@@ -443,12 +443,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0800
-     * @tc.name       : testBuilintsStringPrototypeIncludesSpecial0008
-     * @tc.desc       : Testing the Buffer interface String with PrototypeIncludes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeIncludesSpecial0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0800
+     * @tc.desc   Testing the Buffer interface String with PrototypeIncludes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeIncludesSpecial0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeIncludesSpecial0008";
@@ -462,12 +462,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0900
-     * @tc.name       : testBuilintsStringPrototypeIndexOfSpecial0009
-     * @tc.desc       : Testing the Buffer interface String with PrototypeIndexOf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeIndexOfSpecial0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0900
+     * @tc.desc   Testing the Buffer interface String with PrototypeIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeIndexOfSpecial0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeIndexOfSpecial0009";
@@ -480,12 +480,12 @@ export default function SpecialCharTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1100
-     * @tc.name       : testBuilintsStringLastIndexOfSpecial0011
-     * @tc.desc       : Testing the Buffer interface String with LastIndexOf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringLastIndexOfSpecial0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1100
+     * @tc.desc   Testing the Buffer interface String with LastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringLastIndexOfSpecial0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringLastIndexOfSpecial0011";
@@ -499,12 +499,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1200
-     * @tc.name       : testBuilintsStringMatchSpecial0012
-     * @tc.desc       : Testing the Buffer interface String with Match
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringMatchSpecial0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1200
+     * @tc.desc   Testing the Buffer interface String with Match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringMatchSpecial0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringMatchSpecial0012";
@@ -519,12 +519,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1300
-     * @tc.name       : testBuilintsStringPrototypeNormalizeSpecial0013
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeNormalizeSpecial0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1300
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeNormalizeSpecial0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeNormalizeSpecial0013";
@@ -538,12 +538,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1400
-     * @tc.name       : testBuilintsStringPrototypePadEndSpecial0014
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypePadEndSpecial0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1400
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypePadEndSpecial0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypePadEndSpecial0014";
@@ -558,12 +558,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1500
-     * @tc.name       : testBuilintsStringPrototypePadStartSpecial0015
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypePadStartSpecial0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1500
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypePadStartSpecial0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypePadStartSpecial0015";
@@ -578,12 +578,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1600
-     * @tc.name       : testBuilintsStringPrototypeRepeatSpecial0016
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeRepeatSpecial0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1600
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeRepeatSpecial0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeRepeatSpecial0016";
@@ -597,12 +597,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1700
-     * @tc.name       : testBuilintsStringPrototypeReplaceSpecial0017
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeReplaceSpecial0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1700
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeReplaceSpecial0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeReplaceSpecial0017";
@@ -617,12 +617,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1800
-     * @tc.name       : testBuilintsStringPrototypeSearchSpecial0018
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeSearchSpecial0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1800
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeSearchSpecial0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeSearchSpecial0018";
@@ -637,12 +637,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1900
-     * @tc.name       : testBuilintsStringPrototypeSliceSpecial0019
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeSliceSpecial0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1900
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeSliceSpecial0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeSliceSpecial0019";
@@ -656,12 +656,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2000
-     * @tc.name       : testBuilintsStringPrototypeStartsWithSpecial0020
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeStartsWithSpecial0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2000
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeStartsWithSpecial0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeStartsWithSpecial0020";
@@ -675,12 +675,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2100
-     * @tc.name       : testBuilintsStringPrototypeSubstringSpecial0021
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeSubstringSpecial0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2100
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeSubstringSpecial0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeSubstringSpecial0021";
@@ -694,12 +694,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2200
-     * @tc.name       : testBuilintsStringPrototypeToLocaleLowerCaseSpecial0022
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeToLocaleLowerCaseSpecial0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2200
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeToLocaleLowerCaseSpecial0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -715,12 +715,12 @@ export default function SpecialCharTest() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2300
-     * @tc.name       : testBuilintsStringPrototypeToLocaleUpperCaseSpecial0023
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeToLocaleUpperCaseSpecial0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2300
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeToLocaleUpperCaseSpecial0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {
@@ -736,12 +736,12 @@ export default function SpecialCharTest() {
       })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2400
-     * @tc.name       : testBuilintsStringPrototypeToLowerCaseSpecial0024
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeToLowerCaseSpecial0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2400
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeToLowerCaseSpecial0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeToLowerCaseSpecial0024";
@@ -756,12 +756,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2500
-     * @tc.name       : testBuilintsStringPrototypeToStringSpecial0025
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeToStringSpecial0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2500
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeToStringSpecial0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeToStringSpecial0025";
@@ -775,12 +775,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2600
-     * @tc.name       : testBuilintsStringPrototypeToUpperCaseSpecial0026
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeToUpperCaseSpecial0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2600
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeToUpperCaseSpecial0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeToUpperCaseSpecial0026";
@@ -795,12 +795,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2700
-     * @tc.name       : testBuilintsStringPrototypeTrimSpecial0027
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeTrimSpecial0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2700
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeTrimSpecial0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeTrimSpecial0027";
@@ -815,12 +815,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2800
-     * @tc.name       : testBuilintsStringPrototypeTrimEndSpecial0028
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeTrimEndSpecial0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2800
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeTrimEndSpecial0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeTrimEndSpecial0028";
@@ -835,12 +835,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2900
-     * @tc.name       : testBuilintsStringPrototypeTrimStartSpecial0029
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeTrimStartSpecial0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2900
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeTrimStartSpecial0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeTrimStartSpecial0029";
@@ -856,12 +856,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3000
-     * @tc.name       : testBuilintsStringPrototypeValueOfSpecial0030
-     * @tc.desc       : Testing the Buffer interface String with Normalize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBuilintsStringPrototypeValueOfSpecial0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3000
+     * @tc.desc   Testing the Buffer interface String with Normalize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBuilintsStringPrototypeValueOfSpecial0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testBuilintsStringPrototypeValueOfSpecial0030";
@@ -874,12 +874,12 @@ export default function SpecialCharTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0100
-     * @tc.name       : testUtilJsonParseSpecial0001
-     * @tc.desc       : Testing the Buffer interface parse with input special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonParseSpecial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0100
+     * @tc.desc   Testing the Buffer interface parse with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilJsonParseSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonParseSpecial0001";
@@ -896,12 +896,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0200
-     * @tc.name       : testUtilJsonStringifySpecial0002
-     * @tc.desc       : Testing the Buffer interface Stringify with input special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonStringifySpecial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0200
+     * @tc.desc   Testing the Buffer interface Stringify with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilJsonStringifySpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonStringifySpecial0002";
@@ -918,12 +918,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0300
-     * @tc.name       : testUtilJsonStringifySpecial0003
-     * @tc.desc       : Testing the Buffer interface Stringify with input special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonStringifySpecial0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0300
+     * @tc.desc   Testing the Buffer interface Stringify with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilJsonStringifySpecial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonStringifySpecial0003";
@@ -940,12 +940,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0400
-     * @tc.name       : testUtilJsonHasSpecial0004
-     * @tc.desc       : Testing the Buffer interface Has with input special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasSpecial0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0400
+     * @tc.desc   Testing the Buffer interface Has with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilJsonHasSpecial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasSpecial0004";
@@ -964,12 +964,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0500
-     * @tc.name       : testUtilJsonRemoveSpecial0005
-     * @tc.desc       : Testing the Buffer interface Remove with input special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveSpecial0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0500
+     * @tc.desc   Testing the Buffer interface Remove with input special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilJsonRemoveSpecial0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveSpecial0005";
@@ -987,12 +987,12 @@ export default function SpecialCharTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_SPECIAL_0100
-     * @tc.name       : testUtilsRequestSpecial0001
-     * @tc.desc       : Testing the Utils interface Request with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilsRequestSpecial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_SPECIAL_0100
+     * @tc.desc   Testing the Utils interface Request with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsRequestSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilsRequestSpecial0001";
@@ -1007,12 +1007,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_SPECIAL_0200
-     * @tc.name       : testUtilsQuerySpecial0002
-     * @tc.desc       : Testing the Utils interface Query with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilsQuerySpecial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_SPECIAL_0200
+     * @tc.desc   Testing the Utils interface Query with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilsQuerySpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = "testUtilsQuerySpecial0002";
@@ -1030,12 +1030,12 @@ export default function SpecialCharTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0100
-     * @tc.name       : testXmlXmlSerializerConstructorSpecial0001
-     * @tc.desc       : Test the function of the interface constructor() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlXmlSerializerConstructorSpecial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0100
+     * @tc.desc   Test the function of the interface constructor() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlXmlSerializerConstructorSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlXmlSerializerConstructorSpecial0001";
@@ -1052,12 +1052,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0200
-     * @tc.name       : testXmlSetAttributesSpecial0002
-     * @tc.desc       : Test the function of the interface setAttributes() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetAttributesSpecial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0200
+     * @tc.desc   Test the function of the interface setAttributes() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetAttributesSpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlSetAttributesSpecial0002";
@@ -1080,12 +1080,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0300
-     * @tc.name       : testXmlAddEmptyElementSpecial0003
-     * @tc.desc       : Test the function of the interface addEmptyElement() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElementSpecial0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0300
+     * @tc.desc   Test the function of the interface addEmptyElement() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElementSpecial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlAddEmptyElementSpecial0003";
@@ -1106,12 +1106,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0400
-     * @tc.name       : testXmlStartElementSpecial0004
-     * @tc.desc       : Test the function of the interface startElement() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElementSpecial0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0400
+     * @tc.desc   Test the function of the interface startElement() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElementSpecial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlStartElementSpecial0004";
@@ -1135,12 +1135,12 @@ export default function SpecialCharTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0600
-     * @tc.name       : testXmlSetCommentSpecial0006
-     * @tc.desc       : Test the function of the interface setComment() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCommentSpecial0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0600
+     * @tc.desc   Test the function of the interface setComment() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCommentSpecial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlSetCommentSpecial0006";
@@ -1161,12 +1161,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0700
-     * @tc.name       : testXmlSetCDATASpecial0007
-     * @tc.desc       : Test the function of the interface setCDATA() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCDATASpecial0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0700
+     * @tc.desc   Test the function of the interface setCDATA() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCDATASpecial0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlSetCDATASpecial0007";
@@ -1187,12 +1187,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0800
-     * @tc.name       : testXmlSetTextSpecial0008
-     * @tc.desc       : Test the function of the interface setText() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetTextSpecial0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0800
+     * @tc.desc   Test the function of the interface setText() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetTextSpecial0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlSetTextSpecial0008";
@@ -1216,12 +1216,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0900
-     * @tc.name       : testXmlSetDocTypeSpecial0009
-     * @tc.desc       : Test the function of the interface setDocType() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDocTypeSpecial0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0900
+     * @tc.desc   Test the function of the interface setDocType() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDocTypeSpecial0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlSetDocTypeSpecial0009";
@@ -1242,12 +1242,12 @@ export default function SpecialCharTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_1000
-     * @tc.name       : testXmlXmlPullParserConstructorSpecial0010
-     * @tc.desc       : Test the function of the interface constructor() with Special
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlXmlPullParserConstructorSpecial0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_1000
+     * @tc.desc   Test the function of the interface constructor() with Special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlXmlPullParserConstructorSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testXmlXmlPullParserConstructorSpecial0010";

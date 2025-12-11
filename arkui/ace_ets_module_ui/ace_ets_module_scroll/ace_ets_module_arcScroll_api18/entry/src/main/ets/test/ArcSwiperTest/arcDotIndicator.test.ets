@@ -44,12 +44,12 @@ export default function arcDotIndicator() {
     });
 
     /**
-     * @tc.number    arcDotIndicator_001
-     * @tc.name      arcDotIndicator_0100
-     * @tc.desc      The direction of the arc-shaped indicator is the 6 o'clock direction.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   arcDotIndicator_0100
+     * @tc.number arcDotIndicator_001
+     * @tc.desc   The direction of the arc-shaped indicator is the 6 o'clock direction.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('arcDotIndicator_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[arcDotIndicator_0100] START');
@@ -70,12 +70,12 @@ export default function arcDotIndicator() {
     });
 
     /**
-     * @tc.number    arcDotIndicator_002
-     * @tc.name      arcDotIndicator_0200
-     * @tc.desc      The direction of the arc-shaped indicator is the 3 o'clock direction.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   arcDotIndicator_0200
+     * @tc.number arcDotIndicator_002
+     * @tc.desc   The direction of the arc-shaped indicator is the 3 o'clock direction.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('arcDotIndicator_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[arcDotIndicator_0200] START');
@@ -100,12 +100,12 @@ export default function arcDotIndicator() {
     });
 
     /**
-     * @tc.number    arcDotIndicator_003
-     * @tc.name      arcDotIndicator_0300
-     * @tc.desc      The direction of the arc-shaped indicator is the 3 o'clock direction.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   arcDotIndicator_0300
+     * @tc.number arcDotIndicator_003
+     * @tc.desc   The direction of the arc-shaped indicator is the 3 o'clock direction.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('arcDotIndicator_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[arcDotIndicator_0300] START');

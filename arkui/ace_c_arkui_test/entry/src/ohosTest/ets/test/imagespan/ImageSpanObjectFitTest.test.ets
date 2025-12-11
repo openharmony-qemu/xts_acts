@@ -26,91 +26,91 @@ export default function imageSpanObjectFitTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0100
-     * @tc.name: testImageSpanObjectFit001
-     * @tc.desc: testing objectFit for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanObjectFit001
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0100
+     * @tc.desc   testing objectFit for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanObjectFit001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanObjectFit001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0200
-     * @tc.name: testImageSpanObjectFit002
-     * @tc.desc: testing objectFit for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanObjectFit002
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0200
+     * @tc.desc   testing objectFit for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanObjectFit002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanObjectFit002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0300
-     * @tc.name: testImageSpanObjectFit003
-     * @tc.desc: testing objectFit for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanObjectFit003
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0300
+     * @tc.desc   testing objectFit for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanObjectFit003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanObjectFit003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0400
-     * @tc.name: testImageSpanObjectFit004
-     * @tc.desc: testing objectFit for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanObjectFit004
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0400
+     * @tc.desc   testing objectFit for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanObjectFit004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanObjectFit004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0500
-     * @tc.name: testImageSpanObjectFit005
-     * @tc.desc: testing objectFit for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanObjectFit005
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0500
+     * @tc.desc   testing objectFit for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanObjectFit005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanObjectFit005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0600
-     * @tc.name: testImageSpanObjectFit006
-     * @tc.desc: testing objectFit for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanObjectFit006
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0600
+     * @tc.desc   testing objectFit for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanObjectFit006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanObjectFit006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0700
-     * @tc.name: testImageSpanObjectFit007
-     * @tc.desc: testing objectFit for imageSpan with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testImageSpanObjectFit007
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_OBJECTFIT_0700
+     * @tc.desc   testing objectFit for imageSpan with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanObjectFit007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanObjectFit007()).assertEqual(0)

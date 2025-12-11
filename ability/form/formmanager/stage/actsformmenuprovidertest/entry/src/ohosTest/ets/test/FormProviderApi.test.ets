@@ -174,19 +174,22 @@ export default function formProviderTest() {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormManager success`);
         done();
       } catch (error) {
-        if (error.code === ERROR_CODE) {
-          expect(error.code).assertEqual(ERROR_CODE);
-        } else if (error.code === ERROR_CODE2) {
-          expect(error.code).assertEqual(ERROR_CODE2);
-        } else if (error.code === ERROR_CODE3) {
-          expect(error.code).assertEqual(ERROR_CODE3);
-        } else if (error.code === ERROR_CODE5) {
-          expect(error.code).assertEqual(ERROR_CODE5);
+        let businessError: BusinessError = error as BusinessError;
+        hilog.error(DOMAIN, COMMON_TAG, '%{public}s',
+          `${TAG} formProvider openFormManager, catch error, 
+          code: ${businessError.code}, message: ${businessError.message})`);
+        if (businessError.code === ERROR_CODE) {
+          expect(businessError.code).assertEqual(ERROR_CODE);
+        } else if (businessError.code === ERROR_CODE2) {
+          expect(businessError.code).assertEqual(ERROR_CODE2);
+        } else if (businessError.code === ERROR_CODE3) {
+          expect(businessError.code).assertEqual(ERROR_CODE3);
+        } else if (businessError.code === ERROR_CODE5) {
+          expect(businessError.code).assertEqual(ERROR_CODE5);
         } else {
-          hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
-          `${TAG} formProvider openFormManager, error: ${JSON.stringify(error)}`);
           expect().assertFail();
         }
+        done();
       }
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })

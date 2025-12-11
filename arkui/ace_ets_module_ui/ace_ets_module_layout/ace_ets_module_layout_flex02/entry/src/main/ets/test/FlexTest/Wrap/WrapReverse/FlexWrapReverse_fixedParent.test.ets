@@ -49,10 +49,12 @@ export default function flexWrapReverse_fixedParent() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedChangeChildWidthLessThanParent
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0100
-     * @tc.name testWrapReverseParentfixedChangeChildWidthLessThanParent
-     * @tc.desc The layout space of the parent component is fixed, and the size of the child component is changed,
-     *               child component width is smaller than parent component width
+     * @tc.desc   The layout space of the parent component is fixed, and the size of the child component is changed,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedChangeChildWidthLessThanParent',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedChangeChildWidthLessThanParent START');
@@ -91,10 +93,12 @@ export default function flexWrapReverse_fixedParent() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedChangeChildWidthLargerThanParent
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0200
-     * @tc.name testWrapReverseParentfixedChangeChildWidthLargerThanParent
-     * @tc.desc The layout space of the parent component is fixed, and the size of the child component is changed,
-     *               child component width is larger than parent component width
+     * @tc.desc   The layout space of the parent component is fixed, and the size of the child component is changed,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedChangeChildWidthLargerThanParent',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedChangeChildWidthLargerThanParent START');

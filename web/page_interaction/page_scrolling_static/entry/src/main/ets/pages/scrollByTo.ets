@@ -20,7 +20,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { Callback } from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import { OverScrollMode,TouchEvent,Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
@@ -52,7 +52,7 @@ struct WebComponent{
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

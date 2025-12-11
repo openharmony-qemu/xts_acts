@@ -48,12 +48,12 @@ export default function initializeModifierTest() {
     });
 
     /**
-     * @tc.number    initializeModifier_0010
-     * @tc.name      Test the api of initializeModifier
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   initializeModifier_0010
+     * @tc.number initializeModifier_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('initializeModifier_0010', Level.LEVEL0, async (done: Function) => {
       console.info('initializeModifier_0010 START');
@@ -70,12 +70,12 @@ export default function initializeModifierTest() {
     });
 
     /**
-     * @tc.number    attribute_0020
-     * @tc.name      Test the api of get attribute
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   attribute_0020
+     * @tc.number attribute_0020
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('attribute_0020', Level.LEVEL0, async (done: Function) => {
       console.info('attribute_0020 START');

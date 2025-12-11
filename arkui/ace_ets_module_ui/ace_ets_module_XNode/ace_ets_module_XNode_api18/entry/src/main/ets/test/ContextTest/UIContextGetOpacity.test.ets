@@ -47,12 +47,12 @@ export default function UIContextGetOpacityTest() {
     });
 
     /**
-     * @tc.number    UIContextGetOpacityTest_0100
-     * @tc.name      UIContextGetOpacityTest_0100
-     * @tc.desc      frameNode: GetOpacity Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIContextGetOpacityTest_0100
+     * @tc.number UIContextGetOpacityTest_0100
+     * @tc.desc   frameNode: GetOpacity Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIContextGetOpacityTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextGetOpacityTest_0100 START');

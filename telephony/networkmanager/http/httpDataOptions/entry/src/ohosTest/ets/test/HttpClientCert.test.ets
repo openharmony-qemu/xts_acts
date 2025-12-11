@@ -42,12 +42,12 @@ export const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
 export default function HttpClientCertTest() {
   describe("HttpClientCertTest", () => {
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0100
-     * @tc.name  : testHttpClientCert0100
-     * @tc.desc  : test clientCert with no certPath no keyPath certType any
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0100
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0100
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0100";
@@ -109,12 +109,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0200
-     * @tc.name  : testHttpClientCert0200
-     * @tc.desc  : test clientCert with no certPath no keyPath certType any
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0200
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0200
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0200";
@@ -164,12 +164,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0300
-     * @tc.name  : testHttpClientCert0300
-     * @tc.desc  : test clientCert with illegal certPath illegal keyPath certType any legitimated
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0300
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0300
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0300";
@@ -225,12 +225,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0400
-     * @tc.name  : testHttpClientCert0400
-     * @tc.desc  : test clientCert with illegal certPath illegal keyPath certType any legitimated
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0400
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0400
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0400",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0400";
@@ -279,12 +279,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0500
-     * @tc.name  : testHttpClientCert0500
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.P12
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0500
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0500
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0500";
@@ -340,12 +340,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0600
-     * @tc.name  : testHttpClientCert0600
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.P12
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0600
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0600
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0600",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0600";
@@ -395,12 +395,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0700
-     * @tc.name  : testHttpClientCert0700
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0700
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0700
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0700",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0700";
@@ -456,12 +456,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0800
-     * @tc.name  : testHttpClientCert0800
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0800
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0800
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0800",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0800";
@@ -511,12 +511,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_0900
-     * @tc.name  : testHttpClientCert0900
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.DER
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert0900
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0900
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert0900",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert0900";
@@ -572,12 +572,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1000
-     * @tc.name  : testHttpClientCert1000
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.DER
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1000
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1000
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1000",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1000";
@@ -627,12 +627,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1100
-     * @tc.name  : testHttpRequestInStreamClientCert1100
-     * @tc.desc  : test clientCert with no certPath no keyPath certType any
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1100
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1100
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1100";
@@ -689,12 +689,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1200
-     * @tc.name  : testHttpRequestInStreamClientCert1200
-     * @tc.desc  : test clientCert with no certPath no keyPath certType any
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1200
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1200
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1200";
@@ -744,12 +744,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1300
-     * @tc.name  : testHttpClientCert1300
-     * @tc.desc  : test clientCert with illegal certPath illegal keyPath certType any legitimated
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1300
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1300
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1300";
@@ -806,12 +806,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1400
-     * @tc.name  : testHttpClientCert1400
-     * @tc.desc  : test clientCert with illegal certPath illegal keyPath certType any legitimated
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1400
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1400
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1400",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1400";
@@ -861,12 +861,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1500
-     * @tc.name  : testHttpClientCert1500
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.P12
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1500
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1500
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1500";
@@ -923,12 +923,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1600
-     * @tc.name  : testHttpClientCert1600
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.P12
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1600
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1600
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1600",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1600";
@@ -978,12 +978,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1700
-     * @tc.name  : testHttpClientCert1700
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1700
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1700
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1700",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1700";
@@ -1040,12 +1040,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1800
-     * @tc.name  : testHttpClientCert1800
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1800
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1800
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1800",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1800";
@@ -1095,12 +1095,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_1900
-     * @tc.name  : testHttpClientCert1900
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.DER
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert1900
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1900
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert1900",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert1900";
@@ -1157,12 +1157,12 @@ export default function HttpClientCertTest() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ClientCert_2000
-     * @tc.name  : testHttpClientCert2000
-     * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.DER
-     * @tc.size  : smallTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testHttpClientCert2000
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_2000
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testHttpClientCert2000",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = "testHttpClientCert2000";

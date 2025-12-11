@@ -46,7 +46,6 @@ export default function inputMethodListJSUnit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_IME_inputMethodList_001
      * @tc.number SUB_InputMethod_IME_inputMethodList_001
      * @tc.desc   the list of inputMethod test

@@ -26,39 +26,39 @@ export default function scrollBlurTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BLUR_0100
-     * @tc.name       : testScrollBlur001
-     * @tc.desc       : testing blur for scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBlur001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BLUR_0100
+     * @tc.desc   testing blur for scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBlur001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBlur001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BLUR_0200
-     * @tc.name       : testScrollBlur002
-     * @tc.desc       : testing blur for scroll with max value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBlur002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BLUR_0200
+     * @tc.desc   testing blur for scroll with max value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBlur002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBlur002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BLUR_0300
-     * @tc.name       : testScrollBlur003
-     * @tc.desc       : testing blur for scroll with middle value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBlur003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BLUR_0300
+     * @tc.desc   testing blur for scroll with middle value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBlur003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBlur003()).assertEqual(0)

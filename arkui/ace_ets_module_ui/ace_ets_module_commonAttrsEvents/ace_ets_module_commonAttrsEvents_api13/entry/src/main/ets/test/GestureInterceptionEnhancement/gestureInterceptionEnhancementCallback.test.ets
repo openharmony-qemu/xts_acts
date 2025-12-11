@@ -47,12 +47,12 @@ export default function gestureInterceptionEnhancementCallbackTest() {
     });
 
     /**
-     * @tc.number    gestureInterceptionEnhancementCallbackTest_0010
-     * @tc.name      gestureInterceptionEnhancementTest
-     * @tc.desc      test the BaseGestureEvent callBackData when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gestureInterceptionEnhancementCallbackTest_0010
+     * @tc.number gestureInterceptionEnhancementCallbackTest_0010
+     * @tc.desc   test the BaseGestureEvent callBackData when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gestureInterceptionEnhancementCallbackTest_0010', Level.LEVEL0, async (done: Function) => {
         console.info('gestureInterceptionEnhancementCallbackTest_0010 START');

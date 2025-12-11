@@ -41,12 +41,12 @@ export default function Provider3Test() {
       done();
     });
     /**
-     * @tc.number    Provider3
-     * @tc.name      Provider3Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider3Test_0100
+     * @tc.number Provider3
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider3Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Provider3Test_0100 START');

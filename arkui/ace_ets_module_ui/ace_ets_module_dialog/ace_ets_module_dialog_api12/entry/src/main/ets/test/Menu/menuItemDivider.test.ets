@@ -43,14 +43,15 @@ export default function menuItemDivider() {
       console.info('menuItemDivider after each called');
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_menuItemDivider_0100
-     * @tc.name      menuItemDivider_0100
-     * @tc.desc      menuItemDivider test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   menuItemDivider_0100
+     * @tc.number menuItemDivider_0100
+     * @tc.desc   menuItemDivider_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('menuItemDivider_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[menuItemDivider_0100] START');
 
@@ -67,14 +68,15 @@ export default function menuItemDivider() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_menuItemDivider_0200
-     * @tc.name      menuItemDivider_0200
-     * @tc.desc      menuItemDivider test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   menuItemDivider_0200
+     * @tc.number menuItemDivider_0200
+     * @tc.desc   menuItemDivider_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('menuItemDivider_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[menuItemDivider_0200] START');
 
@@ -90,14 +92,15 @@ export default function menuItemDivider() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_menuItemDivider_0300
-     * @tc.name      menuItemDivider_0300
-     * @tc.desc      menuItemDivider test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   menuItemDivider_0300
+     * @tc.number menuItemDivider_0300
+     * @tc.desc   menuItemDivider_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('menuItemDivider_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[menuItemDivider_0300] START');
 
@@ -113,14 +116,15 @@ export default function menuItemDivider() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_menuItemDivider_0400
-     * @tc.name      menuItemDivider_0400
-     * @tc.desc      menuItemDivider test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   menuItemDivider_0400
+     * @tc.number menuItemDivider_0400
+     * @tc.desc   menuItemDivider_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('menuItemDivider_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[menuItemDivider_0400] START');
 

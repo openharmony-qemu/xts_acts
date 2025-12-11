@@ -19,13 +19,13 @@ import webSocket from 'libtestNetStackWebsocketNdk.so'
 export default function webSocketTest() {
   describe('ActsAbilityTest', () => {  
   
-    /*
-     * @tc.number:SUB_testWebSocketClientAddHeader002
-     * @tc.name: testWebSocketClientAddHeader002
-     * @tc.desc:test webSocket OHWebSocketClientAddHeader 
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testWebSocketClientAddHeader002
+     * @tc.number SUB_testWebSocketClientAddHeader002
+     * @tc.desc   test webSocket OHWebSocketClientAddHeader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebSocketClientAddHeader002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -35,13 +35,13 @@ export default function webSocketTest() {
       done()
     })
 
-   /*
-     * @tc.number:SUB_tesWebSocketClientSend004
-     * @tc.name: tesWebSocketClientSend004
-     * @tc.desc:test webSocket OHWebSocketClientSend 
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   tesWebSocketClientSend004
+     * @tc.number SUB_tesWebSocketClientSend004
+     * @tc.desc   test webSocket OHWebSocketClientSend
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tesWebSocketClientSend004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -52,6 +52,14 @@ export default function webSocketTest() {
       done()
     })
 
+    /**
+     * @tc.name   testwebSocketClientClose005
+     * @tc.number testwebSocketClientClose005
+     * @tc.desc   testwebSocketClientClose005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testwebSocketClientClose005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let result:number = webSocket.OHWebSocketClientClose();
@@ -60,6 +68,14 @@ export default function webSocketTest() {
       done()
     })
 
+    /**
+     * @tc.name   testWebSocketClientDestroy006
+     * @tc.number testWebSocketClientDestroy006
+     * @tc.desc   testWebSocketClientDestroy006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketClientDestroy006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let result:number = webSocket.OHWebSocketClientDestroy();

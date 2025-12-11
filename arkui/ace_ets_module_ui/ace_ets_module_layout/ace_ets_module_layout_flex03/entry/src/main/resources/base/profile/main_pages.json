@@ -68,6 +68,7 @@
         "MainAbility/pages/Flex/FlexSpaceResourcePage",
         "MainAbility/pages/Flex/FlexMatchParentPage",
         "MainAbility/pages/Flex/FlexWrapContent",
-        "MainAbility/pages/Flex/FlexFixAtIdealSizePage"
+        "MainAbility/pages/Flex/FlexFixAtIdealSizePage",
+        "MainAbility/pages/Flex/flexPage"
     ]
 }

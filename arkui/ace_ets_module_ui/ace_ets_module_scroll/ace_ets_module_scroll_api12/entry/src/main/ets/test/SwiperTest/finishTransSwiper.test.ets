@@ -44,12 +44,12 @@ export default function finishTransSwiper() {
     });
 
     /**
-     * @tc.number    finishTransSwiper_001
-     * @tc.name      finishTransSwiper_0100
-     * @tc.desc      Customize the Swiper page transition animation.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   finishTransSwiper_0100
+     * @tc.number finishTransSwiper_001
+     * @tc.desc   Customize the Swiper page transition animation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('finishTransSwiper_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[finishTransSwiper_0100] START');

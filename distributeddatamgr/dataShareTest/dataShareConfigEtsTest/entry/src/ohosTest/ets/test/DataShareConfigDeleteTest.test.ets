@@ -76,7 +76,6 @@ export default function dataShareConfigDeleteTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest001
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0550
      * @tc.desc   single uri
@@ -107,7 +106,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest002
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0560
      * @tc.desc   single uri
@@ -139,7 +137,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0570
      * @tc.desc   single uri
@@ -171,7 +168,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest004
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0580
      * @tc.desc   single uri
@@ -198,7 +194,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest005
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0590
      * @tc.desc   single uri
@@ -228,7 +223,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest006
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0600
      * @tc.desc   single uri
@@ -259,7 +253,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest007
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0610
      * @tc.desc   single uri
@@ -285,7 +278,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest008
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0620
      * @tc.desc   single uri
@@ -311,7 +303,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest009
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0630
      * @tc.desc   single uri
@@ -342,7 +333,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest010
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0640
      * @tc.desc   single uri
@@ -373,7 +363,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest011
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0650
      * @tc.desc   single uri
@@ -404,7 +393,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest012
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0660
      * @tc.desc   single uri
@@ -434,7 +422,6 @@ export default function dataShareConfigDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   dataShareConfigDeleteTest013
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0670
      * @tc.desc   single uri

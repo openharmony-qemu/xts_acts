@@ -55,6 +55,14 @@ export default function ActsgetcomponentaddTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0010
+     * @tc.number ArkUX_Get_component_add_0010
+     * @tc.desc   ArkUX_Get_component_add_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0010', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0010 START');
       setTimeout(() => {
@@ -77,6 +85,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0020
+     * @tc.number ArkUX_Get_component_add_0020
+     * @tc.desc   ArkUX_Get_component_add_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0020', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0020 START');
       setTimeout(() => {
@@ -99,6 +115,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0030
+     * @tc.number ArkUX_Get_component_add_0030
+     * @tc.desc   ArkUX_Get_component_add_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0030', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0030 START');
       setTimeout(() => {
@@ -121,6 +145,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0040
+     * @tc.number ArkUX_Get_component_add_0040
+     * @tc.desc   ArkUX_Get_component_add_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0040', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0040 START');
       setTimeout(() => {
@@ -143,6 +175,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0050
+     * @tc.number ArkUX_Get_component_add_0050
+     * @tc.desc   ArkUX_Get_component_add_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0050', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0050 START');
       setTimeout(() => {
@@ -165,6 +205,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0060
+     * @tc.number ArkUX_Get_component_add_0060
+     * @tc.desc   ArkUX_Get_component_add_0060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0060', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0060 START');
       setTimeout(() => {
@@ -187,6 +235,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0070
+     * @tc.number ArkUX_Get_component_add_0070
+     * @tc.desc   ArkUX_Get_component_add_0070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0070', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0070 START');
       setTimeout(() => {
@@ -209,6 +265,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0080
+     * @tc.number ArkUX_Get_component_add_0080
+     * @tc.desc   ArkUX_Get_component_add_0080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0080', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0080 START');
       setTimeout(() => {
@@ -231,6 +295,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0090
+     * @tc.number ArkUX_Get_component_add_0090
+     * @tc.desc   ArkUX_Get_component_add_0090
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0090', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0090 START');
       setTimeout(() => {
@@ -253,6 +325,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0100
+     * @tc.number ArkUX_Get_component_add_0100
+     * @tc.desc   ArkUX_Get_component_add_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0100 START');
       setTimeout(() => {
@@ -275,6 +355,14 @@ export default function ActsgetcomponentaddTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Get_component_add_0110
+     * @tc.number ArkUX_Get_component_add_0110
+     * @tc.desc   ArkUX_Get_component_add_0110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Get_component_add_0110', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Get_component_add_0110 START');
       setTimeout(() => {

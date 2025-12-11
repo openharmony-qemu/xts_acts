@@ -80,9 +80,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasIdProp
-         * @tc.desc      ACE
+         * @tc.name   testCanvasIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasIdProp', Level.LEVEL0, async function(done) {
             console.info('testCanvasIdProp START')
@@ -98,9 +101,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasClassProp
-         * @tc.desc      ACE
+         * @tc.name   testCanvasClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasClassProp', Level.LEVEL0, async function(done) {
             console.info('testCanvasClassProp START')
@@ -117,9 +123,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testCanvasClassPropNone START')
@@ -137,9 +146,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasStyleProp
-         * @tc.desc      ACEs
+         * @tc.name   testCanvasStyleProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACEs
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         //    it('testCanvasStyleProp', Level.LEVEL0, async function (done) {
         //        console.info('testCanvasStyleProp START')
@@ -163,9 +175,12 @@ export default function canvasPropsJsTest() {
         //    })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasRefProp
-         * @tc.desc      ACE
+         * @tc.name   testCanvasRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasRefProp', Level.LEVEL0, async function(done) {
             console.info('testCanvasRefProp START')
@@ -182,9 +197,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testCanvasRefPropNone START')
@@ -202,9 +220,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testCanvasDisabledPropTrue START')
@@ -221,9 +242,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testCanvasDisabledPropFalse START')
@@ -240,9 +264,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testCanvasDisabledPropNone START')
@@ -259,9 +286,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testCanvasFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testCanvasFocusablePropTrue START')
@@ -278,9 +308,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testCanvasFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testCanvasFocusablePropFalse START')
@@ -297,9 +330,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testCanvasFocusablePropNone START')
@@ -316,9 +352,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDataProp
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDataProp', Level.LEVEL0, async function(done) {
             console.info('testCanvasDataProp START')
@@ -336,9 +375,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testCanvasDataPropNone START')
@@ -356,9 +398,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testCanvasDirPropRtl START')
@@ -375,9 +420,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testCanvasDirPropLtr START')
@@ -394,9 +442,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testCanvasDirPropAuto START')
@@ -413,9 +464,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testCanvasDirPropNone START')
@@ -432,9 +486,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testCanvasForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasForPropNull', Level.LEVEL0, async function(done) {
             console.info('testCanvasForPropNull START')
@@ -452,9 +509,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testCanvasForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasForPropOne', Level.LEVEL0, async function(done) {
             console.info('testCanvasForPropOne START')
@@ -472,9 +532,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testCanvasForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasForPropThree', Level.LEVEL0, async function(done) {
             console.info('testCanvasForPropThree START')
@@ -492,9 +555,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testCanvasIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testCanvasIfPropTrue START')
@@ -512,9 +578,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasIfPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testCanvasIfPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         //    it('testCanvasIfPropFalse', Level.LEVEL0, async function (done) {
         //        console.info('testCanvasIfPropFalse START')
@@ -531,9 +600,12 @@ export default function canvasPropsJsTest() {
         //    })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasIfPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasIfPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         //    it('testCanvasIfPropNone', Level.LEVEL0, async function (done) {
         //        console.info('testCanvasIfPropNone START')
@@ -550,9 +622,12 @@ export default function canvasPropsJsTest() {
         //    })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testCanvasShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testCanvasShowPropTrue START')
@@ -570,9 +645,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testCanvasShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testCanvasShowPropFalse START')
@@ -590,9 +668,12 @@ export default function canvasPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCanvasShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testCanvasShowPropNone START')

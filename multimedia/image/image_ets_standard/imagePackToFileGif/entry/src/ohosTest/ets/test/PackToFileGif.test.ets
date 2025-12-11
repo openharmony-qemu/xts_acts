@@ -422,15 +422,12 @@ export default function imagePackToFileGif() {
         }
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0100
-         * @tc.name      : test the packToFile interface uses many PixelMaps
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0100
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0100", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -448,17 +445,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0200
-         * @tc.name      : test the packToFile interface uses PixelMap
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0200
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0200
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0200", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -476,15 +470,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0300
-         * @tc.name      : test the packToFile interface configuration delaytimes
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0300
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0300", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -503,15 +494,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0400
-         * @tc.name      : test the packToFile interface configuration loop
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0400
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0400", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -530,15 +518,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0500
-         * @tc.name      : test the packToFile interface no disposalTypes and no loopCount
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0500
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0500", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -559,15 +544,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0600
-         * @tc.name      : test the packToFile interface frameCount less than PixelMapList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0600
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0600", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -587,15 +569,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0700
-         * @tc.name      : test the packToFile interface frameCount more than PixelMapList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0700
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0700", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -615,15 +594,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0800
-         * @tc.name      : test the packToFile interface delayTimeList less than PixelMapList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0800
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0800", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -643,15 +619,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0900
-         * @tc.name      : test the packToFile interface delayTimeList more than PixelMapList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0900
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_0900", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -671,15 +644,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1000
-         * @tc.name      : test the packToFile interface disposalTypes less than PixelMapList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1000
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1000", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -699,15 +669,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1100
-         * @tc.name      : test the packToFile interface disposalTypes more than PixelMapList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1100
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1100", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -726,17 +693,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1200
-         * @tc.name      : test the packToFile interface uses test.bmp
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1200
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1200
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1200", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -753,17 +717,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1300
-         * @tc.name      : test the packToFile interface uses test.jpg
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1300
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1300
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1300", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -780,17 +741,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1400
-         * @tc.name      : test the packToFile interface uses test.ico
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1400
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1400
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1400", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -807,17 +765,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1500
-         * @tc.name      : test the packToFile interface uses test.svg
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1500
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1500
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1500", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -834,17 +789,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1600
-         * @tc.name      : test the packToFile interface uses test.dng
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1600
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1600
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1600", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -861,17 +813,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1700
-         * @tc.name      : test the packToFile interface uses test.jpeg
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1700
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1700
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1700", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -888,17 +837,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1800
-         * @tc.name      : test the packToFile interface uses test.webp
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1800
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1800
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1800", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
                 console.info("This device does not support GIF encoding.")
@@ -915,17 +861,14 @@ export default function imagePackToFileGif() {
             }
         });
 
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1900
-         * @tc.name      : test the packToFile interface uses HDRVividSingleLayer.heic
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
-         */
+         /**
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1900
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1900
+          * @tc.desc   1.create PixelMap List
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_1900", Level.LEVEL0, async (done: Function) => {
             try {
                 if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
@@ -958,15 +901,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0100
-         * @tc.name      : test the packToFile interface passed wrong frameCount
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0100
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0100", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -986,15 +926,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0200
-         * @tc.name      : test the packToFile interface passed wrong delayTimeList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0200
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0200", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1014,15 +951,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0300
-         * @tc.name      : test the packToFile interface passed wrong disposalTypes
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0300
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0300", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1042,15 +976,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0400
-         * @tc.name      : test the packToFile interface passed wrong loopCount
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0400
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0400", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1070,15 +1001,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0500
-         * @tc.name      : test the packToFile interface passed wrong loopCount
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0500
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILEFORSEQUENCE_ERROR_0500", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1098,15 +1026,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAPLIST_ERROR_0100
-         * @tc.name      : test the packToFile interface passed empty pixelMapList
-         * @tc.desc      : 1.create PixelMap List
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAPLIST_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAPLIST_ERROR_0100
+         * @tc.desc   1.create PixelMap List
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACKTOFILE_PIXELMAPLIST_ERROR_0100", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1126,15 +1051,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0100
-         * @tc.name      : test pack gif imagesource to file --callback
-         * @tc.desc      : 1.create imagesource
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.call packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0100", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1152,15 +1074,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0200
-         * @tc.name      : test pack gif PixelMap to file --callback
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.call packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0200
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0200", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1178,15 +1097,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0300
-         * @tc.name      : test pack gif imagesource to file --promise
-         * @tc.desc      : 1.create imagesource
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.call packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0300", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1204,15 +1120,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0400
-         * @tc.name      : test pack gif PixelMap to file --promise
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.call packToFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0400
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_GIF_PACKTOFILE_0400", Level.LEVEL0, async (done: Function) => {
             if (!isSupportGifEncode) {
@@ -1230,15 +1143,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_err_001
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/gif", quality: 101 };
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0100", Level.LEVEL0, async (done: Function) => {
             let globalpixelmap = await getPixelMapData()
@@ -1253,15 +1163,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200
-         * @tc.name      : sub_multimedia_image_packToFile_callback_pixelmap_err_002
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/gif" };
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_0200", Level.LEVEL0, async (done: Function) => {
             let source = await getImageSourceData("moving_test.gif");
@@ -1278,15 +1185,12 @@ export default function imagePackToFileGif() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_err_003
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/gif", quality: 101 };
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0300", Level.LEVEL0, async (done: Function) => {
             let globalpixelmap = await getPixelMapData()
@@ -1301,15 +1205,12 @@ export default function imagePackToFileGif() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0400
-         * @tc.name      : sub_multimedia_image_packToFile_promise_pixelmap_err_004
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.get writefd
-         *               : 3.create ImagePacker
-         *               : 4.packToFile { format: "image/gif", quality: 101 };
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_0400", Level.LEVEL0, async (done: Function) => {
             let source = await getImageSourceData("moving_test.gif");

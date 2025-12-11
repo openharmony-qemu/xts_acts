@@ -60,12 +60,12 @@ export default function ImageCreatePixelMapFromSurface() {
 
 
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_001
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_001
-     * @tc.desc       surfaceId is''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_001
+     * @tc.number image_CreatePixelMapFromSurface_Promise_001
+     * @tc.desc   surfaceId is''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_001';
@@ -83,12 +83,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_002
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_002
-     * @tc.desc       surfaceId is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_002
+     * @tc.number image_CreatePixelMapFromSurface_Promise_002
+     * @tc.desc   surfaceId is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_002';
@@ -106,12 +106,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_003
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_003
-     * @tc.desc       surfaceId is undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_003
+     * @tc.number image_CreatePixelMapFromSurface_Promise_003
+     * @tc.desc   surfaceId is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_003';
@@ -130,12 +130,12 @@ export default function ImageCreatePixelMapFromSurface() {
     })
 
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_004
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_004
-     * @tc.desc       surfaceId is indexSurfaceId,region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_004
+     * @tc.number image_CreatePixelMapFromSurface_Promise_004
+     * @tc.desc   surfaceId is indexSurfaceId,region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_004';
@@ -152,12 +152,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_005
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_005
-     * @tc.desc       surfaceId is indexSurfaceId,region is undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_005
+     * @tc.number image_CreatePixelMapFromSurface_Promise_005
+     * @tc.desc   surfaceId is indexSurfaceId,region is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_005';
@@ -174,12 +174,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_006
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_006
-     * @tc.desc       surfaceId is indexSurfaceId,region is ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_006
+     * @tc.number image_CreatePixelMapFromSurface_Promise_006
+     * @tc.desc   surfaceId is indexSurfaceId,region is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_006';
@@ -198,12 +198,12 @@ export default function ImageCreatePixelMapFromSurface() {
     })
 
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_007
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_007
-     * @tc.desc       surfaceId is '',region is ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_007
+     * @tc.number image_CreatePixelMapFromSurface_Promise_007
+     * @tc.desc   surfaceId is '',region is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_007';
@@ -221,12 +221,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_008
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_008
-     * @tc.desc       surfaceId is null,region is ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_008
+     * @tc.number image_CreatePixelMapFromSurface_Promise_008
+     * @tc.desc   surfaceId is null,region is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_008';
@@ -244,12 +244,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_009
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_009
-     * @tc.desc       surfaceId is undefined,region is ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_009
+     * @tc.number image_CreatePixelMapFromSurface_Promise_009
+     * @tc.desc   surfaceId is undefined,region is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_009';
@@ -267,12 +267,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_010
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_010
-     * @tc.desc       surfaceId is null,region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_010
+     * @tc.number image_CreatePixelMapFromSurface_Promise_010
+     * @tc.desc   surfaceId is null,region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_010';
@@ -290,12 +290,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_011
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_011
-     * @tc.desc       surfaceId is undefined,region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_011
+     * @tc.number image_CreatePixelMapFromSurface_Promise_011
+     * @tc.desc   surfaceId is undefined,region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_011';
@@ -312,12 +312,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_012
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_012
-     * @tc.desc       surfaceId is '',region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_012
+     * @tc.number image_CreatePixelMapFromSurface_Promise_012
+     * @tc.desc   surfaceId is '',region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_012';
@@ -334,12 +334,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_013
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_013
-     * @tc.desc       surfaceId is '',region is  ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_013
+     * @tc.number image_CreatePixelMapFromSurface_Promise_013
+     * @tc.desc   surfaceId is '',region is  ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_013';
@@ -356,12 +356,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Promise_014
-     * @tc.name       image_CreatePixelMapFromSurface_Promise_014
-     * @tc.desc       surfaceId is null,region is  undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Promise_014
+     * @tc.number image_CreatePixelMapFromSurface_Promise_014
+     * @tc.desc   surfaceId is null,region is  undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Promise_014';
@@ -378,12 +378,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_001
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_001
-     * @tc.desc       surfaceId is''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_001
+     * @tc.number image_CreatePixelMapFromSurface_Sync_001
+     * @tc.desc   surfaceId is''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_001';
@@ -398,12 +398,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_002
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_002
-     * @tc.desc       surfaceId is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_002
+     * @tc.number image_CreatePixelMapFromSurface_Sync_002
+     * @tc.desc   surfaceId is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_002';
@@ -418,12 +418,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_003
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_003
-     * @tc.desc       surfaceId is undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_003
+     * @tc.number image_CreatePixelMapFromSurface_Sync_003
+     * @tc.desc   surfaceId is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_003';
@@ -438,12 +438,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_004
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_004
-     * @tc.desc       indexSurfaceId,region is undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_004
+     * @tc.number image_CreatePixelMapFromSurface_Sync_004
+     * @tc.desc   indexSurfaceId,region is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_004';
@@ -458,12 +458,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_005
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_005
-     * @tc.desc       indexSurfaceId,region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_005
+     * @tc.number image_CreatePixelMapFromSurface_Sync_005
+     * @tc.desc   indexSurfaceId,region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_005';
@@ -478,12 +478,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_006
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_006
-     * @tc.desc       indexSurfaceId,region is ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_006
+     * @tc.number image_CreatePixelMapFromSurface_Sync_006
+     * @tc.desc   indexSurfaceId,region is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_006';
@@ -499,12 +499,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_007
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_007
-     * @tc.desc       indexSurfaceId is '',region
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_007
+     * @tc.number image_CreatePixelMapFromSurface_Sync_007
+     * @tc.desc   indexSurfaceId is '',region
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_007';
@@ -520,12 +520,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_008
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_008
-     * @tc.desc       indexSurfaceId is null,region
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_008
+     * @tc.number image_CreatePixelMapFromSurface_Sync_008
+     * @tc.desc   indexSurfaceId is null,region
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_008';
@@ -541,12 +541,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_009
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_009
-     * @tc.desc       indexSurfaceId is undefined,region
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_009
+     * @tc.number image_CreatePixelMapFromSurface_Sync_009
+     * @tc.desc   indexSurfaceId is undefined,region
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_009';
@@ -563,12 +563,12 @@ export default function ImageCreatePixelMapFromSurface() {
     })
 
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_010
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_010
-     * @tc.desc       indexSurfaceId is undefined,region is undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_010
+     * @tc.number image_CreatePixelMapFromSurface_Sync_010
+     * @tc.desc   indexSurfaceId is undefined,region is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_010';
@@ -583,12 +583,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_011
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_011
-     * @tc.desc       indexSurfaceId is undefined,region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_011
+     * @tc.number image_CreatePixelMapFromSurface_Sync_011
+     * @tc.desc   indexSurfaceId is undefined,region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_011';
@@ -604,12 +604,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_012
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_012
-     * @tc.desc       indexSurfaceId is null,region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_012
+     * @tc.number image_CreatePixelMapFromSurface_Sync_012
+     * @tc.desc   indexSurfaceId is null,region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_012';
@@ -625,12 +625,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_013
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_013
-     * @tc.desc       indexSurfaceId is '',region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_013
+     * @tc.number image_CreatePixelMapFromSurface_Sync_013
+     * @tc.desc   indexSurfaceId is '',region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_013';
@@ -646,12 +646,12 @@ export default function ImageCreatePixelMapFromSurface() {
       done();
     })
     /**
-     * @tc.number     image_CreatePixelMapFromSurface_Sync_014
-     * @tc.name       image_CreatePixelMapFromSurface_Sync_014
-     * @tc.desc       indexSurfaceId is '',region is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   image_CreatePixelMapFromSurface_Sync_014
+     * @tc.number image_CreatePixelMapFromSurface_Sync_014
+     * @tc.desc   indexSurfaceId is '',region is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_CreatePixelMapFromSurface_Sync_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_014';

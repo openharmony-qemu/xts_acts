@@ -43,12 +43,12 @@ export default function StyledStringURL() {
     });
 
     /**
-     * @tc.number    SUB_ACE_StyledStringURL_0100
-     * @tc.name      StyledStringURL_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   StyledStringURL_0100
+     * @tc.number SUB_ACE_StyledStringURL_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StyledStringURL_0100', Level.LEVEL2, async (done: Function) => {
       console.info('StyledStringURL_0100 START');

@@ -85,12 +85,12 @@ export default function sendableCreateImageSourceTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_001
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_001
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_001
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_001
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_001';
@@ -101,12 +101,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_002
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_002
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_002
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_002
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_002';
@@ -117,12 +117,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_003
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_003
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_003
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_003
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_003';
@@ -133,12 +133,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_004
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_004
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_004
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_004
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_004';
@@ -149,12 +149,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_005
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_005
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_005
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_005
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_005';
@@ -165,12 +165,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_006
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_006
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_006
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_006
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_006';
@@ -181,12 +181,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_007
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_007
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_007
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_007
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_007';
@@ -197,12 +197,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_008
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_008
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_008
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_008
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_008';
@@ -213,12 +213,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_009
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_009
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_009
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_009
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_009';
@@ -229,12 +229,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_010
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_010
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_010
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_010
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_010';
@@ -245,12 +245,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_011
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_011
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_011
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_011
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_011';
@@ -261,12 +261,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_012
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_012
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_012
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_012
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_012';
@@ -275,12 +275,12 @@ export default function sendableCreateImageSourceTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_013
-     * @tc.name      : sendableImage_createImageSource_sendable_promise_013
-     * @tc.desc      : sendableImage_createImageSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createImageSource_sendable_promise_013
+     * @tc.number SENDABLE_IMAGE_CREATE_IMAGE_SOURCE_013
+     * @tc.desc   sendableImage_createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createImageSource_sendable_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createImageSource_sendable_promise_013';

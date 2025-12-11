@@ -44,10 +44,13 @@ export default function polygonNewJsunit() {
       console.info("polygonNe after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testpolygonNe0001
-     * @tc.desic         acepolygonNeEtsTest0001
+    /**
+     * @tc.name   testpolygonNe0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testpolygonNe0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolygonNe0001', Level.LEVEL0, async () => {
       console.info('polygonNe testpolygonNe0001 START');
@@ -61,10 +64,13 @@ export default function polygonNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testpolygonNe0002
-     * @tc.desic         acepolygonNeEtsTest0002
+    /**
+     * @tc.name   testpolygonNe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testpolygonNe0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolygonNe0002', Level.LEVEL0, async () => {
       console.info('polygonNe testpolygonNe0002 START');

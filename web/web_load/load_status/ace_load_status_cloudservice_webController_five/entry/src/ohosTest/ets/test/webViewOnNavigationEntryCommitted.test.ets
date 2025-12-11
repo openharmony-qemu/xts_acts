@@ -59,13 +59,13 @@ export default function ActsAceWebViewOnNavigationEntryCommitted() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0001
-     *@tc.name testWebViewOnNavigationEntryCommitted01
-     *@tc.desc test onNavigationEntryCommitted
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewOnNavigationEntryCommitted01
+     * @tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0001
+     * @tc.desc   test onNavigationEntryCommitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewOnNavigationEntryCommitted01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebViewOnNavigationEntryCommitted01"
@@ -74,13 +74,13 @@ export default function ActsAceWebViewOnNavigationEntryCommitted() {
         sendEventByKey('webViewOnNavigationEntryCommittedButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0002
-     *@tc.name testWebViewOnNavigationEntryCommitted02
-     *@tc.desc test onNavigationEntryCommitted
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewOnNavigationEntryCommitted02
+     * @tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0002
+     * @tc.desc   test onNavigationEntryCommitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewOnNavigationEntryCommitted02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewOnNavigationEntryCommitted02"
@@ -89,13 +89,13 @@ export default function ActsAceWebViewOnNavigationEntryCommitted() {
       sendEventByKey('webViewOnNavigationEntryCommittedButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0003
-     *@tc.name testWebViewOnNavigationEntryCommitted03
-     *@tc.desc test onNavigationEntryCommitted
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewOnNavigationEntryCommitted03
+     * @tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0003
+     * @tc.desc   test onNavigationEntryCommitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewOnNavigationEntryCommitted03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewOnNavigationEntryCommitted03"
@@ -104,13 +104,13 @@ export default function ActsAceWebViewOnNavigationEntryCommitted() {
       sendEventByKey('webViewOnNavigationEntryCommittedButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0004
-     *@tc.name testWebViewOnNavigationEntryCommitted04
-     *@tc.desc test onNavigationEntryCommitted
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewOnNavigationEntryCommitted04
+     * @tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0004
+     * @tc.desc   test onNavigationEntryCommitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewOnNavigationEntryCommitted04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewOnNavigationEntryCommitted04"
@@ -119,13 +119,13 @@ export default function ActsAceWebViewOnNavigationEntryCommitted() {
       sendEventByKey('webViewOnNavigationEntryCommittedButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0005
-     *@tc.name testWebViewOnNavigationEntryCommitted05
-     *@tc.desc test onNavigationEntryCommitted
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewOnNavigationEntryCommitted05
+     * @tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0005
+     * @tc.desc   test onNavigationEntryCommitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewOnNavigationEntryCommitted05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewOnNavigationEntryCommitted05"

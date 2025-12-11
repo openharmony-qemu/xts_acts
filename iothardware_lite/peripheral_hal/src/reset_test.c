@@ -19,12 +19,6 @@
 
 void (*g_rebootDevice)(unsigned int);
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suit name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotResetTestSuite);
 
 /**
@@ -47,9 +41,12 @@ static BOOL IotResetTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_8000
- * @tc.name      : UART operation with RebootDevice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testIotReset001
+ * @tc.number SUB_UTILS_WIFIIOT_API_8000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotResetTestSuite, testIotReset001, Function | MediumTest | Level1)
 {

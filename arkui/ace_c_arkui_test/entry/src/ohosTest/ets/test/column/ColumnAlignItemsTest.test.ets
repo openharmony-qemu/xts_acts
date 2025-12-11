@@ -26,52 +26,52 @@ export default function columnAlignItemsTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0100
-     * @tc.name: testColumnAlignItems001
-     * @tc.desc: testing alignItems for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnAlignItems001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0100
+     * @tc.desc   testing alignItems for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnAlignItems001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnAlignItems001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0200
-     * @tc.name: testColumnAlignItems002
-     * @tc.desc: testing alignItems for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnAlignItems002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0200
+     * @tc.desc   testing alignItems for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnAlignItems002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnAlignItems002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0300
-     * @tc.name: testColumnAlignItems003
-     * @tc.desc: testing alignItems for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnAlignItems003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0300
+     * @tc.desc   testing alignItems for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnAlignItems003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnAlignItems003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0400
-     * @tc.name: testColumnAlignItems004
-     * @tc.desc: testing alignItems for column with unnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnAlignItems004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ALIGNITEMS_0400
+     * @tc.desc   testing alignItems for column with unnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnAlignItems004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnAlignItems004()).assertEqual(0)

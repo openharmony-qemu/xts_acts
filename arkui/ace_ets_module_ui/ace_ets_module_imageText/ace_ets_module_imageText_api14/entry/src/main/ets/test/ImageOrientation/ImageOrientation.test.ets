@@ -44,6 +44,14 @@ export default function ImageOrientationTest() {
       done();
     });
 
+    /**
+     * @tc.name   ImageOrientationTest_0100
+     * @tc.number ImageOrientationTest_0100
+     * @tc.desc   ImageOrientationTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ImageOrientationTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0100 START');
       let driver: Driver = Driver.create();

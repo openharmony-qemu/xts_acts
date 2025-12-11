@@ -94,12 +94,12 @@ export default function photoAccessHelperGetObjectByPositionTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_001
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_001
-     * @tc.desc      : phAccessHelper.getObjectByPosition index 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_001
+     * @tc.desc   phAccessHelper.getObjectByPosition index 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_001';
@@ -109,12 +109,12 @@ export default function photoAccessHelperGetObjectByPositionTest() {
       });
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_002
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_002
-     * @tc.desc      : phAccessHelper.getObjectByPosition index 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_002
+     * @tc.desc   phAccessHelper.getObjectByPosition index 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_002';
@@ -124,12 +124,12 @@ export default function photoAccessHelperGetObjectByPositionTest() {
       });
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_003
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_003
-     * @tc.desc      : phAccessHelper.getObjectByPosition index -1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_003
+     * @tc.desc   phAccessHelper.getObjectByPosition index -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_CALLBACK_003';
@@ -139,12 +139,12 @@ export default function photoAccessHelperGetObjectByPositionTest() {
       });
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
-     * @tc.desc      : phAccessHelper.getObjectByPosition index 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
+     * @tc.desc   phAccessHelper.getObjectByPosition index 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001';
@@ -154,12 +154,12 @@ export default function photoAccessHelperGetObjectByPositionTest() {
       });
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
-     * @tc.desc      : phAccessHelper.getObjectByPosition index 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
+     * @tc.desc   phAccessHelper.getObjectByPosition index 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002';
@@ -169,11 +169,12 @@ export default function photoAccessHelperGetObjectByPositionTest() {
       });
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
-     * @tc.desc      : phAccessHelper.getObjectByPosition index -1
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
+     * @tc.desc   phAccessHelper.getObjectByPosition index -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003';

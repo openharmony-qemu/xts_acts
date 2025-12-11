@@ -46,12 +46,14 @@ export default function AlertDialog1() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : AlertDialog1_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   AlertDialog1_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('AlertDialog1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('AlertDialog1_0100 START');
       let driver = await Driver.create()
@@ -81,12 +83,14 @@ export default function AlertDialog1() {
       console.info('[AlertDialog1_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : AlertDialog1_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   AlertDialog1_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('AlertDialog1_0200', Level.LEVEL2, async (done: Function) => {
       console.info('AlertDialog1_0200 START');
       let driver = await Driver.create()

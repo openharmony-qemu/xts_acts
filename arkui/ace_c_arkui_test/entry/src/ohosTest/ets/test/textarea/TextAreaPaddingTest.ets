@@ -26,26 +26,26 @@ export default function textAreaPaddingTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_PADDING_0100
-     * @tc.name: testTextAreaPadding001
-     * @tc.desc: testing padding for textArea with single value 16vp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPadding001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_PADDING_0100
+     * @tc.desc   testing padding for textArea with single value 16vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPadding001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPadding001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_PADDING_0200
-     * @tc.name: testTextAreaPadding002
-     * @tc.desc: testing padding for textArea with overall value array 8,16,10,20(vp)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPadding002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_PADDING_0200
+     * @tc.desc   testing padding for textArea with overall value array 8,16,10,20(vp)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPadding002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPadding002()).assertEqual(0)

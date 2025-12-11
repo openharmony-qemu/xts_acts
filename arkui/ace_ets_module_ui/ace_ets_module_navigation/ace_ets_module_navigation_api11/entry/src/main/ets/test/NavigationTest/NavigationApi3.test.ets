@@ -45,11 +45,13 @@ export default function NavigationApi3() {
       console.info("NavigationApi3 after each called");
     });
 
-    /*
-     * @tc.number      NavigationApi3_001
-     * @tc.name        NavigationApi3_001
-     * @tc.desc        Navigation NavDestinationMode DIALOG and STANDARD test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   NavigationApi3_001
+     * @tc.number NavigationApi3_001
+     * @tc.desc   Navigation NavDestinationMode DIALOG and STANDARD test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationApi3_001',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[NavigationApi3_001] START');

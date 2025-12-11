@@ -29,12 +29,12 @@ export default function builtinsRegExpConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpConstructorTest0100
      * @tc.number SUB_BUILTINS_REGEXP_CONSTRUCTOR_TEST_0100
-     * @tc.name builtinsRegExpConstructorTest0100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpConstructorTest0100';
@@ -46,12 +46,12 @@ export default function builtinsRegExpConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpConstructorTest0200
      * @tc.number SUB_BUILTINS_REGEXP_CONSTRUCTOR_TEST_0200
-     * @tc.name builtinsRegExpConstructorTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpConstructorTest0200';
@@ -64,12 +64,12 @@ export default function builtinsRegExpConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpConstructorTest0300
      * @tc.number SUB_BUILTINS_REGEXP_CONSTRUCTOR_TEST_0300
-     * @tc.name builtinsRegExpConstructorTest0300
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpConstructorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpConstructorTest0300';

@@ -19,12 +19,12 @@ const Success = 0
 export default function ActsBackgroundTaskErrorTest() {
   describe('ActsBackgroundTaskErrorTest', () => {
     /**
-     * @tc.number  : SUB_Resourceschedule_BackgroundProcessManagerSuccess_0100
-     * @tc.name    : SUB_Resourceschedule_BackgroundProcessManagerSuccess_0100
-     * @tc.desc    : Test BackgroundProcessManagerSuccess
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_BackgroundProcessManagerSuccess_0100
+     * @tc.number SUB_Resourceschedule_BackgroundProcessManagerSuccess_0100
+     * @tc.desc   Test BackgroundProcessManagerSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_BackgroundProcessManagerSuccess_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -40,12 +40,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_BackgroundProcessManagerInvalidParam_0200
-     * @tc.name    : SUB_Resourceschedule_BackgroundProcessManagerInvalidParam_0200
-     * @tc.desc    : Test BackgroundProcessManagerInvalidParam
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_BackgroundProcessManagerInvalidParam_0200
+     * @tc.number SUB_Resourceschedule_BackgroundProcessManagerInvalidParam_0200
+     * @tc.desc   Test BackgroundProcessManagerInvalidParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_BackgroundProcessManagerInvalidParam_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -61,12 +61,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_SetProcessPriorityInvalidParam_0300
-     * @tc.name    : SUB_Resourceschedule_SetProcessPriorityInvalidParam_0300
-     * @tc.desc    : Test SetProcessPriorityInvalidParam
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_SetProcessPriorityInvalidParam_0300
+     * @tc.number SUB_Resourceschedule_SetProcessPriorityInvalidParam_0300
+     * @tc.desc   Test SetProcessPriorityInvalidParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_SetProcessPriorityInvalidParam_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -82,12 +82,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_RequestSuspendDelaySuccess_0100
-     * @tc.name    : SUB_Resourceschedule_RequestSuspendDelaySuccess_0100
-     * @tc.desc    : Test RequestSuspendDelaySuccess
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_RequestSuspendDelaySuccess_0100
+     * @tc.number SUB_Resourceschedule_RequestSuspendDelaySuccess_0100
+     * @tc.desc   Test RequestSuspendDelaySuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_RequestSuspendDelaySuccess_0100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -103,12 +103,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_RequestSuspendDelayInvalidParam_0200
-     * @tc.name    : SUB_Resourceschedule_RequestSuspendDelayInvalidParam_0200
-     * @tc.desc    : Test RequestSuspendDelayInvalidParam
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_RequestSuspendDelayInvalidParam_0200
+     * @tc.number SUB_Resourceschedule_RequestSuspendDelayInvalidParam_0200
+     * @tc.desc   Test RequestSuspendDelayInvalidParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_RequestSuspendDelayInvalidParam_0200', Level.LEVEL3, async (done: Function) => {
       try {
@@ -124,12 +124,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_RequestSuspendDelaySVFailed_0300
-     * @tc.name    : SUB_Resourceschedule_RequestSuspendDelaySVFailed_0300
-     * @tc.desc    : Test RequestSuspendDelaySVFailed
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_RequestSuspendDelaySVFailed_0300
+     * @tc.number SUB_Resourceschedule_RequestSuspendDelaySVFailed_0300
+     * @tc.desc   Test RequestSuspendDelaySVFailed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_RequestSuspendDelaySVFailed_0300', Level.LEVEL3, async (done: Function) => {
       try {
@@ -145,12 +145,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_GetRemainingDelayTimeSuccess_0400
-     * @tc.name    : SUB_Resourceschedule_GetRemainingDelayTimeSuccess_0400
-     * @tc.desc    : Test GetRemainingDelayTimeSuccess
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_GetRemainingDelayTimeSuccess_0400
+     * @tc.number SUB_Resourceschedule_GetRemainingDelayTimeSuccess_0400
+     * @tc.desc   Test GetRemainingDelayTimeSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_GetRemainingDelayTimeSuccess_0400', Level.LEVEL3, async (done: Function) => {
       try {
@@ -166,12 +166,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_GetRemainingDelayTimeInfoVerFailed_0500
-     * @tc.name    : SUB_Resourceschedule_GetRemainingDelayTimeInfoVerFailed_0500
-     * @tc.desc    : Test GetRemainingDelayTimeInfoVerFailed
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_GetRemainingDelayTimeInfoVerFailed_0500
+     * @tc.number SUB_Resourceschedule_GetRemainingDelayTimeInfoVerFailed_0500
+     * @tc.desc   Test GetRemainingDelayTimeInfoVerFailed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_GetRemainingDelayTimeInfoVerFailed_0500', Level.LEVEL3, async (done: Function) => {
       try {
@@ -187,12 +187,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_CancelSuspendDelaySuccess_0600
-     * @tc.name    : SUB_Resourceschedule_CancelSuspendDelaySuccess_0600
-     * @tc.desc    : Test CancelSuspendDelaySuccess
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_CancelSuspendDelaySuccess_0600
+     * @tc.number SUB_Resourceschedule_CancelSuspendDelaySuccess_0600
+     * @tc.desc   Test CancelSuspendDelaySuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_CancelSuspendDelaySuccess_0600', Level.LEVEL3, async (done: Function) => {
       try {
@@ -208,12 +208,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_CancelSuspendDelayVerFailed_0700
-     * @tc.name    : SUB_Resourceschedule_CancelSuspendDelayVerFailed_0700
-     * @tc.desc    : Test CancelSuspendDelayVerFailed
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_CancelSuspendDelayVerFailed_0700
+     * @tc.number SUB_Resourceschedule_CancelSuspendDelayVerFailed_0700
+     * @tc.desc   Test CancelSuspendDelayVerFailed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_CancelSuspendDelayVerFailed_0700', Level.LEVEL3, async (done: Function) => {
       try {
@@ -229,12 +229,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_GetTransientTaskInfoSuccess_0800
-     * @tc.name    : SUB_Resourceschedule_GetTransientTaskInfoSuccess_0800
-     * @tc.desc    : Test GetTransientTaskInfoSuccess
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_GetTransientTaskInfoSuccess_0800
+     * @tc.number SUB_Resourceschedule_GetTransientTaskInfoSuccess_0800
+     * @tc.desc   Test GetTransientTaskInfoSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_GetTransientTaskInfoSuccess_0800', Level.LEVEL3, async (done: Function) => {
       try {
@@ -250,12 +250,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_TransientTaskOK_0900
-     * @tc.name    : SUB_Resourceschedule_TransientTaskOK_0900
-     * @tc.desc    : Test TransientTaskOK
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_TransientTaskOK_0900
+     * @tc.number SUB_Resourceschedule_TransientTaskOK_0900
+     * @tc.desc   Test TransientTaskOK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_TransientTaskOK_0900', Level.LEVEL3, async (done: Function) => {
       try {
@@ -271,12 +271,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_TransientTaskInvalidParam_1000
-     * @tc.name    : SUB_Resourceschedule_TransientTaskInvalidParam_1000
-     * @tc.desc    : Test TransientTaskInvalidParam
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_TransientTaskInvalidParam_1000
+     * @tc.number SUB_Resourceschedule_TransientTaskInvalidParam_1000
+     * @tc.desc   Test TransientTaskInvalidParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_TransientTaskInvalidParam_1000', Level.LEVEL3, async (done: Function) => {
       try {
@@ -292,12 +292,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_TransientTaskCIVerificationFailed_1100
-     * @tc.name    : SUB_Resourceschedule_TransientTaskCIVerificationFailed_1100
-     * @tc.desc    : Test TransientTaskCIVerificationFailed
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_TransientTaskCIVerificationFailed_1100
+     * @tc.number SUB_Resourceschedule_TransientTaskCIVerificationFailed_1100
+     * @tc.desc   Test TransientTaskCIVerificationFailed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_TransientTaskCIVerificationFailed_1100', Level.LEVEL3, async (done: Function) => {
       try {
@@ -313,12 +313,12 @@ export default function ActsBackgroundTaskErrorTest() {
     })
 
     /**
-     * @tc.number  : SUB_Resourceschedule_TransientTaskSVFailed_1200
-     * @tc.name    : SUB_Resourceschedule_TransientTaskSVFailed_1200
-     * @tc.desc    : Test TransientTaskSVFailed
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Resourceschedule_TransientTaskSVFailed_1200
+     * @tc.number SUB_Resourceschedule_TransientTaskSVFailed_1200
+     * @tc.desc   Test TransientTaskSVFailed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Resourceschedule_TransientTaskSVFailed_1200', Level.LEVEL3, async (done: Function) => {
       try {

@@ -28,7 +28,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     hilog.info(domain, tag, '%{public}s', 'SystemDateTimeJsunitStaticTest start');
         
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTimezone_JS_API_Static_0100
      * @tc.number SUB_systemDateTime_getTimezone_JS_API_Static_0100
      * @tc.desc   Test systemTimeDate_setTimezone API functionality.
@@ -50,7 +49,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTime_sync_Static_0010
      * @tc.number SUB_systemDateTime_getTime_sync_Static_0010
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -68,7 +66,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTimezone_JS_API_Static_0200
      * @tc.number SUB_systemDateTime_getTimezone_JS_API_Static_0200
      * @tc.desc   Test systemTimeDate_setTimezone API functionality.
@@ -97,7 +94,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTime_sync_Static_0020
      * @tc.number SUB_systemDateTime_getTime_sync_Static_0020
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -115,7 +111,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTime_sync_Static_0030
      * @tc.number SUB_systemDateTime_getTime_sync_Static_0030
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -133,7 +128,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_Static_0050
      * @tc.number SUB_systemDateTime_getUptime_sync_Static_0050
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -151,7 +145,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_Static_0060
      * @tc.number SUB_systemDateTime_getUptime_sync_Static_0060
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -169,7 +162,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_Static_0070
      * @tc.number SUB_systemDateTime_getUptime_sync_Static_0070
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -187,7 +179,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_Static_0090
      * @tc.number SUB_systemDateTime_getUptime_sync_Static_0090
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
@@ -205,7 +196,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_Static_0100
      * @tc.number SUB_systemDateTime_getUptime_sync_Static_0100
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -223,7 +213,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_Static_0110
      * @tc.number SUB_systemDateTime_getUptime_sync_Static_0110
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -241,7 +230,6 @@ export default function SystemDateTimeJsunitStaticTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTimezoneSync_sync_Static_0130
      * @tc.number SUB_systemDateTime_getTimezoneSync_sync_Static_0130
      * @tc.desc   Test systemTimeDate_setTimezone API functionality.

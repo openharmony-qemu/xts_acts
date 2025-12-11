@@ -31,6 +31,14 @@ export default function SecurityHuksSignVerifyDSACallbackJsunit() {
             useSoftware = await checkSoftware();
             done();
         })
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_DSA_001
+         * @tc.number Security_HUKS_SignVerify_API9_DSA_001
+         * @tc.desc   Security_HUKS_SignVerify_API9_DSA_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_DSA_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyDSASIGNSHA1KeyAlias001';
             let HuksOptions = {
@@ -57,6 +65,14 @@ export default function SecurityHuksSignVerifyDSACallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_DSA_002
+         * @tc.number Security_HUKS_SignVerify_API9_DSA_002
+         * @tc.desc   Security_HUKS_SignVerify_API9_DSA_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_DSA_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyDSASIGNSHA1KeyAlias002';
             let HuksOptions = {
@@ -73,6 +89,14 @@ export default function SecurityHuksSignVerifyDSACallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_DSA_003
+         * @tc.number Security_HUKS_SignVerify_API9_DSA_003
+         * @tc.desc   Security_HUKS_SignVerify_API9_DSA_003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_DSA_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyDSASIGNSHA1KeyAlias003';
             let HuksOptions = {
@@ -99,6 +123,14 @@ export default function SecurityHuksSignVerifyDSACallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_DSA_004
+         * @tc.number Security_HUKS_SignVerify_API9_DSA_004
+         * @tc.desc   Security_HUKS_SignVerify_API9_DSA_004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_DSA_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyDSASIGNSHA1KeyAlias004';
             let HuksOptions = {

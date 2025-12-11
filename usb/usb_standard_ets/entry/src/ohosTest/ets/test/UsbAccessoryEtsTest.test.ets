@@ -115,7 +115,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAccessoryList001
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0100
      * @tc.desc   verify getAccessoryList result
@@ -146,7 +145,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAccessoryList002
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_RetValue_0400
      * @tc.desc   verify getAccessoryList result
@@ -167,7 +165,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight001
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0200
      * @tc.desc   verify requestAccessoryRight no param result
@@ -193,7 +190,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight002
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0300
      * @tc.desc   verify requestAccessoryRight result
@@ -223,7 +219,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestAccessoryRight003
      * @tc.number SUB_USB_DeviceManager_ReValue_Accessory_0100
      * @tc.desc   verify requestAccessoryRight result
@@ -251,7 +246,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasAccessoryRight001
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0400
      * @tc.desc   erify hasAccessoryRight no param result
@@ -276,7 +270,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasAccessoryRight002
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0500
      * @tc.desc   verify hasAccessoryRight result
@@ -301,7 +294,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasAccessoryRight003
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0600
      * @tc.desc   verify hasAccessoryRight result
@@ -333,7 +325,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCancelAccessoryRight001
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0700
      * @tc.desc   verify cancelAccessoryRight no param result
@@ -359,7 +350,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCancelAccessoryRight002
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0800
      * @tc.desc   verify cancelAccessoryRight result
@@ -389,7 +379,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory001
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_0900
      * @tc.desc   verify openAccessory no param result
@@ -414,7 +403,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory002
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_1000
      * @tc.desc   verify openAccessory result
@@ -450,7 +438,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory003
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_1100
      * @tc.desc   verify openAccessory reopen
@@ -487,7 +474,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpenAccessory004
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_1200
      * @tc.desc   verify openAccessory no permission
@@ -511,7 +497,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCloseAccessory001
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_1300
      * @tc.desc   verify closeAccessory result
@@ -545,7 +530,6 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCloseAccessory002
      * @tc.number SUB_USB_DeviceManager_JS_Accessory_1400
      * @tc.desc   verify openAccessory no param result

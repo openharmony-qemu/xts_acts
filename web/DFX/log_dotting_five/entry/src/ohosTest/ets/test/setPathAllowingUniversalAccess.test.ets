@@ -52,28 +52,28 @@ export default function setPathAllowingUniversalAccess() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0200
-    * @tc.name       : setPathAllowingUniversalAccess0200
-    * @tc.desc       : test setPathAllowingUniversalAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   setPathAllowingUniversalAccess0200
+     * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0200
+     * @tc.desc   test setPathAllowingUniversalAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setPathAllowingUniversalAccess0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("setPathAllowingUniversalAccess0200", 119030)
       Utils.registerEvent("setPathAllowingUniversalAccess0200", '401', 119040, done);
       sendEventByKey('setPathAllowingUniversalAccessButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0300
-    * @tc.name       : setPathAllowingUniversalAccess0300
-    * @tc.desc       : test setPathAllowingUniversalAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   setPathAllowingUniversalAccess0300
+     * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0300
+     * @tc.desc   test setPathAllowingUniversalAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setPathAllowingUniversalAccess0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("setPathAllowingUniversalAccess0300", 119030)
       Utils.registerEvent("setPathAllowingUniversalAccess0300", '401', 119050, done);

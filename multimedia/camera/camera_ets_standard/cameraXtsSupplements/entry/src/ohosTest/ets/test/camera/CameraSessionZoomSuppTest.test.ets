@@ -269,12 +269,12 @@ export default function CameraSessionZoomSuppTest() {
     });
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0100
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0100
-     * @tc.desc       Check capture session support video stabilization high mode with promise or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0100
+     * @tc.desc   Check capture session support video stabilization high mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0100', Level.LEVEL2,
       async (done: Function) => {
@@ -290,12 +290,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0200
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0200
-     * @tc.desc       Check capture session support video stabilization high mode with promise or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0200
+     * @tc.desc   Check capture session support video stabilization high mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0200', Level.LEVEL2,
       async (done: Function) => {
@@ -311,12 +311,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0300
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0300
-     * @tc.desc       Check capture session support video stabilization high mode with promise or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0300
+     * @tc.desc   Check capture session support video stabilization high mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0300', Level.LEVEL2,
       async (done: Function) => {
@@ -333,12 +333,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0800
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0800
-     * @tc.desc       Check capture session support video stabilization high mode with promise or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0800
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0800
+     * @tc.desc   Check capture session support video stabilization high mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_VIDEO_STABILIZATION_SETVIDEOSTABILIZATIONMODE_0800', Level.LEVEL2,
       async (done: Function) => {
@@ -354,12 +354,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0100
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0100
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0100
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0100',
       Level.LEVEL2, async (done: Function) => {
@@ -371,12 +371,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0200
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0200
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0200
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0200',
       Level.LEVEL2, async (done: Function) => {
@@ -388,12 +388,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0300
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0300
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0300
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0300',
       Level.LEVEL2, async (done: Function) => {
@@ -406,12 +406,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0400
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0400
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0400
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0400',
       Level.LEVEL2, async (done: Function) => {
@@ -423,12 +423,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0500
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0500
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0500
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0500',
       Level.LEVEL2, async (done: Function) => {
@@ -440,12 +440,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0600
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0600
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0600
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0600',
       Level.LEVEL2, async (done: Function) => {
@@ -457,12 +457,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0700
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0700
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0700
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0700
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0700',
       Level.LEVEL2, async (done: Function) => {
@@ -474,12 +474,12 @@ export default function CameraSessionZoomSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0800
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0800
-     * @tc.desc       Check capture session support video stabilization errorcode
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0800
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0800
+     * @tc.desc   Check capture session support video stabilization errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0800',
       Level.LEVEL2, async (done: Function) => {

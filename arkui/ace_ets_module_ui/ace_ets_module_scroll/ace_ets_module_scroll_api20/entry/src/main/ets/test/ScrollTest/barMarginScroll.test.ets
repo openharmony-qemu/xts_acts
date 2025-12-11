@@ -43,12 +43,12 @@ export default function barMarginScroll() {
     });
 
     /**
-     * @tc.number    barMarginScroll_001
-     * @tc.name      barMarginScroll_0100
-     * @tc.desc      Set the margins for the scrollbar of the Scroll component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barMarginScroll_0100
+     * @tc.number barMarginScroll_001
+     * @tc.desc   Set the margins for the scrollbar of the Scroll component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barMarginScroll_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[barMarginScroll_0100] START');

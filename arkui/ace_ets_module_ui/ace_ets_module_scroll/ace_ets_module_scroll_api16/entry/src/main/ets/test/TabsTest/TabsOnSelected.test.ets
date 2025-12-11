@@ -48,10 +48,12 @@ export default function TabsOnSelectedTest() {
     })
 
     /**
-     * @tc.number    TabsOnSelectedTest0010
-     * @tc.name      TabsOnSelectedTest0010
-     * @tc.desc      onSelected
-     * @tc.level     Level 2
+     * @tc.name   TabsOnSelectedTest0010
+     * @tc.number TabsOnSelectedTest0010
+     * @tc.desc   onSelected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsOnSelectedTest0010', Level.LEVEL1, async (done: Function) => {
         let tagName = 'TabsOnSelectedTest0010';
@@ -69,10 +71,12 @@ export default function TabsOnSelectedTest() {
       });
 
     /**
-     * @tc.number    TabsOnSelectedTest0020
-     * @tc.name      TabsOnSelectedTest0020
-     * @tc.desc      onSelected
-     * @tc.level     Level 2
+     * @tc.name   TabsOnSelectedTest0020
+     * @tc.number TabsOnSelectedTest0020
+     * @tc.desc   onSelected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsOnSelectedTest0020', Level.LEVEL1, async (done: Function) => {
         let tagName = 'TabsOnSelectedTest0020';

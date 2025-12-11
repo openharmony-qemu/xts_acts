@@ -40,12 +40,12 @@ export default function InactiveColor_APITest() {
       done();
     });
     /**
-     * @tc.number    InactiveColor
-     * @tc.name      InactiveColor_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   InactiveColor_APITest_0100
+     * @tc.number InactiveColor
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InactiveColor_APITest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('InactiveColor_APITest_0100 START');

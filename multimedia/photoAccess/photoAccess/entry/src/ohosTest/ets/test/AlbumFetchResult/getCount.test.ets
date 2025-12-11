@@ -41,12 +41,12 @@ export default function albumGetCountTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_COUNT_0000
-     * @tc.name      : album_getCount_callback_000
-     * @tc.desc      : getCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getCount_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_COUNT_0000
+     * @tc.desc   getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getCount_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_getCount_callback_000';
@@ -79,12 +79,12 @@ export default function albumGetCountTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_COUNT_0100
-     * @tc.name      : album_getCount_callback_001
-     * @tc.desc      : getCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getCount_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_COUNT_0100
+     * @tc.desc   getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getCount_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_getCount_callback_001';

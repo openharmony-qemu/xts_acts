@@ -26,39 +26,39 @@ export default function textBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGN_0100
-     * @tc.name       : testTextBackgroundColor001
-     * @tc.desc       : testing align for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGN_0100
+     * @tc.desc   testing align for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDCOLOR_0200
-     * @tc.name       : testTextBackgroundColor002
-     * @tc.desc       : testing align for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing align for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ALIGN_0300
-     * @tc.name       : testTextBackgroundColor003
-     * @tc.desc       : testing backgroundcolor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ALIGN_0300
+     * @tc.desc   testing backgroundcolor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundColor003()).assertEqual(0)

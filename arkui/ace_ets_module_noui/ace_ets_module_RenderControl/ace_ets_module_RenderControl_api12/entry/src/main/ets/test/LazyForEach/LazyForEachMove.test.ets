@@ -59,9 +59,12 @@ export default function LazyForEachMove() {
     });
 
     /**
+     * @tc.name   LazyForEachMove_001
      * @tc.number LazyForEachMove_001
-     * @tc.name LazyForEachMove_001
-     * @tc.desc Test LazyForEachMove
+     * @tc.desc   Test LazyForEachMove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachMove_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachMove_001] START');

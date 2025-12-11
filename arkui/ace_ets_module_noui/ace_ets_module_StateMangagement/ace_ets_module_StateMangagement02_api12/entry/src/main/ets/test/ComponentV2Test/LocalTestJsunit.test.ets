@@ -46,12 +46,12 @@ export default function LocalTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalTestJsunit_001
-     * @tc.name      LocalTestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalTestJsunit_001
+     * @tc.number LocalTestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalTestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalTestJsunit_001] START');
@@ -70,12 +70,12 @@ export default function LocalTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalTestJsunit_002
-     * @tc.name      LocalTestJsunit_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalTestJsunit_002
+     * @tc.number LocalTestJsunit_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalTestJsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalTestJsunit_002] START');
@@ -93,12 +93,12 @@ export default function LocalTestJsunit() {
       done();
     });
     /**
-     * @tc.number    LocalTestJsunit_003
-     * @tc.name      LocalTestJsunit_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalTestJsunit_003
+     * @tc.number LocalTestJsunit_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalTestJsunit_003', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalTestJsunit_003] START');
@@ -143,12 +143,12 @@ export default function LocalTestJsunit() {
       done();
     });
     /**
-     * @tc.number    LocalTestJsunit_004
-     * @tc.name      LocalTestJsunit_004
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalTestJsunit_004
+     * @tc.number LocalTestJsunit_004
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalTestJsunit_004', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalTestJsunit_004] START');
@@ -166,12 +166,12 @@ export default function LocalTestJsunit() {
       done();
     });
     /**
-     * @tc.number    LocalTestJsunit_005
-     * @tc.name      LocalTestJsunit_005
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalTestJsunit_005
+     * @tc.number LocalTestJsunit_005
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalTestJsunit_005', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalTestJsunit_005] START');
@@ -189,12 +189,12 @@ export default function LocalTestJsunit() {
       done();
     });
     /**
-     * @tc.number    LocalTestJsunit_006
-     * @tc.name      LocalTestJsunit_006
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalTestJsunit_006
+     * @tc.number LocalTestJsunit_006
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalTestJsunit_006', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalTestJsunit_006] START');

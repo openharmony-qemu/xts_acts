@@ -28,7 +28,6 @@ export default function ActsLocationCApi20Test() {
     )
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOHLocationInfoGetAdditionalInfoTest0100
      * @tc.number SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100
      * @tc.desc   test OHLocationInfoGetAdditionalInfo.
@@ -52,7 +51,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_IsLocatingEnabledTest0100
      * @tc.number SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0100
      * @tc.desc   test OH_Location_IsLocatingEnabled1.
@@ -76,7 +74,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_IsLocatingEnabledTest0101
      * @tc.number SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101
      * @tc.desc   test OH_Location_IsLocatingEnabled2.
@@ -100,7 +97,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_StartLocatingTest0100
      * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0100
      * @tc.desc   test OH_Location_StartLocating1.
@@ -124,7 +120,6 @@ export default function ActsLocationCApi20Test() {
       }
     )
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_StartLocatingTest0101
      * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0101
      * @tc.desc   test OH_Location_StartLocating2.
@@ -148,7 +143,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_StopLocatingTest0100
      * @tc.number SUB_LocationKit_OH_Location_StopLocating_Test_0100
      * @tc.desc   test OH_Location_StopLocating2.
@@ -172,7 +166,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_LocationRequestConfig_SetUseSceneTest0100
      * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0100
      * @tc.desc   test OH_LocationRequestConfig_SetUseScene0100.
@@ -197,7 +190,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_LocationRequestConfig_SetUseSceneTest0101
      * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0101
      * @tc.desc   test OH_LocationRequestConfig_SetUseScene0101.
@@ -222,7 +214,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_LocationRequestConfig_SetUseSceneTest0102
      * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0102
      * @tc.desc   test OH_LocationRequestConfig_SetUseScene0102.
@@ -247,7 +238,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0100
      * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetPowerConsumptionScene_Test_0100
      * @tc.desc   test OH_LocationRequestConfig_SetPowerConsumptionScene0100.
@@ -274,7 +264,6 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0101
      * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetPowerConsumptionScene_Test_0101
      * @tc.desc   test OH_LocationRequestConfig_SetPowerConsumptionScene0101.

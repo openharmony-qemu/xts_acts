@@ -46,7 +46,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0200
          * @tc.desc   flush String callback interface test
@@ -102,7 +101,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0900
          * @tc.desc   mPreference.get()
@@ -128,7 +126,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0800
          * @tc.desc   mPreference.get()
@@ -154,7 +151,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0700
          * @tc.desc   mPreference.getAll()
@@ -179,7 +175,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1100
          * @tc.desc   mPreference.has()
@@ -205,7 +200,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1000
          * @tc.desc   mPreference.has()
@@ -230,7 +224,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0700
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1700
          * @tc.desc   mPreference.put()
@@ -256,7 +249,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0800
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1500
          * @tc.desc   mPreference.put()
@@ -281,7 +273,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0900
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0500
          * @tc.desc   fmPreference.delete()
@@ -307,7 +298,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1000
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0400
          * @tc.desc   mPreference.delete()
@@ -332,7 +322,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0300
          * @tc.desc   mPreference.flush()
@@ -357,7 +346,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0600
          * @tc.desc   mPreference.flush()
@@ -382,7 +370,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0100
          * @tc.desc   mPreference.on()
@@ -411,7 +398,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1600
          * @tc.desc   mPreference.on()
@@ -438,7 +424,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1400
          * @tc.desc   mPreference.off()
@@ -463,7 +448,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1200
          * @tc.desc   mPreference.off()
@@ -490,7 +474,6 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1700
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1300
          * @tc.desc   mPreference.off()

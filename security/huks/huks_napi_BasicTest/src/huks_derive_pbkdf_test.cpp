@@ -73,9 +73,12 @@ static struct OH_Huks_Param g_pbkdf2FinishParams001[] = {
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 /**
- * @tc.name: HuksDerivePBKDFTest.Security_HUKS_NAPI_Derive_pbkdf_0100
- * @tc.desc: alg-PBKDF2 pur-Derive dig-SHA256.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Derive_pbkdf_0100
+ * @tc.number Security_HUKS_NAPI_Derive_pbkdf_0100
+ * @tc.desc   alg-PBKDF2 pur-Derive dig-SHA256.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HuksDerivePBKDFTest, Security_HUKS_NAPI_Derive_pbkdf_0100, TestSize.Level1)
 {

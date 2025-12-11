@@ -70,6 +70,14 @@ export default function ListItem_Delete_Start_Default() {
     //  * @tc.name      testListItem
     //  * @tc.desc      Do not set actionAreaDistance and slide 56
     //  */
+    /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_Default_0100
+     * @tc.number SUB_ACE_ListItem_Delete_Start_Default_0100
+     * @tc.desc   SUB_ACE_ListItem_Delete_Start_Default_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('SUB_ACE_ListItem_Delete_Start_Default_0100',  Level.LEVEL0, async  (done: Function)=> {
     //   console.info('[SUB_ACE_ListItem_Delete_Start_Default_0100] START');
     //   await CommonFunc.sleep(1000);
@@ -101,9 +109,12 @@ export default function ListItem_Delete_Start_Default() {
     //   done();
     // });
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_Default_0200
      * @tc.number SUB_ACE_ListItem_Delete_Start_Default_0200
-     * @tc.name testListItem
-     * @tc.desc Do not set actionAreaDistance and slide 70
+     * @tc.desc   Do not set actionAreaDistance and slide 70
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_Default_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_Default_0200] START');
@@ -141,9 +152,12 @@ export default function ListItem_Delete_Start_Default() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_Default_0300
      * @tc.number SUB_ACE_ListItem_Delete_Start_Default_0300
-     * @tc.name testListItem
-     * @tc.desc Do not set actionAreaDistance and slide 40
+     * @tc.desc   Do not set actionAreaDistance and slide 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_Default_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_Default_0300] START');

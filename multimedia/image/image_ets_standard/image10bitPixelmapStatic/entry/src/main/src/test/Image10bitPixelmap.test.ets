@@ -153,8 +153,8 @@ export default function image10bitPixelMap() {
       return bufferRead
     }
 
-    const testImageSourceCreatePixelMap = async (file: string | int | ArrayBuffer, desiredFormat: image.PixelMapFormat): Promise<image.PixelMap> => {
-      let imageSource: image.ImageSource;
+    const testImageSourceCreatePixelMap = async (file: string | int | ArrayBuffer, desiredFormat: image.PixelMapFormat): Promise<image.PixelMap | undefined> => {
+      let imageSource: image.ImageSource | undefined;
       if (file instanceof string) {
         let buffer = await getBuffer(file as string);
         imageSource = image.createImageSource(buffer);
@@ -163,15 +163,25 @@ export default function image10bitPixelMap() {
       } else {
         imageSource = image.createImageSource(file as int);
       }
+
+      if (imageSource == undefined) {
+        hilog.info(0x0000, 'image10bitPixelMap', `imageSource is undefined, testImageSourceCreatePixelMap failed`);
+        return undefined;
+      }
+
       let decodingOpt: image.DecodingOptions = {
         editable: true,
         desiredPixelFormat: desiredFormat,
         desiredDynamicRange: image.DecodingDynamicRange.HDR
       }
-      let pixelMap = await imageSource.createPixelMap(decodingOpt);
-      if (pixelMap.getImageInfoSync().pixelFormat != desiredFormat) {
+      let pixelMap = await imageSource!.createPixelMap(decodingOpt);
+      if (pixelMap == undefined) {
+        hilog.info(0x0000, 'image10bitPixelMap', `pixelMap is undefined, testImageSourceCreatePixelMap failed`);
+        return undefined;
+      }
+      if (pixelMap!.getImageInfoSync().pixelFormat != desiredFormat) {
         try {
-          await pixelMap.convertPixelFormat(desiredFormat);
+          await pixelMap!.convertPixelFormat(desiredFormat);
         } catch (error) {
           hilog.info(0x0000, "image10bitPixelMap", 'convertPixelFormat failed, msg:%{public}s', JSON.stringify(error));
         }
@@ -179,7 +189,7 @@ export default function image10bitPixelMap() {
       return pixelMap;
     }
 
-    const testCreatePixelMap = async (fileName: string, expectFormat: image.PixelMapFormat): Promise<image.PixelMap> => {
+    const testCreatePixelMap = async (fileName: string, expectFormat: image.PixelMapFormat): Promise<image.PixelMap | undefined> => {
       if (isSupportHdr) {
         return testImageSourceCreatePixelMap(fileName, expectFormat);
       } else {
@@ -203,6 +213,7 @@ export default function image10bitPixelMap() {
       }
       if (res) {
         logger.log('no change after writeBuffer');
+        expect(true).assertTrue();
         done();
       }
     }
@@ -428,16 +439,12 @@ export default function image10bitPixelMap() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0100
-      * @tc.desc    test writeBufferToPixels and readPixelsToBuffer promise
-      *                 1.create PixelMap
-      *                 2.call writeBufferToPixels
-      *                 3.call return undefined
-      *                 4.call readPixelsToBuffer
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0100
+     * @tc.desc   test writeBufferToPixels and readPixelsToBuffer promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0100');
@@ -451,16 +458,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0200
-      * @tc.desc    test writeBufferToPixels and readPixelsToBuffer callback
-      *                 1.create PixelMap
-      *                 2.call writeBufferToPixels
-      *                 3.call return undefined
-      *                 4.call readPixelsToBuffer
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0200
+     * @tc.desc   test writeBufferToPixels and readPixelsToBuffer callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0200');
@@ -474,16 +477,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0300
-      * @tc.desc    test writeBufferToPixels and readPixelsToBuffer sync
-      *                 1.create PixelMap
-      *                 2.call writeBufferToPixels
-      *                 3.call return undefined
-      *                 4.call readPixelsToBuffer
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0300
+     * @tc.desc   test writeBufferToPixels and readPixelsToBuffer sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_0300');
@@ -497,15 +496,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2800
-      * @tc.desc    test pixelmap.applyColorSpace
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3. call applyColorSpace-promise
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2800
+     * @tc.desc   test pixelmap.applyColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       if (!isSupportHdr) {
@@ -518,15 +514,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2900
-      * @tc.desc    test pixelmap.applyColorSpace callback
-      *               : 1.create imagesource
-      *               : 2.create pixelmap
-      *               : 3. call applyColorSpace-callback
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2900
+     * @tc.desc   test pixelmap.applyColorSpace callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       if (!isSupportHdr) {
@@ -539,14 +532,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5100
-      * @tc.desc    test pack pixelmap to file --promise
-      *               : 1.create PixelMap
-      *               : 2.pack pixelmap to file
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5100
+     * @tc.desc   test pack pixelmap to file --promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5100");
@@ -562,14 +553,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5200
-      * @tc.desc    test pack pixelmap to file --callback
-      *               : 1.create PixelMap
-      *               : 2.pack pixelmap to file
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5200
+     * @tc.desc   test pack pixelmap to file --callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5200");
@@ -589,14 +578,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5500
-      * @tc.desc    test pixelmap.toSdr
-      *               : 1.create PixelMap
-      *               : 2.call toSdr
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5500
+     * @tc.desc   test pixelmap.toSdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportHdr) {
@@ -609,14 +596,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5600
-      * @tc.desc    test pixelmap.toSdr
-      *               : 1.create PixelMap
-      *               : 2.call toSdr
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5600
+     * @tc.desc   test pixelmap.toSdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportHdr) {
@@ -629,14 +614,12 @@ export default function image10bitPixelMap() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5700
-      * @tc.desc    test pixelmap.toSdr
-      *               : 1.create PixelMap
-      *               : 2.call toSdr
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5700
+     * @tc.desc   test pixelmap.toSdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_STATIC_5700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportHdr) {

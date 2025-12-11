@@ -25,10 +25,13 @@ let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当�
 export default function ObserverJsunit() {
   describe('ObserverJsunit', (): void => {
     hilog.info(domain, tag, '%{public}s', '************* Observer Test start *************');
-    /*
-     * @tc.number    : Telephony_observer_observer_on_callStateChange_0200
-     * @tc.name      : Telephony_observer_observer_on_callStateChange_0200
-     * @tc.desc      : call the on method of callStateChange
+    /**
+     * @tc.name   Telephony_observer_observer_on_callStateChange_0200
+     * @tc.number Telephony_observer_observer_on_callStateChange_0200
+     * @tc.desc   call the on method of callStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_observer_observer_on_callStateChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_callStateChange_0200 Test start *************');
@@ -50,10 +53,13 @@ export default function ObserverJsunit() {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_callStateChange_0200 Test end *************');
     })
 
-    /*
-     * @tc.number    : Telephony_observer_observer_off_callStateChange_0100
-     * @tc.name      : Telephony_observer_observer_off_callStateChange_0100
-     * @tc.desc      : call the off method of callStateChange
+    /**
+     * @tc.name   Telephony_observer_observer_off_callStateChange_0100
+     * @tc.number Telephony_observer_observer_off_callStateChange_0100
+     * @tc.desc   call the off method of callStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_observer_observer_off_callStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_callStateChange_0100 Test start *************');
@@ -74,10 +80,13 @@ export default function ObserverJsunit() {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_callStateChange_0100 Test end *************');
     })
 
-    /*
-     * @tc.number    : Telephony_observer_observer_on_signalInfoChange_0200
-     * @tc.name      : Telephony_observer_observer_on_signalInfoChange_0200
-     * @tc.desc      : call the on method of signalInfoChange
+    /**
+     * @tc.name   Telephony_observer_observer_on_signalInfoChange_0200
+     * @tc.number Telephony_observer_observer_on_signalInfoChange_0200
+     * @tc.desc   call the on method of signalInfoChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_observer_observer_on_signalInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_signalInfoChange_0200 Test start *************');
@@ -98,10 +107,13 @@ export default function ObserverJsunit() {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_signalInfoChange_0200 Test end *************');
     })
 
-    /*
-     * @tc.number    : Telephony_observer_observer_off_signalInfoChange_0100
-     * @tc.name      : Telephony_observer_observer_off_signalInfoChange_0100
-     * @tc.desc      : call the off method of signalInfoChange
+    /**
+     * @tc.name   Telephony_observer_observer_off_signalInfoChange_0100
+     * @tc.number Telephony_observer_observer_off_signalInfoChange_0100
+     * @tc.desc   call the off method of signalInfoChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_observer_observer_off_signalInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_signalInfoChange_0100 Test start *************');

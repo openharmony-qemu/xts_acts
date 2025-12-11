@@ -30,12 +30,12 @@ export default function setAlbumNameChangeRequestTest() {
       await sleep(1000);
     });
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_STATIC_0000
-      * @tc.name    album_name_change_request_static_000
-      * @tc.desc    change album name
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_name_change_request_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_STATIC_0000
+     * @tc.desc   change album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_name_change_request_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -72,12 +72,12 @@ export default function setAlbumNameChangeRequestTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_STATIC_0100
-      * @tc.name    album_name_change_request_static_001
-      * @tc.desc    change album name with invalid long albumName
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   album_name_change_request_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_STATIC_0100
+     * @tc.desc   change album name with invalid long albumName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('album_name_change_request_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -101,12 +101,12 @@ export default function setAlbumNameChangeRequestTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_STATIC_0200
-      * @tc.name    album_name_change_request_static_002
-      * @tc.desc    change album name with albumName containing invalid characters
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   album_name_change_request_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_STATIC_0200
+     * @tc.desc   change album name with albumName containing invalid characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('album_name_change_request_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

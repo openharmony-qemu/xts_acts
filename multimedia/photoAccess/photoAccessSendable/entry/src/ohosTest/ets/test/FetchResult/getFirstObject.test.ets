@@ -41,12 +41,12 @@ export default function getFirstObjectTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_First_Obj_001
-     * @tc.name      : get_first_object_promise_000
-     * @tc.desc      : getFirstObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_first_object_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Get_First_Obj_001
+     * @tc.desc   getFirstObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_first_object_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'get_first_object_promise_000';

@@ -53,12 +53,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       console.log(msg + ' beforeEach end!!!')
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0010
-     * @tc.name      : testShiftAppWindowFocus_DialogWindow_SourceWinFocus
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testShiftAppWindowFocus_DialogWindow_SourceWinFocus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0010
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowFocus_DialogWindow_SourceWinFocus', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testShiftAppWindowFocus_DialogWindow_SourceWinFocus';
@@ -110,12 +110,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0020
-     * @tc.name      : testShiftAppWindowFocus_DialogWindow_SourceWinNotFocus
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testShiftAppWindowFocus_DialogWindow_SourceWinNotFocus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0020
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowFocus_DialogWindow_SourceWinNotFocus', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testShiftAppWindowFocus_DialogWindow_SourceWinNotFocus';
@@ -167,12 +167,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0030
-     * @tc.name      : testShiftAppWindowFocus_SubWindow_SourceWinFocus
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testShiftAppWindowFocus_SubWindow_SourceWinFocus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0030
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowFocus_SubWindow_SourceWinFocus', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testShiftAppWindowFocus_SubWindow_SourceWinFocus';
@@ -219,12 +219,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0040
-     * @tc.name      : testShiftAppWindowFocus_SubWindow_SourceWinNotFocus
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testShiftAppWindowFocus_SubWindow_SourceWinNotFocus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0040
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowFocus_SubWindow_SourceWinNotFocus', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testShiftAppWindowFocus_SubWindow_SourceWinNotFocus';
@@ -273,12 +273,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0050
-     * @tc.name      : testSetWindowFocusable_DialogWindow_Callback
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_DialogWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0050
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_DialogWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowFocusable_DialogWindow_Callback';
@@ -318,12 +318,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0060
-     * @tc.name      : testSetWindowFocusable_DialogWindow_Promise
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_DialogWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0060
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_DialogWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowFocusable_DialogWindow_Promise';
@@ -354,12 +354,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0070
-     * @tc.name      : testSetWindowFocusable_MainWindow_Promise
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_MainWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0070
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_MainWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowFocusable_MainWindow_Promise';
@@ -381,12 +381,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0080
-     * @tc.name      : testSetWindowFocusable_MainWindow_Callback
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_MainWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0080
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_MainWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowFocusable_MainWindow_Callback';
@@ -414,12 +414,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0090
-     * @tc.name      : testSetWindowFocusable_SubWindow_Callback
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_SubWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0090
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_SubWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowFocusable_SubWindow_Callback';
@@ -454,12 +454,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0100
-     * @tc.name      : testSetWindowFocusable_SubWindow_Promise
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_SubWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0100
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_SubWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowFocusable_SubWindow_Promise';
@@ -486,12 +486,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0110
-     * @tc.name      : testShiftAppWindowFocus_SubWindowWithOptions_SourceWinFocus
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testShiftAppWindowFocus_SubWindowWithOptions_SourceWinFocus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0110
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowFocus_SubWindowWithOptions_SourceWinFocus', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testShiftAppWindowFocus_SubWindowWithOptions_SourceWinFocus';
@@ -551,12 +551,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0120
-     * @tc.name      : testShiftAppWindowFocus_SubWindowWithOptions_SourceWinNotFocus
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testShiftAppWindowFocus_SubWindowWithOptions_SourceWinNotFocus
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0120
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShiftAppWindowFocus_SubWindowWithOptions_SourceWinNotFocus', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testShiftAppWindowFocus_SubWindowWithOptions_SourceWinNotFocus';
@@ -618,12 +618,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0130
-     * @tc.name      : testSetWindowFocusable_SubWindowWithOps_Callback
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_SubWindowWithOps_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0130
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_SubWindowWithOps_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowFocusable_SubWindowWithOps_Callback';
@@ -673,12 +673,12 @@ export default function windowFocusTest(context: common.UIAbilityContext, window
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0140
-     * @tc.name      : testSetWindowFocusable_SubWindowWithOps_Promise
-     * @tc.desc      : Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowFocusable_SubWindowWithOps_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWFOCUS_JS_API_0140
+     * @tc.desc   Set whether the window supports switching from the focus window before the click to the window when clicking or other methods are used to focus the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusable_SubWindowWithOps_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowFocusable_SubWindowWithOps_Promise';

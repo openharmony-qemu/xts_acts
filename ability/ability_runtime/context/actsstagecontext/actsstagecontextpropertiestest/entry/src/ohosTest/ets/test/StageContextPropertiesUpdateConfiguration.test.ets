@@ -22,10 +22,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
   describe('StageContextPropertiesUpdateConfiguration.test', () => {
 
     /**
-     * @tc.number: SUB_AA_SetColorMode_0100
-     * @tc.name: Check if the application can be successfully set to the color mode
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0100
+     * @tc.number SUB_AA_SetColorMode_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0100', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetColorMode_0100============')
@@ -50,10 +52,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetColorMode_0200
-     * @tc.name: Check if the application can be successfully set to the color mode
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200
+     * @tc.number SUB_AA_SetColorMode_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetColorMode_0200============')
@@ -79,10 +83,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetLanguage_0100
-     * @tc.name: Check if the application can be successfully set to the language
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0100
+     * @tc.number SUB_AA_SetLanguage_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0100', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetLanguage_0100============')
@@ -97,10 +103,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetLanguage_0200
-     * @tc.name: Check if the application can be successfully set to the language
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
+     * @tc.number SUB_AA_SetLanguage_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetLanguage_0200============')
@@ -125,10 +133,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetFont_0100
-     * @tc.name: Check if the application can be successfully set to the font
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0100
+     * @tc.number SUB_AA_SetFont_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0100', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetFont_0100============')
@@ -142,10 +152,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetFont_0200
-     * @tc.name: Check wrong parameters
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0200
+     * @tc.number SUB_AA_SetFont_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0200', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetFont_0200============')
@@ -160,10 +172,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetFont_0300
-     * @tc.name: Check wrong parameters
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300
+     * @tc.number SUB_AA_SetFont_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetFont_0300============')
@@ -178,10 +192,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetFontSize_0100
-     * @tc.name: Check wrong parameters
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize__0100
+     * @tc.number SUB_AA_SetFontSize_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize__0100', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetFontSize__0100============')
@@ -196,10 +212,12 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
     });
 
     /**
-     * @tc.number: SUB_AA_SetFontSize_0200
-     * @tc.name: Check wrong parameters
-     * @tc.desc:  Function test
-     * @tc.level   1
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize__0200
+     * @tc.number SUB_AA_SetFontSize_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize__0200', Level.LEVEL0, (done: Function) => {
       console.info('=============ApplicationContext_SetFontSize__0200============')

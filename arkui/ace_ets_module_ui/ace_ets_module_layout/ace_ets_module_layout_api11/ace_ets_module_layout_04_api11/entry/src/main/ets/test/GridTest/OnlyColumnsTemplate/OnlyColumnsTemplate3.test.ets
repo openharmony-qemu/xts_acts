@@ -46,9 +46,12 @@ export default function OnlyColumnsTemplate3() {
       console.info("OnlyColumnsTemplate3 after each called");
     });
     /**
+     * @tc.name   SUB_ACE_GRID_OnlyColumnsTemplate3_0100
      * @tc.number SUB_ACE_GRID_OnlyColumnsTemplate3_0100
-     * @tc.name testGrid
-     * @tc.desc GridItem only sets columnStart
+     * @tc.desc   GridItem only sets columnStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_OnlyColumnsTemplate3_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate3_0100] START');

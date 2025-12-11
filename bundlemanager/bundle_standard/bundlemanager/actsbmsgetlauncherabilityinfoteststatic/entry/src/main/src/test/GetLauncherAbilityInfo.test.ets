@@ -37,10 +37,13 @@ export default function actsGetLauncherAbilityInfoTest() {
   describe("ActsGetLauncherAbilityInfoTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.desc: Test getLauncherAbilityInfoSync with valid value.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.desc   Test getLauncherAbilityInfoSync with valid value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100';
@@ -59,8 +62,8 @@ export default function actsGetLauncherAbilityInfoTest() {
         expect(data[0].elementName.abilityName).assertEqual('EntryAbility');
         expect(data[0].elementName.shortName).assertEqual('');
         expect(data[0].elementName.uri).assertEqual('/ohos.acts.bms.getlauncherabilityinfo.test.static/entry/EntryAbility');
-        done();
         hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+        done();
       } catch (errData) {
         // hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getLauncherAbilityInfoSync failed, result is: %{public}s', JSON.stringify(err));
         console.log('getLauncherAbilityInfoSync failed');
@@ -77,10 +80,13 @@ export default function actsGetLauncherAbilityInfoTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
-     * @tc.desc: Test getLauncherAbilityInfoSync with bundle name is not found return errcode 17700001.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
+     * @tc.desc   Test getLauncherAbilityInfoSync with bundle name is not found return errcode 17700001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -107,10 +113,13 @@ export default function actsGetLauncherAbilityInfoTest() {
         }
       });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
-     * @tc.desc: Test getLauncherAbilityInfoSync with user ID is not found return errcode 17700004.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
+     * @tc.desc   Test getLauncherAbilityInfoSync with user ID is not found return errcode 17700004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -119,8 +128,8 @@ export default function actsGetLauncherAbilityInfoTest() {
           hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case start');
           let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, 111);
           expect().assertFail();
-          done();
           hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+          done();
         } catch (errData) {
           let errMsg = (errData as BusinessError).message;
           let code = (errData as BusinessError).code;
@@ -137,13 +146,13 @@ export default function actsGetLauncherAbilityInfoTest() {
         }
       });
 
-     /**
-     * @tc.number  Sub_Bms_Framework_getAbilityInfo_static_00
-     * @tc.name    Sub_Bms_Framework_getAbilityInfo_static_00
-     * @tc.desc    Test getAbilityInfo normal
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level1
+    /**
+     * @tc.name   Sub_Bms_Framework_getAbilityInfo_static_00
+     * @tc.number Sub_Bms_Framework_getAbilityInfo_static_00
+     * @tc.desc   Test getAbilityInfo normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getAbilityInfo_static_00', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let uri = "https://www.example.com";
@@ -195,12 +204,12 @@ export default function actsGetLauncherAbilityInfoTest() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_getAbilityInfo_static_01
-     * @tc.name    Sub_Bms_Framework_getAbilityInfo_static_01
-     * @tc.desc    Test getAbilityInfo with error code
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level1
+     * @tc.name   Sub_Bms_Framework_getAbilityInfo_static_01
+     * @tc.number Sub_Bms_Framework_getAbilityInfo_static_01
+     * @tc.desc   Test getAbilityInfo with error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getAbilityInfo_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let uri = "6666666";

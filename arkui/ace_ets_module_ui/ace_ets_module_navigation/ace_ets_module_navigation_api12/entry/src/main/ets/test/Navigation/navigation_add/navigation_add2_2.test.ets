@@ -45,9 +45,12 @@ export default function navigation_add2_2() {
     });
 
     /**
+     * @tc.name   navigation_add2_2_0100
      * @tc.number navigation_add2_2_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   navigation_add2_2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('navigation_add2_2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('navigation_add2_2_0100 START');

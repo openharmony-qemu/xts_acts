@@ -54,6 +54,7 @@ export default class EntryAbility extends UIAbility {
         console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
       });
     });
+    AppStorage.setOrCreate('windowStage', windowStage);
   }
 
   onWindowStageDestroy():void{

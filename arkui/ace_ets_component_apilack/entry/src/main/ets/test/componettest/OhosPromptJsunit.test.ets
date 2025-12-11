@@ -44,6 +44,14 @@ export default function ohosPromptJsunit() {
       console.info("OhosPrompt each called");
     });
 
+    /**
+     * @tc.name   test_OhosPrompt_001
+     * @tc.number test_OhosPrompt_001
+     * @tc.desc   test_OhosPrompt_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_OhosPrompt_001', Level.LEVEL0, async () => {
       await Utils.sleep(1000)
       let callback = (eventData: events_emitter.EventData) => {

@@ -25,26 +25,26 @@ export default function customDialogBackGroundTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testCalendarPickerDate001
-     * @tc.desc       : testing CalendarPicker AutoPlay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomDialog001
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0100
+     * @tc.desc   testing CalendarPicker AutoPlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialog001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialog001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testCalendarPickerDate001
-     * @tc.desc       : testing CalendarPicker AutoPlay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomDialog002
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0100
+     * @tc.desc   testing CalendarPicker AutoPlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialog002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialog002()).assertEqual(0)

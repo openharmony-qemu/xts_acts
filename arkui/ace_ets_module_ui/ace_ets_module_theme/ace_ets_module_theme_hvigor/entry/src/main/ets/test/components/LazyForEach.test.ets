@@ -80,13 +80,13 @@ export default function lazyForEachTest() {
       }
     });
     /**
-    * @tc.number    : ActsLazyForEachThemeColors_0100
-    * @tc.name      : ActsLazyForEachThemeColors_0100
-    * @tc.desc      : check system colors values of the LazyForEach component
-    * @tc.level     : Level 2
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+     * @tc.name   ActsLazyForEachThemeColors_0100
+     * @tc.number ActsLazyForEachThemeColors_0100
+     * @tc.desc   check system colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsLazyForEachThemeColors_0100`, Level.LEVEL0, async () => {
       await sleep(frameTime);
       const CASE: string = `ActsLazyForEachThemeColors_0100`;
@@ -102,13 +102,13 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsLazyForEachThemeColors_0200
-      * @tc.name      : ActsLazyForEachThemeColors_0200
-      * @tc.desc      : check custom colors values of the LazyForEach component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsLazyForEachThemeColors_0200
+     * @tc.number ActsLazyForEachThemeColors_0200
+     * @tc.desc   check custom colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsLazyForEachThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsLazyForEachThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -124,13 +124,12 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsLazyForEachThemeColors_0300
-     * @tc.name      : ActsLazyForEachThemeColors_0300
-     * @tc.desc      : check system colors values of the LazyForEach component
-     *                 after change theme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLazyForEachThemeColors_0300
+     * @tc.number ActsLazyForEachThemeColors_0300
+     * @tc.desc   check system colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsLazyForEachThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsLazyForEachThemeColors_0300`;
@@ -148,14 +147,13 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsLazyForEachThemeColors_0400
-      * @tc.name      : ActsLazyForEachThemeColors_0400
-      * @tc.desc      : check system colors values of the LazyForEach component
-      *                 with ListItemGroup
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsLazyForEachThemeColors_0400
+     * @tc.number ActsLazyForEachThemeColors_0400
+     * @tc.desc   check system colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsLazyForEachThemeColors_0400`, Level.LEVEL0, async () => {
       await sleep(frameTime);
       const CASE: string = `ActsLazyForEachThemeColors_0400`;
@@ -172,14 +170,13 @@ export default function lazyForEachTest() {
     });
 
     /**
-      * @tc.number    : ActsLazyForEachThemeColors_0500
-      * @tc.name      : ActsLazyForEachThemeColors_0500
-      * @tc.desc      : check custom colors values of the LazyForEach component
-      *                 with ListItemGroup
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsLazyForEachThemeColors_0500
+     * @tc.number ActsLazyForEachThemeColors_0500
+     * @tc.desc   check custom colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsLazyForEachThemeColors_0500`, Level.LEVEL2, () => {
       const CASE: string = `ActsLazyForEachThemeColors_0500`;
       console.info(`${SUITE} ${CASE} START`);
@@ -195,14 +192,13 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsLazyForEachThemeColors_0600
-      * @tc.name      : ActsLazyForEachThemeColors_0600
-      * @tc.desc      : check system colors values of the LazyForEach component
-      *                 with ListItemGroup after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsLazyForEachThemeColors_0600
+     * @tc.number ActsLazyForEachThemeColors_0600
+     * @tc.desc   check system colors values of the LazyForEach component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsLazyForEachThemeColors_0600`, Level.LEVEL0, async () => {
       const CASE: string = `ActsLazyForEachThemeColors_0600`;
       console.info(`${SUITE} ${CASE} START`);
