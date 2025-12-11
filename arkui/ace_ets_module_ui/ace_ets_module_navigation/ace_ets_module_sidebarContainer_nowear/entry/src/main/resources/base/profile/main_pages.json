@@ -11,6 +11,8 @@
 	    "MainAbility/pages/SideBarContainer/sideBar",
         "MainAbility/pages/SideBarContainer/sidebar2",
         "MainAbility/pages/SideBarContainer/sideBar3",
-        "MainAbility/pages/SideBarContainer/SidebarType"
+        "MainAbility/pages/SideBarContainer/SidebarType",
+        "MainAbility/pages/SideBarContainer/SideBarWidth1",
+        "MainAbility/pages/SideBarContainer/SideBarWidth2"
     ]
 }

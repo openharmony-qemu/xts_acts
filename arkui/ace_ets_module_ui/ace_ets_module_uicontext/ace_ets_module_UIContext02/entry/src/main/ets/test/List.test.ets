@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import IsFollowingSystemFontScaleTrueTest from './ContextTest/IsFollowingSystemFontScaleTrueTest.test';
+import GetUIContextTest from './getUIContext/GetUIContextTest.test';
 
 export default function testsuite() {
   IsFollowingSystemFontScaleTrueTest();
+  GetUIContextTest();
 }

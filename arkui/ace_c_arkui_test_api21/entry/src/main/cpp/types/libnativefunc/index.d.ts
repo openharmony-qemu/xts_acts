@@ -25,3 +25,9 @@ export const TestAllowForceDark: () => number;
 export const TestImageContentTransitionEffect001: () => number;
 
 export const TestImageContentTransitionEffect002: () => number;
+
+export const TestMethodReturnValue001: () => number;
+export const TestMethodReturnValue002: () => number;
+export const TestMethodReturnValue003: () => number;
+export const TestMethodReturnValue004: () => number;
+export const TestMethodReturnValue005: () => number;

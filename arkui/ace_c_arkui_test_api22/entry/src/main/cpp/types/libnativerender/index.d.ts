@@ -20,6 +20,14 @@ export const CoastingAxisTest_a: () => string[];
 
 export const CoastingAxisTest_b: () => string[];
 
+export const CoastingAxisTest_c: () => string[];
+
+export const CoastingAxisTest_d: () => string[];
+
+export const CoastingAxisTest_e: () => string[];
+
+export const CoastingAxisTest: (a: string) => void;
+
 export const hasAxisTest: (a: string) => void;
 
 export const WaterFlowFillPolicyTest: (a: string) => void;

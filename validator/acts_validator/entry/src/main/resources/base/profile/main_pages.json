@@ -176,6 +176,7 @@
     "pages/ArkUI/RichEditiorComponentContentKeyboard",
     "pages/ArkUI/WindowSizeLayoutBreakpointChange",
     "pages/ArkUI/AccessibilityActionOptionsScrollStep",
+    "pages/ArkUI/CapiSourceType",
     "pages/ArkUI/Magnifier"
   ]
 }

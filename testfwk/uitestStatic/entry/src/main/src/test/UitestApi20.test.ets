@@ -51,6 +51,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_001
      * @tc.name testGetDisplayId_static
      * @tc.desc getDisplayId test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplayId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetDisplayId_static start`);
@@ -78,6 +81,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_002
      * @tc.name test_origin_static
      * @tc.desc specifies the string value match pattern.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_origin_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_origin_static start`);
@@ -105,6 +111,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_003
      * @tc.name testTriggerCombineKeysWithId_static
      * @tc.desc triggerCombineKeys test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTriggerCombineKeysWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testTriggerCombineKeysWithId_static start`);
@@ -182,6 +191,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_004
      * @tc.name testClickAt_static
      * @tc.desc clickAt test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClickAt_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testClickAt_static start`);
@@ -209,6 +221,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_005
      * @tc.name testDoubleClickAt_static
      * @tc.desc doubleClickAt test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDoubleClickAt_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDoubleClickAt_static start`);
@@ -242,6 +257,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_006
      * @tc.name testDriverLongClickAt_static
      * @tc.desc LongClick on the specified location on the screen, the value of duration is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverLongClickAt_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDriverLongClickAt_static start`);
@@ -269,6 +287,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_0061
      * @tc.name testDriverLongClickAt_duration_static
      * @tc.desc LongClick on the specified location on the screen, the value of duration is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverLongClickAt_duration_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDriverLongClickAt_duration_static start`);
@@ -296,6 +317,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_007
      * @tc.name test_swipeBetween_static
      * @tc.desc swipeBetween test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_swipeBetween_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_swipeBetween_static start`);
@@ -322,6 +346,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_0071
      * @tc.name test_swipeBetween_speed_static
      * @tc.desc swipeBetween test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_swipeBetween_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_swipeBetween_speed_static start`);
@@ -348,6 +375,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_008
      * @tc.name testDragBetween_static
      * @tc.desc drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDragBetween_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDragBetween_static start`);
@@ -379,6 +409,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_0081
      * @tc.name testDragBetween_speed_static
      * @tc.desc drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDragBetween_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDragBetween_speed_static start`);
@@ -410,6 +443,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_0082
      * @tc.name testDragBetween_duration_static
      * @tc.desc drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDragBetween_duration_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDragBetween_duration_static start`);
@@ -441,6 +477,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_009
      * @tc.name testScreenCaptureWithId_static
      * @tc.desc capture the specified area of current screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testScreenCaptureWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testScreenCaptureWithId_static start`);
@@ -458,6 +497,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_010
      * @tc.name testGetDisplayRotationWithId_static
      * @tc.desc getDisplayRotation test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplayRotationWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetDisplayRotationWithId_static start`);
@@ -513,6 +555,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_011
      * @tc.name testGetDisplayDensityWithId_static
      * @tc.desc getDisplayDensity test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplayDensityWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetDisplayDensityWithId_static start`);
@@ -530,6 +575,9 @@ export default function uitestEnumTest() {
      * @tc.number UitestTest_Api20_012
      * @tc.name testMouseLongClick_static
      * @tc.desc longClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseLongClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testMouseLongClick_static start`);
@@ -553,9 +601,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_0121
      * @tc.name testMouseLongClick_key1_static
+     * @tc.number UitestTest_Api20_0121
      * @tc.desc longClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseLongClick_key1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testMouseLongClick_key1_static start`);
@@ -579,9 +630,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_0122
      * @tc.name testMouseLongClick_key2_static
+     * @tc.number UitestTest_Api20_0122
      * @tc.desc longClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseLongClick_key2_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testMouseLongClick_key2_static start`);
@@ -605,9 +659,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_0123
      * @tc.name testMouseLongClick_duration_static
+     * @tc.number UitestTest_Api20_0123
      * @tc.desc longClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseLongClick_duration_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testMouseLongClick_duration_static start`);
@@ -631,9 +688,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_013
      * @tc.name testNewMouseDrag_static
+     * @tc.number UitestTest_Api20_013
      * @tc.desc drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNewMouseDrag_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `testNewMouseDrag_static start`);
@@ -663,9 +723,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_0131
      * @tc.name testNewMouseDrag_speed_static
+     * @tc.number UitestTest_Api20_0131
      * @tc.desc drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNewMouseDrag_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `testNewMouseDrag_speed_static start`);
@@ -695,9 +758,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_0132
      * @tc.name testNewMouseDrag_duration_static
+     * @tc.number UitestTest_Api20_0132
      * @tc.desc drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNewMouseDrag_duration_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `testNewMouseDrag_duration_static start`);
@@ -727,9 +793,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_014
      * @tc.name testCrownRotate_static
+     * @tc.number UitestTest_Api20_014
      * @tc.desc crownRotate test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCrownRotate_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `testCrownRotate_static start`);
@@ -769,9 +838,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_015
      * @tc.name testBelongingDisplay_static
+     * @tc.number UitestTest_Api20_015
      * @tc.desc belongingDisplay test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBelongingDisplay_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, "testBelongingDisplay_static Start!!!!!");
@@ -795,9 +867,12 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_016
      * @tc.name testWindowAttrWithId_static
+     * @tc.number UitestTest_Api20_016
      * @tc.desc find window by WindowFilter and get it's active status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowAttrWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');

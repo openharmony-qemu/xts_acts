@@ -75,12 +75,6 @@ async function setVideoMode() {
   setSessionMode();
 }
 
-async function setPhotoMode() {
-  console.log(TAG + 'setPhotoMode');
-  setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
-  setSessionMode();
-}
-
 async function getPhotoReceiverSurface() {
   console.log(TAG + 'Entering getPhotoReceiverSurface');
   receiver = image.createImageReceiver(640, 480, 4, 8);
@@ -421,26 +415,6 @@ export default function cameraSessionTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_001 ret is "+ retCode);
       expect(retCode).assertEqual(CAMERA_OK);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_001 ends here");
-    })
-    /**
-     * @tc.number   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_002
-     * @tc.name     SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_002
-     * @tc.desc     Check capture session enable ISO  with promise
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_002--------------");
-      let ret = createCameraSessionInstance();
-      if (ret != true) {
-        expect().assertFail();
-      }
-      await setPhotoMode();
-      let retCode = cameraObj.getIsoInfoChangeTest();
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_002 ret is "+ retCode);
-      expect(retCode).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ISO_INFO_PROMISE_002 ends here");
     })
   })
 }

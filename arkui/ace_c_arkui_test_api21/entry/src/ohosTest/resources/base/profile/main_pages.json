@@ -14,6 +14,7 @@
     "MainAbility/pages/list/ListWillStartFlingTest",
     "MainAbility/pages/list/ListDidStopFlingTest",
     "MainAbility/pages/imageSupportSvg2/ImageSupportSvg2Page",
-    "MainAbility/pages/sourceType/SourceTypeTest"
+    "MainAbility/pages/sourceType/SourceTypeTest",
+    "MainAbility/pages/nodeUtil/TestGetPositionGetSize"
   ]
 }
