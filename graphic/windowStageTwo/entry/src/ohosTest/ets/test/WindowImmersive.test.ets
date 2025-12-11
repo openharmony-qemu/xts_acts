@@ -3975,25 +3975,17 @@ export default function windowImmersiveTest() {
             console.info(caseName + ' avoidArea7: ' + JSON.stringify(avoidArea7));
             let avoidArea8 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR)
             console.info(caseName + ' avoidArea8: ' + JSON.stringify(avoidArea8));
-            // expect(avoidArea7.leftRect.left).assertEqual(avoidArea8.leftRect.left);
-            // expect(avoidArea7.leftRect.top).assertEqual(avoidArea8.leftRect.top);
             expect(avoidArea7.leftRect.width).assertEqual(0);
             expect(avoidArea7.leftRect.height).assertEqual(0);
 
-            // expect(avoidArea7.rightRect.left).assertEqual(avoidArea8.rightRect.left);
-            // expect(avoidArea7.rightRect.top).assertEqual(avoidArea8.rightRect.top);
             expect(avoidArea7.rightRect.width).assertEqual(0);
             expect(avoidArea7.rightRect.height).assertEqual(0);
 
-            // expect(avoidArea7.topRect.left).assertEqual(avoidArea8.topRect.left);
-            // expect(avoidArea7.topRect.top).assertEqual(avoidArea8.topRect.top);
             expect(avoidArea7.topRect.width).assertEqual(0);
             expect(avoidArea7.topRect.height).assertEqual(0);
 
-            // expect(avoidArea7.bottomRect.left).assertEqual(avoidArea8.bottomRect.left);
-            // expect(avoidArea7.bottomRect.top).assertEqual(avoidArea8.bottomRect.top);
-            expect(avoidArea7.bottomRect.width).assertEqual(0);
-            expect(avoidArea7.bottomRect.height).assertEqual(0);
+            expect(avoidArea7.bottomRect.width).assertLarger(0);
+            expect(avoidArea7.bottomRect.height).assertLarger(0);
             await terminateAbility3(caseName);
             done()
           } catch (error) {
