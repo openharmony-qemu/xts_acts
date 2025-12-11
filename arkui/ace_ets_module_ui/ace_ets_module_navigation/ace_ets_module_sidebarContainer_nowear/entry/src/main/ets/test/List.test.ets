@@ -23,6 +23,8 @@ import SideBarContainerDivider from './SideBarContainerTest/SideBarContainerDivi
 import sideBarShowSideBarJsunit from './SideBarContainerTest/sideBar3.test'
 import sidebarIconsJsunit from './SideBarContainerTest/sidebarfirst.test'
 import sidebarTypeTest from './SideBarContainerTest/SidebarType.test';
+import SideBarWidth1 from './SideBarContainerTest/SideBarWidth1.test'
+import SideBarWidth2 from './SideBarContainerTest/SideBarWidth2.test';
 
 export default function testsuite() {
   SideBarContainer_Attribute();
@@ -35,4 +37,6 @@ export default function testsuite() {
   sideBarShowSideBarJsunit();
   sidebar();
   sidebarTypeTest();
+  SideBarWidth1();
+  SideBarWidth2();
 }
