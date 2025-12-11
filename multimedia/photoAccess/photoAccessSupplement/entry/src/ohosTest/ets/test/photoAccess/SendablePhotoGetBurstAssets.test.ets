@@ -61,12 +61,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
 
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_001
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_001
-     * @tc.desc      : sendable phAccessHelper.createAsset extension 255
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_001
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_001
+     * @tc.desc     sendable phAccessHelper.createAsset extension 255
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_001';
@@ -88,12 +88,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       done();
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_002
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_002
-     * @tc.desc      : sendable phAccessHelper.createAsset extension 256
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_002
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_002
+     * @tc.desc     sendable phAccessHelper.createAsset extension 256
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_002';
@@ -115,12 +115,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       done();
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_003
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_003
-     * @tc.desc      : sendable phAccessHelper.createAsset extension 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_003
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_003
+     * @tc.desc     sendable phAccessHelper.createAsset extension 0
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_003';
@@ -142,12 +142,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       done();
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_004
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_004
-     * @tc.desc      : sendable phAccessHelper.createAsset extension 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_004
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_004
+     * @tc.desc     sendable phAccessHelper.createAsset extension 1
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_createAsset_extension_004';
@@ -170,12 +170,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_clone_001
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_clone_001
-     * @tc.desc      : clone phAccessHelper title 255
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_clone_001
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_clone_001
+     * @tc.desc     clone phAccessHelper title 255
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_clone_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_clone_001';
@@ -201,12 +201,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       done();
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_clone_002
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_clone_002
-     * @tc.desc      : clone phAccessHelper title 256
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_clone_002
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_clone_002
+     * @tc.desc     clone phAccessHelper title 256
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_clone_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_clone_002';
@@ -232,12 +232,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       done();
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_clone_003
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_clone_003
-     * @tc.desc      : clone phAccessHelper title 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_clone_003
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_clone_003
+     * @tc.desc     clone phAccessHelper title 0
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_clone_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_clone_003';
@@ -263,12 +263,12 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       done();
     })
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_clone_004
-     * @tc.name      : SENDABLE_PHOTO_ACCESS_HELPER_clone_004
-     * @tc.desc      : clone phAccessHelper title 1
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number   SENDABLE_PHOTO_ACCESS_HELPER_clone_004
+     * @tc.name     SENDABLE_PHOTO_ACCESS_HELPER_clone_004
+     * @tc.desc     clone phAccessHelper title 1
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_clone_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_clone_004';
