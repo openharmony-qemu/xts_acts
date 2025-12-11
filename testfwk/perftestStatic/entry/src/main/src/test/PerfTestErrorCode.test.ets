@@ -349,7 +349,7 @@ export default function perfTestErrorTest() {
                     metrics: metrics,
                     actionCode: (finish: Callback<boolean>) => {
                         console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode start`);
-                        await Utils.msSleep(9000);
+                        await Utils.msSleep(5000);
                         console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode end`);
                         finish(true)
                     },
@@ -358,7 +358,7 @@ export default function perfTestErrorTest() {
                         console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static resetCode called 2`);
                         finish(true)
                     },
-                    timeout: 5000,
+                    timeout: 2000,
                 }
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
                 await perfTest.run();
@@ -367,6 +367,7 @@ export default function perfTestErrorTest() {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode timeOut is: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(TimeoutErrorCode);
             }
+            await Utils.msSleep(8000);
             console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static end`);
         })
 
@@ -391,11 +392,11 @@ export default function perfTestErrorTest() {
                     iterations: 1,
                     resetCode: (finish: Callback<boolean>) => {
                         console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode start `);
-                        await Utils.msSleep(9000);
+                        await Utils.msSleep(5000);
                         console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode end`);
                         finish(true)
                     },
-                    timeout: 5000,
+                    timeout: 2000,
                 }
                 let perfTest: PerfTest= PerfTest.create(perfTestStrategy)
                 await perfTest.run();
@@ -404,6 +405,7 @@ export default function perfTestErrorTest() {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode timeOut is: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(TimeoutErrorCode);
             }
+            await Utils.msSleep(8000);
             console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static end`);
         })
 
