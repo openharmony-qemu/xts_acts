@@ -399,6 +399,116 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       }
     });
 
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0100
+     * @tc.name       testSetWindowContainerColorNoPermissionwithMainWindow
+     * @tc.desc       验证普通应用未配置权限时主窗调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testSetWindowContainerColorNoPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorNoPermissionwithMainWindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+        console.info(`${caseName} success`);
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
+        if (canIUseRes) {
+          if (isPCStatus == '') {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(201);
+          }
+        } else {
+          expect(err.code).assertEqual(801);
+        }
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0200
+     * @tc.name       testSetWindowContainerColorNoPermissionwithSubwindow
+     * @tc.desc       验证普通应用未配置权限时子窗口调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testSetWindowContainerColorNoPermissionwithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorNoPermissionwithSubwindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        await subWindowClass.setUIContent("testability/pages/Index2");
+        await subWindowClass.showWindow();
+        subWindowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+        await subWindowClass.destroyWindow()
+        console.info(`${caseName} success`);
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
+        await subWindowClass?.destroyWindow()
+        if (canIUseRes) {
+          if (isPCStatus == '') {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(201);
+          }
+        } else {
+          expect(err.code).assertEqual(801);
+        }
+        done()
+      }
+    });
+    
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0300
+     * @tc.name       testSetWindowContainerColorPermissionwithSystemWindow
+     * @tc.desc       验证普通应用在PC设备未配置权限时dialog窗调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testSetWindowContainerColorPermissionwithSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorPermissionwithSystemWindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: 'dialogWindow',
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      }
+      try {
+        subWindowClass = await window.createWindow(config);
+        await subWindowClass.setUIContent("testability/pages/Index2");
+        await subWindowClass.showWindow();
+        subWindowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+        await subWindowClass.destroyWindow()
+        console.info(`${caseName} success`);
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
+        await subWindowClass?.destroyWindow()
+        if (canIUseRes) {
+          if (isPCStatus == '') {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(201);
+          }
+        } else {
+          expect(err.code).assertEqual(801);
+        }
+        done()
+      }
+    });
 
   })
 }
