@@ -37,6 +37,7 @@ export default function DragAndDropTest() {
     it('DragAndDropTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.Nullptr_OH_ArkUI_CreateDragActionWithContext()).assertEqual(0)
       await Utils.sleep(200)
+      done()
     })
 
     /**
@@ -63,7 +64,6 @@ export default function DragAndDropTest() {
      */
     it('DragAndDropTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.Nullptr_OH_ArkUI_CreateDragPreviewOption()).assertEqual(0)
-      await Utils.sleep(200)
       await Utils.sleep(200)
       done()
     })
