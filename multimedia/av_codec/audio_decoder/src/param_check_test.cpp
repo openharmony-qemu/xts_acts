@@ -96,46 +96,6 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_001, TestSize.Level2)
     result0 = aDecBufferDemo->Destroy(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
 
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_GSM_MS);
-    ASSERT_NE(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_EAC3);
-    ASSERT_EQ(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_NE(result0, AV_ERR_OK);
-
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AC3);
-    ASSERT_NE(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_ALAC);
-    ASSERT_NE(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_GSM);
-    ASSERT_NE(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_WMAV1);
-    ASSERT_NE(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_WMAV2);
-    ASSERT_NE(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_WMAPRO);
-    ASSERT_NE(codec, nullptr);
-    result0 = aDecBufferDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
     codec = aDecBufferDemo->CreateByMime("aaa");
     ASSERT_EQ(codec, nullptr);
     result0 = aDecBufferDemo->Destroy(codec);
@@ -1176,6 +1136,63 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_025, TestSize.Level2)
     result0 = aDecBufferDemo->Destroy(codec);
     OH_AVFormat_Destroy(format);
     format = nullptr;
+
+    delete aDecBufferDemo;
+}
+
+/**
+ * @tc.name   PARAM_CHECK_026
+ * @tc.number PARAM_CHECK_026
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(ParamCheckTest, PARAM_CHECK_026, TestSize.Level2)
+{
+    OH_AVCodec* codec = nullptr;
+    OH_AVErrCode result0;
+    ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_GSM_MS);
+    ASSERT_NE(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_EAC3);
+    ASSERT_EQ(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_NE(result0, AV_ERR_OK);
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AC3);
+    ASSERT_NE(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_ALAC);
+    ASSERT_NE(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_GSM);
+    ASSERT_NE(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_WMAV1);
+    ASSERT_NE(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_WMAV2);
+    ASSERT_NE(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_WMAPRO);
+    ASSERT_NE(codec, nullptr);
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
 
     delete aDecBufferDemo;
 }
