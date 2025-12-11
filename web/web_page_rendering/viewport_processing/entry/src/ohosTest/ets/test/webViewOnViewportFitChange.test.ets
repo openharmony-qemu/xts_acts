@@ -27,13 +27,13 @@ export default function webViewOnViewportFitChange() {
      done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OnViewportFitChange_API_0001
-     *@tc.name testWebViewOnViewportFitChange
-     *@tc.desc test OnViewportFitChange
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewOnViewportFitChange
+     * @tc.number SUB_ACE_WEB_OnViewportFitChange_API_0001
+     * @tc.desc   test OnViewportFitChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewOnViewportFitChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent("emitWebViewOnViewportFitChange", 154030);
@@ -42,13 +42,13 @@ export default function webViewOnViewportFitChange() {
 
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_ViewportFit_COVER_API_0002
-     *@tc.name testWebView_ViewportFit_COVER
-     *@tc.desc ViewportFit_COVER
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebView_ViewportFit_COVER
+     * @tc.number SUB_ACE_WEB_ViewportFit_COVER_API_0002
+     * @tc.desc   ViewportFit_COVER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_ViewportFit_COVER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent("emitWebView_ViewportFit_COVER", 154030);

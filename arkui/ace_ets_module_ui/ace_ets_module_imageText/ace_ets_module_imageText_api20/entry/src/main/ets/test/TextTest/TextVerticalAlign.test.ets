@@ -42,12 +42,12 @@ export default function TextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextVerticalAlignTest_0010
-     * @tc.name      TextVerticalAlignTest_0010
-     * @tc.desc      test the textVerticalAlign of Text: TextVerticalAlign.BASELINE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextVerticalAlignTest_0010
+     * @tc.number SUB_ACE_TextVerticalAlignTest_0010
+     * @tc.desc   test the textVerticalAlign of Text: TextVerticalAlign.BASELINE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextVerticalAlignTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextVerticalAlignTest_0010] START');
@@ -60,12 +60,12 @@ export default function TextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextVerticalAlignTest_0020
-     * @tc.name      TextVerticalAlignTest_0020
-     * @tc.desc      test the textVerticalAlign of Text: TextVerticalAlign.BOTTOM
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextVerticalAlignTest_0020
+     * @tc.number SUB_ACE_TextVerticalAlignTest_0020
+     * @tc.desc   test the textVerticalAlign of Text: TextVerticalAlign.BOTTOM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextVerticalAlignTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextVerticalAlignTest_0020] START');
@@ -78,12 +78,12 @@ export default function TextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextVerticalAlignTest_0030
-     * @tc.name      TextVerticalAlignTest_0030
-     * @tc.desc      test the textVerticalAlign of Text: TextVerticalAlign.CENTER
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextVerticalAlignTest_0030
+     * @tc.number SUB_ACE_TextVerticalAlignTest_0030
+     * @tc.desc   test the textVerticalAlign of Text: TextVerticalAlign.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextVerticalAlignTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[TextVerticalAlignTest_0030] START');
@@ -96,12 +96,12 @@ export default function TextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextVerticalAlignTest_0040
-     * @tc.name      TextVerticalAlignTest_0040
-     * @tc.desc      test the textVerticalAlign of Text: TextVerticalAlign.TOP
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextVerticalAlignTest_0040
+     * @tc.number SUB_ACE_TextVerticalAlignTest_0040
+     * @tc.desc   test the textVerticalAlign of Text: TextVerticalAlign.TOP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextVerticalAlignTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[TextVerticalAlignTest_0040] START');
@@ -114,12 +114,12 @@ export default function TextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextVerticalAlignTest_0050
-     * @tc.name      TextVerticalAlignTest_0050
-     * @tc.desc      test the textVerticalAlign of Text: default
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextVerticalAlignTest_0050
+     * @tc.number SUB_ACE_TextVerticalAlignTest_0050
+     * @tc.desc   test the textVerticalAlign of Text: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextVerticalAlignTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[TextVerticalAlignTest_0050] START');
@@ -132,12 +132,12 @@ export default function TextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextVerticalAlignTest_0060
-     * @tc.name      TextVerticalAlignTest_0060
-     * @tc.desc      test the textVerticalAlign of Text: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextVerticalAlignTest_0060
+     * @tc.number SUB_ACE_TextVerticalAlignTest_0060
+     * @tc.desc   test the textVerticalAlign of Text: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextVerticalAlignTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[TextVerticalAlignTest_0060] START');

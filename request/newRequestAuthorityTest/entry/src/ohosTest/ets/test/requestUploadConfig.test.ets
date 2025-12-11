@@ -87,13 +87,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0100
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0100
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0100
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0100
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0100 is starting-----------------------");
@@ -124,13 +124,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0200
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0200
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0200
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0200
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0200 is starting-----------------------");
@@ -161,13 +161,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0300
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0300
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0300
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0300
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0300 is starting-----------------------");
@@ -198,13 +198,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0400
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0400
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0400
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0400
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0400 is starting-----------------------");
@@ -235,13 +235,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0500
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0500
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0500
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0500
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0100 is starting-----------------------");
@@ -272,13 +272,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0600
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0600
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0600
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0600
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0600', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0600 is starting-----------------------");
@@ -309,13 +309,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0700
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0700
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0700
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0700
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0700', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0700 is starting-----------------------");
@@ -346,13 +346,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0800
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0800
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0800
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0800
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0800', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0800 is starting-----------------------");
@@ -383,13 +383,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_0900
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_0900
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_0900
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_0900
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_0900', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_0900 is starting-----------------------");
@@ -420,13 +420,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1000
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1000
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1000
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1000
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1000', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1000 is starting-----------------------");
@@ -457,13 +457,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1100
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1100
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1100
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1100
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1100 is starting-----------------------");
@@ -494,13 +494,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1200
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1200
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1200
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1200
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1200 is starting-----------------------");
@@ -531,13 +531,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1300
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1300
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1300
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1300
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0100 is starting-----------------------");
@@ -568,13 +568,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1400
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1400
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1400
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1400
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1400 is starting-----------------------");
@@ -605,13 +605,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1500
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1500
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1500
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1500
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1500 is starting-----------------------");
@@ -642,13 +642,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1600
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1600
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1600
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1600
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1600', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1600 is starting-----------------------");
@@ -679,13 +679,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1800
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1800
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1800
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1800
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1800', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1800 is starting-----------------------");
@@ -716,13 +716,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_UploadConfig_1900
-     * @tc.name: SUB_REQUEST_Agent_UploadConfig_1900
-     * @tc.desc: different upload path or upload file name of config
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_UploadConfig_1900
+     * @tc.number SUB_REQUEST_Agent_UploadConfig_1900
+     * @tc.desc   different upload path or upload file name of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_UploadConfig_1900', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_UploadConfig_1900 is starting-----------------------");
@@ -753,13 +753,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_contentType_0100
-     * @tc.name: SUB_REQUEST_Agent_contentType_0100
-     * @tc.desc: contentType is test name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_contentType_0100
+     * @tc.number SUB_REQUEST_Agent_contentType_0100
+     * @tc.desc   contentType is test name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_contentType_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_contentType_0100 is starting-----------------------");
@@ -802,13 +802,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_REQUEST_Agent_contentType_0200
-     * @tc.name: SUB_REQUEST_Agent_contentType_0200
-     * @tc.desc: contentType is default.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_REQUEST_Agent_contentType_0200
+     * @tc.number SUB_REQUEST_Agent_contentType_0200
+     * @tc.desc   contentType is default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Agent_contentType_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Agent_contentType_0200 is starting-----------------------");
@@ -850,13 +850,13 @@ export default function requestUploadConfigTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Download_on_faultOccur_1000
-     * @tc.name: SUB_Request_Download_on_faultOccur_1000
-     * @tc.desc: faults of REDIRECT error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Download_on_faultOccur_1000
+     * @tc.number SUB_Request_Download_on_faultOccur_1000
+     * @tc.desc   faults of REDIRECT error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_on_faultOccur_1000', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Download_on_faultOccur_1000 is starting-----------------------");

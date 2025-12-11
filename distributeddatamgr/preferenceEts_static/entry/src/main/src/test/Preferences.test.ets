@@ -46,6 +46,22 @@ let mPreferences: dataPreferences.Preferences;
 let context: common.UIAbilityContext;
 const TAG = '[PREFERENCES_CALLBACK_JSUNIT_TEST]'
 
+class User {
+  name: string = '';
+  age: int;
+  salary: double
+};
+
+class Company {
+  cName: string = '';
+  enName: string = '';
+  year: int;
+  money: BigInt = 0n;
+  isActive: boolean = false;
+  groups: string[] = [];
+  users: User[] = [];
+}
+
 export default function preferenceTest() {
   describe('preferenceTest', (): void =>  {
     beforeAll (() => {
@@ -88,7 +104,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetPreferences0001
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2200
      * @tc.desc   GetSyn promise interface test
@@ -113,7 +128,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDeletePreferencesOptionsPromise_0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2300
      * @tc.desc   GetSyn promise interface test
@@ -149,7 +163,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDeletePreferencesOptionsPromise_0200
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2400
      * @tc.desc   GetSyn promise interface test
@@ -202,7 +215,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesGetSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_0100
      * @tc.desc   GetSyn promise interface test
@@ -218,7 +230,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesPutSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_PutSync_strong_basis_EtsApiTest_0200
      * @tc.desc   PutSync promise interface test
@@ -297,7 +308,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesPutArrayNumber001
      * @tc.number SUB_DistributedData_Preference_SDK_PutSync_strong_basis_EtsApiTest_2500
      * @tc.desc   PutArrayNumber promise interface test
@@ -316,7 +326,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesPutFlushRemoveGet_0300
      * @tc.number SUB_DistributedData_Preference_SDK_Flush_strong_basis_EtsApiTest_0300
      * @tc.desc   Flush promise interface test
@@ -368,7 +377,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetFloat0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetFloat_strong_basis_EtsApiTest_0400
      * @tc.desc   GetFloat promise interface test
@@ -387,7 +395,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesPutInt0100
      * @tc.number SUB_DistributedData_Preference_SDK_PutInt_strong_basis_EtsApiTest_0500
      * @tc.desc   PutInt promise interface test
@@ -417,7 +424,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDelete0010
      * @tc.number SUB_DistributedData_Preference_SDK_Delete_strong_basis_EtsApiTest_0600
      * @tc.desc   Delete promise interface test
@@ -445,7 +451,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesHasKey0036
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0700
      * @tc.desc   HasKey promise interface test
@@ -463,7 +468,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesHasKey0031
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0800
      * @tc.desc   HasKey promise interface test
@@ -484,7 +488,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testRemovePreferencesFromCache0001
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0900
      * @tc.desc   HasKey promise interface test
@@ -517,7 +520,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0400
      * @tc.number SUB_DistributedData_Preference_SDK_removePreferencesFromCacheSync_strong_basis_EtsApiTest_1000
      * @tc.desc   removePreferencesFromCacheSync promise interface test
@@ -564,7 +566,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_deleteSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_strong_basis_EtsApiTest_1100
      * @tc.desc   deleteSync promise interface test
@@ -582,7 +583,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_GetPreferencesSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_sGetPreferencesSync_basis_EtsApiTest_1200
      * @tc.desc   GetPreferencesSync promise interface test
@@ -606,7 +606,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesHasSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_HasSync_basis_EtsApiTest_1300
      * @tc.desc   HasSync promise interface test
@@ -624,7 +623,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_Preferences_GetAllSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAllSync_basis_EtsApiTest_1400
      * @tc.desc   GetAllSync promise interface test
@@ -676,7 +674,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesClear0012
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_Clear_basis_EtsApiTest_1500
      * @tc.desc   Clear promise interface test
@@ -696,7 +693,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesClear0011
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_Clear_basis_EtsApiTest_1600
      * @tc.desc   Clear promise interface test
@@ -719,7 +715,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesDeletePreferences0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_DeletePreferences_basis_EtsApiTest_1700
      * @tc.desc   DeletePreferences promise interface test
@@ -752,7 +747,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetPreferencesPromise0010
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetPreferences_basis_EtsApiTest_1800
      * @tc.desc   GetPreferences promise interface test
@@ -777,7 +771,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   PreferencesRemovePreferencesFromCacheSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_RemovePreferencesFromCacheSync_basis_EtsApiTest_1900
      * @tc.desc   RemovePreferencesFromCacheSync promise interface test
@@ -809,7 +802,6 @@ export default function preferenceTest() {
     
     
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetAllCallBackTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2000
      * @tc.desc   GetAll promise interface test
@@ -864,7 +856,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesGetAllPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2100
      * @tc.desc   GetAllPromise promise interface test
@@ -921,7 +912,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnChangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2600
      * @tc.desc   GetAllPromise promise interface test
@@ -960,7 +950,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOffChangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2700
      * @tc.desc   GetAllPromise promise interface test
@@ -992,7 +981,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnMultiprocessPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2800
      * @tc.desc   GetAllPromise promise interface test
@@ -1026,7 +1014,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOffMultiprocessPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2900
      * @tc.desc   GetAllPromise promise interface test
@@ -1058,7 +1045,6 @@ export default function preferenceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnDatachangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_3000
      * @tc.desc   GetAllPromise promise interface test
@@ -1088,7 +1074,6 @@ export default function preferenceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   testPreferencesOnMultiprocessErrPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_3100
      * @tc.desc   GetAllPromise promise interface test
@@ -1123,7 +1108,6 @@ export default function preferenceTest() {
 
 
      /**
-      * @generated.time 2025-11-09 20:49:48
       * @tc.name   testPreferencesMxaKeyLengthPromiseTest0001
       * @tc.number SUB_DistributedData_Preference_SDK_MxaKeyLength_basis_EtsApiTest_3200
       * @tc.desc   MxaKeyLength promise interface test
@@ -1140,6 +1124,108 @@ export default function preferenceTest() {
         done();
       } catch(err : BusinessError) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesMxaKeyLengthPromiseTest0001 :" + err.code + err.message );
+        expect().assertFail();
+        done();
+      }
+    })
+
+    const userArrVar: User[] = [];
+    userArrVar.push({ name: 'zhangSan', age: 18, salary: 3000.5 });
+    userArrVar.push({ name: 'lisi', age: 20, salary: 5000.4 });
+    const moneyNum = BigInt("-12345678912345678912345678971234567123456");
+    let company: Company = {
+      cName: '我的公司',
+      enName: 'myCompany',
+      year: 1998,
+      groups: ['dp1', 'dp2'],
+      users: userArrVar,
+      isActive: true,
+      money: moneyNum
+    };
+
+    /**
+     * @tc.name   testPreferencesObjectPromiseTestGet
+     * @tc.number SUB_DistributedData_Preference_SDK_ObjectGet_basis_EtsApiTest_3300
+     * @tc.desc   MxaKeyLength promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesObjectPromiseTestGet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        mPreferences.flushSync();
+
+        await mPreferences.put("object_key", company);
+        let compJson = await mPreferences.get("object_key", {});
+        let compJsonElement = JSON.parseJsonElement(compJson.toString());
+        expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
+        expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
+        expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
+        expect(true).assertEqual(compJsonElement.getElement("isActive").asBoolean());
+
+        let groups = compJsonElement.getArray("groups");
+        expect("dp1").assertEqual(groups[0].asString());
+        expect("dp2").assertEqual(groups[1].asString());
+        let users = compJsonElement.getArray("users");
+        expect(18).assertEqual(users[0].getElement("age").asInteger());
+        expect("zhangSan").assertEqual(users[0].getElement("name").asString());
+        expect(3000.5).assertEqual(users[0].getElement("salary").asDouble());
+        expect(20).assertEqual(users[1].getElement("age").asInteger());
+        expect("lisi").assertEqual(users[1].getElement("name").asString());
+        expect(5000.4).assertEqual(users[1].getElement("salary").asDouble());
+        done();
+      } catch(err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGet :" + err.code + err.message );
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPreferencesObjectPromiseTestGetAll
+     * @tc.number SUB_DistributedData_Preference_SDK_ObjectGetAll_basis_EtsApiTest_3400
+     * @tc.desc   MxaKeyLength promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesObjectPromiseTestGetAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        mPreferences.flushSync();
+
+        await mPreferences.put("object_key", company);
+        await mPreferences.put("string_key", 'test_string');
+        await mPreferences.put("double_key", 3.14);
+
+        mPreferences.getAll((err: BusinessError | null, value: Object | undefined) => {
+          let obj = value as Record<string, object>;
+          expect("test_string").assertEqual(obj.get("string_key"));
+          expect(3.14).assertEqual(obj.get("double_key"));
+          let allJson = obj.get("object_key");
+          let compJsonElement = JSON.parseJsonElement(allJson?.toString() as string);
+
+          expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
+          expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
+          expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
+          expect(true).assertEqual(compJsonElement.getElement("isActive").asBoolean());
+
+          let groups = compJsonElement.getArray("groups");
+          expect("dp1").assertEqual(groups[0].asString());
+          expect("dp2").assertEqual(groups[1].asString());
+          let users = compJsonElement.getArray("users");
+          expect(18).assertEqual(users[0].getElement("age").asInteger());
+          expect("zhangSan").assertEqual(users[0].getElement("name").asString());
+          expect(3000.5).assertEqual(users[0].getElement("salary").asDouble());
+          expect(20).assertEqual(users[1].getElement("age").asInteger());
+          expect("lisi").assertEqual(users[1].getElement("name").asString());
+          expect(5000.4).assertEqual(users[1].getElement("salary").asDouble());
+          done();
+        })
+        done();
+      } catch(err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGetAll :" + err.code + err.message );
         expect().assertFail();
         done();
       }

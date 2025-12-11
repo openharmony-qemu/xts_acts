@@ -38,12 +38,12 @@ export default function demoEscapeUtilJsonTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0100
-     * @tc.name       : testParseEscape0001
-     * @tc.desc       : Test the Utils interface parse with input escape \b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParseEscape0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0100
+     * @tc.desc   Test the Utils interface parse with input escape \b.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testParseEscape0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParseEscape0001";
@@ -60,12 +60,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0200
-     * @tc.name       : testParseEscape0002
-     * @tc.desc       : Test the Utils interface parse with input escape \f.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParseEscape0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0200
+     * @tc.desc   Test the Utils interface parse with input escape \f.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testParseEscape0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParseEscape0002";
@@ -82,12 +82,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0300
-     * @tc.name       : testParseEscape0003
-     * @tc.desc       : Test the Utils interface parse with input escape \n.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testParseEscape0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0300
+     * @tc.desc   Test the Utils interface parse with input escape \n.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testParseEscape0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testParseEscape0003";
@@ -104,12 +104,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0400
-     * @tc.name       : testParseEscape0004
-     * @tc.desc       : Test the Utils interface parse with input escape \r.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0400
+     * @tc.desc   Test the Utils interface parse with input escape \r.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0004";
@@ -126,12 +126,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0500
-     * @tc.name       : testParseEscape0005
-     * @tc.desc       : Test the Utils interface parse with input escape \t.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0500
+     * @tc.desc   Test the Utils interface parse with input escape \t.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0005";
@@ -148,12 +148,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0600
-     * @tc.name       : testParseEscape0006
-     * @tc.desc       : Test the Utils interface parse with input escape \v.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0600
+     * @tc.desc   Test the Utils interface parse with input escape \v.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0006";
@@ -170,12 +170,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0700
-     * @tc.name       : testParseEscape0007
-     * @tc.desc       : Test the Utils interface parse with input escape \x24.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0700
+     * @tc.desc   Test the Utils interface parse with input escape \x24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0007";
@@ -193,12 +193,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0800
-     * @tc.name       : testParseEscape0008
-     * @tc.desc       : Test the Utils interface parse with input escape \开.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0800
+     * @tc.desc   Test the Utils interface parse with input escape \开.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0008";
@@ -215,12 +215,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0900
-     * @tc.name       : testParseEscape0009
-     * @tc.desc       : Test the Utils interface parse with input escape \开.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_0900
+     * @tc.desc   Test the Utils interface parse with input escape \开.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0009";
@@ -237,12 +237,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_1000
-     * @tc.name       : testParseEscape0010
-     * @tc.desc       : Test the Utils interface parse with input escape \0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_1000
+     * @tc.desc   Test the Utils interface parse with input escape \0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0010";
@@ -259,12 +259,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_1100
-     * @tc.name       : testParseEscape0011
-     * @tc.desc       : Test the Utils interface parse with input escape \b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParseEscape0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_ESCAPE_1100
+     * @tc.desc   Test the Utils interface parse with input escape \b.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParseEscape0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testParseEscape0011";
@@ -281,12 +281,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1200
-     * @tc.name       : testUtilJsonHasEscape0001
-     * @tc.desc       : Test the function of the Interface escape  \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1200
+     * @tc.desc   Test the function of the Interface escape  \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0001";
@@ -302,12 +302,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_1300
-     * @tc.name       : testUtilJsonHasEmoji0002
-     * @tc.desc       : Test the function of the Interface escape  \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_1300
+     * @tc.desc   Test the function of the Interface escape  \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0002";
@@ -323,12 +323,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1400
-     * @tc.name       : testUtilJsonHasEscape0003
-     * @tc.desc       : Test the function of the Interface escape  \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1400
+     * @tc.desc   Test the function of the Interface escape  \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0003";
@@ -344,12 +344,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1500
-     * @tc.name       : testUtilJsonHasEscape0004
-     * @tc.desc       : Test the function of the Interface escape  \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1500
+     * @tc.desc   Test the function of the Interface escape  \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0004";
@@ -365,12 +365,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1600
-     * @tc.name       : testUtilJsonHasEscape0005
-     * @tc.desc       : Test the function of the Interface escape  \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1600
+     * @tc.desc   Test the function of the Interface escape  \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0005";
@@ -386,12 +386,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1700
-     * @tc.name       : testUtilJsonHasEscape0006
-     * @tc.desc       : Test the function of the Interface escape  \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1700
+     * @tc.desc   Test the function of the Interface escape  \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0006";
@@ -407,12 +407,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1800
-     * @tc.name       : testUtilJsonHasEscape0007
-     * @tc.desc       : Test the function of the Interface escape  \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1800
+     * @tc.desc   Test the function of the Interface escape  \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0007";
@@ -428,12 +428,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1900
-     * @tc.name       : testUtilJsonHasEscape0008
-     * @tc.desc       : Test the function of the Interface escape  \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_1900
+     * @tc.desc   Test the function of the Interface escape  \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0008";
@@ -449,12 +449,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2000
-     * @tc.name       : testUtilJsonHasEscape0009
-     * @tc.desc       : Test the function of the Interface escape  \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2000
+     * @tc.desc   Test the function of the Interface escape  \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0009";
@@ -470,12 +470,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2100
-     * @tc.name       : testUtilJsonHasEscape0010
-     * @tc.desc       : Test the function of the Interface escape  \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2100
+     * @tc.desc   Test the function of the Interface escape  \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0010";
@@ -491,12 +491,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2200
-     * @tc.name       : testUtilJsonHasEscape0011
-     * @tc.desc       : Test the function of the Interface escape  \\b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEscape0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Escape_2200
+     * @tc.desc   Test the function of the Interface escape  \\b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEscape0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEscape0011";
@@ -511,12 +511,12 @@ export default function demoEscapeUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2300
-     * @tc.name       : testUtilJsonRemoveEscape0001
-     * @tc.desc       : Test the function of the Interface escape  \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2300
+     * @tc.desc   Test the function of the Interface escape  \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0001";
@@ -533,12 +533,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2400
-     * @tc.name       : testUtilJsonRemoveEmoji0002
-     * @tc.desc       : Test the function of the Interface escape  \f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2400
+     * @tc.desc   Test the function of the Interface escape  \f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0002";
@@ -555,12 +555,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2500
-     * @tc.name       : testUtilJsonRemoveEscape0003
-     * @tc.desc       : Test the function of the Interface escape  \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2500
+     * @tc.desc   Test the function of the Interface escape  \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0003";
@@ -577,12 +577,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2600
-     * @tc.name       : testUtilJsonRemoveEscape0004
-     * @tc.desc       : Test the function of the Interface escape  \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2600
+     * @tc.desc   Test the function of the Interface escape  \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0004";
@@ -599,12 +599,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2700
-     * @tc.name       : testUtilJsonRemoveEscape0005
-     * @tc.desc       : Test the function of the Interface escape  \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2700
+     * @tc.desc   Test the function of the Interface escape  \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0005";
@@ -621,12 +621,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2800
-     * @tc.name       : testUtilJsonRemoveEscape0006
-     * @tc.desc       : Test the function of the Interface escape  \v
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2800
+     * @tc.desc   Test the function of the Interface escape  \v
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0006";
@@ -643,12 +643,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2900
-     * @tc.name       : testUtilJsonRemoveEscape0007
-     * @tc.desc       : Test the function of the Interface escape  \x24
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_2900
+     * @tc.desc   Test the function of the Interface escape  \x24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0007";
@@ -665,12 +665,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3000
-     * @tc.name       : testUtilJsonRemoveEscape0008
-     * @tc.desc       : Test the function of the Interface escape  \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3000
+     * @tc.desc   Test the function of the Interface escape  \开
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0008";
@@ -687,12 +687,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3100
-     * @tc.name       : testUtilJsonRemoveEscape0009
-     * @tc.desc       : Test the function of the Interface escape  \😊
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3100
+     * @tc.desc   Test the function of the Interface escape  \😊
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0009";
@@ -709,12 +709,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3200
-     * @tc.name       : testUtilJsonRemoveEscape0010
-     * @tc.desc       : Test the function of the Interface escape  \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3200
+     * @tc.desc   Test the function of the Interface escape  \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0010";
@@ -731,12 +731,12 @@ export default function demoEscapeUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3300
-     * @tc.name       : testUtilJsonRemoveEscape0011
-     * @tc.desc       : Test the function of the Interface escape  \b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEscape0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Escape_3300
+     * @tc.desc   Test the function of the Interface escape  \b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEscape0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEscape0011";

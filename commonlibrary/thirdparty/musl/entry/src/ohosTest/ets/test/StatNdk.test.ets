@@ -34,12 +34,12 @@ export default function statNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_CHMOD_0100
-     * @tc.name       : testMuslStatChmod001
-     * @tc.desc       : test chmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatChmod001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_CHMOD_0100
+     * @tc.desc   test chmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatChmod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -49,12 +49,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_FSTAT64_0100
-     * @tc.name       : testMuslStatFstat64001
-     * @tc.desc       : test fstat64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatFstat64001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_FSTAT64_0100
+     * @tc.desc   test fstat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatFstat64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -69,12 +69,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_FSTATAT_0100
-     * @tc.name       : testMuslStatFstatat001
-     * @tc.desc       : test fstatat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatFstatat001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_FSTATAT_0100
+     * @tc.desc   test fstatat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatFstatat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -90,12 +90,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_FSTATAT64_0100
-     * @tc.name       : testMuslStatFstatat64001
-     * @tc.desc       : test fstatat64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatFstatat64001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_FSTATAT64_0100
+     * @tc.desc   test fstatat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatFstatat64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -110,12 +110,12 @@ export default function statNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_FUTIMENS_0100
-     * @tc.name       : testMuslStatFutimens001
-     * @tc.desc       : test futimens
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatFutimens001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_FUTIMENS_0100
+     * @tc.desc   test futimens
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatFutimens001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -125,12 +125,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKFIFOAT_0200
-     * @tc.name     : testMuslStatMkFifoAt002
-     * @tc.desc     : test mkfifoat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkFifoAt002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKFIFOAT_0200
+     * @tc.desc   test mkfifoat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkFifoAt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stat.mkFifoAt(-1, 'fifoAt002');
@@ -139,12 +139,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKFIFOAT_0300
-     * @tc.name     : testMuslStatMkFifoAt003
-     * @tc.desc     : test mkfifoat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkFifoAt003
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKFIFOAT_0300
+     * @tc.desc   test mkfifoat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkFifoAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stat.mkFifoAt(-100, 'fifoAt003');
@@ -152,12 +152,12 @@ export default function statNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0100
-     * @tc.name     : testMuslStatMkNodAt001
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStatMkNodAt001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0100
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -175,12 +175,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0200
-     * @tc.name     : testMuslStatMkNodAt002
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStatMkNodAt002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0200
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -198,12 +198,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0300
-     * @tc.name     : testMuslStatMkNodAt003
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStatMkNodAt003
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0300
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -221,12 +221,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0400
-     * @tc.name     : testMuslStatMkNodAt004
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStatMkNodAt004
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0400
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -244,12 +244,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0500
-     * @tc.name     : testMuslStatMkNodAt005
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStatMkNodAt005
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0500
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -267,12 +267,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0600
-     * @tc.name     : testMuslStatMkNodAt006
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStatMkNodAt006
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0600
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -290,12 +290,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0700
-     * @tc.name     : testMuslStatMkNodAt007
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt007
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0700
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -313,12 +313,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0800
-     * @tc.name     : testMuslStatMkNodAt008
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt008
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0800
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -336,12 +336,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0900
-     * @tc.name     : testMuslStatMkNodAt009
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt009
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_0900
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -359,12 +359,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1000
-     * @tc.name     : testMuslStatMkNodAt010
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt010
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1000
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -382,12 +382,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1100
-     * @tc.name     : testMuslStatMkNodAt011
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStatMkNodAt011
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1100
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -405,12 +405,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1200
-     * @tc.name     : testMuslStatMkNodAt012
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt012
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1200
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -428,12 +428,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1300
-     * @tc.name     : testMuslStatMkNodAt013
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt013
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1300
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -451,12 +451,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1400
-     * @tc.name     : testMuslStatMkNodAt014
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt014
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1400
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -474,12 +474,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1500
-     * @tc.name     : testMuslStatMkNodAt015
-     * @tc.desc     : test mknodat
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslStatMkNodAt015
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKNODAT_1500
+     * @tc.desc   test mknodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkNodAt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -497,12 +497,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_MKDIR_0100
-     * @tc.name       : testMuslStatMkDir001
-     * @tc.desc       : test mkdir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatMkDir001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKDIR_0100
+     * @tc.desc   test mkdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkDir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stat.mkDir();
@@ -511,12 +511,12 @@ export default function statNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_MKDIRAT_0100
-     * @tc.name       : testMuslStatMkDirat001
-     * @tc.desc       : test mkdirat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatMkDirat001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_MKDIRAT_0100
+     * @tc.desc   test mkdirat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatMkDirat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stat.mkDirAt();
@@ -526,12 +526,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_LSTAT_0100
-     * @tc.name       : testMuslStatLstat001
-     * @tc.desc       : test lstat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatLstat001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_LSTAT_0100
+     * @tc.desc   test lstat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatLstat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stat.lstat();
@@ -540,12 +540,12 @@ export default function statNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_LSTAT64_0100
-     * @tc.name       : testMuslStatLstat64001
-     * @tc.desc       : test lstat64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatLstat64001
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_LSTAT64_0100
+     * @tc.desc   test lstat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatLstat64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stat.lstat64();

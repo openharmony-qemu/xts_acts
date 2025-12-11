@@ -18,12 +18,12 @@ import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 export default function ErrorCodeTest() {
   describe('ErrorCodeTest', () => {
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCode_0100
-     * @tc.name    : SUB_OH_OHNativeErrorCode_0100
-     * @tc.desc    : test SUB_OH_OHNativeErrorCode ok Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCode_0100
+     * @tc.number SUB_OH_OHNativeErrorCode_0100
+     * @tc.desc   test SUB_OH_OHNativeErrorCode ok Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -40,12 +40,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCode_0200
-     * @tc.name    : SUB_OH_OHNativeErrorCode_0200
-     * @tc.desc    : test SUB_OH_OHNativeErrorCode invalid Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCode_0200
+     * @tc.number SUB_OH_OHNativeErrorCode_0200
+     * @tc.desc   test SUB_OH_OHNativeErrorCode invalid Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -62,12 +62,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BufferErrorCodeOK_0100
-     * @tc.name    : SUB_OH_Drawing_BufferErrorCodeOK_0100
-     * @tc.desc    : test SUB_OH_Drawing_BufferErrorCode return ok Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BufferErrorCodeOK_0100
+     * @tc.number SUB_OH_Drawing_BufferErrorCodeOK_0100
+     * @tc.desc   test SUB_OH_Drawing_BufferErrorCode return ok Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BufferErrorCodeOK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -84,12 +84,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeBuffer_0200
-     * @tc.name    : SUB_OH_OHNativeErrorCodeBuffer_0200
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeBuffer invalid Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeBuffer_0200
+     * @tc.number SUB_OH_OHNativeErrorCodeBuffer_0200
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeBuffer invalid Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeBuffer_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -106,12 +106,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeBufferSupport_0100
-     * @tc.name    : SUB_OH_OHNativeErrorCodeBufferSupport_0100
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeBuffer UNSUPPORTED Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeBufferSupport_0100
+     * @tc.number SUB_OH_OHNativeErrorCodeBufferSupport_0100
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeBuffer UNSUPPORTED Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeBufferSupport_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -129,12 +129,12 @@ export default function ErrorCodeTest() {
 
 
     /**
-     * @tc.number  : SUB_OH_Drawing_BufferHDIError_0100
-     * @tc.name    : SUB_OH_Drawing_BufferHDIError_0100
-     * @tc.desc    : test SUB_OH_Drawing_BufferHDIError code Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_BufferHDIError_0100
+     * @tc.number SUB_OH_Drawing_BufferHDIError_0100
+     * @tc.desc   test SUB_OH_Drawing_BufferHDIError code Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_BufferHDIError_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -151,12 +151,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeBufferImage_0100
-     * @tc.name    : SUB_OH_OHNativeErrorCodeBufferImage_0100
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeBufferImage unsupport Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeBufferImage_0100
+     * @tc.number SUB_OH_OHNativeErrorCodeBufferImage_0100
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeBufferImage unsupport Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeBufferImage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -173,12 +173,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeImageNoBuffer_0100
-     * @tc.name    : SUB_OH_OHNativeErrorCodeImageNoBuffer_0100
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeImage no buffer Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeImageNoBuffer_0100
+     * @tc.number SUB_OH_OHNativeErrorCodeImageNoBuffer_0100
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeImage no buffer Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeImageNoBuffer_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -195,12 +195,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID
-     * @tc.name    : SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID
-     * @tc.desc    : test SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID
+     * @tc.number SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID
+     * @tc.desc   test SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeImage_ErrCodeBUFFER_STATE_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -217,12 +217,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE
-     * @tc.name    : SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE
-     * @tc.desc    : test SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE
+     * @tc.number SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE
+     * @tc.desc   test SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeImage_ErrCodeBUFFER_NOT_IN_CACHE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -239,12 +239,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeVSync_0100
-     * @tc.name    : SUB_OH_OHNativeErrorCodeVSync_0100
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeVSync ok Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeVSync_0100
+     * @tc.number SUB_OH_OHNativeErrorCodeVSync_0100
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeVSync ok Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeVSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -261,12 +261,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeVSync_0200
-     * @tc.name    : SUB_OH_OHNativeErrorCodeVSync_0200
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeVSync Invalid Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeVSync_0200
+     * @tc.number SUB_OH_OHNativeErrorCodeVSync_0200
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeVSync Invalid Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeVSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -283,12 +283,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeWindow_0100
-     * @tc.name    : SUB_OH_OHNativeErrorCodeWindow_0100
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeWindow ok Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeWindow_0100
+     * @tc.number SUB_OH_OHNativeErrorCodeWindow_0100
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeWindow ok Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeWindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -305,12 +305,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_OHNativeErrorCodeWindowInvalid_0100
-     * @tc.name    : SUB_OH_OHNativeErrorCodeWindowInvalid_0100
-     * @tc.desc    : test SUB_OH_OHNativeErrorCodeWindowInvalid Invalid Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHNativeErrorCodeWindowInvalid_0100
+     * @tc.number SUB_OH_OHNativeErrorCodeWindowInvalid_0100
+     * @tc.desc   test SUB_OH_OHNativeErrorCodeWindowInvalid Invalid Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_OHNativeErrorCodeWindowInvalid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -327,12 +327,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeErrorCodeWindowUNKNOW_0100
-     * @tc.name    : SUB_OH_NativeErrorCodeWindowUNKNOW_0100
-     * @tc.desc    : test SUB_OH_NativeErrorCodeWindowUNKNOW Invalid Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeErrorCodeWindowUNKNOW_0100
+     * @tc.number SUB_OH_NativeErrorCodeWindowUNKNOW_0100
+     * @tc.desc   test SUB_OH_NativeErrorCodeWindowUNKNOW Invalid Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeErrorCodeWindowUNKNOW_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -349,12 +349,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_DrawingErrorCode_0100
-     * @tc.name    : SUB_OH_Drawing_DrawingErrorCode_0100
-     * @tc.desc    : test SUB_OH_Drawing_DrawingErrorCode Alloc Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_DrawingErrorCode_0100
+     * @tc.number SUB_OH_Drawing_DrawingErrorCode_0100
+     * @tc.desc   test SUB_OH_Drawing_DrawingErrorCode Alloc Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_DrawingErrorCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -371,12 +371,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineTypographyGetLineBreak_0100
-     * @tc.name    : SUB_OH_Drawing_LineTypographyGetLineBreak_0100
-     * @tc.desc    : test SUB_OH_Drawing_LineTypographyGetLineBreak invalue Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineTypographyGetLineBreak_0100
+     * @tc.number SUB_OH_Drawing_LineTypographyGetLineBreak_0100
+     * @tc.desc   test SUB_OH_Drawing_LineTypographyGetLineBreak invalue Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_LineTypographyGetLineBreak_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -393,12 +393,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100
-     * @tc.name    : SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100
-     * @tc.desc    : test SUB_OH_Drawing_LineTypographyCreateLineInvalue invalue Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100
+     * @tc.number SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100
+     * @tc.desc   test SUB_OH_Drawing_LineTypographyCreateLineInvalue invalue Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_LineTypographyCreateLineInvalue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -415,12 +415,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_EffectTileModeREPEATSuccess_0100
-     * @tc.name    : SUB_OH_EffectTileModeREPEATSuccess_0100
-     * @tc.desc    : test SUB_OH_EffectTileModeREPEAT Success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_EffectTileModeREPEATSuccess_0100
+     * @tc.number SUB_OH_EffectTileModeREPEATSuccess_0100
+     * @tc.desc   test SUB_OH_EffectTileModeREPEAT Success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_EffectTileModeREPEATSuccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -437,12 +437,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_EffectTileModeMIRROR_0100
-     * @tc.name    : SUB_OH_EffectTileModeMIRROR_0100
-     * @tc.desc    : test SUB_OH_EffectTileModeMIRROR Success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_EffectTileModeMIRROR_0100
+     * @tc.number SUB_OH_EffectTileModeMIRROR_0100
+     * @tc.desc   test SUB_OH_EffectTileModeMIRROR Success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_EffectTileModeMIRROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -459,12 +459,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_EffectTileModeDECAL_0100
-     * @tc.name    : SUB_OH_EffectTileModeDECAL_0100
-     * @tc.desc    : test SUB_OH_EffectTileModeDECAL Success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_EffectTileModeDECAL_0100
+     * @tc.number SUB_OH_EffectTileModeDECAL_0100
+     * @tc.desc   test SUB_OH_EffectTileModeDECAL Success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_EffectTileModeDECAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -481,12 +481,12 @@ export default function ErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_SamplingOptionsCopy_0100
-     * @tc.name    : SUB_OH_Drawing_SamplingOptionsCopy_0100
-     * @tc.desc    : test SUB_OH_Drawing_SamplingOptionsCopy Success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_SamplingOptionsCopy_0100
+     * @tc.number SUB_OH_Drawing_SamplingOptionsCopy_0100
+     * @tc.desc   test SUB_OH_Drawing_SamplingOptionsCopy Success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_SamplingOptionsCopy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -502,12 +502,12 @@ export default function ErrorCodeTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_Drawing_SamplingOptionsCopy_0200
-     * @tc.name    : SUB_OH_Drawing_SamplingOptionsCopy_0200
-     * @tc.desc    : test SUB_OH_Drawing_SamplingOptionsCopy Fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_SamplingOptionsCopy_0200
+     * @tc.number SUB_OH_Drawing_SamplingOptionsCopy_0200
+     * @tc.desc   test SUB_OH_Drawing_SamplingOptionsCopy Fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_SamplingOptionsCopy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

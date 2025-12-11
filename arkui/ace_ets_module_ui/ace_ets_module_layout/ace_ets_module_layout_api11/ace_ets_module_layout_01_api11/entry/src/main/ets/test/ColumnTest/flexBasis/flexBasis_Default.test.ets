@@ -46,9 +46,12 @@ export default function flexBasis_Default() {
       console.info("flexBasis_Default after each called")
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Default_TEST_0100
      * @tc.number SUB_ACE_flexBasis_Default_TEST_0100
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis(null) , the height of column1 is  the original height
+     * @tc.desc   column1 is set to flexBasis(null) , the height of column1 is  the original height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Default_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0100] START');
@@ -89,9 +92,12 @@ export default function flexBasis_Default() {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0100] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Default_TEST_0200
      * @tc.number SUB_ACE_flexBasis_Default_TEST_0200
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis(undefined) , the height of column1 is  the original height
+     * @tc.desc   column1 is set to flexBasis(undefined) , the height of column1 is  the original height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Default_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0200] START');
@@ -132,9 +138,12 @@ export default function flexBasis_Default() {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0200] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Default_TEST_0300
      * @tc.number SUB_ACE_flexBasis_Default_TEST_0300
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis(-5) , the height of column1 is  the original height
+     * @tc.desc   column1 is set to flexBasis(-5) , the height of column1 is  the original height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Default_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0300] START');
@@ -176,9 +185,12 @@ export default function flexBasis_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexBasis_Default_TEST_0400
      * @tc.number SUB_ACE_flexBasis_Default_TEST_0400
-     * @tc.name testFlexBasis
-     * @tc.desc column1、column2 and column3 do not set  flexBasis, the height of column1 is  the original height
+     * @tc.desc   column1、column2 and column3 do not set  flexBasis, the height of column1 is  the original height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Default_TEST_0400',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0400] START');

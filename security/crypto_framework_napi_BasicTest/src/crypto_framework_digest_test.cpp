@@ -81,14 +81,6 @@ class MD_TEST : public testing::TestWithParam<MdSpec> {
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkDigestNapiTest, MD_TEST, ::testing::ValuesIn(g_mdData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0100
-* @tc.name OHCryptoFrameworkDigestNapiTest/MD_TEST.SUB_Security_CryptoFramework_NAPI_Digest_Test_0100/x
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0100, TestSize.Level0)
 {
     MdSpec mdData = GetParam();
@@ -116,13 +108,13 @@ HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0100, TestSize.L
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0200
-* @tc.name OHCryptoFrameworkDigestNapiTest.SUB_Security_CryptoFramework_NAPI_Digest_Test_0200
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Digest_Test_0200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0200
+ * @tc.desc   algorithm is Digest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkDigestNapiTest, SUB_Security_CryptoFramework_NAPI_Digest_Test_0200, TestSize.Level0)
 {
     OH_CryptoDigest *ctx = nullptr;
@@ -133,13 +125,13 @@ HWTEST_F(OHCryptoFrameworkDigestNapiTest, SUB_Security_CryptoFramework_NAPI_Dige
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0300
-* @tc.name OHCryptoFrameworkDigestNapiTest.SUB_Security_CryptoFramework_NAPI_Digest_Test_0300
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Digest_Test_0300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0300
+ * @tc.desc   algorithm is Digest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkDigestNapiTest, SUB_Security_CryptoFramework_NAPI_Digest_Test_0300, TestSize.Level0)
 {
     OH_CryptoDigest *ctx = nullptr;
@@ -161,13 +153,13 @@ HWTEST_F(OHCryptoFrameworkDigestNapiTest, SUB_Security_CryptoFramework_NAPI_Dige
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0400
-* @tc.name OHCryptoFrameworkDigestNapiTest.SUB_Security_CryptoFramework_NAPI_Digest_Test_0400
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Digest_Test_0400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0400
+ * @tc.desc   algorithm is Digest
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkDigestNapiTest, SUB_Security_CryptoFramework_NAPI_Digest_Test_0400, TestSize.Level0)
 {
     OH_CryptoDigest *ctx = nullptr;
@@ -187,14 +179,6 @@ HWTEST_F(OHCryptoFrameworkDigestNapiTest, SUB_Security_CryptoFramework_NAPI_Dige
     OH_DigestCrypto_Destroy(ctx);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0500
-* @tc.name OHCryptoFrameworkDigestNapiTest/MD_TEST.SUB_Security_CryptoFramework_NAPI_Digest_Test_0500/x
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MD_TEST, Security_CryptoFramework_NAPI_Digest_Test_0500, TestSize.Level0)
 {
     MdSpec mdData = GetParam();
@@ -221,14 +205,6 @@ HWTEST_P(MD_TEST, Security_CryptoFramework_NAPI_Digest_Test_0500, TestSize.Level
     free(testData);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0600
-* @tc.name OHCryptoFrameworkDigestNapiTest/MD_TEST.SUB_Security_CryptoFramework_NAPI_Digest_Test_0600/x
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0600, TestSize.Level0)
 {
     MdSpec mdData = GetParam();
@@ -255,14 +231,6 @@ HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0600, TestSize.L
     HcfBlobDataClearAndFree((HcfBlob *)&out);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0700
-* @tc.name OHCryptoFrameworkDigestNapiTest/MD_TEST.SUB_Security_CryptoFramework_NAPI_Digest_Test_0700/x
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0700, TestSize.Level0)
 {
     MdSpec mdData = GetParam();
@@ -297,14 +265,6 @@ HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0700, TestSize.L
     HcfBlobDataClearAndFree((HcfBlob *)&out);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0800
-* @tc.name OHCryptoFrameworkDigestNapiTest/MD_TEST.SUB_Security_CryptoFramework_NAPI_Digest_Test_0800/x
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0800, TestSize.Level0)
 {
     MdSpec mdData = GetParam();
@@ -322,14 +282,6 @@ HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0800, TestSize.L
     HcfBlobDataClearAndFree((HcfBlob *)&out);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Digest_Test_0900
-* @tc.name OHCryptoFrameworkDigestNapiTest/MD_TEST.SUB_Security_CryptoFramework_NAPI_Digest_Test_0900/x
-* @tc.desc algorithm is Digest
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MD_TEST, SUB_Security_CryptoFramework_NAPI_Digest_Test_0900, TestSize.Level0)
 {
     MdSpec mdData = GetParam();

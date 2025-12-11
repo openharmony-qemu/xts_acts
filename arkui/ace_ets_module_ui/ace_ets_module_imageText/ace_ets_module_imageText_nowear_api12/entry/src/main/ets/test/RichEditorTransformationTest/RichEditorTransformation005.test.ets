@@ -55,12 +55,12 @@ export default function RichEditorTransformation005() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_010
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_010
-     * @tc.desc  : Verify whether it is possible to cut and paste RichEditor AffineTransformation properly after setting the zoom/pan/rotate attributes
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_010
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_010
+     * @tc.desc   Verify whether it is possible to cut and paste RichEditor AffineTransformation properly after setting the zoom/pan/rotate attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_010',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_010 START');

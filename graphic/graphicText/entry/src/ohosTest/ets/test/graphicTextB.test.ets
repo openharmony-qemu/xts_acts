@@ -26,12 +26,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_056
-     * @tc.name      : testFontWidth
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFontWidth
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_056
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testFontWidth===="
@@ -56,12 +56,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_057
-     * @tc.name      : testTextHeightBehavior
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextHeightBehavior
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_057
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextHeightBehavior', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testTextHeightBehavior===="
@@ -81,12 +81,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_058
-     * @tc.name      : testTextStyle_3
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextStyle_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_058
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyle_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testTextStyle_3===="
@@ -173,12 +173,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_059
-     * @tc.name      : testParagraphStyle_2
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testParagraphStyle_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_059
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testParagraphStyle_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testParagraphStyle_2===="
@@ -274,12 +274,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_060
-     * @tc.name      : testPaintOnPath
-     * @tc.desc      : To test interface paintOnPath of Paragraph.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPaintOnPath
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_060
+     * @tc.desc   To test interface paintOnPath of Paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPaintOnPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testPaintOnPath===="
@@ -314,12 +314,12 @@ export default function graphicTextBTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_061
-     * @tc.name      : testClearCaches
-     * @tc.desc      : To test interface clearCaches of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testClearCaches
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_061
+     * @tc.desc   To test interface clearCaches of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearCaches', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testClearCaches===="
@@ -340,12 +340,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_062
-     * @tc.name      : testTextStyle_FontVariation
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextStyle_FontVariation
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_062
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyle_FontVariation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testTextStyle_FontVariation===="
@@ -438,12 +438,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_063
-     * @tc.name      : testStrutStyle_leading
-     * @tc.desc      : To test interface StrutStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStrutStyle_leading
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_063
+     * @tc.desc   To test interface StrutStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStrutStyle_leading', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testStrutStyle_leading===="
@@ -544,12 +544,12 @@ export default function graphicTextBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_064
-     * @tc.name      : testGetLongestLineWithIndent
-     * @tc.desc      : To test interface getLongestLineWithIndent.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLongestLineWithIndent
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_064
+     * @tc.desc   To test interface getLongestLineWithIndent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetLongestLineWithIndent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetLongestLineWithIndent===="

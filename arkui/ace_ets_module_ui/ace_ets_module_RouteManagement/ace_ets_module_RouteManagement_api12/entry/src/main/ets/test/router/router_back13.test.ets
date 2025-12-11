@@ -59,12 +59,12 @@ export default function router_back13() {
     });
 
     /**
+     * @tc.name   router_back13_0100
      * @tc.number SUB_ACE_UI_ABILITY_ROUTER_0340
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('router_back13_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[router_back13_0100] START');

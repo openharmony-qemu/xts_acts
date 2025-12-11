@@ -48,12 +48,12 @@ export default function TextTimerNodeTest() {
     })
 
     /**
-     * @tc.number    TextTimerNode0100
-     * @tc.name      TextTimerNode0100
-     * @tc.desc      frameNode: createNodeTextTimerToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextTimerNode0100
+     * @tc.number TextTimerNode0100
+     * @tc.desc   frameNode: createNodeTextTimerToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextTimerNode0100', Level.LEVEL2, async (done: Function) => {
 

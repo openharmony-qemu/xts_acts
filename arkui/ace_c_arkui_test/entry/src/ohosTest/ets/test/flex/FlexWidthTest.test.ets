@@ -26,39 +26,39 @@ export default function flexWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_FLEX_WIDTH_0100
-     * @tc.name: testFlexWidth001
-     * @tc.desc: testing width for flex with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testFlexWidth001
+     * @tc.number SUB_ARKUI_CAPI_FLEX_WIDTH_0100
+     * @tc.desc   testing width for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFlexWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testFlexWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_FLEX_WIDTH_0200
-     * @tc.name: testFlexWidth002
-     * @tc.desc: testing width for flex with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testFlexWidth002
+     * @tc.number SUB_ARKUI_CAPI_FLEX_WIDTH_0200
+     * @tc.desc   testing width for flex with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFlexWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testFlexWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_FLEX_WIDTH_0300
-     * @tc.name: testFlexWidth003
-     * @tc.desc: testing width for flex with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testFlexWidth003
+     * @tc.number SUB_ARKUI_CAPI_FLEX_WIDTH_0300
+     * @tc.desc   testing width for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFlexWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testFlexWidth003()).assertEqual(0)

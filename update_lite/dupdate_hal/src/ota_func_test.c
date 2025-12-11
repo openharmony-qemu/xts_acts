@@ -26,12 +26,6 @@
 #define ERR_LENGTH       9
 #define DATA_OFFSET      0
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is ota
- * @param        : module name is otalite
- * @param        : test suit name is OtaFuncTestSuite
- */
 LITE_TEST_SUIT(ota, otalite, OtaFuncTestSuite);
 
 /**
@@ -54,9 +48,12 @@ static BOOL OtaFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_Upgrade_API_0100
- * @tc.name      : Initializes the OTA module
- * @tc.desc      : [C- SOFTWARE -0100]
+ * @tc.name   subUpgradeAPI0100
+ * @tc.number SUB_Upgrade_API_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0100, Function | MediumTest | Level1)
 {
@@ -67,9 +64,12 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0100, Function | MediumTest | Leve
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_0200
- * @tc.name      : Sets the switch for using the default upgrade package format
- * @tc.desc      : [C- SOFTWARE -0100]
+ * @tc.name   subUpgradeAPI0200
+ * @tc.number SUB_Upgrade_API_0200
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0200, Function | MediumTest | Level1)
 {
@@ -83,9 +83,12 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0200, Function | MediumTest | Leve
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_0300
- * @tc.name      : Obtains the index of the A or B partition to be upgraded
- * @tc.desc      : [C- SOFTWARE -0100]
+ * @tc.name   subUpgradeAPI0300
+ * @tc.number SUB_Upgrade_API_0300
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0300, Function | MediumTest | Level1)
 {
@@ -97,12 +100,12 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0300, Function | MediumTest | Leve
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_0800
- * @tc.name      : Sets the switch for using the default upgrade package format fail
- * @tc.desc      : [C-L1-310] MUST NOT alter JS API behavior.
- * @tc.size      : MEDIUM
- * @tc.type      : FUNC
- * @tc.level     : Level 1
+ * @tc.name   subUpgradeAPI0800
+ * @tc.number SUB_Upgrade_API_0800
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0800, Function | MediumTest | Level1)
 {
@@ -113,12 +116,12 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI0800, Function | MediumTest | Leve
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_1000
- * @tc.name      : Writes specified data into flash memory fail
- * @tc.desc      : [C-L1-310] MUST NOT alter JS API behavior.
- * @tc.size      : MEDIUM
- * @tc.type      : FUNC
- * @tc.level     : Level 1
+ * @tc.name   subUpgradeAPI1000
+ * @tc.number SUB_Upgrade_API_1000
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1000, Function | MediumTest | Level1)
 {
@@ -136,12 +139,12 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1000, Function | MediumTest | Leve
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_1100
- * @tc.name      : Reads the data that has been written into flash memory fail
- * @tc.desc      : [C-L1-310] MUST NOT alter JS API behavior.
- * @tc.size      : MEDIUM
- * @tc.type      : FUNC
- * @tc.level     : Level 1
+ * @tc.name   subUpgradeAPI1100
+ * @tc.number SUB_Upgrade_API_1100
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1100, Function | MediumTest | Level1)
 {
@@ -162,12 +165,12 @@ LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1100, Function | MediumTest | Leve
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_1200
- * @tc.name      : Cancels an upgrade fail
- * @tc.desc      : [C-L1-310] MUST NOT alter JS API behavior.
- * @tc.size      : MEDIUM
- * @tc.type      : FUNC
- * @tc.level     : Level 1
+ * @tc.name   subUpgradeAPI1200
+ * @tc.number SUB_Upgrade_API_1200
+ * @tc.desc   [C-L1-310] MUST NOT alter JS API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(OtaFuncTestSuite, subUpgradeAPI1200, Function | MediumTest | Level1)
 {

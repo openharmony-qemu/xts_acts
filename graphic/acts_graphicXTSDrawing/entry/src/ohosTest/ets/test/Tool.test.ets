@@ -40,12 +40,12 @@ export default function toolTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0100
-     * @tc.name      : testMakeColorFromResourceColorNormal01
-     * @tc.desc      : Test for testMakeColorFromResourceColorNormal01.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorNormal01
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0100
+     * @tc.desc   Test for testMakeColorFromResourceColorNormal01.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorNormal01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorNormal01';
@@ -139,12 +139,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0200
-     * @tc.name      : testMakeColorFromResourceColorNormal02
-     * @tc.desc      : Test for testMakeColorFromResourceColorNormal02.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorNormal02
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0200
+     * @tc.desc   Test for testMakeColorFromResourceColorNormal02.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorNormal02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorNormal02';
@@ -214,12 +214,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0300
-     * @tc.name      : testMakeColorFromResourceColorAbnormal01
-     * @tc.desc      : Test for testMakeColorFromResourceColorAbnormal01.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorAbnormal01
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0300
+     * @tc.desc   Test for testMakeColorFromResourceColorAbnormal01.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorAbnormal01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorAbnormal01';
@@ -329,12 +329,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0400
-     * @tc.name      : testMakeColorFromResourceColorAbnormal02
-     * @tc.desc      : Test for testMakeColorFromResourceColorAbnormal02.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorAbnormal02
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0400
+     * @tc.desc   Test for testMakeColorFromResourceColorAbnormal02.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorAbnormal02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorAbnormal02';
@@ -372,12 +372,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0500
-     * @tc.name      : testMakeColorFromResourceColorNull
-     * @tc.desc      : Test for testMakeColorFromResourceColorNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0500
+     * @tc.desc   Test for testMakeColorFromResourceColorNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorNull';
@@ -399,12 +399,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0600
-     * @tc.name      : testMakeColorFromResourceColorMultipleCalls
-     * @tc.desc      : Test for testMakeColorFromResourceColorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_0600
+     * @tc.desc   Test for testMakeColorFromResourceColorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorMultipleCalls';

@@ -86,12 +86,12 @@ export default function DecimalTest024() {
     console.info("start################################start");
 
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_abs_Func_001
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -117,12 +117,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_abs_Func_002
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_abs_002('1.1', 1.1);
@@ -139,12 +139,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_003
-     * @tc.name      : Decimal_abs_Func_003
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_003
+     * @tc.number DECIMAL_TEST_003
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_abs_002('999.999', 999.999);
@@ -161,12 +161,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_004
-     * @tc.name      : Decimal_abs_Func_004
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_004
+     * @tc.number DECIMAL_TEST_004
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_abs_002('NaN', NaN);
@@ -183,12 +183,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_005
-     * @tc.name      : Decimal_abs_Func_005
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_005
+     * @tc.number DECIMAL_TEST_005
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_abs_001('127', '127.0');
@@ -209,12 +209,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_006
-     * @tc.name      : Decimal_abs_Func_006
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_006
+     * @tc.number DECIMAL_TEST_006
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -243,12 +243,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_007
-     * @tc.name      : Decimal_abs_Func_007
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_007
+     * @tc.number DECIMAL_TEST_007
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_abs_001('8.99315449050893705e+6', '8.99315449050893705e+6');
@@ -265,12 +265,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_008
-     * @tc.name      : Decimal_abs_Func_008
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_008
+     * @tc.number DECIMAL_TEST_008
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_abs_001('1.226806049797304683867e-18', '1.226806049797304683867e-18');
@@ -287,12 +287,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_009
-     * @tc.name      : Decimal_abs_Func_009
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_009
+     * @tc.number DECIMAL_TEST_009
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_abs_001('3.0033340092338313923473428e+16', '-3.0033340092338313923473428e+16');
@@ -313,12 +313,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_010
-     * @tc.name      : Decimal_abs_Func_010
-     * @tc.desc      : Test abs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_abs_Func_010
+     * @tc.number DECIMAL_TEST_010
+     * @tc.desc   Test abs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_abs_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -341,12 +341,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_011
-     * @tc.name      : Decimal_acos_Func_011
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_011
+     * @tc.number DECIMAL_TEST_011
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -372,12 +372,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_012
-     * @tc.name      : Decimal_acos_Func_012
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_012
+     * @tc.number DECIMAL_TEST_012
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('-0.6403', 7, 1, '2.265685');
@@ -394,12 +394,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_013
-     * @tc.name      : Decimal_acos_Func_013
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_013
+     * @tc.number DECIMAL_TEST_013
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('0.5', 7, 2, '1.047198');
@@ -416,12 +416,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_014
-     * @tc.name      : Decimal_acos_Func_014
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_014
+     * @tc.number DECIMAL_TEST_014
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('-0.66158215731029676878636733180177567', 8, 0, '2.2937231');
@@ -433,12 +433,12 @@ export default function DecimalTest024() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_0014
-     * @tc.name      : Decimal_acos_Func_014_1
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_014_1
+     * @tc.number DECIMAL_TEST_0014
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_014_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('-0.78468834561401325', 40, 6, '2.472989536549809027410129361828086088366');
@@ -453,12 +453,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_015
-     * @tc.name      : Decimal_acos_Func_015
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_015
+     * @tc.number DECIMAL_TEST_015
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('-0.027096519359', 92, 3,
@@ -473,12 +473,12 @@ export default function DecimalTest024() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_0015
-     * @tc.name      : Decimal_acos_Func_015_1
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_015_1
+     * @tc.number DECIMAL_TEST_0015
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_015_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('0.41923186648524998285699814886092351368793359300547574', 42, 3,
@@ -493,12 +493,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_016
-     * @tc.name      : Decimal_acos_Func_016
-     * @tc.desc      : Test acos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acos_Func_016
+     * @tc.number DECIMAL_TEST_016
+     * @tc.desc   Test acos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acos_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -521,12 +521,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_017
-     * @tc.name      : Decimal_acosh_Func_017
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acosh_Func_017
+     * @tc.number DECIMAL_TEST_017
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acosh_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -551,12 +551,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_018
-     * @tc.name      : Decimal_acosh_Func_018
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acosh_Func_018
+     * @tc.number DECIMAL_TEST_018
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acosh_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acosh_005('9.28', 1, 5, '3');
@@ -567,12 +567,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_0018
-     * @tc.name      : Decimal_acosh_Func_018_1
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acosh_Func_018_1
+     * @tc.number DECIMAL_TEST_0018
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acosh_Func_018_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acosh_005('43999099999999099999999999999999999997999999999999999999999990993999999.999099999999999699999',
@@ -584,12 +584,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_019
-     * @tc.name      : Decimal_acosh_Func_019
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acosh_Func_019
+     * @tc.number DECIMAL_TEST_019
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acosh_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acosh_005('920.33', 5, 5, '7.5179');
@@ -605,12 +605,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_020
-     * @tc.name      : Decimal_acosh_Func_020
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acosh_Func_020
+     * @tc.number DECIMAL_TEST_020
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acosh_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acosh_005('97574340', 32, 2, '19.08927228754035088993028581182');
@@ -630,12 +630,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_021
-     * @tc.name      : Decimal_acosh_Func_021
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acosh_Func_021
+     * @tc.number DECIMAL_TEST_021
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acosh_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acosh_005('3623643157643492007800000000000000000', 54, 0,
@@ -654,12 +654,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_022
-     * @tc.name      : Decimal_acosh_Func_022
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_acosh_Func_022
+     * @tc.number DECIMAL_TEST_022
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_acosh_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -682,12 +682,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_023
-     * @tc.name      : Decimal_asin_Func_023
-     * @tc.desc      : Test asin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asin_Func_023
+     * @tc.number DECIMAL_TEST_023
+     * @tc.desc   Test asin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asin_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -714,12 +714,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_024
-     * @tc.name      : Decimal_asin_Func_024
-     * @tc.desc      : Test asin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asin_Func_024
+     * @tc.number DECIMAL_TEST_024
+     * @tc.desc   Test asin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asin_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asin_006('-0.8185571137226394757008542835605396', 1, 1, '-0.9');
@@ -736,12 +736,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_025
-     * @tc.name      : Decimal_asin_Func_025
-     * @tc.desc      : Test asin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asin_Func_025
+     * @tc.number DECIMAL_TEST_025
+     * @tc.desc   Test asin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asin_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asin_006('-0.5434', 8, 3, '-0.57448199');
@@ -757,12 +757,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_026
-     * @tc.name      : Decimal_asin_Func_026
-     * @tc.desc      : Test asin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asin_Func_026
+     * @tc.number DECIMAL_TEST_026
+     * @tc.desc   Test asin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asin_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asin_006('0.6608633389456637408497420998651914114139088612446', 2, 4, '0.72');
@@ -782,12 +782,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_027
-     * @tc.name      : Decimal_asin_Func_027
-     * @tc.desc      : Test asin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asin_Func_027
+     * @tc.number DECIMAL_TEST_027
+     * @tc.desc   Test asin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asin_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asin_006('0.6191705648197127900333', 20, 3, '0.6676860026273445248');
@@ -798,12 +798,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_0027
-     * @tc.name      : Decimal_asin_Func_027_1
-     * @tc.desc      : Test asin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asin_Func_027_1
+     * @tc.number DECIMAL_TEST_0027
+     * @tc.desc   Test asin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asin_Func_027_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asin_006('-0.1958', 17, 5, '-0.19707317438982823');
@@ -814,12 +814,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_028
-     * @tc.name      : Decimal_asin_Func_028
-     * @tc.desc      : Test asin
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asin_Func_028
+     * @tc.number DECIMAL_TEST_028
+     * @tc.desc   Test asin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asin_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -842,12 +842,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_029
-     * @tc.name      : Decimal_asinh_Func_029
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asinh_Func_029
+     * @tc.number DECIMAL_TEST_029
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asinh_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -873,12 +873,12 @@ export default function DecimalTest024() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_030
-     * @tc.name      : Decimal_asinh_Func_030
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asinh_Func_030
+     * @tc.number DECIMAL_TEST_030
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asinh_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asinh_007('268', 5, 2, '6.2842');
@@ -894,12 +894,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_031
-     * @tc.name      : Decimal_asinh_Func_031
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asinh_Func_031
+     * @tc.number DECIMAL_TEST_031
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asinh_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asinh_007('4', 2, 0, '2.1');
@@ -916,12 +916,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_032
-     * @tc.name      : Decimal_asinh_Func_032
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asinh_Func_032
+     * @tc.number DECIMAL_TEST_032
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asinh_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asinh_007('7519.1832', 46, 1, '9.618359979005094092372581180036903865361423221');
@@ -934,12 +934,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_0032
-     * @tc.name      : Decimal_asinh_Func_032_1
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asinh_Func_032_1
+     * @tc.number DECIMAL_TEST_0032
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asinh_Func_032_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asinh_007('461967326081151345517140931535', 45, 1, '68.9984388572118740675493758006785202194685299');
@@ -953,12 +953,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_033
-     * @tc.name      : Decimal_asinh_Func_033
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asinh_Func_033
+     * @tc.number DECIMAL_TEST_033
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asinh_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asinh_007('-0.03384059130054301010037', 28, 4, '-0.03383413566704186353496859594');
@@ -974,12 +974,12 @@ export default function DecimalTest024() {
     })
 
     /**
-     * @tc.number    : DECIMAL_TEST_034
-     * @tc.name      : Decimal_asinh_Func_034
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_asinh_Func_034
+     * @tc.number DECIMAL_TEST_034
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_asinh_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({

@@ -107,12 +107,12 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
     });
 
     /**
-     * @tc.number     onDataHandler_onDataPrepared_promise_001
-     * @tc.name       onDataHandler_onDataPrepared_promise_001
-     * @tc.desc       MediaAssetDataHandler_onDataPrepared
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   onDataHandler_onDataPrepared_promise_001
+     * @tc.number onDataHandler_onDataPrepared_promise_001
+     * @tc.desc   MediaAssetDataHandler_onDataPrepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDataHandler_onDataPrepared_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'onDataHandler_onDataPrepared_promise_001';
@@ -126,12 +126,12 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
     })
 
     /**
-     * @tc.number     onDataHandler_onDataPrepared_promise_002
-     * @tc.name       onDataHandler_onDataPrepared_promise_002
-     * @tc.desc       MediaAssetDataHandler_onDataPrepared
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   onDataHandler_onDataPrepared_promise_002
+     * @tc.number onDataHandler_onDataPrepared_promise_002
+     * @tc.desc   MediaAssetDataHandler_onDataPrepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDataHandler_onDataPrepared_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'onDataHandler_onDataPrepared_promise_002';
@@ -145,12 +145,12 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
     })
 
     /**
-     * @tc.number     onDataHandler_onDataPrepared_promise_003
-     * @tc.name       onDataHandler_onDataPrepared_promise_003
-     * @tc.desc       MediaAssetDataHandler_onDataPrepared
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   onDataHandler_onDataPrepared_promise_003
+     * @tc.number onDataHandler_onDataPrepared_promise_003
+     * @tc.desc   MediaAssetDataHandler_onDataPrepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDataHandler_onDataPrepared_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'onDataHandler_onDataPrepared_promise_003';
@@ -164,12 +164,12 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
     })
 
     /**
-     * @tc.number     onDataHandler_onDataPrepared_promise_004
-     * @tc.name       onDataHandler_onDataPrepared_promise_004
-     * @tc.desc       MediaAssetDataHandler_onDataPrepared
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   onDataHandler_onDataPrepared_promise_004
+     * @tc.number onDataHandler_onDataPrepared_promise_004
+     * @tc.desc   MediaAssetDataHandler_onDataPrepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDataHandler_onDataPrepared_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'onDataHandler_onDataPrepared_promise_004';
@@ -183,12 +183,12 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
     })
 
     /**
-     * @tc.number     onDataHandler_onDataPrepared_promise_005
-     * @tc.name       onDataHandler_onDataPrepared_promise_005
-     * @tc.desc       MediaAssetDataHandler_onDataPrepared
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   onDataHandler_onDataPrepared_promise_005
+     * @tc.number onDataHandler_onDataPrepared_promise_005
+     * @tc.desc   MediaAssetDataHandler_onDataPrepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDataHandler_onDataPrepared_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'onDataHandler_onDataPrepared_promise_005';
@@ -202,12 +202,12 @@ export default function MediaAssetDataHandlerOnDataPreparedTest() {
     })
 
     /**
-     * @tc.number     onDataHandler_onDataPrepared_promise_006
-     * @tc.name       onDataHandler_onDataPrepared_promise_006
-     * @tc.desc       MediaAssetDataHandler_onDataPrepared
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   onDataHandler_onDataPrepared_promise_006
+     * @tc.number onDataHandler_onDataPrepared_promise_006
+     * @tc.desc   MediaAssetDataHandler_onDataPrepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDataHandler_onDataPrepared_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'onDataHandler_onDataPrepared_promise_006';

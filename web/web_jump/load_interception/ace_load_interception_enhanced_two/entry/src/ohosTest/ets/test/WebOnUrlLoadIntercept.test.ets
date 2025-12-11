@@ -61,14 +61,14 @@ export default function webOnUrlLoadIntercept() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONURLLOADINTERCEPT_0200
-    * @tc.name        : testOnUrlLoadIntercept002
-    * @tc.desc        : test onLoadIntercept when return true
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnUrlLoadIntercept002
+     * @tc.number SUB_WEB_ONURLLOADINTERCEPT_0200
+     * @tc.desc   test onLoadIntercept when return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnUrlLoadIntercept002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testOnUrlLoadIntercept002", 134450)
       Utils.registerEvent("testOnUrlLoadIntercept002", CommonConstants.EXAMPLE_URL, 134460, done);

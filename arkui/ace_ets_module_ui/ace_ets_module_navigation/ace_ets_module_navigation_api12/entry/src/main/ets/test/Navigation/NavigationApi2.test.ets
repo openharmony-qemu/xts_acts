@@ -45,9 +45,12 @@ export default function NavigationApi2() {
     });
 
     /**
+     * @tc.name   NavigationApi2_0100
      * @tc.number NavigationApi2_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   NavigationApi2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationApi2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationApi2_0100 START');

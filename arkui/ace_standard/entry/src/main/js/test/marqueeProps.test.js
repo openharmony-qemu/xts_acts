@@ -80,9 +80,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeIdProp
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeIdProp', Level.LEVEL0, async function(done) {
             console.info('testmarqueeIdProp START');
@@ -98,9 +101,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeClassProp
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeClassProp', Level.LEVEL0, async function(done) {
             console.info('testmarqueeClassProp START');
@@ -117,9 +123,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeClassPropNone START');
@@ -137,9 +146,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeRefProp
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeRefProp', Level.LEVEL0, async function(done) {
             console.info('testmarqueeRefProp START');
@@ -156,9 +168,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeRefPropNone START');
@@ -176,9 +191,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testmarqueeFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testmarqueeFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDataProp
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDataProp', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDataProp START');
@@ -310,9 +346,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDataPropNone START');
@@ -330,9 +369,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testmarqueeClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testmarqueeClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testmarqueeClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDirPropRtl START');
@@ -426,9 +480,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDirPropLtr START');
@@ -445,9 +502,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDirPropAuto START');
@@ -464,9 +524,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeDirPropNone START');
@@ -483,9 +546,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeForPropNull', Level.LEVEL0, async function(done) {
             console.info('testmarqueeForPropNull START');
@@ -503,9 +569,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeForPropOne', Level.LEVEL0, async function(done) {
             console.info('testmarqueeForPropOne START');
@@ -523,9 +592,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeForPropThree', Level.LEVEL0, async function(done) {
             console.info('testmarqueeForPropThree START');
@@ -543,9 +615,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testmarqueeIfPropTrue START');
@@ -563,9 +638,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testmarqueeShowPropTrue START');
@@ -583,9 +661,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testmarqueeShowPropFalse START');
@@ -603,9 +684,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeShowPropNone START');
@@ -623,9 +707,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeScrollamountPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeScrollamountPropNone', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropNone START');
@@ -643,9 +730,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeScrollamountProp10
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeScrollamountProp10', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropNone START');
@@ -663,9 +753,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeScrollamountProp20
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeScrollamountProp20', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropNone START');
@@ -683,9 +776,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeLoopPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeLoopPropNull', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropObject START');
@@ -703,9 +799,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeLoopProp1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeLoopProp1', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropObject START');
@@ -723,9 +822,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeLoopProp3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeLoopProp3', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropObject START');
@@ -743,9 +845,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDirectionPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDirectionPropNull', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropObject START');
@@ -763,9 +868,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDirectionPropRight
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDirectionPropRight', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropObject START');
@@ -783,9 +891,12 @@ export default function marqueePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmarqueeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testmarqueeDirectionPropLeft
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmarqueeDirectionPropLeft', Level.LEVEL0, async function(done) {
             console.info('testmarqueeXsPropObject START');

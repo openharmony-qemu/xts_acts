@@ -51,7 +51,6 @@ export default function relationalStoreDataGroupIdCallback() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Callback_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0100
      * @tc.desc   relationalStore getRdbStore dataGroupId null callback test
@@ -84,7 +83,6 @@ export default function relationalStoreDataGroupIdCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Callback_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0200
      * @tc.desc   relationalStore getRdbStore dataGroupId undefined callback test
@@ -118,7 +116,6 @@ export default function relationalStoreDataGroupIdCallback() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Callback_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0300
      * @tc.desc   relationalStore getRdbStore dataGroupId callback test
@@ -146,7 +143,6 @@ export default function relationalStoreDataGroupIdCallback() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_RelationalStore_DataGroupId_Callback_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreJsAPITest_0400
      * @tc.desc   relationalStore deleteRdbStore dataGroupId callback test

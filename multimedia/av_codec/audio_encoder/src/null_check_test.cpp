@@ -44,9 +44,12 @@ void NullCheckTest::TearDown() {}
 } // namespace
 
 /**
- * @tc.number    : NULL_CHECK_001
- * @tc.name      : CreateByMime - mime null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_001
+ * @tc.number NULL_CHECK_001
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_001, TestSize.Level2)
 {
@@ -61,9 +64,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_001, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_002
- * @tc.name      : CreateByName - mime null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_002
+ * @tc.number NULL_CHECK_002
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_002, TestSize.Level2)
 {
@@ -78,9 +84,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_002, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_003
- * @tc.name      : Destroy - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_003
+ * @tc.number NULL_CHECK_003
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_003, TestSize.Level2)
 {
@@ -97,9 +106,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_003, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_004
- * @tc.name      : SetCallback - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_004
+ * @tc.number NULL_CHECK_004
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_004, TestSize.Level2)
 {
@@ -116,9 +128,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_004, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_005
- * @tc.name      : Configure - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_005
+ * @tc.number NULL_CHECK_005
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_005, TestSize.Level2)
 {
@@ -145,9 +160,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_005, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_006
- * @tc.name      : Configure - format null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_006
+ * @tc.number NULL_CHECK_006
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_006, TestSize.Level2)
 {
@@ -175,9 +193,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_006, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_007
- * @tc.name      : Prepare - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_007
+ * @tc.number NULL_CHECK_007
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_007, TestSize.Level2)
 {
@@ -194,9 +215,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_007, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_008
- * @tc.name      : Start - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_008
+ * @tc.number NULL_CHECK_008
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_008, TestSize.Level2)
 {
@@ -225,9 +249,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_008, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_009
- * @tc.name      : Stop - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_009
+ * @tc.number NULL_CHECK_009
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_009, TestSize.Level2)
 {
@@ -258,9 +285,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_009, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_010
- * @tc.name      : Flush - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_010
+ * @tc.number NULL_CHECK_010
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_010, TestSize.Level2)
 {
@@ -291,9 +321,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_010, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_011
- * @tc.name      : Reset - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_011
+ * @tc.number NULL_CHECK_011
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_011, TestSize.Level2)
 {
@@ -310,9 +343,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_011, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_012
- * @tc.name      : GetOutputDescription - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_012
+ * @tc.number NULL_CHECK_012
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_012, TestSize.Level2)
 {
@@ -344,9 +380,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_012, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_013
- * @tc.name      : PushInputData - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_013
+ * @tc.number NULL_CHECK_013
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_013, TestSize.Level2)
 {
@@ -379,9 +418,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_013, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_014
- * @tc.name      : PushInputDataEOS - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_014
+ * @tc.number NULL_CHECK_014
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_014, TestSize.Level2)
 {
@@ -414,9 +456,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_014, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_015
- * @tc.name      : FreeOutputData - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_015
+ * @tc.number NULL_CHECK_015
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_015, TestSize.Level2)
 {
@@ -453,9 +498,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_015, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_016
- * @tc.name      : IsValid - codec null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_016
+ * @tc.number NULL_CHECK_016
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_016, TestSize.Level2)
 {
@@ -473,9 +521,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_016, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_017
- * @tc.name      : IsValid - isValid null check
- * @tc.desc      : null check test
+ * @tc.name   NULL_CHECK_017
+ * @tc.number NULL_CHECK_017
+ * @tc.desc   null check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_017, TestSize.Level2)
 {
@@ -494,9 +545,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_017, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_018
- * @tc.name      : NULL_CHECK_018
- * @tc.desc      : OH_AudioCodec_QueryInputBuffer - codec null check
+ * @tc.name   NULL_CHECK_018
+ * @tc.number NULL_CHECK_018
+ * @tc.desc   OH_AudioCodec_QueryInputBuffer - codec null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_018, TestSize.Level2)
 {
@@ -531,9 +585,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_018, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_019
- * @tc.name      : NULL_CHECK_019
- * @tc.desc      : OH_AudioCodec_QueryInputBuffer - index null check
+ * @tc.name   NULL_CHECK_019
+ * @tc.number NULL_CHECK_019
+ * @tc.desc   OH_AudioCodec_QueryInputBuffer - index null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_019, TestSize.Level2)
 {
@@ -567,9 +624,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_019, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_020
- * @tc.name      : NULL_CHECK_020
- * @tc.desc      : OH_AudioCodec_GetInputBuffer - codec null check
+ * @tc.name   NULL_CHECK_020
+ * @tc.number NULL_CHECK_020
+ * @tc.desc   OH_AudioCodec_GetInputBuffer - codec null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_020, TestSize.Level2)
 {
@@ -607,9 +667,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_020, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_021
- * @tc.name      : NULL_CHECK_021
- * @tc.desc      : OH_AudioCodec_QueryOutputBuffer - codec null check
+ * @tc.name   NULL_CHECK_021
+ * @tc.number NULL_CHECK_021
+ * @tc.desc   OH_AudioCodec_QueryOutputBuffer - codec null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_021, TestSize.Level2)
 {
@@ -657,9 +720,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_021, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_022
- * @tc.name      : NULL_CHECK_022
- * @tc.desc      : OH_AudioCodec_QueryOutputBuffer - index null check
+ * @tc.name   NULL_CHECK_022
+ * @tc.number NULL_CHECK_022
+ * @tc.desc   OH_AudioCodec_QueryOutputBuffer - index null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_022, TestSize.Level2)
 {
@@ -707,9 +773,12 @@ HWTEST_F(NullCheckTest, NULL_CHECK_022, TestSize.Level2)
 }
 
 /**
- * @tc.number    : NULL_CHECK_023
- * @tc.name      : NULL_CHECK_023
- * @tc.desc      : OH_AudioCodec_GetOutputBuffer - codec null check
+ * @tc.name   NULL_CHECK_023
+ * @tc.number NULL_CHECK_023
+ * @tc.desc   OH_AudioCodec_GetOutputBuffer - codec null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(NullCheckTest, NULL_CHECK_023, TestSize.Level2)
 {

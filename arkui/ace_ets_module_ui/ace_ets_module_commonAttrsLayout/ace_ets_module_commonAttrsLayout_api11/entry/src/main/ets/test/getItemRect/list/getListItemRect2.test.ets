@@ -63,12 +63,14 @@ export default function getListItemRect2() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemRect2_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the offset of listItem0 to offset{x:20,y:0}
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemRect2_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemRect2_0100
+     * @tc.desc   set index to 0,set the offset of listItem0 to offset{x:20,y:0}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemRect2_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemRect2_0100] START');
@@ -127,12 +129,14 @@ export default function getListItemRect2() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemRect2_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemRect2_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemRect2_0200
+     * @tc.desc   set index to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemRect2_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemRect2_0200] START');

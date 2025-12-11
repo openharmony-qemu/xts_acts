@@ -188,12 +188,12 @@ export default function BitVectortest() {
     })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_0100
-     * @tc.name      : BitVectortest0100
-     * @tc.desc      : BitVector constructor 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest0100
+     * @tc.number SUB_COOLLECTION_BITVECTOR_0100
+     * @tc.desc   BitVector constructor 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -214,15 +214,15 @@ export default function BitVectortest() {
       })
 
 
-    /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_0200
-     * @tc.name      : BitVectortest0200
-     * @tc.desc      : BitVector push 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
 
+    /**
+     * @tc.name   BitVectortest0200
+     * @tc.number BitVectortest0200
+     * @tc.desc   BitVectortest0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('BitVectortest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'BitVectortest0200';
@@ -243,12 +243,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_0400
-     * @tc.name      : BitVectortest0400
-     * @tc.desc      : BitVector pop 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest0400
+     * @tc.number SUB_COOLLECTION_BITVECTOR_0400
+     * @tc.desc   BitVector pop 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -271,12 +271,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_0600
-     * @tc.name      : BitVectortest0600
-     * @tc.desc      : BitVector has 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest0600
+     * @tc.number SUB_COOLLECTION_BITVECTOR_0600
+     * @tc.desc   BitVector has 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -304,12 +304,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_0700
-     * @tc.name      : BitVectortest0700
-     * @tc.desc      : BitVector has 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest0700
+     * @tc.number SUB_COOLLECTION_BITVECTOR_0700
+     * @tc.desc   BitVector has 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -337,12 +337,12 @@ export default function BitVectortest() {
 
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_0900
-     * @tc.name      : BitVectortest0900
-     * @tc.desc      : BitVector has 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest0900
+     * @tc.number SUB_COOLLECTION_BITVECTOR_0900
+     * @tc.desc   BitVector has 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -368,12 +368,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_01000
-     * @tc.name      : BitVectortest01000
-     * @tc.desc      : BitVector setBitsByRange 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest01000
+     * @tc.number SUB_COOLLECTION_BITVECTOR_01000
+     * @tc.desc   BitVector setBitsByRange 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest01000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -399,12 +399,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_01100
-     * @tc.name      : BitVectortest01100
-     * @tc.desc      : BitVector setBitsByRange 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest01100
+     * @tc.number SUB_COOLLECTION_BITVECTOR_01100
+     * @tc.desc   BitVector setBitsByRange 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest01100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_01200
-     * @tc.name      : BitVectortest01200
-     * @tc.desc      : BitVector setBitsByRange 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest01200
+     * @tc.number SUB_COOLLECTION_BITVECTOR_01200
+     * @tc.desc   BitVector setBitsByRange 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest01200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -463,12 +463,12 @@ export default function BitVectortest() {
 
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_01400
-     * @tc.name      : BitVectortest01400
-     * @tc.desc      : BitVector setAllBits 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest01400
+     * @tc.number SUB_COOLLECTION_BITVECTOR_01400
+     * @tc.desc   BitVector setAllBits 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest01400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -496,12 +496,12 @@ export default function BitVectortest() {
 
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_01600
-     * @tc.name      : BitVectortest01600
-     * @tc.desc      : BitVector getBitsByRange 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest01600
+     * @tc.number SUB_COOLLECTION_BITVECTOR_01600
+     * @tc.desc   BitVector getBitsByRange 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest01600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -528,12 +528,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_01700
-     * @tc.name      : BitVectortest01700
-     * @tc.desc      : BitVector getBitsByRange 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest01700
+     * @tc.number SUB_COOLLECTION_BITVECTOR_01700
+     * @tc.desc   BitVector getBitsByRange 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest01700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -560,12 +560,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_01800
-     * @tc.name      : BitVectortest01800
-     * @tc.desc      : BitVector getBitsByRange 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest01800
+     * @tc.number SUB_COOLLECTION_BITVECTOR_01800
+     * @tc.desc   BitVector getBitsByRange 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest01800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -592,12 +592,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02000
-     * @tc.name      : BitVectortest02000
-     * @tc.desc      : BitVector resize 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02000
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02000
+     * @tc.desc   BitVector resize 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -623,12 +623,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02100
-     * @tc.name      : BitVectortest02100
-     * @tc.desc      : BitVector resize 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02100
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02100
+     * @tc.desc   BitVector resize 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -655,12 +655,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02300
-     * @tc.name      : BitVectortest02300
-     * @tc.desc      : BitVector resize 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02300
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02300
+     * @tc.desc   BitVector resize 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -686,12 +686,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02400
-     * @tc.name      : BitVectortest02400
-     * @tc.desc      : BitVector getBitCountByRange 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02400
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02400
+     * @tc.desc   BitVector getBitCountByRange 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -717,12 +717,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02500
-     * @tc.name      : BitVectortest02500
-     * @tc.desc      : BitVector getBitCountByRange 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02500
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02500
+     * @tc.desc   BitVector getBitCountByRange 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -748,12 +748,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02600
-     * @tc.name      : BitVectortest02600
-     * @tc.desc      : BitVector getBitCountByRange 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02600
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02600
+     * @tc.desc   BitVector getBitCountByRange 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -780,12 +780,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02800
-     * @tc.name      : BitVectortest02800
-     * @tc.desc      : BitVector getIndexOf 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02800
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02800
+     * @tc.desc   BitVector getIndexOf 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -812,12 +812,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_02900
-     * @tc.name      : BitVectortest02900
-     * @tc.desc      : BitVector getIndexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest02900
+     * @tc.number SUB_COOLLECTION_BITVECTOR_02900
+     * @tc.desc   BitVector getIndexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest02900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -844,12 +844,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_03100
-     * @tc.name      : BitVectortest03100
-     * @tc.desc      : BitVector getLastIndexOf 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest03100
+     * @tc.number SUB_COOLLECTION_BITVECTOR_03100
+     * @tc.desc   BitVector getLastIndexOf 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest03100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -876,12 +876,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_03200
-     * @tc.name      : BitVectortest03200
-     * @tc.desc      : BitVector getLastIndexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest03200
+     * @tc.number SUB_COOLLECTION_BITVECTOR_03200
+     * @tc.desc   BitVector getLastIndexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest03200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -909,12 +909,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_03400
-     * @tc.name      : BitVectortest03400
-     * @tc.desc      : BitVector flipBitByIndex 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest03400
+     * @tc.number SUB_COOLLECTION_BITVECTOR_03400
+     * @tc.desc   BitVector flipBitByIndex 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest03400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -940,12 +940,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_03500
-     * @tc.name      : BitVectortest03500
-     * @tc.desc      : BitVector flipBitByIndex 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest03500
+     * @tc.number SUB_COOLLECTION_BITVECTOR_03500
+     * @tc.desc   BitVector flipBitByIndex 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest03500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -971,12 +971,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_03600
-     * @tc.name      : BitVectortest03600
-     * @tc.desc      : BitVector flipBitByIndex 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest03600
+     * @tc.number SUB_COOLLECTION_BITVECTOR_03600
+     * @tc.desc   BitVector flipBitByIndex 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest03600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1004,12 +1004,12 @@ export default function BitVectortest() {
 
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_03800
-     * @tc.name      : BitVectortest03800
-     * @tc.desc      : BitVector flipBitsByRange 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest03800
+     * @tc.number SUB_COOLLECTION_BITVECTOR_03800
+     * @tc.desc   BitVector flipBitsByRange 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest03800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1035,12 +1035,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_03900
-     * @tc.name      : BitVectortest03900
-     * @tc.desc      : BitVector flipBitsByRange 10200001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest03900
+     * @tc.number SUB_COOLLECTION_BITVECTOR_03900
+     * @tc.desc   BitVector flipBitsByRange 10200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest03900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1066,12 +1066,12 @@ export default function BitVectortest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04000
-     * @tc.name      : BitVectortest04000
-     * @tc.desc      : BitVector flipBitsByRange 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04000
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04000
+     * @tc.desc   BitVector flipBitsByRange 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1097,15 +1097,15 @@ export default function BitVectortest() {
         done()
       })
 
-    /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04200
-     * @tc.name      : BitVectortest04200
-     * @tc.desc      : BitVector values 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
 
+    /**
+     * @tc.name   BitVectortest04200
+     * @tc.number BitVectortest04200
+     * @tc.desc   BitVectortest04200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('BitVectortest04200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const caseName = 'BitVectortest04200';
@@ -1130,12 +1130,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04300
-     * @tc.name      : BitVectortest04300
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04300
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04300
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1166,12 +1166,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04400
-     * @tc.name      : BitVectortest04400
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04400
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04400
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1202,12 +1202,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04500
-     * @tc.name      : BitVectortest04500
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04500
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04500
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1238,12 +1238,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04600
-     * @tc.name      : BitVectortest04600
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04600
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04600
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1274,12 +1274,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04700
-     * @tc.name      : BitVectortest04700
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04700
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04700
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1310,12 +1310,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04800
-     * @tc.name      : BitVectortest04800
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04800
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04800
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1346,12 +1346,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_04900
-     * @tc.name      : BitVectortest04900
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest04900
+     * @tc.number SUB_COOLLECTION_BITVECTOR_04900
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest04900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1382,12 +1382,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_05000
-     * @tc.name      : BitVectortest05000
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest05000
+     * @tc.number SUB_COOLLECTION_BITVECTOR_05000
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest05000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1418,12 +1418,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_05100
-     * @tc.name      : BitVectortest05100
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest05100
+     * @tc.number SUB_COOLLECTION_BITVECTOR_05100
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest05100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1454,12 +1454,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_05200
-     * @tc.name      : BitVectortest05200
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest05200
+     * @tc.number SUB_COOLLECTION_BITVECTOR_05200
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest05200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1490,12 +1490,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_05300
-     * @tc.name      : BitVectortest05300
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest05300
+     * @tc.number SUB_COOLLECTION_BITVECTOR_05300
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest05300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1526,12 +1526,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_05400
-     * @tc.name      : BitVectortest05400
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest05400
+     * @tc.number SUB_COOLLECTION_BITVECTOR_05400
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest05400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1562,12 +1562,12 @@ export default function BitVectortest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTION_BITVECTOR_05500
-     * @tc.name      : BitVectortest05500
-     * @tc.desc      : BitVector values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BitVectortest05500
+     * @tc.number SUB_COOLLECTION_BITVECTOR_05500
+     * @tc.desc   BitVector values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BitVectortest05500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -45,12 +45,12 @@ export default function DequeTest() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0100
-     * @tc.name       : testInsertFront0001
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertFront0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0100
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertFront0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertFront0001";
@@ -68,12 +68,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0200
-     * @tc.name       : testInsertFront0001
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertFront0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0200
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertFront0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertFront0002";
@@ -91,12 +91,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0300
-     * @tc.name       : testInsertFront0001
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertFront0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0300
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertFront0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertFront0003";
@@ -126,12 +126,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0400
-     * @tc.name       : testInsertFront0001
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertFront0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0400
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertFront0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertFront0004";
@@ -154,12 +154,12 @@ export default function DequeTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0500
-     * @tc.name       : testInsertEnd0005
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertEnd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0500
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertEnd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertEnd0005";
@@ -177,12 +177,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0600
-     * @tc.name       : testInsertEnd0005
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertEnd0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0600
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertEnd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertEnd0006";
@@ -200,12 +200,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0700
-     * @tc.name       : testInsertEnd0007
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertEnd0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0700
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertEnd0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertEnd0007";
@@ -235,12 +235,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0800
-     * @tc.name       : testInsertEnd0005
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testInsertEnd0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0800
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInsertEnd0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testInsertEnd0008";
@@ -264,12 +264,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0900
-     * @tc.name       : testHas0009
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0900
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHas0009";
@@ -285,12 +285,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1000
-     * @tc.name       : testHas0010
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1000
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHas0010";
@@ -306,12 +306,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1100
-     * @tc.name       : testHas0011
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1100
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHas0011";
@@ -331,12 +331,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1200
-     * @tc.name       : tesPopFirst0012
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   tesPopFirst0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1200
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tesPopFirst0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "tesPopFirst0012";
@@ -356,12 +356,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1300
-     * @tc.name       : tesPopFirst0013
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   tesPopFirst0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1300
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tesPopFirst0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "tesPopFirst0013";
@@ -377,12 +377,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1400
-     * @tc.name       : tesPopLast0014
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   tesPopLast0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1400
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tesPopLast0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "tesPopLast0014";
@@ -402,12 +402,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1500
-     * @tc.name       : tesGetFirst0015
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   tesGetFirst0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1500
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tesGetFirst0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "tesGetFirst0015";
@@ -423,12 +423,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1600
-     * @tc.name       : tesGetLast0016
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   tesGetLast0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1600
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tesGetLast0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "tesGetLast0016";
@@ -447,12 +447,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1700
-     * @tc.name       : tesGetLast0017
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   tesGetLast0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1700
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tesGetLast0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "tesGetLast0017";
@@ -467,12 +467,12 @@ export default function DequeTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1800
-     * @tc.name       : tesGetLast0018
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   tesGetLast0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1800
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tesGetLast0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "tesGetLast0018";
@@ -499,14 +499,14 @@ export default function DequeTest() {
       }
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1800
-     * @tc.name       : tesGetLast0018
-     * @tc.desc       : Test the function of the interface isEmpty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+   /**
+    * @tc.name   tesForeach0019
+    * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1800
+    * @tc.desc   Test the function of the interface isEmpty.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    // it('tesForeach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "tesGetLast0019";
     //   try {
@@ -531,6 +531,31 @@ export default function DequeTest() {
     //     expect(false).assertFail();
     //   }
     // });
+
+    /**
+     * @tc.name   testUtil3_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_003
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUtil3_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let result = 0;
+      let deque: Deque<int> = new Deque<int>();
+      deque.insertFront(2);
+      deque.insertFront(4);
+      deque.insertFront(5);
+      deque.insertFront(4);
+
+      let iter = deque.$_iterator();
+      let temp: IteratorResult<int> = iter.next();
+      while (!temp.done) {
+        result = result + temp.value!;
+        temp = iter.next();
+      }
+      expect(result).assertEqual(15);
+    })
 
   })
 }

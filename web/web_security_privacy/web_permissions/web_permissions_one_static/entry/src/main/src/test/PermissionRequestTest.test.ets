@@ -46,14 +46,14 @@ export default function webOnPermissionRequest() {
       console.info("WebOnPermissionRequestTest afterEach end");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_PERMISSIONREQUESTDENY_GROUP_0100
-    * @tc.name        : testPermissionRequestDenyGroupStatic001
-    * @tc.desc        : test permissionRequest deny
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testPermissionRequestDenyGroupStatic001
+     * @tc.number SUB_WEB_PERMISSIONREQUESTDENY_GROUP_0100
+     * @tc.desc   test permissionRequest deny
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPermissionRequestDenyGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await startAbility(bundleName, 'EntryAbility');
@@ -93,14 +93,14 @@ export default function webOnPermissionRequest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_PERMISSIONREQUESTGRANT_GROUP_0100
-    * @tc.name        : testPermissionRequestGrantGroupStatic001
-    * @tc.desc        : test permissionRequest grant
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testPermissionRequestGrantGroupStatic001
+     * @tc.number SUB_WEB_PERMISSIONREQUESTGRANT_GROUP_0100
+     * @tc.desc   test permissionRequest grant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPermissionRequestGrantGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await startAbility(bundleName, 'EntryAbility');

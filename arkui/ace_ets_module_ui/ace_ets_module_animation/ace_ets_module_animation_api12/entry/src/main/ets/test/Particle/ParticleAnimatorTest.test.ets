@@ -57,12 +57,12 @@ export default function ParticleAnimatorTest() {
       console.info("ParticleAnimatorTest after each called");
     });
     /**
+     * @tc.name   ParticleAnimatorTest_001
      * @tc.number ParticleAnimatorTest_001
-     * @tc.name ParticleAnimatorTest_001
-     * @tc.desc test the particle of attribute
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test the particle of attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleAnimatorTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ParticleAnimatorTest_001] START');

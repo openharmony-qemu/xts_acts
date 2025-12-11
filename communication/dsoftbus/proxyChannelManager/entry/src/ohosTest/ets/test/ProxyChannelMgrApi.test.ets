@@ -149,7 +149,6 @@ export default function proxyChannelMgr() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr结构错误
@@ -185,7 +184,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr长度为空
@@ -221,7 +219,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr为空格
@@ -257,7 +254,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr为特殊字符
@@ -296,7 +292,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600
      * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid长度为空
@@ -333,7 +328,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700
      * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid为空格
@@ -370,7 +364,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900
      * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid超max
@@ -408,7 +401,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000
      * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid为特殊字符
@@ -445,7 +437,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100
      * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid格式错误
@@ -489,7 +480,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr格式错误
@@ -526,7 +516,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
      * @tc.desc   closeProxyChannel接口入参channelId为无效值
@@ -554,7 +543,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400
      * @tc.desc   closeProxyChannel接口入参channelId为0
@@ -582,7 +570,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500
      * @tc.desc   closeProxyChannel接口入参channelId为 -1
@@ -610,7 +597,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600
      * @tc.desc   closeProxyChannel接口入参channelId为 1.0
@@ -638,7 +624,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700
      * @tc.desc   closeProxyChannel接口入参channelId为 null
@@ -666,7 +651,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800
      * @tc.desc   closeProxyChannel接口入参channelId为 undefined
@@ -694,7 +678,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900
      * @tc.desc   sendData接口入参channelId为无效值
@@ -732,7 +715,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000
      * @tc.desc   sendData接口入参channelId为 null
@@ -766,7 +748,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100
      * @tc.desc   sendData接口入参channelId为 undefined
@@ -800,7 +781,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200
      * @tc.desc   sendData接口入参channelId为 -1
@@ -839,7 +819,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300
      * @tc.desc   sendData接口入参channelId为 0
@@ -879,7 +858,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400
      * @tc.desc   sendData接口入参channelId为 1.1
@@ -912,7 +890,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500
      * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 1
@@ -941,7 +918,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600
      * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 null
@@ -970,7 +946,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700
      * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 undefined
@@ -999,7 +974,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800
      * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 -1
@@ -1028,7 +1002,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900
      * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 0
@@ -1057,7 +1030,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000
      * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 1.1
@@ -1086,7 +1058,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100
      * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 无效值
@@ -1115,7 +1086,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200
      * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 null
@@ -1144,7 +1114,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300
      * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 undefined
@@ -1173,7 +1142,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400
      * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 -1
@@ -1202,7 +1170,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500
      * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 0
@@ -1231,7 +1198,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600
      * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 1.1
@@ -1260,7 +1226,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700
      * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 1
@@ -1289,7 +1254,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800
      * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 null
@@ -1318,7 +1282,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900
      * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 undefined
@@ -1347,7 +1310,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000
      * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 -1
@@ -1376,7 +1338,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100
      * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 0
@@ -1405,7 +1366,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200
      * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 1.1
@@ -1434,7 +1394,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300
      * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 无效值
@@ -1463,7 +1422,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400
      * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 null
@@ -1492,7 +1450,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500
      * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 undefined
@@ -1521,7 +1478,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600
      * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 -1
@@ -1550,7 +1506,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700
      * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 0
@@ -1579,7 +1534,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800
      * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 1.1
@@ -1608,7 +1562,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr失效
@@ -1650,7 +1603,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr使用macHash失效
@@ -1692,7 +1644,6 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr的长度超过限制

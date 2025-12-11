@@ -60,14 +60,14 @@ export default function webController() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_IMAGEACCESS_0100
-    * @tc.name       : testImageAccess001
-    * @tc.desc       : test imageAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testImageAccess001
+     * @tc.number SUB_WEB_IMAGEACCESS_0100
+     * @tc.desc   test imageAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testImageAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testImageAccess001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -78,14 +78,14 @@ export default function webController() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_IMAGEACCESS_0200
-    * @tc.name       : testImageAccess002
-    * @tc.desc       : test imageAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testImageAccess002
+     * @tc.number SUB_WEB_IMAGEACCESS_0200
+     * @tc.desc   test imageAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testImageAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testImageAccess002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -98,14 +98,14 @@ export default function webController() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_ONLINEIMAGEACCESS_0100
-    * @tc.name       : testOnlineImageAccess001
-    * @tc.desc       : test onlineImageAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnlineImageAccess001
+     * @tc.number SUB_WEB_ONLINEIMAGEACCESS_0100
+     * @tc.desc   test onlineImageAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnlineImageAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnlineImageAccess001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -116,14 +116,14 @@ export default function webController() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONLINEIMAGEACCESS_0200
-    * @tc.name       : testOnlineImageAccess002
-    * @tc.desc       : test onlineImageAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnlineImageAccess002
+     * @tc.number SUB_WEB_ONLINEIMAGEACCESS_0200
+     * @tc.desc   test onlineImageAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnlineImageAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnlineImageAccess002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -134,14 +134,14 @@ export default function webController() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FILEACCESS_0100
-    * @tc.name       : testFileAccess001
-    * @tc.desc       : test fileAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testFileAccess001
+     * @tc.number SUB_WEB_FILEACCESS_0100
+     * @tc.desc   test fileAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testFileAccess001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -152,14 +152,14 @@ export default function webController() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FILEACCESS_0200
-    * @tc.name       : testFileAccess002
-    * @tc.desc       : test fileAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testFileAccess002
+     * @tc.number SUB_WEB_FILEACCESS_0200
+     * @tc.desc   test fileAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testFileAccess002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

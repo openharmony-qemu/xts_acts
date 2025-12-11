@@ -47,13 +47,13 @@ export default function TextNumberTransitionTest() {
       console.info("TextNumberTransitionTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_TEXT_NUMBER_TRANSITION_API_0001
-    * @tc.name         TextNumberTransitionTest0001
-    * @tc.desc         test flipDirection: FlipDirection.DOWN, enableBlur: false
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextNumberTransitionTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_TEXT_NUMBER_TRANSITION_API_0001
+     * @tc.desc   test flipDirection: FlipDirection.DOWN, enableBlur: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextNumberTransitionTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -68,14 +68,14 @@ export default function TextNumberTransitionTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_TEXT_NUMBER_TRANSITION_API_0002
-   * @tc.name         TextNumberTransitionTest0002
-   * @tc.desc         test flipDirection: FlipDirection.UP, enableBlur: true
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        3
-    */
+    /**
+     * @tc.name   TextNumberTransitionTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_TEXT_NUMBER_TRANSITION_API_0002
+     * @tc.desc   test flipDirection: FlipDirection.UP, enableBlur: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('TextNumberTransitionTest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       console.info('TextNumberTransitionTest0002 START');

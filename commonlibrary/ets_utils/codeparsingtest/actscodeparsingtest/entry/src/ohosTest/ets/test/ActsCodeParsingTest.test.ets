@@ -17,13 +17,13 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 export default function actscodeparsingtest() {
   describe('ActsCodeParsingTest', () => {
 
-    /*
-     * @tc.number: SUB_Runtime_Language_PublicFundation_StringParsing_0100
-     * @tc.name: Hexadecimal parsing.
-     * @tc.desc: Hexadecimal parsing.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   SUB_Runtime_Language_PublicFundation_StringParsing_0100
+     * @tc.number SUB_Runtime_Language_PublicFundation_StringParsing_0100
+     * @tc.desc   Hexadecimal parsing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Runtime_Language_PublicFundation_StringParsing_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

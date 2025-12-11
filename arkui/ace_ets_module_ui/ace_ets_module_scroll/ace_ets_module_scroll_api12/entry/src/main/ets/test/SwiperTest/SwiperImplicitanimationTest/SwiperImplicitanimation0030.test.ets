@@ -45,12 +45,12 @@ export default function SwiperImplicitanimation0030() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0030
      * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0030
-     * @tc.name SWIPER_IMPLICITANIMATION_0030
-     * @tc.desc show index currentOffset change
-     * @tc.level Level 3
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   show index currentOffset change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0030', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0030 START");

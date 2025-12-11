@@ -26,13 +26,13 @@ export default function ListNodeAdapterEventTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_WIDTH_0100
-     * @tc.name       : testListNodeAdapterEvent001
-     * @tc.desc       : testing width for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListNodeAdapterEvent001
+     * @tc.number SUB_ARKUI_CAPI_LIST_WIDTH_0100
+     * @tc.desc   testing width for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNodeAdapterEvent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListNodeAdapterEvent001()).assertEqual(0)

@@ -48,12 +48,12 @@ export default function textInputLineHeight() {
     })
 
     /**
+     * @tc.name   textInputLineHeight_0100
      * @tc.number textInputLineHeight_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputLineHeight_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[textInputLineHeight_0100] START');

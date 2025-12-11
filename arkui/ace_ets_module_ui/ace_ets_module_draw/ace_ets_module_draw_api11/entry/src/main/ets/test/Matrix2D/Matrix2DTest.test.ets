@@ -45,6 +45,14 @@ export default function Matrix2DTest() {
       console.info("Matrix2D after each called");
     });
 
+    /**
+     * @tc.name   testMatrix2D_0010
+     * @tc.number testMatrix2D_0010
+     * @tc.desc   testMatrix2D_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMatrix2D_0010', Level.LEVEL0, async (done:Function) => {
       console.info('[testMatrix2D_0010] START');
       await Utils.sleep(2000);

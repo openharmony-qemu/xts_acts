@@ -38,7 +38,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0100
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0100
      * @tc.desc   pattterns value is pasteboard.Pattern.EMAIL_ADDRESS
@@ -77,7 +76,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0200
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0200
      * @tc.desc   pattterns value is pasteboard.Pattern.URL
@@ -114,7 +112,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0200 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0300
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0300
      * @tc.desc   pattterns value is pasteboard.Pattern.NUMBER
@@ -152,7 +149,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0400
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0400
      * @tc.desc   pattterns value is pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL
@@ -190,7 +186,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0500
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0500
      * @tc.desc   pattterns value is pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS
@@ -227,7 +222,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0500 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0600
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0600
      * @tc.desc   pattterns value is pasteboard.Pattern.NUMBER,pasteboard.Pattern.URL
@@ -264,7 +258,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0600 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0700
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0700
      * @tc.desc   pattterns value is pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL
@@ -302,7 +295,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0800
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0800
      * @tc.desc   pattterns value is []
@@ -341,7 +333,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0900
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0900
      * @tc.desc   pattterns value is [null,null,undefined]
@@ -381,7 +372,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1000
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1000
      * @tc.desc   detectPatterns value is null
@@ -418,7 +408,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1100
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1100
      * @tc.desc   detectPatterns value is undefined
@@ -455,7 +444,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1200
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1200
      * @tc.desc   Patterns value is [123,456]
@@ -492,7 +480,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1200 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1300
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1300
      * @tc.desc   Patterns value is [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,521]
@@ -530,7 +517,6 @@ export default function pasteboardDetectPatternsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1400
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1400
      * @tc.desc   Patterns value is [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,pasteboard.Pattern.NUMBER]
@@ -569,7 +555,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1400 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1500
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1500
      * @tc.desc   Patterns value is [pasteboard.Pattern.NUMBER,null]
@@ -606,7 +591,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1500 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1600
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1600
      * @tc.desc   Patterns value is [pasteboard.Pattern.NUMBER,undefiend]
@@ -643,7 +627,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1600 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1700
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1700
      * @tc.desc   Patterns value is [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,null]
@@ -680,7 +663,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1700 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1800
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1800
      * @tc.desc   Patterns value is [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,undefined]
@@ -717,7 +699,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1800 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1900
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1900
      * @tc.desc   textData is 123,Patterns value is [pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL]
@@ -752,7 +733,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1900 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2000
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2000
      * @tc.desc   textData is "https://www.baidu.com/",Patterns value is [pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.NUMBER]
@@ -787,7 +767,6 @@ export default function pasteboardDetectPatternsTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2000 ---------end")
     });
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2100
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2100
      * @tc.desc   textData is "qqq@163.com",Patterns value is [pasteboard.Pattern.URL,pasteboard.Pattern.NUMBER]

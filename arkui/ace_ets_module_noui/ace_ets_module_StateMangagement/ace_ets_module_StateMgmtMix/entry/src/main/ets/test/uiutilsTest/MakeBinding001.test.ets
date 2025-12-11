@@ -46,12 +46,12 @@ export default function MakeBinding001() {
     });
 
     /**
-     * @tc.number    MakeBinding001_001
-     * @tc.name      MakeBinding001_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   MakeBinding001_001
+     * @tc.number MakeBinding001_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MakeBinding001_001', Level.LEVEL0, async (done: Function) => {
       console.info('[MakeBinding001_001] START');

@@ -50,11 +50,13 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
       }, gSetTimeout);
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Context_EnvironmentTest_0400
-     * @tc.name    Multiple registrations and deregistration.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Context_EnvironmentTest_0400
+     * @tc.number SUB_AA_AMS_Context_EnvironmentTest_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Context_EnvironmentTest_0400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_AMS_Context_EnvironmentTest_0400 ==== ';
@@ -92,11 +94,13 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
       console.info(TAG, `end`);
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Context_EnvironmentTest_0500
-     * @tc.name    unregisterEnvironmentCallback interface input parameter is a nonexistent ID.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Context_EnvironmentTest_0500
+     * @tc.number SUB_AA_AMS_Context_EnvironmentTest_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Context_EnvironmentTest_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_AMS_Context_EnvironmentTest_0500 ==== ';
@@ -114,11 +118,13 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Context_EnvironmentTest_0600
-     * @tc.name    unregisterEnvironmentCallback interface input parameter is negative.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Context_EnvironmentTest_0600
+     * @tc.number SUB_AA_AMS_Context_EnvironmentTest_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Context_EnvironmentTest_0600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_AMS_Context_EnvironmentTest_0600 ==== ';

@@ -25,12 +25,12 @@ export default function muslApplicationTargetSdkVersionNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_APPLICATIONTARGETSDKVERSION_GETAPPLICATIONTARGETSDKVERSION_0100
-     * @tc.name       : testMuslApplicationTargetSdkVersionGetApplicationTargetSdkVersion001
-     * @tc.desc       : get_device_api_version
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslApplicationTargetSdkVersionGetApplicationTargetSdkVersion001
+     * @tc.number SUB_THIRDPARTY_MUSL_APPLICATIONTARGETSDKVERSION_GETAPPLICATIONTARGETSDKVERSION_0100
+     * @tc.desc   get_device_api_version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslApplicationTargetSdkVersionGetApplicationTargetSdkVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = applicationTargetSdkVersion.getApplicationTargetSdkVersion();

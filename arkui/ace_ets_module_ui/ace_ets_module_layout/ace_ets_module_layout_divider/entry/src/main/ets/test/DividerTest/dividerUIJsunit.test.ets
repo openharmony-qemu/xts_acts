@@ -44,12 +44,12 @@ export default function dividerUIJsunit() {
     });
 
     /**
-     * @tc.number dividerUIJsunit_0100
      * @tc.name   dividerUIJsunit_0100
+     * @tc.number dividerUIJsunit_0100
      * @tc.desc   test divider
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerUIJsunit_0100',  Level.LEVEL0, async (done: Function) => {
        console.info('dividerUIJsunit_0100 START');
@@ -67,14 +67,14 @@ export default function dividerUIJsunit() {
        done();
     });
 
-    /**
-     * @tc.number dividerUIJsunit_0200
-     * @tc.name   dividerUIJsunit_0200
-     * @tc.desc   test divider
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
-     */
+   /**
+    * @tc.name   dividerUIJsunit_0200
+    * @tc.number dividerUIJsunit_0200
+    * @tc.desc   test divider
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('dividerUIJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('dividerUIJsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -96,12 +96,12 @@ export default function dividerUIJsunit() {
     });
 
     /**
-     * @tc.number dividerUIJsunit_0300
      * @tc.name   dividerUIJsunit_0300
+     * @tc.number dividerUIJsunit_0300
      * @tc.desc   test divider
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerUIJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('dividerUIJsunit_0300 START');
@@ -118,12 +118,12 @@ export default function dividerUIJsunit() {
     });
 
     /**
-     * @tc.number dividerUIJsunit_0400
      * @tc.name   dividerUIJsunit_0400
+     * @tc.number dividerUIJsunit_0400
      * @tc.desc   test divider
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerUIJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('datelPanelJsunit_0400 START');
@@ -146,12 +146,12 @@ export default function dividerUIJsunit() {
     });
 
     /**
-     * @tc.number dividerUIJsunit_0500
      * @tc.name   dividerUIJsunit_0500
+     * @tc.number dividerUIJsunit_0500
      * @tc.desc   test divider
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerUIJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('dividerUIJsunit_0500 START');
@@ -168,12 +168,12 @@ export default function dividerUIJsunit() {
     });
 
     /**
-     * @tc.number dividerUIJsunit_0600
      * @tc.name   dividerUIJsunit_0600
+     * @tc.number dividerUIJsunit_0600
      * @tc.desc   test divider
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerUIJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('dividerUIJsunit_0500 START');

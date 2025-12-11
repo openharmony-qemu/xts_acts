@@ -17,12 +17,12 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 export default function DataViewTest() {
   describe('dataViewTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0100
-     * @tc.name       : testDataViewSetuint320001
-     * @tc.desc       : Test the function of the Interface setUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0100
+     * @tc.desc   Test the function of the Interface setUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint320001";
@@ -38,12 +38,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0200
-     * @tc.name       : testDataViewSetuint320002
-     * @tc.desc       : Test the function of the Interface setUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint320002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0200
+     * @tc.desc   Test the function of the Interface setUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint320002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint320002";
@@ -59,12 +59,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0300
-     * @tc.name       : testDataViewSetuint320003
-     * @tc.desc       : Test the function of the Interface setUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint320003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0300
+     * @tc.desc   Test the function of the Interface setUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint320003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint320003";
@@ -80,12 +80,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0400
-     * @tc.name       : testDataViewSetuint320004
-     * @tc.desc       : Test the function of the Interface setUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint320004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0400
+     * @tc.desc   Test the function of the Interface setUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint320004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint320004";
@@ -101,12 +101,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0500
-     * @tc.name       : testDataViewSetuint320005
-     * @tc.desc       : Test the function of the Interface setUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint320005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0500
+     * @tc.desc   Test the function of the Interface setUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint320005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint320005";
@@ -122,12 +122,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0600
-     * @tc.name       : testDataViewSetuint160001
-     * @tc.desc       : Test the function of the Interface setUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint160001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0600
+     * @tc.desc   Test the function of the Interface setUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint160001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint160001";
@@ -143,12 +143,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0700
-     * @tc.name       : testDataViewSetuint160002
-     * @tc.desc       : Test the function of the Interface setUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint160002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0700
+     * @tc.desc   Test the function of the Interface setUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint160002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint160002";
@@ -164,12 +164,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0800
-     * @tc.name       : testDataViewSetuint160003
-     * @tc.desc       : Test the function of the Interface setUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint160003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0800
+     * @tc.desc   Test the function of the Interface setUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint160003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint160003";
@@ -184,12 +184,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0900
-     * @tc.name       : testDataViewSetuint160004
-     * @tc.desc       : Test the function of the Interface setUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetuint160004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_0900
+     * @tc.desc   Test the function of the Interface setUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetuint160004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetuint160004";
@@ -205,12 +205,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1000
-     * @tc.name       : testDataViewSetUint160005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDataViewSetUint160005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1000
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataViewSetUint160005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testDataViewSetUint160005";
@@ -226,12 +226,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1100
-     * @tc.name       : testDataViewSetUint80001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetUint80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1100
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetUint80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetUint80001";
@@ -247,12 +247,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1200
-     * @tc.name       : testDataViewSetUint80002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetUint80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1200
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetUint80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetUint80002";
@@ -268,12 +268,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1300
-     * @tc.name       : testDataViewSetUint80003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetUint80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1300
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetUint80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetUint80003";
@@ -289,12 +289,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1400
-     * @tc.name       : testDataViewSetUint80004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetUint80004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1400
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetUint80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetUint80004";
@@ -310,12 +310,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1500
-     * @tc.name       : testDataViewSetUint80005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetUint80005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1500
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetUint80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetUint80005";
@@ -331,12 +331,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1600
-     * @tc.name       : testDataViewSetInt320001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1600
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt320001";
@@ -352,12 +352,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1700
-     * @tc.name       : testDataViewSetInt320002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt320002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1700
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt320002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt320002";
@@ -373,12 +373,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1800
-     * @tc.name       : testDataViewSetInt320003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt320003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1800
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt320003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt320003";
@@ -394,12 +394,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1900
-     * @tc.name       : testDataViewSetInt320004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt320004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_1900
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt320004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt320004";
@@ -415,12 +415,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2000
-     * @tc.name       : testDataViewSetInt320005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt320005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2000
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt320005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt320005";
@@ -436,12 +436,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2100
-     * @tc.name       : testDataViewSetInt320001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt160001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2100
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt160001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt160001";
@@ -457,12 +457,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2200
-     * @tc.name       : testDataViewSetInt320002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt160002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2200
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt160002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt160002";
@@ -478,12 +478,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2300
-     * @tc.name       : testDataViewSetInt320003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt160003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2300
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt160003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt320003";
@@ -499,12 +499,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2400
-     * @tc.name       : testDataViewSetInt320004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt160004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2400
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt160004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt160004";
@@ -520,12 +520,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2500
-     * @tc.name       : testDataViewSetInt320005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt160005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2500
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt160005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt160005";
@@ -541,12 +541,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2600
-     * @tc.name       : testDataViewSetInt80001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2600
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt80001";
@@ -562,12 +562,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2700
-     * @tc.name       : testDataViewSetInt80002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2700
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt80002";
@@ -583,12 +583,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2800
-     * @tc.name       : testDataViewSetInt80003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2800
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt80003";
@@ -604,12 +604,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2900
-     * @tc.name       : testDataViewSetInt80004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt80004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_2900
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt80004";
@@ -624,12 +624,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3000
-     * @tc.name       : testDataViewSetInt80005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetInt80005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3000
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetInt80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetInt80005";
@@ -645,12 +645,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3100
-     * @tc.name       : testDataViewFloat640001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat640001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3100
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetFloat640001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat640001";
@@ -666,12 +666,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3200
-     * @tc.name       : testDataViewFloat640002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat640002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3200
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetFloat640002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat640002";
@@ -687,12 +687,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3300
-     * @tc.name       : testDataViewFloat640003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat640003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3300
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetFloat640003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat640003";
@@ -708,12 +708,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3400
-     * @tc.name       : testDataViewFloat640004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat640004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3400
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetFloat640004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat640004";
@@ -729,12 +729,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3500
-     * @tc.name       : testDataViewFloat640005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat640005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3500
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetFloat640005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat640005";
@@ -750,12 +750,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3600
-     * @tc.name       : testDataViewFloat320001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3600
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetFloat320001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat320001";
@@ -771,12 +771,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3700
-     * @tc.name       : testDataViewSetFloat320002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat320002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3700
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetFloat320002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat320002";
@@ -792,12 +792,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3800
-     * @tc.name       : testDataViewSetFloat320003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat320003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3800
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetFloat320003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat320003";
@@ -813,12 +813,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3900
-     * @tc.name       : testDataViewSetFloat320004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat320004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_3900
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetFloat320004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat320004";
@@ -834,12 +834,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4000
-     * @tc.name       : testDataViewSetFloat320005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetFloat320005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4000
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetFloat320005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetFloat320005";
@@ -855,12 +855,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4100
-     * @tc.name       : testDataViewSetBigUint640001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigUint640001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4100
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetBigUint640001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetBigUint640001"
@@ -876,12 +876,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4200
-     * @tc.name       : testDataViewSetBigUint640002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigUint640002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4200
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetBigUint640002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetBigUint640002";
@@ -897,12 +897,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4300
-     * @tc.name       : testDataViewSetBigUint640003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigUint640003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4300
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetBigUint640003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetBigUint640003";
@@ -918,12 +918,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4400
-     * @tc.name       : testDataViewSetBigUint640004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigUint640004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4400
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetBigUint640004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetBigUint640004";
@@ -939,12 +939,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4500
-     * @tc.name       : testDataViewSetBigUint640005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigUint640005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4500
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testDataViewSetBigUint640005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewSetBigUint640005";
@@ -960,12 +960,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4600
-     * @tc.name       : testDataViewSetBigint640001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigint640001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4600
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetBigint640001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewSetBigint640001'
@@ -981,12 +981,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4700
-     * @tc.name       : testDataViewSetBigint640002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigint640002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4700
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetBigint640002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewSetBigint640002'
@@ -1002,12 +1002,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4800
-     * @tc.name       : testDataViewSetBigint640003
-     * @tc.desc       : Test the function of the Inerface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigint640003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4800
+     * @tc.desc   Test the function of the Inerface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetBigint640003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewSetBigint640003'
@@ -1023,12 +1023,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4900
-     * @tc.name       : testDataViewSetBigint640004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigint640004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_4900
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetBigint640004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewSetBigint640004'
@@ -1044,12 +1044,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5000
-     * @tc.name       : testDataViewByteOffset0001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewSetBigint640005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5000
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewSetBigint640005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewSetBigint640005'
@@ -1065,12 +1065,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5100
-     * @tc.name       : testDataViewByteOffset0001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewByteOffset0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5100
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewByteOffset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewByteOffset0001'
@@ -1085,12 +1085,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5200
-     * @tc.name       : testDataViewByteOffset0002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewByteOffset0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5200
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewByteOffset0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewByteOffset0002'
@@ -1105,12 +1105,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5300
-     * @tc.name       : testDataViewByteOffset0003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewByteOffset0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5300
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewByteOffset0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewByteOffset0003'
@@ -1125,12 +1125,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5400
-     * @tc.name       : testDataViewByteOffset0004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewByteOffset0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5400
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewByteOffset0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewByteOffset0004'
@@ -1145,12 +1145,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5500
-     * @tc.name       : testDataViewGetBigInt640001
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigInt640001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5500
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigInt640001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetBigInt640001";
@@ -1164,12 +1164,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5600
-     * @tc.name       : testDataViewGetBigInt640002
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigInt640002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5600
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigInt640002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigInt640002';
@@ -1183,12 +1183,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5700
-     * @tc.name       : testDataViewGetBigInt640003
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigInt640003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5700
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigInt640003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigInt640003';
@@ -1202,12 +1202,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5800
-     * @tc.name       : testDataViewGetBigInt640004
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigInt640004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5800
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigInt640004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigInt640004';
@@ -1221,12 +1221,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5900
-     * @tc.name       : testDataViewGetBigInt640005
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigInt640005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_5900
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigInt640005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigInt640005';
@@ -1240,12 +1240,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6000
-     * @tc.name       : testDataViewGetBigUint640001
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigUint640001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6000
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigUint640001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigUint640001';
@@ -1259,12 +1259,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6100
-     * @tc.name       : testDataViewGetBigUint640002
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigUint640002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6100
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigUint640002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigUint640002';
@@ -1278,12 +1278,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6200
-     * @tc.name       : testDataViewGetBigUint640003
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigUint640003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6200
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigUint640003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigUint640003';
@@ -1297,12 +1297,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6300
-     * @tc.name       : testDataViewGetBigUint640004
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigUint640004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6300
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigUint640004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigUint640004';
@@ -1316,12 +1316,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6400
-     * @tc.name       : testDataViewGetBigUint640005
-     * @tc.desc       : Test the function of the Interface getBigInt64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetBigUint640005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6400
+     * @tc.desc   Test the function of the Interface getBigInt64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetBigUint640005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetBigUint640005';
@@ -1335,12 +1335,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6500
-     * @tc.name       : testDataViewGetFloat320001
-     * @tc.desc       : Test the function of the Interface getFloat32.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6500
+     * @tc.desc   Test the function of the Interface getFloat32.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat320001';
@@ -1354,12 +1354,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6600
-     * @tc.name       : testDataViewGetFloat320002
-     * @tc.desc       : Test the function of the Interface getFloat32.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat320002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6600
+     * @tc.desc   Test the function of the Interface getFloat32.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat320002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat320002';
@@ -1373,12 +1373,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6700
-     * @tc.name       : testDataViewGetFloat320003
-     * @tc.desc       : Test the function of the Interface getFloat32.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat320003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6700
+     * @tc.desc   Test the function of the Interface getFloat32.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat320003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat320003';
@@ -1393,12 +1393,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6800
-     * @tc.name       : testDataViewGetFloat320004
-     * @tc.desc       : Test the function of the Interface getFloat32.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat320004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6800
+     * @tc.desc   Test the function of the Interface getFloat32.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat320004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat320004';
@@ -1413,12 +1413,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6900
-     * @tc.name       : testDataViewGetFloat320005
-     * @tc.desc       : Test the function of the Interface getFloat32.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataView0069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_6900
+     * @tc.desc   Test the function of the Interface getFloat32.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataView0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataView0069';
@@ -1433,12 +1433,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7000
-     * @tc.name       : testDataViewGetFloat320006
-     * @tc.desc       : Test the function of the Interface getFloat32.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat320006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7000
+     * @tc.desc   Test the function of the Interface getFloat32.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat320006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat320006';
@@ -1453,12 +1453,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7100
-     * @tc.name       : testDataViewGetFloat640001
-     * @tc.desc       : Test the function of the Interface getFloat64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat640001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7100
+     * @tc.desc   Test the function of the Interface getFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat640001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat640001';
@@ -1473,12 +1473,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7200
-     * @tc.name       : testDataViewGetFloat640002
-     * @tc.desc       : Test the function of the Interface getFloat64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat640002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7200
+     * @tc.desc   Test the function of the Interface getFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat640002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat640002';
@@ -1493,12 +1493,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7300
-     * @tc.name       : testDataViewGetFloat640003
-     * @tc.desc       : Test the function of the Interface getFloat64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat640003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7300
+     * @tc.desc   Test the function of the Interface getFloat64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat640003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat640003';
@@ -1513,12 +1513,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7400
-     * @tc.name       : testDataViewGetFloat640004
-     * @tc.desc       : Test the function of the Interface getFloat64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat640004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7400
+     * @tc.desc   Test the function of the Interface getFloat64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat640004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat640004';
@@ -1532,12 +1532,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7500
-     * @tc.name       : testDataViewGetFloat640005
-     * @tc.desc       : Test the function of the Interface getFloat64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat640005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7500
+     * @tc.desc   Test the function of the Interface getFloat64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat640005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat640005';
@@ -1552,12 +1552,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7600
-     * @tc.name       : testDataViewGetFloat640006
-     * @tc.desc       : Test the function of the Interface getFloat64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetFloat640006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7600
+     * @tc.desc   Test the function of the Interface getFloat64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetFloat640006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetFloat640006';
@@ -1572,12 +1572,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7700
-     * @tc.name       : testDataViewGetInt80001
-     * @tc.desc       : Test the function of the Interface getInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7700
+     * @tc.desc   Test the function of the Interface getInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt80001';
@@ -1593,12 +1593,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7800
-     * @tc.name       : testDataViewGetInt80002
-     * @tc.desc       : Test the function of the Interface getInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7800
+     * @tc.desc   Test the function of the Interface getInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt80002';
@@ -1613,12 +1613,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7900
-     * @tc.name       : testDataViewGetInt80003
-     * @tc.desc       : Test the function of the interface getInt8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_7900
+     * @tc.desc   Test the function of the interface getInt8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt80003';
@@ -1632,12 +1632,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8000
-     * @tc.name       : testDataViewGetInt80004
-     * @tc.desc       : Test the function of the interface getInt8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt80004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8000
+     * @tc.desc   Test the function of the interface getInt8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt80004';
@@ -1652,12 +1652,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8100
-     * @tc.name       : testDataViewGetInt80005
-     * @tc.desc       : Test the function of the interface getInt8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt80005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8100
+     * @tc.desc   Test the function of the interface getInt8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt80005';
@@ -1672,12 +1672,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8200
-     * @tc.name       : testDataViewGetInt160001
-     * @tc.desc       : Test the function of the interface getInt16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt160001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8200
+     * @tc.desc   Test the function of the interface getInt16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt160001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt160001';
@@ -1691,12 +1691,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8300
-     * @tc.name       : testDataViewGetInt160002
-     * @tc.desc       : Test the function of the interface getInt16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt160002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8300
+     * @tc.desc   Test the function of the interface getInt16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt160002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt160002';
@@ -1710,12 +1710,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8400
-     * @tc.name       : testDataViewGetInt160003
-     * @tc.desc       : Test the function of the interface getInt16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt160003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8400
+     * @tc.desc   Test the function of the interface getInt16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt160003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt160003';
@@ -1729,12 +1729,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8500
-     * @tc.name       : testDataViewGetInt160004
-     * @tc.desc       : Test the function of the interface getInt16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt160004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8500
+     * @tc.desc   Test the function of the interface getInt16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt160004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt160004';
@@ -1749,12 +1749,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8600
-     * @tc.name       : testDataViewGetInt160005
-     * @tc.desc       : Test the function of the interface getInt16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt160005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8600
+     * @tc.desc   Test the function of the interface getInt16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt160005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt160005';
@@ -1769,12 +1769,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8700
-     * @tc.name       : testDataViewGetInt320001
-     * @tc.desc       : Test the function of the interface getInt32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8700
+     * @tc.desc   Test the function of the interface getInt32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt320001';
@@ -1788,12 +1788,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8800
-     * @tc.name       : testDataViewGetInt320002
-     * @tc.desc       : Test the function of the interface getInt32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt320002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8800
+     * @tc.desc   Test the function of the interface getInt32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt320002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDataViewGetInt320002';
@@ -1807,12 +1807,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8900
-     * @tc.name       : testDataViewGetInt320003
-     * @tc.desc       : Test the function of the interface getInt32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt320003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_8900
+     * @tc.desc   Test the function of the interface getInt32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt320003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetInt320003";
@@ -1827,12 +1827,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9000
-     * @tc.name       : testDataViewGetInt320004
-     * @tc.desc       : Test the function of the interface getInt32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt320004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9000
+     * @tc.desc   Test the function of the interface getInt32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt320004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetInt320004";
@@ -1847,12 +1847,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9100
-     * @tc.name       : testDataViewGetInt320005
-     * @tc.desc       : Test the function of the interface getInt32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt320005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9100
+     * @tc.desc   Test the function of the interface getInt32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt320005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetInt320005";
@@ -1867,12 +1867,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9200
-     * @tc.name       : testDataViewGetInt320006
-     * @tc.desc       : Test the function of the interface getInt32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetInt320006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9200
+     * @tc.desc   Test the function of the interface getInt32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetInt320006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetInt320006";
@@ -1887,12 +1887,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9300
-     * @tc.name       : testDataViewGetUint80001
-     * @tc.desc       : Test the function of the interface getUint8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9300
+     * @tc.desc   Test the function of the interface getUint8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint80001";
@@ -1907,12 +1907,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9400
-     * @tc.name       : testDataViewGetUint80002
-     * @tc.desc       : Test the function of the interface getUint8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9400
+     * @tc.desc   Test the function of the interface getUint8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint80002";
@@ -1927,12 +1927,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9500
-     * @tc.name       : testDataViewGetUint80003
-     * @tc.desc       : Test the function of the interface getUint8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9500
+     * @tc.desc   Test the function of the interface getUint8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint80003";
@@ -1947,12 +1947,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9600
-     * @tc.name       : testDataViewGetUint80004
-     * @tc.desc       : Test the function of the interface getUint8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint80004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9600
+     * @tc.desc   Test the function of the interface getUint8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint80004";
@@ -1967,12 +1967,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9700
-     * @tc.name       : testDataViewGetUint80005
-     * @tc.desc       : Test the function of the interface getUint8().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint80005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9700
+     * @tc.desc   Test the function of the interface getUint8().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint80005";
@@ -1987,12 +1987,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9800
-     * @tc.name       : testDataViewGetUint160001
-     * @tc.desc       : Test the function of the interface getUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint160001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9800
+     * @tc.desc   Test the function of the interface getUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint160001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint160001";
@@ -2007,12 +2007,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9900
-     * @tc.name       : testDataViewGetUint160002
-     * @tc.desc       : Test the function of the interface getUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint160002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_9900
+     * @tc.desc   Test the function of the interface getUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint160002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint160002";
@@ -2027,12 +2027,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10000
-     * @tc.name       : testDataViewGetUint160003
-     * @tc.desc       : Test the function of the interface getUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint160003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10000
+     * @tc.desc   Test the function of the interface getUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint160003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint160003";
@@ -2047,12 +2047,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10100
-     * @tc.name       : testDataViewGetUint160004
-     * @tc.desc       : Test the function of the interface getUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint160004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10100
+     * @tc.desc   Test the function of the interface getUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint160004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint160004";
@@ -2068,12 +2068,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10200
-     * @tc.name       : testDataViewGetUint160005
-     * @tc.desc       : Test the function of the interface getUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint160005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10200
+     * @tc.desc   Test the function of the interface getUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint160005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint160005";
@@ -2088,12 +2088,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10300
-     * @tc.name       : testDataViewGetUint160006
-     * @tc.desc       : Test the function of the interface getUint16().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint160006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10300
+     * @tc.desc   Test the function of the interface getUint16().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint160006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint160006";
@@ -2108,12 +2108,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10400
-     * @tc.name       : testDataViewGetUint320001
-     * @tc.desc       : Test the function of the interface getUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint320001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10400
+     * @tc.desc   Test the function of the interface getUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint320001";
@@ -2129,12 +2129,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10500
-     * @tc.name       : testDataViewGetUint320002
-     * @tc.desc       : Test the function of the interface getUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint320002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10500
+     * @tc.desc   Test the function of the interface getUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint320002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint320002";
@@ -2150,12 +2150,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10600
-     * @tc.name       : testDataViewGetUint320003
-     * @tc.desc       : Test the function of the interface getUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint320003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10600
+     * @tc.desc   Test the function of the interface getUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint320003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint320003";
@@ -2170,12 +2170,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10700
-     * @tc.name       : testDataViewGetUint320004
-     * @tc.desc       : Test the function of the interface getUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint320004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10700
+     * @tc.desc   Test the function of the interface getUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint320004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint320004";
@@ -2190,12 +2190,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10800
-     * @tc.name       : testDataViewGetUint160005
-     * @tc.desc       : Test the function of the interface getUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint320005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10800
+     * @tc.desc   Test the function of the interface getUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint320005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint320005";
@@ -2210,12 +2210,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10900
-     * @tc.name       : testDataViewGetUint320006
-     * @tc.desc       : Test the function of the interface getUint32().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewGetUint320006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_10900
+     * @tc.desc   Test the function of the interface getUint32().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewGetUint320006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewGetUint320006";
@@ -2230,12 +2230,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11000
-     * @tc.name       : testDataViewDataViewPrototypeByteLength0001
-     * @tc.desc       : Test the function of the interface DataViewPrototypeByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewDataViewPrototypeByteLength0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11000
+     * @tc.desc   Test the function of the interface DataViewPrototypeByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewDataViewPrototypeByteLength0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewDataViewPrototypeByteLength0001";
@@ -2250,12 +2250,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11100
-     * @tc.name       : testDataViewDataViewPrototypeByteLength0002
-     * @tc.desc       : Test the function of the interface DataViewPrototypeByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewDataViewPrototypeByteLength0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11100
+     * @tc.desc   Test the function of the interface DataViewPrototypeByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewDataViewPrototypeByteLength0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewDataViewPrototypeByteLength0002";
@@ -2270,12 +2270,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11200
-     * @tc.name       : testDataViewDataViewPrototypeByteLength0003
-     * @tc.desc       : Test the function of the interface DataViewPrototypeByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewDataViewPrototypeByteLength0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11200
+     * @tc.desc   Test the function of the interface DataViewPrototypeByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewDataViewPrototypeByteLength0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewDataViewPrototypeByteLength0003";
@@ -2290,12 +2290,12 @@ export default function DataViewTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11300
-     * @tc.name       : testDataViewDataViewPrototypeByteLength0004
-     * @tc.desc       : Test the function of the interface DataViewPrototypeByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDataViewDataViewPrototypeByteLength0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DATAVIEW_11300
+     * @tc.desc   Test the function of the interface DataViewPrototypeByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDataViewDataViewPrototypeByteLength0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDataViewDataViewPrototypeByteLength0004";

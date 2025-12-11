@@ -59,12 +59,12 @@ export default function BuiltinsGenericsActTest() {
     })
 
     /**
-     * @tc.number    : SUB_GENERICE_ACT_TEST_0100
-     * @tc.name      : testGenericClass
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGenericClass
+     * @tc.number SUB_GENERICE_ACT_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGenericClass', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -93,12 +93,12 @@ export default function BuiltinsGenericsActTest() {
       });
 
     /**
-     * @tc.number    : SUB_GENERICE_ACT_TEST_0200
-     * @tc.name      : testGenericInterface
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGenericInterface
+     * @tc.number SUB_GENERICE_ACT_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGenericInterface', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -128,12 +128,12 @@ export default function BuiltinsGenericsActTest() {
 
 
     /**
-     * @tc.number    :SUB_GENERICE_ACT_TEST_0300
-     * @tc.name      : testMultiGeneric
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMultiGeneric
+     * @tc.number SUB_GENERICE_ACT_TEST_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testMultiGeneric', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -162,12 +162,12 @@ export default function BuiltinsGenericsActTest() {
       });
 
     /**
-     * @tc.number    :SUB_GENERICE_ACT_TEST_0400
-     * @tc.name      : testGenericConstraint
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGenericConstraint
+     * @tc.number SUB_GENERICE_ACT_TEST_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGenericConstraint', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -196,12 +196,12 @@ export default function BuiltinsGenericsActTest() {
       });
 
     /**
-     * @tc.number    :SUB_GENERICE_ACT_TEST_0500
-     * @tc.name      : testGenericDefaultClass
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGenericDefaultClass
+     * @tc.number SUB_GENERICE_ACT_TEST_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGenericDefaultClass', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -230,12 +230,12 @@ export default function BuiltinsGenericsActTest() {
       });
 
     /**
-     * @tc.number    :SUB_GENERICE_ACT_TEST_0600
-     * @tc.name      : builtinsGenericsFormatTest
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsGenericsFormatTest
+     * @tc.number SUB_GENERICE_ACT_TEST_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsGenericsFormatTest', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -264,12 +264,12 @@ export default function BuiltinsGenericsActTest() {
       });
 
     /**
-     * @tc.number    :SUB_GENERICE_ACT_TEST_0700
-     * @tc.name      : builtinsGenericsRestraintTest
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   builtinsGenericsRestraintTest
+     * @tc.number SUB_GENERICE_ACT_TEST_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsGenericsRestraintTest', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

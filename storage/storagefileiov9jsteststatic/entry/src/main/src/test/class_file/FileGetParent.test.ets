@@ -30,14 +30,12 @@ export default function fileIOFileGetParent() {
   describe('fileIO_fs_file_getParent', (): void => {
 
     /**
+     * @tc.name   fileIO_test_filegetParent_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0100
-     * @tc.name fileIO_test_filegetParent_static_001
-     * @tc.desc Test getParent() interfaces.
-     * Open the file, file getParent(),write content
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getParent() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_filegetParent_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filegetParent_static_001');
@@ -59,14 +57,12 @@ export default function fileIOFileGetParent() {
     });
 
     /**
+     * @tc.name   fileIO_test_filegetParent_static_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0200
-     * @tc.name fileIO_test_filegetParent_static_002
-     * @tc.desc Test getParent() interfaces.
-     * Open the file, file getParent(),without content
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getParent() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_filegetParent_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filegetParent_static_002');
@@ -87,14 +83,12 @@ export default function fileIOFileGetParent() {
     });
 
     /**
+     * @tc.name   fileIO_test_filegetParent_static_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0300
-     * @tc.name fileIO_test_filegetParent_static_003
-     * @tc.desc Test getParent() interfaces.
-     * Open the file, file getParent(),fs.dup
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getParent() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filegetParent_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filegetParent_static_003');
@@ -114,14 +108,12 @@ export default function fileIOFileGetParent() {
     });
 
     /**
+     * @tc.name   fileIO_test_filegetParent_static_004
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_FILEGETPARENT_0400
-     * @tc.name fileIO_test_filegetParent_static_004
-     * @tc.desc Test getParent() interfaces.
-     * Open the file, file getParent(),fileuri.getUriFromPath()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getParent() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filegetParent_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filegetParent_static_004');

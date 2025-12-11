@@ -46,7 +46,6 @@ export default function rdbValueNdkTest() {
     afterAll(() => {})
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_BatchInsert_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_BatchInsert_0100
      * @tc.desc   OH_Rdb_BatchInsert_0100
@@ -62,7 +61,6 @@ export default function rdbValueNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Value_PutNull_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0100
      * @tc.desc   OH_Value_PutNull_0100
@@ -78,7 +76,6 @@ export default function rdbValueNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Value_Put_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0200
      * @tc.desc   OH_Value_Put_0100
@@ -94,7 +91,6 @@ export default function rdbValueNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Values_Put_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0300
      * @tc.desc   OH_Values_Put_0100
@@ -110,7 +106,6 @@ export default function rdbValueNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Value_PutFloatVector_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0400
      * @tc.desc   OH_Value_PutFloatVector_0100
@@ -126,7 +121,6 @@ export default function rdbValueNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Values_PutFloatVector_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0500
      * @tc.desc   OH_Values_PutFloatVector_0100

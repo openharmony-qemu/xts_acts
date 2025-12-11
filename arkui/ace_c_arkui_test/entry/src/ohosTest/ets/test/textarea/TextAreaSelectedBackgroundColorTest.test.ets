@@ -26,39 +26,39 @@ export default function textAreaSelectedBackgroundColorTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_SELECTEDBACKGROUNDCOLOR_0100
-     * @tc.name: testTextAreaSelectedBackgroundColor001
-     * @tc.desc: testing SelectedBackgroundColor for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaSelectedBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_SELECTEDBACKGROUNDCOLOR_0100
+     * @tc.desc   testing SelectedBackgroundColor for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaSelectedBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaSelectedBackgroundColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_SELECTEDBACKGROUNDCOLOR_0200
-     * @tc.name: testTextAreaSelectedBackgroundColor002
-     * @tc.desc: testing SelectedBackgroundColor for textArea with black value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaSelectedBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_SELECTEDBACKGROUNDCOLOR_0200
+     * @tc.desc   testing SelectedBackgroundColor for textArea with black value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaSelectedBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaSelectedBackgroundColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_SELECTEDBACKGROUNDCOLOR_0300
-     * @tc.name: testTextAreaSelectedBackgroundColor003
-     * @tc.desc: testing SelectedBackgroundColor for textArea with white value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaSelectedBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_SELECTEDBACKGROUNDCOLOR_0300
+     * @tc.desc   testing SelectedBackgroundColor for textArea with white value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaSelectedBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaSelectedBackgroundColor003()).assertEqual(0)

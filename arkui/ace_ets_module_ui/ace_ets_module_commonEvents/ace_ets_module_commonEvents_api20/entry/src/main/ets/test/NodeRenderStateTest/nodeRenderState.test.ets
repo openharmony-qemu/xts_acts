@@ -46,12 +46,14 @@ export default function nodeRenderStateTest() {
       console.info('nodeRenderStateTest after each called');
     });
 
-    /* *
-    * @tc.number: nodeRenderStateTest_0100
-    * @tc.name  : nodeRenderStateTest_0100
-    * @tc.desc  : To test add nodeRenderState return RENDER_IN
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   nodeRenderStateTest_0100
+     * @tc.number nodeRenderStateTest_0100
+     * @tc.desc   To test add nodeRenderState return RENDER_IN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('nodeRenderStateTest_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('nodeRenderStateTest_0100 START');
@@ -69,12 +71,14 @@ export default function nodeRenderStateTest() {
       done();
     });
 
-    /* *
-    * @tc.number: nodeRenderStateTest_0200
-    * @tc.name  : nodeRenderStateTest_0200
-    * @tc.desc  : To test add nodeRenderState return RENDER_OUT
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   nodeRenderStateTest_0200
+     * @tc.number nodeRenderStateTest_0200
+     * @tc.desc   To test add nodeRenderState return RENDER_OUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('nodeRenderStateTest_0200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('nodeRenderStateTest_0200 START');
@@ -95,12 +99,14 @@ export default function nodeRenderStateTest() {
       done();
     });
 
-    /* *
-    * @tc.number: nodeRenderStateTest_0300
-    * @tc.name  : nodeRenderStateTest_0300
-    * @tc.desc  : To test remove nodeRenderState
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   nodeRenderStateTest_0300
+     * @tc.number nodeRenderStateTest_0300
+     * @tc.desc   To test remove nodeRenderState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('nodeRenderStateTest_0300', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('nodeRenderStateTest_0300 START');

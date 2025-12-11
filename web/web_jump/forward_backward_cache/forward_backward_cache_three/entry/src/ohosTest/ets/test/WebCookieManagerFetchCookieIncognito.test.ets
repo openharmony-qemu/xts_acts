@@ -56,13 +56,13 @@ export default function webCookieManagerFetchCookieIncognito() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0100
-    * @tc.name         testFetchCookieIncognito001
-    * @tc.desc         test fetchCookie param incognito false
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testFetchCookieIncognito001
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0100
+     * @tc.desc   test fetchCookie param incognito false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFetchCookieIncognito001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieIncognito001', 136700)
       Utils.registerEvent('testFetchCookieIncognito001', 'a=b', 136710, done);
@@ -70,13 +70,13 @@ export default function webCookieManagerFetchCookieIncognito() {
     })
 
     /**
-    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0200
-    * @tc.name         testFetchCookieIncognito002
-    * @tc.desc         test fetchCookie param incognito true
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testFetchCookieIncognito002
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_0200
+     * @tc.desc   test fetchCookie param incognito true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFetchCookieIncognito002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('testFetchCookieIncognito002', 136700)
       Utils.registerEvent('testFetchCookieIncognito002', 'aa=cc', 136720, done);
@@ -85,13 +85,13 @@ export default function webCookieManagerFetchCookieIncognito() {
 
 
     /**
-    * @tc.number       SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_ERRORCODE_0300
-    * @tc.name         testFetchCookieIncognitoErrorCode003
-    * @tc.desc         test fetchCookie param incognito true, error code 17100002
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        Level 1
-    */
+     * @tc.name   testFetchCookieIncognitoErrorCode003
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_INCOGNITO_ERRORCODE_0300
+     * @tc.desc   test fetchCookie param incognito true, error code 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFetchCookieIncognitoErrorCode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testFetchCookieIncognitoErrorCode003', 136700)

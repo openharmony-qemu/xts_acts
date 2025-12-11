@@ -56,14 +56,14 @@ export default function webOnFirstContentfulPaint() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONFIRSTCONTENTFULPAINT_0100
-    * @tc.name        : testOnFirstContentfulPaint001
-    * @tc.desc        : test onFirstContentfulPaint with Visibility.None
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnFirstContentfulPaint001
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0100
+     * @tc.desc   test onFirstContentfulPaint with Visibility.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnFirstContentfulPaint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnFirstContentfulPaint001", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -73,14 +73,14 @@ export default function webOnFirstContentfulPaint() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONFIRSTCONTENTFULPAINT_0200
-    * @tc.name        : testOnFirstContentfulPaint002
-    * @tc.desc        : test onFirstContentfulPaint with Visibility.Visible
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnFirstContentfulPaint002
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0200
+     * @tc.desc   test onFirstContentfulPaint with Visibility.Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnFirstContentfulPaint002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnFirstContentfulPaint002", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;

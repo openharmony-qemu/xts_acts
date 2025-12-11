@@ -45,9 +45,12 @@ export default function row_TextOffsetTest() {
       console.info("Row_TextOffsetTest after each called");
     });
     /**
+     * @tc.name   testRowTextOffset
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1300
-     * @tc.name testRowTextOffset
-     * @tc.desc The offset of first subcomponent changed
+     * @tc.desc   The offset of first subcomponent changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextOffset',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextOffset] START');

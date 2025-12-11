@@ -46,14 +46,13 @@ export default function RichEditorSymbolSpanStyleTest() {
       console.info("RichEditorSymbolSpanStyleTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         RichEditorSymbolSpanStyleTest0001
-    * @tc.desic        set offset: 10,fontColor: [Color.Red],fontSize: 30,fontWeight: 200,
-    *                  effectStrategy: SymbolEffectStrategy.NONE
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorSymbolSpanStyleTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   RichEditorSymbolSpanStyleTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorSymbolSpanStyleTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -81,14 +80,13 @@ export default function RichEditorSymbolSpanStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         RichEditorSymbolSpanStyleTest0002
-    * @tc.desic        set offset: 20,fontColor: [Color.Red, Color.Blue, Color.Pink], fontSize: '40',
-    *                  fontWeight: FontWeight.Normal,effectStrategy: SymbolEffectStrategy.SCALE
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorSymbolSpanStyleTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   RichEditorSymbolSpanStyleTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorSymbolSpanStyleTest0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -116,15 +114,14 @@ export default function RichEditorSymbolSpanStyleTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-   * @tc.name         RichEditorSymbolSpanStyleTest0003
-   * @tc.desic        set offset: 30,fontColor: [$r('app.color.red'), Color.Blue, Color.Pink],
-   *                  fontSize: $r('app.string.fontSize'),fontWeight: '900',effectStrategy: SymbolEffectStrategy.HIERARCHICAL
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorSymbolSpanStyleTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   RichEditorSymbolSpanStyleTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorSymbolSpanStyleTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' RichEditorSymbolSpanStyleTest0003 START');

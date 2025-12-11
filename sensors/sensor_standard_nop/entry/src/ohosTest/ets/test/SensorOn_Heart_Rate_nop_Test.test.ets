@@ -47,13 +47,13 @@ export default function heart_rate_nop_Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Heart_Rate_Sensor_nop_Test016
-     * @tc.name: Heart_Rate_Sensor_nop_Test01
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Heart_Rate_Sensor_nop_Test01
+     * @tc.number SUB_SensorsSystem_Heart_Rate_Sensor_nop_Test016
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Heart_Rate_Sensor_nop_Test01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Heart_Rate_Sensor_nop_Test01--------');

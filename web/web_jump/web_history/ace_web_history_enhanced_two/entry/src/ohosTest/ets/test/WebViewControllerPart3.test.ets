@@ -54,14 +54,14 @@ export default function webViewControllerPart3Test() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_RESTOREWEBSTATE_0100
-    * @tc.name       : testRestoreWebState001
-    * @tc.desc       : test restoreWebState
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testRestoreWebState001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RESTOREWEBSTATE_0100
+     * @tc.desc   test restoreWebState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRestoreWebState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testRestoreWebState001", 133200)
       Utils.registerEvent("testRestoreWebState001", "index", 133210, done);

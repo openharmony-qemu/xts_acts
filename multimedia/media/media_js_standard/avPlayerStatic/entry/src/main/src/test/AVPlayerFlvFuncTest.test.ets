@@ -52,7 +52,7 @@ async function testSeiMessage(src: string | media.AVFileDescriptor, avPlayer: me
 function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payloadTypes: Array<int>, done: () => void) {
   let surfaceID: string = globalThis.value;
 
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     switch (state) {
       case INITIALIZED:
         if (!avPlayer) {
@@ -101,7 +101,7 @@ function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payloadTypes: 
     }
   });
 
-  avPlayer?.on('seiMessageReceived', payloadTypes, (messages: Array<media.SeiMessage>, playbackPosition?: int) => {
+  avPlayer?.onSeiMessageReceived(payloadTypes, (messages: Array<media.SeiMessage>, playbackPosition?: int) => {
     try {
       console.info(`Received SEI message at playbackPosition: ${playbackPosition}`);
       expect(messages !== null && messages !== undefined).assertTrue();
@@ -175,13 +175,12 @@ export default function AVPlayerFlvFuncTest() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_static_0100
-      * @tc.desc    seiMessageReceived test
-      *               : 001.test
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_static_0100
+     * @tc.desc   seiMessageReceived test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SEIMESSAGERECEIVED_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       const videoSrc = 'http://media.iyuns.top:1003/live/SEI-H264.flv';

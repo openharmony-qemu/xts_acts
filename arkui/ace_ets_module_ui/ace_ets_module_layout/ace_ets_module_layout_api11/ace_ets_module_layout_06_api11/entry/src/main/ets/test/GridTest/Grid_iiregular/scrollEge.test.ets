@@ -63,13 +63,15 @@ export default function scrollByJsunit() {
     });
 
 
-    /* *
-      * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-      * @tc.name  :  scrollEgeJsunit_0001
-      * @tc.desc  :  Click scrollEdge(Edge.Bottom) and the component slides to the bottom
-      * @tc.level : Level 2
-      */
 
+    /**
+     * @tc.name   scrollEgeJsunit_0001
+     * @tc.number scrollEgeJsunit_0001
+     * @tc.desc   scrollEgeJsunit_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollEgeJsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0001] START');
       await CommonFunc.sleep(1000);
@@ -94,14 +96,16 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0002
-     * @tc.name  : scrollEgeJsunit_0002
-     * @tc.desc  : Click scrollEdge(Edge.Edge) and the component slides to the bottom
-     * @tc.level : Level 2
+
+
+    /**
+     * @tc.name   scrollEgeJsunit_0002
+     * @tc.number scrollEgeJsunit_0002
+     * @tc.desc   scrollEgeJsunit_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('scrollEgeJsunit_0002',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0002] START');
       await CommonFunc.sleep(1000);
@@ -127,14 +131,16 @@ export default function scrollByJsunit() {
     });
 
 
-    /* *
-      * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0003
-      * @tc.name  : scrollEgeJsunit_0003
-      * @tc.desc  : Click scrollEdge(Edge.Start) and the component slides to the top
-      * @tc.level : Level 2
-      */
 
 
+    /**
+     * @tc.name   scrollEgeJsunit_0003
+     * @tc.number scrollEgeJsunit_0003
+     * @tc.desc   scrollEgeJsunit_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollEgeJsunit_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0003] START');
       await CommonFunc.sleep(1000);
@@ -158,13 +164,15 @@ export default function scrollByJsunit() {
     });
 
 
-    /* *
-      * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0004
-      * @tc.name  : scrollEgeJsunit_0004
-      * @tc.desc  : Click scrollEdge(Edge.Top) and the component slides to the top
-      * @tc.level : Level 2
-      */
 
+    /**
+     * @tc.name   scrollEgeJsunit_0004
+     * @tc.number scrollEgeJsunit_0004
+     * @tc.desc   scrollEgeJsunit_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollEgeJsunit_0004',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0004] START');
       await CommonFunc.sleep(1000);
@@ -187,13 +195,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-        * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0005
-        * @tc.name  : scrollEgeJsunit_0005
-        * @tc.desc  : Click scrollToIndex (-5) and the component does not slide
-        * @tc.level : Level 2
-        */
 
+    /**
+     * @tc.name   scrollEgeJsunit_0005
+     * @tc.number scrollEgeJsunit_0005
+     * @tc.desc   scrollEgeJsunit_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollEgeJsunit_0005',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0005] START');
       await CommonFunc.sleep(1000);
@@ -216,13 +226,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-         * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0006
-         * @tc.name  : scrollEgeJsunit_0006
-         * @tc.desc  : Click scrollToIndex (25) and the component slides to index 25
-         * @tc.level : Level 2
-         */
 
+    /**
+     * @tc.name   scrollEgeJsunit_0006
+     * @tc.number scrollEgeJsunit_0006
+     * @tc.desc   scrollEgeJsunit_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollEgeJsunit_0006',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0006] START');
       await CommonFunc.sleep(1000);
@@ -246,14 +258,16 @@ export default function scrollByJsunit() {
     });
 
 
-    /* *
-      * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0007
-      * @tc.name  : scrollEgeJsunit_0007
-      * @tc.desc  : Click scrollToIndex (5) and the component slides to index 5
-      * @tc.level : Level 2
-      */
 
 
+    /**
+     * @tc.name   scrollEgeJsunit_0007
+     * @tc.number scrollEgeJsunit_0007
+     * @tc.desc   scrollEgeJsunit_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollEgeJsunit_0007',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0007] START');
       await CommonFunc.sleep(1000);
@@ -273,14 +287,16 @@ export default function scrollByJsunit() {
       console.info('[scrollEgeJsunit_0007] END');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0008
-   * @tc.name  : scrollEgeJsunit_0008
-   * @tc.desc  : Click scrollToIndex (undefined) and the component does not slide
-   * @tc.level : Level 2
-   */
 
 
+    /**
+     * @tc.name   scrollEgeJsunit_0008
+     * @tc.number scrollEgeJsunit_0008
+     * @tc.desc   scrollEgeJsunit_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollEgeJsunit_0008',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollEgeJsunit_0008] START');
       await CommonFunc.sleep(1000);

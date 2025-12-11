@@ -41,7 +41,7 @@ let indexOne: int = 1;
 
 export default function cameraSessionZoomRatioTest() {
 
-  let receiver: image.ImageReceiver;
+  let receiver: image.ImageReceiver | undefined;
   let mPhotoSurface: string = "";
   let surfaceId: string = '';
 
@@ -66,7 +66,7 @@ export default function cameraSessionZoomRatioTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + mPhotoSurface)
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -350,12 +350,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session set zoom ratio with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session set zoom ratio with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100--------------");
@@ -408,12 +408,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200
-      * @tc.desc   Check capture session set zoom ratio with promise(invalid value, max + 1)
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, max + 1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200--------------");
@@ -464,12 +464,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300
-      * @tc.desc   Check capture session set zoom ratio with promise(invalid value, max + 0.1)
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, max + 0.1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300--------------");
@@ -520,12 +520,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400
-      * @tc.desc   Check capture session set zoom ratio with promise(invalid value, min - 1)
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, min - 1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400--------------");
@@ -576,12 +576,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500
-      * @tc.desc   Check capture session set zoom ratio with promise(invalid value, min - 0.1)
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, min - 0.1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500--------------");
@@ -632,12 +632,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200
-      * @tc.desc   Check capture session set smooth zoom with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200
+     * @tc.desc   Check capture session set smooth zoom with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200--------------");
@@ -710,12 +710,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SUPPORTED_COLOR_SPACES_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SUPPORTED_COLOR_SPACES_STATIC_0100
-      * @tc.desc   Check camera session get supported color sapaces
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SUPPORTED_COLOR_SPACES_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SUPPORTED_COLOR_SPACES_STATIC_0100
+     * @tc.desc   Check camera session get supported color sapaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SUPPORTED_COLOR_SPACES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SUPPORTED_COLOR_SPACES_STATIC_0100--------------");
@@ -746,12 +746,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0100
-      * @tc.desc   Check camera session set color sapace
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0100
+     * @tc.desc   Check camera session set color sapace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0100--------------");
@@ -791,12 +791,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0200
-      * @tc.desc   Check camera session get color sapace
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0200
+     * @tc.desc   Check camera session get color sapace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0200--------------");
@@ -839,12 +839,12 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
-      * @tc.desc   Check camera session Auto Device  Switch Supported
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
+     * @tc.desc   Check camera session Auto Device  Switch Supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100--------------");
@@ -874,12 +874,12 @@ export default function cameraSessionZoomRatioTest() {
     })
     
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
-      * @tc.desc   Check camera session Enable Auto Device  Switch Supported
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
+     * @tc.desc   Check camera session Enable Auto Device  Switch Supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100--------------");

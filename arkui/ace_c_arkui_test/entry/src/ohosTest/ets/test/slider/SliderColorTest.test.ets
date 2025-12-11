@@ -37,14 +37,14 @@ export default function sliderSelectedColorTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_SELECTEDCOLOR_0100
-    * @tc.name: testSliderSelectedColor001
-    * @tc.desc: testing selectedColor for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderColor001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_SELECTEDCOLOR_0100
+     * @tc.desc   testing selectedColor for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderColor001', Level.LEVEL1, async (done: Function) => {
       console.info('testSliderColor001  START');
       await Utils.sleep(500);

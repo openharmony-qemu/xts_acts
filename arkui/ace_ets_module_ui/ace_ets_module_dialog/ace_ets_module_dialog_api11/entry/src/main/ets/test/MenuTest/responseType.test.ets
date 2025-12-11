@@ -45,10 +45,13 @@ export default function responseTypeJsunit() {
       console.info("responseType after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testresponseType0002
-     * @tc.desic        acehoverEffectEtsTest0002
+    /**
+     * @tc.name   testresponseType0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testresponseType0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testresponseType0002', Level.LEVEL2, async (done: Function) => {
       console.info('responseType testresponseType0002 START');
@@ -61,10 +64,13 @@ export default function responseTypeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testhoverEffect0003
-     * @tc.desic        acehoverEffectEtsTest0003
+    /**
+     * @tc.name   testresponseType0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testresponseType0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testresponseType0003', Level.LEVEL2, async (done: Function) => {
       console.info('responseType testresponseType0003 START');

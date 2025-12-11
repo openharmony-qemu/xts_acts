@@ -42,12 +42,12 @@ export default function tabsCallBack9() {
     });
 
     /**
-     * @tc.number    tabsCallBack9_001
-     * @tc.name      tabsCallBack9_0100
-     * @tc.desc      Dragging the mouse to trigger the start and end callback.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsCallBack9_0100
+     * @tc.number tabsCallBack9_001
+     * @tc.desc   Dragging the mouse to trigger the start and end callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsCallBack9_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsCallBack9_0100] START');

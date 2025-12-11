@@ -55,12 +55,12 @@ export default function RichEditorSetStyledString006() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0015
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0015
-     * @tc.desc  : Call setStyle to set property string style to test RichEditor setStyledString
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0015
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0015
+     * @tc.desc   Call setStyle to set property string style to test RichEditor setStyledString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0015',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0015 START');
@@ -95,12 +95,12 @@ export default function RichEditorSetStyledString006() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0016
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0016
-     * @tc.desc  : Call removeStyle to test the RichEditor setStyledString property string style
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0016
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0016
+     * @tc.desc   Call removeStyle to test the RichEditor setStyledString property string style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0016',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0016 START');

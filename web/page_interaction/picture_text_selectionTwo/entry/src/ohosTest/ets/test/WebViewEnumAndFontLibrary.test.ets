@@ -59,14 +59,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMX_0100
-    * @tc.name       : testWebContextMenuParamX001
-    * @tc.desc       : test WebContextMenuParamX
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamX001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMX_0100
+     * @tc.desc   test WebContextMenuParamX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamX001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamX", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -76,14 +76,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMY_0100
-    * @tc.name       : testWebContextMenuParamY001
-    * @tc.desc       : test WebContextMenuParamY
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamY001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMY_0100
+     * @tc.desc   test WebContextMenuParamY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamY001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamY", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -93,14 +93,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETLINKURL_0100
-    * @tc.name       : testWebContextMenuParamGetLinkUrl001
-    * @tc.desc       : test WebContextMenuParamGetLinkUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetLinkUrl001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETLINKURL_0100
+     * @tc.desc   test WebContextMenuParamGetLinkUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetLinkUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetLinkUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -110,14 +110,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETUNFILTEREDLINKURL_0100
-    * @tc.name       : testWebContextMenuParamGetUnfilteredLinkUrl001
-    * @tc.desc       : test WebContextMenuParamGetUnfilteredLinkUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetUnfilteredLinkUrl001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETUNFILTEREDLINKURL_0100
+     * @tc.desc   test WebContextMenuParamGetUnfilteredLinkUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetUnfilteredLinkUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetUnfilteredLinkUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -127,14 +127,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCEURL_0100
-    * @tc.name       : testWebContextMenuParamGetSourceUrl001
-    * @tc.desc       : test WebContextMenuParamGetSourceUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetSourceUrl001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCEURL_0100
+     * @tc.desc   test WebContextMenuParamGetSourceUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetSourceUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSourceUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -144,14 +144,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMEXISTSIMAGECONTENTS_0100
-    * @tc.name       : testWebContextMenuParamExistsImageContents001
-    * @tc.desc       : test WebContextMenuParamExistsImageContents
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamExistsImageContents001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMEXISTSIMAGECONTENTS_0100
+     * @tc.desc   test WebContextMenuParamExistsImageContents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamExistsImageContents001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamExistsImageContents", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -161,14 +161,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMEXISTSIMAGECONTENTS_0200
-    * @tc.name       : testWebContextMenuParamExistsImageContents002
-    * @tc.desc       : testWebContextMenuParamExistsImageContents002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamExistsImageContents002
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMEXISTSIMAGECONTENTS_0200
+     * @tc.desc   testWebContextMenuParamExistsImageContents002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamExistsImageContents002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamExistsImageTrueContents", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -178,14 +178,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETMEDIATYPE_0100
-    * @tc.name       : testWebContextMenuParamGetMediaType001
-    * @tc.desc       : test WebContextMenuParamGetMediaType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetMediaType001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETMEDIATYPE_0100
+     * @tc.desc   test WebContextMenuParamGetMediaType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetMediaType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetMediaType", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -195,14 +195,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETSELECTIONTEXT_0100
-    * @tc.name       : testWebContextMenuParamGetSelectionText001
-    * @tc.desc       : test WebContextMenuParamGetSelectionText
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetSelectionText001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETSELECTIONTEXT_0100
+     * @tc.desc   test WebContextMenuParamGetSelectionText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetSelectionText001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSelectionText", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -212,14 +212,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCETYPE_0100
-    * @tc.name       : testWebContextMenuParamGetSourceType001
-    * @tc.desc       : test WebContextMenuParamGetSourceType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetSourceType001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCETYPE_0100
+     * @tc.desc   test WebContextMenuParamGetSourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetSourceType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSourceType", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -229,14 +229,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCETYPE_0200
-    * @tc.name       : testWebContextMenuParamGetSourceType001
-    * @tc.desc       : test WebContextMenuParamGetSourceType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetSourceType002
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCETYPE_0200
+     * @tc.desc   test WebContextMenuParamGetSourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetSourceType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetSourceTypeNone", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -246,14 +246,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETINPUTFIELDTYPE_0100
-    * @tc.name       : testWebContextMenuParamGetInputFieldType001
-    * @tc.desc       : test WebContextMenuParamGetInputFieldType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetInputFieldType001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETINPUTFIELDTYPE_0100
+     * @tc.desc   test WebContextMenuParamGetInputFieldType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetInputFieldType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetInputFieldType", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -263,14 +263,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0100
-    * @tc.name       : testWebContextMenuParamIsEditable001
-    * @tc.desc       : test WebContextMenuParamIsEditable
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamIsEditable001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0100
+     * @tc.desc   test WebContextMenuParamIsEditable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamIsEditable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamIsEditable", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -280,14 +280,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0200
-    * @tc.name       : emitWebContextMenuParamIsEditableTrue
-    * @tc.desc       : emitWebContextMenuParamIsEditableTrue
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitWebContextMenuParamIsEditableTrue
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMISEDITABLE_0200
+     * @tc.desc   emitWebContextMenuParamIsEditableTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitWebContextMenuParamIsEditableTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamIsEditableTrue", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -297,14 +297,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETEDITSTATEFLAGS_0100
-    * @tc.name       : testWebContextMenuParamGetEditStateFlags001
-    * @tc.desc       : test WebContextMenuParamGetEditStateFlags
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebContextMenuParamGetEditStateFlags001
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAMGETEDITSTATEFLAGS_0100
+     * @tc.desc   test WebContextMenuParamGetEditStateFlags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebContextMenuParamGetEditStateFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetEditStateFlags", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -314,14 +314,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENUINPUTFIELDTYPENONE_0100
-    * @tc.name       : testContextMenuInputFieldTypeNone001
-    * @tc.desc       : test ContextMenuInputFieldTypeNone
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testContextMenuInputFieldTypeNone001
+     * @tc.number SUB_WEB_CONTEXTMENUINPUTFIELDTYPENONE_0100
+     * @tc.desc   test ContextMenuInputFieldTypeNone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuInputFieldTypeNone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuInputFieldTypeNone", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -331,14 +331,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENUSOURCETYPELONGPRESS_0100
-    * @tc.name       : testContextMenuSourceTypeLongPress001
-    * @tc.desc       : test ContextMenuSourceTypeLongPress
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testContextMenuSourceTypeLongPress001
+     * @tc.number SUB_WEB_CONTEXTMENUSOURCETYPELONGPRESS_0100
+     * @tc.desc   test ContextMenuSourceTypeLongPress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuSourceTypeLongPress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuSourceTypeLongPress", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -348,14 +348,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENUEDITSTATEFLAGS_0100
-    * @tc.name       : testContextMenuEditStateFlags001
-    * @tc.desc       : test ContextMenuEditStateFlags
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testContextMenuEditStateFlags001
+     * @tc.number SUB_WEB_CONTEXTMENUEDITSTATEFLAGS_0100
+     * @tc.desc   test ContextMenuEditStateFlags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuEditStateFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuEditStateFlags", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -365,14 +365,14 @@ export default function WebViewEnumAndFontLibrary() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CONTEXTMENUMEDIATYPE_0100
-    * @tc.name       : testContextMenuMediaType001
-    * @tc.desc       : test ContextMenuMediaType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testContextMenuMediaType001
+     * @tc.number SUB_WEB_CONTEXTMENUMEDIATYPE_0100
+     * @tc.desc   test ContextMenuMediaType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testContextMenuMediaType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeNone", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -383,14 +383,14 @@ export default function WebViewEnumAndFontLibrary() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ONCONTEXTMENUSHOW_0100
-    * @tc.name       : testOnContextMenuShow001
-    * @tc.desc       : test onContextMenuShow
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnContextMenuShow001
+     * @tc.number SUB_WEB_ONCONTEXTMENUSHOW_0100
+     * @tc.desc   test onContextMenuShow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnContextMenuShow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("onContextMenuShow", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;

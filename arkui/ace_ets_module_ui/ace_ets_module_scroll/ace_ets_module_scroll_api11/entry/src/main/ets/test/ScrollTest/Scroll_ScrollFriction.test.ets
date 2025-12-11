@@ -46,9 +46,12 @@ export default function scroll_ScrollFrictionTest() {
       console.info("ScrollFrictionPage after each called");
     });
     /**
+     * @tc.name   testScrollFriction_0100
      * @tc.number SUB_ACE_SCROLL_SCROLLFRICTION_001
-     * @tc.name testScrollFriction_0100
-     * @tc.desc set friction to -1
+     * @tc.desc   set friction to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollFriction_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollFriction_0100] START');
@@ -67,9 +70,12 @@ export default function scroll_ScrollFrictionTest() {
     });
 
     /**
+     * @tc.name   testScrollFriction_0200
      * @tc.number SUB_ACE_SCROLL_SCROLLFRICTION_002
-     * @tc.name testScrollFriction_0200
-     * @tc.desc set friction to 10
+     * @tc.desc   set friction to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollFriction_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollFriction_0200] START');

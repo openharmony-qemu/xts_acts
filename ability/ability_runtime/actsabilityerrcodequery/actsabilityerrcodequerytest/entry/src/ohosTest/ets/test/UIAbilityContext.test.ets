@@ -93,9 +93,12 @@ export default function UIAbilityContext() {
     })
     
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0100
-     * @tc.desc: run parameter error, pass undefined
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0100
+     * @tc.desc   run parameter error, pass undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0100', Level.LEVEL0, async (done: Function) => {
       let startParams = ['StartupTask_001'];
@@ -118,9 +121,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100
-     * @tc.desc: getStartupTaskResult parameter error, pass undefined
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100
+     * @tc.desc   getStartupTaskResult parameter error, pass undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -134,9 +140,12 @@ export default function UIAbilityContext() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0100
-     * @tc.desc: isStartupTaskInitialized parameter error, pass undefined
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0100
+     * @tc.desc   isStartupTaskInitialized parameter error, pass undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0100', Level.LEVEL0,
       async (done: Function) => {
@@ -150,9 +159,12 @@ export default function UIAbilityContext() {
       })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0100
-     * @tc.desc: removeStartupTaskResult parameter error, pass undefined
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0100
+     * @tc.desc   removeStartupTaskResult parameter error, pass undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0100', Level.LEVEL0,
       async (done: Function) => {
@@ -166,9 +178,12 @@ export default function UIAbilityContext() {
       })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0100
-     * @tc.desc: startAbilityByType parameter error, pass undefined Async
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0100
+     * @tc.desc   startAbilityByType parameter error, pass undefined Async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0100', Level.LEVEL0, async (done: Function) => {
       let wantParam: Record<string, Object> = {
@@ -198,9 +213,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0200
-     * @tc.desc: startAbilityByType parameter error, pass undefined Promise
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0200
+     * @tc.desc   startAbilityByType parameter error, pass undefined Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0200', Level.LEVEL0, async (done: Function) => {
       let wantParam: Record<string, Object> = {
@@ -232,9 +250,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0100
-     * @tc.desc: openAtomicService parameter error, pass undefined Promise
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0100
+     * @tc.desc   openAtomicService parameter error, pass undefined Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0100', Level.LEVEL0, async (done: Function) => {
       let appId: string = '6918661953712445909';
@@ -259,9 +280,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0100
-     * @tc.desc: Capability not support
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0100
+     * @tc.desc   Capability not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0100', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -306,9 +330,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0200
-     * @tc.desc: Start options check failed.
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0200
+     * @tc.desc   Start options check failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_0200', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -353,9 +380,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0100
-     * @tc.desc: Capability not support.
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0100
+     * @tc.desc   Capability not support.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0100', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -400,9 +430,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0200
-     * @tc.desc: Start options check failed.
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0200
+     * @tc.desc   Start options check failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_0200', Level.LEVEL0, async (done: Function) => {
       let want: Want = {
@@ -447,9 +480,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0400
-     * @tc.desc: startAbility set flags=-1
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0400
+     * @tc.desc   startAbility set flags=-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0400', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {
@@ -474,9 +510,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0300
-     * @tc.desc: startAbilityForResult set flags=-1   Async
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0300
+     * @tc.desc   startAbilityForResult set flags=-1   Async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0300', Level.LEVEL0,
       async (done: Function) => {
@@ -502,9 +541,12 @@ export default function UIAbilityContext() {
       })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0800
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0800
-     * @tc.desc: startAbilityForResult set flags=-1   Promise
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0800
+     * @tc.desc   startAbilityForResult set flags=-1   Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0800', Level.LEVEL0,
       async (done: Function) => {
@@ -534,9 +576,12 @@ export default function UIAbilityContext() {
       })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500
-     * @tc.desc: The premeters within the Want carry parameters with a size of more than 200k
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500
+     * @tc.desc   The premeters within the Want carry parameters with a size of more than 200k
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500', Level.LEVEL0, async (done: Function) => {
       // 构造一个超过 200KB 的对象
@@ -565,9 +610,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0100
-     * @tc.desc: The onBackground callback is called in the background   Promise
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0100
+     * @tc.desc   The onBackground callback is called in the background   Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0100', Level.LEVEL0, async (done: Function) => {
       let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0100`;
@@ -603,9 +651,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0600
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0600
-     * @tc.desc: The onBackground callback is called in the background
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0600
+     * @tc.desc   The onBackground callback is called in the background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0600', Level.LEVEL0, async (done: Function) => {
       let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0600`;
@@ -644,9 +695,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0800
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0800
-     * @tc.desc: The onBackground callback is called in the background   Promise
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0800
+     * @tc.desc   The onBackground callback is called in the background   Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0800', Level.LEVEL0, async (done: Function) => {
       let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0800`;
@@ -686,9 +740,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openLink_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openLink_0100
-     * @tc.desc: The onBackground callback of openLink is called in the background   Promise
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openLink_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openLink_0100
+     * @tc.desc   The onBackground callback of openLink is called in the background   Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openLink_0100', Level.LEVEL0, async (done: Function) => {
       let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openLink_0100`;
@@ -732,9 +789,12 @@ export default function UIAbilityContext() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0100
-     * @tc.desc: The onBackground callback of startAbilityForResult is called in the background
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0100
+     * @tc.desc   The onBackground callback of startAbilityForResult is called in the background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0100', Level.LEVEL0, async (done: Function) => {
       let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0100`;
@@ -773,9 +833,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0400
-     * @tc.desc: The onBackground callback of startAbilityForResult(option) is called in the background
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0400
+     * @tc.desc   The onBackground callback of startAbilityForResult(option) is called in the background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0400', Level.LEVEL0, async (done: Function) => {
       let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0400`;
@@ -814,9 +877,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0600
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0600
-     * @tc.desc: The onBackground callback of startAbilityForResult(option) is called in the background promise
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0600
+     * @tc.desc   The onBackground callback of startAbilityForResult(option) is called in the background promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0600', Level.LEVEL0, async (done: Function) => {
       let tag:string = `SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0600`;
@@ -857,9 +923,12 @@ export default function UIAbilityContext() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0200
-     * @tc.desc: The exported value of the target ability is false
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0200
+     * @tc.desc   The exported value of the target ability is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0200', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {
@@ -884,9 +953,12 @@ export default function UIAbilityContext() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0300
-     * @tc.desc: Configure the Capability permission for the target
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0300
+     * @tc.desc   Configure the Capability permission for the target
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0300', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {
@@ -910,9 +982,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0700
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0700
-     * @tc.desc: Configure the Capability permission for the target
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0700
+     * @tc.desc   Configure the Capability permission for the target
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0700', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {
@@ -939,9 +1014,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0900
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0900
-     * @tc.desc: Configure the Capability permission for the target
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0900
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0900
+     * @tc.desc   Configure the Capability permission for the target
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0900', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {
@@ -969,9 +1047,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0200
-     * @tc.desc: Configure the Capability permission for the target startAbilityForResult
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0200
+     * @tc.desc   Configure the Capability permission for the target startAbilityForResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0200', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {
@@ -999,9 +1080,12 @@ export default function UIAbilityContext() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0500
-     * @tc.desc: Configure the Capability permission for the target startAbilityForResult
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0500
+     * @tc.desc   Configure the Capability permission for the target startAbilityForResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0500', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {
@@ -1028,9 +1112,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResutc.numberlt_0700
-     * @tc.name: SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0700
-     * @tc.desc: Configure the Capability permission for the target startAbilityForResult
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResutc.numberlt_0700
+     * @tc.desc   Configure the Capability permission for the target startAbilityForResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityForResult_0700', Level.LEVEL0, async (done: Function) => {
       let startWant: Want = {

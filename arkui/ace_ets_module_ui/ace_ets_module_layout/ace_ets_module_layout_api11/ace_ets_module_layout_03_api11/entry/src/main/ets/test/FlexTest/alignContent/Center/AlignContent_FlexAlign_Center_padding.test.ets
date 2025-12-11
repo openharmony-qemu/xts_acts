@@ -50,13 +50,15 @@ export default function AlignContent_FlexAlign_Center_padding() {
       console.info("AlignContent_FlexAlign_Center_padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0300
-     * @tc.name testAlignContentCenterFlexPaddingNoSatisfy
-     * @tc.desc The AlignContent property of the Flex component is set to FlexAlign.Center, and the padding
-     *               setting of the Flex component does not meet the size requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexPaddingNoSatisfy
+     * @tc.number testAlignContentCenterFlexPaddingNoSatisfy
+     * @tc.desc   testAlignContentCenterFlexPaddingNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexPaddingNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexPaddingNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -105,13 +107,15 @@ export default function AlignContent_FlexAlign_Center_padding() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0400
-     * @tc.name testAlignContentCenterFlexPaddingSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center, and set the padding for
-     *               the Flex component to meet the size requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexPaddingSatisfy
+     * @tc.number testAlignContentCenterFlexPaddingSatisfy
+     * @tc.desc   testAlignContentCenterFlexPaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexPaddingSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexPaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

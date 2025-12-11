@@ -49,9 +49,12 @@ export default function flexAlign_SpaceAround_fixedChildParentItemAlignEnd() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapAlignmentBottomEnd
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_0800
-     * @tc.name testAlignSpaceAroundRowNoWrapAlignmentBottomEnd
-     * @tc.desc The child component is fixed, and the parent component is bound with Alignment.BottomEnd attributes
+     * @tc.desc   The child component is fixed, and the parent component is bound with Alignment.BottomEnd attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapAlignmentBottomEnd',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapAlignmentBottomEnd START');

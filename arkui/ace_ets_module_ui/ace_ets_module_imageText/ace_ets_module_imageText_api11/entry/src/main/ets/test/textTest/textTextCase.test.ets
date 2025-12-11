@@ -49,12 +49,12 @@ export default function textTextCaseTest() {
     }) 
 
     /**
+     * @tc.name   textTextCase0100
      * @tc.number textTextCase0100
-     * @tc.name   Test the textCase property of the text component
      * @tc.desc   set the textCase property value is  TextCase.Normal
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTextCase0100', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextCase0100';
@@ -89,12 +89,12 @@ export default function textTextCaseTest() {
     });
 
     /**
+     * @tc.name   textTextCase0200
      * @tc.number textTextCase0200
-     * @tc.name   Test the textCase property of the text component
      * @tc.desc   set the textCase property value is  TextCase.LowerCase
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTextCase0200', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextCase0200';
@@ -129,12 +129,12 @@ export default function textTextCaseTest() {
     });
     
     /**
+     * @tc.name   textTextCase0300
      * @tc.number textTextCase0300
-     * @tc.name   Test the textCase property of the text component
      * @tc.desc   set the textCase property value is  TextCase.UpperCase
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTextCase0300', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextCase0300';

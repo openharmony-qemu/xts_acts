@@ -23,13 +23,13 @@ export default function imageDraggableEventTest() {
 
     let PAGE_TAG = 'ImageDraggableEventTest';
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0600
-     * @tc.name       : testImageDraggable006
-     * @tc.desc       : test image Draggable with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDraggable006
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0600
+     * @tc.desc   test image Draggable with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDraggable006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`image/${PAGE_TAG}`);

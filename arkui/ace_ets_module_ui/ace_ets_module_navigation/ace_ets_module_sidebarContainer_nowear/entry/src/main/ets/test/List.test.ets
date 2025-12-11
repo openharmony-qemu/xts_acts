@@ -22,6 +22,7 @@ import SideBarContainerType_DefaultValue3 from './SideBarContainerTest/SideBarCo
 import SideBarContainerDivider from './SideBarContainerTest/SideBarContainerDivider/SideBarContainerDivider.test';
 import sideBarShowSideBarJsunit from './SideBarContainerTest/sideBar3.test'
 import sidebarIconsJsunit from './SideBarContainerTest/sidebarfirst.test'
+import sidebarTypeTest from './SideBarContainerTest/SidebarType.test';
 
 export default function testsuite() {
   SideBarContainer_Attribute();
@@ -33,4 +34,5 @@ export default function testsuite() {
   sidebarIconsJsunit();
   sideBarShowSideBarJsunit();
   sidebar();
+  sidebarTypeTest();
 }

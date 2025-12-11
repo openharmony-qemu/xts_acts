@@ -41,12 +41,12 @@ export default function ComputedTraceTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_COMPUTE_0260
-     * @tc.name      ComputedTraceTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   ComputedTraceTest_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_COMPUTE_0260
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComputedTraceTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ComputedTraceTest_0100 START');

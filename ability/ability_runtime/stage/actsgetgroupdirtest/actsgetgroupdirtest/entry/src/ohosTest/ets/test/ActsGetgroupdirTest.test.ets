@@ -42,11 +42,13 @@ export default function ActsGetgroupdirTest() {
     })
     afterAll(() => {
     })
-    /*
-     * @tc.number  AMS_getGroupDir_001
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_001
+     * @tc.number AMS_getGroupDir_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_001', Level.LEVEL0, async (done: Function) => {
       console.log("start AMS_getGroupDir_001 =====>");
@@ -60,11 +62,13 @@ export default function ActsGetgroupdirTest() {
       done();
     })
 
-    /*
-     * @tc.number  AMS_getGroupDir_002
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_002
+     * @tc.number AMS_getGroupDir_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_002', Level.LEVEL0, async (done: Function) => {
       console.log("start AMS_getGroupDir_002 =====>");
@@ -78,11 +82,13 @@ export default function ActsGetgroupdirTest() {
       done();
     })
 
-    /*
-     * @tc.number  AMS_getGroupDir_003
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_003
+     * @tc.number AMS_getGroupDir_003
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_003', Level.LEVEL0, async (done: Function) => {
       console.log("start AMS_getGroupDir_003 =====>");
@@ -96,11 +102,13 @@ export default function ActsGetgroupdirTest() {
       done();
     })
 
-    /*
-     * @tc.number  AMS_getGroupDir_004
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_004
+     * @tc.number AMS_getGroupDir_004
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_004', Level.LEVEL0, async (done: Function) => {
       console.log("start AMS_getGroupDir_004 =====>");
@@ -113,11 +121,13 @@ export default function ActsGetgroupdirTest() {
       })
     })
 
-    /*
-     * @tc.number  AMS_getGroupDir_005
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_005
+     * @tc.number AMS_getGroupDir_005
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_005', Level.LEVEL0, async (done: Function) => {
       console.log("start AMS_getGroupDir_005 =====>");
@@ -130,11 +140,13 @@ export default function ActsGetgroupdirTest() {
       })
     })
 
-    /*
-     * @tc.number  AMS_getGroupDir_006
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_006
+     * @tc.number AMS_getGroupDir_006
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_006', Level.LEVEL0, async (done: Function) => {
       console.log("start AMS_getGroupDir_006 =====>");
@@ -147,11 +159,13 @@ export default function ActsGetgroupdirTest() {
       })
     })
 
-    /*
-     * @tc.number  AMS_getGroupDir_007
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_007
+     * @tc.number AMS_getGroupDir_007
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_007', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -198,11 +212,13 @@ export default function ActsGetgroupdirTest() {
       }
     })
 
-    /*
-     * @tc.number  AMS_getGroupDir_008
-     * @tc.name    getGroupDir
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   AMS_getGroupDir_008
+     * @tc.number AMS_getGroupDir_008
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AMS_getGroupDir_008', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;

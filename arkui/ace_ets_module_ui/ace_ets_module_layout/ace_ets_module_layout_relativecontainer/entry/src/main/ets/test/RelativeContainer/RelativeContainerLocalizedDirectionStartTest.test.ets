@@ -45,9 +45,12 @@ export default function RelativeContainerLocalizedDirectionStartTest() {
     });
 
     /**
+     * @tc.name   RelativeContainerLocalizedDirectionStart_0100
      * @tc.number RelativeContainerLocalizedDirectionStart_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   RelativeContainerLocalizedDirectionStart_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RelativeContainerLocalizedDirectionStart_0100', Level.LEVEL1, async (done: Function) => {
       console.info('RelativeContainerLocalizedDirectionStart_0100 START');

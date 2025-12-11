@@ -40,28 +40,28 @@ export default function webInitTest() {
       done()
     });
 
-    /*
-    * @tc.number      : SUB_WEB_SCHEME_NAME_0100
-    * @tc.name        : testSchemeName001
-    * @tc.desc        : test schemeName length exceeds 32
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testSchemeName001
+     * @tc.number SUB_WEB_SCHEME_NAME_0100
+     * @tc.desc   test schemeName length exceeds 32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testSchemeName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testSchemeName001", 119760)
       Utils.registerEvent("testSchemeName001", '401', 119770, done);
       sendEventByKey('WebInitTestButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_CUSTOMIZESCHEMES_0100
-    * @tc.name        : testCustomizeSchemes001
-    * @tc.desc        : test customizeSchemes length exceeds 10
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testCustomizeSchemes001
+     * @tc.number SUB_WEB_CUSTOMIZESCHEMES_0100
+     * @tc.desc   test customizeSchemes length exceeds 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testCustomizeSchemes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testCustomizeSchemes001", 119760)
       Utils.registerEvent("testCustomizeSchemes001", '401', 119780, done);

@@ -58,10 +58,13 @@ export default function webViewSrollableJsunit() {
       console.info("NestedScrollMode beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODELEFT_API_001
-     *tc.name NestedScrollMode01
-     *tc.desic test NestedScrollMode01 interface when choose callback mode.
+    /**
+     * @tc.name   NestedScrollMode01
+     * @tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODELEFT_API_001
+     * @tc.desc   NestedScrollMode01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NestedScrollMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("NestedScrollMode01", EVENT_ID_SET_SUITE_KEY)
@@ -72,11 +75,14 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
-  *tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODERIGHT_API_002
-  *tc.name NestedScrollMode02
-  *tc.desic test NestedScrollMode02 interface when choose callback mode.
-  */
+    /**
+     * @tc.name   NestedScrollMode02
+     * @tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODERIGHT_API_002
+     * @tc.desc   NestedScrollMode02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NestedScrollMode02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("NestedScrollMode02", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -86,11 +92,14 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
-    *tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODETOP_API_003
-    *tc.name NestedScrollMode03
-    *tc.desic test NestedScrollMode03 interface when choose callback mode.
-    */
+    /**
+     * @tc.name   NestedScrollMode03
+     * @tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODETOP_API_003
+     * @tc.desc   NestedScrollMode03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NestedScrollMode03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("NestedScrollMode03", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -100,11 +109,14 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-      /*
-  *tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODEBOTTOM_API_004
-  *tc.name NestedScrollMode04
-  *tc.desic test NestedScrollMode04 interface when choose callback mode.
-  */
+    /**
+     * @tc.name   NestedScrollMode04
+     * @tc.number SUB_ACE_BASIC_ETS_NESTEDSCROLLMODEBOTTOM_API_004
+     * @tc.desc   NestedScrollMode04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NestedScrollMode04',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("NestedScrollMode04", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

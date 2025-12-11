@@ -29,12 +29,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0100
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0100
-     * @tc.name builtinsBooleanConstructorTest0100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0100';
@@ -46,12 +46,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0200
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0200
-     * @tc.name builtinsBooleanConstructorTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0200';
@@ -64,12 +64,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0300
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0300
-     * @tc.name builtinsBooleanConstructorTest0300
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0300';
@@ -82,12 +82,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0400
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0400
-     * @tc.name builtinsBooleanConstructorTest0400
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0400';
@@ -100,12 +100,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0500
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0500
-     * @tc.name builtinsBooleanConstructorTest0500
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0500';
@@ -118,12 +118,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0600
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0600
-     * @tc.name builtinsBooleanConstructorTest0600
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0600';
@@ -136,12 +136,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0700
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0700
-     * @tc.name builtinsBooleanConstructorTest0700
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0700';
@@ -154,12 +154,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0800
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0800
-     * @tc.name builtinsBooleanConstructorTest0800
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0800';
@@ -172,12 +172,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest0900
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_0900
-     * @tc.name builtinsBooleanConstructorTest0900
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest0900';
@@ -190,12 +190,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1000
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1000
-     * @tc.name builtinsBooleanConstructorTest1000
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1000';
@@ -208,12 +208,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1100
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1100
-     * @tc.name builtinsBooleanConstructorTest1100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1100';
@@ -226,12 +226,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1200
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1200
-     * @tc.name builtinsBooleanConstructorTest1200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1200';
@@ -243,12 +243,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1300
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1300
-     * @tc.name builtinsBooleanConstructorTest1300
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1300';
@@ -260,12 +260,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1400
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1400
-     * @tc.name builtinsBooleanConstructorTest1400
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1400';
@@ -277,12 +277,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1500
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1500
-     * @tc.name builtinsBooleanConstructorTest1500
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1500';
@@ -294,12 +294,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1600
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1600
-     * @tc.name builtinsBooleanConstructorTest1600
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1600';
@@ -311,12 +311,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1700
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1700
-     * @tc.name builtinsBooleanConstructorTest1700
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1700';
@@ -328,12 +328,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1800
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1800
-     * @tc.name builtinsBooleanConstructorTest1800
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1800';
@@ -345,12 +345,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest1900
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_1900
-     * @tc.name builtinsBooleanConstructorTest1900
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest1900';
@@ -363,12 +363,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest2000
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_2000
-     * @tc.name builtinsBooleanConstructorTest2000
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest2000';
@@ -380,12 +380,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest2100
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_2100
-     * @tc.name builtinsBooleanConstructorTest2100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest2100';
@@ -397,12 +397,12 @@ export default function builtinsBooleanConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanConstructorTest2200
      * @tc.number SUB_BUILTINS_BOOLEAN_CONSTRUCTOR_TEST_2200
-     * @tc.name builtinsBooleanConstructorTest2200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanConstructorTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanConstructorTest2200';

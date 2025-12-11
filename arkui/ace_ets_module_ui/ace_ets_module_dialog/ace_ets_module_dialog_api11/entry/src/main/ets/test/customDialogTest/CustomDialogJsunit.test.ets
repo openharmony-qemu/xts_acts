@@ -42,15 +42,15 @@ export default function CustomDialogJsunit() {
       }
       done()
     });
-    /**
-     * @tc.number    CustomDialogJsunit_0100
-     * @tc.name      CustomDialogJsunit_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   CustomDialogJsunit_0100
+     * @tc.number CustomDialogJsunit_0100
+     * @tc.desc   CustomDialogJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('CustomDialogJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('CustomDialogJsunit_0100 START');

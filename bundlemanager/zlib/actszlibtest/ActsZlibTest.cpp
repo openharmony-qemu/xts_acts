@@ -114,9 +114,12 @@ struct mem_zone {
 };
 
 /**
- * @tc.number    : ActsZlibTest_0100
- * @tc.name      : Test compress and uncompress test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestCompress
+ * @tc.number ActsZlibTest_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestCompress, Function | MediumTest | Level0)
 {
@@ -147,9 +150,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestCompress, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0200
- * @tc.name      : Test gzio
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzio
+ * @tc.number ActsZlibTest_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzio, Function | MediumTest | Level0)
 {
@@ -202,9 +208,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzio, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0300
- * @tc.name      : Test deflate
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestDeflate
+ * @tc.number ActsZlibTest_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestDeflate, Function | MediumTest | Level0)
 {
@@ -250,9 +259,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestDeflate, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0400
- * @tc.name      : Test inflate
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflate
+ * @tc.number ActsZlibTest_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflate, Function | MediumTest | Level0)
 {
@@ -292,9 +304,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflate, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0500
- * @tc.name      : Test deflate with large buffers and dynamic change of compression level
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestLargeDeflate
+ * @tc.number ActsZlibTest_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestLargeDeflate, Function | MediumTest | Level0)
 {
@@ -353,9 +368,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestLargeDeflate, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0600
- * @tc.name      : Test inflate with large buffers
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestLargeInflate
+ * @tc.number ActsZlibTest_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestLargeInflate, Function | MediumTest | Level0)
 {
@@ -394,9 +412,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestLargeInflate, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0700
- * @tc.name      : Test deflate with full flush
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestFlush
+ * @tc.number ActsZlibTest_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestFlush, Function | MediumTest | Level0)
 {
@@ -435,9 +456,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestFlush, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0800
- * @tc.name      : Test inflateSync
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestSync
+ * @tc.number ActsZlibTest_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestSync, Function | MediumTest | Level0)
 {
@@ -473,9 +497,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestSync, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0900
- * @tc.name      : Test deflate with preset dictionary
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestDictDeflate
+ * @tc.number ActsZlibTest_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestDictDeflate, Function | MediumTest | Level1)
 {
@@ -512,9 +539,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestDictDeflate, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1000
- * @tc.name      : Test inflate with a preset dictionary
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestDictInflate
+ * @tc.number ActsZlibTest_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestDictInflate, Function | MediumTest | Level1)
 {
@@ -565,9 +595,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestDictInflate, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1100
- * @tc.name      : Test compress2 with Z_BEST_COMPRESSION level
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestCompress2
+ * @tc.number ActsZlibTest_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestCompress2, Function | MediumTest | Level1)
 {
@@ -600,9 +633,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestCompress2, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1200
- * @tc.name      : Test adler32
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestAdler
+ * @tc.number ActsZlibTest_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestAdler, Function | MediumTest | Level1)
 {
@@ -631,9 +667,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestAdler, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1300
- * @tc.name      : Test deflate state
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestDeflateState
+ * @tc.number ActsZlibTest_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestDeflateState, Function | MediumTest | Level2)
 {
@@ -696,9 +735,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestDeflateState, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1400
- * @tc.name      : Test deflateBound
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestDeflateBound
+ * @tc.number ActsZlibTest_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestDeflateBound, Function | MediumTest | Level1)
 {
@@ -735,9 +777,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestDeflateBound, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1500
- * @tc.name      : Test adler32
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestCRC
+ * @tc.number ActsZlibTest_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestCRC, Function | MediumTest | Level2)
 {
@@ -770,9 +815,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestCRC, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1600
- * @tc.name      : Test get_crc_table
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGetCrcTable
+ * @tc.number ActsZlibTest_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGetCrcTable, Function | MediumTest | Level2)
 {
@@ -781,9 +829,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGetCrcTable, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1700
- * @tc.name      : Test gzBuffer
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzBuffer
+ * @tc.number ActsZlibTest_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzBuffer, Function | MediumTest | Level2)
 {
@@ -843,9 +894,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzBuffer, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1800
- * @tc.name      : Test gzflush
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzFlush
+ * @tc.number ActsZlibTest_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzFlush, Function | MediumTest | Level2)
 {
@@ -871,9 +925,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzFlush, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_1900
- * @tc.name      : Test gzfread
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzFread
+ * @tc.number ActsZlibTest_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzFread, Function | MediumTest | Level2)
 {
@@ -894,9 +951,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzFread, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2000
- * @tc.name      : Test gzfwrite
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzWrite
+ * @tc.number ActsZlibTest_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzWrite, Function | MediumTest | Level2)
 {
@@ -916,9 +976,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzWrite, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2100
- * @tc.name      : Test gzgetc
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzGetc
+ * @tc.number ActsZlibTest_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzGetc, Function | MediumTest | Level2)
 {
@@ -937,9 +1000,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzGetc, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3400
- * @tc.name      : Test gzungetc
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzUnGetc
+ * @tc.number ActsZlibTest_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzUnGetc, Function | MediumTest | Level2)
 {
@@ -961,9 +1027,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzUnGetc, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2200
- * @tc.name      : Test gzgetc_
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzGetc_
+ * @tc.number ActsZlibTest_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzGetc_, Function | MediumTest | Level2)
 {
@@ -982,9 +1051,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzGetc_, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2300
- * @tc.name      : Test gzgets
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzGets
+ * @tc.number ActsZlibTest_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzGets, Function | MediumTest | Level2)
 {
@@ -1008,9 +1080,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzGets, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2400
- * @tc.name      : Test gzoffset64
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzOffset64
+ * @tc.number ActsZlibTest_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzOffset64, Function | MediumTest | Level2)
 {
@@ -1030,9 +1105,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzOffset64, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2500
- * @tc.name      : Test gzopen and gzopen64 and gzopen_w
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzOpen
+ * @tc.number ActsZlibTest_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzOpen, Function | MediumTest | Level2)
 {
@@ -1080,9 +1158,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzOpen, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2600
- * @tc.name      : Test gzprintf
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzPrintf
+ * @tc.number ActsZlibTest_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzPrintf, Function | MediumTest | Level2)
 {
@@ -1099,9 +1180,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzPrintf, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2700
- * @tc.name      : Test gzputc
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzPutc
+ * @tc.number ActsZlibTest_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzPutc, Function | MediumTest | Level2)
 {
@@ -1120,9 +1204,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzPutc, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2800
- * @tc.name      : Test gzputs
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzPuts
+ * @tc.number ActsZlibTest_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzPuts, Function | MediumTest | Level2)
 {
@@ -1139,9 +1226,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzPuts, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_2900
- * @tc.name      : Test gzread
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzRead
+ * @tc.number ActsZlibTest_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzRead, Function | MediumTest | Level2)
 {
@@ -1179,9 +1269,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzRead, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3000
- * @tc.name      : Test gzrewind
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzRewind
+ * @tc.number ActsZlibTest_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzRewind, Function | MediumTest | Level2)
 {
@@ -1200,9 +1293,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzRewind, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3100
- * @tc.name      : Test gzseek and gzseek64
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzseek
+ * @tc.number ActsZlibTest_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzseek, Function | MediumTest | Level2)
 {
@@ -1224,9 +1320,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzseek, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3200
- * @tc.name      : Test gzsetparams
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzSetParams
+ * @tc.number ActsZlibTest_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzSetParams, Function | MediumTest | Level2)
 {
@@ -1245,9 +1344,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzSetParams, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3300
- * @tc.name      : Test gztell and gztell64
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzTell
+ * @tc.number ActsZlibTest_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzTell, Function | MediumTest | Level2)
 {
@@ -1280,9 +1382,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzTell, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3500
- * @tc.name      : Test gzvprintf
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzVprintf
+ * @tc.number ActsZlibTest_3500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzVprintf, Function | MediumTest | Level2)
 {
@@ -1301,9 +1406,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzVprintf, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3600
- * @tc.name      : Test gzwrite
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzwrite
+ * @tc.number ActsZlibTest_3600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzwrite, Function | MediumTest | Level2)
 {
@@ -1322,9 +1430,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzwrite, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_3700
- * @tc.name      : Test inflateBackInit, inflateBack, inflateBackEnd
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzInflateBack
+ * @tc.number ActsZlibTest_3700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzInflateBack, Function | MediumTest | Level2)
 {
@@ -1360,9 +1471,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestGzInflateBack, Function | MediumTest | Level2
 }
 
 /**
- * @tc.number    : ActsZlibTest_3800
- * @tc.name      : Test inflateCodesUsed
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateCodesUsed
+ * @tc.number ActsZlibTest_3800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateCodesUsed, Function | MediumTest | Level2)
 {
@@ -1388,9 +1502,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateCodesUsed, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : ActsZlibTest_3900
- * @tc.name      : Test inflateCopy and inflateEnd
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateCopy_END
+ * @tc.number ActsZlibTest_3900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateCopy_END, Function | MediumTest | Level2)
 {
@@ -1404,9 +1521,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateCopy_END, Function | MediumTest | Leve
 }
 
 /**
- * @tc.number    : ActsZlibTest_4000
- * @tc.name      : Test inflateGetDictionary
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateGetDictionary
+ * @tc.number ActsZlibTest_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateGetDictionary, Function | MediumTest | Level2)
 {
@@ -1440,9 +1560,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateGetDictionary, Function | MediumTest |
 }
 
 /**
- * @tc.number    : ActsZlibTest_4100
- * @tc.name      : Test inflateGetHeader
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateGetHeader
+ * @tc.number ActsZlibTest_4100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateGetHeader, Function | MediumTest | Level2)
 {
@@ -1482,9 +1605,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateGetHeader, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : ActsZlibTest_4200
- * @tc.name      : Test inflateInit_ and inflateInit2_
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateInit_
+ * @tc.number ActsZlibTest_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateInit_, Function | MediumTest | Level2)
 {
@@ -1545,9 +1671,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateInit_, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_4300
- * @tc.name      : Test inflatePrime
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflatePrime
+ * @tc.number ActsZlibTest_4300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflatePrime, Function | MediumTest | Level2)
 {
@@ -1575,9 +1704,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflatePrime, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_4400
- * @tc.name      : Test inflateReset, inflateReset2, inflateResetKeep
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateReset
+ * @tc.number ActsZlibTest_4400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateReset, Function | MediumTest | Level2)
 {
@@ -1613,9 +1745,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateReset, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_4500
- * @tc.name      : Test inflateSetDictionary
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateSetDictionary
+ * @tc.number ActsZlibTest_4500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateSetDictionary, Function | MediumTest | Level2)
 {
@@ -1647,9 +1782,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateSetDictionary, Function | MediumTest |
 }
 
 /**
- * @tc.number    : ActsZlibTest_4600
- * @tc.name      : Test inflateSyncPoint
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateSyncPoint
+ * @tc.number ActsZlibTest_4600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateSyncPoint, Function | MediumTest | Level2)
 {
@@ -1679,9 +1817,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateSyncPoint, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : ActsZlibTest_4700
- * @tc.name      : Test inflateUndermine
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateUndermine
+ * @tc.number ActsZlibTest_4700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateUndermine, Function | MediumTest | Level2)
 {
@@ -1711,9 +1852,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateUndermine, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : ActsZlibTest_4800
- * @tc.name      : Test inflateValidate
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestInflateValidate
+ * @tc.number ActsZlibTest_4800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestInflateValidate, Function | MediumTest | Level2)
 {
@@ -1743,9 +1887,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestInflateValidate, Function | MediumTest | Leve
 }
 
 /**
- * @tc.number    : ActsZlibTest_4900
- * @tc.name      : Test zlibCompileFlags
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestzlibCompileFlags
+ * @tc.number ActsZlibTest_4900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestzlibCompileFlags, Function | MediumTest | Level2)
 {
@@ -1764,9 +1911,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestzlibCompileFlags, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : ActsZlibTest_5000
- * @tc.name      : Test zError
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestzError
+ * @tc.number ActsZlibTest_5000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestzError, Function | MediumTest | Level2)
 {
@@ -1776,9 +1926,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestzError, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_5100
- * @tc.name      : Test zlibVersion
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestzlibVersion
+ * @tc.number ActsZlibTest_5100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestzlibVersion, Function | MediumTest | Level2)
 {
@@ -1789,9 +1942,12 @@ HWTEST_F(ActsZlibTest, ActsZlibTestzlibVersion, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_5200
- * @tc.name      : Test gzdopen
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   ActsZlibTestGzdopen
+ * @tc.number ActsZlibTest_5200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsZlibTest, ActsZlibTestGzdopen, Function | MediumTest | Level2)
 {

@@ -21,10 +21,13 @@ export default function ActsNotificationBadgeTest() {
   describe('SUB_NOTIFICATION_ANS_BADGE_TEST', () => {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_SetNum_0900
-     * @tc.name: setBadgeNumber()
-     * @tc.desc: verify the callback function of setBadgeNumber
+    /**
+     * @tc.name   Sub_Notification_Ans_Corner_SetNum_0900
+     * @tc.number Sub_Notification_Ans_Corner_SetNum_0900
+     * @tc.desc   verify the callback function of setBadgeNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_0900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -51,10 +54,13 @@ export default function ActsNotificationBadgeTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_SetNum_1000
-     * @tc.name: setBadgeNumber()
-     * @tc.desc: verify the promise function of setBadgeNumber
+    /**
+     * @tc.name   Sub_Notification_Ans_Corner_SetNum_1000
+     * @tc.number Sub_Notification_Ans_Corner_SetNum_1000
+     * @tc.desc   verify the promise function of setBadgeNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_1000', Level.LEVEL0, async (done: Function) => {
       try {

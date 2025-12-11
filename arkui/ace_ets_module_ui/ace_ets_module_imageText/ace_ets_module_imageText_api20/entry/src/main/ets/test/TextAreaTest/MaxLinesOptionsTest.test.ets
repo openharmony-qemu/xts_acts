@@ -46,13 +46,13 @@ export default function MaxLinesOptionsTest() {
       console.info("MaxLinesOptionsTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0001
-    * @tc.name         MaxLinesOptionsTest0001
-    * @tc.desc         test textArea maxLines options overflowMode is  CLIP
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   MaxLinesOptionsTest0001
+     * @tc.number SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0001
+     * @tc.desc   test textArea maxLines options overflowMode is  CLIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MaxLinesOptionsTest0001', Level.LEVEL1, async (done: Function) => {
       console.info('MaxLinesOptionsTest0001 START');
@@ -64,13 +64,13 @@ export default function MaxLinesOptionsTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0002
-    * @tc.name         MaxLinesOptionsTest0002
-    * @tc.desc         test textArea maxLines options overflowMode is  SCROLL
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   MaxLinesOptionsTest0002
+     * @tc.number SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0002
+     * @tc.desc   test textArea maxLines options overflowMode is  SCROLL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MaxLinesOptionsTest0002', Level.LEVEL3, async (done: Function) => {
       console.info('MaxLinesOptionsTest0002 START');
@@ -82,13 +82,13 @@ export default function MaxLinesOptionsTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0003
-    * @tc.name         MaxLinesOptionsTest0003
-    * @tc.desc         test textArea maxLines options overflowMode is  no set
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   MaxLinesOptionsTest0003
+     * @tc.number SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0003
+     * @tc.desc   test textArea maxLines options overflowMode is  no set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MaxLinesOptionsTest0003', Level.LEVEL3, async (done: Function) => {
       console.info('MaxLinesOptionsTest0003 START');
@@ -100,13 +100,13 @@ export default function MaxLinesOptionsTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0004
-    * @tc.name         MaxLinesOptionsTest0004
-    * @tc.desc         test textArea maxLines options overflowMode is  undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   MaxLinesOptionsTest0004
+     * @tc.number SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0004
+     * @tc.desc   test textArea maxLines options overflowMode is  undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MaxLinesOptionsTest0004', Level.LEVEL3, async (done: Function) => {
       console.info('MaxLinesOptionsTest0004 START');

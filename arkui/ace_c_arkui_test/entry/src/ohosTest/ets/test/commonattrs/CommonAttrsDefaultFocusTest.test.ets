@@ -26,52 +26,52 @@ export default function commonAttrsDefaultFocusTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0100
-     * @tc.name       : testCommonAttrsDefaultFocus001
-     * @tc.desc       : testing defaultFocus for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDefaultFocus001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0100
+     * @tc.desc   testing defaultFocus for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDefaultFocus001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDefaultFocus001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0200
-     * @tc.name       : testCommonAttrsDefaultFocus002
-     * @tc.desc       : testing defaultFocus for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDefaultFocus002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0200
+     * @tc.desc   testing defaultFocus for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDefaultFocus002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDefaultFocus002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0300
-     * @tc.name       : testCommonAttrsDefaultFocus003
-     * @tc.desc       : testing defaultFocus for commonAttrs with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDefaultFocus003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0300
+     * @tc.desc   testing defaultFocus for commonAttrs with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDefaultFocus003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDefaultFocus003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0400
-     * @tc.name       : testCommonAttrsDefaultFocus004
-     * @tc.desc       : testing resetAttribute defaultFocus for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDefaultFocus004
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_DEFAULTFOCUS_0400
+     * @tc.desc   testing resetAttribute defaultFocus for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDefaultFocus004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDefaultFocus004()).assertEqual(0)

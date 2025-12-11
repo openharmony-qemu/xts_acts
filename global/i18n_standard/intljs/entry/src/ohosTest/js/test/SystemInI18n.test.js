@@ -57,7 +57,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0100
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0100
      * @tc.desc   check the display country
@@ -72,7 +71,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0200
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0200
      * @tc.desc   check the display country
@@ -87,7 +85,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0300
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0300
      * @tc.desc   check the display country
@@ -102,7 +99,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0400
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0400
      * @tc.desc   check the display country
@@ -124,7 +120,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0500
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0500
      * @tc.desc   check the display country
@@ -139,7 +134,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0600
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0600
      * @tc.desc   check the display country
@@ -161,7 +155,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0700
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0700
      * @tc.desc   check the language
@@ -176,7 +169,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0800
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0800
      * @tc.desc   check the language
@@ -191,7 +183,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_0900
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_0900
      * @tc.desc   check the language
@@ -213,7 +204,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1000
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1000
      * @tc.desc   check the language
@@ -235,7 +225,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1100
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1100
      * @tc.desc   check the language
@@ -250,7 +239,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1200
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1200
      * @tc.desc   check the language
@@ -265,7 +253,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1300
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1300
      * @tc.desc   check the language
@@ -280,7 +267,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1400
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1400
      * @tc.desc   check the language
@@ -295,7 +281,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1500
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1500
      * @tc.desc   check the language
@@ -310,7 +295,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1600
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1600
      * @tc.desc   check the language
@@ -325,7 +309,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1700
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1700
      * @tc.desc   check the language
@@ -340,7 +323,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1800
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1800
      * @tc.desc   check the language
@@ -355,7 +337,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_1900
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_1900
      * @tc.desc   check the language
@@ -370,7 +351,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2000
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2000
      * @tc.desc   check the language
@@ -392,7 +372,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2100
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2100
      * @tc.desc   check the language
@@ -414,7 +393,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2200
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2200
      * @tc.desc   check the getSystemLanguages
@@ -430,7 +408,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2300
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2300
      * @tc.desc   check the getSystemCountries
@@ -446,7 +423,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2400
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2400
      * @tc.desc   check the getSystemCountries
@@ -469,7 +445,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2500
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2500
      * @tc.desc   check the getSystemCountries
@@ -492,7 +467,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2600
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2600
      * @tc.desc   check the isSuggested
@@ -507,7 +481,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2700
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2700
      * @tc.desc   check the isSuggested
@@ -522,7 +495,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2800
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2800
      * @tc.desc   check the isSuggested
@@ -537,7 +509,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_2900
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_2900
      * @tc.desc   check the isSuggested
@@ -552,7 +523,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3000
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3000
      * @tc.desc   check the isSuggested
@@ -574,7 +544,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3100
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3100
      * @tc.desc   check the isSuggested
@@ -596,7 +565,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3200
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3200
      * @tc.desc   check the getSystemLanguage
@@ -611,7 +579,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3300
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3300
      * @tc.desc   check the getSystemRegion
@@ -626,7 +593,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3400
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3400
      * @tc.desc   check the getSystemLocale
@@ -641,7 +607,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3500
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3500
      * @tc.desc   check the is24HourClock
@@ -656,7 +621,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3600
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3600
      * @tc.desc   check the value of getPreferredLanguageList method
@@ -672,7 +636,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3700
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3700
      * @tc.desc   check the value of getFirstPreferredLanguage method
@@ -696,7 +659,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3800
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3800
      * @tc.desc   check the value of getAppPreferredLanguage method
@@ -712,7 +674,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_system_test_3900
      * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_3900
      * @tc.desc   get the getUsingLocalDigit value
@@ -727,7 +688,6 @@ describe('SystemInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_AppPreferredLanguage_0400
      * @tc.number SUB_GLOBAL_I18N_AppPreferredLanguage_0400
      * @tc.desc   setAppPreferredLanguage

@@ -95,7 +95,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     console.info(TAG + "*************Unit Test Begin*************")
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1400
      * @tc.desc   RelationalStore backup and restore function test
@@ -164,7 +163,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1500
      * @tc.desc   RelationalStore backup function test
@@ -198,7 +196,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1600
      * @tc.desc   RelationalStore restore function test
@@ -241,7 +238,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1700
      * @tc.desc   RelationalStore restore function test
@@ -273,7 +269,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0050
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1800
      * @tc.desc   RelationalStore restore function test
@@ -313,7 +308,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0060
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1900
      * @tc.desc   RelationalStore restore function test
@@ -334,7 +328,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
       })
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0070
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2000
      * @tc.desc   RelationalStore restore function test
@@ -360,7 +353,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0090
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2200
      * @tc.desc   RelationalStore restore function test
@@ -384,7 +376,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2300
      * @tc.desc   RelationalStore restore function test
@@ -413,7 +404,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0120
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2500
      * @tc.desc   RelationalStore restore function test
@@ -445,7 +435,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   RdbBackupRestoreTest0130
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2600
      * @tc.desc   RelationalStore restore function test

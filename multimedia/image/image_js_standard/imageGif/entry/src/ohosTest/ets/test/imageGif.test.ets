@@ -579,132 +579,120 @@ export default function imageGif() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0100
-     * @tc.name      : test getDelayTimeList(promise) one frame gif
-     * @tc.desc      : 1.create one frame gif imagesource
-     *                 2.getDelayTimeList(promise)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0100
+     * @tc.desc   1.create one frame gif imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0100", Level.LEVEL0, async (done:Function)=>{
       getDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0100", "test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0200
-     * @tc.name      : test getDelayTimeList(promise) gif
-     * @tc.desc      : 1.create gif imagesource
-     *                 2.getDelayTimeList(promise)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0200
+     * @tc.desc   1.create gif imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0200", Level.LEVEL0, async (done:Function)=>{
       getDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_0200", "moving_test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0100
-     * @tc.name      : test getDelayTimeList(callback) one frame gif
-     * @tc.desc      : 1.create one frame gif imagesource
-     *                 2.getDelayTimeList(callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0100
+     * @tc.desc   1.create one frame gif imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0100", Level.LEVEL0, async (done:Function)=>{
       getDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0100", "test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0200
-     * @tc.name      : test getDelayTimeList(callback) gif
-     * @tc.desc      : 1.create gif imagesource
-     *                 2.getDelayTimeList(callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0200
+     * @tc.desc   1.create gif imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0200", Level.LEVEL0, async (done:Function)=>{
       getDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_0200", "moving_test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0100
-     * @tc.name      : test getDisposalType promise for gif
-     * @tc.desc      : 1.create gif imagesource
-     *                 2.getDisposalType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0100
+     * @tc.desc   1.create gif imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0100", Level.LEVEL0, async (done:Function)=>{
       testGetDisposalTypePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0100", "moving_test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0200
-     * @tc.name      : test getDisposalType promise for one frame gif
-     * @tc.desc      : 1.create one frame gif imagesource
-     *                 2.getDisposalType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0200
+     * @tc.desc   1.create one frame gif imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0200", Level.LEVEL0, async (done:Function)=>{
       testGetDisposalTypePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0200", "test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0300
-     * @tc.name      : test getDisposalType promise jpg error
-     * @tc.desc      : 1.create jpg imagesource
-     *                 2.getDisposalType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0300
+     * @tc.desc   1.create jpg imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0300", Level.LEVEL0, async (done:Function)=>{
       testGetDisposalTypePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_0300", "test.jpg");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_0100
-     * @tc.name      :  getFrameCount - promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_0100", Level.LEVEL0, async (done:Function)=>{
       getFrameCountPromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_0100", "moving_test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_0100
-     * @tc.name      :  getFrameCount - callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.getFrameCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_0100", Level.LEVEL0, async (done:Function)=>{
       getFrameCountCallBack(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_0100", "moving_test.gif");
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_0100
-     * @tc.name      : createPixelMapList - promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_0100", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -722,14 +710,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0100
-     * @tc.name      : createPixelMapList - promise-sampleSize: -1
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0100", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -752,14 +738,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0200
-     * @tc.name      : createPixelMapList - promise-index: -8
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0200", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -782,14 +766,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0300
-     * @tc.name      : createPixelMapList - promise-rotate: 500
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0300", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -812,14 +794,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0400
-     * @tc.name      : createPixelMapList - promise-desiredPixelFormat: unsupported format
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_0400", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -842,15 +822,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_0100
-     * @tc.name      : createPixelMapList - callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_0100", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -868,14 +845,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0100
-     * @tc.name      : createPixelMapList - callback-sampleSize: -1
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0100", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -898,14 +873,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0200
-     * @tc.name      : createPixelMapList - callback- index: -8
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0200", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -928,14 +901,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0300
-     * @tc.name      : createPixelMapList - callback-rotate: 500
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0300", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -958,14 +929,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0400
-     * @tc.name      : createPixelMapList - callback-unsupported format
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.createPixelMapList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_CALLBACK_0400", Level.LEVEL0, async (done:Function)=>{
       let decodeOpts:Options = {
@@ -988,16 +957,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0100
-     * @tc.desc      : test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.getDelayTimeList
-     *                 4.getDisposalType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0100
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0100", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0100");
@@ -1007,16 +972,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0200
-     * @tc.desc      : test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.test marshalling
-     *                 4.compare picture gif metadata properties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0200
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0200", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0200");
@@ -1035,15 +996,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0300
-     * @tc.desc      : test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.compare picture gif metadata properties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0300
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0300", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_0300");
@@ -1063,14 +1021,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0100
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0100
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0100");
@@ -1080,14 +1036,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0200
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0200
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0200");
@@ -1103,14 +1057,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0300
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0300
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0300");
@@ -1120,14 +1072,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0400
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0400
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0400", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_0400");

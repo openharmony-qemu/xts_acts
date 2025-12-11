@@ -50,12 +50,12 @@ export default function DecimalTest017() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST17_001
-     * @tc.name      : Decimal_round_Func_001
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_001
+     * @tc.number DECIMAL_TEST17_001
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set  ({
@@ -78,12 +78,12 @@ export default function DecimalTest017() {
       test_round_001('0', '1e-9000000000000000', 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST17_002
-     * @tc.name      : Decimal_round_Func_002
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_002
+     * @tc.number DECIMAL_TEST17_002
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('-0', '-1e-9000000000000000', 4);
@@ -102,12 +102,12 @@ export default function DecimalTest017() {
       test_round_001('4.8046702619549660118837319476958242e+34', '4.80467026195496601188373194769582420063536104857816444372396235915e+34', 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST17_003
-     * @tc.name      : Decimal_round_Func_003
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_003
+     * @tc.number DECIMAL_TEST17_003
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('16604074202686788', '16604074202686787.6', 0);
@@ -126,12 +126,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_004
-     * @tc.name      : Decimal_round_Func_004
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_004
+     * @tc.number DECIMAL_TEST17_004
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('6.25825257883805843076111330243671881564726599e+44', '6.2582525788380584307611133024367188156472659814623144865497e+44', 0);
@@ -149,12 +149,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_005
-     * @tc.name      : Decimal_round_Func_005
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_005
+     * @tc.number DECIMAL_TEST17_005
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('8113502102248864193', '8113502102248864193.4', 6);
@@ -174,12 +174,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_006
-     * @tc.name      : Decimal_round_Func_006
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_006
+     * @tc.number DECIMAL_TEST17_006
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('14768', '14768.1842134501472446153274412575133', 1);
@@ -199,12 +199,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_007
-     * @tc.name      : Decimal_round_Func_007
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_007
+     * @tc.number DECIMAL_TEST17_007
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('4.666777096688297335109779706846177431928559905049197884212958955e+63', '4.6667770966882973351097797068461774319285599050491978842129589550252836742465454224095908e+63', 6);
@@ -222,12 +222,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_008
-     * @tc.name      : Decimal_round_Func_008
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_008
+     * @tc.number DECIMAL_TEST17_008
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('4.39311758031073540977322723016501396453173282821704760525204945353983876096252e+77', '4.39311758031073540977322723016501396453173282821704760525204945353983876096251821769058876287518283551757703348408464e+77', 2);
@@ -245,12 +245,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_009
-     * @tc.name      : Decimal_round_Func_009
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_009
+     * @tc.number DECIMAL_TEST17_009
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('3.68965336119015432161651754041004e+32', '3.68965336119015432161651754041003908937708794285e+32', 2);
@@ -269,12 +269,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_010
-     * @tc.name      : Decimal_round_Func_010
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_010
+     * @tc.number DECIMAL_TEST17_010
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('7.953951085584591494904819e+25', '7.9539510855845914949048190132594822824626976317642169018875166767e+25', 5);
@@ -294,12 +294,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_011
-     * @tc.name      : Decimal_round_Func_011
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_011
+     * @tc.number DECIMAL_TEST17_011
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('5.37691884604259144480804415625800887790938772497524135e+53', '5.376918846042591444808044156258008877909387724975241352981212067476945435681674020225105e+53', 3);
@@ -318,12 +318,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_012
-     * @tc.name      : Decimal_round_Func_012
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_012
+     * @tc.number DECIMAL_TEST17_012
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('37738994177', '37738994177', 5);
@@ -343,12 +343,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_013
-     * @tc.name      : Decimal_round_Func_013
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_013
+     * @tc.number DECIMAL_TEST17_013
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('2.763384545224304050146832313739655508577774027132280259541365597279123017482e+75', '2.763384545224304050146832313739655508577774027132280259541365597279123017482371912033266310613516271663e+75', 5);
@@ -372,12 +372,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_014
-     * @tc.name      : Decimal_round_Func_014
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_014
+     * @tc.number DECIMAL_TEST17_014
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('6', '5.9619856716250354871335057', 2);
@@ -401,12 +401,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_015
-     * @tc.name      : Decimal_round_Func_015
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_015
+     * @tc.number DECIMAL_TEST17_015
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('9.277380564234452159463923699924423033503589164006560028593034039059e+66', '9.2773805642344521594639236999244230335035891640065600285930340390595049193598441e+66', 3);
@@ -428,12 +428,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_016
-     * @tc.name      : Decimal_round_Func_016
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_016
+     * @tc.number DECIMAL_TEST17_016
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('1.03007021065884639208787111225352947659134e+41', '1.03007021065884639208787111225352947659134e+41', 5);
@@ -455,12 +455,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_017
-     * @tc.name      : Decimal_round_Func_017
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_017
+     * @tc.number DECIMAL_TEST17_017
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('6.72291657980520450527702159742964874909944380115207127826868e+59', '6.7229165798052045052770215974296487490994438011520712782686756677317729908042785747274547904999e+59', 5);
@@ -480,12 +480,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_018
-     * @tc.name      : Decimal_round_Func_018
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_018
+     * @tc.number DECIMAL_TEST17_018
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('9.12591556752170002546686195712080775076927539494357342e+53', '9.12591556752170002546686195712080775076927539494357342095192221318809927523394869766948859999e+53', 6);
@@ -508,12 +508,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_019
-     * @tc.name      : Decimal_round_Func_019
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_019
+     * @tc.number DECIMAL_TEST17_019
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('5.38788728618099476057660664795230746327516453731e+47', '5.38788728618099476057660664795230746327516453730723672718211491484463437612544615e+47', 5);
@@ -533,12 +533,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_020
-     * @tc.name      : Decimal_round_Func_020
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_020
+     * @tc.number DECIMAL_TEST17_020
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('6253581', '6253581.49602122273536242131464028542', 4);
@@ -557,12 +557,12 @@ export default function DecimalTest017() {
       test_round_001('6.703769389175962220793e+21', '6.703769389175962220792067880359735732888123800491e+21', 0);
     });
     /**
-     * @tc.number    : DECIMAL_TEST17_021
-     * @tc.name      : Decimal_round_Func_021
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_021
+     * @tc.number DECIMAL_TEST17_021
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('2.5585369539549659010966714135825828801369980436910644884291291e+61', '2.5585369539549659010966714135825828801369980436910644884291291234042228005022238e+61', 5);
@@ -581,12 +581,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_022
-     * @tc.name      : Decimal_round_Func_022
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_022
+     * @tc.number DECIMAL_TEST17_022
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('7.85665005570333663657093714469705934e+35', '7.856650055703336636570937144697059336863289133308185e+35', 0);
@@ -607,12 +607,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_023
-     * @tc.name      : Decimal_round_Func_023
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_023
+     * @tc.number DECIMAL_TEST17_023
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('7.8212509096600498185673448363795561801e+38', '7.82125090966004981856734483637955618009925616349415607657138464833290636076e+38', 4);
@@ -631,12 +631,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_024
-     * @tc.name      : Decimal_round_Func_024
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_024
+     * @tc.number DECIMAL_TEST17_024
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('50057554472467', '50057554472467.164635378107751829995761049170916', 1);
@@ -659,12 +659,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_025
-     * @tc.name      : Decimal_round_Func_025
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_025
+     * @tc.number DECIMAL_TEST17_025
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('3.6413072083209667611577984e+25', '3.64130720832096676115779843247079245446941280671681175325417221e+25', 3);
@@ -686,12 +686,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_026
-     * @tc.name      : Decimal_round_Func_026
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_026
+     * @tc.number DECIMAL_TEST17_026
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('7.53156457775671837805805213210009899583881e+41', '7.53156457775671837805805213210009899583881451963e+41', 1);
@@ -712,12 +712,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_027
-     * @tc.name      : Decimal_round_Func_027
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_027
+     * @tc.number DECIMAL_TEST17_027
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('978080378597', '978080378597.2017', 6);
@@ -738,12 +738,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_028
-     * @tc.name      : Decimal_round_Func_028
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_028
+     * @tc.number DECIMAL_TEST17_028
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('3.601323497164902344681087151677942539149573539415387031319081234142241e+69', '3.60132349716490234468108715167794253914957353941538703131908123414224106980338319e+69', 3);
@@ -768,12 +768,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_029
-     * @tc.name      : Decimal_round_Func_029
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_029
+     * @tc.number DECIMAL_TEST17_029
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('711645553194682', '711645553194682', 6);
@@ -795,12 +795,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_030
-     * @tc.name      : Decimal_round_Func_030
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_030
+     * @tc.number DECIMAL_TEST17_030
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('1.62306671385880562700401146583371770207236387224456185716632e+59', '1.62306671385880562700401146583371770207236387224456185716632051105062492e+59', 5);
@@ -823,12 +823,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_031
-     * @tc.name      : Decimal_round_Func_031
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_031
+     * @tc.number DECIMAL_TEST17_031
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('488983444', '488983443.827', 0);
@@ -849,12 +849,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_032
-     * @tc.name      : Decimal_round_Func_032
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_032
+     * @tc.number DECIMAL_TEST17_032
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('9.939519663839419097084309722114337860929618038e+45', '9.93951966383941909708430972211433786092961803758074876538411188673348e+45', 0);
@@ -876,12 +876,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_033
-     * @tc.name      : Decimal_round_Func_033
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_033
+     * @tc.number DECIMAL_TEST17_033
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('5.8017462781868947979669035963150371455e+37', '5.80174627818689479796690359631503714551627518481e+37', 1);
@@ -903,12 +903,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_034
-     * @tc.name      : Decimal_round_Func_034
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_034
+     * @tc.number DECIMAL_TEST17_034
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_round_001('7.04165504077691457763479440814442249894246758944393488056686043599000962e+71', '7.0416550407769145776347944081444224989424675894439348805668604359900096153767456881719096558635e+71', 5);
@@ -929,12 +929,12 @@ export default function DecimalTest017() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST17_035
-     * @tc.name      : Decimal_round_Func_035
-     * @tc.desc      : Test round
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_round_Func_035
+     * @tc.number DECIMAL_TEST17_035
+     * @tc.desc   Test round
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_round_Func_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set  ({

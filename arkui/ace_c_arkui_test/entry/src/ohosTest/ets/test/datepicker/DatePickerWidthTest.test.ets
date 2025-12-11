@@ -26,39 +26,39 @@ export default function datePickerWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_DATEPICKER_WIDTH_0100
-     * @tc.name: testDatePickerWidth001
-     * @tc.desc: testing width for datePicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testDatePickerWidth001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_WIDTH_0100
+     * @tc.desc   testing width for datePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_DATEPICKER_WIDTH_0200
-     * @tc.name: testDatePickerWidth002
-     * @tc.desc: testing width for datePicker with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testDatePickerWidth002
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_WIDTH_0200
+     * @tc.desc   testing width for datePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_DATEPICKER_WIDTH_0300
-     * @tc.name: testDatePickerWidth003
-     * @tc.desc: testing width for datePicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testDatePickerWidth003
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_WIDTH_0300
+     * @tc.desc   testing width for datePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerWidth003()).assertEqual(0)

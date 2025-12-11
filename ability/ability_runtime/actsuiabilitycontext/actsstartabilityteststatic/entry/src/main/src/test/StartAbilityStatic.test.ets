@@ -46,13 +46,13 @@ export default function startAbilityTestStatic() {
       hilog.info(domain, tag, 'beforeAll end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0100
-     * @tc.desc   : Call UIAbilityContext startAbility succeeded.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0100
+     * @tc.desc   Call UIAbilityContext startAbility succeeded.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0100`;
@@ -78,13 +78,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0200
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0200
+     * @tc.desc   Call UIAbilityContext startAbility failed.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0200`;
@@ -110,13 +110,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0300
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0300
-     * @tc.desc   : Call UIAbilityContext startAbility with options succeeded.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0300
+     * @tc.desc   Call UIAbilityContext startAbility with options succeeded.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0300`;
@@ -199,13 +199,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0400
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0400
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0400
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0400`;
@@ -234,13 +234,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0500
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0500
-     * @tc.desc   : Call UIAbilityContext startAbility succeeded.(callback),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0500
+     * @tc.desc   Call UIAbilityContext startAbility succeeded.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0500`;
@@ -268,13 +268,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0600
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0600
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(callback),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0600
+     * @tc.desc   Call UIAbilityContext startAbility failed.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0600`;
@@ -302,13 +302,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0700
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0700
-     * @tc.desc   : Call UIAbilityContext startAbility with options succeeded.(callback),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0700
+     * @tc.desc   Call UIAbilityContext startAbility with options succeeded.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0700`;
@@ -339,14 +339,14 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0800
-    * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0800
-    * @tc.desc   : Call UIAbilityContext startAbility with options failed.(callback),
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0800
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0800`;
       hilog.info(domain, tag, `it begin`);

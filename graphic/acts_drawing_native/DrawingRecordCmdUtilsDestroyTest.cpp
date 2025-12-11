@@ -62,13 +62,13 @@ class DrawingRecordCmdUtilsDestroyTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0200
- * @tc.name: testRecordCmdUtilsDestroyNormal
- * @tc.desc: test for testRecordCmdUtilsDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRecordCmdUtilsDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0200
+ * @tc.desc   test for testRecordCmdUtilsDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingRecordCmdUtilsDestroyTest, testRecordCmdUtilsDestroyNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RecordCmdUtilsCreate

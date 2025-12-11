@@ -45,9 +45,12 @@ export default function ButtonApi1() {
     });
 
     /**
+     * @tc.name   ButtonApi1_0100
      * @tc.number ButtonApi1_0100
-     * @tc.name testButton
-     * @tc.desc
+     * @tc.desc   ButtonApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ButtonApi1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ButtonApi1_0100 START');
@@ -61,9 +64,12 @@ export default function ButtonApi1() {
       done();
     });
     /**
+     * @tc.name   ButtonApi1_0200
      * @tc.number ButtonApi1_0200
-     * @tc.name testButton
-     * @tc.desc
+     * @tc.desc   ButtonApi1_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ButtonApi1_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ButtonApi1_0200 START');

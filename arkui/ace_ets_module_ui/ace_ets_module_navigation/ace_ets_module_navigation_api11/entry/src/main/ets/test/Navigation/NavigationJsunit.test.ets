@@ -43,6 +43,14 @@ export default function NavigationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavigationJsunit_0100
+     * @tc.number NavigationJsunit_0100
+     * @tc.desc   NavigationJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the Navigation component
       console.info('[NavigationJsunit_0100] START');
@@ -74,6 +82,14 @@ export default function NavigationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavigationJsunit_0300
+     * @tc.number NavigationJsunit_0300
+     * @tc.desc   NavigationJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Verify onTitleModeChange event of Navigation component
       console.info('[NavigationJsunit_0300] START');
@@ -86,6 +102,14 @@ export default function NavigationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavigationJsunit_0400
+     * @tc.number NavigationJsunit_0400
+     * @tc.desc   NavigationJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify onNavBarStateChange event of Navigation component
       console.info('[NavigationJsunit_0400] START');
@@ -100,6 +124,14 @@ export default function NavigationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavigationJsunit_0600
+     * @tc.number NavigationJsunit_0600
+     * @tc.desc   NavigationJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // Modify atrributes of Navigation component 
       console.info('[NavigationJsunit_0600] START');
@@ -140,6 +172,14 @@ export default function NavigationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavigationJsunit_0700
+     * @tc.number NavigationJsunit_0700
+     * @tc.desc   NavigationJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Modify the titleMode of Navigation component 
       console.info('[NavigationJsunit_0700] START');
@@ -160,6 +200,14 @@ export default function NavigationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavigationJsunit_0800
+     * @tc.number NavigationJsunit_0800
+     * @tc.desc   NavigationJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       // Modify the mode of Navigation component 
       console.info('[NavigationJsunit_0800] START');
@@ -180,6 +228,14 @@ export default function NavigationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavigationJsunit_0900
+     * @tc.number NavigationJsunit_0900
+     * @tc.desc   NavigationJsunit_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationJsunit_0900',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of Navigation component
       console.info('[NavigationJsunit_0900] START');

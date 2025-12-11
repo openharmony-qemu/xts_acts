@@ -50,12 +50,12 @@ export default function getAllObjectsTest() {
 
 
     /**
-     * @tc.number      fetchResult_getAllObjects_promise_004
-     * @tc.name        fetchResult_getAllObjects_promise_004
-     * @tc.desc        getAllObjects
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   fetchResult_getAllObjects_promise_004
+     * @tc.number fetchResult_getAllObjects_promise_004
+     * @tc.desc   getAllObjects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getAllObjects_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getAllObjects_promise_004';
@@ -76,12 +76,12 @@ export default function getAllObjectsTest() {
     })
 
     /**
-     * @tc.number     fetchResult_getAllObjects_callback_004
-     * @tc.name       fetchResult_getAllObjects_callback_004
-     * @tc.desc       getAllObjects
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   fetchResult_getAllObjects_callback_004
+     * @tc.number fetchResult_getAllObjects_callback_004
+     * @tc.desc   getAllObjects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getAllObjects_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getAllObjects_callback_004';

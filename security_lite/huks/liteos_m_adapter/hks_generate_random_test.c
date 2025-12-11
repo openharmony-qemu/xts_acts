@@ -114,9 +114,12 @@ static void ExecHksGenerateRandomTest001(void const *argument)
 }
 
 /**
- * @tc.name: HksGenerateRandomTest.HksGenerateRandomTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksGenerateRandomTest001
+ * @tc.number HksGenerateRandomTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksGenerateRandomTest, HksGenerateRandomTest001, Level1)
 {

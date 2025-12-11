@@ -39,10 +39,13 @@ const URI = "/ohos.acts.bms.getlauncherabilityinfo.test/entry_test/TestAbility";
 
 export default function actsGetLauncherAbilityInfoTest() {
   describe('ActsGetLauncherAbilityInfoTest', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100
-     * @tc.desc: Test getLauncherAbilityInfoSync with valid value.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100
+     * @tc.desc   Test getLauncherAbilityInfoSync with valid value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -123,10 +126,13 @@ export default function actsGetLauncherAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000
-     * @tc.desc: Test getLauncherAbilityInfoSync with parameter error return errcode 401.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000
+     * @tc.desc   Test getLauncherAbilityInfoSync with parameter error return errcode 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_GetLauncherAbilityInfoSync_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -152,10 +158,13 @@ export default function actsGetLauncherAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
-     * @tc.desc: Test getLauncherAbilityInfoSync with bundle name is not found return errcode 17700001.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
+     * @tc.desc   Test getLauncherAbilityInfoSync with bundle name is not found return errcode 17700001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -186,10 +195,13 @@ export default function actsGetLauncherAbilityInfoTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
-     * @tc.desc: Test getLauncherAbilityInfoSync with user ID is not found return errcode 17700004.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
+     * @tc.desc   Test getLauncherAbilityInfoSync with user ID is not found return errcode 17700004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

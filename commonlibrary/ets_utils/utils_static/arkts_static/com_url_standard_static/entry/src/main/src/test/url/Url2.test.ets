@@ -21,12 +21,12 @@ import hilog from '@ohos.hilog'
 export default function urlTest2() {
   describe('urlTest2',  (): void => {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00100
-     * @tc.name: testParamsAppend001
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsAppend001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00100
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsAppend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
@@ -37,12 +37,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00200
-     * @tc.name: testParamsAppend002
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsAppend002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00200
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsAppend002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
@@ -53,12 +53,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00300
-     * @tc.name: testParamsAppend003
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsAppend003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00300
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsAppend003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
@@ -69,12 +69,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00400
-     * @tc.name: testParamsAppend004
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsAppend004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00400
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsAppend004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -85,12 +85,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00500
-     * @tc.name: testParamsAppend005
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsAppend005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00500
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsAppend005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -108,6 +108,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsAppend006
+     * @tc.number testParamsAppend006
+     * @tc.desc   testParamsAppend006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -129,6 +137,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsAppend007
+     * @tc.number testParamsAppend007
+     * @tc.desc   testParamsAppend007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsAppend007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -145,12 +161,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00800
-     * @tc.name: testParamsDelete001
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsDelete001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00800
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -161,12 +177,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00900
-     * @tc.name: testParamsDelete002
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsDelete002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00900
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo大=1&bar=2');
@@ -177,12 +193,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01000
-     * @tc.name: testParamsDelete003
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsDelete003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01000
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo大=1&bar=2');
@@ -193,12 +209,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01100
-     * @tc.name: testParamsDelete004
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsDelete004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01100
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -209,12 +225,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01200
-     * @tc.name: testParamsDelete005
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsDelete005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01200
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -232,6 +248,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsDelete006
+     * @tc.number testParamsDelete006
+     * @tc.desc   testParamsDelete006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsDelete006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -253,6 +277,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsDelete007
+     * @tc.number testParamsDelete007
+     * @tc.desc   testParamsDelete007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsDelete007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -274,6 +306,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testNewURLParams001
+     * @tc.number testNewURLParams001
+     * @tc.desc   testNewURLParams001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testNewURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(undefined);
     //   let result = params.toString();
@@ -284,12 +324,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01600
-     * @tc.name: testParamsEntries001
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsEntries001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01600
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -306,12 +346,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01700
-     * @tc.name: testParamsEntries002
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsEntries002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01700
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -327,12 +367,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01800
-     * @tc.name: testParamsEntries003
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsEntries003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01800
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -349,12 +389,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01900
-     * @tc.name: testParamsEntries004
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsEntries004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01900
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -370,12 +410,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02000
-     * @tc.name: testParamsEntries005
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsEntries005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02000
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -392,12 +432,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02100
-     * @tc.name: testParams[Symbol.iterator]001
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParams[Symbol.iterator]001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02100
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParams[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -413,12 +453,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02200
-     * @tc.name: testParams[Symbol.iterator]002
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParams[Symbol.iterator]002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02200
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParams[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -434,12 +474,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02300
-     * @tc.name: testParams[Symbol.iterator]003
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParams[Symbol.iterator]003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02300
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParams[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -456,12 +496,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02400
-     * @tc.name: testParams[Symbol.iterator]004
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParams[Symbol.iterator]004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02400
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParams[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -477,12 +517,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02500
-     * @tc.name: testParams[Symbol.iterator]005
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParams[Symbol.iterator]005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02500
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParams[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -499,12 +539,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02600
-     * @tc.name: testParamsForEach001
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsForEach001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02600
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -518,12 +558,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02700
-     * @tc.name: testParamsForEach002
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsForEach002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02700
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsForEach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -537,12 +577,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02800
-     * @tc.name: testParamsForEach003
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsForEach003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02800
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -557,12 +597,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_02900
-     * @tc.name: testParamsForEach004
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsForEach004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02900
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsForEach004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
@@ -576,12 +616,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03000
-     * @tc.name: testParamsForEach005
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsForEach005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03000
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
@@ -603,6 +643,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsForEach006
+     * @tc.number testParamsForEach006
+     * @tc.desc   testParamsForEach006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("foo=bar&jss=txt");
@@ -626,6 +674,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsForEach007
+     * @tc.number testParamsForEach007
+     * @tc.desc   testParamsForEach007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams("key1=value1&key2=value2")
     //   let arr:string[] = [];
@@ -643,12 +699,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03300
-     * @tc.name: testParamsGet001
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGet001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03300
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -657,12 +713,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03400
-     * @tc.name: testParamsGet002
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGet002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03400
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -671,12 +727,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03500
-     * @tc.name: testParamsGet003
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGet003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03500
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -686,12 +742,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03600
-     * @tc.name: testParamsGet004
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGet004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03600
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -700,12 +756,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03700
-     * @tc.name: testParamsGet005
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGet005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03700
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -722,6 +778,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsGet006
+     * @tc.number testParamsGet006
+     * @tc.desc   testParamsGet006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = new Url.URLParams("key1=value1&key2=value2")
@@ -737,12 +801,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03900
-     * @tc.name: testParamsGetAll001
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGetAll001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03900
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGetAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -752,12 +816,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04000
-     * @tc.name: testParamsGetAll002
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGetAll002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04000
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGetAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&8=DEF")
@@ -767,12 +831,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04100
-     * @tc.name: testParamsGetAll003
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGetAll003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04100
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=da")
@@ -782,12 +846,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04200
-     * @tc.name: testParamsGetAll004
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGetAll004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04200
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGetAll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -797,12 +861,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04300
-     * @tc.name: testParamsGetAll005
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsGetAll005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04300
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsGetAll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -819,6 +883,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsGetAll006
+     * @tc.number testParamsGetAll006
+     * @tc.desc   testParamsGetAll006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsGetAll006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -834,12 +906,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04500
-     * @tc.name: testParamsHas001
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsHas001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04500
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -848,12 +920,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04600
-     * @tc.name: testParamsHas002
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsHas002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04600
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
@@ -862,12 +934,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04700
-     * @tc.name: testParamsHas003
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsHas003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04700
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
@@ -877,12 +949,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04800
-     * @tc.name: testParamsHas004
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsHas004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04800
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
@@ -891,12 +963,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04900
-     * @tc.name: testParamsHas005
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsHas005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_04900
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsHas005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
@@ -913,6 +985,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsHas006
+     * @tc.number testParamsHas006
+     * @tc.desc   testParamsHas006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams("小=value1&￥=value2&key3=大")
     //   try {
@@ -926,12 +1006,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05100
-     * @tc.name: testParamsKeys001
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsKeys001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05100
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsKeys001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
@@ -945,12 +1025,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05200
-     * @tc.name: testParamsKeys002
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsKeys002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05200
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsKeys002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
@@ -964,12 +1044,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05300
-     * @tc.name: testParamsKeys003
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsKeys003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05300
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsKeys003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
@@ -983,12 +1063,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05400
-     * @tc.name: testParamsKeys004
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsKeys004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05400
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsKeys004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六");
@@ -1002,12 +1082,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05500
-     * @tc.name: testParamsKeys005
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsKeys005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05500
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsKeys005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六&key5=发");
@@ -1021,14 +1101,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05600
-     * @tc.name: testParamsSet001
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSet001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05600
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1039,14 +1117,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05700
-     * @tc.name: testParamsSet002
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSet002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05700
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1056,14 +1132,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05800
-     * @tc.name: testParamsSet003
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSet003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05800
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1073,14 +1147,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05900
-     * @tc.name: testParamsSet004
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSet004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_05900
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1091,14 +1163,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06000
-     * @tc.name: testParamsSet005
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSet005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06000
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1108,14 +1178,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06100
-     * @tc.name: testParamsSet006
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSet006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06100
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams();
@@ -1134,6 +1202,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsSet007
+     * @tc.number testParamsSet007
+     * @tc.desc   testParamsSet007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1158,6 +1234,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsSet007
+     * @tc.number testParamsSet007
+     * @tc.desc   testParamsSet007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1173,12 +1257,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06400
-     * @tc.name: testParamsSort001
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSort001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06400
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&3=value3&2=key2");
@@ -1188,12 +1272,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06500
-     * @tc.name: testParamsSort002
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSort002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06500
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSort002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("a=value1&c=value2&b=key2");
@@ -1203,12 +1287,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06600
-     * @tc.name: testParamsSort003
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSort003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06600
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSort003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=33");
@@ -1219,12 +1303,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06700
-     * @tc.name: testParamsSort004
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSort004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06700
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSort004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&3=value3&2=key2&4=key4");
@@ -1234,12 +1318,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06800
-     * @tc.name: testParamsSort005
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsSort005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06800
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsSort005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("a=value1&c=value2&4=key4&b=key2");
@@ -1249,12 +1333,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06900
-     * @tc.name: testParamsValues001
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsValues001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06900
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -1268,12 +1352,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07000
-     * @tc.name: testParamsValues002
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsValues002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07000
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -1287,12 +1371,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07100
-     * @tc.name: testParamsValues003
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsValues003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07100
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -1307,12 +1391,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07200
-     * @tc.name: testParamsValues004
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsValues004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07200
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
@@ -1326,12 +1410,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07300
-     * @tc.name: testParamsValues005
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsValues005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07300
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4&5=key5")
@@ -1345,12 +1429,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07400
-     * @tc.name: testParamsToString001
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsToString001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07400
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -1359,12 +1443,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07500
-     * @tc.name: testParamsToString002
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsToString002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07500
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大")
@@ -1374,12 +1458,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07600
-     * @tc.name: testParamsToString003
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsToString003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07600
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("￥=)")
@@ -1389,12 +1473,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07700
-     * @tc.name: testParamsToString004
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsToString004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07700
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
@@ -1403,12 +1487,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07800
-     * @tc.name: testParamsToString005
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsToString005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07800
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大&4=key4&5=key5")
@@ -1418,12 +1502,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_07900
-     * @tc.name: testParamsConstruction001
-     * @tc.desc: A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsConstruction001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_07900
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('?user=abc&query=xyz')
@@ -1439,6 +1523,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsConstruction002
+     * @tc.number testParamsConstruction002
+     * @tc.desc   testParamsConstruction002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //   it('testParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //  class c1 {
     //    user: string;
@@ -1453,12 +1545,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08100
-     * @tc.name: testParamsConstruction003
-     * @tc.desc: A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsConstruction003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08100
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsConstruction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams([
@@ -1478,6 +1570,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsConstruction004
+     * @tc.number testParamsConstruction004
+     * @tc.desc   testParamsConstruction004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let map: Map<string, string> = new Map<string, string>();
     //   map.set('user', 'abc');
@@ -1488,12 +1588,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08300
-     * @tc.name: testParamsConstruction005
-     * @tc.desc: A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsConstruction005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08300
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const getQueryPairs = (): [string, string][] => [
@@ -1507,12 +1607,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08400
-     * @tc.name: testParamsConstruction006
-     * @tc.desc: A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsConstruction006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08400
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams()
@@ -1529,6 +1629,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsConstruction007
+     * @tc.number testParamsConstruction007
+     * @tc.desc   testParamsConstruction007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(param)
     //   params.append('abcde','fghki')
@@ -1544,6 +1652,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsConstruction008
+     * @tc.number testParamsConstruction008
+     * @tc.desc   testParamsConstruction008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     const param = 123456789;
@@ -1563,6 +1679,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testParamsConstruction009
+     * @tc.number testParamsConstruction009
+     * @tc.desc   testParamsConstruction009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testParamsConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     const param = [
@@ -1584,6 +1708,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testNewURLSearchParams001
+     * @tc.number testNewURLSearchParams001
+     * @tc.desc   testNewURLSearchParams001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testNewURLSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(undefined);
     //   let result = params.toString()
@@ -1594,12 +1726,12 @@ export default function urlTest2() {
     // })
     //
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08900
-     * @tc.name: testUrlAppend001
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlAppend001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08900
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlAppend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
@@ -1610,12 +1742,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09000
-     * @tc.name: testUrlAppend002
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlAppend002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09000
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlAppend002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -1626,12 +1758,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09100
-     * @tc.name: testUrlAppend003
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlAppend003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09100
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlAppend003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -1642,12 +1774,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09200
-     * @tc.name: testUrlAppend004
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlAppend004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09200
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlAppend004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -1658,12 +1790,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09300
-     * @tc.name: testUrlAppend005
-     * @tc.desc: Appends a specified key/value pair as a new search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlAppend005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09300
+     * @tc.desc   Appends a specified key/value pair as a new search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlAppend005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -1681,6 +1813,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlAppend006
+     * @tc.number testUrlAppend006
+     * @tc.desc   testUrlAppend006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let params = new Url.URLParams(that.search)
@@ -1695,12 +1835,12 @@ export default function urlTest2() {
     // })
     //
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09500
-     * @tc.name: testUrlDelete001
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlDelete001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09500
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -1711,12 +1851,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09600
-     * @tc.name: testUrlDelete002
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlDelete002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09600
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlDelete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo大=1&bar=2');
@@ -1727,12 +1867,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09700
-     * @tc.name: testUrlDelete003
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlDelete003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09700
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlDelete003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo大=1&bar=2');
@@ -1743,12 +1883,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09800
-     * @tc.name: testUrlDelete004
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlDelete004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09800
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlDelete004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -1759,12 +1899,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09900
-     * @tc.name: testUrlDelete005
-     * @tc.desc: Deletes the given search parameter and its associated value,from the list of all search parameters.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlDelete005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09900
+     * @tc.desc   Deletes the given search parameter and its associated value,from the list of all search parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlDelete005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -1775,12 +1915,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10000
-     * @tc.name: testUrlEntries001
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlEntries001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10000
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -1797,12 +1937,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10100
-     * @tc.name: testUrlEntries002
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlEntries002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10100
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1818,12 +1958,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10200
-     * @tc.name: testUrlEntries003
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlEntries003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10200
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1840,12 +1980,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10300
-     * @tc.name: testUrlEntries004
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlEntries004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10300
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1861,12 +2001,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10400
-     * @tc.name: testUrlEntries005
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlEntries005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10400
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1883,12 +2023,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10500
-     * @tc.name: testUrl[Symbol.iterator]001
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrl[Symbol.iterator]001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10500
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrl[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -1904,12 +2044,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10600
-     * @tc.name: testUrl[Symbol.iterator]002
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrl[Symbol.iterator]002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10600
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrl[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1925,12 +2065,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10700
-     * @tc.name: testUrl[Symbol.iterator]003
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrl[Symbol.iterator]003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10700
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrl[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1947,12 +2087,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10800
-     * @tc.name: testUrl[Symbol.iterator]004
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrl[Symbol.iterator]004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10800
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrl[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1968,12 +2108,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_10900
-     * @tc.name: testUrl[Symbol.iterator]005
-     * @tc.desc: Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrl[Symbol.iterator]005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10900
+     * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrl[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -1990,12 +2130,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11000
-     * @tc.name: testUrlForEach001
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlForEach001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11000
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2009,12 +2149,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11100
-     * @tc.name: testUrlForEach002
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlForEach002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11100
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlForEach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -2028,12 +2168,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11200
-     * @tc.name: testUrlForEach003
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlForEach003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11200
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
@@ -2048,12 +2188,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11300
-     * @tc.name: testUrlForEach004
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlForEach004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11300
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlForEach004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
@@ -2067,12 +2207,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11400
-     * @tc.name: testUrlForEach005
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlForEach005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11400
+     * @tc.desc   Callback functions are used to traverse key-value pairs on the URLParams instance obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
@@ -2087,12 +2227,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11500
-     * @tc.name: testUrlForEach006
-     * @tc.desc: The second parameter of forEach is undefined or null.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlForEach006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11500
+     * @tc.desc   The second parameter of forEach is undefined or null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2110,12 +2250,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11600
-     * @tc.name: testUrlGet001
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGet001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11600
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2124,12 +2264,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11700
-     * @tc.name: testUrlGet002
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGet002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11700
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2138,12 +2278,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11800
-     * @tc.name: testUrlGet003
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGet003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11800
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2153,12 +2293,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_11900
-     * @tc.name: testUrlGet004
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGet004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_11900
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2167,12 +2307,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12000
-     * @tc.name: testUrlGet005
-     * @tc.desc: Returns the first value associated to the given search parameter.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGet005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12000
+     * @tc.desc   Returns the first value associated to the given search parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2182,12 +2322,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12100
-     * @tc.name: testUrlGetAll001
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGetAll001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12100
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGetAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
@@ -2197,12 +2337,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12200
-     * @tc.name: testUrlGetAll002
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGetAll002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12200
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGetAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&8=DEF")
@@ -2212,12 +2352,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12300
-     * @tc.name: testUrlGetAll003
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGetAll003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12300
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=da")
@@ -2227,12 +2367,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12400
-     * @tc.name: testUrlGetAll004
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGetAll004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12400
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGetAll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -2242,12 +2382,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12500
-     * @tc.name: testUrlGetAll005
-     * @tc.desc: Returns all key-value pairs associated with a given search parameter as an array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlGetAll005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12500
+     * @tc.desc   Returns all key-value pairs associated with a given search parameter as an array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlGetAll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -2257,12 +2397,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12600
-     * @tc.name: testUrlHas001
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHas001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12600
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -2271,12 +2411,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12700
-     * @tc.name: testUrlHas002
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHas002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12700
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
@@ -2285,12 +2425,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12800
-     * @tc.name: testUrlHas003
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHas003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12800
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
@@ -2300,12 +2440,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_12900
-     * @tc.name: testUrlHas004
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHas004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_12900
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
@@ -2314,12 +2454,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13000
-     * @tc.name: testUrlHas005
-     * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHas005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13000
+     * @tc.desc   Returns a Boolean that indicates whether a parameter with the specified name exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHas005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
@@ -2336,6 +2476,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlHas006
+     * @tc.number testUrlHas006
+     * @tc.desc   testUrlHas006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams("小=value1&￥=value2&key3=大")
     //   params.append("￥","ACA")
@@ -2350,12 +2498,12 @@ export default function urlTest2() {
     // })
     //
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13200
-     * @tc.name: testUrlKeys001
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlKeys001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13200
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlKeys001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
@@ -2369,12 +2517,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13300
-     * @tc.name: testUrlKeys002
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlKeys002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13300
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlKeys002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
@@ -2388,12 +2536,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13400
-     * @tc.name: testUrlKeys003
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlKeys003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13400
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlKeys003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
@@ -2407,12 +2555,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13500
-     * @tc.name: testUrlKeys004
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlKeys004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13500
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlKeys004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六");
@@ -2426,12 +2574,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13600
-     * @tc.name: testUrlKeys005
-     * @tc.desc: Returns an iterator allowing to go through all keys contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlKeys005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13600
+     * @tc.desc   Returns an iterator allowing to go through all keys contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlKeys005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六&key5=发");
@@ -2445,14 +2593,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13700
-     * @tc.name: testUrlSet001
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSet001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13700
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -2463,14 +2609,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13800
-     * @tc.name: testUrlSet002
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSet002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13800
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -2480,14 +2624,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13900
-     * @tc.name: testUrlSet003
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSet003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13900
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -2497,14 +2639,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14000
-     * @tc.name: testUrlSet004
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSet004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14000
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -2515,14 +2655,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14100
-     * @tc.name: testUrlSet005
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSet005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14100
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -2541,6 +2679,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSet006
+     * @tc.number testUrlSet006
+     * @tc.desc   testUrlSet006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -2554,14 +2700,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14300
-     * @tc.name: testUrlSet006
-     * @tc.desc: Sets the value associated with a given search parameter to the given value.
-     * If there were several matching values, this method deletes the others.
-     * If the search parameter doesn't exist, this method creates it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSet007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14300
+     * @tc.desc   Sets the value associated with a given search parameter to the given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams();
@@ -2571,12 +2715,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14400
-     * @tc.name: testUrlSort001
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSort001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14400
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&3=value3&2=key2");
@@ -2586,12 +2730,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14500
-     * @tc.name: testUrlSort002
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSort002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14500
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSort002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("a=value1&c=value2&b=key2");
@@ -2601,12 +2745,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14600
-     * @tc.name: testUrlSort003
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSort003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14600
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSort003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=33");
@@ -2617,12 +2761,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14700
-     * @tc.name: testUrlSort004
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSort004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14700
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSort004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&3=value3&2=key2&4=key4");
@@ -2632,12 +2776,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14800
-     * @tc.name: testUrlSort005
-     * @tc.desc: Sort all key/value pairs contained in this obj in place and return undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSort005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14800
+     * @tc.desc   Sort all key/value pairs contained in this obj in place and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSort005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("a=value1&c=value2&4=key4&b=key2");
@@ -2647,12 +2791,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14900
-     * @tc.name: testUrlValues001
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlValues001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_14900
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -2666,12 +2810,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15000
-     * @tc.name: testUrlValues002
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlValues002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15000
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -2685,12 +2829,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15100
-     * @tc.name: testUrlValues003
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlValues003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15100
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -2705,12 +2849,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15200
-     * @tc.name: testUrlValues004
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlValues004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15200
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
@@ -2724,12 +2868,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15300
-     * @tc.name: testUrlValues005
-     * @tc.desc: Returns an iterator allowing to go through all values contained in this obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlValues005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15300
+     * @tc.desc   Returns an iterator allowing to go through all values contained in this obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4&5=key5")
@@ -2743,12 +2887,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15400
-     * @tc.name: testUrlSearchParamsToString001
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsToString001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15400
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
@@ -2757,12 +2901,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15500
-     * @tc.name: testUrlSearchParamsToString002
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsToString002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15500
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大")
@@ -2772,12 +2916,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15600
-     * @tc.name: testUrlSearchParamsToString003
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsToString003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15600
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("￥=)")
@@ -2787,12 +2931,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15700
-     * @tc.name: testUrlSearchParamsToString004
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsToString004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15700
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
@@ -2801,12 +2945,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15800
-     * @tc.name: testUrlSearchParamsToString005
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsToString005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15800
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大&4=key4&5=key5")
@@ -2816,12 +2960,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_15900
-     * @tc.name: testUrlSearchParamsConstruction001
-     * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsConstruction001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_15900
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('?user=abc&query=xyz')
@@ -2837,6 +2981,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParamsConstruction002
+     * @tc.number testUrlSearchParamsConstruction002
+     * @tc.desc   testUrlSearchParamsConstruction002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams({
     //     user: 'abc',
@@ -2847,12 +2999,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16100
-     * @tc.name: testUrlSearchParamsConstruction003
-     * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsConstruction003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16100
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsConstruction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams([
@@ -2872,6 +3024,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParamsConstruction004
+     * @tc.number testUrlSearchParamsConstruction004
+     * @tc.desc   testUrlSearchParamsConstruction004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const map: Map<K,V> = new Map<K,V>();
     //   map.set('user', 'abc');
@@ -2889,6 +3049,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParamsConstruction005
+     * @tc.number testUrlSearchParamsConstruction005
+     * @tc.desc   testUrlSearchParamsConstruction005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParamsConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const getQueryPairs = () => [
     //     ['user', 'abc'],
@@ -2901,12 +3069,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16400
-     * @tc.name: testUrlSearchParamsConstruction006
-     * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsConstruction006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16400
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams()
@@ -2923,6 +3091,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParamsConstruction007
+     * @tc.number testUrlSearchParamsConstruction007
+     * @tc.desc   testUrlSearchParamsConstruction007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParamsConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(param)
     //   params.append('abcde','fghki')
@@ -2931,12 +3107,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16600
-     * @tc.name: testUrlSearchParamsConstruction008
-     * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearchParamsConstruction008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16600
+     * @tc.desc   A parameterized constructor used to create an URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearchParamsConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams()
@@ -2946,12 +3122,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16700
-     * @tc.name: testNewUrl001
-     * @tc.desc:  The second parameter of Url construction is undefined or null.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNewUrl001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16700
+     * @tc.desc   The second parameter of Url construction is undefined or null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNewUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment', undefined)
@@ -2963,12 +3139,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16800
-     * @tc.name: testUrlToString001
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16800
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -2977,12 +3153,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16900
-     * @tc.name: testUrlToString002
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16900
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file')
@@ -2991,12 +3167,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17000
-     * @tc.name: testUrlToString003
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17000
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080#fragment')
@@ -3005,12 +3181,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17100
-     * @tc.name: testUrlToString004
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17100
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http1://host/directory/file?query#fragment')
@@ -3019,12 +3195,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17200
-     * @tc.name: testUrlToString005
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17200
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http:host:8080/directory/file?query#fragment')
@@ -3033,12 +3209,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17300
-     * @tc.name: testUrlToString006
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17300
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://255.16581375')
@@ -3047,12 +3223,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17400
-     * @tc.name: testUrlToString007
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17400
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://192.1.')
@@ -3061,12 +3237,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17500
-     * @tc.name: testUrlToString008
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17500
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://192.1..')
@@ -3075,12 +3251,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17600
-     * @tc.name: testUrlToString009
-     * @tc.desc:  Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToString009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17600
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://192.95645654354.8.f')
@@ -3089,12 +3265,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17700
-     * @tc.name: testUrlHref001
-     * @tc.desc:  Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHref001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17700
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHref001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3103,12 +3279,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17800
-     * @tc.name: testUrlHref002
-     * @tc.desc:  Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHref002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17800
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHref002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://host:8080/directory/file?query#fragment')
@@ -3117,12 +3293,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_17900
-     * @tc.name: testUrlHref003
-     * @tc.desc:  Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHref003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_17900
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHref003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080')
@@ -3131,12 +3307,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18000
-     * @tc.name: testUrlHref004
-     * @tc.desc:  Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHref004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18000
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHref004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3146,12 +3322,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18100
-     * @tc.name: testUrlHref005
-     * @tc.desc:  Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHref005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18100
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHref005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3161,12 +3337,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18200
-     * @tc.name: testUrlOrigin001
-     * @tc.desc:  Gets the read-only serialization of the URL's origin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlOrigin001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18200
+     * @tc.desc   Gets the read-only serialization of the URL's origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3175,12 +3351,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18300
-     * @tc.name: testUrlOrigin002
-     * @tc.desc:  Gets the read-only serialization of the URL's origin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlOrigin002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18300
+     * @tc.desc   Gets the read-only serialization of the URL's origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlOrigin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:11/directory/file?query#fragment')
@@ -3189,12 +3365,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18400
-     * @tc.name: testUrlOrigin003
-     * @tc.desc:  Gets the read-only serialization of the URL's origin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlOrigin003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18400
+     * @tc.desc   Gets the read-only serialization of the URL's origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlOrigin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host/directory/file?query#fragment')
@@ -3203,12 +3379,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18500
-     * @tc.name: testUrlOrigin004
-     * @tc.desc:  Gets the read-only serialization of the URL's origin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlOrigin004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18500
+     * @tc.desc   Gets the read-only serialization of the URL's origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlOrigin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@aaaasshost:212/directory/file?query#fragment')
@@ -3217,12 +3393,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18600
-     * @tc.name: testUrlOrigin005
-     * @tc.desc:  Gets the read-only serialization of the URL's origin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlOrigin005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18600
+     * @tc.desc   Gets the read-only serialization of the URL's origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlOrigin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host22:100#fragment')
@@ -3231,12 +3407,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18700
-     * @tc.name: testUrlProtocol001
-     * @tc.desc: Gets and sets the protocol portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlProtocol001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18700
+     * @tc.desc   Gets and sets the protocol portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlProtocol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3245,12 +3421,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18800
-     * @tc.name: testUrlProtocol002
-     * @tc.desc: Gets and sets the protocol portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlProtocol002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18800
+     * @tc.desc   Gets and sets the protocol portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlProtocol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http1://username:password@host:8080/directory/file?query#fragment')
@@ -3259,12 +3435,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_18900
-     * @tc.name: testUrlProtocol003
-     * @tc.desc: Gets and sets the protocol portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlProtocol003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_18900
+     * @tc.desc   Gets and sets the protocol portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlProtocol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://username:password@host:8080/directory/file?query#fragment')
@@ -3273,12 +3449,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19000
-     * @tc.name: testUrlProtocol004
-     * @tc.desc: Gets and sets the protocol portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlProtocol004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19000
+     * @tc.desc   Gets and sets the protocol portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlProtocol004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3288,12 +3464,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19100
-     * @tc.name: testUrlProtocol005
-     * @tc.desc: Gets and sets the protocol portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlProtocol005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19100
+     * @tc.desc   Gets and sets the protocol portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlProtocol005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3303,12 +3479,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19200
-     * @tc.name: testUrlUsername001
-     * @tc.desc: Gets and sets the username portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlUsername001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19200
+     * @tc.desc   Gets and sets the username portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlUsername001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3317,12 +3493,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19300
-     * @tc.name: testUrlUsername002
-     * @tc.desc: Gets and sets the username portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlUsername002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19300
+     * @tc.desc   Gets and sets the username portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlUsername002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://zhao:password@host:8080/directory/file?query#fragment')
@@ -3331,12 +3507,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19400
-     * @tc.name: testUrlUsername003
-     * @tc.desc: Gets and sets the username portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlUsername003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19400
+     * @tc.desc   Gets and sets the username portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlUsername003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3346,12 +3522,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19500
-     * @tc.name: testUrlUsername004
-     * @tc.desc: Gets and sets the username portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlUsername004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19500
+     * @tc.desc   Gets and sets the username portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlUsername004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3361,12 +3537,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19600
-     * @tc.name: testUrlUsername005
-     * @tc.desc: Gets and sets the username portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlUsername005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19600
+     * @tc.desc   Gets and sets the username portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlUsername005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://usme@host:8080/directory/file?query#fragment')
@@ -3375,12 +3551,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19700
-     * @tc.name: testUrlPassword001
-     * @tc.desc: Gets and sets the password portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPassword001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19700
+     * @tc.desc   Gets and sets the password portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPassword001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:11@host:8080/directory/file?query#fragment')
@@ -3389,12 +3565,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19800
-     * @tc.name: testUrlPassword002
-     * @tc.desc: Gets and sets the password portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPassword002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19800
+     * @tc.desc   Gets and sets the password portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPassword002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:23aa@host:8080/directory/file?query#fragment')
@@ -3403,12 +3579,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_19900
-     * @tc.name: testUrlPassword003
-     * @tc.desc: Gets and sets the password portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPassword003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_19900
+     * @tc.desc   Gets and sets the password portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPassword003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username@host:8080/directory/file?query#fragment')
@@ -3417,12 +3593,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20000
-     * @tc.name: testUrlPassword004
-     * @tc.desc: Gets and sets the password portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPassword004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20000
+     * @tc.desc   Gets and sets the password portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPassword004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3432,12 +3608,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20100
-     * @tc.name: testUrlPassword005
-     * @tc.desc: Gets and sets the password portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPassword005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20100
+     * @tc.desc   Gets and sets the password portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPassword005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3447,12 +3623,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20200
-     * @tc.name: testUrlHost001
-     * @tc.desc: Gets and sets the host portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHost001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20200
+     * @tc.desc   Gets and sets the host portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHost001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3461,12 +3637,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20300
-     * @tc.name: testUrlHost002
-     * @tc.desc: Gets and sets the host portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHost002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20300
+     * @tc.desc   Gets and sets the host portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHost002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@hosthost/directory/file?query#fragment')
@@ -3475,12 +3651,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20400
-     * @tc.name: testUrlHost003
-     * @tc.desc: Gets and sets the host portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHost003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20400
+     * @tc.desc   Gets and sets the host portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHost003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:199/directory/file?query#fragment')
@@ -3489,12 +3665,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20500
-     * @tc.name: testUrlHost004
-     * @tc.desc: Gets and sets the host portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHost004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20500
+     * @tc.desc   Gets and sets the host portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHost004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3504,12 +3680,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20600
-     * @tc.name: testUrlHost005
-     * @tc.desc: Gets and sets the host portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHost005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20600
+     * @tc.desc   Gets and sets the host portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHost005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3519,12 +3695,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20700
-     * @tc.name: testUrlHostname001
-     * @tc.desc: Gets and sets the host name portion of the URL，not include the port.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHostname001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20700
+     * @tc.desc   Gets and sets the host name portion of the URL，not include the port.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHostname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3533,12 +3709,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20800
-     * @tc.name: testUrlHostname002
-     * @tc.desc: Gets and sets the host name portion of the URL，not include the port.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHostname002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20800
+     * @tc.desc   Gets and sets the host name portion of the URL，not include the port.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHostname002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host123:8080/directory/file?query#fragment')
@@ -3547,12 +3723,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_20900
-     * @tc.name: testUrlHostname003
-     * @tc.desc: Gets and sets the host name portion of the URL，not include the port.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHostname003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_20900
+     * @tc.desc   Gets and sets the host name portion of the URL，not include the port.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHostname003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@885ssa:8080/directory/file?query#fragment')
@@ -3561,12 +3737,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21000
-     * @tc.name: testUrlHostname004
-     * @tc.desc: Gets and sets the host name portion of the URL，not include the port.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHostname004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21000
+     * @tc.desc   Gets and sets the host name portion of the URL，not include the port.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHostname004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3576,12 +3752,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21100
-     * @tc.name: testUrlHostname005
-     * @tc.desc: Gets and sets the host name portion of the URL，not include the port.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHostname005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21100
+     * @tc.desc   Gets and sets the host name portion of the URL，not include the port.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHostname005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3591,12 +3767,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21200
-     * @tc.name: testUrlPort001
-     * @tc.desc: Gets and sets the port portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPort001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21200
+     * @tc.desc   Gets and sets the port portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3605,12 +3781,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21300
-     * @tc.name: testUrlPort002
-     * @tc.desc: Gets and sets the port portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPort002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21300
+     * @tc.desc   Gets and sets the port portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPort002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:100/directory/file?query#fragment')
@@ -3619,12 +3795,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21400
-     * @tc.name: testUrlPort003
-     * @tc.desc: Gets and sets the port portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPort003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21400
+     * @tc.desc   Gets and sets the port portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPort003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host/directory/file?query#fragment')
@@ -3633,12 +3809,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21500
-     * @tc.name: testUrlPort004
-     * @tc.desc: Gets and sets the port portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPort004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21500
+     * @tc.desc   Gets and sets the port portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPort004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3648,12 +3824,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21600
-     * @tc.name: testUrlPort005
-     * @tc.desc: Gets and sets the port portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPort005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21600
+     * @tc.desc   Gets and sets the port portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPort005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3663,12 +3839,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21700
-     * @tc.name: testUrlPathname001
-     * @tc.desc: Gets and sets the path portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPathname001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21700
+     * @tc.desc   Gets and sets the path portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPathname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3677,12 +3853,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21800
-     * @tc.name: testUrlPathname002
-     * @tc.desc: Gets and sets the path portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPathname002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21800
+     * @tc.desc   Gets and sets the path portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPathname002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory?query#fragment')
@@ -3691,12 +3867,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_21900
-     * @tc.name: testUrlPathname003
-     * @tc.desc: Gets and sets the path portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPathname003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_21900
+     * @tc.desc   Gets and sets the path portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPathname003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080?query#fragment')
@@ -3705,12 +3881,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22000
-     * @tc.name: testUrlPathname004
-     * @tc.desc: Gets and sets the path portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPathname004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22000
+     * @tc.desc   Gets and sets the path portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPathname004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3720,12 +3896,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22100
-     * @tc.name: testUrlPathname005
-     * @tc.desc: Gets and sets the path portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPathname005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22100
+     * @tc.desc   Gets and sets the path portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPathname005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
@@ -3735,12 +3911,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22200
-     * @tc.name: testUrlSearch001
-     * @tc.desc: Gets and sets the serialized query portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearch001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22200
+     * @tc.desc   Gets and sets the serialized query portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq#fragment')
@@ -3749,12 +3925,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22300
-     * @tc.name: testUrlSearch002
-     * @tc.desc: Gets and sets the serialized query portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearch002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22300
+     * @tc.desc   Gets and sets the serialized query portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq&ll=pp#fragment')
@@ -3763,12 +3939,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22400
-     * @tc.name: testUrlSearch003
-     * @tc.desc: Gets and sets the serialized query portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearch003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22400
+     * @tc.desc   Gets and sets the serialized query portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?ppp9875=77#fragment')
@@ -3777,12 +3953,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22500
-     * @tc.name: testUrlSearch004
-     * @tc.desc: Gets and sets the serialized query portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearch004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22500
+     * @tc.desc   Gets and sets the serialized query portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearch004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq#fragment')
@@ -3792,12 +3968,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22600
-     * @tc.name: testUrlSearch005
-     * @tc.desc: Gets and sets the serialized query portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearch005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22600
+     * @tc.desc   Gets and sets the serialized query portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearch005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq#fragment')
@@ -3807,12 +3983,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22700
-     * @tc.name: testUrlHash001
-     * @tc.desc: Gets and sets the fragment portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHash001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22700
+     * @tc.desc   Gets and sets the fragment portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHash001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#fragment')
@@ -3821,12 +3997,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22800
-     * @tc.name: testUrlHash002
-     * @tc.desc: Gets and sets the fragment portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHash002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22800
+     * @tc.desc   Gets and sets the fragment portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHash002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#fragment')
@@ -3836,12 +4012,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_22900
-     * @tc.name: testUrlHash003
-     * @tc.desc: Gets and sets the fragment portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHash003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_22900
+     * @tc.desc   Gets and sets the fragment portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHash003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#poiu')
@@ -3850,12 +4026,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23000
-     * @tc.name: testUrlHash004
-     * @tc.desc: Gets and sets the fragment portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHash004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23000
+     * @tc.desc   Gets and sets the fragment portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHash004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp')
@@ -3864,12 +4040,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23100
-     * @tc.name: testUrlHash005
-     * @tc.desc: Gets and sets the fragment portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHash005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23100
+     * @tc.desc   Gets and sets the fragment portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHash005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#fragment')
@@ -3886,6 +4062,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParams001
+     * @tc.number testUrlSearchParams001
+     * @tc.desc   testUrlSearchParams001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
     //   const params = that.searchParams
@@ -3901,6 +4085,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParams002
+     * @tc.number testUrlSearchParams002
+     * @tc.desc   testUrlSearchParams002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let params = that.searchParams
@@ -3917,6 +4109,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParams003
+     * @tc.number testUrlSearchParams003
+     * @tc.desc   testUrlSearchParams003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
     //   let params = that.searchParams
@@ -3932,6 +4132,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParams004
+     * @tc.number testUrlSearchParams004
+     * @tc.desc   testUrlSearchParams004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let params = that.searchParams
@@ -3948,6 +4156,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParams005
+     * @tc.number testUrlSearchParams005
+     * @tc.desc   testUrlSearchParams005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
     //   let params = that.searchParams
@@ -3963,6 +4179,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlURLParams001
+     * @tc.number testUrlURLParams001
+     * @tc.desc   testUrlURLParams001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
     //   const seach = that.params
@@ -3978,6 +4202,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlURLParams002
+     * @tc.number testUrlURLParams002
+     * @tc.desc   testUrlURLParams002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let seach = that.params
@@ -3994,6 +4226,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlURLParams003
+     * @tc.number testUrlURLParams003
+     * @tc.desc   testUrlURLParams003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
     //   let seach = that.params
@@ -4009,6 +4249,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlURLParams004
+     * @tc.number testUrlURLParams004
+     * @tc.desc   testUrlURLParams004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlURLParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let seach = that.params
@@ -4025,6 +4273,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlURLParams005
+     * @tc.number testUrlURLParams005
+     * @tc.desc   testUrlURLParams005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlURLParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
     //   let seach = that.params
@@ -4033,12 +4289,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24200
-     * @tc.name: testUrlToJson001
-     * @tc.desc: Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToJson001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24200
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToJson001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#qwer=da')
@@ -4047,12 +4303,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24300
-     * @tc.name: testUrlToJson002
-     * @tc.desc: Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToJson002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24300
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToJson002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://host:8080/directory/file?query=pppppp#qwer=da')
@@ -4061,12 +4317,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24400
-     * @tc.name: testUrlToJson003
-     * @tc.desc: Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToJson003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24400
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToJson003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080')
@@ -4075,12 +4331,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24500
-     * @tc.name: testUrlToJson004
-     * @tc.desc: Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToJson004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24500
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToJson004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http11://username:password@host:8080?query=pppppp#qwer=da')
@@ -4089,12 +4345,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24600
-     * @tc.name: testUrlToJson005
-     * @tc.desc: Returns the serialized URL as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlToJson005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24600
+     * @tc.desc   Returns the serialized URL as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlToJson005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory')
@@ -4103,12 +4359,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24700
-     * @tc.name: testUrlIPv6001
-     * @tc.desc: Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlIPv6001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24700
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlIPv6001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html')
@@ -4117,12 +4373,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24800
-     * @tc.name: testUrlIPv6002
-     * @tc.desc: Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlIPv6002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24800
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlIPv6002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://[1080:0:0:0:8:800:200C:417A]/index.html')
@@ -4131,12 +4387,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24900
-     * @tc.name: testUrlIPv6003
-     * @tc.desc: Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlIPv6003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24900
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlIPv6003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://[::FFFF:129.144.52.38]:80/index.html')
@@ -4145,12 +4401,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25000
-     * @tc.name: testUrlIPv4001
-     * @tc.desc: Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlIPv4001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25000
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlIPv4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://0377.0xff.255.1:80/index.html')
@@ -4159,12 +4415,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25100
-     * @tc.name: testUrlIPv4002
-     * @tc.desc: Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlIPv4002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25100
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlIPv4002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://0377.0xff.255.g/index.html')
@@ -4173,12 +4429,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25200
-     * @tc.name: testUrlIPv4003
-     * @tc.desc: Gets and sets the serialized URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlIPv4003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25200
+     * @tc.desc   Gets and sets the serialized URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlIPv4003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://190.254.245.9:80/index.html')
@@ -4187,12 +4443,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25300
-     * @tc.name: testUrlConstruction001
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://developer.mozilla.org',)
@@ -4201,12 +4457,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25400
-     * @tc.name: testUrlConstruction002
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://developer.mozilla.org','flie:/developer.mozilla.org')
@@ -4215,12 +4471,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25500
-     * @tc.name: testUrlConstruction003
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://developer.mozilla.org','ftp://www.example.com')
@@ -4229,12 +4485,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25600
-     * @tc.name: testUrlConstruction004
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25600
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL(' ', 'http://www.example.com')
@@ -4243,12 +4499,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25700
-     * @tc.name: testUrlConstruction005
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25700
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('.', 'http://www.example.com')
@@ -4257,12 +4513,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25800
-     * @tc.name: testUrlConstruction006
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25800
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('../h:', 'http://www.example.com')
@@ -4271,12 +4527,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_25900
-     * @tc.name: testUrlConstruction007
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_25900
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('/sca/./path/path/../scasa/jjjjj', 'http://www.example.com')
@@ -4285,12 +4541,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26000
-     * @tc.name: testUrlConstruction008
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_26000
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('/../sca/./path/path/../scasa/jjjjj', 'http://www.example.com')
@@ -4299,12 +4555,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26100
-     * @tc.name: testUrlConstruction009
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_26100
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL( '/../sca/./path/path/../scasa/jjjjj', 'file://www.example.com')
@@ -4313,12 +4569,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26200
-     * @tc.name: testUrlConstruction010
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_26200
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('/../sca/./path/path/../scasa/jjjjj', 'file1://www.example.com')
@@ -4327,12 +4583,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26300
-     * @tc.name: testUrlConstruction011
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_26300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
@@ -4342,12 +4598,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26400
-     * @tc.name: testUrlConstruction012
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_26400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
@@ -4357,12 +4613,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26500
-     * @tc.name: testUrlConstruction013
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlConstruction013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_26500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlConstruction013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
@@ -4379,6 +4635,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlConstruction014
+     * @tc.number testUrlConstruction014
+     * @tc.desc   testUrlConstruction014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlConstruction014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
     //   const result = params.searchParams.toString();
@@ -4393,6 +4657,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL001
+     * @tc.number testUrlparseURL001
+     * @tc.desc   testUrlparseURL001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4409,6 +4681,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL002
+     * @tc.number testUrlparseURL002
+     * @tc.desc   testUrlparseURL002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4425,6 +4705,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL003
+     * @tc.number testUrlparseURL003
+     * @tc.desc   testUrlparseURL003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4441,6 +4729,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL004
+     * @tc.number testUrlparseURL004
+     * @tc.desc   testUrlparseURL004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4457,6 +4753,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL005
+     * @tc.number testUrlparseURL005
+     * @tc.desc   testUrlparseURL005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4473,6 +4777,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL006
+     * @tc.number testUrlparseURL006
+     * @tc.desc   testUrlparseURL006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4489,6 +4801,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL007
+     * @tc.number testUrlparseURL007
+     * @tc.desc   testUrlparseURL007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4511,6 +4831,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL008
+     * @tc.number testUrlparseURL008
+     * @tc.desc   testUrlparseURL008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4534,6 +4862,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL009
+     * @tc.number testUrlparseURL009
+     * @tc.desc   testUrlparseURL009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4557,6 +4893,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0010
+     * @tc.number testUrlparseURL0010
+     * @tc.desc   testUrlparseURL0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4580,6 +4924,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0011
+     * @tc.number testUrlparseURL0011
+     * @tc.desc   testUrlparseURL0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4599,6 +4951,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0012
+     * @tc.number testUrlparseURL0012
+     * @tc.desc   testUrlparseURL0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4615,6 +4975,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0013
+     * @tc.number testUrlparseURL0013
+     * @tc.desc   testUrlparseURL0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4631,6 +4999,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0014
+     * @tc.number testUrlparseURL0014
+     * @tc.desc   testUrlparseURL0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4647,6 +5023,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0015
+     * @tc.number testUrlparseURL0015
+     * @tc.desc   testUrlparseURL0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4663,6 +5047,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0016
+     * @tc.number testUrlparseURL0016
+     * @tc.desc   testUrlparseURL0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4679,6 +5071,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0017
+     * @tc.number testUrlparseURL0017
+     * @tc.desc   testUrlparseURL0017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4695,6 +5095,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0018
+     * @tc.number testUrlparseURL0018
+     * @tc.desc   testUrlparseURL0018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4711,6 +5119,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0019
+     * @tc.number testUrlparseURL0019
+     * @tc.desc   testUrlparseURL0019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4727,6 +5143,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0020
+     * @tc.number testUrlparseURL0020
+     * @tc.desc   testUrlparseURL0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4743,6 +5167,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0021
+     * @tc.number testUrlparseURL0021
+     * @tc.desc   testUrlparseURL0021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4765,6 +5197,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0022
+     * @tc.number testUrlparseURL0022
+     * @tc.desc   testUrlparseURL0022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4787,6 +5227,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0023
+     * @tc.number testUrlparseURL0023
+     * @tc.desc   testUrlparseURL0023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4809,6 +5257,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0024
+     * @tc.number testUrlparseURL0024
+     * @tc.desc   testUrlparseURL0024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4831,6 +5287,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0025
+     * @tc.number testUrlparseURL0025
+     * @tc.desc   testUrlparseURL0025
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4846,12 +5310,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29200
-     * @tc.name: testUrlparseURL0026
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29200
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params2 =  Url.URL.parseURL('http://192.0x.9.')
@@ -4860,12 +5324,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29300
-     * @tc.name: testUrlparseURL0027
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let urlObj =  Url.URL.parseURL('../2/2.html', 'http://xxx.com/hem1/1/1.html')
@@ -4874,12 +5338,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29400
-     * @tc.name: testUrlparseURL0028
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let urlObj =  Url.URL.parseURL('../2/2.html', 'http://xxx.com')
@@ -4888,12 +5352,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29500
-     * @tc.name: testUrlparseURL0029
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strUrl = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksv" +
@@ -4908,12 +5372,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29600
-     * @tc.name: testUrlparseURL0030
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29600
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strUrl = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksv" +
@@ -4928,12 +5392,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29700
-     * @tc.name: testUrlparseURL0031
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29700
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strUrl = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksv" +
@@ -4947,12 +5411,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29800
-     * @tc.name: testUrlparseURL0032
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29800
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strUrl = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksv" +
@@ -4966,12 +5430,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29900
-     * @tc.name: testUrlparseURL0033
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_29900
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strUrl = "?newsId=HB-1-snhs/index_v2-s&urlInfo=%7B%22hot_topic%22%3A%221%22%2C%22keyword%22%3A%22%25" +
@@ -4989,12 +5453,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30000
-     * @tc.name: testUrlparseURL0034
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30000
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strUrl = '?newsId=HB-1-snhs/index_v2-search&urlInfo=%7B%22hot_topic%22%3A%221%22%2C%22keyword%22%3A%22' +
@@ -5015,12 +5479,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30100
-     * @tc.name: testUrlparseURL0035
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0035
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30100
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const u = Url.URL.parseURL(`https://a.cn?phone=lkasdjfj+d sa+=d+d`)
@@ -5034,12 +5498,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30200
-     * @tc.name: testUrlparseURL0036
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0036
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30200
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const schema = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my" +
@@ -5052,12 +5516,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30300
-     * @tc.name: testUrlparseURL0037
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0037
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let urlz = Url.URL.parseURL('eleme://web?url=eleme%3A%2F%2Fweb%3Fur1%3Dhttps%253A%252F%252Fwww.ba+idu.com')
@@ -5069,12 +5533,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30400
-     * @tc.name: testUrlparseURL0038
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0038
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let urlobj = Url.URL.parseURL('https://developer.exampleUrl/?fod=1&bard=2#ss');
@@ -5085,12 +5549,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30500
-     * @tc.name: testUrlparseURL0039
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0039
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let urlString = '?url=http%3A%2F%2Ftest-aweme.snssdk.com%2Ffalcon%2Fjsb_tester_web%2Fdmt%2F%3FcaseId%3D%26' +
@@ -5113,12 +5577,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30600
-     * @tc.name: testUrlparseURL0040
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30600
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let urlString = '?url='
@@ -5138,6 +5602,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0041
+     * @tc.number testUrlparseURL0041
+     * @tc.desc   testUrlparseURL0041
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86`)
     //   const phone2 = u2.params.get('phone')
@@ -5153,6 +5625,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0042
+     * @tc.number testUrlparseURL0042
+     * @tc.desc   testUrlparseURL0042
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86+9`)
     //   const phone2 = u2.params.get('phone')
@@ -5166,12 +5646,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30900
-     * @tc.name: testUrlparseURL0043
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0043
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30900
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26');
@@ -5180,12 +5660,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31000
-     * @tc.name: testUrlparseURL0044
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0044
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31000
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26%7D');
@@ -5195,12 +5675,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31100
-     * @tc.name: testUrlparseURL0045
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31100
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
@@ -5212,12 +5692,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31200
-     * @tc.name: testUrlparseURL0046
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0046
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31200
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优');
@@ -5227,12 +5707,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31300
-     * @tc.name: testUrlparseURL0047
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0047
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd/aa#xx=%26优优');
@@ -5240,14 +5720,14 @@ export default function urlTest2() {
       expect(uu.toString()).assertEqual(res);
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31400
-     * @tc.name: testUrlparseURL0048
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+      /**
+       * @tc.name   testUrlparseURL0048
+       * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31400
+       * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('testUrlparseURL0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
@@ -5258,12 +5738,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31500
-     * @tc.name: testUrlparseURL0049
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0049
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://k中%:ss8@www.baidu.com/s#a%jd中文测试q/aa?xx=%26%E4%B8%AD');
@@ -5272,12 +5752,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31600
-     * @tc.name: testUrlparseURL0050
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31600
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://k中%:ss8@www.baidu.com/s#a%jd中文测试q/aa?xx=%26%E4%B8%AD');
@@ -5285,12 +5765,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31700
-     * @tc.name: testUrlparseURL0051
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0051
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31700
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://k中%:ss8@www.baidu.com/s#a%jd中文测试q/aa?xx=%26%E4%B8%AD');
@@ -5302,12 +5782,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31800
-     * @tc.name: testUrlparseURL0052
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0052
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31800
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://k中%:ss8@www.baidu.com/s#a%jd中文测试q/aa?xx=%26%E4%B8%AD');
@@ -5317,12 +5797,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_31900
-     * @tc.name: testUrlparseURL0053
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0053
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31900
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
@@ -5334,12 +5814,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32000
-     * @tc.name: testUrlparseURL0054
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0054
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32000
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let objParams = new Url.URLParams("?a%20b=a&a%2Bb=a1");
@@ -5353,12 +5833,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32100
-     * @tc.name: testUrlparseURL0055
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0055
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32100
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let objParams = new Url.URLParams();
@@ -5368,12 +5848,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32200
-     * @tc.name: testUrlparseURL0056
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0056
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32200
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let objParams = new Url.URLParams('1=3&1=6');
@@ -5386,12 +5866,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32300
-     * @tc.name: testUrlparseURL0057
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0057
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let objParams = new Url.URLParams('?key=first2');
@@ -5407,12 +5887,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32400
-     * @tc.name: testUrlparseURL0058
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0058
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const objParams = new Url.URLParams('key=a   b   c');
@@ -5422,12 +5902,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32500
-     * @tc.name: testUrlparseURL0059
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0059
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const objParams = new Url.URLParams('key=a%20b %3D%2Bc++=p%26p%25%E5%A4%A7');
@@ -5440,12 +5920,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32600
-     * @tc.name: testUrlparseURL0060
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32600
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://sssw.dasf?key=a%20b %3D%2Bc++=p%26p%25%E5%A4%A7!()~{}[]%大');
@@ -5460,12 +5940,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32700
-     * @tc.name: testUrlparseURL0061
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0061
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32700
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://sssw.dasf');
@@ -5474,12 +5954,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32800
-     * @tc.name: testUrlparseURL0062
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0062
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32800
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://sssw.dasf?9995=sss');
@@ -5488,12 +5968,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_32900
-     * @tc.name: testUrlparseURL0063
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0063
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_32900
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = new Url.URLParams('key2=val&key')
@@ -5509,6 +5989,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlparseURL0064
+     * @tc.number testUrlparseURL0064
+     * @tc.desc   testUrlparseURL0064
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlparseURL0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const obj = new Url.URLParams('')
     //   obj.sort();
@@ -5520,12 +6008,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33100
-     * @tc.name: testUrlparseURL0065
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0065
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33100
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://sssw.dasf?key2=val&key');
@@ -5538,12 +6026,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33200
-     * @tc.name: testUrlparseURL0066
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0066
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33200
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/path?query#fagmengt😀');
@@ -5551,12 +6039,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33300
-     * @tc.name: testUrlparseURL0067
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0067
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/path?query#fagme🆒ngt😀');
@@ -5564,12 +6052,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33400
-     * @tc.name: testUrlparseURL0068
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0068
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/p🤣at看ヾ(≧▽≦*)oh?query#fagmengt');
@@ -5579,12 +6067,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33500
-     * @tc.name: testUrlparseURL0069
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0069
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://us啊🌹er:pass@www.test.com/patoh?query#fagmengt');
@@ -5593,12 +6081,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33600
-     * @tc.name: testUrlparseURL0070
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33600
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh?query#fagmengt');
@@ -5607,12 +6095,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33700
-     * @tc.name: testUrlparseURL0071
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33700
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh?query#fagmengt');
@@ -5621,12 +6109,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33800
-     * @tc.name: testUrlparseURL0072
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0072
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33800
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh?query#fagmengt');
@@ -5635,12 +6123,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33900
-     * @tc.name: testUrlparseURL0073
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0073
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33900
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh?query#fagmengt');
@@ -5649,12 +6137,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34000
-     * @tc.name: testUrlparseURL0074
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0074
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34000
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh?query#fagmengt');
@@ -5663,12 +6151,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34100
-     * @tc.name: testUrlparseURL0075
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0075
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34100
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh?query=unicode\ud83d#fagmengt');
@@ -5676,12 +6164,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34200
-     * @tc.name: testUrlparseURL0076
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0076
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34200
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const paramsObj = new Url.URLParams('\uDC00s');
@@ -5689,12 +6177,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34300
-     * @tc.name: testUrlparseURL0077
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0077
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34300
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const paramsObj = new Url.URLParams('key=%F0%9F%98%80s');
@@ -5702,12 +6190,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34400
-     * @tc.name: testUrlparseURL0078
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0078
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh?query#fagmengt\ud83d');
@@ -5715,12 +6203,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34500
-     * @tc.name: testUrlparseURL0079
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0079
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34500
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('https://www.test.com/patoh\ude01?query#fagmengt');
@@ -5728,12 +6216,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34600
-     * @tc.name: testUrlparseURL0080
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34600
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const paramsObj = new Url.URLParams('测试非法字符输入\ude51用例');
@@ -5742,12 +6230,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34700
-     * @tc.name: testUrlparseURL0081
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0081
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34700
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const paramsObj = new Url.URLParams('key=value');
@@ -5756,12 +6244,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34800
-     * @tc.name: testUrlparseURL0082
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0082
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34800
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "ftp:!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ \\[]"
@@ -5782,12 +6270,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_34900
-     * @tc.name: testUrlparseURL0083
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0083
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_34900
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('patoh\ude01?query#fagmengt','https://www.test.com\ude01');
@@ -5795,12 +6283,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35000
-     * @tc.name: testUrlparseURL0084
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlparseURL0084
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35000
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlparseURL0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = Url.URL.parseURL('patoh\ude01?query#fagmengt','https://www.test.com\ude01');
@@ -5808,12 +6296,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35100
-     * @tc.name: testUrlHost006
-     * @tc.desc: Gets and sets the host portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHost006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35100
+     * @tc.desc   Gets and sets the host portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHost006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]^_`abcdefghijklmnopqrstuv"
@@ -5825,12 +6313,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35200
-     * @tc.name: testUrlHostname006
-     * @tc.desc: Gets and sets the host name portion of the URL，not include the port.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHostname006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35200
+     * @tc.desc   Gets and sets the host name portion of the URL，not include the port.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHostname006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]^_`abcdefghijklmnopqrstuv"
@@ -5842,12 +6330,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35300
-     * @tc.name: testUrlPort006
-     * @tc.desc: Gets and sets the port portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPort006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35300
+     * @tc.desc   Gets and sets the port portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPort006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]^_`abcdefghijklmnopqrstuv"
@@ -5859,12 +6347,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35400
-     * @tc.name: testUrlProtocol006
-     * @tc.desc: Gets and sets the protocol portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlProtocol006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35400
+     * @tc.desc   Gets and sets the protocol portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlProtocol006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]^_`abcdefghijklmnopqrstuv"
@@ -5876,12 +6364,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35500
-     * @tc.name: testUrlOrigin006
-     * @tc.desc: Gets and sets the host portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlOrigin006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35500
+     * @tc.desc   Gets and sets the host portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlOrigin006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]^_`abcdefghijklmnopqrstuv"
@@ -5894,12 +6382,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35600
-     * @tc.name: testUrlUsername006
-     * @tc.desc: Gets and sets the username portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlUsername006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35600
+     * @tc.desc   Gets and sets the username portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlUsername006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
@@ -5923,12 +6411,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35700
-     * @tc.name: testUrlPassword006
-     * @tc.desc: Gets and sets the password portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPassword006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35700
+     * @tc.desc   Gets and sets the password portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPassword006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
@@ -5952,12 +6440,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35800
-     * @tc.name: testUrlPathname006
-     * @tc.desc: URL set pathname and get pathname.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlPathname006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35800
+     * @tc.desc   URL set pathname and get pathname.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlPathname006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
@@ -5980,12 +6468,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_35900
-     * @tc.name: testUrlHash006
-     * @tc.desc: Gets and sets the fragment portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHash006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_35900
+     * @tc.desc   Gets and sets the fragment portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHash006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
@@ -6008,12 +6496,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_36000
-     * @tc.name: testUrlSearch006
-     * @tc.desc: Gets and sets the serialized query portion of the URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlSearch006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_36000
+     * @tc.desc   Gets and sets the serialized query portion of the URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlSearch006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
@@ -6044,6 +6532,14 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
+    /**
+     * @tc.name   testUrlSearchParams006
+     * @tc.number testUrlSearchParams006
+     * @tc.desc   testUrlSearchParams006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testUrlSearchParams006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
     //     + "^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸"
@@ -6076,12 +6572,12 @@ export default function urlTest2() {
     // })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_36200
-     * @tc.name: testParamsToString006
-     * @tc.desc: Returns a query string suitable for use in a URL.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testParamsToString006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_36200
+     * @tc.desc   Returns a query string suitable for use in a URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
@@ -6115,12 +6611,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_36300
-     * @tc.name: testUrlHref006
-     * @tc.desc: URL get href.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUrlHref006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_36300
+     * @tc.desc   URL get href.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUrlHref006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let obj = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
@@ -6158,12 +6654,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_36400
-     * @tc.name: testNewURLParams002
-     * @tc.desc: The input parameter for New URLParams with the code can not tranform to utf-8.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNewURLParams002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_36400
+     * @tc.desc   The input parameter for New URLParams with the code can not tranform to utf-8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNewURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('aa=%E4%B8%AD%E5%9B%BD%BD');
@@ -6172,12 +6668,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_36500
-     * @tc.name: testNewURLParams003
-     * @tc.desc: The input parameter for New URLParams with the emoji.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNewURLParams003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_36500
+     * @tc.desc   The input parameter for New URLParams with the emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNewURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('aa=bc%F0%9F%98%82%F0Ad');
@@ -6186,12 +6682,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_36600
-     * @tc.name: testNewURLParams004
-     * @tc.desc: The input parameter for New URLParams with the ܀ܟ.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNewURLParams004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_36600
+     * @tc.desc   The input parameter for New URLParams with the ܀ܟ.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNewURLParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('aa=a%DC%80f%DC%9Fb');

@@ -23,13 +23,12 @@ export default function fileioLseek() {
 describe('fileio_lseek', function () {
 
   /**
+   * @tc.name   fileio_test_lseek_async_000
    * @tc.number _SUB_DF_FILEIO_LSEEK_ASYNC_0000
-   * @tc.name fileio_test_lseek_async_000
-   * @tc.desc Test lseekAsync()interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseekAsync()interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_lseek_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_lseek_async_000');
@@ -48,13 +47,12 @@ describe('fileio_lseek', function () {
   });
 
   /**
+   * @tc.name   fileio_test_lseek_async_001
    * @tc.number _SUB_DF_FILEIO_LSEEK_ASYNC_0010
-   * @tc.name fileio_test_lseek_async_001
-   * @tc.desc Test lseekAsync()interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseekAsync()interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_lseek_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_lseek_async_001');
@@ -73,13 +71,12 @@ describe('fileio_lseek', function () {
   });
 
   /**
+   * @tc.name   fileio_test_lseek_sync_000
    * @tc.number SUB_DF_FILEIO_LSEEK_SYNC_0000
-   * @tc.name fileio_test_lseek_sync_000
-   * @tc.desc Test lseekSync()interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseekSync()interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_lseek_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_lseek_sync_000');
@@ -98,13 +95,12 @@ describe('fileio_lseek', function () {
   });
 
   /**
+   * @tc.name   fileio_test_lseek_sync_001
    * @tc.number SUB_DF_FILEIO_LSEEK_SYNC_0010
-   * @tc.name fileio_test_lseek_sync_001
-   * @tc.desc Test lseekSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseekSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_lseek_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_lseek_sync_001');

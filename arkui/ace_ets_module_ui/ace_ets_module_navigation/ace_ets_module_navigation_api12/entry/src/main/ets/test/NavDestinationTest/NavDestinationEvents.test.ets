@@ -49,10 +49,12 @@ export default function NavDestinationEvents() {
 
 
     /**
-     * @tc.number    NavDestinationEvents_0100
-     * @tc.name      NavDestinationEvents_0100
-     * @tc.desc      Test NavDestination onWillAppear
-     * @tc.level     Level 2
+     * @tc.name   NavDestinationEvents_0100
+     * @tc.number NavDestinationEvents_0100
+     * @tc.desc   Test NavDestination onWillAppear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationEvents_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavDestinationEvents_0100 START');

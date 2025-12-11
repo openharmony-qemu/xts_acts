@@ -47,9 +47,12 @@ export default function flexExceed_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenterSetMarPad
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_0600
-     * @tc.name testFlexItemAlignCenterSetMarPad
-     * @tc.desc Subcomponent inside when parent component set margin and padding.
+     * @tc.desc   Subcomponent inside when parent component set margin and padding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenterSetMarPad',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenterSetMarPad START');

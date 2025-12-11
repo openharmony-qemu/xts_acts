@@ -44,10 +44,13 @@ export default function featureAbilityStartAbilityJsunit() {
       console.info("featureAbilityStartAbility after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testfeatureAbilityStartAbility0001
-     * @tc.desic         acefeatureAbilityStartAbilityEtsTest0001
+    /**
+     * @tc.name   testfeatureAbilityStartAbility0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testfeatureAbilityStartAbility0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testfeatureAbilityStartAbility0001', Level.LEVEL0, async () => {
       console.info('featureAbilityStartAbility testfeatureAbilityStartAbility0001 START');

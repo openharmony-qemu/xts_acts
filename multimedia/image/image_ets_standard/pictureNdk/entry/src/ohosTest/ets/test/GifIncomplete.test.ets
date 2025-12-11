@@ -154,16 +154,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0100
-     * @tc.desc      : test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.getDelayTimeList
-     *                 4.getDisposalType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0100
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0100", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0100");
@@ -173,16 +169,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0200
-     * @tc.desc      : test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.set and get gif metadata
-     *                 4.compare picture gif metadata properties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0200
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0200", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_0200");
@@ -208,14 +200,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0100
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0100
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0100", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0100");
@@ -225,14 +215,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0200
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0200
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0200", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0200");
@@ -248,14 +236,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0300
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0300
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0300", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0300");
@@ -265,14 +251,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0400
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0400
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0400", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0400");
@@ -295,13 +279,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0500
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0500
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0500", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0500");
@@ -323,13 +306,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0600
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0600
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0600", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0600");
@@ -355,13 +337,12 @@ export default function gifIncompleteTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0700
-     * @tc.desc      : test gif incomplete frame error
-     *                 1.createPictureAtIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0700
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0700", Level.LEVEL0, async (done:Function)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_NATIVE_ERROR_0700");

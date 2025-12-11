@@ -86,13 +86,13 @@ function expectEqual(exp: string | number | boolean, assert: string | number | b
 export default function TLSSocketUpgradeTest() {
   describe('TLSSocketUpgradeTest', () => {
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_STARTTLS_0100
-     * @tc.name  :  testSTARTTLSWith163Com
-     * @tc.desc  :  Test STARTTLS feature by visiting smtp.163.com
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testSTARTTLSWith163Com
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_STARTTLS_0100
+     * @tc.desc   Test STARTTLS feature by visiting smtp.163.com
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSTARTTLSWith163Com', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testSTARTTLSWith163Com '
@@ -183,13 +183,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_OneWayTLS_0100
-     * @tc.name  :  testOneWayTLSWithBaidu
-     * @tc.desc  :  Test oneway TLS with upgraded TLSSocket by visiting baidu.com
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testOneWayTLSWithBaidu
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_OneWayTLS_0100
+     * @tc.desc   Test oneway TLS with upgraded TLSSocket by visiting baidu.com
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOneWayTLSWithBaidu', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testOneWayTLSWithBaidu '
@@ -230,13 +230,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_NotConnectedTCPSocket_0100
-     * @tc.name  :  testUpgradeWithNotConnectedTCPSocket
-     * @tc.desc  :  Test upgrading TLSSocket with not connected TCPSocket
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testUpgradeWithNotConnectedTCPSocket
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_NotConnectedTCPSocket_0100
+     * @tc.desc   Test upgrading TLSSocket with not connected TCPSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpgradeWithNotConnectedTCPSocket', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testUpgradeWithNotConnectedTCPSocket '
@@ -264,13 +264,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_ClosedTCPSocket_0100
-     * @tc.name  :  testUpgradeWithClosedTCPSocket
-     * @tc.desc  :  Test upgrading TLSSocket with closed TCPSocket
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testUpgradeWithClosedTCPSocket
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_ClosedTCPSocket_0100
+     * @tc.desc   Test upgrading TLSSocket with closed TCPSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpgradeWithClosedTCPSocket', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testUpgradeWithClosedTCPSocket '
@@ -306,13 +306,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_UDPSocket_0100
-     * @tc.name  :  testUpgradeWithUDPSocket
-     * @tc.desc  :  Test upgrading TLSSocket with UDPSocket
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testUpgradeWithUDPSocket
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_UDPSocket_0100
+     * @tc.desc   Test upgrading TLSSocket with UDPSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpgradeWithUDPSocket', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testUpgradeWithUDPSocket '
@@ -343,13 +343,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_ParaNumber_0100
-     * @tc.name  :  testUpgradeWithNumber
-     * @tc.desc  :  Test upgrading TLSSocket with parameter number
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testUpgradeWithNumber
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_ParaNumber_0100
+     * @tc.desc   Test upgrading TLSSocket with parameter number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpgradeWithNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testUpgradeWithNumber '
@@ -372,13 +372,13 @@ export default function TLSSocketUpgradeTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_ParaString_0100
-     * @tc.name  :  testUpgradeWithString
-     * @tc.desc  :  Test upgrading TLSSocket with parameter string
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testUpgradeWithString
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_ParaString_0100
+     * @tc.desc   Test upgrading TLSSocket with parameter string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpgradeWithString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testUpgradeWithString '
@@ -401,13 +401,13 @@ export default function TLSSocketUpgradeTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_ParaObject_0100
-     * @tc.name  :  testUpgradeWithInvalidObject
-     * @tc.desc  :  Test upgrading TLSSocket with invalid object
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testUpgradeWithInvalidObject
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_ParaObject_0100
+     * @tc.desc   Test upgrading TLSSocket with invalid object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpgradeWithInvalidObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testUpgradeWithInvalidObject '
@@ -430,13 +430,13 @@ export default function TLSSocketUpgradeTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_NoSSLServer_0100
-     * @tc.name  :  testConnectToNoSSLServer
-     * @tc.desc  :  Test connecting to HTTP server with upgraded TLSSocket
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testConnectToNoSSLServer
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_NoSSLServer_0100
+     * @tc.desc   Test connecting to HTTP server with upgraded TLSSocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConnectToNoSSLServer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testConnectToNoSSLServer '
@@ -475,13 +475,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_ConcurrentUpgradeClosed_0100
-     * @tc.name  :  testConcurrentUpgradeAndCloseTCPSocket
-     * @tc.desc  :  Test upgrade and close Socket concurrently
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testConcurrentUpgradeAndCloseTCPSocket
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_ConcurrentUpgradeClosed_0100
+     * @tc.desc   Test upgrade and close Socket concurrently
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConcurrentUpgradeAndCloseTCPSocket', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testConcurrentUpgradeAndCloseTCPSocket '
@@ -516,13 +516,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_ConcurrentUpgradeSend_0100
-     * @tc.name  :  testConcurrentUpgradeAndSendTCPSocket
-     * @tc.desc  :  Test upgrade and send Socket concurrently
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testConcurrentUpgradeAndSendTCPSocket
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_ConcurrentUpgradeSend_0100
+     * @tc.desc   Test upgrade and send Socket concurrently
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConcurrentUpgradeAndSendTCPSocket', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testConcurrentUpgradeAndSendTCPSocket '
@@ -577,13 +577,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_Concurrent10Upgrade_0100
-     * @tc.name  :  testConcurrentUpgrade10TCPSocket
-     * @tc.desc  :  Test upgrade 10 Sockets concurrently
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testConcurrentUpgrade10TCPSocket
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_Concurrent10Upgrade_0100
+     * @tc.desc   Test upgrade 10 Sockets concurrently
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConcurrentUpgrade10TCPSocket', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testConcurrentUpgrade10TCPSocket '
@@ -629,13 +629,13 @@ export default function TLSSocketUpgradeTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_SendAfterUpgrade_0100
-     * @tc.name  :  testTCPSocketSendAfterUpgrade
-     * @tc.desc  :  Test TCPSocket send after upgraded
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testTCPSocketSendAfterUpgrade
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_SendAfterUpgrade_0100
+     * @tc.desc   Test TCPSocket send after upgraded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTCPSocketSendAfterUpgrade', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testTCPSocketSendAfterUpgrade '
@@ -688,13 +688,13 @@ export default function TLSSocketUpgradeTest() {
       });
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketUpgrade_SendAfterUpgrade_0100
-     * @tc.name  :  testTLSSocketSendAfterUpgradeNotConnect
-     * @tc.desc  :  Test upgraded TLSSocket send before connect
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testTLSSocketSendAfterUpgradeNotConnect
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketUpgrade_SendAfterUpgrade_0100
+     * @tc.desc   Test upgraded TLSSocket send before connect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTLSSocketSendAfterUpgradeNotConnect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const testName = 'testTLSSocketSendAfterUpgradeNotConnect '

@@ -46,10 +46,12 @@ export default function Grid_Row_GutterOption_Number() {
     });
 
     /**
-     * @tc.number    SUB_ACE_GRIDROWGUTTEROPTION_NUMBER_0100
-     * @tc.name      testGutterOptionLengthNumber
-     * @tc.desc      Set the GridRowSizeOption of GridRow to {x: -20 ,y: 10}
-     *               the parent component
+     * @tc.name   SUB_ACE_GridRowGutterOption_NUMBER_0100
+     * @tc.number SUB_ACE_GRIDROWGUTTEROPTION_NUMBER_0100
+     * @tc.desc   Set the GridRowSizeOption of GridRow to {x: -20 ,y: 10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowGutterOption_NUMBER_0100',  Level.LEVEL0, async  (done: Function)=> {
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_0100 START');
@@ -73,9 +75,12 @@ export default function Grid_Row_GutterOption_Number() {
     });
 
     /**
-     * @tc.number    SUB_ACE_GRIDROWGUTTEROPTION_NUMBER_0200
-     * @tc.name      testGutterOptionNumber
-     * @tc.desc      Set the GridRowSizeOption of GridRow to {x: 0 ,y: 10}
+     * @tc.name   SUB_ACE_GridRowGutterOption_NUMBER_0200
+     * @tc.number SUB_ACE_GRIDROWGUTTEROPTION_NUMBER_0200
+     * @tc.desc   Set the GridRowSizeOption of GridRow to {x: 0 ,y: 10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowGutterOption_NUMBER_0200',  Level.LEVEL0, async  (done: Function)=> {
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_0200 START');
@@ -98,9 +103,12 @@ export default function Grid_Row_GutterOption_Number() {
     });
 
     /**
-     * @tc.number    SUB_ACE_GRIDROWGUTTEROPTION_NUMBER_0300
-     * @tc.name      testGutterOptionNumber
-     * @tc.desc      Set the GridRowSizeOption of GridRow to {x: 10 ,y: 10}
+     * @tc.name   SUB_ACE_GridRowGutterOption_NUMBER_0300
+     * @tc.number SUB_ACE_GRIDROWGUTTEROPTION_NUMBER_0300
+     * @tc.desc   Set the GridRowSizeOption of GridRow to {x: 10 ,y: 10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowGutterOption_NUMBER_0300',  Level.LEVEL0, async  (done: Function)=> {
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_0300 START');

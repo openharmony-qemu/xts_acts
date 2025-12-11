@@ -197,12 +197,6 @@ static void WaitScanResult(void)
     }
 }
 
-/**
- * @tc.desc      : register a test suite, this test suite is used to test basic functions
- * @param        : subsystem name is communication
- * @param        : module name is wifiaware
- * @param        : test suit name is WifiAwareReliTestSuite
- */
 LITE_TEST_SUIT(communication, wifiservice, WifiServiceFuncTestSuite);
 
 /**
@@ -287,9 +281,12 @@ static BOOL WifiServiceFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0100
- * @tc.name      : Test enable and disable wifi interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testEnableDisableWifi
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testEnableDisableWifi, Function | MediumTest | Level2)
 {
@@ -318,9 +315,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testEnableDisableWifi, Function | Mediu
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0200
- * @tc.name      : Test scan and get scan info interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testScan
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testScan, Function | MediumTest | Level2)
 {
@@ -355,9 +355,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testScan, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0300
- * @tc.name      : Test connect and disconnect interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testConnectDisConnect
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testConnectDisConnect, Function | MediumTest | Level2)
 {
@@ -383,9 +386,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testConnectDisConnect, Function | Mediu
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0400
- * @tc.name      : Test handle device config interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testHandleDeviceConfig
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testHandleDeviceConfig, Function | MediumTest | Level2)
 {
@@ -448,9 +454,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testHandleDeviceConfig, Function | Medi
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0500
- * @tc.name      : Test handle AP config interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testHandleHotspotConfig
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testHandleHotspotConfig, Function | MediumTest | Level2)
 {
@@ -491,9 +500,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testHandleHotspotConfig, Function | Med
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0600
- * @tc.name      : Test enable and disable AP interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testEnableDisableHotSpot
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testEnableDisableHotSpot, Function | MediumTest | Level2)
 {
@@ -541,9 +553,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testEnableDisableHotSpot, Function | Me
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0700
- * @tc.name      : Test get signal Level interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetSignalLevel
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testGetSignalLevel, Function | MediumTest | Level2)
 {
@@ -581,9 +596,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testGetSignalLevel, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0800
- * @tc.name      : test adavance scan interface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testAdvanceScanType
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanType, Function | MediumTest | Level2)
 {
@@ -635,9 +653,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanType, Function | MediumT
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_0900
- * @tc.name      : test adavance scan interface with invalid parameter
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testAdvanceScanInvalidParam01
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanInvalidParam01, Function | MediumTest | Level2)
 {
@@ -663,9 +684,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanInvalidParam01, Function
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_1000
- * @tc.name      : test adavance scan interface with different invalid scantype
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testAdvanceScanInvalidParam02
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanInvalidParam02, Function | MediumTest | Level2)
 {
@@ -708,9 +732,12 @@ LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanInvalidParam02, Function
 }
 
 /**
- * @tc.number    : SUB_COMMUNICATION_WIFISERVICE_SDK_1100
- * @tc.name      : test adavance scan interface with different invalid scantype
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testAdvanceScanInvalidParam03
+ * @tc.number SUB_COMMUNICATION_WIFISERVICE_SDK_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(WifiServiceFuncTestSuite, testAdvanceScanInvalidParam03, Function | MediumTest | Level2)
 {

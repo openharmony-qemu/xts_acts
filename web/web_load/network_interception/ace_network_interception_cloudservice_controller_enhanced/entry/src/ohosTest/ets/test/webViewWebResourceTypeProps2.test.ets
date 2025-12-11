@@ -58,13 +58,13 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
         done();
       })
 
-      /*
-       *@tc.number SUB_ACE_WEB_NET_RESOURCETYPE_0700
-       *@tc.name testWebView_webResourceType_SUB_RESOURCE
-       *@tc.desc test webResourceType SUB_RESOURCE
-       *@tc.size MediumTest
-       *@tc.type Function
-       *@tc.level Level 2
+      /**
+       * @tc.name   testWebView_webResourceType_SUB_RESOURCE
+       * @tc.number SUB_ACE_WEB_NET_RESOURCETYPE_0700
+       * @tc.desc   test webResourceType SUB_RESOURCE
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testWebView_webResourceType_SUB_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_SUB_RESOURCE"
@@ -75,13 +75,13 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
         await waitForExist(()=>isReturn, "emitWebView_webResourceType_SUB_RESOURCE", true,1000);
         done();
       })
-      /*
-       *@tc.number SUB_ACE_WEB_NET_RESOURCETYPE_1600
-       *@tc.name testWebView_webResourceType_SERVICE_WORKER
-       *@tc.desc test webResourceType SERVICE_WORKER
-       *@tc.size MediumTest
-       *@tc.type Function
-       *@tc.level Level 1
+      /**
+       * @tc.name   testWebView_webResourceType_SERVICE_WORKER
+       * @tc.number SUB_ACE_WEB_NET_RESOURCETYPE_1600
+       * @tc.desc   test webResourceType SERVICE_WORKER
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testWebView_webResourceType_SERVICE_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_SERVICE_WORKER"
@@ -93,13 +93,13 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
         done();
       })
 
-      /*
-       *@tc.number SUB_ACE_WEB_NET_RESOURCETYPE_1800
-       *@tc.name testWebView_webResourceType_PLUGIN_RESOURCE
-       *@tc.desc test webResourceType PLUGIN_RESOURCE
-       *@tc.size MediumTest
-       *@tc.type Function
-       *@tc.level Level 1
+      /**
+       * @tc.name   testWebView_webResourceType_PLUGIN_RESOURCE
+       * @tc.number SUB_ACE_WEB_NET_RESOURCETYPE_1800
+       * @tc.desc   test webResourceType PLUGIN_RESOURCE
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testWebView_webResourceType_PLUGIN_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_PLUGIN_RESOURCE"
@@ -111,14 +111,14 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
         done();
       })
 
-      /*
-     *@tc.number SUB_ACE_WEB_NET_RESOURCETYPE_1900
-     *@tc.name testWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME
-     *@tc.desc test webResourceType NAVIGATION_PRELOAD_MAIN_FRAME
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
-     */
+      /**
+       * @tc.name   testWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME
+       * @tc.number SUB_ACE_WEB_NET_RESOURCETYPE_1900
+       * @tc.desc   test webResourceType NAVIGATION_PRELOAD_MAIN_FRAME
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('testWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         emitKey = "emitWebView_webResourceType_NAVIGATION_PRELOAD_MAIN_FRAME"
         Utils.emitEvent(emitKey, 142021);
@@ -130,14 +130,14 @@ export default function ActsAceWebViewWebResourceTypeProps2() {
       })
 
 
-    /*
-    *@tc.number SUB_ACE_WEB_NET_RESOURCETYPE_2000
-    *@tc.name testWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME
-    *@tc.desc test webResourceType NAVIGATION_PRELOAD_SUB_FRAME
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level Level 1
-    */
+    /**
+     * @tc.name   testWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME
+     * @tc.number SUB_ACE_WEB_NET_RESOURCETYPE_2000
+     * @tc.desc   test webResourceType NAVIGATION_PRELOAD_SUB_FRAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebView_webResourceType_NAVIGATION_PRELOAD_SUB_FRAME"
       Utils.emitEvent(emitKey, 142021);

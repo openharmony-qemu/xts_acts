@@ -26,26 +26,26 @@ export default function swiperCachedCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CACHEDCOUNT_0100
-     * @tc.name       : testSwiperCachedCount001
-     * @tc.desc       : testing cachedCount for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCachedCount001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CACHEDCOUNT_0100
+     * @tc.desc   testing cachedCount for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCachedCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCachedCount001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CACHEDCOUNT_0200
-     * @tc.name       : testSwiperCachedCount002
-     * @tc.desc       : testing cachedCount for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCachedCount002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CACHEDCOUNT_0200
+     * @tc.desc   testing cachedCount for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCachedCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCachedCount002()).assertEqual(0)

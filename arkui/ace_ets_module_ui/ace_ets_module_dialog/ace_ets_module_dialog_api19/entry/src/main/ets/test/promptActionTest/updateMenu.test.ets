@@ -41,13 +41,13 @@ export default function updateMenuTest() {
         done();
       });
       /**
-     * @tc.number    updateMenu
-     * @tc.name      updateMenuTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+       * @tc.name   updateMenuTest_0100
+       * @tc.number updateMenu
+       * @tc.desc   api
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('updateMenuTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let tagName = 'updateMenuTest_0100';
         console.info('[' + tagName + '] START============================');

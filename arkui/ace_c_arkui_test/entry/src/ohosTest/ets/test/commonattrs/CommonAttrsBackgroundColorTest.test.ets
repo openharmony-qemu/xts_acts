@@ -26,39 +26,39 @@ export default function commonAttrsBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BACKGROUNDCOLOR_0100
-     * @tc.name       : testCommonAttrsBackgroundColor001
-     * @tc.desc       : testing backgroundColor for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BACKGROUNDCOLOR_0200
-     * @tc.name       : testCommonAttrsBackgroundColor002
-     * @tc.desc       : testing backgroundColor for commonAttrs with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for commonAttrs with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BACKGROUNDCOLOR_0300
-     * @tc.name       : testCommonAttrsBackgroundColor003
-     * @tc.desc       : testing backgroundColor for commonAttrs with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for commonAttrs with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundColor003()).assertEqual(0)

@@ -63,12 +63,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOnKeyboardDidShowErrCode1300002_0100
-         * @tc.name         testOnKeyboardDidShowErrCode1300002_static_0100
-         * @tc.desc         testOnKeyboardDidShowErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOnKeyboardDidShowErrCode1300002_static_0100
+         * @tc.number testOnKeyboardDidShowErrCode1300002_0100
+         * @tc.desc   testOnKeyboardDidShowErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnKeyboardDidShowErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidShowErrCode1300002_static_0100";
@@ -81,7 +81,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('keyboardDidShow', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.onKeyboardDidShow((keyboardInfo: window.KeyboardInfo) => {
                     hilog.info(domain, tag,msgStr +  'keyboard show animation completion. keyboardInfo beginRect: ' + JSON.stringify(keyboardInfo.beginRect));
                     hilog.info(domain, tag,msgStr +  'keyboard show animation completion. keyboardInfo beginRect: ' + JSON.stringify(keyboardInfo.endRect));
                 });
@@ -103,12 +103,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOffKeyboardDidShowErrCode1300002_0100
-         * @tc.name         testOffKeyboardDidShowErrCode1300002_static_0100
-         * @tc.desc         testOffKeyboardDidShowErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOffKeyboardDidShowErrCode1300002_static_0100
+         * @tc.number testOffKeyboardDidShowErrCode1300002_0100
+         * @tc.desc   testOffKeyboardDidShowErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOffKeyboardDidShowErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffKeyboardDidShowErrCode1300002_static_0100";
@@ -121,7 +121,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('keyboardDidShow', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.offKeyboardDidShow((keyboardInfo: window.KeyboardInfo) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
@@ -143,12 +143,12 @@ export default function WindowKeyBoardTest() {
 
 
         /**
-         * @tc.number       testOnKeyboardDidHideErrCode1300002_0100
-         * @tc.name         testOnKeyboardDidHideErrCode1300002_static_0100
-         * @tc.desc         testOnKeyboardDidHideErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOnKeyboardDidHideErrCode1300002_static_0100
+         * @tc.number testOnKeyboardDidHideErrCode1300002_0100
+         * @tc.desc   testOnKeyboardDidHideErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnKeyboardDidHideErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidHideErrCode1300002_static_0100";
@@ -161,7 +161,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('keyboardDidHide', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.onKeyboardDidHide((keyboardInfo: window.KeyboardInfo) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -182,12 +182,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOffKeyboardDidHideErrCode1300002_0100
-         * @tc.name         testOffKeyboardDidHideErrCode1300002_static_0100
-         * @tc.desc         testOffKeyboardDidHideErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOffKeyboardDidHideErrCode1300002_static_0100
+         * @tc.number testOffKeyboardDidHideErrCode1300002_0100
+         * @tc.desc   testOffKeyboardDidHideErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOffKeyboardDidHideErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffKeyboardDidShowErrCode1300002_static_0100";
@@ -200,7 +200,7 @@ export default function WindowKeyBoardTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('keyboardDidHide', (keyboardInfo: window.KeyboardInfo) => {
+                tempWnd.offKeyboardDidHide((keyboardInfo: window.KeyboardInfo) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -221,12 +221,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOnKeyboardHeightChangeErrCode1300002_0100
-         * @tc.name         testOnKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.desc         testOnKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOnKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.number testOnKeyboardHeightChangeErrCode1300002_0100
+         * @tc.desc   testOnKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOnKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardHeightChangeErrCode1300002_static_0100";
@@ -238,7 +238,7 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('keyboardHeightChange', (data) => {
+                tempWnd.onKeyboardHeightChange((data) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(data));
                 });
                 await tempWnd.destroyWindow();
@@ -252,12 +252,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOffKeyboardHeightChangeErrCode1300002_0100
-         * @tc.name         testOffKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.desc         testOffKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
+         * @tc.name   testOffKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.number testOffKeyboardHeightChangeErrCode1300002_0100
+         * @tc.desc   testOffKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testOffKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffKeyboardHeightChangeErrCode1300002_static_0100";
@@ -269,7 +269,7 @@ export default function WindowKeyBoardTest() {
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('keyboardHeightChange', (data) => {
+                tempWnd.offKeyboardHeightChange((data) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(data));
                 });
                 await tempWnd.destroyWindow();

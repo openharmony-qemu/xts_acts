@@ -38,12 +38,12 @@ export default function getCountTest () {
     let sendablePhAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(globalContext);
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Count_001
-     * @tc.name      : get_count_promise_001
-     * @tc.desc      : getCount
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_count_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Count_001
+     * @tc.desc   getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_count_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'get_count_promise_001';

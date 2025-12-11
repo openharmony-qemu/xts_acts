@@ -28,7 +28,6 @@ export default function BrightnessTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBrightnessTest_static_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0010
      * @tc.desc   Test the third-party application call setValue will be blocked
@@ -51,7 +50,6 @@ export default function BrightnessTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBrightnessTest_static_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0020
      * @tc.desc   Test the third-party application call setValue will be blocked
@@ -74,7 +72,6 @@ export default function BrightnessTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBrightnessTest_static_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0030
      * @tc.desc   Test the third-party application call setValue will be blocked

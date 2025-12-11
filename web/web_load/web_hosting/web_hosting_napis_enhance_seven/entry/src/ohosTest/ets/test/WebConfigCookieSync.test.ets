@@ -58,14 +58,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0001
-    * @tc.name       : testConfigCookieSync001
-    * @tc.desc       : test configCookieSync Set the cache value to include \n
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testConfigCookieSync001
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0001
+     * @tc.desc   test configCookieSync Set the cache value to include \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConfigCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync001", 147501)
       let isReturn = false;
@@ -77,14 +77,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0002
-    * @tc.name       : testConfigCookieSync002
-    * @tc.desc       : test configCookieSync Set the cache value to include \t
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testConfigCookieSync002
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0002
+     * @tc.desc   test configCookieSync Set the cache value to include \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConfigCookieSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync002", 147501)
       let isReturn = false;
@@ -96,14 +96,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0003
-    * @tc.name       : testConfigCookieSync003
-    * @tc.desc       : test configCookieSync Set the cache value to include \r
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testConfigCookieSync003
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0003
+     * @tc.desc   test configCookieSync Set the cache value to include \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConfigCookieSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync003", 147501)
       let isReturn = false;
@@ -115,14 +115,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0004
-    * @tc.name       : testConfigCookieSync004
-    * @tc.desc       : test configCookieSync Set the cache value to include \0
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testConfigCookieSync004
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0004
+     * @tc.desc   test configCookieSync Set the cache value to include \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConfigCookieSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync004", 147501)
       let isReturn = false;
@@ -134,14 +134,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0005
-    * @tc.name       : testConfigCookieSync005
-    * @tc.desc       : test configCookieSync Set the cache value to include \n httpOnly
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testConfigCookieSync005
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0005
+     * @tc.desc   test configCookieSync Set the cache value to include \n httpOnly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testConfigCookieSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync005", 147501)
       let isReturn = false;
@@ -153,14 +153,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0006
-    * @tc.name       : testConfigCookieSync006
-    * @tc.desc       : test configCookieSync Set the cache value to include \t httpOnly
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testConfigCookieSync006
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0006
+     * @tc.desc   test configCookieSync Set the cache value to include \t httpOnly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConfigCookieSync006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync006", 147501)
       let isReturn = false;
@@ -172,14 +172,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0007
-    * @tc.name       : testConfigCookieSync007
-    * @tc.desc       : test configCookieSync Set the cache value to include \r httpOnly
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testConfigCookieSync007
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0007
+     * @tc.desc   test configCookieSync Set the cache value to include \r httpOnly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConfigCookieSync007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync007", 147501)
       let isReturn = false;
@@ -191,14 +191,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0008
-    * @tc.name       : testConfigCookieSync008
-    * @tc.desc       : test configCookieSync Set the cache value to include \0 httpOnly
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testConfigCookieSync008
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0008
+     * @tc.desc   test configCookieSync Set the cache value to include \0 httpOnly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConfigCookieSync008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync008", 147501)
       let isReturn = false;
@@ -210,13 +210,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0009
-     * @tc.name       : testConfigCookieSync009
-     * @tc.desc       : test configCookieSync Set the cache value to include \n clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieSync009
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0009
+     * @tc.desc   test configCookieSync Set the cache value to include \n clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieSync009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync009", 147501)
@@ -229,13 +229,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0010
-     * @tc.name       : testConfigCookieSync010
-     * @tc.desc       : test configCookieSync Set the cache value to include \r httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieSync010
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0010
+     * @tc.desc   test configCookieSync Set the cache value to include \r httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieSync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync010", 147501)
@@ -248,13 +248,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0011
-     * @tc.name       : testConfigCookieSync011
-     * @tc.desc       : test configCookieSync Set the cache value to include \0 httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync011
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0011
+     * @tc.desc   test configCookieSync Set the cache value to include \0 httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync011", 147501)
@@ -267,13 +267,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0012
-     * @tc.name       : testConfigCookieSync012
-     * @tc.desc       : test configCookieSync Set the cache value to include \n httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync012
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0012
+     * @tc.desc   test configCookieSync Set the cache value to include \n httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync012", 147501)
@@ -286,13 +286,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0013
-     * @tc.name       : testConfigCookieSync013
-     * @tc.desc       : test configCookieSync Set the cache value to include \r httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync013
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0013
+     * @tc.desc   test configCookieSync Set the cache value to include \r httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync013", 147501)
@@ -305,13 +305,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0014
-     * @tc.name       : testConfigCookieSync014
-     * @tc.desc       : test configCookieSync Set the cache value to include \0 httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync014
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0014
+     * @tc.desc   test configCookieSync Set the cache value to include \0 httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync014", 147501)
@@ -324,13 +324,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0015
-     * @tc.name       : testConfigCookieSync015
-     * @tc.desc       : test configCookieSync Set the cache value to include \n  enable incognito httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync015
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0015
+     * @tc.desc   test configCookieSync Set the cache value to include \n  enable incognito httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync015", 147501)
@@ -343,13 +343,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0016
-     * @tc.name       : testConfigCookieSync016
-     * @tc.desc       : test configCookieSync Set the cache value to include \t  enable incognito httpOnly
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync016
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0016
+     * @tc.desc   test configCookieSync Set the cache value to include \t  enable incognito httpOnly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync016", 147501)
@@ -362,13 +362,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0017
-     * @tc.name       : testConfigCookieSync017
-     * @tc.desc       : test configCookieSync Set the cache value to include \r  enable incognito httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync017
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0017
+     * @tc.desc   test configCookieSync Set the cache value to include \r  enable incognito httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync017", 147501)
@@ -381,13 +381,13 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0018
-     * @tc.name       : testConfigCookieSync018
-     * @tc.desc       : test configCookieSync Set the cache value to include \0  enable incognito httpOnly clearAllCookiesSync success
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testConfigCookieSync018
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0018
+     * @tc.desc   test configCookieSync Set the cache value to include \0  enable incognito httpOnly clearAllCookiesSync success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConfigCookieSync018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync018", 147501)
@@ -400,14 +400,14 @@ export default function WebConfigCookieSync() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0019
-    * @tc.name       : testConfigCookieSync019
-    * @tc.desc       : test configCookieSync Set the cache value to include \n enable incognito httpOnly
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testConfigCookieSync019
+     * @tc.number SUB_ACE_WEB_CONFIGCOOKIESYYNC_NAPI_0019
+     * @tc.desc   test configCookieSync Set the cache value to include \n enable incognito httpOnly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testConfigCookieSync019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitConfigCookieSync019", 147501)
       let isReturn = false;

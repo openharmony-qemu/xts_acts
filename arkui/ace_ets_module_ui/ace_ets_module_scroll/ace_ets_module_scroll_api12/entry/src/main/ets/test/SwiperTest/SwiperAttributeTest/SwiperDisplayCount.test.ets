@@ -56,13 +56,13 @@ export default function SwiperMargin() {
       console.info("SwiperDisplayCount after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_0160
-     * @tc.name       : SwiperDisplayCount_0160
-     * @tc.desc       : set autoPlay and loop to true
-     * @tc.level      : Level 1
-     * @tc.type       : Function
-     * @tc.size       :
+    /**
+     * @tc.name   SwiperDisplayCount_0160
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_0160
+     * @tc.desc   set autoPlay and loop to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperDisplayCount_0160', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperDisplayCount_0160] START');

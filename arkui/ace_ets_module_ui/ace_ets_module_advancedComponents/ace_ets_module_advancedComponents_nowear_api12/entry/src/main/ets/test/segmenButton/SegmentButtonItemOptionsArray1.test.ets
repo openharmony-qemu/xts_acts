@@ -48,14 +48,14 @@ export default function SegmentButtonItemOptionsArray1() {
       console.info("SegmentButtonItemOptionsArray1 after each called");
     });
 
-    /**
-     * @tc.number    SegmentButtonItemOptionsArray1_001
-     * @tc.name      SegmentButtonItemOptionsArray1_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
-     */
+       /**
+        * @tc.name   SegmentButtonItemOptionsArray1_001
+        * @tc.number SegmentButtonItemOptionsArray1_001
+        * @tc.desc   Frequently updating and modifying the values of parent components
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
        it('SegmentButtonItemOptionsArray1_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_001] START');
        await CommonFunc.sleep(2000);
@@ -81,14 +81,14 @@ export default function SegmentButtonItemOptionsArray1() {
      });
 
     
-     /**
-      * @tc.number    SegmentButtonItemOptionsArray1_002
-      * @tc.name      SegmentButtonItemOptionsArray1_002
-      * @tc.desc      Frequently updating and modifying the values of parent components
-      * @tc.level     Level 0
-      * @tc.type
-      * @tc.size
-      */
+           /**
+            * @tc.name   SegmentButtonItemOptionsArray1_002
+            * @tc.number SegmentButtonItemOptionsArray1_002
+            * @tc.desc   Frequently updating and modifying the values of parent components
+            * @tc.type   FUNCTION
+            * @tc.size   MEDIUMTEST
+            * @tc.level  LEVEL0
+            */
            it('SegmentButtonItemOptionsArray1_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_002] START');
        await CommonFunc.sleep(2000);
@@ -113,14 +113,14 @@ export default function SegmentButtonItemOptionsArray1() {
        done();
      });
 
- /**
-      * @tc.number    SegmentButtonItemOptionsArray1_003
-      * @tc.name      SegmentButtonItemOptionsArray1_003
-      * @tc.desc      Frequently updating and modifying the values of parent components
-      * @tc.level     Level 0
-      * @tc.type
-      * @tc.size
-      */
+           /**
+            * @tc.name   SegmentButtonItemOptionsArray1_003
+            * @tc.number SegmentButtonItemOptionsArray1_003
+            * @tc.desc   Frequently updating and modifying the values of parent components
+            * @tc.type   FUNCTION
+            * @tc.size   MEDIUMTEST
+            * @tc.level  LEVEL0
+            */
            it('SegmentButtonItemOptionsArray1_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_003] START');
        await CommonFunc.sleep(2000);
@@ -145,14 +145,14 @@ export default function SegmentButtonItemOptionsArray1() {
        done();
      }) 
 
- /**
-      * @tc.number    SegmentButtonItemOptionsArray1_004
-      * @tc.name      SegmentButtonItemOptionsArray1_004
-      * @tc.desc      Frequently updating and modifying the values of parent components
-      * @tc.level     Level 0
-      * @tc.type
-      * @tc.size
-      */
+      /**
+       * @tc.name   SegmentButtonItemOptionsArray1_004
+       * @tc.number SegmentButtonItemOptionsArray1_004
+       * @tc.desc   Frequently updating and modifying the values of parent components
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('SegmentButtonItemOptionsArray1_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_004] START');
        await CommonFunc.sleep(2000);
@@ -176,13 +176,13 @@ export default function SegmentButtonItemOptionsArray1() {
        console.info('[SegmentButtonItemOptionsArray1_003] END');
        done();
      });
- /**
-      * @tc.number    SegmentButtonItemOptionsArray1_005
-      * @tc.name      SegmentButtonItemOptionsArray1_005
-      * @tc.desc      Frequently updating and modifying the values of parent components
-      * @tc.level     Level 0
-      * @tc.type
-      * @tc.size
+     /**
+      * @tc.name   SegmentButtonItemOptionsArray1_005
+      * @tc.number SegmentButtonItemOptionsArray1_005
+      * @tc.desc   Frequently updating and modifying the values of parent components
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
       */
      it('SegmentButtonItemOptionsArray1_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_005] START');
@@ -207,14 +207,14 @@ export default function SegmentButtonItemOptionsArray1() {
        console.info('[SegmentButtonItemOptionsArray1_005] END');
        done();
      });
-     /**
-      * @tc.number    SegmentButtonItemOptionsArray1_006
-      * @tc.name      SegmentButtonItemOptionsArray1_006
-      * @tc.desc      Frequently updating and modifying the values of parent components
-      * @tc.level     Level 0
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   SegmentButtonItemOptionsArray1_006
+     * @tc.number SegmentButtonItemOptionsArray1_006
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SegmentButtonItemOptionsArray1_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonItemOptionsArray1_006] START');
       await CommonFunc.sleep(2000);

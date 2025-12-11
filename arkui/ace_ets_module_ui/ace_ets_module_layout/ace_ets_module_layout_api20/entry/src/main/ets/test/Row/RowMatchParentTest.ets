@@ -46,6 +46,14 @@ export default function RowMatchParentTest() {
     });
 
 
+    /**
+     * @tc.name   RowMatchParentTest_0100
+     * @tc.number RowMatchParentTest_0100
+     * @tc.desc   RowMatchParentTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RowMatchParentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[RowMatchParentTest_0100] START');
       let driver = await Driver.create()

@@ -114,13 +114,13 @@ void NativeUndefinedGlyphDisplayTest::BoundsResult(
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_001
- * @tc.name  : OHDrawingSetTextUndefinedGlyphDisplay001
- * @tc.desc  : Test undefined glyph display use tofu
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingSetTextUndefinedGlyphDisplay001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_001
+ * @tc.desc   Test undefined glyph display use tofu
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay001, Function | MediumTest | Level0)
 {
@@ -135,13 +135,13 @@ HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay0
     OH_Drawing_DestroyTypography(typography);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_002
- * @tc.name  : OHDrawingSetTextUndefinedGlyphDisplay002
- * @tc.desc  : Test undefined glyph display use default
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingSetTextUndefinedGlyphDisplay002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_002
+ * @tc.desc   Test undefined glyph display use default
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay002, Function | MediumTest | Level0)
 {
@@ -152,13 +152,13 @@ HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay0
     OH_Drawing_DestroyTypography(typography);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_003
- * @tc.name  : OHDrawingSetTextUndefinedGlyphDisplay003
- * @tc.desc  : Test undefined glyph display use invalid input
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingSetTextUndefinedGlyphDisplay003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_003
+ * @tc.desc   Test undefined glyph display use invalid input
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay003, Function | MediumTest | Level0)
 {
@@ -180,13 +180,13 @@ HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay0
     OH_Drawing_DestroyTypography(tofuTypography);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_004
- * @tc.name  : OHDrawingSetTextUndefinedGlyphDisplay004
- * @tc.desc  : Test undefined glyph display use only no glyph
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingSetTextUndefinedGlyphDisplay004
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_004
+ * @tc.desc   Test undefined glyph display use only no glyph
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay004, Function | MediumTest | Level0)
 {
@@ -208,13 +208,13 @@ HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay0
     OH_Drawing_DestroyTypography(tofuTypography);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_005
- * @tc.name  : OHDrawingSetTextUndefinedGlyphDisplay005
- * @tc.desc  : Test set family name, but still force tofu
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingSetTextUndefinedGlyphDisplay005
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_SetTextUndefinedGlyphDisplay_005
+ * @tc.desc   Test set family name, but still force tofu
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeUndefinedGlyphDisplayTest, OHDrawingSetTextUndefinedGlyphDisplay005, Function | MediumTest | Level0)
 {

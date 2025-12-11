@@ -35,12 +35,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0100
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0100
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0100
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -64,12 +64,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0200
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0200
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0200
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -89,12 +89,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0300
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0300
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0300
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -118,12 +118,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0400
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0400
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0400
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -140,12 +140,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0500
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0500
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0500
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyAlgName_A: string = "DH_modp1536";
@@ -163,12 +163,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0600
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0600
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0600
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyAlgName_A: string = "ECC224";
@@ -186,12 +186,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0700
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0700
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0700
-     * @tc.desc algorithm is agreeAlg
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is agreeAlg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyAlgName_A: string = "ECC521";
@@ -209,12 +209,12 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AgreementSync_Func_0800
      * @tc.number SUB_Security_CryptoFramework_AgreementSync_Func_0800
-     * @tc.name SUB_Security_CryptoFramework_AgreementSync_Func_0800
-     * @tc.desc algorithm is agreeAlg
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is agreeAlg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AgreementSync_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyAlgName: string = "ECC521";

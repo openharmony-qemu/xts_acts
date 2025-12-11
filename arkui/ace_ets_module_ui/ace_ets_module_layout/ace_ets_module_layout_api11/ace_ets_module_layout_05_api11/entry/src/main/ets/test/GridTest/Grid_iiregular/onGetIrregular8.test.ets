@@ -60,12 +60,14 @@ export default function onGetIrregular8Jsunit() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-    * @tc.name  : onGetIrregular8Jsunit_0001
-    * @tc.desc  : onGetIrregular[2,1], the custom size of the obtained index setting is laid out according to 2 rows and 1 column
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   onGetIrregular8Jsunit_0001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
+     * @tc.desc   onGetIrregular[2,1], the custom size of the obtained index setting is laid out according to 2 rows and 1 column
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onGetIrregular8Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[onGetIrregular8Jsunit_0000] START');

@@ -26,39 +26,39 @@ export default function radioGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_GROUP_0100
-     * @tc.name       : testRadioGroup001
-     * @tc.desc       : testing Group for Radio with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioGroup001
+     * @tc.number SUB_ARKUI_CAPI_RADIO_GROUP_0100
+     * @tc.desc   testing Group for Radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioGroup001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_GROUP_0200
-     * @tc.name       : testRadioGroup002
-     * @tc.desc       : testing Group for Radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioGroup002
+     * @tc.number SUB_ARKUI_CAPI_RADIO_GROUP_0200
+     * @tc.desc   testing Group for Radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioGroup002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_GROUP_0300
-     * @tc.name       : testRadioGroup003
-     * @tc.desc       : testing Group for Radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioGroup003
+     * @tc.number SUB_ARKUI_CAPI_RADIO_GROUP_0300
+     * @tc.desc   testing Group for Radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioGroup003()).assertEqual(0)

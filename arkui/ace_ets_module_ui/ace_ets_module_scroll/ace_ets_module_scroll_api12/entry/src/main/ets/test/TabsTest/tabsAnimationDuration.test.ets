@@ -43,13 +43,13 @@ export default function tabsAnimationDuration() {
     });
 
     /**
-    * @tc.number: SUB_ACE_Tabs_ANIMATIOnDuration_0100
-    * @tc.name  : tabsAnimationDuration_0100
-    * @tc.desc  : Set animationDuration for tabs switch animation
-    * @tc.level : Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   tabsAnimationDuration_0100
+     * @tc.number SUB_ACE_Tabs_ANIMATIOnDuration_0100
+     * @tc.desc   Set animationDuration for tabs switch animation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tabsAnimationDuration_0100', Level.LEVEL1, async (done: Function) => {
       console.info('tabsAnimationDuration_0100 START');
       await CommonFunc.sleep(1000);

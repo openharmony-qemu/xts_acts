@@ -49,12 +49,12 @@ export default function subHeaderTitleBuilder() {
     })
 
     /**
-     * @tc.number subHeaderTitleBuilder
      * @tc.name   subHeaderTitleBuilder_0100
+     * @tc.number subHeaderTitleBuilder
      * @tc.desc   Test subHeader titleBuilder
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('subHeaderTitleBuilder_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderTitleBuilder_0100] START');

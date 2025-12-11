@@ -34,13 +34,12 @@ export default function arkTSUtilsTest() {
   describe('arkTSUtilsTest', () => {
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1200
-     * @tc.name      : testTaskLocksQueryAll0001
-     * @tc.desc      : The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
-     *                 resulting in no information with length=0.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQueryAll0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1200
+     * @tc.desc   The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQueryAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQueryAll0001';
@@ -55,13 +54,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1300
-     * @tc.name      : testTaskLocksQueryAll0002
-     * @tc.desc      : The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
-     *                 returning information on existing asynchronous locks and validating each item in the AsyncLockState results.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQueryAll0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1300
+     * @tc.desc   The queryAll operation of AsyncLock does not create an asynchronous lock but performs a query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQueryAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQueryAll0002';
@@ -76,13 +74,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1400
-     * @tc.name      : testTaskLocksQueryAll0003
-     * @tc.desc      : The queryAll operation of AsyncLock creates multiple asynchronous locks,
-     *                 performs a query, and validates each item in the AsyncLockState results.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQueryAll0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1400
+     * @tc.desc   The queryAll operation of AsyncLock creates multiple asynchronous locks,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQueryAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQueryAll0003';
@@ -101,13 +98,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0100
-     * @tc.name      : testTaskLocksConstructor0001
-     * @tc.desc      : The request operation of AsyncLock, which had not been created before,
-     *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksConstructor0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0100
+     * @tc.desc   The request operation of AsyncLock, which had not been created before,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksConstructor0001';
@@ -122,12 +118,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0700
-     * @tc.name      : testTaskLocksQuery0001
-     * @tc.desc      : The request operation of AsyncLock has not been created before, resulting in an error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQuery0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0700
+     * @tc.desc   The request operation of AsyncLock has not been created before, resulting in an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQuery0001';
@@ -142,12 +138,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1100
-     * @tc.name      : testTaskLocksQuery0005
-     * @tc.desc      : The query operation of AsyncLock has not been created before, error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQuery0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1100
+     * @tc.desc   The query operation of AsyncLock has not been created before, error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQuery0005';
@@ -162,13 +158,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0200
-     * @tc.name      : testTaskLocksRequest0001
-     * @tc.desc      : The request operation of AsyncLock, which had not been created before,
-     *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksRequest0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0200
+     * @tc.desc   The request operation of AsyncLock, which had not been created before,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksRequest0001';
@@ -184,13 +179,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0300
-     * @tc.name      : testTaskLocksRequest0002
-     * @tc.desc      : The request operation of AsyncLock has already been created earlier.
-     *                 Here, it is a lookup operation that returns an already existing asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksRequest0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0300
+     * @tc.desc   The request operation of AsyncLock has already been created earlier.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksRequest0002';
@@ -207,13 +201,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0400
-     * @tc.name      : testTaskLocksRequest0003
-     * @tc.desc      : The request operation of AsyncLock has not been created before.
-     *                 Here, it is a creation operation that returns a newly created asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksRequest0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0400
+     * @tc.desc   The request operation of AsyncLock has not been created before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksRequest0003';
@@ -229,13 +222,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0500
-     * @tc.name      : testTaskLocksRequest0004
-     * @tc.desc      : The request operation of AsyncLock has already been created before.
-     *                 Here, it is a lookup operation that returns an existing asynchronous lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksRequest0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0500
+     * @tc.desc   The request operation of AsyncLock has already been created before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksRequest0004';
@@ -252,14 +244,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0600
-     * @tc.name      : testTaskLocksRequest0005
-     * @tc.desc      : The request operation of AsyncLock had already been created.
-     *                 When performing a lookup with a case-insensitive mismatch,
-     *                 it actually returns a newly created async lock.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksRequest0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0600
+     * @tc.desc   The request operation of AsyncLock had already been created.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksRequest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksRequest0005';
@@ -277,13 +267,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0800
-     * @tc.name      : testTaskLocksQuery0002
-     * @tc.desc      : The request operation of AsyncLock has already been created.
-     *                 It returns an existing async lock and verifies each piece of information in the AsyncLockState result.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQuery0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0800
+     * @tc.desc   The request operation of AsyncLock has already been created.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQuery0002';
@@ -303,13 +292,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0900
-     * @tc.name      : testTaskLocksQuery0003
-     * @tc.desc      : The query operation of AsyncLock was previously created with the specified name.
-     *                 It returns an existing async lock and verifies each piece of information in the AsyncLockState result.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQuery0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_0900
+     * @tc.desc   The query operation of AsyncLock was previously created with the specified name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQuery0003';
@@ -329,13 +317,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1000
-     * @tc.name      : testTaskLocksQuery0004
-     * @tc.desc      : The query operation of AsyncLock was previously created with the specified name.
-     *                 When performing a lookup with a case-insensitive mismatch, it results in an error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTaskLocksQuery0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1000
+     * @tc.desc   The query operation of AsyncLock was previously created with the specified name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskLocksQuery0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testTaskLocksQuery0004';
@@ -352,12 +339,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1500
-     * @tc.name       : testLockAsync0001
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1500
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0001";
@@ -374,12 +361,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1600
-     * @tc.name       : testLockAsync0006
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1600
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0006";
@@ -415,12 +402,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1700
-     * @tc.name       : testLockAsync0007
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1700
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0007";
@@ -444,12 +431,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1800
-     * @tc.name       : testLockAsync0008
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1800
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0008";
@@ -479,12 +466,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1900
-     * @tc.name       : testLockAsync0009
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0009
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1900
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0009";
@@ -522,12 +509,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2000
-     * @tc.name       : testLockAsync0010
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0010
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2000
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0010";
@@ -552,12 +539,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2100
-     * @tc.name       : testLockAsync0011
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0011
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2100
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0011";
@@ -581,12 +568,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2200
-     * @tc.name       : testLockAsync0012
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0012
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2200
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0012";
@@ -612,13 +599,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2300
-     * @tc.name      : testLockAsync0013
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLockAsync0013
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2300
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testLockAsync0013';
@@ -654,13 +640,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2400
-     * @tc.name      : testLockAsync0014
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLockAsync0014
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2400
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testLockAsync0014';
@@ -696,13 +681,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2500
-     * @tc.name      : testLockAsync0015
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLockAsync0015
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2500
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testLockAsync0015';
@@ -738,13 +722,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2600
-     * @tc.name      : testLockAsync0016
-     * @tc.desc      : Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
-     *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testLockAsync0016
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2600
+     * @tc.desc   Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'testLockAsync0016';
@@ -780,12 +763,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2700
-     * @tc.name       : testLockAsync0017
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0017
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2700
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0017";
@@ -824,12 +807,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2800
-     * @tc.name       : testLockAsync0018
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0018
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2800
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0018";
@@ -866,12 +849,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2900
-     * @tc.name       : testLockAsync0019
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0019
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2900
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0019";
@@ -908,12 +891,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3000
-     * @tc.name       : testLockAsync0020
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0020
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3000
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0020";
@@ -944,12 +927,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3100
-     * @tc.name       : testLockAsync0021
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0021
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3100
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0021";
@@ -989,12 +972,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3200
-     * @tc.name       : testLockAsync0022
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0022
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3200
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0022";
@@ -1018,12 +1001,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3300
-     * @tc.name       : testLockAsync0023
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0023
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3300
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0023";
@@ -1055,12 +1038,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3400
-     * @tc.name       : testLockAsync0024
-     * @tc.desc       : Test the function of the interface LockAsync.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLockAsync0024
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3400
+     * @tc.desc   Test the function of the interface LockAsync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLockAsync0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testLockAsync0024";
@@ -1092,12 +1075,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3500
-     * @tc.name       : testAsyncLockMode0001
-     * @tc.desc       : Test the function of the interface LockAsyncMode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockMode0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3500
+     * @tc.desc   Test the function of the interface LockAsyncMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockMode0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockMode0001";
@@ -1129,12 +1112,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3600
-     * @tc.name       : testAsyncLockMode0002
-     * @tc.desc       : Test the function of the interface LockAsyncMode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockMode0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3600
+     * @tc.desc   Test the function of the interface LockAsyncMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockMode0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockMode0002";
@@ -1169,12 +1152,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3700
-     * @tc.name       : testAsyncLockOptions0001
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3700
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0001";
@@ -1192,12 +1175,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3800
-     * @tc.name       : testAsyncLockOptions0002
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3800
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0002";
@@ -1225,12 +1208,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3900
-     * @tc.name       : testAsyncLockOptions0003
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3900
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0003";
@@ -1252,12 +1235,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4000
-     * @tc.name       : testAsyncLockOptions0004
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4000
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0004";
@@ -1279,12 +1262,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4100
-     * @tc.name       : testAsyncLockOptions0005
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4100
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0005";
@@ -1308,12 +1291,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4200
-     * @tc.name       : testAsyncLockOptions0006
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4200
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0006";
@@ -1337,12 +1320,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4300
-     * @tc.name       : testAsyncLockOptions0007
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4300
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0007";
@@ -1364,12 +1347,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4400
-     * @tc.name       : testAsyncLockOptions0008
-     * @tc.desc       : Test the function of the interface LockAsyncOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockOptions0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4400
+     * @tc.desc   Test the function of the interface LockAsyncOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockOptions0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockOptions0008";
@@ -1391,12 +1374,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4500
-     * @tc.name       : testAsyncLockState0001
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4500
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0001";
@@ -1422,12 +1405,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4600
-     * @tc.name       : testAsyncLockState0002
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4600
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0002";
@@ -1453,12 +1436,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4700
-     * @tc.name       : testAsyncLockState0003
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4700
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0003";
@@ -1484,12 +1467,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4800
-     * @tc.name       : testAsyncLockState0004
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4800
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0004";
@@ -1515,12 +1498,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4900
-     * @tc.name       : testAsyncLockState0005
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4900
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0005";
@@ -1548,12 +1531,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5000
-     * @tc.name       : testAsyncLockState0006
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5000
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0006";
@@ -1581,12 +1564,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5100
-     * @tc.name       : testAsyncLockState0007
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5100
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0007";
@@ -1614,12 +1597,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5200
-     * @tc.name       : testAsyncLockState0008
-     * @tc.desc       : Test the function of the interface LockAsyncState.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockState0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5200
+     * @tc.desc   Test the function of the interface LockAsyncState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockState0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockState0008";
@@ -1648,12 +1631,12 @@ export default function arkTSUtilsTest() {
 
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5300
-     * @tc.name       : testISendable0001
-     * @tc.desc       : Test the function of the interface ISendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testISendable0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5300
+     * @tc.desc   Test the function of the interface ISendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testISendable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testISendable0001";
@@ -1670,12 +1653,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5400
-     * @tc.name       : testTransformer0001
-     * @tc.desc       : Test the function of the interface Transformer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTransformer0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5400
+     * @tc.desc   Test the function of the interface Transformer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTransformer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testTransformer0001";
@@ -1696,12 +1679,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5500
-     * @tc.name       : testAsyncLockParseOptions0001
-     * @tc.desc       : Test the function of the interface LockAsyncParseOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockParseOptions0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5500
+     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockParseOptions0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockParseOptions0001";
@@ -1722,12 +1705,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5600
-     * @tc.name       : testAsyncLockParseOptions0002
-     * @tc.desc       : Test the function of the interface LockAsyncParseOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockParseOptions0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5600
+     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockParseOptions0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockParseOptions0002";
@@ -1749,12 +1732,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5700
-     * @tc.name       : testAsyncLockParseOptions0003
-     * @tc.desc       : Test the function of the interface LockAsyncParseOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockParseOptions0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5700
+     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockParseOptions0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockParseOptions0003";
@@ -1776,12 +1759,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5800
-     * @tc.name       : testAsyncLockParseOptions0004
-     * @tc.desc       : Test the function of the interface LockAsyncParseOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAsyncLockParseOptions0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5800
+     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAsyncLockParseOptions0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testAsyncLockParseOptions0004";
@@ -1803,12 +1786,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5900
-     * @tc.name       : testParse0001
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5900
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParse0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testParse0001";
@@ -1824,12 +1807,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6000
-     * @tc.name       : testParse0002
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6000
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParse0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testParse0002";
@@ -1845,12 +1828,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6100
-     * @tc.name       : testParse0003
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6100
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParse0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testParse0003";
@@ -1868,12 +1851,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6200
-     * @tc.name       : testParse0004
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6200
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParse0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testParse0004";
@@ -1891,12 +1874,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6300
-     * @tc.name       : testParse0005
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6300
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParse0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testParse0005";
@@ -1919,12 +1902,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6400
-     * @tc.name       : testParse0006
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6400
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParse0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testParse0006";
@@ -1947,12 +1930,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6500
-     * @tc.name       : testParse0007
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParse0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6500
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testParse0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testParse0007";
@@ -1975,12 +1958,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6600
-     * @tc.name       : testStringify0001
-     * @tc.desc       : Test the function of the interface Stringify.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6600
+     * @tc.desc   Test the function of the interface Stringify.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0001";
@@ -1994,12 +1977,12 @@ export default function arkTSUtilsTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6700
-     * @tc.name       : testStringify0002
-     * @tc.desc       : Test the function of the interface Stringify.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6700
+     * @tc.desc   Test the function of the interface Stringify.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0002";
@@ -2013,12 +1996,12 @@ export default function arkTSUtilsTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6800
-     * @tc.name       : testStringify0003
-     * @tc.desc       : Test the function of the interface Stringify.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6800
+     * @tc.desc   Test the function of the interface Stringify.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0003";
@@ -2032,12 +2015,12 @@ export default function arkTSUtilsTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6900
-     * @tc.name       : testStringify0004
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_6900
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0004";
@@ -2051,12 +2034,12 @@ export default function arkTSUtilsTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7000
-     * @tc.name       : testStringify0005
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7000
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0005";
@@ -2073,12 +2056,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7100
-     * @tc.name       : testStringify0006
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7100
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0006";
@@ -2093,12 +2076,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7200
-     * @tc.name       : testStringify0007
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7200
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0007";
@@ -2117,12 +2100,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7300
-     * @tc.name       : testStringify0008
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7300
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0008";
@@ -2138,12 +2121,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7400
-     * @tc.name       : testStringify0009
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0009
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7400
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0009";
@@ -2159,12 +2142,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7600
-     * @tc.name       : testStringify0011
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0011
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7600
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0011";
@@ -2180,12 +2163,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7700
-     * @tc.name       : testStringify0012
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0012
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7700
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0012";
@@ -2201,12 +2184,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7800
-     * @tc.name       : testStringify0013
-     * @tc.desc       : Test the function of the interface Parse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStringify0013
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7800
+     * @tc.desc   Test the function of the interface Parse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testStringify0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = "testStringify0013";
@@ -2222,12 +2205,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7900
-     * @tc.name       : testIsSendable0001
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_7900
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0001";
@@ -2242,12 +2225,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8000
-     * @tc.name       : testIsSendable0002
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8000
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0002";
@@ -2262,12 +2245,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8100
-     * @tc.name       : testIsSendable0003
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8100
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0003";
@@ -2282,12 +2265,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8200
-     * @tc.name       : testIsSendable0004
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8200
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0004";
@@ -2302,12 +2285,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8300
-     * @tc.name       : testIsSendable0005
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8300
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0005";
@@ -2322,12 +2305,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8400
-     * @tc.name       : testIsSendable0006
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8400
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0006";
@@ -2342,12 +2325,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8500
-     * @tc.name       : testIsSendable0007
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8500
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0007";
@@ -2362,12 +2345,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8600
-     * @tc.name       : testIsSendable0008
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8600
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0008";
@@ -2382,12 +2365,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8700
-     * @tc.name       : testIsSendable0009
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0009
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8700
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0009";
@@ -2402,12 +2385,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8800
-     * @tc.name       : testIsSendable0010
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0010
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8800
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0010";
@@ -2422,12 +2405,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8900
-     * @tc.name       : testIsSendable0011
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0011
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_8900
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0011";
@@ -2442,12 +2425,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9000
-     * @tc.name       : testIsSendable0012
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0012
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9000
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0012";
@@ -2462,12 +2445,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9100
-     * @tc.name       : testIsSendable0013
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0013
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9100
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0013";
@@ -2488,12 +2471,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9200
-     * @tc.name       : testIsSendable0014
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0014
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9200
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0014";
@@ -2508,12 +2491,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9300
-     * @tc.name       : testIsSendable0015
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0015
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9300
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0015";
@@ -2528,12 +2511,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9400
-     * @tc.name       : testIsSendable0016
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0016
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9400
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0016";
@@ -2548,12 +2531,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9500
-     * @tc.name       : testIsSendable0017
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0017
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9500
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0017";
@@ -2568,12 +2551,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9600
-     * @tc.name       : testIsSendable0018
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0018
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9600
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0018";
@@ -2588,12 +2571,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9700
-     * @tc.name       : testIsSendable0019
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0019
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9700
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0019";
@@ -2608,12 +2591,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9800
-     * @tc.name       : testIsSendable0020
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0020
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9800
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0020";
@@ -2628,12 +2611,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9900
-     * @tc.name       : testIsSendable0021
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0021
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_9900
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0021";
@@ -2648,12 +2631,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10000
-     * @tc.name       : testIsSendable0022
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0022
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10000
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0022";
@@ -2668,12 +2651,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10100
-     * @tc.name       : testIsSendable0023
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0023
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10100
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0023";
@@ -2688,12 +2671,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10200
-     * @tc.name       : testIsSendable0024
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0024
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10200
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0024";
@@ -2708,12 +2691,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10300
-     * @tc.name       : testIsSendable0025
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0025
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10300
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0025";
@@ -2729,12 +2712,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10400
-     * @tc.name       : testIsSendable0026
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0026
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10400
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0026";
@@ -2749,12 +2732,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10500
-     * @tc.name       : testIsSendable0027
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0027
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10500
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0027";
@@ -2769,12 +2752,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10600
-     * @tc.name       : testIsSendable0028
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0028
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10600
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0028";
@@ -2788,12 +2771,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10700
-     * @tc.name       : testIsSendable0029
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0029
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10700
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0029";
@@ -2807,12 +2790,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10800
-     * @tc.name       : testIsSendable0030
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0030
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10800
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0030";
@@ -2827,12 +2810,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10900
-     * @tc.name       : testIsSendable0031
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0031
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_10900
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0031";
@@ -2847,12 +2830,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11000
-     * @tc.name       : testIsSendable0032
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0032
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11000
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0032";
@@ -2867,12 +2850,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11100
-     * @tc.name       : testIsSendable0033
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0033
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11100
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0033";
@@ -2887,12 +2870,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11200
-     * @tc.name       : testIsSendable0034
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0034
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11200
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0034";
@@ -2907,12 +2890,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11300
-     * @tc.name       : testIsSendable0035
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0035
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11300
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0035";
@@ -2927,12 +2910,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11400
-     * @tc.name       : testIsSendable0036
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0036
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11400
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0036";
@@ -2947,12 +2930,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11500
-     * @tc.name       : testIsSendable0037
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0037
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11500
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0037";
@@ -2967,12 +2950,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11600
-     * @tc.name       : testIsSendable0038
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0038
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11600
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0038";
@@ -2987,12 +2970,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11700
-     * @tc.name       : testIsSendable0039
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0039
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11700
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0039";
@@ -3007,12 +2990,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11800
-     * @tc.name       : testIsSendable0040
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0040
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11800
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0040";
@@ -3026,12 +3009,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11900
-     * @tc.name       : testIsSendable0041
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0041
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_11900
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0041";
@@ -3046,12 +3029,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_12000
-     * @tc.name       : testIsSendable0042
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0042
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_12000
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0042";
@@ -3068,12 +3051,12 @@ export default function arkTSUtilsTest() {
     })
 
     /**
-     * @tc.number     : SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_12100
-     * @tc.name       : testIsSendable0043
-     * @tc.desc       : Test the function of the interface IsSendable.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsSendable0043
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_12100
+     * @tc.desc   Test the function of the interface IsSendable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSendable0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testIsSendable0043";

@@ -50,13 +50,15 @@ export default function AlignContent_FlexAlign_End_padding() {
       console.info("AlignContent_FlexAlign_End_padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_0300
-     * @tc.name testAlignContentEndFlexPaddingNoSatisfy
-     * @tc.desc The AlignContent property of the Flex component is set to FlexAlign.End, and the padding setting
-     *               for the Flex component does not meet the height requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexPaddingNoSatisfy
+     * @tc.number testAlignContentEndFlexPaddingNoSatisfy
+     * @tc.desc   testAlignContentEndFlexPaddingNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexPaddingNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexPaddingNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -103,13 +105,15 @@ export default function AlignContent_FlexAlign_End_padding() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_0400
-     * @tc.name testAlignContentEndFlexPaddingSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set padding for the
-     *               Flex component to meet the height requirements of the subcomponen.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexPaddingSatisfy
+     * @tc.number testAlignContentEndFlexPaddingSatisfy
+     * @tc.desc   testAlignContentEndFlexPaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexPaddingSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexPaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

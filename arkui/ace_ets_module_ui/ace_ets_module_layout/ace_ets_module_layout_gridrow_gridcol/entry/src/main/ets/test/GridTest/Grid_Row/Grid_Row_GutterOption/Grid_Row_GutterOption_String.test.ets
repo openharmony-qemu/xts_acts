@@ -47,9 +47,12 @@ export default function Grid_Row_GutterOption_String() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowGutterOption_STRING_0100
      * @tc.number SUB_ACE_GRIDROWGUTTEROPTION_STRING_0100
-     * @tc.name testGutterLengthString
-     * @tc.desc Set the GridRowSizeOption of GridRow to '80px'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '80px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowGutterOption_STRING_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowGutterOption_STRING_0100 START');
@@ -70,9 +73,12 @@ export default function Grid_Row_GutterOption_String() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowGutterOption_STRING_0200
      * @tc.number SUB_ACE_GRIDROWGUTTEROPTION_STRING_0200
-     * @tc.name testGutterLengthString
-     * @tc.desc Set the GridRowSizeOption of GridRow to '30%'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '30%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowGutterOption_STRING_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowGutterOption_STRING_0200 START');

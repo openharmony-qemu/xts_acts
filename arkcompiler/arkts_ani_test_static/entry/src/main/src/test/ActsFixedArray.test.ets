@@ -31,12 +31,12 @@ export default function fixedArrayTest() {
     }
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_GETLENGTH_0100
-     * @tc.name      test_FixedArray_GetLength_0001
-     * @tc.desc      get length error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_GetLength_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_GETLENGTH_0100
+     * @tc.desc   get length error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_GetLength_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_GETLENGTH_0200
-     * @tc.name      test_FixedArray_GetLength_0002
-     * @tc.desc      get length ok tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_GetLength_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_GETLENGTH_0200
+     * @tc.desc   get length ok tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_GetLength_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -70,12 +70,12 @@ export default function fixedArrayTest() {
 
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_GETLENGTH_0300
-     * @tc.name      test_FixedArray_GetLength_0003
-     * @tc.desc      get length types tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_GetLength_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_GETLENGTH_0300
+     * @tc.desc   get length types tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_GetLength_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -89,12 +89,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0100
-     * @tc.name      test_FixedArray_Boolean_0001
-     * @tc.desc      get length error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Boolean_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0100
+     * @tc.desc   get length error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Boolean_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -108,12 +108,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0200
-     * @tc.name      test_FixedArray_Boolean_0002
-     * @tc.desc      get boolean array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Boolean_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0200
+     * @tc.desc   get boolean array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Boolean_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -127,12 +127,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0300
-     * @tc.name      test_FixedArray_Boolean_0003
-     * @tc.desc      check change from managed region boolean test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Boolean_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0300
+     * @tc.desc   check change from managed region boolean test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Boolean_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -146,12 +146,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0400
-     * @tc.name      test_FixedArray_Boolean_0004
-     * @tc.desc      check change from api region boolean test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Boolean_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0400
+     * @tc.desc   check change from api region boolean test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Boolean_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -165,12 +165,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0500
-     * @tc.name      test_FixedArray_Boolean_0005
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Boolean_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0500
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Boolean_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -184,12 +184,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0600
-     * @tc.name      test_FixedArray_Boolean_0006
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Boolean_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BOOLEAN_0600
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Boolean_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -203,12 +203,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BYTE_0100
-     * @tc.name      test_FixedArray_Byte_0001
-     * @tc.desc      set byte array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Byte_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BYTE_0100
+     * @tc.desc   set byte array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Byte_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -222,12 +222,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BYTE_0200
-     * @tc.name      test_FixedArray_Byte_0002
-     * @tc.desc      get byte array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Byte_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BYTE_0200
+     * @tc.desc   get byte array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Byte_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -241,12 +241,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BYTE_0300
-     * @tc.name      test_FixedArray_Byte_0003
-     * @tc.desc      check change from managed region byte test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Byte_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BYTE_0300
+     * @tc.desc   check change from managed region byte test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Byte_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -260,12 +260,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BYTE_0400
-     * @tc.name      test_FixedArray_Byte_0004
-     * @tc.desc      check change from api region byte test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Byte_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BYTE_0400
+     * @tc.desc   check change from api region byte test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Byte_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -279,12 +279,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BYTE_0500
-     * @tc.name      test_FixedArray_Byte_0005
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Byte_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BYTE_0500
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Byte_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -298,12 +298,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BYTE_0600
-     * @tc.name      test_FixedArray_Byte_0006
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Byte_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BYTE_0600
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Byte_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -317,12 +317,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_BYTE_0700
-     * @tc.name      test_FixedArray_Byte_0007
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Byte_0007
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_BYTE_0700
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Byte_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -336,12 +336,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_CHAR_0100
-     * @tc.name      test_FixedArray_Char_0001
-     * @tc.desc      set char array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Char_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_CHAR_0100
+     * @tc.desc   set char array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Char_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -355,12 +355,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_CHAR_0200
-     * @tc.name      test_FixedArray_Char_0002
-     * @tc.desc      get char array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Char_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_CHAR_0200
+     * @tc.desc   get char array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Char_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -374,12 +374,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_CHAR_0300
-     * @tc.name      test_FixedArray_Char_0003
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Char_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_CHAR_0300
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Char_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -393,12 +393,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_CHAR_0400
-     * @tc.name      test_FixedArray_Char_0004
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Char_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_CHAR_0400
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Char_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -412,12 +412,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_CHAR_0500
-     * @tc.name      test_FixedArray_Char_0005
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Char_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_CHAR_0500
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Char_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -431,12 +431,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0100
-     * @tc.name      test_FixedArray_Short_0001
-     * @tc.desc      set short array region error test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Short_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_SHORT_0100
+     * @tc.desc   set short array region error test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Short_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -450,12 +450,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0200
-     * @tc.name      test_FixedArray_Short_0002
-     * @tc.desc      get short array region error test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Short_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_SHORT_0200
+     * @tc.desc   get short array region error test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Short_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -469,12 +469,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0300
-     * @tc.name      test_FixedArray_Short_0003
-     * @tc.desc      check change from managed region short test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Short_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_SHORT_0300
+     * @tc.desc   check change from managed region short test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Short_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -488,12 +488,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0400
-     * @tc.name      test_FixedArray_Short_0004
-     * @tc.desc      check change from api region short test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Short_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_SHORT_0400
+     * @tc.desc   check change from api region short test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Short_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -507,12 +507,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0500
-     * @tc.name      test_FixedArray_Short_0005
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Short_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_SHORT_0500
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Short_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -526,12 +526,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0600
-     * @tc.name      test_FixedArray_Short_0006
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Short_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_SHORT_0600
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Short_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -545,12 +545,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_SHORT_0700
-     * @tc.name      test_FixedArray_Short_0007
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Short_0007
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_SHORT_0700
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Short_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -564,12 +564,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0100
-     * @tc.name      test_FixedArray_Int_0001
-     * @tc.desc      set int array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0100
+     * @tc.desc   set int array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -583,12 +583,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0200
-     * @tc.name      test_FixedArray_Int_0002
-     * @tc.desc      set int array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0200
+     * @tc.desc   set int array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -602,12 +602,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0300
-     * @tc.name      test_FixedArray_Int_0003
-     * @tc.desc      get int array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0300
+     * @tc.desc   get int array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -621,12 +621,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0400
-     * @tc.name      test_FixedArray_Int_0004
-     * @tc.desc      check change from managed region int test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0400
+     * @tc.desc   check change from managed region int test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -640,12 +640,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0500
-     * @tc.name      test_FixedArray_Int_0005
-     * @tc.desc      check change from api region int test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0500
+     * @tc.desc   check change from api region int test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -659,12 +659,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0600
-     * @tc.name      test_FixedArray_Int_0006
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0600
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -678,12 +678,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0700
-     * @tc.name      test_FixedArray_Int_0007
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0007
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0700
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -697,12 +697,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_INT_0800
-     * @tc.name      test_FixedArray_Int_0008
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Int_0008
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_INT_0800
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Int_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -716,12 +716,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0100
-     * @tc.name      test_FixedArray_Long_0001
-     * @tc.desc      set long array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0100
+     * @tc.desc   set long array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -735,12 +735,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0200
-     * @tc.name      test_FixedArray_Long_0002
-     * @tc.desc      set long array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0200
+     * @tc.desc   set long array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -754,12 +754,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0300
-     * @tc.name      test_FixedArray_Long_0003
-     * @tc.desc      get long array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0300
+     * @tc.desc   get long array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -773,12 +773,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0400
-     * @tc.name      test_FixedArray_Long_0004
-     * @tc.desc      check change from managed region long test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0400
+     * @tc.desc   check change from managed region long test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -792,12 +792,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0500
-     * @tc.name      test_FixedArray_Long_0005
-     * @tc.desc      check change from api region long test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0500
+     * @tc.desc   check change from api region long test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -811,12 +811,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0600
-     * @tc.name      test_FixedArray_Long_0006
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0600
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -830,12 +830,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0700
-     * @tc.name      test_FixedArray_Long_0007
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0007
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0700
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -849,12 +849,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_LONG_0800
-     * @tc.name      test_FixedArray_Long_0008
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Long_0008
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_LONG_0800
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Long_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -868,12 +868,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0100
-     * @tc.name      test_FixedArray_Float_0001
-     * @tc.desc      set float array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0100
+     * @tc.desc   set float array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -887,12 +887,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0200
-     * @tc.name      test_FixedArray_Float_0002
-     * @tc.desc      set float array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0200
+     * @tc.desc   set float array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -906,12 +906,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0300
-     * @tc.name      test_FixedArray_Float_0003
-     * @tc.desc      get float array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0300
+     * @tc.desc   get float array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -925,12 +925,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0400
-     * @tc.name      test_FixedArray_Float_0004
-     * @tc.desc      check change from managed region float test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0400
+     * @tc.desc   check change from managed region float test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -944,12 +944,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0500
-     * @tc.name      test_FixedArray_Float_0005
-     * @tc.desc      check change from api region float test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0500
+     * @tc.desc   check change from api region float test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -963,12 +963,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0600
-     * @tc.name      test_FixedArray_Float_0006
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0600
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -982,12 +982,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0700
-     * @tc.name      test_FixedArray_Float_0007
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0007
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0700
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1001,12 +1001,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_FLOAT_0800
-     * @tc.name      test_FixedArray_Float_0008
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Float_0008
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_FLOAT_0800
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Float_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1020,12 +1020,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0100
-     * @tc.name      test_FixedArray_Double_0001
-     * @tc.desc      set double array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0100
+     * @tc.desc   set double array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1039,12 +1039,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0200
-     * @tc.name      test_FixedArray_Double_0002
-     * @tc.desc      set double array region error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0200
+     * @tc.desc   set double array region error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1058,12 +1058,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0300
-     * @tc.name      test_FixedArray_Double_0003
-     * @tc.desc      check change from managed region double test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0300
+     * @tc.desc   check change from managed region double test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1077,12 +1077,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0400
-     * @tc.name      test_FixedArray_Double_0004
-     * @tc.desc      check change from api region double test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0400
+     * @tc.desc   check change from api region double test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1096,12 +1096,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0500
-     * @tc.name      test_FixedArray_Double_0005
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0500
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1115,12 +1115,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0600
-     * @tc.name      test_FixedArray_Double_0006
-     * @tc.desc      set special value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0600
+     * @tc.desc   set special value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1134,12 +1134,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0700
-     * @tc.name      test_FixedArray_Double_0007
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0007
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0700
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1153,12 +1153,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0800
-     * @tc.name      test_FixedArray_Double_0008
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Double_0008
+     * @tc.number SUB_ANI_FIXEDARRAY_REGION_DOUBLE_0800
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Double_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1172,12 +1172,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_GET_REF_0100
-     * @tc.name      test_FixedArray_Get_Ref_0001
-     * @tc.desc      get ref error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Get_Ref_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_GET_REF_0100
+     * @tc.desc   get ref error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Get_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1191,12 +1191,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_GET_REF_0200
-     * @tc.name      test_FixedArray_Get_Ref_0002
-     * @tc.desc      get ref error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Get_Ref_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_GET_REF_0200
+     * @tc.desc   get ref error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Get_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1210,12 +1210,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_GET_REF_0300
-     * @tc.name      test_FixedArray_Get_Ref_0003
-     * @tc.desc      get ref ok tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Get_Ref_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_GET_REF_0300
+     * @tc.desc   get ref ok tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Get_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1229,12 +1229,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0100
-     * @tc.name      test_FixedArray_New_Ref_0001
-     * @tc.desc      new ref error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_New_Ref_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_NEW_REF_0100
+     * @tc.desc   new ref error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_New_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1248,12 +1248,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0200
-     * @tc.name      test_FixedArray_New_Ref_0002
-     * @tc.desc      new ref error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_New_Ref_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_NEW_REF_0200
+     * @tc.desc   new ref error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_New_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1267,12 +1267,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0300
-     * @tc.name      test_FixedArray_New_Ref_0003
-     * @tc.desc      new object array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_New_Ref_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_NEW_REF_0300
+     * @tc.desc   new object array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_New_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1286,12 +1286,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0400
-     * @tc.name      test_FixedArray_New_Ref_0004
-     * @tc.desc      new object array test 2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_New_Ref_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_NEW_REF_0400
+     * @tc.desc   new object array test 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_New_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1305,12 +1305,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0500
-     * @tc.name      test_FixedArray_New_Ref_0005
-     * @tc.desc      new object array test 3
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_New_Ref_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_NEW_REF_0500
+     * @tc.desc   new object array test 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_New_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1324,12 +1324,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_NEW_REF_0700
-     * @tc.name      test_FixedArray_New_Ref_0007
-     * @tc.desc      new large array types test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_New_Ref_0007
+     * @tc.number SUB_ANI_FIXEDARRAY_NEW_REF_0700
+     * @tc.desc   new large array types test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_New_Ref_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1343,12 +1343,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0100
-     * @tc.name      test_FixedArray_Set_Ref_0001
-     * @tc.desc      set ref error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Set_Ref_0001
+     * @tc.number SUB_ANI_FIXEDARRAY_SET_REF_0100
+     * @tc.desc   set ref error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Set_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1362,12 +1362,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0200
-     * @tc.name      test_FixedArray_Set_Ref_0002
-     * @tc.desc      set ref error tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Set_Ref_0002
+     * @tc.number SUB_ANI_FIXEDARRAY_SET_REF_0200
+     * @tc.desc   set ref error tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Set_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1381,12 +1381,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0300
-     * @tc.name      test_FixedArray_Set_Ref_0003
-     * @tc.desc      set ref ok tests
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Set_Ref_0003
+     * @tc.number SUB_ANI_FIXEDARRAY_SET_REF_0300
+     * @tc.desc   set ref ok tests
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Set_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1400,12 +1400,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0400
-     * @tc.name      test_FixedArray_Set_Ref_0004
-     * @tc.desc      set ref error value to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Set_Ref_0004
+     * @tc.number SUB_ANI_FIXEDARRAY_SET_REF_0400
+     * @tc.desc   set ref error value to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Set_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1419,12 +1419,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0500
-     * @tc.name      test_FixedArray_Set_Ref_0005
-     * @tc.desc      set get union to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Set_Ref_0005
+     * @tc.number SUB_ANI_FIXEDARRAY_SET_REF_0500
+     * @tc.desc   set get union to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Set_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1438,12 +1438,12 @@ export default function fixedArrayTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_FIXEDARRAY_SET_REF_0600
-     * @tc.name      test_FixedArray_Set_Ref_0006
-     * @tc.desc      set get stability to array test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
+     * @tc.name   test_FixedArray_Set_Ref_0006
+     * @tc.number SUB_ANI_FIXEDARRAY_SET_REF_0600
+     * @tc.desc   set get stability to array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_FixedArray_Set_Ref_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

@@ -26,39 +26,39 @@ export default function commonAttrsOutlineWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OUTLINEWIDTH_0100
-     * @tc.name       : testCommonAttrsOutlineWidth001
-     * @tc.desc       : testing outline width for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOutlineWidth001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OUTLINEWIDTH_0100
+     * @tc.desc   testing outline width for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOutlineWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOutlineWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OUTLINEWIDTH_0200
-     * @tc.name       : testCommonAttrsOutlineWidth002
-     * @tc.desc       : testing outline width for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOutlineWidth002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OUTLINEWIDTH_0200
+     * @tc.desc   testing outline width for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOutlineWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOutlineWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OUTLINEWIDTH_0300
-     * @tc.name       : testCommonAttrsOutlineWidth003
-     * @tc.desc       : testing outline width for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOutlineWidth003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OUTLINEWIDTH_0300
+     * @tc.desc   testing outline width for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOutlineWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOutlineWidth003()).assertEqual(0)

@@ -42,12 +42,12 @@ export default function SearchEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchEnableAutoSpacingTest_0010
-     * @tc.name      SearchEnableAutoSpacingTest_0010
-     * @tc.desc      test the attr of Search: enableAutoSpacing(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchEnableAutoSpacingTest_0010
+     * @tc.number SUB_ACE_SearchEnableAutoSpacingTest_0010
+     * @tc.desc   test the attr of Search: enableAutoSpacing(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchEnableAutoSpacingTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchEnableAutoSpacingTest_0010] START');
@@ -60,12 +60,12 @@ export default function SearchEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchEnableAutoSpacingTest_0020
-     * @tc.name      SearchEnableAutoSpacingTest_0020
-     * @tc.desc      test the attr of Search: enableAutoSpacing(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchEnableAutoSpacingTest_0020
+     * @tc.number SUB_ACE_SearchEnableAutoSpacingTest_0020
+     * @tc.desc   test the attr of Search: enableAutoSpacing(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchEnableAutoSpacingTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchEnableAutoSpacingTest_0020] START');
@@ -78,12 +78,12 @@ export default function SearchEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchEnableAutoSpacingTest_0030
-     * @tc.name      SearchEnableAutoSpacingTest_0030
-     * @tc.desc      test the attr of Search: enableAutoSpacing(default)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchEnableAutoSpacingTest_0030
+     * @tc.number SUB_ACE_SearchEnableAutoSpacingTest_0030
+     * @tc.desc   test the attr of Search: enableAutoSpacing(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchEnableAutoSpacingTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchEnableAutoSpacingTest_0030] START');
@@ -96,12 +96,12 @@ export default function SearchEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchEnableAutoSpacingTest_0040
-     * @tc.name      SearchEnableAutoSpacingTest_0040
-     * @tc.desc      test the attr of Search: enableAutoSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchEnableAutoSpacingTest_0040
+     * @tc.number SUB_ACE_SearchEnableAutoSpacingTest_0040
+     * @tc.desc   test the attr of Search: enableAutoSpacing(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchEnableAutoSpacingTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchEnableAutoSpacingTest_0040] START');
@@ -114,12 +114,12 @@ export default function SearchEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchEnableAutoSpacingTest_0050
-     * @tc.name      SearchEnableAutoSpacingTest_0050
-     * @tc.desc      test the attr of SearchModifier: enableAutoSpacing(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchEnableAutoSpacingTest_0050
+     * @tc.number SUB_ACE_SearchEnableAutoSpacingTest_0050
+     * @tc.desc   test the attr of SearchModifier: enableAutoSpacing(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchEnableAutoSpacingTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchEnableAutoSpacingTest_0050] START');
@@ -132,12 +132,12 @@ export default function SearchEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchEnableAutoSpacingTest_0060
-     * @tc.name      SearchEnableAutoSpacingTest_0060
-     * @tc.desc      test the attr of SearchModifier: enableAutoSpacing(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchEnableAutoSpacingTest_0060
+     * @tc.number SUB_ACE_SearchEnableAutoSpacingTest_0060
+     * @tc.desc   test the attr of SearchModifier: enableAutoSpacing(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchEnableAutoSpacingTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchEnableAutoSpacingTest_0060] START');
@@ -150,12 +150,12 @@ export default function SearchEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchEnableAutoSpacingTest_0070
-     * @tc.name      SearchEnableAutoSpacingTest_0070
-     * @tc.desc      test the attr of SearchModifier: enableAutoSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchEnableAutoSpacingTest_0070
+     * @tc.number SUB_ACE_SearchEnableAutoSpacingTest_0070
+     * @tc.desc   test the attr of SearchModifier: enableAutoSpacing(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchEnableAutoSpacingTest_0070', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchEnableAutoSpacingTest_0070] START');

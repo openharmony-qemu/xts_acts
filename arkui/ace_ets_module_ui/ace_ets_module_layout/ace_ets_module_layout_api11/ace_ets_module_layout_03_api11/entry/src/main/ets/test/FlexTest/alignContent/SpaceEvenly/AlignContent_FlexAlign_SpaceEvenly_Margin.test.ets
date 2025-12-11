@@ -50,13 +50,15 @@ export default function AlignContent_FlexAlign_SpaceEvenly_Margin() {
       console.info("AlignContent_FlexAlign_SpaceEvenly_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_0500
-     * @tc.name testAlignContentSpaceEvenlyFlexMarginSatisfy
-     * @tc.desc Set the alignContent property of the flex component to FlexAlign.SpaceEvenly
-     *               and the flex component to margin.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexMarginSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexMarginSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy START');
       let strJson = getInspectorByKey('AlignContentFlexSpaceEvenlyMargin_flex');

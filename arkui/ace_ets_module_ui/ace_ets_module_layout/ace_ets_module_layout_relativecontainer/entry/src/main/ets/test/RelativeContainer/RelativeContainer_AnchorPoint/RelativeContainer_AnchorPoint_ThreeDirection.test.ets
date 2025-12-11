@@ -47,9 +47,12 @@ export default function RelativeContainer_AnchorPoint_ThreeDirection() {
     });
 
     /**
+     * @tc.name   SUB_ACE_RelativeContainer_AnchorPoint_ThreeDirection_TEST_0100
      * @tc.number SUB_ACE_RelativeContainer_AnchorPoint_ThreeDirection_TEST_0100
-     * @tc.name testRelativeContainer
-     * @tc.desc row set two directions anchor piont
+     * @tc.desc   row set two directions anchor piont
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_RelativeContainer_AnchorPoint_ThreeDirection_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_ThreeDirection_TEST_0100] START');

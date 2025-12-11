@@ -60,12 +60,12 @@ export default function closeToastTest() {
     });
 
     /**
+     * @tc.name   closeToastTest_0100
      * @tc.number SUB_ACE_closeToastTest_0100
-     * @tc.name closeToastTest_0100
-     * @tc.desc To test that the promptAction.closeToast parameter is an abnormal value(0,undefined,null).
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.desc   To test that the promptAction.closeToast parameter is an abnormal value(0,undefined,null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('closeToastTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('closeToastTest_0100 START');
@@ -89,13 +89,13 @@ export default function closeToastTest() {
       console.info('closeToastTest_0100 END');
       done();
     });
-     /**
+    /**
+     * @tc.name   closeToastTest_0200
      * @tc.number closeToastTest_0200
-     * @tc.name closeToastTest_0200
-     * @tc.desc To test that the promptAction.closeToast parameter is an abnormal value(0,undefined,null).
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.desc   To test that the promptAction.closeToast parameter is an abnormal value(0,undefined,null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('closeToastTest_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('closeToastTest_0200 START');

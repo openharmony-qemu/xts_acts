@@ -70,10 +70,13 @@ static int32_t CreateAndSetSource()
     return ret;
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0100
- * @tc.name      : Video Prepare Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_001
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_001, Level1)
 {
@@ -93,10 +96,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_001, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0200
- * @tc.name      : Video Prepare Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_002
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_002, Level1)
 {
@@ -112,10 +118,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_002, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0300
- * @tc.name      : Video Play Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_003
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_003, Level1)
 {
@@ -136,10 +145,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_003, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0400
- * @tc.name      : Video Stop Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_004
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_004, Level1)
 {
@@ -164,10 +176,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_004, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0500
- * @tc.name      : Video Stop Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_005
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_005, Level1)
 {
@@ -185,10 +200,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_005, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0600
- * @tc.name      : Video Pause Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_006
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_006, Level1)
 {
@@ -211,10 +229,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_006, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0700
- * @tc.name      : Video Pause Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_007
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_007, Level1)
 {
@@ -230,10 +251,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_007, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0800
- * @tc.name      : Video GetCurrentTime Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_008
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_008, Level1)
 {
@@ -255,10 +279,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_008, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_0900
- * @tc.name      : Video GetCurrentTime Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_009
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_009, Level1)
 {
@@ -282,10 +309,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_009, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1000
- * @tc.name      : Video GetDuration Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_010
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_010, Level1)
 {
@@ -309,10 +339,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_010, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1100
- * @tc.name      : Video Rewind Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_011
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_011, Level1)
 {
@@ -333,10 +366,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_011, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1200
- * @tc.name      : Video GetDuration Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_012
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_012, Level1)
 {
@@ -353,10 +389,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_012, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1300
- * @tc.name      : Video GetVideoSurfaceSize Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_013
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_013, Level1)
 {
@@ -380,10 +419,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_013, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1400
- * @tc.name      : Video GetVideoSurfaceSize Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_014
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_014, Level1)
 {
@@ -404,10 +446,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_014, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1500
- * @tc.name      : Video GetVideoSurfaceSize Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_015
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_015, Level1)
 {
@@ -428,10 +473,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_015, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1600
- * @tc.name      : Video Reset Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_016
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_016, Level1)
 {
@@ -452,10 +500,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_016, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1700
- * @tc.name      : Video Reset Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_017
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_017, Level1)
 {
@@ -473,10 +524,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_017, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1800
- * @tc.name      : Video Release Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_018
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_018, Level1)
 {
@@ -496,10 +550,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_018, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_1900
- * @tc.name      : Video EnableSingleLooping Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_019
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_019, Level1)
 {
@@ -523,10 +580,13 @@ HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_019, Level1)
     sleep(1);
 }
 
-/* *
- * @tc.number    : SUB_MEDIA_PLAYER_PLAY_2000
- * @tc.name      : Video EnableSingleLooping Test.
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   player_lite_video_test_020
+ * @tc.number SUB_MEDIA_PLAYER_PLAY_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsMediaPlayerVideoTest, player_lite_video_test_020, Level1)
 {

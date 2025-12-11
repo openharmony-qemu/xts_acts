@@ -77,6 +77,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
         beforeEach(function () {
             resetOptions();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_101
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_101
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias101';
             let HuksOptions = {
@@ -102,6 +110,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_102
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_102
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias102';
             let HuksOptions = {
@@ -117,6 +133,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias103';
             let HuksOptions = {
@@ -142,6 +166,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_104
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_104
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias104';
             let HuksOptions = {
@@ -157,6 +189,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_102
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_102
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias102';
             let params = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -167,6 +207,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_102
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_102
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias102';
             let params = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -175,6 +223,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_104
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_104
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias104';
             let params = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -185,6 +241,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_104
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_104
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias104';
             let params = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -193,6 +257,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_101
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_101
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias101';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -206,6 +278,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_101
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_101
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias101';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -217,6 +297,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNNONE_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -230,6 +318,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNNONE_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -241,6 +337,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size384SIGNNONE_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size384SIGNNONE_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size384SIGNNONE_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size384SIGNNONE_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize384SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize384);
@@ -252,6 +356,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size521SIGNNONE_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size521SIGNNONE_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size521SIGNNONE_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size521SIGNNONE_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize521SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestNONE, HuksSignVerifyECC.HuksKeyECCSize521);
@@ -263,6 +375,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA1_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA1_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA1, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -276,6 +396,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA1_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA1_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA1, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -289,6 +417,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA1_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA1_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize384SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA1, HuksSignVerifyECC.HuksKeyECCSize384);
@@ -302,6 +438,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA1_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA1_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA1_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA1_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize521SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA1, HuksSignVerifyECC.HuksKeyECCSize521);
@@ -315,6 +459,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA224_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA224_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA224, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -328,6 +480,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA224_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA224_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA224, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -341,6 +501,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA224_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA224_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize384SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA224, HuksSignVerifyECC.HuksKeyECCSize384);
@@ -354,6 +522,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA224_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA224_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA224_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA224_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize521SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA224, HuksSignVerifyECC.HuksKeyECCSize521);
@@ -367,6 +543,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA256_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA256_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA256, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -380,6 +564,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA256_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA256_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA256, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -391,6 +583,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA256_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA256_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize384SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA256, HuksSignVerifyECC.HuksKeyECCSize384);
@@ -402,6 +602,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA256_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA256_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA256_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA256_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize521SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA256, HuksSignVerifyECC.HuksKeyECCSize521);
@@ -413,6 +621,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA384_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA384_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA384, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -426,6 +642,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA384_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA384_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA384, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -437,6 +661,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA384_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA384_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize384SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA384, HuksSignVerifyECC.HuksKeyECCSize384);
@@ -448,6 +680,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA384_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA384_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA384_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA384_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize521SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA384, HuksSignVerifyECC.HuksKeyECCSize521);
@@ -459,6 +699,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA512_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA512_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size224SIGNSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize224SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA512, HuksSignVerifyECC.HuksKeyECCSize224);
@@ -472,6 +720,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA512_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA512_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size256SIGNSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize256SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA512, HuksSignVerifyECC.HuksKeyECCSize256);
@@ -483,6 +739,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA512_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA512_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size384SIGNSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize384SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA512, HuksSignVerifyECC.HuksKeyECCSize384);
@@ -494,6 +758,14 @@ export default function SecurityHuksSignVerifyECCPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA512_103
+         * @tc.number Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA512_103
+         * @tc.desc   Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA512_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API8_ECC_Size521SIGNSHA512_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'testSignVerifyECCSize521SIGNNONEKeyAlias103';
             let paramsFirst = new Array(HuksSignVerifyECC.HuksTagECCDigestSHA512, HuksSignVerifyECC.HuksKeyECCSize521);

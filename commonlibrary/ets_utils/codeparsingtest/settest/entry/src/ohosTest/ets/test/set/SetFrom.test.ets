@@ -75,12 +75,12 @@ export default function SetFromTest() {
     })
 
     /**
+     * @tc.name   testSetKeysValues001
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_001
-     * @tc.name testSetKeysValues001
-     * @tc.desc Verify keys() and values() return same elements for primitive values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() return same elements for primitive values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['a', 'b', 'c']);
@@ -93,12 +93,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues002
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_002
-     * @tc.name testSetKeysValues002
-     * @tc.desc Verify keys() and values() consistency after add operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() consistency after add operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2]);
@@ -115,12 +115,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues003
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_003
-     * @tc.name testSetKeysValues003
-     * @tc.desc Verify keys() and values() after delete operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() after delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<boolean> = new Set([true, false, true]);
@@ -134,12 +134,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues004
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_004
-     * @tc.name testSetKeysValues004
-     * @tc.desc Verify keys() and values() for empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() for empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -153,12 +153,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues005
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_005
-     * @tc.name testSetKeysValues005
-     * @tc.desc Verify keys() and values() with object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1: BasicEntity = { id: '1', value: 100 };
@@ -175,12 +175,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues006
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_006
-     * @tc.name testSetKeysValues006
-     * @tc.desc Verify keys() and values() with mixed primitive types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with mixed primitive types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string | number | boolean> = new Set([
@@ -195,12 +195,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues007
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_007
-     * @tc.name testSetKeysValues007
-     * @tc.desc Verify keys() and values() after clear() operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() after clear() operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([10, 20, 30]);
@@ -214,12 +214,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues008
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_008
-     * @tc.name testSetKeysValues008
-     * @tc.desc Verify simultaneous iteration with keys() and values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify simultaneous iteration with keys() and values()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<string> = new Set(['apple', 'banana', 'cherry']);
@@ -243,24 +243,24 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues009
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_009
-     * @tc.name testSetKeysValues009
-     * @tc.desc Verify keys() and values() with Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetForOfJs009()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testSetKeysValues010
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_010
-     * @tc.name testSetKeysValues010
-     * @tc.desc Verify keys() and values() with BigInt elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const big1: bigint = 1234567890123456789n;
@@ -280,12 +280,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues011
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_011
-     * @tc.name testSetKeysValues011
-     * @tc.desc Verify keys() and values() with Date objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1: Date = new Date('2024-01-01');
@@ -302,12 +302,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues012
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_012
-     * @tc.name testSetKeysValues012
-     * @tc.desc Verify keys() and values() with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const item1: DataModel = new DataModel(1, 'First');
@@ -326,12 +326,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues013
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_013
-     * @tc.name testSetKeysValues013
-     * @tc.desc Verify keys() and values() with modified objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with modified objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj: BasicEntity = { id: 'init', value: 0 };
@@ -351,12 +351,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues015
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_015
-     * @tc.name testSetKeysValues015
-     * @tc.desc Verify keys() and values() with regex elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with regex elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex1: RegExp = /pattern/;
@@ -373,12 +373,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues016
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_016
-     * @tc.name testSetKeysValues016
-     * @tc.desc Verify keys() and values() with NaN and special numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with NaN and special numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([
@@ -394,12 +394,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues017
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_017
-     * @tc.name testSetKeysValues017
-     * @tc.desc Verify keys() and values() with enum values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<DataType> = new Set([
@@ -418,12 +418,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues018
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_018
-     * @tc.name testSetKeysValues018
-     * @tc.desc Verify keys() and values() during concurrent modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() during concurrent modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set([1, 2, 3, 4]);
@@ -448,12 +448,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues020
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_020
-     * @tc.name testSetKeysValues020
-     * @tc.desc Verify keys() and values() with large dataset
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with large dataset
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues020', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -475,12 +475,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues021
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_021
-     * @tc.name testSetKeysValues021
-     * @tc.desc Verify keys() and values() with Promise elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with Promise elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const promise1: Promise<number> = Promise.resolve(10);
@@ -497,12 +497,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues022
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_022
-     * @tc.name testSetKeysValues022
-     * @tc.desc Verify keys() and values() with Error objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with Error objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const error1: Error = new Error('Error 1');
@@ -521,12 +521,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues023
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_023
-     * @tc.name testSetKeysValues023
-     * @tc.desc Verify keys() and values() with typed arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr1: Uint8Array = new Uint8Array([1, 2, 3]);
@@ -544,36 +544,36 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues024
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_024
-     * @tc.name testSetKeysValues024
-     * @tc.desc Verify keys() and values() with frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetForOfJs024()).assertEqual(false);
     });
 
     /**
+     * @tc.name   testSetKeysValues025
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_025
-     * @tc.name testSetKeysValues025
-     * @tc.desc Verify keys() and values() with generator functions as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with generator functions as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetForOfJs025()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testSetKeysValues026
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_026
-     * @tc.name testSetKeysValues026
-     * @tc.desc Verify keys() and values() with mixed String objects and primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with mixed String objects and primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const strObj: String = new String('object');
@@ -590,12 +590,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues027
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_027
-     * @tc.name testSetKeysValues027
-     * @tc.desc Verify keys() and values() with mixed Number objects and primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with mixed Number objects and primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const numObj: Number = new Number(42);
@@ -612,12 +612,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues028
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_028
-     * @tc.name testSetKeysValues028
-     * @tc.desc Verify keys() and values() with Map objects as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with Map objects as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: Map<string, number> = new Map([['a', 1]]);
@@ -634,12 +634,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues029
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_029
-     * @tc.name testSetKeysValues029
-     * @tc.desc Verify keys() and values() performance with frequent operations
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() performance with frequent operations
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues029', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
@@ -679,12 +679,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetKeysValues030
      * @tc.number SUB_COMMONLIBRARY_SET_KEYS_VALUES_030
-     * @tc.name testSetKeysValues030
-     * @tc.desc Verify keys() and values() with null, undefined and related strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify keys() and values() with null, undefined and related strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeysValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const set: Set<null | undefined | string> = new Set([
@@ -705,12 +705,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf001
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_001
-     * @tc.name testSetForOf001
-     * @tc.desc Verify For-of in Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify For-of in Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number|string>();
@@ -728,12 +728,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf002
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_002
-     * @tc.name testSetForOf002
-     * @tc.desc Verify iteration behavior when adding elements during for-of loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify iteration behavior when adding elements during for-of loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2]);
@@ -753,12 +753,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf003
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_003
-     * @tc.name testSetForOf003
-     * @tc.desc Verify iteration behavior when deleting elements during for-of loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify iteration behavior when deleting elements during for-of loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3]);
@@ -777,12 +777,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf004
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_004
-     * @tc.name testSetForOf004
-     * @tc.desc Verify for-of loop on empty Set after clear()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop on empty Set after clear()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>(['a', 'b', 'c']);
@@ -798,12 +798,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf005
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_005
-     * @tc.name testSetForOf005
-     * @tc.desc Verify for-of loop with has() method check
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with has() method check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<boolean>([true, false]);
@@ -819,12 +819,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf006
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_006
-     * @tc.name testSetForOf006
-     * @tc.desc Verify for-of loop with objects as elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with objects as elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1 : GeneratedObjectLiteralInterface_1= { id: 1 };
@@ -842,12 +842,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf007
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_007
-     * @tc.name testSetForOf007
-     * @tc.desc Verify for-of loop after multiple add and delete operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop after multiple add and delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>();
@@ -868,12 +868,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf008
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_008
-     * @tc.name testSetForOf008
-     * @tc.desc Verify for-of loop with mixed data types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with mixed data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number | string | boolean>([10, 'hello', true]);
@@ -890,12 +890,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf009
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_009
-     * @tc.name testSetForOf009
-     * @tc.desc Verify for-of loop with large Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with large Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>();
@@ -915,12 +915,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf010
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_010
-     * @tc.name testSetForOf010
-     * @tc.desc Verify for-of loop with same-value-zero comparison elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with same-value-zero comparison elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([0, -0, 1]);
@@ -936,12 +936,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf011
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_011
-     * @tc.name testSetForOf011
-     * @tc.desc Verify for-of loop with nested Set elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with nested Set elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const nestedSet1 = new Set<number>([1, 2]);
@@ -959,12 +959,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf012
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_012
-     * @tc.name testSetForOf012
-     * @tc.desc Verify for-of iteration order after multiple add operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of iteration order after multiple add operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>();
@@ -981,12 +981,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf013
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_013
-     * @tc.name testSetForOf013
-     * @tc.desc Verify for-of loop with undefined and null elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with undefined and null elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<undefined | null>([undefined, null]);
@@ -1002,12 +1002,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf015
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_015
-     * @tc.name testSetForOf015
-     * @tc.desc Verify for-of loop after re-adding deleted element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop after re-adding deleted element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3]);
@@ -1023,12 +1023,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf016
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_016
-     * @tc.name testSetForOf016
-     * @tc.desc Verify for-of loop with numbers and their string equivalents
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with numbers and their string equivalents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number | string>([1, '1', 2, '2']);
@@ -1044,12 +1044,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf017
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_017
-     * @tc.name testSetForOf017
-     * @tc.desc Verify breaking for-of loop early
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify breaking for-of loop early
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3, 4, 5]);
@@ -1064,12 +1064,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf018
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_018
-     * @tc.name testSetForOf018
-     * @tc.desc Verify continuing in for-of loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify continuing in for-of loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3, 4, 5]);
@@ -1084,12 +1084,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf020
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_020
-     * @tc.name testSetForOf020
-     * @tc.desc Verify for-of loop with Set created from array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set created from array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [10, 20, 30, 20, 40];
@@ -1105,12 +1105,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf022
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_022
-     * @tc.name testSetForOf022
-     * @tc.desc Verify for-of loop with Date objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date1 = new Date(2023, 0, 1);
@@ -1128,12 +1128,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf023
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_023
-     * @tc.name testSetForOf023
-     * @tc.desc Verify for-of loop with NaN elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with NaN elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([NaN, NaN, 1, NaN]);
@@ -1149,12 +1149,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf024
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_024
-     * @tc.name testSetForOf024
-     * @tc.desc Verify for-of loop with multiple delete operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with multiple delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3, 4, 5]);
@@ -1170,12 +1170,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf025
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_025
-     * @tc.name testSetForOf025
-     * @tc.desc Verify for-of loop with Set containing functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set containing functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const func1 = () => 'hello';
@@ -1193,12 +1193,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf026
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_026
-     * @tc.name testSetForOf026
-     * @tc.desc Verify for-of loop with empty Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with empty Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>();
@@ -1212,12 +1212,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf027
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_027
-     * @tc.name testSetForOf027
-     * @tc.desc Verify for-of loop with Set and has() for non-existent element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set and has() for non-existent element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>(['apple', 'banana']);
@@ -1231,12 +1231,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf028
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_028
-     * @tc.name testSetForOf028
-     * @tc.desc Verify for-of loop with modified element properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with modified element properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1 : GeneratedObjectLiteralInterface_1 = { id: 10 };
@@ -1256,12 +1256,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf029
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_029
-     * @tc.name testSetForOf029
-     * @tc.desc Verify for-of loop with Set size check during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set size check during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3]);
@@ -1278,12 +1278,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf030
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_030
-     * @tc.name testSetForOf030
-     * @tc.desc Verify for-of loop with same object added multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with same object added multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj : GeneratedObjectLiteralInterface_1= { id: 1 };
@@ -1302,12 +1302,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf031
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_031
-     * @tc.name testSetForOf031
-     * @tc.desc Verify for-of loop with bigint elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with bigint elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const big1 = BigInt(100);
@@ -1325,12 +1325,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf032
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_032
-     * @tc.name testSetForOf032
-     * @tc.desc Verify for-of loop with elements of different primitive types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements of different primitive types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string | number | boolean>(['text', 42, true]);
@@ -1347,12 +1347,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf033
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_033
-     * @tc.name testSetForOf033
-     * @tc.desc Verify for-of loop after adding elements in reverse order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop after adding elements in reverse order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>();
@@ -1367,12 +1367,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf034
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_034
-     * @tc.name testSetForOf034
-     * @tc.desc Verify for-of loop with element deletion before iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with element deletion before iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>(['a', 'b', 'c', 'd']);
@@ -1389,24 +1389,24 @@ export default function SetFromTest() {
 
 
     /**
+     * @tc.name   testSetForOf036
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_036
-     * @tc.name testSetForOf036
-     * @tc.desc Verify for-of loop with nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetForOfJs036()).assertDeepEquals(['test1', 'test2']);
     });
 
     /**
+     * @tc.name   testSetForOf037
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_037
-     * @tc.name testSetForOf037
-     * @tc.desc Verify for-of loop with large string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with large string elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const longStr1 = 'a'.repeat(1000);
@@ -1424,24 +1424,24 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf038
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_038
-     * @tc.name testSetForOf038
-     * @tc.desc Verify for-of loop with elements added in different scopes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements added in different scopes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetForOfJs038()).assertDeepEquals([1, 2, 3, 4]);
     });
 
     /**
+     * @tc.name   testSetForOf041
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_041
-     * @tc.name testSetForOf041
-     * @tc.desc Verify for-of loop with elements deleted and re-added multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements deleted and re-added multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>(['a', 'b']);
@@ -1460,12 +1460,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf042
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_042
-     * @tc.name testSetForOf042
-     * @tc.desc Verify for-of loop with Set containing RegExp objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set containing RegExp objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex1 = /test1/;
@@ -1483,12 +1483,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf043
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_043
-     * @tc.name testSetForOf043
-     * @tc.desc Verify for-of loop with elements that are promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const promise1 = Promise.resolve(1);
@@ -1506,12 +1506,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf044
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_044
-     * @tc.name testSetForOf044
-     * @tc.desc Verify for-of loop with Set created from another Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set created from another Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const originalSet = new Set<number>([1, 2, 3]);
@@ -1526,12 +1526,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf045
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_045
-     * @tc.name testSetForOf045
-     * @tc.desc Verify for-of loop with Set and simultaneous iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set and simultaneous iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3]);
@@ -1547,12 +1547,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf046
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_046
-     * @tc.name testSetForOf046
-     * @tc.desc Verify for-of loop with elements that are class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class TestClass {
@@ -1576,12 +1576,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf047
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_047
-     * @tc.name testSetForOf047
-     * @tc.desc Verify for-of loop with elements that are weak references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are weak references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1 : GeneratedObjectLiteralInterface_3 = { name: 'obj1' };
@@ -1601,12 +1601,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf048
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_048
-     * @tc.name testSetForOf048
-     * @tc.desc Verify for-of loop with Set that has maximum size elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with Set that has maximum size elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>();
@@ -1625,12 +1625,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf049
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_049
-     * @tc.name testSetForOf049
-     * @tc.desc Verify for-of loop with elements that are modified during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are modified during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj1 : GeneratedObjectLiteralInterface_1 = { id: 10 };
@@ -1647,12 +1647,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf050
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_050
-     * @tc.name testSetForOf050
-     * @tc.desc Verify for-of loop with elements that are deleted and added in the same iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are deleted and added in the same iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3]);
@@ -1670,12 +1670,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf051
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_051
-     * @tc.name testSetForOf051
-     * @tc.desc Verify for-of loop with empty string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with empty string elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>(['', '', 'non-empty']);
@@ -1691,12 +1691,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf052
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_052
-     * @tc.name testSetForOf052
-     * @tc.desc Verify for-of loop with elements that are negative numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([-1, -2, -3]);
@@ -1710,12 +1710,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf053
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_053
-     * @tc.name testSetForOf053
-     * @tc.desc Verify for-of loop with mixed positive and negative numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with mixed positive and negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, -1, 2, -2]);
@@ -1729,12 +1729,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf054
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_054
-     * @tc.name testSetForOf054
-     * @tc.desc Verify for-of loop with elements that are floating-point numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are floating-point numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1.5, 2.5, 3.5]);
@@ -1748,12 +1748,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf055
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_055
-     * @tc.name testSetForOf055
-     * @tc.desc Verify for-of loop with elements that are special numbers (Infinity, -Infinity)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are special numbers (Infinity, -Infinity)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([Infinity, -Infinity, 0]);
@@ -1770,12 +1770,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf056
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_056
-     * @tc.name testSetForOf056
-     * @tc.desc Verify for-of loop with elements that are Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>(['😀', '🌍', '📚']);
@@ -1789,12 +1789,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf057
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_057
-     * @tc.name testSetForOf057
-     * @tc.desc Verify for-of loop with elements that are multi-byte strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are multi-byte strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<string>(['你好', '世界', '测试']);
@@ -1808,12 +1808,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf058
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_058
-     * @tc.name testSetForOf058
-     * @tc.desc Verify for-of loop with elements that are added using chaining
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are added using chaining
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>()
@@ -1830,12 +1830,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf059
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_059
-     * @tc.name testSetForOf059
-     * @tc.desc Verify for-of loop with elements that are deleted using forEach
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are deleted using forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3, 4, 5]);
@@ -1856,36 +1856,36 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf060
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_060
-     * @tc.name testSetForOf060
-     * @tc.desc Verify for-of loop with elements that are Proxy objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are Proxy objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetForOfJs060()).assertDeepEquals([10, 20]);
     });
 
     /**
+     * @tc.name   testSetForOf061
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_061
-     * @tc.name testSetForOf061
-     * @tc.desc Verify for-of loop with elements that are generators
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are generators
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testSetForOfJs061()).assertDeepEquals([1, 2]);
     });
 
     /**
+     * @tc.name   testSetForOf062
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_062
-     * @tc.name testSetForOf062
-     * @tc.desc Verify for-of loop with elements that are added conditionally
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are added conditionally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>();
@@ -1906,12 +1906,12 @@ export default function SetFromTest() {
     });
 
     /**
+     * @tc.name   testSetForOf063
      * @tc.number SUB_COMMONLIBRARY_SET_For_Of_063
-     * @tc.name testSetForOf063
-     * @tc.desc Verify for-of loop with elements that are filtered during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify for-of loop with elements that are filtered during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetForOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mySet = new Set<number>([1, 2, 3, 4, 5, 6]);
@@ -1926,14 +1926,6 @@ export default function SetFromTest() {
       expect(result).assertDeepEquals([3, 6]);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_SET_For_Of_064
-     * @tc.name testSetForOf064
-     * @tc.desc Verify for-of loop with elements that are transformed during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
 
   });
 }

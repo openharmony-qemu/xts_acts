@@ -47,9 +47,12 @@ export default function Grid_Col_Order_GridColColumnOption() {
       console.info("Grid_Col_Order_GridColColumnOption after each called")
     });
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0100
      * @tc.number SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0100
-     * @tc.name testGridColOrder
-     * @tc.desc Set the width of Column to 40vp
+     * @tc.desc   Set the width of Column to 40vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0100] START');
@@ -79,9 +82,12 @@ export default function Grid_Col_Order_GridColColumnOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0200
      * @tc.number SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0200
-     * @tc.name testGridColOrder
-     * @tc.desc Set the width of Column to 80vp
+     * @tc.desc   Set the width of Column to 80vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0200] START');
@@ -111,9 +117,12 @@ export default function Grid_Col_Order_GridColColumnOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0300
      * @tc.number SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0300
-     * @tc.name testGridColOrder
-     * @tc.desc Set the width of Column to 120vp
+     * @tc.desc   Set the width of Column to 120vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0300] START');
@@ -142,9 +151,12 @@ export default function Grid_Col_Order_GridColColumnOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0400
      * @tc.number SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0400
-     * @tc.name testGridColOrder
-     * @tc.desc Set the width of Column to 180vp
+     * @tc.desc   Set the width of Column to 180vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0400] START');
@@ -173,9 +185,12 @@ export default function Grid_Col_Order_GridColColumnOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0500
      * @tc.number SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0500
-     * @tc.name testGridColOrder
-     * @tc.desc Set the width of Column to 220vp
+     * @tc.desc   Set the width of Column to 220vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0500] START');
@@ -204,9 +219,12 @@ export default function Grid_Col_Order_GridColColumnOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0600
      * @tc.number SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0600
-     * @tc.name testGridColOrder
-     * @tc.desc Set the width of Column to 320vp
+     * @tc.desc   Set the width of Column to 320vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Order_GridColColumnOption_TEST_0600] START');

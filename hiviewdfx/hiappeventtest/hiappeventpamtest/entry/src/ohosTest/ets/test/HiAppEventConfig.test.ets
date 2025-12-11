@@ -24,12 +24,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig01
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0100
-     * @tc.name testHiAppEventSetConfig01
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event_rawheap值返回0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event_rawheap值返回0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetConfig01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0100 start");
@@ -54,12 +54,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig02
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0200
-     * @tc.name testHiAppEventSetConfig02
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event值返回0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event值返回0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetConfig02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0200 start");
@@ -84,12 +84,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig03
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0300
-     * @tc.name testHiAppEventSetConfig03
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype1:event_rawheap值返回401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype1:event_rawheap值返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0300 start");
@@ -110,12 +110,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig04
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0400
-     * @tc.name testHiAppEventSetConfig04
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype1:event值返回401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype1:event值返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0400 start");
@@ -136,12 +136,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig05
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0500
-     * @tc.name testHiAppEventSetConfig05
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event_rawheap1值返回401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event_rawheap1值返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0500 start");
@@ -162,12 +162,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig06
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0600
-     * @tc.name testHiAppEventSetConfig06
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event1值返回401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event1值返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0600 start");
@@ -188,12 +188,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig07
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0700
-     * @tc.name testHiAppEventSetConfig07
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入一次正确一次错误值返回0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入一次正确一次错误值返回0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0700 start");
@@ -219,12 +219,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig08
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0800
-     * @tc.name testHiAppEventSetConfig08
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入一次正确一次错误值返回0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入一次正确一次错误值返回0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0800 start");
@@ -250,12 +250,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig09
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_0900
-     * @tc.name testHiAppEventSetConfig09
-     * @tc.desc 验证hiAppEvent.setEventConfig接口name参数传入undefined返回401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口name参数传入undefined返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_0900 start");
@@ -276,12 +276,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig10
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_1000
-     * @tc.name testHiAppEventSetConfig10
-     * @tc.desc 验证hiAppEvent.setEventConfig接口name参数传入undefined返回401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口name参数传入undefined返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_1000 start");
@@ -302,12 +302,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig11
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_1100
-     * @tc.name testHiAppEventSetConfig11
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event_rawheap值稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event_rawheap值稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_1100 start");
@@ -335,12 +335,12 @@ export default function HiAppEventSetConfigTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetConfig12
      * @tc.number SUB_DFX_DFR_hiAppEvent_Interface_1200
-     * @tc.name testHiAppEventSetConfig12
-     * @tc.desc 验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event值稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证hiAppEvent.setEventConfig接口config参数传入js_heap_logtype:event值稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventSetConfig12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_hiAppEvent_Interface_1200 start");

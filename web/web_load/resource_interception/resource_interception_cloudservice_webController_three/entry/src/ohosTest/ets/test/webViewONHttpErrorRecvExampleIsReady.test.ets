@@ -56,10 +56,13 @@ export default function webViewONHttpErrorRecvExampleIsReady() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0300
-     *tc.name testOnHttpErrorRecvExampleIsReadyFalse
-     *tc.desc test interface of onHttpErrorReceive with parameter used by example but setResponseIsReady false
+    /**
+     * @tc.name   testOnHttpErrorRecvExampleIsReadyFalse
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0300
+     * @tc.desc   test interface of onHttpErrorReceive with parameter used by example but setResponseIsReady false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnHttpErrorRecvExampleIsReadyFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnHttpErrorRecvExampleIsReadyFalse", EVENT_ID_SET_EMIT_KEY);

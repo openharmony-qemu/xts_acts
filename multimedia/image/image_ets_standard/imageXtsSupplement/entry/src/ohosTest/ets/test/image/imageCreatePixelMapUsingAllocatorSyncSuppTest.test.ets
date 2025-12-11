@@ -191,12 +191,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     });
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0100
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0100';
@@ -215,12 +215,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0200';
@@ -239,12 +239,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0300';
@@ -263,12 +263,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0400';
@@ -287,12 +287,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0500';
@@ -312,12 +312,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
 
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0700
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0700';
@@ -336,12 +336,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0800
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0800
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0800
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0800';
@@ -360,12 +360,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900';
@@ -384,12 +384,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1000
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1000
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1000
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1000';
@@ -408,12 +408,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1100
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1100';
@@ -432,12 +432,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1200';
@@ -456,12 +456,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1300';
@@ -480,12 +480,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1400';
@@ -504,12 +504,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1500';
@@ -528,12 +528,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1600
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1600
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1600
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1600';
@@ -552,12 +552,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1700
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_1700';
@@ -576,12 +576,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2000
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2000
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2000
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2000';
@@ -600,12 +600,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2100
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2100';
@@ -624,12 +624,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2200';
@@ -648,12 +648,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2300';
@@ -672,12 +672,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2400';
@@ -696,12 +696,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2500';
@@ -720,12 +720,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2600
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2600
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2600
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2600';
@@ -744,12 +744,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2700
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_2700';
@@ -768,12 +768,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3200';
@@ -792,12 +792,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3300';
@@ -816,12 +816,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_3400';
@@ -840,12 +840,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0100
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0100';
@@ -865,12 +865,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0200';
@@ -890,12 +890,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0300';
@@ -915,12 +915,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0400';
@@ -940,12 +940,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0500';
@@ -965,12 +965,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0700
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0700';
@@ -990,12 +990,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0800
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0800
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0800
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0800';
@@ -1015,12 +1015,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0900
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0900
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0900
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_0900';
@@ -1040,12 +1040,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1000
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1000
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1000
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1000';
@@ -1065,12 +1065,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1100
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1100';
@@ -1090,12 +1090,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1200';
@@ -1115,12 +1115,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1300';
@@ -1140,12 +1140,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1400';
@@ -1165,12 +1165,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1900
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1900
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1900
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_1900';
@@ -1190,12 +1190,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2000
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2000
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2000
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2000';
@@ -1215,12 +1215,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2100
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2100';
@@ -1240,12 +1240,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2200';
@@ -1265,12 +1265,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2300';
@@ -1290,12 +1290,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2500';
@@ -1315,12 +1315,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2600
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2600
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2600
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2600';
@@ -1340,12 +1340,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2700
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2700';
@@ -1365,12 +1365,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2800
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2800
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2800
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_2800';
@@ -1390,12 +1390,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3200';
@@ -1415,12 +1415,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_3300';
@@ -1440,12 +1440,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0400';
@@ -1465,12 +1465,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0500';
@@ -1489,12 +1489,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0600
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0600
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0600
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0600';
@@ -1513,12 +1513,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0700
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0700';
@@ -1538,12 +1538,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0800
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0800
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0800
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0800';
@@ -1562,12 +1562,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0900
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0900
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0900
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_0900';
@@ -1586,12 +1586,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1300
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1300';
@@ -1611,12 +1611,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1400';
@@ -1635,12 +1635,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1500';
@@ -1659,12 +1659,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0400
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0400';
@@ -1684,12 +1684,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0500
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0500';
@@ -1709,12 +1709,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0600
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0600
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0600
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0600';
@@ -1735,12 +1735,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0700
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0700';
@@ -1760,12 +1760,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0800
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0800
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0800
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0800';
@@ -1785,12 +1785,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0900
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0900
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0900
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_0900';
@@ -1811,12 +1811,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1000
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1000
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1000
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1000';
@@ -1836,12 +1836,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1100
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1100';
@@ -1861,12 +1861,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1200
      * @tc.desc   image_createPixelMapUsingAllocatorSync
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1200';
@@ -1887,12 +1887,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0100
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0100';
@@ -1912,12 +1912,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0200
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0200';
@@ -1937,12 +1937,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0300
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0300
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0300';
@@ -1962,12 +1962,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0400
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0400
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0400';
@@ -1987,12 +1987,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0500
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0500
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0500';
@@ -2012,12 +2012,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0700
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0700
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0700';
@@ -2037,12 +2037,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0800
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0800
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0800
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0800';
@@ -2062,12 +2062,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0900
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0900
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0900
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_0900';
@@ -2087,12 +2087,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1000
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1000
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1000
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1000';
@@ -2112,12 +2112,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1100
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1100
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1100';
@@ -2137,12 +2137,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1200
      * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1200
      * @tc.desc   image_createPixelMapUsingAllocator
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1200';
@@ -2162,12 +2162,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1300
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1300
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1300
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1300';
@@ -2187,12 +2187,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1400
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1400
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1400
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1400
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1400';
@@ -2212,12 +2212,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1900
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1900
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1900
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1900
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_1900';
@@ -2237,12 +2237,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2000
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2000
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2000
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2000
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2000';
@@ -2262,12 +2262,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2100
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2100
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2100
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2100
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2100';
@@ -2287,12 +2287,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2200
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2200
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2200
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2200';
@@ -2312,12 +2312,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2300
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2300
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2300
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2300';
@@ -2337,12 +2337,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2500
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2500
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2500
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2500
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2500';
@@ -2362,12 +2362,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2600
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2600
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2600
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2600
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2600';
@@ -2387,12 +2387,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2700
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2700
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2700
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2700
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2700';
@@ -2412,12 +2412,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2800
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2800
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2800
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2800
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_2800';
@@ -2437,12 +2437,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3200
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3200
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3200
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3200
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3200';
@@ -2462,12 +2462,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3300
-     * @tc.name      SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3300
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3300
+     * @tc.number SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3300
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_COLORS_3300';
@@ -2487,12 +2487,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1600';
@@ -2511,12 +2511,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1700';
@@ -2535,12 +2535,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1800';
@@ -2559,12 +2559,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_1900';
@@ -2583,12 +2583,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2100';
@@ -2607,12 +2607,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2200';
@@ -2631,12 +2631,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2300';
@@ -2647,12 +2647,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2400';
@@ -2663,12 +2663,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2700';
@@ -2687,12 +2687,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_2800';
@@ -2711,12 +2711,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3300';
@@ -2735,12 +2735,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3400';
@@ -2759,12 +2759,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3500';
@@ -2783,12 +2783,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3600';
@@ -2807,12 +2807,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3700';
@@ -2831,12 +2831,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_ERROR_3800';
@@ -2855,12 +2855,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1300';
@@ -2880,12 +2880,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1600';
@@ -2905,12 +2905,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1700';
@@ -2930,12 +2930,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1800';
@@ -2955,12 +2955,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900
-     * @tc.desc      image_createPixelMapUsingAllocatorSync
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900
+     * @tc.desc   image_createPixelMapUsingAllocatorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_1900';
@@ -2980,12 +2980,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2100';
@@ -3005,12 +3005,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2200';
@@ -3030,12 +3030,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2300';
@@ -3047,12 +3047,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2400';
@@ -3064,12 +3064,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2700';
@@ -3089,12 +3089,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_2800';
@@ -3114,12 +3114,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3300';
@@ -3139,12 +3139,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3400';
@@ -3164,12 +3164,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3500';
@@ -3189,12 +3189,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3600';
@@ -3214,12 +3214,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3700';
@@ -3239,12 +3239,12 @@ export default function imageCreatePixelMapUsingAllocatorSyncSuppTest() {
     })
 
     /**
-     * @tc.number    IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800
-     * @tc.name      IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800
-     * @tc.desc      image_createPixelMapUsingAllocator
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800
+     * @tc.desc   image_createPixelMapUsingAllocator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_COLORS_ERROR_3800';

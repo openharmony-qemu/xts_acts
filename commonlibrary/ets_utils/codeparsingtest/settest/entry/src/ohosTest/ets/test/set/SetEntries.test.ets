@@ -62,12 +62,12 @@ export default function setEntriesTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   SetEntriesTest001
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0100
-     * @tc.name SetEntriesTest001
-     * @tc.desc Iterate non-empty Set with strings, verify each entry is [value, value]
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Iterate non-empty Set with strings, verify each entry is [value, value]
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['a', 'b', 'c']);
@@ -85,12 +85,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest002
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0200
-     * @tc.name SetEntriesTest002
-     * @tc.desc Iterate non-empty Set with numbers, verify entry format
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Iterate non-empty Set with numbers, verify entry format
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([10, 20, 30]);
@@ -102,12 +102,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest003
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0300
-     * @tc.name SetEntriesTest003
-     * @tc.desc Iterate empty Set, verify iterator is empty
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Iterate empty Set, verify iterator is empty
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<number>();
@@ -120,12 +120,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest004
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0400
-     * @tc.name SetEntriesTest004
-     * @tc.desc Verify iteration order matches insertion order
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify iteration order matches insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set<string>();
@@ -140,12 +140,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest005
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0500
-     * @tc.name SetEntriesTest005
-     * @tc.desc Verify each call to entries() returns new iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify each call to entries() returns new iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1, 2]);
@@ -160,12 +160,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest006
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0600
-     * @tc.name SetEntriesTest006
-     * @tc.desc Iterate Set with boolean values, verify entry format
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Iterate Set with boolean values, verify entry format
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([true, false, true]);
@@ -176,12 +176,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest007
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0700
-     * @tc.name SetEntriesTest007
-     * @tc.desc Iterate Set with null and undefined, verify entries
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Iterate Set with null and undefined, verify entries
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([null, undefined, null]);
@@ -192,12 +192,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest008
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0800
-     * @tc.name SetEntriesTest008
-     * @tc.desc Use for...of loop to iterate entries
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use for...of loop to iterate entries
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['x', 'y', 'z']);
@@ -211,12 +211,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest009
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_0900
-     * @tc.name SetEntriesTest009
-     * @tc.desc Iterate Set with single element, verify entry
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Iterate Set with single element, verify entry
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['only-element']);
@@ -229,12 +229,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest010
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1000
-     * @tc.name SetEntriesTest010
-     * @tc.desc Verify entries() ignores passed parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() ignores passed parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1, 2, 3]);
@@ -245,12 +245,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest011
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1100
-     * @tc.name SetEntriesTest011
-     * @tc.desc Iterate Set with NaN (treated as equal to itself)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with NaN (treated as equal to itself)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([NaN, 1, NaN]);
@@ -265,12 +265,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest012
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1200
-     * @tc.name SetEntriesTest012
-     * @tc.desc Iterate Set with 0 and -0 (treated as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with 0 and -0 (treated as equal)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([0, -0, 100]);
@@ -284,12 +284,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest013
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1300
-     * @tc.name SetEntriesTest013
-     * @tc.desc Iterate Set with Symbol values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with Symbol values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetEntriesTest013();
@@ -300,12 +300,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest014
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1400
-     * @tc.name SetEntriesTest014
-     * @tc.desc Iterate Set with BigInt values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with BigInt values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const big1 = 123n;
@@ -318,12 +318,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest015
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1500
-     * @tc.name SetEntriesTest015
-     * @tc.desc Iterate Set with object references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with object references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -339,12 +339,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest017
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1700
-     * @tc.name SetEntriesTest017
-     * @tc.desc Iterate Set with Date objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const date = new Date('2024-01-01');
@@ -356,12 +356,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest018
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1800
-     * @tc.name SetEntriesTest018
-     * @tc.desc Iterate large Set (1000 elements), verify order and completeness
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate large Set (1000 elements), verify order and completeness
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest018', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -379,12 +379,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest019
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_1900
-     * @tc.name SetEntriesTest019
-     * @tc.desc Iterate Set with RegExp objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with RegExp objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const regex = /test/;
@@ -397,12 +397,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest020
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2000
-     * @tc.name SetEntriesTest020
-     * @tc.desc Iterate Set with function references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterate Set with function references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const func = () => {};
@@ -414,12 +414,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest021
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2100
-     * @tc.name SetEntriesTest021
-     * @tc.desc Modify Set during iteration, verify iterator uses snapshot (no new elements)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Modify Set during iteration, verify iterator uses snapshot (no new elements)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2]);
@@ -437,12 +437,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest022
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2200
-     * @tc.name SetEntriesTest022
-     * @tc.desc Delete Set element during iteration, verify iterator skips deleted element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete Set element during iteration, verify iterator skips deleted element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3]);
@@ -460,12 +460,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest023
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2300
-     * @tc.name SetEntriesTest023
-     * @tc.desc Modify object properties after iterator generation, verify entry updates
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Modify object properties after iterator generation, verify entry updates
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -484,13 +484,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest024
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2400
-     * @tc.name SetEntriesTest024
-     * @tc.name SetEntriesTest024
-     * @tc.desc Call entries() on non-Set instance (array), verify behavior
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Call entries() on non-Set instance (array), verify behavior
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const entries = SetEntriesTest024() as number[][];
@@ -500,12 +499,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest025
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2500
-     * @tc.name SetEntriesTest025
-     * @tc.desc Verify iterator compatibility with spread operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify iterator compatibility with spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const entries = SetEntriesTest025();
@@ -515,12 +514,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest026
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2600
-     * @tc.name SetEntriesTest026
-     * @tc.desc Verify iterator compatibility with Array.from() mapping
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify iterator compatibility with Array.from() mapping
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const doubledValues = SetEntriesTest026();
@@ -530,12 +529,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest027
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2700
-     * @tc.name SetEntriesTest027
-     * @tc.desc Iterate Set with circular reference object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterate Set with circular reference object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -551,12 +550,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest028
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2800
-     * @tc.name SetEntriesTest028
-     * @tc.desc Iterate frozen Set, verify entries are accessible
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterate frozen Set, verify entries are accessible
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetEntriesTest028();
@@ -566,12 +565,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest029
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_2900
-     * @tc.name SetEntriesTest029
-     * @tc.desc Verify for...in does not iterate iterator (vs for...of)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify for...in does not iterate iterator (vs for...of)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = SetEntriesTest029();
@@ -581,12 +580,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest030
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3000
-     * @tc.name SetEntriesTest030
-     * @tc.desc Comprehensive test: mixed types + multiple iterations + modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + multiple iterations + modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -615,12 +614,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest031
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3100
-     * @tc.name SetEntriesTest031
-     * @tc.desc Verify iterator works with Set containing nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator works with Set containing nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -638,24 +637,24 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest032
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3200
-     * @tc.name SetEntriesTest032
-     * @tc.desc Verify entries() on Set with Symbol.iterator modified
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() on Set with Symbol.iterator modified
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetEntriesTest032()).assertDeepEquals([[1, 1], [2, 2], [3, 3]]);
     });
 
     /**
+     * @tc.name   SetEntriesTest034
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3400
-     * @tc.name SetEntriesTest034
-     * @tc.desc Verify entries() on a subclass of Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() on a subclass of Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class MySet extends Set {
@@ -672,12 +671,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest035
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3500
-     * @tc.name SetEntriesTest035
-     * @tc.desc Verify iterator doesn't include elements added after iterator creation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator doesn't include elements added after iterator creation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2]);
@@ -690,12 +689,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest036
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3600
-     * @tc.name SetEntriesTest036
-     * @tc.desc Verify entries() works with very large numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with very large numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const largeNum = Number.MAX_SAFE_INTEGER;
@@ -707,12 +706,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest037
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3700
-     * @tc.name SetEntriesTest037
-     * @tc.desc Verify entries() with Set containing negative numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() with Set containing negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([-1, -2, -3]);
@@ -722,12 +721,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest038
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3800
-     * @tc.name SetEntriesTest038
-     * @tc.desc Verify entries() with Set containing float numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() with Set containing float numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set([1.5, 2.5, 3.5]);
@@ -737,12 +736,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest039
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_3900
-     * @tc.name SetEntriesTest039
-     * @tc.desc Verify entries() with Set containing empty strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() with Set containing empty strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['', '', 'non-empty']);
@@ -753,12 +752,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest040
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4000
-     * @tc.name SetEntriesTest040
-     * @tc.desc Verify entries() with Set containing multi-line strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() with Set containing multi-line strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const multiLine = 'line1\nline2';
@@ -769,12 +768,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest041
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4100
-     * @tc.name SetEntriesTest041
-     * @tc.desc Verify entries() with Set containing special characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() with Set containing special characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('SetEntriesTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const set = new Set(['!', '@', '#', '$', '%']);
@@ -784,12 +783,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest042
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4200
-     * @tc.name SetEntriesTest042
-     * @tc.desc Verify entries() with Set containing Unicode characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set(['😀', '🌍', '📚']);
@@ -799,12 +798,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest044
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4400
-     * @tc.name SetEntriesTest044
-     * @tc.desc Verify entries() with Set containing same-value objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing same-value objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -820,12 +819,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest045
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4500
-     * @tc.name SetEntriesTest045
-     * @tc.desc Verify entries() with Set containing class instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing class instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       class MyClass {
@@ -846,12 +845,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest046
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4600
-     * @tc.name SetEntriesTest046
-     * @tc.desc Verify entries() with Set containing promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const promise1 = Promise.resolve(1);
@@ -864,12 +863,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest047
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4700
-     * @tc.name SetEntriesTest047
-     * @tc.desc Verify entries() with Set containing WeakMap (non-iterable)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing WeakMap (non-iterable)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const weakMap = new WeakMap<object, string>();
@@ -880,12 +879,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest048
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4800
-     * @tc.name SetEntriesTest048
-     * @tc.desc Verify entries() with Set containing Map
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Map
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const map = new Map([['key', 'value']]);
@@ -897,12 +896,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest049
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_4900
-     * @tc.name SetEntriesTest049
-     * @tc.desc Verify entries() with Set containing Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const innerSet = new Set([1, 2]);
@@ -914,12 +913,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest051
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5100
-     * @tc.name SetEntriesTest051
-     * @tc.desc Verify iterator continues correctly after partial iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator continues correctly after partial iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2, 3, 4, 5]);
@@ -939,12 +938,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest052
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5200
-     * @tc.name SetEntriesTest052
-     * @tc.desc Verify entries() works after clearing the Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works after clearing the Set
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([1, 2, 3]);
@@ -956,12 +955,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest053
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5300
-     * @tc.name SetEntriesTest053
-     * @tc.desc Verify entries() on a Set that has had elements added and removed
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() on a Set that has had elements added and removed
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set<number>();
@@ -979,12 +978,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest054
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5400
-     * @tc.name SetEntriesTest054
-     * @tc.desc Verify entries() with Set containing generator functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing generator functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const result = SetEntriesTest054();
@@ -997,12 +996,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest055
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5500
-     * @tc.name SetEntriesTest055
-     * @tc.desc Verify entries() with Set containing async functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing async functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const asyncFunc1 = async () => { return 1; };
@@ -1015,24 +1014,24 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest056
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5600
-     * @tc.name SetEntriesTest056
-     * @tc.desc Verify entries() with Set containing proxies
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() with Set containing proxies
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SetEntriesTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(SetEntriesTest056()).assertEqual(1);
     });
 
     /**
+     * @tc.name   SetEntriesTest057
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5700
-     * @tc.name SetEntriesTest057
-     * @tc.desc Verify entries() with Set containing typed arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr1 = new Uint8Array([1, 2, 3]);
@@ -1045,12 +1044,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest058
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5800
-     * @tc.name SetEntriesTest058
-     * @tc.desc Verify entries() with Set containing data views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing data views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const buffer = new ArrayBuffer(16);
@@ -1064,12 +1063,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest059
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_5900
-     * @tc.name SetEntriesTest059
-     * @tc.desc Verify entries() with Set containing regex with flags
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing regex with flags
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const regex1 = /test/i;
@@ -1083,12 +1082,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest060
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6000
-     * @tc.name SetEntriesTest060
-     * @tc.desc Verify entries() with Set containing error objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing error objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const error1 = new Error('Error 1');
@@ -1102,12 +1101,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest061
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6100
-     * @tc.name SetEntriesTest061
-     * @tc.desc Verify entries() with Set containing Math object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Math object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Math]);
@@ -1118,12 +1117,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest062
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6200
-     * @tc.name SetEntriesTest062
-     * @tc.desc Verify entries() with Set containing JSON object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing JSON object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([JSON]);
@@ -1134,12 +1133,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest063
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6300
-     * @tc.name SetEntriesTest063
-     * @tc.desc Verify entries() with Set containing Date constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Date constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Date]);
@@ -1150,12 +1149,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest064
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6400
-     * @tc.name SetEntriesTest064
-     * @tc.desc Verify entries() with Set containing Number constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Number constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Number]);
@@ -1166,12 +1165,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest065
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6500
-     * @tc.name SetEntriesTest065
-     * @tc.desc Verify entries() with Set containing String constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing String constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([String]);
@@ -1182,12 +1181,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest066
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6600
-     * @tc.name SetEntriesTest066
-     * @tc.desc Verify entries() with Set containing Boolean constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Boolean constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Boolean]);
@@ -1199,12 +1198,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest067
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6700
-     * @tc.name SetEntriesTest067
-     * @tc.desc Verify entries() with Set containing Function constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Function constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const multiplyByTwo = (a: number) => a * 2;
@@ -1215,12 +1214,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest068
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6800
-     * @tc.name SetEntriesTest068
-     * @tc.desc Verify entries() with Set containing Object constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Object]);
@@ -1232,12 +1231,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest069
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_6900
-     * @tc.name SetEntriesTest069
-     * @tc.desc Verify entries() with Set containing Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Array]);
@@ -1249,12 +1248,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest070
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7000
-     * @tc.name SetEntriesTest070
-     * @tc.desc Verify entries() with Set containing RegExp constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing RegExp constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([RegExp]);
@@ -1266,12 +1265,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest071
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7100
-     * @tc.name SetEntriesTest071
-     * @tc.desc Verify entries() with Set containing Error constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Error constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Error]);
@@ -1283,12 +1282,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest072
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7200
-     * @tc.name SetEntriesTest072
-     * @tc.desc Verify entries() with Set containing custom error constructors
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing custom error constructors
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       class CustomError extends Error {}
@@ -1301,12 +1300,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest073
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7300
-     * @tc.name SetEntriesTest073
-     * @tc.desc Verify entries() with Set containing Map constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Map constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const map = SetEntriesTest073() as Map<string, string>;
@@ -1314,12 +1313,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest074
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7400
-     * @tc.name SetEntriesTest074
-     * @tc.desc Verify entries() with Set containing Set constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Set constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Set]);
@@ -1331,12 +1330,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest075
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7500
-     * @tc.name SetEntriesTest075
-     * @tc.desc Verify entries() with Set containing WeakMap constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing WeakMap constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{}
@@ -1347,12 +1346,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest076
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7600
-     * @tc.name SetEntriesTest076
-     * @tc.desc Verify entries() with Set containing WeakSet constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing WeakSet constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{}
@@ -1367,12 +1366,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest077
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7700
-     * @tc.name SetEntriesTest077
-     * @tc.desc Verify entries() with Set containing Symbol constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Symbol constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Symbol]);
@@ -1384,48 +1383,48 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest078
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7800
-     * @tc.name SetEntriesTest078
-     * @tc.desc Verify entries() with Set containing Promise constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Promise constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(await SetEntriesTest078()).assertEqual('test');
     });
 
     /**
+     * @tc.name   SetEntriesTest079
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_7900
-     * @tc.name SetEntriesTest079
-     * @tc.desc Verify entries() with Set containing Reflect object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Reflect object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(SetEntriesTest079()).assertEqual(1);
     });
 
     /**
+     * @tc.name   SetEntriesTest080
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8000
-     * @tc.name SetEntriesTest080
-     * @tc.desc Verify entries() with Set containing Proxy constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Proxy constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(SetEntriesTest080()).assertEqual(1);
     });
 
     /**
+     * @tc.name   SetEntriesTest081
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8100
-     * @tc.name SetEntriesTest081
-     * @tc.desc Verify entries() with Set containing Int8Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Int8Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Int8Array]);
@@ -1438,12 +1437,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest082
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8200
-     * @tc.name SetEntriesTest082
-     * @tc.desc Verify entries() with Set containing Uint8Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Uint8Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Uint8Array]);
@@ -1456,12 +1455,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest083
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8300
-     * @tc.name SetEntriesTest083
-     * @tc.desc Verify entries() with Set containing Uint8ClampedArray constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Uint8ClampedArray constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Uint8ClampedArray]);
@@ -1474,12 +1473,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest084
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8400
-     * @tc.name SetEntriesTest084
-     * @tc.desc Verify entries() with Set containing Int16Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Int16Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Int16Array]);
@@ -1492,12 +1491,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest085
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8500
-     * @tc.name SetEntriesTest085
-     * @tc.desc Verify entries() with Set containing Uint16Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Uint16Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Uint16Array]);
@@ -1510,12 +1509,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest086
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8600
-     * @tc.name SetEntriesTest086
-     * @tc.desc Verify entries() with Set containing Int32Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Int32Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Int32Array]);
@@ -1528,12 +1527,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest087
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8700
-     * @tc.name SetEntriesTest087
-     * @tc.desc Verify entries() with Set containing Uint32Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Uint32Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Uint32Array]);
@@ -1546,12 +1545,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest088
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8800
-     * @tc.name SetEntriesTest088
-     * @tc.desc Verify entries() with Set containing Float32Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Float32Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Float32Array]);
@@ -1564,12 +1563,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest089
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_8900
-     * @tc.name SetEntriesTest089
-     * @tc.desc Verify entries() with Set containing Float64Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Float64Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([Float64Array]);
@@ -1582,12 +1581,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest090
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_9000
-     * @tc.name SetEntriesTest090
-     * @tc.desc Verify entries() with Set containing BigInt64Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing BigInt64Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       if (typeof BigInt64Array === 'undefined') {
@@ -1604,12 +1603,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest091
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_9100
-     * @tc.name SetEntriesTest091
-     * @tc.desc Verify entries() with Set containing BigUint64Array constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing BigUint64Array constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       if (typeof BigUint64Array === 'undefined') {
@@ -1626,12 +1625,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest092
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_9200
-     * @tc.name SetEntriesTest092
-     * @tc.desc Verify entries() with Set containing ArrayBuffer constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing ArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([ArrayBuffer]);
@@ -1644,12 +1643,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest093
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_9300
-     * @tc.name SetEntriesTest093
-     * @tc.desc Verify entries() with Set containing DataView constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing DataView constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const set = new Set([DataView]);
@@ -1662,12 +1661,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest094
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_9400
-     * @tc.name SetEntriesTest094
-     * @tc.desc Verify entries() with Set containing Atomics object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing Atomics object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       if (typeof Atomics === 'undefined') {
@@ -1682,12 +1681,12 @@ export default function setEntriesTest() {
     });
 
     /**
+     * @tc.name   SetEntriesTest095
      * @tc.number SUB_BUILTINS_SET_ENTRIES_TEST_9500
-     * @tc.name SetEntriesTest095
-     * @tc.desc Verify entries() with Set containing SharedArrayBuffer constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() with Set containing SharedArrayBuffer constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SetEntriesTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       if (typeof SharedArrayBuffer === 'undefined') {

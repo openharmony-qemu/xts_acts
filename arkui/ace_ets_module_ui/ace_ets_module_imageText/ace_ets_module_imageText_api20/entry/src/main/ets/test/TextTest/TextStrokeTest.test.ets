@@ -47,13 +47,13 @@ export default function TextStrokeTest() {
       console.info("TextStrokeTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_STROKE_API_0001
-    * @tc.name         TextStrokeTest0001
-    * @tc.desc         set undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextStrokeTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_STROKE_API_0001
+     * @tc.desc   set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextStrokeTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -78,13 +78,13 @@ export default function TextStrokeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_STROKE_API_0002
-    * @tc.name         TextStrokeTest0002
-    * @tc.desc         set normal
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextStrokeTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_STROKE_API_0002
+     * @tc.desc   set normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextStrokeTest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -113,13 +113,13 @@ export default function TextStrokeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_STROKE_API_0003
-    * @tc.name         TextStrokeTest0003
-    * @tc.desc         set normal
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextStrokeTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_STROKE_API_0003
+     * @tc.desc   set normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextStrokeTest0003', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

@@ -47,12 +47,12 @@ export default function PinchGestureBasic02Test() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      PinchGestureBasic02Test_0010
-     * @tc.desc      api test PinchGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PinchGestureBasic02Test_0010
+     * @tc.number PinchGestureBasic02Test_0010
+     * @tc.desc   api test PinchGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PinchGestureBasic02Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PinchGestureBasic02Test_0010 START');

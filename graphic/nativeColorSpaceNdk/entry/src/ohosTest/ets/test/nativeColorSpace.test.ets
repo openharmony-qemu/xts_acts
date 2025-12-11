@@ -19,12 +19,12 @@ import nativeColorSpaceNdk from 'libcolorSpaceNdk.so';
 export default function nativeColorSpaceTest() {
   describe('NativeColorSpaceTest', () => {
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_CreateColorSpaceFromName
-     * @tc.name       : testOHCreateColorSpaceFromName
-     * @tc.desc       : test OH_Create_Color_Space_From_Name
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHCreateColorSpaceFromName
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_CreateColorSpaceFromName
+     * @tc.desc   test OH_Create_Color_Space_From_Name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCreateColorSpaceFromName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -34,12 +34,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_CreateFromPrimariesAndGamma
-     * @tc.name       : testOHCreateFromPrimariesAndGamma
-     * @tc.desc       : test OH_Create_From_Primaries_And_Gamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHCreateFromPrimariesAndGamma
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_CreateFromPrimariesAndGamma
+     * @tc.desc   test OH_Create_From_Primaries_And_Gamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCreateFromPrimariesAndGamma', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -49,12 +49,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_Destroy
-     * @tc.name       : testOHDestroy
-     * @tc.desc       : test OH_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHDestroy
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_Destroy
+     * @tc.desc   test OH_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeColorSpaceNdk.oHDestroy();
@@ -63,12 +63,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetColorSpaceName
-     * @tc.name       : testOHGetColorSpaceName
-     * @tc.desc       : test OH_GetColorSpaceName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetColorSpaceName
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetColorSpaceName
+     * @tc.desc   test OH_GetColorSpaceName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetColorSpaceName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeColorSpaceNdk.oHGetColorSpaceName();
@@ -77,12 +77,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetColorSpaceName001
-     * @tc.name       : testOHGetColorSpaceName001
-     * @tc.desc       : test OH_GetColorSpaceName001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetColorSpaceName001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetColorSpaceName001
+     * @tc.desc   test OH_GetColorSpaceName001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetColorSpaceName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeColorSpaceNdk.oHGetColorSpaceName001();
@@ -91,12 +91,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetWhitePoint
-     * @tc.name       : testOHGetWhitePoint
-     * @tc.desc       : test OH_Get_White_Point
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetWhitePoint
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetWhitePoint
+     * @tc.desc   test OH_Get_White_Point
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetWhitePoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeColorSpaceNdk.oHGetWhitePoint();
@@ -105,12 +105,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetWhitePoint001
-     * @tc.name       : testOHGetWhitePoint001
-     * @tc.desc       : test OH_Get_White_Point001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetWhitePoint001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetWhitePoint001
+     * @tc.desc   test OH_Get_White_Point001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetWhitePoint001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeColorSpaceNdk.oHGetWhitePoint001();
@@ -119,12 +119,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetGamma
-     * @tc.name       : testOHGetGamma
-     * @tc.desc       : test OH_Get_Gamma
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetGamma
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetGamma
+     * @tc.desc   test OH_Get_Gamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetGamma', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeColorSpaceNdk.oHGetGamma();
@@ -133,12 +133,12 @@ export default function nativeColorSpaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetGamma001
-     * @tc.name       : testOHGetGamma001
-     * @tc.desc       : test OH_Get_Gamma001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOHGetGamma001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_GetGamma001
+     * @tc.desc   test OH_Get_Gamma001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHGetGamma001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeColorSpaceNdk.oHGetGamma001();

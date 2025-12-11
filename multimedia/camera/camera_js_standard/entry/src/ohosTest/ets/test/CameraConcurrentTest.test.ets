@@ -193,12 +193,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_0100
-     * @tc.name      : check get camera device by position and type
-     * @tc.desc      : check get camera device by position and type
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_0100
+     * @tc.desc   check get camera device by position and type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_0100', Level.LEVEL0, async (done: Function) => {
         console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_0100--------------");
@@ -227,12 +227,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_ERRORCODE_0100
-     * @tc.name      : check get camera device by position and type errorcode 401 
-     * @tc.desc      : check get camera device by position and type errorcode 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_ERRORCODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_ERRORCODE_0100
+     * @tc.desc   check get camera device by position and type errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
         console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_ERRORCODE_0100--------------");
@@ -258,12 +258,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_0100
-     * @tc.name      : check get camera concurrent infos 
-     * @tc.desc      : check get concurrent infos 
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_0100
+     * @tc.desc   check get concurrent infos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_0100', Level.LEVEL0, async (done: Function) => {
         console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_0100--------------");
@@ -291,12 +291,12 @@ export function CameraConcurrentTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONNCURRENT_TYPE_0100
-     * @tc.name      : check camerainput open by concurrent type 
-     * @tc.desc      : check camerainput open by concurrent type  
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONNCURRENT_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONNCURRENT_TYPE_0100
+     * @tc.desc   check camerainput open by concurrent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONNCURRENT_TYPE_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONNCURRENT_TYPE_0200--------------");

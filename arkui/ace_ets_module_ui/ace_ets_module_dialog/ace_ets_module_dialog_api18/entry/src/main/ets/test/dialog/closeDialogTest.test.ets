@@ -60,12 +60,12 @@ export default function closeDialogTest() {
     });
 
     /**
+     * @tc.name   closeDialogTest_0100
      * @tc.number SUB_ACE_closeDialogTest_0100
-     * @tc.name closeDialogTest_0100
-     * @tc.desc To test that the promptAction.closeDialog parameter is an abnormal value(0,undefined,null).
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.desc   To test that the promptAction.closeDialog parameter is an abnormal value(0,undefined,null).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('closeDialogTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('closeDialogTest_0100 START');

@@ -26,26 +26,26 @@ export default function swiperPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_POSITION_0100
-     * @tc.name       : testSwiperPosition001
-     * @tc.desc       : testing position for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperPosition001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_POSITION_0100
+     * @tc.desc   testing position for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperPosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_POSITION_0200
-     * @tc.name       : testSwiperPosition002
-     * @tc.desc       : testing position for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperPosition002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_POSITION_0200
+     * @tc.desc   testing position for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperPosition002()).assertEqual(0)

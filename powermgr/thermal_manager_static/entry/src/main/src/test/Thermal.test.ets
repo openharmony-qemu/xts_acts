@@ -27,7 +27,6 @@ export default function ThermalTest() {
   describe("ThermalTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0100
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0010
      * @tc.desc   Thermal acquisition kit
@@ -54,7 +53,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0200
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0020
      * @tc.desc   Thermal acquisition kit
@@ -79,7 +77,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0300
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0030
      * @tc.desc   Thermal acquisition kit
@@ -105,7 +102,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0400
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0040
      * @tc.desc   Get device thermalLevel COOL
@@ -130,7 +126,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0500
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0050
      * @tc.desc   Get device thermalLevel NORMAL
@@ -155,7 +150,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0600
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0060
      * @tc.desc   Get device thermalLevel WARM
@@ -180,7 +174,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0700
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0070
      * @tc.desc   Get device thermalLevel HOT
@@ -205,7 +198,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0800
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0080
      * @tc.desc   Get device thermalLevel OVERHEATED
@@ -230,7 +222,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_0900
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0090
      * @tc.desc   Get device thermalLevel WARNING
@@ -255,7 +246,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_1000
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0100
      * @tc.desc   Get device thermalLevel EMERGENCY
@@ -280,7 +270,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testThermalTest_static_1100
      * @tc.number SUB_PowerSystem_ThermalManager_ETSTest_0110
      * @tc.desc   Get device thermalLevel ESCAPE

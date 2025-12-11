@@ -41,7 +41,6 @@ export default function PowerManagerServiceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0100
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0010
      * @tc.desc   PowerManagerService stop test
@@ -64,7 +63,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0200
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0020
      * @tc.desc   PowerManagerService stop test
@@ -87,7 +85,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0300
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0030
      * @tc.desc   PowerManagerService stop test
@@ -108,7 +105,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0400
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0040
      * @tc.desc   PowerManagerService stop test
@@ -131,7 +127,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0500
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0050
      * @tc.desc   PowerManagerService stop test
@@ -151,7 +146,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0600
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0060
      * @tc.desc   PowerManagerService stop test
@@ -171,7 +165,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0700
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0070
      * @tc.desc   PowerManagerService stop test
@@ -191,7 +184,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0800
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0080
      * @tc.desc   PowerManagerService stop test
@@ -211,7 +203,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_0900
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0090
      * @tc.desc   PowerManagerService stop test
@@ -231,7 +222,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_1000
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0100
      * @tc.desc   PowerManagerService stop test
@@ -251,7 +241,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_1100
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0110
      * @tc.desc   PowerManagerService stop test
@@ -271,7 +260,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_1200
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0120
      * @tc.desc   PowerManagerService stop test
@@ -295,7 +283,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_1300
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0130
      * @tc.desc   PowerManagerService stop test
@@ -323,7 +310,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_1400
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0140
      * @tc.desc   PowerManagerService stop test
@@ -343,7 +329,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   PowerManagerServiceTest_1500
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0150
      * @tc.desc   PowerManagerService stop test
@@ -363,7 +348,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerManagerServiceTest_1600
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0160
      * @tc.desc   PowerManagerService stop test
@@ -383,7 +367,6 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerManagerServiceTest_1700
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0170
      * @tc.desc   PowerManagerService stop test

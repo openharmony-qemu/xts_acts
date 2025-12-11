@@ -54,10 +54,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_3460
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0100_001
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3460
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(TAG_TEST_0100_001, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -77,10 +79,12 @@ export default function applicationBundleJsunit() {
        
 
         /**
-         * @tc.number: bundle_getApplicationInfo_test_0200_001
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0200_001
+         * @tc.number bundle_getApplicationInfo_test_0200_001
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it(TAG_TEST_0200_001, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -102,10 +106,12 @@ export default function applicationBundleJsunit() {
        
 
         /**
-         * @tc.number: bundle_getApplicationInfo_test_0300_001
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by callBack)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0300_001
+         * @tc.number bundle_getApplicationInfo_test_0300_001
+         * @tc.desc   Check the return value of the interface (by callBack)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it(TAG_TEST_0300_001, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let errors;
@@ -131,10 +137,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: bundle_getApplicationInfo_test_0400_001
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by callBack)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0400_001
+         * @tc.number bundle_getApplicationInfo_test_0400_001
+         * @tc.desc   Check the return value of the interface (by callBack)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it(TAG_TEST_0400_001, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let errors;

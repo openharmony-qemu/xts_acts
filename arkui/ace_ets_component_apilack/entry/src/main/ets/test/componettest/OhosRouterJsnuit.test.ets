@@ -44,6 +44,14 @@ export default function OhosRouterJsunit() {
       console.info("ohosRouter after each called");
     });
 
+    /**
+     * @tc.name   ohosRouterTest001
+     * @tc.number ohosRouterTest001
+     * @tc.desc   ohosRouterTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest001', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest001] START');
       let options: router.RouterOptions  = {
@@ -64,6 +72,14 @@ export default function OhosRouterJsunit() {
 
     });
 
+    /**
+     * @tc.name   ohosRouterTest002
+     * @tc.number ohosRouterTest002
+     * @tc.desc   ohosRouterTest002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest002', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest002] START');
       let options: router.RouterOptions  = {
@@ -97,6 +113,14 @@ export default function OhosRouterJsunit() {
 
     });
 
+    /**
+     * @tc.name   ohosRouterTest003
+     * @tc.number ohosRouterTest003
+     * @tc.desc   ohosRouterTest003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest003', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest003] START');
       await Utils.sleep(1000);
@@ -109,6 +133,14 @@ export default function OhosRouterJsunit() {
 
     });
 
+    /**
+     * @tc.name   ohosRouterTest004
+     * @tc.number ohosRouterTest004
+     * @tc.desc   ohosRouterTest004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest004', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest004] START');
       router.clear();
@@ -139,6 +171,14 @@ export default function OhosRouterJsunit() {
 
     });
 
+    /**
+     * @tc.name   ohosRouterTest005
+     * @tc.number ohosRouterTest005
+     * @tc.desc   ohosRouterTest005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest005', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest005] START');
       let options: router.RouterOptions  = {
@@ -172,6 +212,14 @@ export default function OhosRouterJsunit() {
     });
 
 
+    /**
+     * @tc.name   ohosRouterTest006
+     * @tc.number ohosRouterTest006
+     * @tc.desc   ohosRouterTest006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest006', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest006] START');
       let options: router.RouterOptions  = {
@@ -204,6 +252,14 @@ export default function OhosRouterJsunit() {
 
     });
 
+    /**
+     * @tc.name   ohosRouterTest008
+     * @tc.number ohosRouterTest008
+     * @tc.desc   ohosRouterTest008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest008', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest008] START');
       let options: router.RouterOptions  = {
@@ -236,6 +292,14 @@ export default function OhosRouterJsunit() {
 
     });
 
+    /**
+     * @tc.name   ohosRouterTest007
+     * @tc.number ohosRouterTest007
+     * @tc.desc   ohosRouterTest007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest007', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest007] START');
       let options: router.RouterOptions  = {
@@ -267,6 +331,14 @@ export default function OhosRouterJsunit() {
         + JSON.stringify(sendEventByKey('ReplaceButtonA', 10, "")));
 
     });
+    /**
+     * @tc.name   ohosRouterTest009
+     * @tc.number ohosRouterTest009
+     * @tc.desc   ohosRouterTest009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ohosRouterTest009', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest009] START');
       let options: router.RouterOptions  = {

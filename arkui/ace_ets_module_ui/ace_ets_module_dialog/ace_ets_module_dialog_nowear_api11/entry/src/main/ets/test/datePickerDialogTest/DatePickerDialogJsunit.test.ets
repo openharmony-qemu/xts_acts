@@ -44,12 +44,12 @@ export default function DatePickerDialogJsunit() {
     });
     
     /**
-     * @tc.number    DatePickerDialogJsunit_0100
-     * @tc.name      DatePickerDialogJsunit_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DatePickerDialogJsunit_0100
+     * @tc.number DatePickerDialogJsunit_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DatePickerDialogJsunit_0100', Level.LEVEL2, async (done: Function) => {
 

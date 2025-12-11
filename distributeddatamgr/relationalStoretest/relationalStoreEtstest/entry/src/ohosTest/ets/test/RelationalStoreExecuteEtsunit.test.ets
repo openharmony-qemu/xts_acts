@@ -63,7 +63,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1000
      * @tc.desc   1. Execute sql: PRAGMA integrity_check
@@ -85,7 +84,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1100
      * @tc.desc   1. Execute sql: PRAGMA quick_check
@@ -107,7 +105,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1200
      * @tc.desc   1. Execute sql: PRAGMA user_version
@@ -130,7 +127,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1300
      * @tc.desc   1. Execute select sql
@@ -152,7 +148,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1400
      * @tc.desc   1. Execute insert sql
@@ -174,7 +169,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1500
      * @tc.desc   1. Execute insert sql
@@ -196,7 +190,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1600
      * @tc.desc   1. Execute batch insert sql
@@ -219,7 +212,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1700
      * @tc.desc   1. Execute update sql
@@ -245,7 +237,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1800
      * @tc.desc   1. Execute delete sql
@@ -270,7 +261,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1900
      * @tc.desc   1. Execute attach sql
@@ -328,7 +318,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2000
      * @tc.desc   1. Create table
@@ -362,7 +351,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2100
      * @tc.desc   1. Create table
@@ -393,7 +381,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2200
      * @tc.desc   1. Execute sql: ""
@@ -416,7 +403,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2300
      * @tc.desc   1. Insert data
@@ -438,7 +424,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2400
      * @tc.desc   1. Insert data and set sql as null or undefined
@@ -468,7 +453,6 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2500
      * @tc.desc   1. Insert data and set args as null or undefined
@@ -500,7 +484,6 @@ export default function rdbStoreExcuteTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0017
      * @tc.number testExecute0017
      * @tc.desc   testExecute0017
@@ -525,7 +508,6 @@ export default function rdbStoreExcuteTest(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testExecute0018
      * @tc.number testExecute0018
      * @tc.desc   testExecute0018

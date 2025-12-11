@@ -41,7 +41,6 @@ export default function RunningLockPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0100
      * @tc.number RunningLockPermissionTest_0100
      * @tc.desc   Function test
@@ -65,7 +64,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0200
      * @tc.number RunningLockPermissionTest_0200
      * @tc.desc   Function test
@@ -98,7 +96,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0300
      * @tc.number RunningLockPermissionTest_0300
      * @tc.desc   Function test
@@ -130,7 +127,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0400
      * @tc.number RunningLockPermissionTest_0400
      * @tc.desc   Function test
@@ -161,7 +157,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0500
      * @tc.number RunningLockPermissionTest_0500
      * @tc.desc   Function test
@@ -186,7 +181,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0600
      * @tc.number RunningLockPermissionTest_0600
      * @tc.desc   Function test
@@ -220,7 +214,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0700
      * @tc.number RunningLockPermissionTest_0700
      * @tc.desc   Function test
@@ -252,7 +245,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0800
      * @tc.number RunningLockPermissionTest_0800
      * @tc.desc   Function test

@@ -21,7 +21,6 @@ export default function userauthTest() {
     describe('userauthTest_API9', function () {
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0102
          * @tc.number Security_IAM_Func_0102
          * @tc.desc   Abnormal testing
@@ -82,7 +81,6 @@ export default function userauthTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0104
          * @tc.number Security_IAM_Func_0104
          * @tc.desc   Abnormal testing
@@ -151,7 +149,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0111
          * @tc.number Security_IAM_Func_0111
          * @tc.desc   Abnormal testing
@@ -193,7 +190,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0105
          * @tc.number Security_IAM_Func_0105
          * @tc.desc   Abnormal testing
@@ -275,7 +271,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0106
          * @tc.number Security_IAM_Func_0106
          * @tc.desc   Abnormal testing
@@ -398,7 +393,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0103
          * @tc.number Security_IAM_Func_0103
          * @tc.desc   Abnormal testing
@@ -456,7 +450,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0108
          * @tc.number Security_IAM_Func_0108
          * @tc.desc   Abnormal testing
@@ -484,7 +477,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0109
          * @tc.number Security_IAM_Func_0109
          * @tc.desc   Abnormal testing
@@ -509,7 +501,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0110
          * @tc.number Security_IAM_Func_0110
          * @tc.desc   A normal response is expected
@@ -533,7 +524,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0104
          * @tc.number Security_IAM_PIN_Kit_Func_0104
          * @tc.desc   Enumeration testing
@@ -552,7 +542,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0105
          * @tc.number Security_IAM_PIN_Kit_Func_0105
          * @tc.desc   Enumeration testing
@@ -578,7 +567,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0106
          * @tc.number Security_IAM_PIN_Kit_Func_0106
          * @tc.desc   Enumeration testing
@@ -595,7 +583,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_Func_0107
          * @tc.number Security_IAM_Func_0107
          * @tc.desc   Enumeration testing
@@ -623,7 +610,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0108
          * @tc.number Security_IAM_PIN_Kit_Func_0108
          * @tc.desc   Enumeration testing
@@ -644,7 +630,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_Security_IAM_UserAuth_FUNC_0110
          * @tc.number SUB_Security_IAM_UserAuth_FUNC_0110
          * @tc.desc   getAuthLockState parameter validity check
@@ -659,11 +644,13 @@ export default function userauthTest() {
             let checkFingerprint = await checkSupportOrNot(userAuthNorth.UserAuthType.FINGERPRINT);
             let authTypeParamError = [0, -1];
             let authType = [userAuthNorth.UserAuthType.FACE, userAuthNorth.UserAuthType.FINGERPRINT, userAuthNorth.UserAuthType.PIN];
+            let permaentLockoutDuration = userAuthNorth.PERMANENT_LOCKOUT_DURATION;
             if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
                 for (let idx0 = 0; idx0 < authTypeParamError.length; idx0++) {
                     try {
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType: ${authTypeParamError[idx0]}`);
                         await userAuthNorth.getAuthLockState(authTypeParamError[idx0]);
+                        expect(null).assertFail();
                     } catch (error) {
                         console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType: ${authTypeParamError[idx0]}`);
                         expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.TYPE_NOT_SUPPORT);
@@ -673,6 +660,7 @@ export default function userauthTest() {
                 try {
                     console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType is empty`);
                     await userAuthNorth.getAuthLockState();
+                    expect(null).assertFail();
                 } catch (error) {
                     console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType is empty`);
                     expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.INVALID_PARAMETERS);
@@ -681,6 +669,7 @@ export default function userauthTest() {
                 try {
                     console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType is NULL`);
                     await userAuthNorth.getAuthLockState(null);
+                    expect(null).assertFail();
                 } catch (error) {
                     console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType is NULL`);
                     expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.INVALID_PARAMETERS);
@@ -693,6 +682,7 @@ export default function userauthTest() {
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.isLocked : ${AuthLockState.isLocked}`);
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.remainingAuthAttempts : ${AuthLockState.remainingAuthAttempts}`);
                         console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.lockoutDuration : ${AuthLockState.lockoutDuration}`);
+                        expect(null).assertFail();
                     } catch (error) {
                         console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType: ${authType[idx0]}`);
                         expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.NOT_ENROLLED);

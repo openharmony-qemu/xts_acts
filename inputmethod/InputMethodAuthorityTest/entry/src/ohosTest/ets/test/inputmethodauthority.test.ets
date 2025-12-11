@@ -37,7 +37,6 @@ export default function inputMethodAuthorityJSUnit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethod_test_switchInputMethod_001
      * @tc.number inputmethod_test_switchInputMethod_001
      * @tc.desc   Function test
@@ -69,7 +68,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethod_test_switchInputMethod_002
      * @tc.number inputmethod_test_switchInputMethod_002
      * @tc.desc   Function test
@@ -107,7 +105,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethod_test_showSoftKeyboard_001
      * @tc.number inputmethod_test_showSoftKeyboard_001
      * @tc.desc   Function test
@@ -135,7 +132,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethod_test_showSoftKeyboard_002
      * @tc.number inputmethod_test_showSoftKeyboard_002
      * @tc.desc   Function test
@@ -164,7 +160,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethod_test_hideSoftKeyboard_001
      * @tc.number inputmethod_test_hideSoftKeyboard_001
      * @tc.desc   Function test
@@ -193,7 +188,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethod_test_hideSoftKeyboard_002
      * @tc.number inputmethod_test_hideSoftKeyboard_002
      * @tc.desc   Function test
@@ -220,7 +214,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethod_test_switchCurrentInputMethodAndSubtype_001
      * @tc.number inputMethod_test_switchCurrentInputMethodAndSubtype_001
      * @tc.desc   Function test
@@ -277,7 +270,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethod_test_switchCurrentInputMethodAndSubtype_002
      * @tc.number inputMethod_test_switchCurrentInputMethodAndSubtype_002
      * @tc.desc   Function test
@@ -335,7 +327,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_001
      * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_001
      * @tc.desc   Function test
@@ -380,7 +371,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_002
      * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_002
      * @tc.desc   Function test
@@ -425,7 +415,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_InputMethodState_0901
      * @tc.number Sub_InputMethod_IME_InputMethodState_0901
      * @tc.desc   Function test
@@ -458,7 +447,6 @@ export default function inputMethodAuthorityJSUnit() {
     };
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_Misc_InputMethod_IME_recvMessage_0100
      * @tc.number Sub_Misc_InputMethod_IME_recvMessage_0100
      * @tc.desc   Function test
@@ -493,7 +481,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_getSecurityMode_0101
      * @tc.number Sub_InputMethod_IME_getSecurityMode_0101
      * @tc.desc   Function test
@@ -517,7 +504,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_createPanel_0101
      * @tc.number Sub_InputMethod_IME_createPanel_0101
      * @tc.desc   Function test
@@ -552,7 +538,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IME_createPanel_0201
      * @tc.number Sub_InputMethod_IME_createPanel_0201
      * @tc.desc   Function test
@@ -580,7 +565,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_DiscardTypingText_0200
      * @tc.number Sub_InputMethod_IMF_DiscardTypingText_0200
      * @tc.desc   Function test
@@ -603,7 +587,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0100
      * @tc.number Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0100
      * @tc.desc   Function test
@@ -626,7 +609,6 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200
      * @tc.number Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200
      * @tc.desc   Function test

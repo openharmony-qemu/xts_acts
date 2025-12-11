@@ -48,7 +48,6 @@ export default function RdbNdkStoreCursorTest() {
         afterAll(async () => {})
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0100
          * @tc.desc   Normal testCase of NDK cursor for GetColumnType.
@@ -64,7 +63,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0200
          * @tc.desc   Normal testCase of NDK cursor for GetColumnIndex.
@@ -80,7 +78,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0300
          * @tc.desc   Normal testCase of NDK cursor for GetColumnName.
@@ -96,7 +93,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0400
          * @tc.desc   Normal testCase of NDK cursor for Getxxx.
@@ -112,7 +108,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0500
          * @tc.desc   Normal testCase of NDK cursor for GetColumnIndex.
@@ -128,7 +123,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0600
          * @tc.desc   Normal testCase of NDK cursor for GetColumnIndex.
@@ -144,7 +138,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0700
          * @tc.desc   Normal testCase of NDK cursor for GetColumnType.
@@ -160,7 +153,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0800
          * @tc.desc   Normal testCase of NDK cursor for GetColumnName.
@@ -176,7 +168,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0900
          * @tc.desc   Normal testCase of NDK cursor for getSize.
@@ -192,7 +183,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1000
          * @tc.desc   Normal testCase of NDK cursor for getText.
@@ -208,7 +198,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1100
          * @tc.desc   Normal testCase of NDK cursor for getInt64.
@@ -224,7 +213,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1200
          * @tc.desc   Normal testCase of NDK cursor for getReal.
@@ -240,7 +228,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1300
          * @tc.desc   getBlob
@@ -256,7 +243,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1400
          * @tc.desc   isNull
@@ -272,7 +258,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1500
          * @tc.desc   getRowCount
@@ -288,7 +273,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1600
          * @tc.desc   getRowCount
@@ -304,7 +288,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1700
          * @tc.desc   getRowCount
@@ -320,7 +303,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1800
          * @tc.desc   SUB_DDM_RDB_CURSOR_1800
@@ -336,7 +318,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_1900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1900
          * @tc.desc   getRowCount
@@ -352,7 +333,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_2000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2000
          * @tc.desc   SUB_DDM_RDB_CURSOR_2000
@@ -368,7 +348,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_2100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2100
          * @tc.desc   SUB_DDM_RDB_CURSOR_2100
@@ -384,7 +363,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_2200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2200
          * @tc.desc   SUB_DDM_RDB_CURSOR_2200
@@ -400,7 +378,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_2300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2300
          * @tc.desc   SUB_DDM_RDB_CURSOR_2300
@@ -416,7 +393,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_2400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2400
          * @tc.desc   SUB_DDM_RDB_CURSOR_2400
@@ -432,7 +408,6 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_2500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2500
          * @tc.desc   SUB_DDM_RDB_CURSOR_2500
@@ -448,7 +423,6 @@ export default function RdbNdkStoreCursorTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_CURSOR_2600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2600
          * @tc.desc   SUB_DDM_RDB_CURSOR_2600

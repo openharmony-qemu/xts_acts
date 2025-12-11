@@ -26,26 +26,26 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDCOLOR_0100
-     * @tc.name       : testTextInputBackgroundColor001
-     * @tc.desc       : testing backgroundColor for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDCOLOR_0200
-     * @tc.name       : testTextInputBackgroundColor002
-     * @tc.desc       : testing backgroundColor for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundColor002()).assertEqual(0)

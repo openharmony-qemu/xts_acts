@@ -28,6 +28,14 @@ export default function PointerEventTest(){
       done()
     })
 
+    /**
+     * @tc.name   PointerEventTest_a
+     * @tc.number PointerEventTest_a
+     * @tc.desc   PointerEventTest_a
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PointerEventTest_a',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.PointerEventTest_a()).assertEqual(0)
       console.log('PointerEventTest_a will drag and check:: ')
@@ -36,6 +44,14 @@ export default function PointerEventTest(){
       done()
     })
 
+    /**
+     * @tc.name   PointerEventTest_a1
+     * @tc.number PointerEventTest_a1
+     * @tc.desc   PointerEventTest_a1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PointerEventTest_a1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.PointerEventTest_a1()).assertEqual(0)
       console.log('PointerEventTest_a1 will drag and check:: ')
@@ -44,6 +60,14 @@ export default function PointerEventTest(){
       done()
     })
 
+    /**
+     * @tc.name   PointerEventTest_b
+     * @tc.number PointerEventTest_b
+     * @tc.desc   PointerEventTest_b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PointerEventTest_b',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.PointerEventTest_b()).assertEqual(0)
       console.log('PointerEventTest_b will drag and check:: ')
@@ -52,6 +76,14 @@ export default function PointerEventTest(){
       done()
     })
 
+    /**
+     * @tc.name   PointerEventTest_b1
+     * @tc.number PointerEventTest_b1
+     * @tc.desc   PointerEventTest_b1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PointerEventTest_b1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.PointerEventTest_b1()).assertEqual(0)
       console.log('PointerEventTest_b1 will drag and check:: ')

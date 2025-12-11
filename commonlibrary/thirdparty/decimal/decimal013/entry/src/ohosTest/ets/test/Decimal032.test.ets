@@ -52,12 +52,12 @@ export default function DecimalTest032() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_mod_Func_001
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -216,12 +216,12 @@ export default function DecimalTest032() {
         test_mod_001( -17.8, -4.1, '-1.4');
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_mod_Func_002
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () =>  {
         Decimal.set ({
@@ -925,12 +925,12 @@ export default function DecimalTest032() {
         test_mod_005('8.3790348726489133341557987289125627922491641304972332e+10', '1.88761931097750519978e+9', '735099043.478904551237987289125627922491641304972332');
     });
     /**
-     * @tc.number    : DECIMAL_TEST_003
-     * @tc.name      : Decimal_mod_Func_003
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_003
+     * @tc.number DECIMAL_TEST_003
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

@@ -39,12 +39,12 @@ export default function ConnectionHandleTest() {
   describe('ConnectionHandleTest',()=>{
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_2000
-     * @tc.name   : testNetworkMgrConnectionNetHandleGetAddressByName2000
-     * @tc.desc   : Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressByName2000
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_2000
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetHandleGetAddressByName2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressByName2000';
@@ -75,12 +75,12 @@ export default function ConnectionHandleTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_2100
-     * @tc.name   : testNetworkMgrConnectionNetHandleGetAddressByName2100
-     * @tc.desc   : Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressByName2100
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_2100
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetHandleGetAddressByName2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressByName2100';
@@ -109,12 +109,12 @@ export default function ConnectionHandleTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2000
-     * @tc.name   : testNetworkMgrConnectionNetHandleGetAddressesByName2000
-     * @tc.desc   : Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName2000
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2000
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetHandleGetAddressesByName2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName2000';
@@ -145,12 +145,12 @@ export default function ConnectionHandleTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2100
-     * @tc.name   : testNetworkMgrConnectionNetHandleGetAddressesByName2100
-     * @tc.desc   : Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName2100
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2100
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetHandleGetAddressesByName2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName2100';
@@ -180,12 +180,12 @@ export default function ConnectionHandleTest() {
 
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_GetDefaultNetSync_0300
-     * @tc.name   : testNetworkMgrConnectionGetDefaultNetSync0300
-     * @tc.desc   : Obtain the network handle and check whether there is a network.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : SMALLTEST
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetSync0300
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNetSync_0300
+     * @tc.desc   Obtain the network handle and check whether there is a network.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetDefaultNetSync0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionGetDefaultNetSync0300';
@@ -203,14 +203,14 @@ export default function ConnectionHandleTest() {
         done();
       }
     });
-    /*
-      * @tc.number:SUB_NetManager_GetConnectionPropertiesSync_0100
-      * @tc.name: testNetManagerGetConnectionPropertiesSync0100
-      * @tc.desc: Whether the getConnectionPropertiesSync_ method is called successfully with WIFI
-      * @tc.level:Level 1
-      * @tc.type:Function
-      * @tc.size:MediumTest
-      */
+    /**
+     * @tc.name   testNetManagerGetConnectionPropertiesSync0100
+     * @tc.number SUB_NetManager_GetConnectionPropertiesSync_0100
+     * @tc.desc   Whether the getConnectionPropertiesSync_ method is called successfully with WIFI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNetManagerGetConnectionPropertiesSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
       const caseName: string = 'testNetManagerGetConnectionPropertiesSync0100';
       console.info(`${caseName}---Start`);

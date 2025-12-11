@@ -1,9 +1,0 @@
-{
-    "src": [
-        "MainAbility/pages/index/index",
-        "MainAbility/pages/ListTest",
-        "MainAbility/pages/List_item",
-        "MainAbility/pages/ListCrown",
-        "MainAbility/pages/List_add"
-    ]
-}

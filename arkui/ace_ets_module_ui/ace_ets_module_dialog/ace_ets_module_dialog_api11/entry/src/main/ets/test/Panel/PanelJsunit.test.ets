@@ -55,9 +55,12 @@ export default function panelJsunit() {
       console.info("Panel after each called");
     });
     /**
+     * @tc.name   panelTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0440
-     * @tc.name panelTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('panelTest001', Level.LEVEL2, async () => {
       console.info('++++++++++++++++ Panel TestCase 1 START ++++++++++++++++');
@@ -83,9 +86,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   panelTest002
      * @tc.number SUB_ACE_BASIC_ETS_API_0450
-     * @tc.name panelTest002
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('panelTest002', Level.LEVEL2, async () => {
       console.info('++++++++++++++++ Panel TestCase 2 START ++++++++++++++++');
@@ -105,9 +111,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   panelTest003
      * @tc.number SUB_ACE_BASIC_ETS_API_0460
-     * @tc.name panelTest003
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('panelTest003', Level.LEVEL2, async () => {
       console.info('++++++++++++++++ Panel TestCase 3 START ++++++++++++++++');

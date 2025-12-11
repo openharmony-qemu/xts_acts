@@ -73,10 +73,13 @@ export default function webViewOnFullScreenExit() {
       await Utils.sleep(2000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWFULLSCREEN_API_0200
-     *tc.name testOnFullScreenExit
-     *tc.desc test interface of onfullscreenexit with runjavascript exitFullscreen
+    /**
+     * @tc.name   testOnFullScreenExit
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWFULLSCREEN_API_0200
+     * @tc.desc   test interface of onfullscreenexit with runjavascript exitFullscreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnFullScreenExit',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       sendEventByKey('TestwebViewOnFullScreenExit',10,'');

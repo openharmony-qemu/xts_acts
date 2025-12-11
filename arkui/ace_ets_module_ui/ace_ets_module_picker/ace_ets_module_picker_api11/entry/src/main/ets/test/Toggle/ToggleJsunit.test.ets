@@ -64,9 +64,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   testToggle010
      * @tc.number SUB_ACE_BASIC_ETS_API_1640
-     * @tc.name testToggle010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle010', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle010 START');
@@ -83,9 +86,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   testToggle020
      * @tc.number SUB_ACE_BASIC_ETS_API_1650
-     * @tc.name testToggle020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle020', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle020 START');
@@ -100,9 +106,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   testToggle030
      * @tc.number SUB_ACE_BASIC_ETS_API_1660
-     * @tc.name testToggle030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle030', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle030 START');
@@ -117,9 +126,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   testToggle040
      * @tc.number SUB_ACE_BASIC_ETS_API_1670
-     * @tc.name testToggle040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle040', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle040 START');
@@ -134,9 +146,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   testToggle050
      * @tc.number SUB_ACE_BASIC_ETS_API_1680
-     * @tc.name testToggle050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle050', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle050 START');
@@ -151,9 +166,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   testToggle060
      * @tc.number SUB_ACE_BASIC_ETS_API_1690
-     * @tc.name testToggle060
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle060', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle060 START');

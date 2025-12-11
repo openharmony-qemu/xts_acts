@@ -114,12 +114,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_FORMAT_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_FORMAT_0100
-         * @tc.desc      : test OHOS_IMAGE_FORMAT_YCBCR_422_SP
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_FORMAT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_FORMAT_0100
+         * @tc.desc   test OHOS_IMAGE_FORMAT_YCBCR_422_SP
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_FORMAT_0100', Level.LEVEL3, async (done: ESObject) => {
             let result: number = ndkTest.imageFormatYcbcr422Sp();
@@ -128,12 +128,12 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_FORMAT_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_FORMAT_0200
-         * @tc.desc      : test OHOS_IMAGE_FORMAT_JPEG
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_FORMAT_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_FORMAT_0200
+         * @tc.desc   test OHOS_IMAGE_FORMAT_JPEG
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_FORMAT_0200', Level.LEVEL3, async (done: ESObject) => {
             let result: number = ndkTest.imageFormatJPEG();
@@ -142,12 +142,12 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0100
-         * @tc.desc      : OH_Image_GetComponent error code is IMAGE_RESULT_SUCCESS
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0100
+         * @tc.desc   OH_Image_GetComponent error code is IMAGE_RESULT_SUCCESS
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0100', Level.LEVEL3, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -184,12 +184,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0200
-         * @tc.desc      : OH_Image_GetComponent, error code is IMAGE_RESULT_JNI_ENV_ABNORMAL
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0200
+         * @tc.desc   OH_Image_GetComponent, error code is IMAGE_RESULT_JNI_ENV_ABNORMAL
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_GETCOMPONENT_0200', Level.LEVEL3, async (done: ESObject) => {
             let result: number = ndkTest.imageGetComponentJniEnvAbnormal();
@@ -198,12 +198,12 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0100
-         * @tc.desc      : OH_Image_Format error code is IMAGE_RESULT_SUCCESS
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0100
+         * @tc.desc   OH_Image_Format error code is IMAGE_RESULT_SUCCESS
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0100', Level.LEVEL3, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -238,12 +238,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0200
-         * @tc.desc      : OH_Image_Format, error code is IMAGE_RESULT_JNI_ENV_ABNORMAL
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0200
+         * @tc.desc   OH_Image_Format, error code is IMAGE_RESULT_JNI_ENV_ABNORMAL
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_OHIMAGEFORMAT_0200', Level.LEVEL3, async (done: ESObject) => {
             let result: number = ndkTest.imageFormatJniEnvAbnormal();
@@ -252,12 +252,12 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0100
-         * @tc.desc      : enum is OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0100
+         * @tc.desc   enum is OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0100', Level.LEVEL3, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -294,12 +294,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0200
-         * @tc.desc      : enum is OHOS_IMAGE_COMPONENT_FORMAT_YUV_U
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0200
+         * @tc.desc   enum is OHOS_IMAGE_COMPONENT_FORMAT_YUV_U
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0200', Level.LEVEL3, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -335,12 +335,12 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0300
-         * @tc.desc      : enum is OHOS_IMAGE_COMPONENT_FORMAT_YUV_V
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0300
+         * @tc.desc   enum is OHOS_IMAGE_COMPONENT_FORMAT_YUV_V
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0300', Level.LEVEL0, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -376,12 +376,12 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0400
-         * @tc.desc      : enum is OHOS_IMAGE_COMPONENT_FORMAT_JPEG
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0400
+         * @tc.desc   enum is OHOS_IMAGE_COMPONENT_FORMAT_JPEG
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_COMPONENTFORMAT_0400', Level.LEVEL3, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -420,12 +420,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGERELEASE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGERELEASE_0100
-         * @tc.desc      : OH_Image_Release error code is IMAGE_RESULT_SUCCESS
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_OHIMAGERELEASE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_OHIMAGERELEASE_0100
+         * @tc.desc   OH_Image_Release error code is IMAGE_RESULT_SUCCESS
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_OHIMAGERELEASE_0100', Level.LEVEL0, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -457,12 +457,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0100
-         * @tc.desc      : OH_Image_ClipRect error code is IMAGE_RESULT_SUCCESS
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0100
+         * @tc.desc   OH_Image_ClipRect error code is IMAGE_RESULT_SUCCESS
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0100', Level.LEVEL3, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -491,12 +491,12 @@ export default function ImageReceiverNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0300
-         * @tc.desc      : OH_Image_ClipRect, error code is IMAGE_RESULT_BAD_PARAMETER
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0300
+         * @tc.desc   OH_Image_ClipRect, error code is IMAGE_RESULT_BAD_PARAMETER
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_OHIMAGECLIPRECT_0300', Level.LEVEL3, async (done: ESObject) => {
             let result: number = ndkTest.imageClipBadParameter();
@@ -506,12 +506,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0100
-         * @tc.desc      : OH_Image_Size error code is IMAGE_RESULT_SUCCESS
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0100
+         * @tc.desc   OH_Image_Size error code is IMAGE_RESULT_SUCCESS
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0100', Level.LEVEL3, async (done: ESObject) => {
             if (!isSupportedCamerasResult) {
@@ -543,12 +543,12 @@ export default function ImageReceiverNDKTest() {
 
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0200
-         * @tc.desc      : OH_Image_Size, error code is IMAGE_RESULT_JNI_ENV_ABNORMAL
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 3
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0200
+         * @tc.desc   OH_Image_Size, error code is IMAGE_RESULT_JNI_ENV_ABNORMAL
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_MULTIMEDIA_IMAGE_OHIMAGESIZE_0200', Level.LEVEL3, async (done: ESObject) => {
             let result: number = ndkTest.imageSizeJniEnvAbnormal();

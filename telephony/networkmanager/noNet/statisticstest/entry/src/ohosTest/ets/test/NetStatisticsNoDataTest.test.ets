@@ -56,13 +56,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_NetworkMgr_Statistics_GetCellularRxBytes_0500
-     * @tc.name  : testNetworkMgrStatisticsGetCellularRxBytes0500
-     * @tc.desc  : Get cellular real-time downlink traffic without card;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetCellularRxBytes0500
+     * @tc.number SUB_NetworkMgr_Statistics_GetCellularRxBytes_0500
+     * @tc.desc   Get cellular real-time downlink traffic without card;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetCellularRxBytes0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetCellularRxBytes0500';
@@ -90,13 +90,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_NetworkMgr_Statistics_GetCellularRxBytes_0600
-     * @tc.name  : testNetworkMgrStatisticsGetCellularRxBytes0600
-     * @tc.desc  : Get cellular real-time downlink traffic without card;promise
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetCellularRxBytes0600
+     * @tc.number SUB_NetworkMgr_Statistics_GetCellularRxBytes_0600
+     * @tc.desc   Get cellular real-time downlink traffic without card;promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetCellularRxBytes0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetCellularRxBytes0600';
@@ -124,13 +124,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_NetworkMgr_Statistics_GetCellularTxBytes_0500
-     * @tc.name  : testNetworkMgrStatisticsGetCellularTxBytes0500
-     * @tc.desc  : Get cellular real-time downlink traffic without card;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetCellularTxBytes0500
+     * @tc.number SUB_NetworkMgr_Statistics_GetCellularTxBytes_0500
+     * @tc.desc   Get cellular real-time downlink traffic without card;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetCellularTxBytes0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetCellularTxBytes0500';
@@ -158,13 +158,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_NetworkMgr_Statistics_GetCellularTxBytes_0600
-     * @tc.name  : testNetworkMgrStatisticsGetCellularTxBytes0600
-     * @tc.desc  : Get cellular real-time downlink traffic without card;promise
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetCellularTxBytes0600
+     * @tc.number SUB_NetworkMgr_Statistics_GetCellularTxBytes_0600
+     * @tc.desc   Get cellular real-time downlink traffic without card;promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetCellularTxBytes0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetCellularTxBytes0600';
@@ -192,13 +192,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetAllRxBytes_0500
-     * @tc.name  : testNetworkMgrStatisticsGetAllRxBytes0500
-     * @tc.desc  : Obtain real-time downlink traffic of all network adapters without Ethernet access;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetAllRxBytes0500
+     * @tc.number SUB_NetworkMgr_Statistics_GetAllRxBytes_0500
+     * @tc.desc   Obtain real-time downlink traffic of all network adapters without Ethernet access;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrStatisticsGetAllRxBytes0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetAllRxBytes0500';
@@ -225,13 +225,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetAllRxBytes_0600
-     * @tc.name  : testNetworkMgrStatisticsGetAllRxBytes0600
-     * @tc.desc  : Obtain real-time downlink traffic of all network adapters without Ethernet access;promise
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetAllRxBytes0600
+     * @tc.number SUB_NetworkMgr_Statistics_GetAllRxBytes_0600
+     * @tc.desc   Obtain real-time downlink traffic of all network adapters without Ethernet access;promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetAllRxBytes0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetAllRxBytes0600';
@@ -258,13 +258,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetAllTxBytes_0500
-     * @tc.name  : testNetworkMgrStatisticsGetAllTxBytes0500
-     * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetAllTxBytes0500
+     * @tc.number SUB_NetworkMgr_Statistics_GetAllTxBytes_0500
+     * @tc.desc   Obtain real-time upstream traffic of all nics without Ethernet access;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrStatisticsGetAllTxBytes0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetAllTxBytes0500';
@@ -291,13 +291,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetAllTxBytes_0600
-     * @tc.name  : testNetworkMgrStatisticsGetAllTxBytes0600
-     * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetAllTxBytes0600
+     * @tc.number SUB_NetworkMgr_Statistics_GetAllTxBytes_0600
+     * @tc.desc   Obtain real-time upstream traffic of all nics without Ethernet access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetAllTxBytes0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetAllTxBytes0600';
@@ -324,13 +324,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetUidRxBytes_0700
-     * @tc.name  : testNetworkMgrStatisticsGetUidRxBytes0700
-     * @tc.desc  : The application does not generate downstream traffic;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidRxBytes0700
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_0700
+     * @tc.desc   The application does not generate downstream traffic;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetUidRxBytes0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytes0700';
@@ -358,13 +358,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetUidRxBytes_0800
-     * @tc.name  : testNetworkMgrStatisticsGetUidRxBytes0800
-     * @tc.desc  : The application does not generate downstream traffic;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidRxBytes0800
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_0800
+     * @tc.desc   The application does not generate downstream traffic;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetUidRxBytes0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytes0800';
@@ -390,13 +390,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetUidTxBytes_0700
-     * @tc.name  : testNetworkMgrStatisticsGetUidTxBytes0700
-     * @tc.desc  : The application does not generate downstream traffic;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidTxBytes0700
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_0700
+     * @tc.desc   The application does not generate downstream traffic;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetUidTxBytes0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytes0700';
@@ -424,13 +424,13 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Statistics_GetUidTxBytes_0800
-     * @tc.name  : testNetworkMgrStatisticsGetUidTxBytes0800
-     * @tc.desc  : The application does not generate downstream traffic;callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidTxBytes0800
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_0800
+     * @tc.desc   The application does not generate downstream traffic;callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrStatisticsGetUidTxBytes0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytes0800';

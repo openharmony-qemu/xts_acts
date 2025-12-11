@@ -195,9 +195,12 @@ static void TestAieClientSetOptionWithoutPrepare(bool isAsync, bool isPerformSet
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0100
- * @tc.name   : 01. 加载算法插件之后，执行1次设置参数值和获取参数值，成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSetOptionFunction0101
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0101, Function | MediumTest | Level2)
 {
@@ -207,9 +210,12 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0101, Fun
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0200
- * @tc.name   : 02. 加载算法插件之后，执行2次设置参数值和获取参数值，成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSetOptionFunction0102
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0102, Function | MediumTest | Level3)
 {
@@ -219,9 +225,12 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0102, Fun
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0300
- * @tc.name   : 03. 加载算法插件之后，执行3次设置参数值和获取参数值，成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSetOptionFunction0103
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_01_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0103, Function | MediumTest | Level3)
 {
@@ -231,9 +240,12 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0103, Fun
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_02_0100
- * @tc.name   : 01. 不加载算法插件，设置参数值，获取参数值，失败
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSetOptionFunction0201
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_02_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0201, Function | MediumTest | Level3)
 {
@@ -243,9 +255,12 @@ HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0201, Fun
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_02_0200
- * @tc.name   : 02. 不加载算法插件，获取参数值，失败
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientSetOptionFunction0202
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSetOption_02_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientSetOptionFunctionTest, testAieClientSetOptionFunction0202, Function | MediumTest | Level3)
 {

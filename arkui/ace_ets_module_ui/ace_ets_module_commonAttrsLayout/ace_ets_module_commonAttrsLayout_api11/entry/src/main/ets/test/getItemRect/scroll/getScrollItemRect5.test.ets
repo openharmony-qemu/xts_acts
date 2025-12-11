@@ -59,12 +59,14 @@ export default function getScrollItemRect5() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect5_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set padding of scroll to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect5_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect5_0100
+     * @tc.desc   set index to 0,set padding of scroll to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect5_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect5_0100] START');
@@ -119,12 +121,14 @@ export default function getScrollItemRect5() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect5_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set margin of column to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect5_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect5_0200
+     * @tc.desc   set index to 0,set margin of column to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect5_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect5_0200] START');

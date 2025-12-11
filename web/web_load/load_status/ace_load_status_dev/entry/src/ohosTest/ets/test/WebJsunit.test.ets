@@ -35,10 +35,13 @@ export default function webJsunit() {
       console.info("web beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_038
-     *tc.name onPageBegin
-     *tc.desic Triggered when the page loading progress changes
+    /**
+     * @tc.name   onPageBegin
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_038
+     * @tc.desc   onPageBegin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onPageBegin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
@@ -50,10 +53,13 @@ export default function webJsunit() {
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_039
-     *tc.name onPageEnd
-     *tc.desic Triggered at the begin of web page loading
+    /**
+     * @tc.name   onPageEnd
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_039
+     * @tc.desc   onPageEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onPageEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnPageEnd";
@@ -64,10 +70,13 @@ export default function webJsunit() {
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_005
-     *tc.name onResourceLoad
-     *tc.desic Triggered when the url loading
+    /**
+     * @tc.name   onResourceLoad
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_005
+     * @tc.desc   onResourceLoad
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onResourceLoad', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnResourceLoad";
@@ -78,10 +87,13 @@ export default function webJsunit() {
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_055
-     *tc.name stop
-     *tc.desic  Stops the current load
+    /**
+     * @tc.name   stop
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_055
+     * @tc.desc   stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitStop";

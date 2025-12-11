@@ -43,12 +43,12 @@ export default function typeArrayFloat64ArrayTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0001
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0001
-     * @tc.name TypeArrayFloat64Array0001
-     * @tc.desc Verify the basic properties of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the basic properties of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array(3);
@@ -60,12 +60,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0002
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0002
-     * @tc.name TypeArrayFloat64Array0002
-     * @tc.desc Verify Float64Array creation based on ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array creation based on ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(32);
@@ -76,12 +76,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0003
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0003
-     * @tc.name TypeArrayFloat64Array0003
-     * @tc.desc Verify Float64Array creation based on SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array creation based on SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       if (typeof SharedArrayBuffer !== 'undefined') {
@@ -93,12 +93,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0004
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0004
-     * @tc.name TypeArrayFloat64Array0004
-     * @tc.desc Verify interaction between Float64Array and DataView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify interaction between Float64Array and DataView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(32);
@@ -116,12 +116,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0005
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0005
-     * @tc.name TypeArrayFloat64Array0005
-     * @tc.desc Verify various construction methods of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify various construction methods of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
 
@@ -138,12 +138,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0006
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0006
-     * @tc.name TypeArrayFloat64Array0006
-     * @tc.desc Verify the set method of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the set method of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array(5);
@@ -163,12 +163,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0007
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0007
-     * @tc.name TypeArrayFloat64Array0007
-     * @tc.desc Verify the subarray method of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the subarray method of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -184,12 +184,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0008
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0008
-     * @tc.name TypeArrayFloat64Array0008
-     * @tc.desc Verify conversion between Float64Array and regular array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify conversion between Float64Array and regular array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = [1.1, 2.2, 3.3];
@@ -203,12 +203,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0009
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0009
-     * @tc.name TypeArrayFloat64Array0009
-     * @tc.desc Verify static from and of methods of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify static from and of methods of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = Float64Array.from([1, 2, 3], (x) => x * 0.1);
@@ -220,12 +220,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0010
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0010
-     * @tc.name TypeArrayFloat64Array0010
-     * @tc.desc Verify iteration methods of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iteration methods of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
@@ -245,12 +245,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0011
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0011
-     * @tc.name TypeArrayFloat64Array0011
-     * @tc.desc Verify search methods of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify search methods of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 2.0, 1.0]);
@@ -271,12 +271,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0012
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0012
-     * @tc.name TypeArrayFloat64Array0012
-     * @tc.desc Verify manipulation methods of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify manipulation methods of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = new Float64Array(5);
@@ -296,12 +296,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0013
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0013
-     * @tc.name TypeArrayFloat64Array0013
-     * @tc.desc Verify handling of boundary values by Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of boundary values by Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([
@@ -321,12 +321,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0014
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0014
-     * @tc.name TypeArrayFloat64Array0014
-     * @tc.desc Verify buffer boundary handling of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify buffer boundary handling of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(16);
@@ -337,12 +337,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0015
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0015
-     * @tc.name TypeArrayFloat64Array0015
-     * @tc.desc Verify exception scenario handling of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exception scenario handling of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let errorThrown = false;
@@ -356,12 +356,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0016
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0016
-     * @tc.name TypeArrayFloat64Array0016
-     * @tc.desc Verify data parsing rules of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify data parsing rules of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(16);
@@ -385,12 +385,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0017
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0017
-     * @tc.name TypeArrayFloat64Array0017
-     * @tc.desc Verify interaction of multiple views on the same buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify interaction of multiple views on the same buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(32);
@@ -412,12 +412,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0018
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0018
-     * @tc.name TypeArrayFloat64Array0018
-     * @tc.desc Verify the slice method of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the slice method of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -434,12 +434,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0019
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0019
-     * @tc.name TypeArrayFloat64Array0019
-     * @tc.desc Verify the every and some methods of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the every and some methods of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([2.0, 4.0, 6.0, 8.0]);
@@ -466,12 +466,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0020
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0020
-     * @tc.name TypeArrayFloat64Array0020
-     * @tc.desc Verify the reduceRight method of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the reduceRight method of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
@@ -488,12 +488,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0021
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0021
-     * @tc.name TypeArrayFloat64Array0021
-     * @tc.desc Verify out-of-bounds index behavior of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify out-of-bounds index behavior of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
@@ -506,12 +506,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0022
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0022
-     * @tc.name TypeArrayFloat64Array0022
-     * @tc.desc Verify buffer sharing between Float64Array and other TypedArrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify buffer sharing between Float64Array and other TypedArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(32);
@@ -529,12 +529,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0023
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0023
-     * @tc.name TypeArrayFloat64Array0023
-     * @tc.desc Verify batch operation performance-related features of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify batch operation performance-related features of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const size = 100;
@@ -558,12 +558,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0024
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0024
-     * @tc.name TypeArrayFloat64Array0024
-     * @tc.desc Verify handling of special mathematical operations by Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of special mathematical operations by Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([0.0, 1.0, -1.0, Infinity, -Infinity, NaN]);
@@ -577,12 +577,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0025
-     * @tc.name TypeArrayFloat64Array0025
-     * @tc.desc Verify empty array behavior of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify empty array behavior of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const emptyArr = new Float64Array(0);
@@ -607,12 +607,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0026
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0026
-     * @tc.name TypeArrayFloat64Array0026
-     * @tc.desc Verify boundary handling of the fill method for Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify boundary handling of the fill method for Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -629,12 +629,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0027
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0027
-     * @tc.name TypeArrayFloat64Array0027
-     * @tc.desc Verify boundary handling of the copyWithin method for Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify boundary handling of the copyWithin method for Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -652,12 +652,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0028
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0028
-     * @tc.name TypeArrayFloat64Array0028
-     * @tc.desc Verify handling of special values by the sort method of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of special values by the sort method of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([3.0, NaN, 1.0, Infinity, -Infinity, 2.0]);
@@ -681,12 +681,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0029
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0029
-     * @tc.name TypeArrayFloat64Array0029
-     * @tc.desc Verify interaction between Float64Array and JSON
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify interaction between Float64Array and JSON
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
@@ -696,12 +696,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0030
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0030
-     * @tc.name TypeArrayFloat64Array0030
-     * @tc.desc Verify handling of NaN by the find and findIndex methods of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of NaN by the find and findIndex methods of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat64Array0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float64Array([1.0, NaN, 3.0, NaN, 5.0]);
@@ -717,12 +717,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0031
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0031
-     * @tc.name TypeArrayFloat64Array0031
-     * @tc.desc Validate the Values Iterator of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Validate the Values Iterator of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.1, 2.2, 3.3]);
@@ -738,12 +738,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0032
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0032
-     * @tc.name TypeArrayFloat64Array0032
-     * @tc.desc Verify the key iterators of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the key iterators of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array(3);
@@ -757,12 +757,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0033
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0033
-     * @tc.name TypeArrayFloat64Array0033
-     * @tc.desc Verify the entries iterator of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the entries iterator of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([10.0, 20.0, 30.0]);
@@ -780,12 +780,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0034
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0034
-     * @tc.name TypeArrayFloat64Array0034
-     * @tc.desc Verify the forEach method parameters of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the forEach method parameters of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
@@ -811,12 +811,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0035
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0035
-     * @tc.name TypeArrayFloat64Array0035
-     * @tc.desc Verify the impact of the map method of Float64Array on the array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the impact of the map method of Float64Array on the array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
@@ -831,12 +831,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0036
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0036
-     * @tc.name TypeArrayFloat64Array0036
-     * @tc.desc Validate the filter method of Float64Array for handling sparse arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Validate the filter method of Float64Array for handling sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(5);
@@ -849,12 +849,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0037
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0037
-     * @tc.name TypeArrayFloat64Array0037
-     * @tc.desc Verify the fill method of Float64Array for filling special values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the fill method of Float64Array for filling special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(3);
@@ -872,12 +872,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0038
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0038
-     * @tc.name TypeArrayFloat64Array0038
-     * @tc.desc Validate the set method of Float64Array for handling different source types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Validate the set method of Float64Array for handling different source types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(5);
@@ -895,12 +895,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0039
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0039
-     * @tc.name TypeArrayFloat64Array0039
-     * @tc.desc Validate the subarray method of Float64Array for handling negative indexes
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Validate the subarray method of Float64Array for handling negative indexes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -917,12 +917,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0040
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0040
-     * @tc.name TypeArrayFloat64Array0040
-     * @tc.desc Validate the slice method of Float64Array for handling negative indexes
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Validate the slice method of Float64Array for handling negative indexes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -939,12 +939,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0041
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0041
-     * @tc.name TypeArrayFloat64Array0041
-     * @tc.desc Verify the performance of Float64Array in complex mathematical operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the performance of Float64Array in complex mathematical operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([0, Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI]);
@@ -959,12 +959,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0042
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0042
-     * @tc.name TypeArrayFloat64Array0042
-     * @tc.desc Verify the handling of array like objects by the from method of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the handling of array like objects by the from method of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = Float64Array.from(arrayLike, (x) => x * 0.5);
@@ -974,12 +974,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0043
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0043
-     * @tc.name TypeArrayFloat64Array0043
-     * @tc.desc Verify the batch modification performance characteristics of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the batch modification performance characteristics of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const size = 1000;
@@ -999,12 +999,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0044
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0044
-     * @tc.name TypeArrayFloat64Array0044
-     * @tc.desc Verify the interaction between Float64Array and WebView in different byte orders
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the interaction between Float64Array and WebView in different byte orders
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(16);
@@ -1032,12 +1032,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0045
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0045
-     * @tc.name TypeArrayFloat64Array0045
-     * @tc.desc Verify the handling of special values by the indexOf method of Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the handling of special values by the indexOf method of Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([0.0, -0.0, NaN, Infinity, -Infinity]);
@@ -1054,12 +1054,12 @@ export default function typeArrayFloat64ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayFloat64Array0046
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0046
-     * @tc.name TypeArrayFloat64Array0046
-     * @tc.desc Test Float64Array with typed array conversion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Float64Array with typed array conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const source = new Float64Array([1.1, 2.2, 3.3]);
@@ -1072,12 +1072,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0047
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0047
-     * @tc.name TypeArrayFloat64Array0047
-     * @tc.desc Test Float64Array buffer sharing modifications
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Float64Array buffer sharing modifications
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(16);
@@ -1094,12 +1094,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0048
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0048
-     * @tc.name TypeArrayFloat64Array0048
-     * @tc.desc Test Float64Array with large values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array with large values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const largeValue = 1e300;
@@ -1111,12 +1111,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0049
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0049
-     * @tc.name TypeArrayFloat64Array0049
-     * @tc.desc Test Float64Array with very small values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array with very small values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const smallValue = 1e-300;
@@ -1127,12 +1127,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0050
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0050
-     * @tc.name TypeArrayFloat64Array0050
-     * @tc.desc Test Float64Array reduce with initial value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Float64Array reduce with initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
@@ -1145,12 +1145,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0051
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0051
-     * @tc.name TypeArrayFloat64Array0051
-     * @tc.desc Test Float64Array find with index parameter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Float64Array find with index parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([5.0, 10.0, 15.0, 20.0]);
@@ -1168,12 +1168,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0052
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0052
-     * @tc.name TypeArrayFloat64Array0052
-     * @tc.desc Test Float64Array filter with array parameter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Float64Array filter with array parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
@@ -1186,12 +1186,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0053
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0053
-     * @tc.name TypeArrayFloat64Array0053
-     * @tc.desc Test Float64Array map with thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array map with thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const multiplier: GeneratedObjectLiteralInterface_1 = { value: 2.0 };
@@ -1205,12 +1205,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0055
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0055
-     * @tc.name TypeArrayFloat64Array0055
-     * @tc.desc Test Float64Array with DataView and overlapping ranges
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array with DataView and overlapping ranges
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(24);
@@ -1229,12 +1229,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0056
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0056
-     * @tc.name TypeArrayFloat64Array0056
-     * @tc.desc Test Float64Array includes method with fromIndex
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Float64Array includes method with fromIndex
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 2.0, 1.0]);
@@ -1246,12 +1246,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0057
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0057
-     * @tc.name TypeArrayFloat64Array0057
-     * @tc.desc Test Float64Array with zero length buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array with zero length buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(0);
@@ -1263,12 +1263,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0058
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0058
-     * @tc.name TypeArrayFloat64Array0058
-     * @tc.desc Test Float64Array with modified buffer byteLength
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array with modified buffer byteLength
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(16);
@@ -1285,12 +1285,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0059
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0059
-     * @tc.name TypeArrayFloat64Array0059
-     * @tc.desc Test Float64Array sort stability
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array sort stability
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const values = [3.0, 1.0, 2.0, 2.0, 1.0];
@@ -1312,12 +1312,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0060
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0060
-     * @tc.name TypeArrayFloat64Array0060
-     * @tc.desc Test Float64Array with maximum length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Float64Array with maximum length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const size = 1024;
@@ -1331,12 +1331,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(approxEqual(arr[size - 1], (size - 1) * 0.1)).assertEqual(true);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0061
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0061
-     * @tc.name TypeArrayFloat64Array0061
-     * @tc.desc Verify Float64Array interaction with ArrayBuffer transfer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array interaction with ArrayBuffer transfer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(32);
@@ -1353,12 +1353,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0064
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0064
-     * @tc.name TypeArrayFloat64Array0064
-     * @tc.desc Verify Float64Array behavior with structured cloning
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with structured cloning
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const original = new Float64Array([10.1, 20.2, 30.3]);
@@ -1380,12 +1380,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0065
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0065
-     * @tc.name TypeArrayFloat64Array0065
-     * @tc.desc Verify Float64Array handling of maximum safe integer values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of maximum safe integer values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const maxSafeInt = Number.MAX_SAFE_INTEGER;
@@ -1404,12 +1404,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0067
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0067
-     * @tc.name TypeArrayFloat64Array0067
-     * @tc.desc Verify Float64Array behavior with zero-length buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with zero-length buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const zeroBuffer = new ArrayBuffer(0);
@@ -1441,12 +1441,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0068
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0068
-     * @tc.name TypeArrayFloat64Array0068
-     * @tc.desc Verify Float64Array handling of floating-point precision edge cases
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of floating-point precision edge cases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(5);
@@ -1471,12 +1471,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0070
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0070
-     * @tc.name TypeArrayFloat64Array0070
-     * @tc.desc Verify Float64Array behavior with overlapping subarray operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with overlapping subarray operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const baseArr = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
@@ -1497,12 +1497,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0071
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0071
-     * @tc.name TypeArrayFloat64Array0071
-     * @tc.desc Verify Float64Array handling of large value ranges (exponents)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of large value ranges (exponents)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(6);
@@ -1526,12 +1526,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(arr[1]).assertEqual(-Infinity);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0072
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0072
-     * @tc.name TypeArrayFloat64Array0072
-     * @tc.desc Verify Float64Array compatibility with ArrayBuffer.slice (buffer duplication)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array compatibility with ArrayBuffer.slice (buffer duplication)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const original = new Float64Array([10.5, 20.5, 30.5, 40.5]);
@@ -1552,12 +1552,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(partialArr[0]).assertEqual(2000.5);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0073
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0073
-     * @tc.name TypeArrayFloat64Array0073
-     * @tc.desc Verify Float64Array iteration with for...of and entries()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float64Array iteration with for...of and entries()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([1.1, 2.2, 3.3, 4.4]);
@@ -1583,12 +1583,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(approxEqual(valueList[2], 3.3)).assertEqual(true);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0074
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0074
-     * @tc.name TypeArrayFloat64Array0074
-     * @tc.desc Verify Float64Array handling of NaN equality in array methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of NaN equality in array methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([1.0, NaN, 3.0, NaN, 5.0]);
@@ -1610,12 +1610,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(allNaN).assertEqual(false);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0075
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0075
-     * @tc.name TypeArrayFloat64Array0075
-     * @tc.desc Verify Float64Array behavior with byteOffset and length parameters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with byteOffset and length parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(64);
@@ -1653,12 +1653,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0076
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0076
-     * @tc.name TypeArrayFloat64Array0076
-     * @tc.desc Verify Float64Array compatibility with DataView for mixed-type buffer access
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array compatibility with DataView for mixed-type buffer access
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(40);
@@ -1680,12 +1680,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(floatBytes.toString()).assertEqual(dvBytes.toString());
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0078
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0078
-     * @tc.name TypeArrayFloat64Array0078
-     * @tc.desc Verify Float64Array behavior with Symbol.iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float64Array behavior with Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([0.5, 1.5, 2.5, 3.5]);
@@ -1714,12 +1714,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0079
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0079
-     * @tc.name TypeArrayFloat64Array0079
-     * @tc.desc Verify Float64Array handling of floating-point signed zero
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of floating-point signed zero
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(4);
@@ -1741,12 +1741,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(posZeroBytes !== negZeroBytes).assertEqual(false);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0081
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0081
-     * @tc.name TypeArrayFloat64Array0081
-     * @tc.desc Verify Float64Array behavior with buffer resizing (via TypedArray constructor)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with buffer resizing (via TypedArray constructor)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(32);
@@ -1774,12 +1774,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0082
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0082
-     * @tc.name TypeArrayFloat64Array0082
-     * @tc.desc Verify Float64Array handling of non-integer length in constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of non-integer length in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr1 = new Float64Array(3.9);
@@ -1817,12 +1817,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(arr5.length).assertEqual(6);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0083
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0083
-     * @tc.name TypeArrayFloat64Array0083
-     * @tc.desc Verify Float64Array compatibility with Math functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float64Array compatibility with Math functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat64Array0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float64Array([Math.PI, Math.E, -Math.PI / 2, 0.0, 1.0, -1.0]);
@@ -1843,12 +1843,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(approxEqual(minVal, -Math.PI / 2)).assertEqual(true);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0084
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0084
-     * @tc.name TypeArrayFloat64Array0084
-     * @tc.desc Verify Float64Array behavior with nested TypedArray views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with nested TypedArray views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const parentBuffer = new ArrayBuffer(96);
@@ -1872,12 +1872,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(nestedSub2.byteOffset).assertEqual(64);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0088
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0088
-     * @tc.name TypeArrayFloat64Array0088
-     * @tc.desc Verify Float64Array handling of time-related values (timestamps)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of time-related values (timestamps)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(5);
@@ -1905,12 +1905,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(String(largeDate.getTime())).assertEqual('NaN');
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0089
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0089
-     * @tc.name TypeArrayFloat64Array0089
-     * @tc.desc Verify Float64Array compatibility with WebGL buffer usage (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array compatibility with WebGL buffer usage (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const vertexData = new Float64Array([
@@ -1932,12 +1932,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(vertexData[3]).assertEqual(0.8);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0090
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0090
-     * @tc.name TypeArrayFloat64Array0090
-     * @tc.desc Verify Float64Array handling of scientific notation values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of scientific notation values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(6);
@@ -1961,12 +1961,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(arr[3].toString()).assertEqual('1e+30');
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0093
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0093
-     * @tc.name TypeArrayFloat64Array0093
-     * @tc.desc Verify Float64Array handling of bitwise operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of bitwise operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0, 15.0, 16.0]);
@@ -1989,12 +1989,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0095
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0095
-     * @tc.name TypeArrayFloat64Array0095
-     * @tc.desc Verify Float64Array compatibility with typed array constructors
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array compatibility with typed array constructors
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const float64Arr = new Float64Array([1.1, 2.2, 3.3, 4.4]);
@@ -2022,12 +2022,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(approxEqual(fullFloat64[1], 987.654)).assertEqual(true);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0097
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0097
-     * @tc.name TypeArrayFloat64Array0097
-     * @tc.desc Verify Float64Array behavior with RegExp when converting to string
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with RegExp when converting to string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([12.34, 56.78, 90.12, 34.56, 78.90]);
@@ -2056,12 +2056,12 @@ export default function typeArrayFloat64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat64Array0100
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0100
-     * @tc.name TypeArrayFloat64Array0100
-     * @tc.desc Verify Float64Array behavior with very large arrays (memory constraints)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with very large arrays (memory constraints)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, () => {
       const largeSize = 1000000;
@@ -2092,12 +2092,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(didThrow).assertEqual(false);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0110
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0110
-     * @tc.name TypeArrayFloat64Array0110
-     * @tc.desc Verify Float64Array handling of numeric separators in assignments
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of numeric separators in assignments
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(6);
@@ -2121,12 +2121,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(arr[0].toString()).assertEqual('1000000.123456');
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0113
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0113
-     * @tc.name TypeArrayFloat64Array0113
-     * @tc.desc Verify Float64Array handling of weak references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of weak references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       if (typeof WeakRef === 'undefined' || typeof FinalizationRegistry === 'undefined') {
@@ -2141,12 +2141,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(finalized).assertEqual(false);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0115
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0115
-     * @tc.name TypeArrayFloat64Array0115
-     * @tc.desc Verify Float64Array handling of array buffer concatenation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of array buffer concatenation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr1 = new Float64Array([1.1, 2.2, 3.3]);
@@ -2176,12 +2176,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(withEmpty.toString()).assertEqual(arr1.toString());
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0116
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0116
-     * @tc.name TypeArrayFloat64Array0116
-     * @tc.desc Verify Float64Array behavior with Math.hypot for vector calculations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with Math.hypot for vector calculations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const vectors2D = new Float64Array([
@@ -2215,12 +2215,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(approxEqual(largeMagnitude, expectedLarge)).assertEqual(true);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0119
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0119
-     * @tc.name TypeArrayFloat64Array0119
-     * @tc.desc Verify Float64Array behavior with error handling in array methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array behavior with error handling in array methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
@@ -2277,12 +2277,12 @@ export default function typeArrayFloat64ArrayTest() {
       expect(errorThrown).assertEqual(true);
     })
     /**
+     * @tc.name   TypeArrayFloat64Array0120
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT64ARRAY_0120
-     * @tc.name TypeArrayFloat64Array0120
-     * @tc.desc Verify Float64Array handling of very small positive and negative values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float64Array handling of very small positive and negative values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayFloat64Array0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const arr = new Float64Array(8);

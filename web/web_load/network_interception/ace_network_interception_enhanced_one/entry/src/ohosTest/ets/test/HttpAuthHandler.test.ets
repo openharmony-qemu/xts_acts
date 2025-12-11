@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -56,14 +57,14 @@ export default function httpAuthHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_ISHTTPAUTHINFOSAVED_0100
-    * @tc.name       : testHttpAuthHandlerIsHttpAuthInfoSaved001
-    * @tc.desc       : test HttpAuthHandler isHttpAuthInfoSaved
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testHttpAuthHandlerIsHttpAuthInfoSaved001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_ISHTTPAUTHINFOSAVED_0100
+     * @tc.desc   test HttpAuthHandler isHttpAuthInfoSaved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpAuthHandlerIsHttpAuthInfoSaved001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testHttpAuthHandlerIsHttpAuthInfoSaved001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -74,14 +75,14 @@ export default function httpAuthHandler() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_CANCEL_0100
-    * @tc.name       : testHttpAuthHandlerCancel001
-    * @tc.desc       : test HttpAuthHandler cancel
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testHttpAuthHandlerCancel001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CANCEL_0100
+     * @tc.desc   test HttpAuthHandler cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpAuthHandlerCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testHttpAuthHandlerCancel001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -91,14 +92,14 @@ export default function httpAuthHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_CONFIRM_0100
-    * @tc.name       : testHttpAuthHandlerConfirm001
-    * @tc.desc       : test HttpAuthHandler confirm
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testHttpAuthHandlerConfirm001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONFIRM_0100
+     * @tc.desc   test HttpAuthHandler confirm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpAuthHandlerConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testHttpAuthHandlerConfirm001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -106,6 +107,22 @@ export default function httpAuthHandler() {
       await Utils.waitAndClickComponent(driver, "HttpAuthHandlerButton");
       await Utils.waitForExist(()=>isReturn, "testHttpAuthHandlerConfirm001_checkReturn", 1);
       done();
+    })
+
+    /**
+     * @tc.name   testIsHttpAuthInfoSavedReturnTrue
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_isHttpAuthInfoSaved_ReturnTrue
+     * @tc.desc   test HttpAuthHandler isHttpAuthInfoSaved return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testIsHttpAuthInfoSavedReturnTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testIsHttpAuthInfoSavedReturnTrue", EVENT_ID_SET_EIMIT_KEY)
+      Utils.registerBaseEvent("testIsHttpAuthInfoSavedReturnTrue", true, 142055, done,(backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      await Utils.waitAndClickComponent(driver, "HttpAuthHandlerButton");
     })
 
   })

@@ -42,10 +42,13 @@ export default function webViewControllerJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0900
-     *tc.name testGetFaviconAgain
-     *tc.desc test for getFavicon again
+    /**
+     * @tc.name   testGetFaviconAgain
+     * @tc.number SUB_ACE_BASIC_ETS_API_0900
+     * @tc.desc   test for getFavicon again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetFaviconAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitGetFaviconAgain", 132140);

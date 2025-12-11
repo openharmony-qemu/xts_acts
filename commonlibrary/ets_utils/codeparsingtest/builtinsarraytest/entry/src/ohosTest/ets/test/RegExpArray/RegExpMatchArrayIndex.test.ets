@@ -40,12 +40,12 @@ export default function builtinsRegExpMatchArrayIndexTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayIndexTest0100
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_INDEX_TEST_0100
-     * @tc.name builtinsRegExpMatchArrayIndexTest0100
-     * @tc.desc Testing RegExpMatchArray index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing RegExpMatchArray index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsRegExpMatchArrayIndexTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -83,12 +83,12 @@ export default function builtinsRegExpMatchArrayIndexTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayIndexTest0200
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_INDEX_TEST_0200
-     * @tc.name builtinsRegExpMatchArrayIndexTest0200
-     * @tc.desc Testing RegExpMatchArray index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayIndexTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -126,12 +126,12 @@ export default function builtinsRegExpMatchArrayIndexTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayIndexTest0300
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_INDEX_TEST_0300
-     * @tc.name builtinsRegExpMatchArrayIndexTest0300
-     * @tc.desc Testing RegExpMatchArray index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayIndexTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

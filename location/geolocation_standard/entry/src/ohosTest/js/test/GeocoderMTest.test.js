@@ -102,7 +102,6 @@ export default function geolocationTest_geo5() {
 
 
      /**
-      * @generated.time 2025-11-09 20:53:27
       * @tc.name   SUB_HSS_LocationSystem_Geo_1900
       * @tc.number SUB_HSS_LocationSystem_Geo_1900
       * @tc.desc   Check whether address resolution and reverse address resolution are supported.
@@ -123,7 +122,6 @@ export default function geolocationTest_geo5() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2000
      * @tc.number SUB_HSS_LocationSystem_Geo_2000
      * @tc.desc   Address Resolution Test.
@@ -164,7 +162,6 @@ export default function geolocationTest_geo5() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2100
      * @tc.number SUB_HSS_LocationSystem_Geo_2100
      * @tc.desc   Address Resolution Test.
@@ -222,7 +219,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2200
      * @tc.number SUB_HSS_LocationSystem_Geo_2200
      * @tc.desc   Obtaining Multiple Addresses Using the Address Resolution Function.
@@ -255,7 +251,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2300
      * @tc.number SUB_HSS_LocationSystem_Geo_2300
      * @tc.desc   Input parameter boundary test of the address resolution function
@@ -328,7 +323,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2400
      * @tc.number SUB_HSS_LocationSystem_Geo_2400
      * @tc.desc   Input parameter boundary test of the address resolution function
@@ -405,7 +399,6 @@ export default function geolocationTest_geo5() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2500
      * @tc.number SUB_HSS_LocationSystem_Geo_2500
      * @tc.desc   Reverse address resolution test.
@@ -477,7 +470,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2600
      * @tc.number SUB_HSS_LocationSystem_Geo_2600
      * @tc.desc   Reverse address resolution test.
@@ -514,7 +506,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2700
      * @tc.number SUB_HSS_LocationSystem_Geo_2700
      * @tc.desc   Obtaining Multiple Locations Using the Reverse Address Resolution Function.
@@ -547,7 +538,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2800
      * @tc.number SUB_HSS_LocationSystem_Geo_2800
      * @tc.desc   Invalid parameter input test for the reverse address resolution function.
@@ -593,7 +583,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_2900
      * @tc.number SUB_HSS_LocationSystem_Geo_2900
      * @tc.desc   Test the reverse address resolution function in the specified range..
@@ -633,7 +622,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_3000
      * @tc.number SUB_HSS_LocationSystem_Geo_3000
      * @tc.desc   Invalid input parameter test for the reverse address resolution function in the specified range
@@ -694,7 +682,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_3100
      * @tc.number SUB_HSS_LocationSystem_Geo_3100
      * @tc.desc   Invalid input parameter test for the reverse address resolution function in the specified range
@@ -733,7 +720,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_3200
      * @tc.number SUB_HSS_LocationSystem_Geo_3200
      * @tc.desc   Invalid longitude and latitude entered for the reverse address resolution
@@ -773,7 +759,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_3300
      * @tc.number SUB_HSS_LocationSystem_Geo_3300
      * @tc.desc   Input parameter boundary test for the reverse address resolution function in a specified range.
@@ -964,7 +949,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_3400
      * @tc.number SUB_HSS_LocationSystem_Geo_3400
      * @tc.desc   Longitude input parameter boundary test for the reverse address resolution function in a specified range
@@ -1152,7 +1136,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_3500
      * @tc.number SUB_HSS_LocationSystem_Geo_3500
      * @tc.desc   Longitude input parameter boundary test for the reverse address resolution function in a specified range
@@ -1193,7 +1176,6 @@ export default function geolocationTest_geo5() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_HSS_LocationSystem_Geo_3600
      * @tc.number SUB_HSS_LocationSystem_Geo_3600
      * @tc.desc   Longitude input parameter boundary test for the reverse address resolution function in a specified range

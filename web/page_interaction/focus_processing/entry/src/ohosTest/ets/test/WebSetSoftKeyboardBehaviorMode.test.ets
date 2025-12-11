@@ -58,14 +58,14 @@ export default function SetSoftKeyboardBehaviorModeTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_SETSOFTKEYBOARDBEHAVIORMODE_0100
-    * @tc.name       : emitSetSoftKeyboardBehaviorMode01
-    * @tc.desc       : test  setSoftKeyboardBehaviorMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetSoftKeyboardBehaviorMode01
+     * @tc.number SUB_WEB_SETSOFTKEYBOARDBEHAVIORMODE_0100
+     * @tc.desc   test  setSoftKeyboardBehaviorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetSoftKeyboardBehaviorMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitSetSoftKeyboardBehaviorMode02";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
@@ -77,14 +77,14 @@ export default function SetSoftKeyboardBehaviorModeTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_SETSOFTKEYBOARDBEHAVIORMODE_0200
-    * @tc.name       : emitSetSoftKeyboardBehaviorMode02
-    * @tc.desc       : test  setSoftKeyboardBehaviorMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetSoftKeyboardBehaviorMode02
+     * @tc.number SUB_WEB_SETSOFTKEYBOARDBEHAVIORMODE_0200
+     * @tc.desc   test  setSoftKeyboardBehaviorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetSoftKeyboardBehaviorMode02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitSetSoftKeyboardBehaviorMode02";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);

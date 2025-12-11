@@ -42,14 +42,14 @@ export default function WebAttributeTest() {
       console.info("WebAttributeTest afterEach start");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_INITIALSCALE_0100
-    * @tc.name        : testInitialScale001
-    * @tc.desc        : test initialScale from 100 to 120
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testInitialScaleStatic001
+     * @tc.number SUB_WEB_INITIALSCALE_0100
+     * @tc.desc   test initialScale from 100 to 120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInitialScaleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1500);
@@ -64,14 +64,14 @@ export default function WebAttributeTest() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_INITIALSCALE_0200
-    * @tc.name        : testInitialScale002
-    * @tc.desc        : test initialScale from 100 to 80
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testInitialScaleStatic002
+     * @tc.number SUB_WEB_INITIALSCALE_0200
+     * @tc.desc   test initialScale from 100 to 80
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInitialScaleStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);

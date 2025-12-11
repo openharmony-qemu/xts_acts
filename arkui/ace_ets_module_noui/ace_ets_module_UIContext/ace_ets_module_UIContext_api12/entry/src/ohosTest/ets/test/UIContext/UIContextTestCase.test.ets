@@ -41,16 +41,16 @@ export default function UIContextTestCase() {
     });
     afterEach(async () => {
     });
+
+
     /**
-     * @tc.number    UIContextTestInterface
-     * @tc.name      UIContextTestCase_0100
-     * @tc.desc      test getHostContext object
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIContextTestCase_0100
+     * @tc.number UIContextTestCase_0100
+     * @tc.desc   UIContextTestCase_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-
-
     it('UIContextTestCase_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UIContextTestCase_0100');
       await CommonFunc.sleep(1000);
@@ -62,16 +62,16 @@ export default function UIContextTestCase() {
       console.info('[UIContextTestCase_0100] END');
       done();
     });
+
+
     /**
-     * @tc.number    UIContextTestInterface
-     * @tc.name      UIContextTestCase_0200
-     * @tc.desc      test getWindowName
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIContextTestCase_0200
+     * @tc.number UIContextTestCase_0200
+     * @tc.desc   UIContextTestCase_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-
-
     it('UIContextTestCase_0200', Level.LEVEL2, async (done: Function) => {
       console.info('UIContextTestCase_0200');
       await CommonFunc.sleep(1000);

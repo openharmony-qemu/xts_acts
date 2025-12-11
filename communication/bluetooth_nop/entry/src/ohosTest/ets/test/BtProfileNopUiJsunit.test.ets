@@ -46,7 +46,6 @@ export default function btProfileNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGetConnectionStateNop
      * @tc.number testGetConnectionStateNop
      * @tc.desc   test getConnectionState without permission
@@ -67,7 +66,6 @@ export default function btProfileNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGetConnectedDevicesNop
      * @tc.number testGetConnectedDevicesNop
      * @tc.desc   test getConnectedDevices without permission
@@ -88,7 +86,6 @@ export default function btProfileNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testGetPlayingStateNop
      * @tc.number testGetPlayingStateNop
      * @tc.desc   test getPlayingState without permission

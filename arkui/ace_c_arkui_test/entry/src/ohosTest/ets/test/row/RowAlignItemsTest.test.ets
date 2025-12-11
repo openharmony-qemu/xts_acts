@@ -26,52 +26,52 @@ export default function rowAlignItemsTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0100
-     * @tc.name: testRowAlignItems001
-     * @tc.desc: testing alignItems for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowAlignItems001
+     * @tc.number SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0100
+     * @tc.desc   testing alignItems for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowAlignItems001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowAlignItems001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0200
-     * @tc.name: testRowAlignItems002
-     * @tc.desc: testing alignItems for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowAlignItems002
+     * @tc.number SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0200
+     * @tc.desc   testing alignItems for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowAlignItems002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowAlignItems002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0300
-     * @tc.name: testRowAlignItems003
-     * @tc.desc: testing alignItems for row with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowAlignItems003
+     * @tc.number SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0300
+     * @tc.desc   testing alignItems for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowAlignItems003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowAlignItems003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0400
-     * @tc.name: testRowAlignItems004
-     * @tc.desc: testing alignItems for row with unnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRowAlignItems004
+     * @tc.number SUB_ARKUI_CAPI_ROW_ALIGNITEMS_0400
+     * @tc.desc   testing alignItems for row with unnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRowAlignItems004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRowAlignItems004()).assertEqual(0)

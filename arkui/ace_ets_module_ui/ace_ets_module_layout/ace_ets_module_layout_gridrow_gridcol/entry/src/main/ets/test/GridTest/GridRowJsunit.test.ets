@@ -45,12 +45,12 @@ export default function GridRowJsunit() {
     });
 
     /**
-     * @tc.number GridRowJsunit_0100
      * @tc.name   GridRowJsunit_0100
+     * @tc.number GridRowJsunit_0100
      * @tc.desc   test GridRow
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridRowJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the GridRow component
@@ -76,12 +76,12 @@ export default function GridRowJsunit() {
     });
 
     /**
-     * @tc.number GridRowJsunit_0200
      * @tc.name   GridRowJsunit_0200
+     * @tc.number GridRowJsunit_0200
      * @tc.desc   test GridRow
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridRowJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component GridRow
@@ -125,12 +125,12 @@ export default function GridRowJsunit() {
     });
 
     /**
-     * @tc.number GridRowJsunit_0300
      * @tc.name   GridRowJsunit_0300
+     * @tc.number GridRowJsunit_0300
      * @tc.desc   test GridRow
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridRowJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component GridRow
@@ -174,12 +174,12 @@ export default function GridRowJsunit() {
     });
 
     /**
-     * @tc.number GridRowJsunit_0400
      * @tc.name   GridRowJsunit_0400
+     * @tc.number GridRowJsunit_0400
      * @tc.desc   test GridRow
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridRowJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify default value of the GridRow component

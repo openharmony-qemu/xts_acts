@@ -41,12 +41,12 @@ export default function ExtendTrackTest() {
       done();
     });
     /**
-     * @tc.number    ExtendTrack
-     * @tc.name      ExtendTrackTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ExtendTrackTest_0100
+     * @tc.number ExtendTrack
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ExtendTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ExtendTrackTest_0100 START');

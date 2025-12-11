@@ -13288,7 +13288,7 @@ static napi_value RepeateCreateDeleteStrongRef(napi_env env, napi_callback_info 
 
     napi_create_strong_reference(env, value, &ref3);
     napi_value value3 = nullptr;
-    napi_get_strong_reference_value(env, ref1, &value3);
+    napi_get_strong_reference_value(env, ref3, &value3);
     equalBool = false;
     napi_strict_equals(env, value, value3, &equalBool);
     if(!equalBool) {
@@ -13296,7 +13296,7 @@ static napi_value RepeateCreateDeleteStrongRef(napi_env env, napi_callback_info 
         napi_delete_strong_reference(env, ref3);
         return CreateBoolean(env, false);
     }
-    
+    napi_delete_strong_reference(env, ref3);
     return CreateBoolean(env, true);
 }
 

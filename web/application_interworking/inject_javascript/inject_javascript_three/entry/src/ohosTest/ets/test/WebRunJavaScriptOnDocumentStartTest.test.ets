@@ -62,28 +62,28 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_0001
-    * @tc.name       : testWebRunJavaScriptOnDocumentStart001
-    * @tc.desc       : test runJavaScriptOnDocumentStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnDocumentStart001
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_0001
+     * @tc.desc   test runJavaScriptOnDocumentStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebRunJavaScriptOnDocumentStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnDocumentStart001", 173130)
       Utils.registerEvent("testWebRunJavaScriptOnDocumentStart001", '"Red"', 173140, done);
       sendEventByKey('WebRunJavaScriptOnDocumentStartTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_0002
-    * @tc.name       : testWebRunJavaScriptOnDocumentStart002
-    * @tc.desc       : test runJavaScriptOnDocumentStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnDocumentStart002
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_0002
+     * @tc.desc   test runJavaScriptOnDocumentStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebRunJavaScriptOnDocumentStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnDocumentStart002", 173130)
       Utils.registerEvent("testWebRunJavaScriptOnDocumentStart002", true, 173150, done);

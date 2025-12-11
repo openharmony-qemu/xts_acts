@@ -21,11 +21,13 @@ import {BusinessError} from "@ohos.base";
 export default function ApiCoverTest() {
   describe('ApiCoverTestTest', () => {
 
-    /*
-     * @tc.number  SUB_AA_Form_Provider_Test_FormErr_0100
-     * @tc.name    Get all FormError types.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_Form_Provider_Test_FormErr_0100
+     * @tc.number SUB_AA_Form_Provider_Test_FormErr_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Form_Provider_Test_FormErr_0100', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_Form_Provider_Test_FormErr_0100");
@@ -54,11 +56,13 @@ export default function ApiCoverTest() {
       done()
     })
 
-    /*
-     * @tc.number  SUB_AA_Form_Provider_Test_FormInfo_0100
-     * @tc.name     Get all FormInfo types
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_Form_Provider_Test_FormInfo_0100
+     * @tc.number SUB_AA_Form_Provider_Test_FormInfo_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Form_Provider_Test_FormInfo_0100', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_Form_Provider_Test_FormInfo_0100");
@@ -77,11 +81,13 @@ export default function ApiCoverTest() {
       expect(1).assertEqual(FormInfo.FormState.READY)
       done();
     });
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_CoverApiContext_0100
-     * @tc.name    Test getExternalCacheDir by callback.
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_CoverApiContext_0100
+     * @tc.number SUB_AA_OpenHarmony_CoverApiContext_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_CoverApiContext_0100', Level.LEVEL0, async (done: Function) => {
         console.log("------------start SUB_AA_OpenHarmony_CoverApi_0500-------------");
@@ -93,11 +99,13 @@ export default function ApiCoverTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_AA_OpenHarmony_CoverApiContext_0200
-     * @tc.name    Test getExternalCacheDir by promise.
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_CoverApiContext_0200
+     * @tc.number SUB_AA_OpenHarmony_CoverApiContext_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_CoverApiContext_0200', Level.LEVEL0, async (done: Function) => {
         console.log("------------start SUB_AA_OpenHarmony_CoverApi_0500-------------");

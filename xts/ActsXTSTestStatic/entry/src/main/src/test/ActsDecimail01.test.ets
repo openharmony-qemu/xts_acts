@@ -82,12 +82,12 @@ export default function DecimalTest001() {
     });
         console.info("start################################start");
     /**
-     * @tc.number: Decimal_toBinary_Func_001
-     * @tc.name: Decimal_toBinary_Func
-     * @tc.desc:  Check Decimal_toBinary
-     * @tc.level: LEVEL1
-     * @tc.size: MEDIUMTEST
-     * @tc.type: FUNCTION
+     * @tc.name   Decimal_toBinary_Func_001
+     * @tc.number Decimal_toBinary_Func_001
+     * @tc.desc   Check Decimal_toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -426,14 +426,14 @@ export default function DecimalTest001() {
         let sss: string = 'testTag';
         expect(sss).assertEqual("123");
     });
-      /**
-       * @tc.number: Decimal_toDecimalPlaces_Func_002
-       * @tc.name: Decimal_toDecimalPlaces_Func
-       * @tc.desc:  Check Decimal_toDecimalPlaces
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_toDecimalPlaces_Func_002
+     * @tc.number Decimal_toDecimalPlaces_Func_002
+     * @tc.desc   Check Decimal_toDecimalPlaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_toDecimalPlaces_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set({
             precision: 20,
@@ -899,14 +899,14 @@ export default function DecimalTest001() {
         let sss: string = 'testTag';
         expect(sss).assertEqual("123");
     });
-      /**
-       * @tc.number: Decimal_toDecimalPlaces_Func_003
-       * @tc.name: Decimal_toDecimalPlaces_Func
-       * @tc.desc:  Check Decimal_toDecimalPlaces_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_toDecimalPlaces_Func_003
+     * @tc.number Decimal_toDecimalPlaces_Func_003
+     * @tc.desc   Check Decimal_toDecimalPlaces_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_toDecimalPlaces_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set({
             precision: 20,
@@ -926,14 +926,14 @@ export default function DecimalTest001() {
             expect(err.message).assertEqual(`The value of "10000000000" is out of range. It must be >= 0 && <= 1000000000 . Received value is: 10000000000`);
         }
     });
-      /**
-       * @tc.number: Decimal_toExponential_Func_004
-       * @tc.name: Decimal_toExponential_Func
-       * @tc.desc:  Check Decimal_toExponential_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_toExponential_Func_004
+     * @tc.number Decimal_toExponential_Func_004
+     * @tc.desc   Check Decimal_toExponential_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_toExponential_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 20,
@@ -1374,14 +1374,14 @@ export default function DecimalTest001() {
         let sss: string = 'testTag';
         expect(sss).assertEqual("123");
     });
-      /**
-       * @tc.number: Decimal_toExponential_Func_005
-       * @tc.name: Decimal_toExponential_Func
-       * @tc.desc:  Check Decimal_toExponential_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_toExponential_Func_005
+     * @tc.number Decimal_toExponential_Func_005
+     * @tc.desc   Check Decimal_toExponential_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_toExponential_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 20,
@@ -1401,14 +1401,14 @@ export default function DecimalTest001() {
             expect(err.message).assertEqual(`The value of "10000000000" is out of range. It must be >= 0 && <= 1000000000 . Received value is: 10000000000`);
         }
     });
-      /**
-       * @tc.number: Decimal_exp_Func_006
-       * @tc.name: Decimal_exp_Func
-       * @tc.desc:  Check Decimal_exp_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_exp_Func_006
+     * @tc.number Decimal_exp_Func_006
+     * @tc.desc   Check Decimal_exp_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_exp_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 40,
@@ -1468,14 +1468,14 @@ export default function DecimalTest001() {
         let sss: string = 'testTag';
         expect(sss).assertEqual("123");
     });
-      /**
-       * @tc.number: Decimal_exp_Func_007
-       * @tc.name: Decimal_exp_Func
-       * @tc.desc:  Check Decimal_exp_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_exp_Func_007
+     * @tc.number Decimal_exp_Func_007
+     * @tc.desc   Check Decimal_exp_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_exp_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 40,
@@ -1542,14 +1542,14 @@ export default function DecimalTest001() {
         let sss: string = 'testTag';
         expect(sss).assertEqual("123");
     });
-      /**
-       * @tc.number: Decimal_exp_Func_008
-       * @tc.name: Decimal_exp_Func
-       * @tc.desc:  Check Decimal_exp_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_exp_Func_008
+     * @tc.number Decimal_exp_Func_008
+     * @tc.desc   Check Decimal_exp_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_exp_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 40,
@@ -1569,14 +1569,14 @@ export default function DecimalTest001() {
             expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
         }
     });
-      /**
-       * @tc.number: Decimal_minAndMax_Func_009
-       * @tc.name: Decimal_minAndMax_Func
-       * @tc.desc:  Check Decimal_minAndMax_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_minAndMax_Func_009
+     * @tc.number Decimal_minAndMax_Func_009
+     * @tc.desc   Check Decimal_minAndMax_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_minAndMax_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 20,
@@ -1706,14 +1706,14 @@ export default function DecimalTest001() {
         let sss: string = 'testTag';
         expect(sss).assertEqual("123");
     });
-      /**
-       * @tc.number: Decimal_minAndMax_Func_01000
-       * @tc.name: Decimal_minAndMax_Func
-       * @tc.desc:  Check Decimal_minAndMax_Func
-       * @tc.level: LEVEL1
-       * @tc.size: MEDIUMTEST
-       * @tc.type: FUNCTION
-       */
+    /**
+     * @tc.name   Decimal_minAndMax_Func_01000
+     * @tc.number Decimal_minAndMax_Func_01000
+     * @tc.desc   Check Decimal_minAndMax_Func
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_minAndMax_Func_01000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 20,

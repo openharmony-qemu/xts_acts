@@ -43,6 +43,14 @@ export default function buttonEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   buttonEnabledJsunit_0100
+     * @tc.number buttonEnabledJsunit_0100
+     * @tc.desc   buttonEnabledJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('buttonEnabledJsunit_0100 START');
@@ -59,6 +67,14 @@ export default function buttonEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   buttonEnabledJsunit_0200
+     * @tc.number buttonEnabledJsunit_0200
+     * @tc.desc   buttonEnabledJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonEnabledJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('buttonEnabledJsunit_0200 START');
@@ -75,6 +91,14 @@ export default function buttonEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   buttonEnabledJsunit_0300
+     * @tc.number buttonEnabledJsunit_0300
+     * @tc.desc   buttonEnabledJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonEnabledJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('buttonEnabledJsunit_0300 START');
@@ -91,6 +115,14 @@ export default function buttonEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   buttonEnabledJsunit_0400
+     * @tc.number buttonEnabledJsunit_0400
+     * @tc.desc   buttonEnabledJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonEnabledJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('buttonEnabledJsunit_0400 START');
@@ -107,6 +139,14 @@ export default function buttonEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   buttonEnabledJsunit_0500
+     * @tc.number buttonEnabledJsunit_0500
+     * @tc.desc   buttonEnabledJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonEnabledJsunit_0500', Level.LEVEL1, async (done: Function) => {
 
       console.info('buttonEnabledJsunit_0500 START');
@@ -123,6 +163,14 @@ export default function buttonEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   buttonEnabledJsunit_0600
+     * @tc.number buttonEnabledJsunit_0600
+     * @tc.desc   buttonEnabledJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonEnabledJsunit_0600', Level.LEVEL1, async (done: Function) => {
 
       console.info('buttonEnabledJsunit_0600 START');
@@ -139,6 +187,14 @@ export default function buttonEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   buttonEnabledJsunit_0700
+     * @tc.number buttonEnabledJsunit_0700
+     * @tc.desc   buttonEnabledJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonEnabledJsunit_0700', Level.LEVEL1, async (done: Function) => {
 
       console.info('buttonEnabledJsunit_0700 START');

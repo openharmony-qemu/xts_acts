@@ -43,12 +43,12 @@ export default function customPopup() {
       console.info("customPopup after each called");
     });
     /**
+     * @tc.name   customPopup_0100
      * @tc.number SUB_ACE_customPopup_0100
-     * @tc.name customPopup_0100
-     * @tc.desc arrowPointPosition
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   arrowPointPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('customPopup_0100', Level.LEVEL0, async (done: Function) => {
       console.info('customPopup_0100 START');

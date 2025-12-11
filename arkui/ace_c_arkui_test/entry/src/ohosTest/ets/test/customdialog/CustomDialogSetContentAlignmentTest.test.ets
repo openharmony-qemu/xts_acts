@@ -26,78 +26,78 @@ export default function customDialogSetContentAlignmentTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0100
-     * @tc.name       : testCustomDialogSetContentAlignment001
-     * @tc.desc       : testing setContentAlignment for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContentAlignment001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0100
+     * @tc.desc   testing setContentAlignment for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContentAlignment001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContentAlignment001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0200
-     * @tc.name       : testCustomDialogSetContentAlignment002
-     * @tc.desc       : testing setContentAlignment for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContentAlignment002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0200
+     * @tc.desc   testing setContentAlignment for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContentAlignment002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContentAlignment002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0300
-     * @tc.name       : testCustomDialogSetContentAlignment003
-     * @tc.desc       : testing setContentAlignment for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContentAlignment003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0300
+     * @tc.desc   testing setContentAlignment for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContentAlignment003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContentAlignment003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0400
-     * @tc.name       : testCustomDialogSetContentAlignment004
-     * @tc.desc       : testing setContentAlignment for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContentAlignment004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0400
+     * @tc.desc   testing setContentAlignment for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContentAlignment004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContentAlignment004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0500
-     * @tc.name       : testCustomDialogSetContentAlignment005
-     * @tc.desc       : testing setContentAlignment for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContentAlignment005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0500
+     * @tc.desc   testing setContentAlignment for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContentAlignment005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContentAlignment005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0600
-     * @tc.name       : testCustomDialogSetContentAlignment006
-     * @tc.desc       : testing setContentAlignment for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContentAlignment006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENTALIGNMENT_0600
+     * @tc.desc   testing setContentAlignment for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContentAlignment006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContentAlignment006()).assertEqual(0)

@@ -43,6 +43,7 @@ struct bindSheetTest {
   myBuilder() {
     Column() {
       Text('scrollsizemode（刷新机制）：')
+        .fontColor(Color.Green)
       Button('FOLLOW_DETENT（离手刷新）')
         .onClick(() => {
           this.sheetScrollModeSize = ScrollSizeMode.FOLLOW_DETENT
@@ -54,8 +55,10 @@ struct bindSheetTest {
 
       Text('------------------------------')
         .margin(20)
+        .fontColor(Color.Green)
 
       Text('EffectEdge值（边缘生效）：')
+        .fontColor(Color.Green)
       Button('START（仅上边缘生效）')
         .onClick(() => {
           this.sheetEffectEdge = EffectEdge.START
@@ -75,6 +78,7 @@ struct bindSheetTest {
 
       Text('-----------')
         .margin(5)
+        .fontColor(Color.Green)
 
       Button('-2（异常值，双边生效）')
         .onClick(() => {
@@ -95,8 +99,10 @@ struct bindSheetTest {
 
       Text('------------------------------')
         .margin(20)
+        .fontColor(Color.Green)
 
       Text('半模态高度：')
+        .fontColor(Color.Green)
       Button('height 700')
         .fontSize(20)
         .onClick(() => {
@@ -116,6 +122,7 @@ struct bindSheetTest {
       TextArea().width('100%')
         .height(50)
       Text('弹窗类型切换按钮：')
+        .fontColor(Color.Green)
       Button('CENTER11')
         .onClick(() => {
           this.sheetType = SheetType.CENTER
@@ -131,6 +138,7 @@ struct bindSheetTest {
 
       Text('------------------------------')
         .margin(20)
+        .fontColor(Color.Green)
     }
     .justifyContent(FlexAlign.Center)
     .width('100%')

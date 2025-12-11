@@ -61,12 +61,12 @@ export default function TestSweepGradientOptions() {
     });
 
     /**
+     * @tc.name   TestSweepGradientOptions_001
      * @tc.number TestSweepGradientOptions_001
-     * @tc.name TestSweepGradientOptions_001
-     * @tc.desc test sweepGradient repeating
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test sweepGradient repeating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestSweepGradientOptions_001', Level.LEVEL0, async (done: Function) => {
       console.info('[TestSweepGradientOptions_001] START');

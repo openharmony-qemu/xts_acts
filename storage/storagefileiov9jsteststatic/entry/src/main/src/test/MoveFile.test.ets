@@ -29,14 +29,12 @@ export default function fileIOMoveFile() {
   describe('fileIO_fs_moveFile', (): void => {
 
     /**
+     * @tc.name   fileIO_test_moveFile_sync_static_000
      * @tc.number SUB_DF_FILEIO_MOVEFILE_SYNC_0000
-     * @tc.name fileIO_test_moveFile_sync_static_000
-     * @tc.desc Test moveFileSync() interface.
-     * Move a single file, shall work properly in normal case.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveFile_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_sync_static_000');
@@ -59,14 +57,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_sync_static_001
      * @tc.number SUB_DF_FILEIO_MOVEFILE_SYNC_0100
-     * @tc.name fileIO_test_moveFile_sync_static_001
-     * @tc.desc Test moveFileSync() interface.
-     * A file with the same name already exists under the destination path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_sync_static_001');
@@ -89,14 +85,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_sync_static_002
      * @tc.number SUB_DF_FILEIO_MOVEFILE_SYNC_0200
-     * @tc.name fileIO_test_moveFile_sync_static_002
-     * @tc.desc Test moveFileSync() interface.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_sync_static_002');
@@ -117,14 +111,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_sync_static_004
      * @tc.number SUB_DF_FILEIO_MOVEFILE_SYNC_0400
-     * @tc.name fileIO_test_moveFile_sync_static_004
-     * @tc.desc Test moveFileSync() interface.
-     * The path point to a directory, not a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_sync_static_004');
@@ -142,14 +134,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_sync_static_006
      * @tc.number SUB_DF_FILEIO_MOVEFILE_SYNC_0600
-     * @tc.name fileIO_test_moveFile_sync_static_006
-     * @tc.desc Test moveFileSync() interface.
-     * Entry parameters increase forced movement when mode = 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveFile_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_sync_static_006');
@@ -174,14 +164,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_sync_static_007
      * @tc.number SUB_DF_FILEIO_MOVEFILE_SYNC_0700
-     * @tc.name fileIO_test_moveFile_sync_static_007
-     * @tc.desc Test moveFileSync() interface.
-     * Undefined option arguments, use default mode = 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_sync_static_007');
@@ -204,14 +192,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_000
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0000
-     * @tc.name fileIO_test_moveFile_async_static_000
-     * @tc.desc Test moveFile() interface. Promise.
-     * Move a single file, shall work properly in normal case.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveFile_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_000');
@@ -235,14 +221,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_001
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0100
-     * @tc.name fileIO_test_moveFile_async_static_001
-     * @tc.desc Test moveFile() interface. Callback.
-     * Move a single file, shall work properly in normal case.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_001');
@@ -267,14 +251,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_002
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0200
-     * @tc.name fileIO_test_moveFile_async_static_002
-     * @tc.desc Test moveFile() interface. Promise.
-     * A file with the same name already exists under the destination path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveFile_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_002');
@@ -298,14 +280,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_003
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0300
-     * @tc.name fileIO_test_moveFile_async_static_003
-     * @tc.desc Test moveFile() interface. Callback.
-     * A file with the same name already exists under the destination path.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_003');
@@ -333,14 +313,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_004
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0400
-     * @tc.name fileIO_test_moveFile_async_static_004
-     * @tc.desc Test moveFile() interface. Promise.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_004');
@@ -362,14 +340,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_005
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0500
-     * @tc.name fileIO_test_moveFile_async_static_005
-     * @tc.desc Test moveFile() interface. Callback.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_005');
@@ -396,14 +372,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_006
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0600
-     * @tc.name fileIO_test_moveFile_async_static_006
-     * @tc.desc Test moveFile() interface. Promise.
-     * The path point to a directory, not a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_006');
@@ -422,14 +396,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_007
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0700
-     * @tc.name fileIO_test_moveFile_async_static_007
-     * @tc.desc Test moveFile() interface. Callback.
-     * The path point to a directory, not a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_007');
@@ -453,14 +425,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_009
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_0900
-     * @tc.name fileIO_test_moveFile_async_static_009
-     * @tc.desc Test moveFile() interface. Promise.
-     * Entry parameters increase forced movement when mode = 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveFile_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_009');
@@ -485,14 +455,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_010
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_1000
-     * @tc.name fileIO_test_moveFile_async_static_010
-     * @tc.desc Test moveFile() interface. Callback.
-     * Entry parameters increase forced movement when mode = 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_moveFile_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_010');
@@ -518,14 +486,12 @@ export default function fileIOMoveFile() {
     });
 
     /**
+     * @tc.name   fileIO_test_moveFile_async_static_011
      * @tc.number SUB_DF_FILEIO_MOVEFILE_ASYNC_1100
-     * @tc.name fileIO_test_moveFile_async_static_011
-     * @tc.desc Test moveFile() interface. Promise.
-     * Undefined option arguments, use default mode = 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test moveFile() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_moveFile_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_moveFile_async_static_011');

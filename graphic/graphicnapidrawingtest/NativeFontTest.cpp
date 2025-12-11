@@ -58,13 +58,13 @@ void NativeFontTest::TearDownTestCase() {}
 void NativeFontTest::SetUp() {}
 void NativeFontTest::TearDown() {}
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_015
- * @tc.name  : NativeFontTest_FontMeasureText015
- * @tc.desc  : test for the textbox.
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   NativeFontTest_FontMeasureText015
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_015
+ * @tc.desc   test for the textbox.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, NativeFontTest_FontMeasureText015, Function | MediumTest | Level1)
 {
@@ -80,13 +80,13 @@ HWTEST_F(NativeFontTest, NativeFontTest_FontMeasureText015, Function | MediumTes
     OH_Drawing_TypographyDestroyTextBox(textBox);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_016
- * @tc.name  : NativeFontTest_FontMeasureText016
- * @tc.desc  : test for the textshadow.
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   NativeFontTest_FontMeasureText016
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_016
+ * @tc.desc   test for the textshadow.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, NativeFontTest_FontMeasureText016, Function | MediumTest | Level1)
 {
@@ -100,13 +100,13 @@ HWTEST_F(NativeFontTest, NativeFontTest_FontMeasureText016, Function | MediumTes
     EXPECT_TRUE(shadow != nullptr);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_017
- * @tc.name  : NativeFontTest_FontMeasureText017
- * @tc.desc  : test for the fontVariation.
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   NativeFontTest_FontMeasureText017
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_017
+ * @tc.desc   test for the fontVariation.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, NativeFontTest_FontMeasureText017, Function | MediumTest | Level1)
 {
@@ -124,13 +124,13 @@ HWTEST_F(NativeFontTest, NativeFontTest_FontMeasureText017, Function | MediumTes
     OH_Drawing_DestroyTextStyle(txtStyle);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_NativeDrawingRegisterFontTest_001
- * @tc.name  : NativeDrawingRegisterFontTest001
- * @tc.desc  : test for register font
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   NativeDrawingRegisterFontTest001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NativeDrawingRegisterFontTest_001
+ * @tc.desc   test for register font
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, NativeDrawingRegisterFontTest001, Function | MediumTest | Level1)
 {
@@ -146,13 +146,13 @@ HWTEST_F(NativeFontTest, NativeDrawingRegisterFontTest001, Function | MediumTest
     OH_Drawing_DestroyFontCollection(fontCollection);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_NativeDrawingRegisterFontTest_002
- * @tc.name  : NativeDrawingRegisterFontTest002
- * @tc.desc  : test for register font
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   NativeDrawingRegisterFontTest002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NativeDrawingRegisterFontTest_002
+ * @tc.desc   test for register font
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, NativeDrawingRegisterFontTest002, Function | MediumTest | Level1)
 {
@@ -168,13 +168,13 @@ HWTEST_F(NativeFontTest, NativeDrawingRegisterFontTest002, Function | MediumTest
     OH_Drawing_DestroyFontCollection(fontCollection);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontCollectionTest_001
- * @tc.name  : OH_Drawing_FontCollectionTest001
- * @tc.desc  : test for creating fontCollection
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   OH_Drawing_FontCollectionTest001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontCollectionTest_001
+ * @tc.desc   test for creating fontCollection
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, OH_Drawing_FontCollectionTest001, Function | MediumTest | Level1)
 {
@@ -188,13 +188,13 @@ HWTEST_F(NativeFontTest, OH_Drawing_FontCollectionTest001, Function | MediumTest
     OH_Drawing_DestroyFontCollection(sharedFontCollection);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_016
- * @tc.name  : OHDrawingTypographyLargeValueTest016
- * @tc.desc  : test for typography
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   OHDrawingTypographyLargeValueTest016
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_016
+ * @tc.desc   test for typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest016, Function | MediumTest | Level1)
 {
@@ -249,13 +249,13 @@ HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest016, Function | Medium
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_026
- * @tc.name  : OHDrawingTypographyLargeValueTest026
- * @tc.desc  : test for typography and txtStyle
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   OHDrawingTypographyLargeValueTest026
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_026
+ * @tc.desc   test for typography and txtStyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest026, Function | MediumTest | Level1)
 {
@@ -306,13 +306,13 @@ HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest026, Function | Medium
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_027
- * @tc.name  : OHDrawingTypographyLargeValueTest027
- * @tc.desc  : test for getting line info for text typography
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   OHDrawingTypographyLargeValueTest027
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_027
+ * @tc.desc   test for getting line info for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest027, Function | MediumTest | Level1)
 {
@@ -357,13 +357,13 @@ HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest027, Function | Medium
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_042
- * @tc.name  : OHDrawingTypographyLargeValueTest042
- * @tc.desc  : test for text shadow for textstyle
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   OHDrawingTypographyLargeValueTest042
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_042
+ * @tc.desc   test for text shadow for textstyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest042, Function | MediumTest | Level1)
 {
@@ -413,13 +413,13 @@ HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTest042, Function | Medium
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTestWithIndent
- * @tc.name  : OHDrawingTypographyLargeValueTestWithIndent
- * @tc.desc  : test for typography
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   OHDrawingTypographyLargeValueTestWithIndent
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTestWithIndent
+ * @tc.desc   test for typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTestWithIndent, Function | MediumTest | Level1)
 {
@@ -473,13 +473,13 @@ HWTEST_F(NativeFontTest, OHDrawingTypographyLargeValueTestWithIndent, Function |
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_001
- * @tc.name  : OHDrawingCreateTextTab001
- * @tc.desc  : test for the text tab create and destroy
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCreateTextTab001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_001
+ * @tc.desc   test for the text tab create and destroy
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, OHDrawingCreateTextTab001, Function | MediumTest | Level0)
 {
@@ -491,13 +491,13 @@ HWTEST_F(NativeFontTest, OHDrawingCreateTextTab001, Function | MediumTest | Leve
     OH_Drawing_DestroyTextTab(textTab2);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_002
- * @tc.name  : OHDrawingCreateTextTab002
- * @tc.desc  : test for get alignment of the text tab
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCreateTextTab002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_002
+ * @tc.desc   test for get alignment of the text tab
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, OHDrawingCreateTextTab002, Function | MediumTest | Level0)
 {
@@ -510,13 +510,13 @@ HWTEST_F(NativeFontTest, OHDrawingCreateTextTab002, Function | MediumTest | Leve
     OH_Drawing_DestroyTextTab(textTab2);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_003
- * @tc.name  : OHDrawingCreateTextTab003
- * @tc.desc  : test for get location of the text tab
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCreateTextTab003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_003
+ * @tc.desc   test for get location of the text tab
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, OHDrawingCreateTextTab003, Function | MediumTest | Level0)
 {
@@ -529,13 +529,13 @@ HWTEST_F(NativeFontTest, OHDrawingCreateTextTab003, Function | MediumTest | Leve
     OH_Drawing_DestroyTextTab(textTab2);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_001
- * @tc.name  : TypographyTest001
- * @tc.desc  : test for text tab with left alignment
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TypographyTest001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_001
+ * @tc.desc   test for text tab with left alignment
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, TypographyTest001, Function | MediumTest | Level0)
 {
@@ -572,13 +572,13 @@ HWTEST_F(NativeFontTest, TypographyTest001, Function | MediumTest | Level0)
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_002
- * @tc.name  : TypographyTest002
- * @tc.desc  : test for text tab with left alignment
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TypographyTest002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_002
+ * @tc.desc   test for text tab with left alignment
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, TypographyTest002, Function | MediumTest | Level0)
 {
@@ -615,13 +615,13 @@ HWTEST_F(NativeFontTest, TypographyTest002, Function | MediumTest | Level0)
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_003
- * @tc.name  : TypographyTest003
- * @tc.desc  : test for text tab with center alignment
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TypographyTest003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_003
+ * @tc.desc   test for text tab with center alignment
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, TypographyTest003, Function | MediumTest | Level0)
 {
@@ -658,13 +658,13 @@ HWTEST_F(NativeFontTest, TypographyTest003, Function | MediumTest | Level0)
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_004
- * @tc.name  : TypographyTest004
- * @tc.desc  : test for setting both the texttab and text layout direction
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TypographyTest004
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_004
+ * @tc.desc   test for setting both the texttab and text layout direction
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, TypographyTest004, Function | MediumTest | Level0)
 {
@@ -702,13 +702,13 @@ HWTEST_F(NativeFontTest, TypographyTest004, Function | MediumTest | Level0)
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_005
- * @tc.name  : TypographyTest005
- * @tc.desc  : test for setting both the texttab and ellipsis
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   TypographyTest005
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_005
+ * @tc.desc   test for setting both the texttab and ellipsis
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, TypographyTest005, Function | MediumTest | Level0)
 {
@@ -747,13 +747,13 @@ HWTEST_F(NativeFontTest, TypographyTest005, Function | MediumTest | Level0)
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_001
- * @tc.name  : FontGetTextPath001
- * @tc.desc  : test for common character of textpath
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   FontGetTextPath001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_001
+ * @tc.desc   test for common character of textpath
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, FontGetTextPath001, Function | MediumTest | Level0)
 {
@@ -775,13 +775,13 @@ HWTEST_F(NativeFontTest, FontGetTextPath001, Function | MediumTest | Level0)
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_002
- * @tc.name  : FontGetTextPath002
- * @tc.desc  : test for UTF16 and UTF32 character of textpath
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   FontGetTextPath002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_002
+ * @tc.desc   test for UTF16 and UTF32 character of textpath
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, FontGetTextPath002, Function | MediumTest | Level0)
 {
@@ -812,13 +812,13 @@ HWTEST_F(NativeFontTest, FontGetTextPath002, Function | MediumTest | Level0)
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_003
- * @tc.name  : FontGetTextPath003
- * @tc.desc  : test for space character of textpath
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   FontGetTextPath003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_003
+ * @tc.desc   test for space character of textpath
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, FontGetTextPath003, Function | MediumTest | Level0)
 {
@@ -841,13 +841,13 @@ HWTEST_F(NativeFontTest, FontGetTextPath003, Function | MediumTest | Level0)
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_004
- * @tc.name  : FontGetTextPath004
- * @tc.desc  : test for negative coordinates of textpath
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   FontGetTextPath004
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_004
+ * @tc.desc   test for negative coordinates of textpath
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, FontGetTextPath004, Function | MediumTest | Level0)
 {
@@ -869,13 +869,13 @@ HWTEST_F(NativeFontTest, FontGetTextPath004, Function | MediumTest | Level0)
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_005
- * @tc.name  : FontGetTextPath005
- * @tc.desc  : test for conversion of glyphsID to path
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   FontGetTextPath005
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_005
+ * @tc.desc   test for conversion of glyphsID to path
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeFontTest, FontGetTextPath005, Function | MediumTest | Level0)
 {

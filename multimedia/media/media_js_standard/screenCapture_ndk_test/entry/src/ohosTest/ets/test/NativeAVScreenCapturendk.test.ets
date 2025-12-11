@@ -81,12 +81,12 @@ export default function nativeAVScreenCaptureNdkTest() {
 
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0100
-     * @tc.name         OH_AVScreenCapture_StartScreenCapture
-     * @tc.desc         OH_AVScreenCapture_StartScreenCapture
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0100', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureTest-------------before click:");
@@ -102,12 +102,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0200
-     * @tc.name         OH_AVScreenCapture_StartScreenRecording
-     * @tc.desc         OH_AVScreenCapture_StartScreenRecording
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0200
+     * @tc.desc   OH_AVScreenCapture_StartScreenRecording
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0200', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenRecordTest-------------before click:");
@@ -123,12 +123,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0210
-     * @tc.name         OH_AVScreenCapture_StartScreenRecording
-     * @tc.desc         OH_AVScreenCapture_StartScreenRecording
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0210
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0210
+     * @tc.desc   OH_AVScreenCapture_StartScreenRecording
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0210', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenRecordTest-------------before click:");
@@ -153,12 +153,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0220
-     * @tc.name         OH_AVScreenCapture_StartScreenRecording
-     * @tc.desc         OH_AVScreenCapture_StartScreenRecording
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0220
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0220
+     * @tc.desc   OH_AVScreenCapture_StartScreenRecording
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0220', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenRecordTest-------------before click:");
@@ -184,12 +184,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0110
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0110
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0110
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0110', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureShowCursorTest-------------before click:");
@@ -213,12 +213,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0120
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0120
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0120
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0120', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureShowCursorTest-------------before click:");
@@ -244,12 +244,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0300
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureWithSurface
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureWithSurface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0300
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0300
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureWithSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0300', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureSurfaceTest-------------before click:");
@@ -265,12 +265,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0400
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0400
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0400
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0400', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "originAVScreenCaptureTest-------------before click:");
@@ -282,12 +282,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0100
-     * @tc.name         OH_AVScreenCapture_StartScreenCapture_SetDisplayCallback_Success
-     * @tc.desc         OH_AVScreenCapture_StartScreenCapture_SetDisplayCallback_Success
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenCapture_SetDisplayCallback_Success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0100', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureDisplayCallbackSuccess-------------before click:");
@@ -303,12 +303,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0200
-     * @tc.name         OH_AVScreenCapture_StartScreenCapture_SetDisplayCallback_Fail
-     * @tc.desc         OH_AVScreenCapture_StartScreenCapture_SetDisplayCallback_Fail
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0200
+     * @tc.desc   OH_AVScreenCapture_StartScreenCapture_SetDisplayCallback_Fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetDisplayCallback_0200', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureSetDisplayCallbackFalse-------------before click:");
@@ -324,12 +324,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0100
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0100', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureShowCursorTest-------------before click:");
@@ -346,12 +346,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0200
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureOrigin
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0200
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0200', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureShowCursorTest-------------before click:");
@@ -368,12 +368,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0300
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureOrigin-With-InvalidVal-Null-False
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureOrigin-With-InvalidVal-Null-False
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0300
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0300
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureOrigin-With-InvalidVal-Null-False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0300', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureShowCursorWithParaNullFalse-------------before click:");
@@ -384,12 +384,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0400
-     * @tc.name         OH_AVScreenCapture_StartScreenCaptureOrigin-With-InvalidVal-Null-True
-     * @tc.desc         OH_AVScreenCapture_StartScreenCaptureOrigin-With-InvalidVal-Null-True
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0400
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0400
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureOrigin-With-InvalidVal-Null-True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SHOW_CURSOR_0400', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureShowCursorWithParaNullTrue-------------before click:");
@@ -400,12 +400,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetSelectionCallback_0100
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetSelectionCallback_0100
-     * @tc.desc         OH_AVScreenCapture_StartScreenCapture_SetSelectionCallback_Success
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetSelectionCallback_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetSelectionCallback_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenCapture_SetSelectionCallback_Success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SetSelectionCallback_0100', Level.LEVEL0, async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureSelectionCallbackSuccess-------------before click:");
@@ -421,12 +421,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0100
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0100
-     * @tc.desc         OH_AVScreenCapture_StrategyForKeepCaptureDuringCall-False
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForKeepCaptureDuringCall-False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForKeepCaptureDuringCallFalse();
@@ -435,12 +435,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0200
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0200
-     * @tc.desc         OH_AVScreenCapture_StrategyForKeepCaptureDuringCall-True
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0200
+     * @tc.desc   OH_AVScreenCapture_StrategyForKeepCaptureDuringCall-True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_KEEP_DURING_CALL_0200', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForKeepCaptureDuringCallTrue();
@@ -449,12 +449,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONTENT_CHANGED_0100
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONTENT_CHANGED_0100
-     * @tc.desc         OH_AVScreenCapture_SetCaptureContentChangedCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONTENT_CHANGED_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONTENT_CHANGED_0100
+     * @tc.desc   OH_AVScreenCapture_SetCaptureContentChangedCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONTENT_CHANGED_0100', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureContentChangedCallback-------------before click:");
@@ -471,12 +471,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_CAPTURE_AREA_0100
-     * @tc.name         OH_AVScreenCapture_StartScreenCapture_SetCaptureArea_True
-     * @tc.desc         OH_AVScreenCapture_StartScreenCapture_SetCaptureArea_True
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_CAPTURE_AREA_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_CAPTURE_AREA_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenCapture_SetCaptureArea_True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_CAPTURE_AREA_0100', Level.LEVEL0, async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureSetCaptureAreaTest-------------before click:");
@@ -493,12 +493,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0100
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0100
-     * @tc.desc         OH_AVScreenCapture_StrategyForPrivacyMaskMode 0
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForPrivacyMaskMode 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0100', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureStrategyForPrivacyMaskModeScreen-------------before click:");
@@ -516,12 +516,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0101
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0101
-     * @tc.desc         OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0101
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0101
+     * @tc.desc   OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0101', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureStrategyForPrivacyMaskModeDisplay-------------before click:");
@@ -539,12 +539,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
-     * @tc.desc         OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
+     * @tc.desc   OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "multiAVScreenCaptureCreate-------------start :");
@@ -559,12 +559,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
-     * @tc.desc         normalAVScreenCaptureErrorTest 1
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400
+     * @tc.desc   normalAVScreenCaptureErrorTest 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0400', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVScreenCaptureErrorTest-------------before click:");
@@ -575,12 +575,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500
-     * @tc.desc         normalAreaTest 1
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500
+     * @tc.desc   normalAreaTest 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0500', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAreaTest-------------before click:");
@@ -591,12 +591,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600
-     * @tc.desc         normalStrategyTest 1
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600
+     * @tc.desc   normalStrategyTest 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0600', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalStrategyTest-------------before click:");
@@ -608,12 +608,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_VIDEO_CONFIGURE_0700', Level.LEVEL0, async (done: Function) => {
       console.info(Tag + "normalSelectionCallback-------------before click:");
@@ -628,12 +628,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
-     * @tc.desc         OH_AVScreenCapture_StrategyForBFramesEncoding-False
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForBFramesEncoding-False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForBFramesEncodingFalse();
@@ -642,12 +642,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
-     * @tc.desc         OH_AVScreenCapture_StrategyForBFramesEncoding-True
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200
+     * @tc.desc   OH_AVScreenCapture_StrategyForBFramesEncoding-True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_ENABLE_B_FRAME_0200', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForBFramesEncodingTrue();
@@ -656,12 +656,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100
-     * @tc.desc         OH_AVScreenCapture_StrategyForPickerPopUp-False
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForPickerPopUp-False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPickerPopUpFalse();
@@ -670,12 +670,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200
-     * @tc.desc         OH_AVScreenCapture_StrategyForPickerPopUp-True
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200
+     * @tc.desc   OH_AVScreenCapture_StrategyForPickerPopUp-True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_PICKER_POPUP_0200', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPickerPopUpTrue();
@@ -685,12 +685,12 @@ export default function nativeAVScreenCaptureNdkTest() {
 
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0100
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0100
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0100
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0100', Level.LEVEL0, async (done: Function) => {
 
@@ -705,12 +705,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0200
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0200
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0200
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0200', Level.LEVEL0, async (done: Function) => {
 
@@ -725,12 +725,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0300
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0300
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0300
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0300', Level.LEVEL0, async (done: Function) => {
 
@@ -754,12 +754,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0400
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0400
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0400
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0400', Level.LEVEL0, async (done: Function) => {
 
@@ -783,12 +783,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0500
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0500
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0500
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0500', Level.LEVEL0, async (done: Function) => {
 
@@ -813,12 +813,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0600
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0600
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0600
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0600', Level.LEVEL0, async (done: Function) => {
 
@@ -842,12 +842,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0700
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0700
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0700
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_PROVIDNDKINTERFACES_0700', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureDisplayCallbackSuccess();
@@ -861,12 +861,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0100
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0100
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0100
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetDisplayCallbackFail();
@@ -880,12 +880,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0200
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0200
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0200
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0200', Level.LEVEL0, async (done: Function) => {
 
@@ -901,12 +901,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0300
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0300
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0300
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0300', Level.LEVEL0, async (done: Function) => {
 
@@ -922,12 +922,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0400
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0400
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0400
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0400', Level.LEVEL0, async (done: Function) => {
 
@@ -942,12 +942,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0500
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0500
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0500
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0500', Level.LEVEL0, async (done: Function) => {
 
@@ -963,12 +963,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0700
-     * @tc.name         SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0700
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0700
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_INTERFACE_SUPPORTSURFACE_0700', Level.LEVEL0, async (done: Function) => {
 
@@ -985,12 +985,12 @@ export default function nativeAVScreenCaptureNdkTest() {
       done();
     });
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_CANVASROTATION_0001
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_CANVASROTATION_0001
-     * @tc.desc         normalSelectionCallback
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_CANVASROTATION_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_CANVASROTATION_0001
+     * @tc.desc   normalSelectionCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_CANVASROTATION_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPrivacyMaskModeDisplay();
@@ -1007,12 +1007,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0001
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0001
-     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Aspect
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0001
+     * @tc.desc   OH_AVScreenCapture_StrategyForFillMode-Aspect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForFillModeAspect();
@@ -1021,12 +1021,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0002
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0002
-     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Scale
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0002
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0002
+     * @tc.desc   OH_AVScreenCapture_StrategyForFillMode-Scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0002', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForFillModeScale();
@@ -1035,12 +1035,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
-     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Scale
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
+     * @tc.desc   OH_AVScreenCapture_StrategyForFillMode-Scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForCornerWrapMode();
@@ -1049,12 +1049,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
-     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Scale
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
+     * @tc.desc   OH_AVScreenCapture_StrategyForFillMode-Scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForClosedMode();
@@ -1063,12 +1063,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
-     * @tc.desc         OH_AVScreenCapture_SetPickerMode
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
+     * @tc.desc   OH_AVScreenCapture_SetPickerMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowOnly();
@@ -1082,12 +1082,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
-     * @tc.desc         OH_AVScreenCapture_ExcludePickerWindows
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.desc   OH_AVScreenCapture_ExcludePickerWindows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
@@ -1097,12 +1097,12 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
-     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
-     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
-     * @tc.desc         OH_AVScreenCapture_presentPicker not surport
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
+     * @tc.desc   OH_AVScreenCapture_presentPicker not surport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker1();

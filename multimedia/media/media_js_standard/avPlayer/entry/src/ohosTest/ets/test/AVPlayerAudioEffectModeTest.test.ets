@@ -84,14 +84,14 @@ export default function AVPlayerAudioEffectModeTest() {
       await mediaTestBase.closeFdNumber(fileDescriptor2.fd);
       await mediaTestBase.closeFdNumber(fileDescriptor3.fd);
     });
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100
-       * @tc.name      : 001.test audioEffectMode - base function
-       * @tc.desc      : Local Video playback control test
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level1
-   */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
       let i = 1;
@@ -215,14 +215,14 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       setSource(avPlayer, fileDescriptor);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0100
-        * @tc.name      : 002.test audioEffectMode - set nonconforming value
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0100', Level.LEVEL0,async (done: Function) => {
       let playCount = 1;
       let expecterror = false;
@@ -318,14 +318,14 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       setSource(avPlayer, fileDescriptor);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0200
-        * @tc.name      : 003.test audioEffectMode - set value in abnormal state
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_RELIABILITY_0200', Level.LEVEL0,async (done: Function) => {
       let expecterror = false;
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
@@ -401,14 +401,14 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       setSource(avPlayer, fileDescriptor);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_STABILITY_0100
-        * @tc.name      : 004.test audioEffectMode - multiple calls
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Stability test
-        * @tc.level     : Level1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_STABILITY_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_STABILITY_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_STABILITY_0100', Level.LEVEL0,async (done: Function) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
       let playCount = 1;
@@ -496,14 +496,14 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       setSource(avPlayer, fileDescriptor);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_APITIME_0100
-        * @tc.name      : 005.test audioEffectMode api time
-        * @tc.desc      : test audioEffectMode api time
-        * @tc.size      : MediumTest
-        * @tc.type      : performance test
-        * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_APITIME_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_APITIME_0100
+     * @tc.desc   test audioEffectMode api time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_APITIME_0100', Level.LEVEL0,async (done: Function) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
       await media.createAVPlayer().then((video) => {
@@ -564,14 +564,14 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       setSource(avPlayer, fileDescriptor);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_0100
-        * @tc.name      : 001.test get max amplitude
-        * @tc.desc      : test get max amplitude
-        * @tc.size      : MediumTest
-        * @tc.type      : performance test
-        * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_0100
+     * @tc.desc   test get max amplitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_0100', Level.LEVEL0,async (done: Function) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
       await media.createAVPlayer().then((video) => {
@@ -623,14 +623,14 @@ export default function AVPlayerAudioEffectModeTest() {
       setSource(avPlayer, fileDescriptor);
     });
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0100
-        * @tc.name      : 001.test get max amplitude setplaybackrange
-        * @tc.desc      : test get max amplitude
-        * @tc.size      : MediumTest
-        * @tc.type      : performance test
-        * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0100
+     * @tc.desc   test get max amplitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0100', Level.LEVEL0, async (done: Function) => {
       let x = [EFFECT_DEFAULT, EFFECT_NONE];
       await media.createAVPlayer().then((video) => {
@@ -692,14 +692,14 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       setSource(avPlayer, fileDescriptor);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0200
-        * @tc.name      : 002.test get max amplitude setplaybackrange
-        * @tc.desc      : test get max amplitude
-        * @tc.size      : MediumTest
-        * @tc.type      : performance test
-        * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0200
+     * @tc.desc   test get max amplitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0200', Level.LEVEL0, async (done: Function) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
       await media.createAVPlayer().then((video) => {
@@ -760,14 +760,14 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       setSource(avPlayer, fileDescriptor);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0300
-        * @tc.name      : 003.test get max amplitude setplaybackrange
-        * @tc.desc      : test get max amplitude
-        * @tc.size      : MediumTest
-        * @tc.type      : performance test
-        * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0300
+     * @tc.desc   test get max amplitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRANGE_0300', Level.LEVEL0, async (done: Function) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
       await media.createAVPlayer().then((video) => {

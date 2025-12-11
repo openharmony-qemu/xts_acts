@@ -26,26 +26,26 @@ export default function stackRotateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_ROTATE_0100
-     * @tc.name       : testStackRotate001
-     * @tc.desc       : testing rotate for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackRotate001
+     * @tc.number SUB_ARKUI_CAPI_STACK_ROTATE_0100
+     * @tc.desc   testing rotate for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackRotate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackRotate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_ROTATE_0200
-     * @tc.name       : testStackRotate002
-     * @tc.desc       : testing rotate for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackRotate002
+     * @tc.number SUB_ARKUI_CAPI_STACK_ROTATE_0200
+     * @tc.desc   testing rotate for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackRotate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackRotate002()).assertEqual(0)

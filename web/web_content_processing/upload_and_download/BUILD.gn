@@ -16,7 +16,9 @@ group("uploadAndDownload") {
   if (is_standard_system) {
     deps = [
       "upload_and_download_one:ActsWebUploadAndDownloadOneTest",
+      "upload_and_download_one_static:ActsWebUploadAndDownloadOneStaticTest",
       "upload_and_download_three:ActsWebUploadAndDownloadThreeTest",
+      "upload_and_download_three_static:ActsWebUploadAndDownloadThreeStaticTest",
       "upload_and_download_two:ActsWebUploadAndDownloadTwoTest",
     ]
   }

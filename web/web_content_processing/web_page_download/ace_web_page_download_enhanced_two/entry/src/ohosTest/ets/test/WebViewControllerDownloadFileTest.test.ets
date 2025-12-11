@@ -64,14 +64,14 @@ export default function webViewControllerDownloadFileTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADERRORCODE_FILE_0100
-    * @tc.name        : testDownloadFile001
-    * @tc.desc        : test WebDownloadErrorCode.FILE_ACCESS_DENIED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDownloadFile001
+     * @tc.number SUB_WEB_WEBDOWNLOADERRORCODE_FILE_0100
+     * @tc.desc   test WebDownloadErrorCode.FILE_ACCESS_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDownloadFile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDownloadFile001", 131940)
       Utils.registerBaseEvent("testDownloadFile001", webView.WebDownloadErrorCode.FILE_ACCESS_DENIED, 131950, done,
@@ -81,14 +81,14 @@ export default function webViewControllerDownloadFileTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadFileTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADERRORCODE_FILE_0200
-    * @tc.name        : testDownloadFile002
-    * @tc.desc        : test WebDownloadErrorCode.USER_CANCELED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDownloadFile002
+     * @tc.number SUB_WEB_WEBDOWNLOADERRORCODE_FILE_0200
+     * @tc.desc   test WebDownloadErrorCode.USER_CANCELED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDownloadFile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDownloadFile002", 131940)
       Utils.registerBaseEvent("testDownloadFile002", webView.WebDownloadErrorCode.USER_CANCELED, 131960, done,

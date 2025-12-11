@@ -42,13 +42,13 @@ export default function dataManagerTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
 
-        /* *
-         * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotIdSync_0200
-         * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0200
-         * @tc.desc  : Get the SIM card for default mobile data.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 0
+        /**
+         * @tc.name   testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0200
+         * @tc.number SUB_Telephony_Data_GetDefaultCellularDataSlotIdSync_0200
+         * @tc.desc   Get the SIM card for default mobile data.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0200';
@@ -66,14 +66,14 @@ export default function dataManagerTest() {
             }
         });
 
-        /* *
-        * @tc.number: SUB_Telephony_Data_GetCellularDataState_0200
-        * @tc.name  : testTelephonyDataGetCellularDataState_static_0200
-        * @tc.desc  : Get the connection status of a packet switched domain (PS domain).
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 3
-        */
+        /**
+         * @tc.name   testTelephonyDataGetCellularDataState_static_0200
+         * @tc.number SUB_Telephony_Data_GetCellularDataState_0200
+         * @tc.desc   Get the connection status of a packet switched domain (PS domain).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testTelephonyDataGetCellularDataState_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetCellularDataState_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -106,14 +106,14 @@ export default function dataManagerTest() {
             }
         });
 
-        /* *
-        * @tc.number: SUB_Telephony_Data_GetCellularDataState_0600
-        * @tc.name  : testTelephonyDataGetCellularDataState_static_0600
-        * @tc.desc  : Get the connection status of a packet switched domain (PS domain).
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 0
-        */
+        /**
+         * @tc.name   testTelephonyDataGetCellularDataState_static_0600
+         * @tc.number SUB_Telephony_Data_GetCellularDataState_0600
+         * @tc.desc   Get the connection status of a packet switched domain (PS domain).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testTelephonyDataGetCellularDataState_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetCellularDataState_static_0600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -146,14 +146,14 @@ export default function dataManagerTest() {
             }
         });
 
-        /* *
-        * @tc.number: SUB_Telephony_Data_IsCellularDataEnabled_0100
-        * @tc.name  : testTelephonyDataIsCellularDataEnabled0100
-        * @tc.desc  : Check whether the cellular data service is enabled.
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 0
-        */
+        /**
+         * @tc.name   testTelephonyDataIsCellularDataEnabled0100
+         * @tc.number SUB_Telephony_Data_IsCellularDataEnabled_0100
+         * @tc.desc   Check whether the cellular data service is enabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testTelephonyDataIsCellularDataEnabled0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataIsCellularDataEnabled0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -175,14 +175,14 @@ export default function dataManagerTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number: SUB_Telephony_Data_IsCellularDataEnabled_0300
-         * @tc.name  : testTelephonyDataIsCellularDataEnabled_static_0300
-         * @tc.desc  : Check whether the cellular data service is enabled.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
-        */
+        /**
+         * @tc.name   testTelephonyDataIsCellularDataEnabled_static_0300
+         * @tc.number SUB_Telephony_Data_IsCellularDataEnabled_0300
+         * @tc.desc   Check whether the cellular data service is enabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testTelephonyDataIsCellularDataEnabled_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataIsCellularDataEnabled_static_0300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -207,14 +207,14 @@ export default function dataManagerTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number: SUB_Telephony_Data_IsCellularDataEnabled_0500
-         * @tc.name  : testTelephonyDataIsCellularDataEnabled_static_0500
-         * @tc.desc  : Check whether the cellular data service is enabled.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 0
-        */
+        /**
+         * @tc.name   testTelephonyDataIsCellularDataEnabled_static_0500
+         * @tc.number SUB_Telephony_Data_IsCellularDataEnabled_0500
+         * @tc.desc   Check whether the cellular data service is enabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testTelephonyDataIsCellularDataEnabled_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataIsCellularDataEnabled_static_0500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -239,14 +239,14 @@ export default function dataManagerTest() {
             }
         });
 
-        /* *
-         * @tc.number: SUB_Telephony_Data_IsCellularDataEnabled_0700
-         * @tc.name  : testTelephonyDataIsCellularDataEnabled_static_0700
-         * @tc.desc  : Check whether the cellular data service is enabled.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
-        */
+        /**
+         * @tc.name   testTelephonyDataIsCellularDataEnabled_static_0700
+         * @tc.number SUB_Telephony_Data_IsCellularDataEnabled_0700
+         * @tc.desc   Check whether the cellular data service is enabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testTelephonyDataIsCellularDataEnabled_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataIsCellularDataEnabled_static_0700';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -272,13 +272,13 @@ export default function dataManagerTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-        /* *
-         * @tc.number: SUB_Telephony_Data_GetDefaultCellularDataSlotIdSync_0100
-         * @tc.name  : testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0100
-         * @tc.desc  : Get the SIM card for default mobile data.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
+        /**
+         * @tc.name   testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0100
+         * @tc.number SUB_Telephony_Data_GetDefaultCellularDataSlotIdSync_0100
+         * @tc.desc   Get the SIM card for default mobile data.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataGetDefaultCellularDataSlotIdSync_static_0100';

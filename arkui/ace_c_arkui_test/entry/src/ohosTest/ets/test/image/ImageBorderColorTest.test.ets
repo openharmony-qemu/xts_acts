@@ -26,52 +26,52 @@ export default function imageBorderColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0100
-     * @tc.name       : testImageBorderColor001
-     * @tc.desc       : testing borderColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderColor001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0100
+     * @tc.desc   testing borderColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0200
-     * @tc.name       : testImageBorderColor002
-     * @tc.desc       : testing borderColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderColor002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0200
+     * @tc.desc   testing borderColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0300
-     * @tc.name       : testImageBorderColor003
-     * @tc.desc       : testing borderColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderColor003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0300
+     * @tc.desc   testing borderColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0400
-     * @tc.name       : testImageBorderColor004
-     * @tc.desc       : testing borderColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderColor004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERCOLOR_0400
+     * @tc.desc   testing borderColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderColor004()).assertEqual(0)

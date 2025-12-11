@@ -58,7 +58,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_0100
      * @tc.number SUB_GLOBAL_I18N_JS_0100
      * @tc.desc   check the getSystemLanguage
@@ -73,7 +72,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_0200
      * @tc.number SUB_GLOBAL_I18N_JS_0200
      * @tc.desc   check the getSystemRegion
@@ -88,7 +86,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_0300
      * @tc.number SUB_GLOBAL_I18N_JS_0300
      * @tc.desc   check the getSystemLocale
@@ -103,7 +100,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_3800
      * @tc.number SUB_GLOBAL_I18N_JS_3800
      * @tc.desc   check the display country
@@ -118,7 +114,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_3820
      * @tc.number SUB_GLOBAL_I18N_JS_3820
      * @tc.desc   check the display country
@@ -133,7 +128,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_3840
      * @tc.number SUB_GLOBAL_I18N_JS_3840
      * @tc.desc   check the display country
@@ -148,7 +142,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_3900
      * @tc.number SUB_GLOBAL_I18N_JS_3900
      * @tc.desc   check the display country
@@ -163,7 +156,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4000
      * @tc.number SUB_GLOBAL_I18N_JS_4000
      * @tc.desc   check the display country
@@ -178,7 +170,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4100
      * @tc.number SUB_GLOBAL_I18N_JS_4100
      * @tc.desc   check the display country
@@ -193,7 +184,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4200
      * @tc.number SUB_GLOBAL_I18N_JS_4200
      * @tc.desc   check the language
@@ -208,7 +198,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4300
      * @tc.number SUB_GLOBAL_I18N_JS_4300
      * @tc.desc   check the language
@@ -223,7 +212,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4400
      * @tc.number SUB_GLOBAL_I18N_JS_4400
      * @tc.desc   check the language
@@ -238,7 +226,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4420
      * @tc.number SUB_GLOBAL_I18N_JS_4420
      * @tc.desc   check the language
@@ -253,7 +240,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4440
      * @tc.number SUB_GLOBAL_I18N_JS_4440
      * @tc.desc   check the language
@@ -268,7 +254,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4500
      * @tc.number SUB_GLOBAL_I18N_JS_4500
      * @tc.desc   check the language
@@ -283,7 +268,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4600
      * @tc.number SUB_GLOBAL_I18N_JS_4600
      * @tc.desc   check the language
@@ -298,7 +282,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4700
      * @tc.number SUB_GLOBAL_I18N_JS_4700
      * @tc.desc   check the language
@@ -313,7 +296,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4800
      * @tc.number SUB_GLOBAL_I18N_JS_4800
      * @tc.desc   check the language
@@ -328,7 +310,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_4900
      * @tc.number SUB_GLOBAL_I18N_JS_4900
      * @tc.desc   check the language
@@ -343,7 +324,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_5000
      * @tc.number SUB_GLOBAL_I18N_JS_5000
      * @tc.desc   check the language
@@ -358,7 +338,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_8800
      * @tc.number SUB_GLOBAL_I18N_JS_8800
      * @tc.desc   get the isRTL value
@@ -374,7 +353,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_8900
      * @tc.number SUB_GLOBAL_I18N_JS_8900
      * @tc.desc   get the isRTL value
@@ -390,7 +368,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_9000
      * @tc.number SUB_GLOBAL_I18N_JS_9000
      * @tc.desc   get the isRTL value
@@ -406,7 +383,6 @@ describe('I18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_0100
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_0100
      * @tc.desc   findEntityInfo

@@ -60,9 +60,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   testTextArea010
      * @tc.number SUB_ACE_BASIC_ETS_API_1410
-     * @tc.name testTextArea010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextArea010', Level.LEVEL1, async (done: Function) => {
       console.info('testTextArea010 START');
@@ -83,9 +86,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   testTextArea020
      * @tc.number SUB_ACE_BASIC_ETS_API_1420
-     * @tc.name testTextArea020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextArea020', Level.LEVEL1, async (done: Function) => {
       console.info('testTextArea020 START');
@@ -99,9 +105,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   testTextArea030
      * @tc.number SUB_ACE_BASIC_ETS_API_1430
-     * @tc.name testTextArea030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextArea030', Level.LEVEL1, async (done: Function) => {
       console.info('testTextArea030 START');

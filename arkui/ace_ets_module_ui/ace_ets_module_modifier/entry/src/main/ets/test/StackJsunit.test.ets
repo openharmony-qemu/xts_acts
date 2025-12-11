@@ -41,12 +41,12 @@ export default function stackJsunit() {
     });
 
     /**
+     * @tc.name   stackTest_002
      * @tc.number stackTest_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set alignContent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set alignContent values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stackTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('stackTest_002 START');
@@ -59,12 +59,12 @@ export default function stackJsunit() {
     });
 
     /**
+     * @tc.name   stackTest_001
      * @tc.number stackTest_001
-     * @tc.name Test the properties of components
-     * @tc.desc Change alignContent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change alignContent values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stackTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('stackTest_001 START');

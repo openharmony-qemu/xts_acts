@@ -55,12 +55,12 @@ export default function RichEditorLineBreakStrategy003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0003
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0003
-     * @tc.desc  : Add textSpan to set the LineBreakStrategy property value to -1 and obtain the LineBreakStrategy property value to test RichEditor LayoutStyle
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0003
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0003
+     * @tc.desc   Add textSpan to set the LineBreakStrategy property value to -1 and obtain the LineBreakStrategy property value to test RichEditor LayoutStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0003 START');
@@ -80,12 +80,12 @@ export default function RichEditorLineBreakStrategy003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0004
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0004
-     * @tc.desc  : Updating paragraph styles without setting the lineBroakStratagy property to obtain the value of the lineBrolStrategy property for testing RichEditor LayoutStyle
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0004
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0004
+     * @tc.desc   Updating paragraph styles without setting the lineBroakStratagy property to obtain the value of the lineBrolStrategy property for testing RichEditor LayoutStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0004',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0004 START');
@@ -107,12 +107,12 @@ export default function RichEditorLineBreakStrategy003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0005
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0005
-     * @tc.desc  : Update paragraph style to set lineBreakStrategy to HIGH_QUALITY and obtain the value of the lineBrealStrategy property to test RichEditor LayoutStyle
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0005
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0005
+     * @tc.desc   Update paragraph style to set lineBreakStrategy to HIGH_QUALITY and obtain the value of the lineBrealStrategy property to test RichEditor LayoutStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0005',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0005 START');
@@ -134,12 +134,12 @@ export default function RichEditorLineBreakStrategy003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0006
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0006
-     * @tc.desc  : Update the paragraph style setting to set the lineBrealStrategy property value to -1 and obtain the linebreakStrategy property value to test RichEditor LayoutStyle
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0006
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0006
+     * @tc.desc   Update the paragraph style setting to set the lineBrealStrategy property value to -1 and obtain the linebreakStrategy property value to test RichEditor LayoutStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0006',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEBREAKSTRATEGY_0006 START');

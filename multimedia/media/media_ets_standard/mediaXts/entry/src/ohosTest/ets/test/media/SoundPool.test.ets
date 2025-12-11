@@ -1215,276 +1215,276 @@ export default function SoundPoolTest() {
     });
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_001
-     * @tc.name      : createSoundPool_callback_001
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_001
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_001', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_002
-     * @tc.name      : createSoundPool_callback_002
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_002
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_002', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_003
-     * @tc.name      : createSoundPool_callback_003
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_003
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_003', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_004
-     * @tc.name      : createSoundPool_callback_004
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_004
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_004', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_005
-     * @tc.name      : createSoundPool_callback_005
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_005
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_005', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_006
-     * @tc.name      : createSoundPool_callback_006
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_006
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_006', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_007
-     * @tc.name      : createSoundPool_callback_007
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_007
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_007', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_008
-     * @tc.name      : createSoundPool_callback_008
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_008
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_008', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_009
-     * @tc.name      : createSoundPool_callback_009
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_009
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_009', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_010
-     * @tc.name      : createSoundPool_callback_010
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_010
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_010', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_011
-     * @tc.name      : createSoundPool_callback_011
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_011
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_011', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_012
-     * @tc.name      : createSoundPool_callback_012
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_012
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_012', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_013
-     * @tc.name      : createSoundPool_callback_013
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_013
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_013', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_014
-     * @tc.name      : createSoundPool_callback_014
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_014
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_callback_014', Level.LEVEL0, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_015
-     * @tc.name      : createSoundPool_callback_015
-     * @tc.desc      : Test normal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level1
+     * @tc.name   createSoundPool_callback_015
+     * @tc.number SOUND_POOL_FUNC_TEST_015
+     * @tc.desc   Test normal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('createSoundPool_callback_015', Level.LEVEL1, async (done: Function) => {
       createSoundPoolCallbackNormal(audio.StreamUsage.STREAM_USAGE_MUSIC, 32, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_016
-     * @tc.name      : createSoundPool_promise_001
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_016
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_001', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_017
-     * @tc.name      : createSoundPool_promise_002
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_017
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_002', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_018
-     * @tc.name      : createSoundPool_promise_003
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_018
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_003', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_019
-     * @tc.name      : createSoundPool_promise_004
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_019
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_004', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_020
-     * @tc.name      : createSoundPool_promise_005
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_020
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_005', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_021
-     * @tc.name      : createSoundPool_promise_006
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_021
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_006', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_022
-     * @tc.name      : createSoundPool_promise_007
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_022
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_007', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_023
-     * @tc.name      : createSoundPool_promise_008
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_023
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_008', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
@@ -1492,3924 +1492,3924 @@ export default function SoundPoolTest() {
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_024
-     * @tc.name      : createSoundPool_promise_009
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_024
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_009', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_025
-     * @tc.name      : createSoundPool_promise_010
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_025
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_010', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_026
-     * @tc.name      : createSoundPool_promise_011
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_026
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_011', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_027
-     * @tc.name      : createSoundPool_promise_012
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_027
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_012', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_028
-     * @tc.name      : createSoundPool_promise_013
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_028
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_013', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_029
-     * @tc.name      : createSoundPool_promise_014
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_014
+     * @tc.number SOUND_POOL_FUNC_TEST_029
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_014', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_030
-     * @tc.name      : createSoundPool_promise_015
-     * @tc.desc      : Test normal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createSoundPool_promise_015
+     * @tc.number SOUND_POOL_FUNC_TEST_030
+     * @tc.desc   Test normal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSoundPool_promise_015', Level.LEVEL0, async (done: Function) => {
       await createSoundPoolPromiseNormal(audio.StreamUsage.STREAM_USAGE_MUSIC, 32, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_031
-     * @tc.name      : createSoundPool_callback_abnormal_001
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_001
+     * @tc.number SOUND_POOL_FUNC_TEST_031
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_UNKNOWN, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_032
-     * @tc.name      : createSoundPool_callback_abnormal_002
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_002
+     * @tc.number SOUND_POOL_FUNC_TEST_032
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_002', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_MUSIC, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_033
-     * @tc.name      : createSoundPool_callback_abnormal_003
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_003
+     * @tc.number SOUND_POOL_FUNC_TEST_033
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_003', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_034
-     * @tc.name      : createSoundPool_callback_abnormal_004
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_004
+     * @tc.number SOUND_POOL_FUNC_TEST_034
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_004', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_035
-     * @tc.name      : createSoundPool_callback_abnormal_005
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_005
+     * @tc.number SOUND_POOL_FUNC_TEST_035
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_005', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_ALARM, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_036
-     * @tc.name      : createSoundPool_callback_abnormal_006
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_006
+     * @tc.number SOUND_POOL_FUNC_TEST_036
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_006', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_037
-     * @tc.name      : createSoundPool_callback_abnormal_007
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_007
+     * @tc.number SOUND_POOL_FUNC_TEST_037
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_007', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_RINGTONE, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_038
-     * @tc.name      : createSoundPool_callback_abnormal_008
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_008
+     * @tc.number SOUND_POOL_FUNC_TEST_038
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_008', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_039
-     * @tc.name      : createSoundPool_callback_abnormal_009
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_009
+     * @tc.number SOUND_POOL_FUNC_TEST_039
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_009', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_040
-     * @tc.name      : createSoundPool_callback_abnormal_010
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_010
+     * @tc.number SOUND_POOL_FUNC_TEST_040
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_010', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_MOVIE, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_041
-     * @tc.name      : createSoundPool_callback_abnormal_011
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_011
+     * @tc.number SOUND_POOL_FUNC_TEST_041
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_011', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_GAME, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_042
-     * @tc.name      : createSoundPool_callback_abnormal_012
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_012
+     * @tc.number SOUND_POOL_FUNC_TEST_042
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_012', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_043
-     * @tc.name      : createSoundPool_callback_abnormal_013
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_013
+     * @tc.number SOUND_POOL_FUNC_TEST_043
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_013', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_NAVIGATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_044
-     * @tc.name      : createSoundPool_callback_abnormal_014
-     * @tc.desc      : Test abnormal scene of create soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_callback_abnormal_014
+     * @tc.number SOUND_POOL_FUNC_TEST_044
+     * @tc.desc   Test abnormal scene of create soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_callback_abnormal_014', Level.LEVEL2, async (done: Function) => {
       createSoundPoolCallbackAbnormal(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_045
-     * @tc.name      : createSoundPool_promise_abnormal_001
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_001
+     * @tc.number SOUND_POOL_FUNC_TEST_045
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_001', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_UNKNOWN, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_046
-     * @tc.name      : createSoundPool_promise_abnormal_002
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_002
+     * @tc.number SOUND_POOL_FUNC_TEST_046
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_002', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_MUSIC, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_047
-     * @tc.name      : createSoundPool_promise_abnormal_003
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_003
+     * @tc.number SOUND_POOL_FUNC_TEST_047
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_003', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_048
-     * @tc.name      : createSoundPool_promise_abnormal_004
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_004
+     * @tc.number SOUND_POOL_FUNC_TEST_048
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_004', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_049
-     * @tc.name      : createSoundPool_promise_abnormal_005
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_005
+     * @tc.number SOUND_POOL_FUNC_TEST_049
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_005', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_ALARM, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_050
-     * @tc.name      : createSoundPool_promise_abnormal_006
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_006
+     * @tc.number SOUND_POOL_FUNC_TEST_050
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_006', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_051
-     * @tc.name      : createSoundPool_promise_abnormal_007
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_007
+     * @tc.number SOUND_POOL_FUNC_TEST_051
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_007', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_RINGTONE, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_052
-     * @tc.name      : createSoundPool_promise_abnormal_008
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_008
+     * @tc.number SOUND_POOL_FUNC_TEST_052
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_008', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_053
-     * @tc.name      : createSoundPool_promise_abnormal_009
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_009
+     * @tc.number SOUND_POOL_FUNC_TEST_053
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_009', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_054
-     * @tc.name      : createSoundPool_promise_abnormal_010
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_010
+     * @tc.number SOUND_POOL_FUNC_TEST_054
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_010', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_MOVIE, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_055
-     * @tc.name      : createSoundPool_promise_abnormal_011
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_011
+     * @tc.number SOUND_POOL_FUNC_TEST_055
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_011', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_GAME, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_056
-     * @tc.name      : createSoundPool_promise_abnormal_012
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_012
+     * @tc.number SOUND_POOL_FUNC_TEST_056
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_012', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_057
-     * @tc.name      : createSoundPool_promise_abnormal_013
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_013
+     * @tc.number SOUND_POOL_FUNC_TEST_057
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_013', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_NAVIGATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_058
-     * @tc.name      : createSoundPool_promise_abnormal_014
-     * @tc.desc      : Test abnormal scene of create soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   createSoundPool_promise_abnormal_014
+     * @tc.number SOUND_POOL_FUNC_TEST_058
+     * @tc.desc   Test abnormal scene of create soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSoundPool_promise_abnormal_014', Level.LEVEL2, async (done: Function) => {
       await createSoundPoolPromiseAbnormal(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, -1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_059
-     * @tc.name      : load_normal_callback_001
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_059
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_060
-     * @tc.name      : load_normal_callback_002
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_060
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_061
-     * @tc.name      : load_normal_callback_003
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_061
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_062
-     * @tc.name      : load_normal_callback_004
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_062
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_063
-     * @tc.name      : load_normal_callback_005
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_063
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_064
-     * @tc.name      : load_normal_callback_006
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_064
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done)
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_065
-     * @tc.name      : load_normal_callback_007
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_065
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_066
-     * @tc.name      : load_normal_callback_008
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_066
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_067
-     * @tc.name      : load_normal_callback_009
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_067
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_068
-     * @tc.name      : load_normal_callback_010
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_068
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_069
-     * @tc.name      : load_normal_callback_011
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_069
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_070
-     * @tc.name      : load_normal_callback_012
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_070
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_071
-     * @tc.name      : load_normal_callback_013
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_071
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_072
-     * @tc.name      : load_normal_callback_014
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_072
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       loadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_073
-     * @tc.name      : load_normal_promise_001
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_073
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_074
-     * @tc.name      : load_normal_promise_002
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_074
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_075
-     * @tc.name      : load_normal_promise_003
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_075
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_076
-     * @tc.name      : load_normal_promise_004
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_076
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_077
-     * @tc.name      : load_normal_promise_005
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_077
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_078
-     * @tc.name      : load_normal_promise_006
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_078
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_079
-     * @tc.name      : load_normal_promise_007
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_079
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_080
-     * @tc.name      : load_normal_promise_008
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_080
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_081
-     * @tc.name      : load_normal_promise_009
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_081
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_082
-     * @tc.name      : load_normal_promise_010
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_082
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_083
-     * @tc.name      : load_normal_promise_011
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_083
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_084
-     * @tc.name      : load_normal_promise_012
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_084
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_085
-     * @tc.name      : load_normal_promise_013
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_085
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_086
-     * @tc.name      : load_normal_promise_014
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_normal_promise_014
+     * @tc.number SOUND_POOL_FUNC_TEST_086
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_normal_promise_014', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_087
-     * @tc.name      : load_with_fd_normal_callback_001
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_with_fd_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_087
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_with_fd_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolWithFdCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_088
-     * @tc.name      : load_with_fd_normal_callback_002
-     * @tc.desc      : Test normal scene of load soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_with_fd_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_088
+     * @tc.desc   Test normal scene of load soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_with_fd_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolWithFdCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 15, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_089
-     * @tc.name      : load_with_fd_normal_promise_001
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_with_fd_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_089
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_with_fd_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolWithFdPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_090
-     * @tc.name      : load_with_fd_normal_promise_002
-     * @tc.desc      : Test normal scene of load soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   load_with_fd_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_090
+     * @tc.desc   Test normal scene of load soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('load_with_fd_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await loadSoundPoolWithFdPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 15, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_091
-     * @tc.name      : play_with_params_normal_promise_001
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_091
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_092
-     * @tc.name      : play_with_params_normal_promise_002
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_092
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_093
-     * @tc.name      : play_with_params_normal_promise_003
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_093
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_094
-     * @tc.name      : play_with_params_normal_promise_004
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_094
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_095
-     * @tc.name      : play_with_params_normal_promise_005
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_095
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_096
-     * @tc.name      : play_with_params_normal_promise_006
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_096
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_097
-     * @tc.name      : play_with_params_normal_promise_007
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_097
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_098
-     * @tc.name      : play_with_params_normal_promise_008
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_098
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_099
-     * @tc.name      : play_with_params_normal_promise_009
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_099
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_100
-     * @tc.name      : play_with_params_normal_promise_010
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_100
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_101
-     * @tc.name      : play_with_params_normal_promise_011
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_101
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_102
-     * @tc.name      : play_with_params_normal_promise_012
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_102
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_103
-     * @tc.name      : play_with_params_normal_promise_013
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_103
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_104
-     * @tc.name      : play_with_params_normal_promise_014
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_promise_014
+     * @tc.number SOUND_POOL_FUNC_TEST_104
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_promise_014', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_105
-     * @tc.name      : play_with_params_normal_callback_001
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_105
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_106
-     * @tc.name      : play_with_params_normal_callback_002
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_106
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_107
-     * @tc.name      : play_with_params_normal_callback_003
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_107
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_108
-     * @tc.name      : play_with_params_normal_callback_004
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_108
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_109
-     * @tc.name      : play_with_params_normal_callback_005
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_109
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_110
-     * @tc.name      : play_with_params_normal_callback_006
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_110
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_111
-     * @tc.name      : play_with_params_normal_callback_007
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_111
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_112
-     * @tc.name      : play_with_params_normal_callback_008
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_112
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_113
-     * @tc.name      : play_with_params_normal_callback_009
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_113
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_114
-     * @tc.name      : play_with_params_normal_callback_010
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_114
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_115
-     * @tc.name      : play_with_params_normal_callback_011
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_115
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_116
-     * @tc.name      : play_with_params_normal_callback_012
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_116
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_117
-     * @tc.name      : play_with_params_normal_callback_013
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_117
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_118
-     * @tc.name      : play_with_params_normal_callback_014
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_118
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_119
-     * @tc.name      : play_with_params_normal_callback_015
-     * @tc.desc      : Test normal scene of play soundPool with PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_with_params_normal_callback_015
+     * @tc.number SOUND_POOL_FUNC_TEST_119
+     * @tc.desc   Test normal scene of play soundPool with PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_with_params_normal_callback_015', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithParamsCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 32, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_120
-     * @tc.name      : play_without_params_normal_callback_001
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_120
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_121
-     * @tc.name      : play_without_params_normal_callback_002
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_121
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_122
-     * @tc.name      : play_without_params_normal_callback_003
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_122
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_123
-     * @tc.name      : play_without_params_normal_callback_004
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_123
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_124
-     * @tc.name      : play_without_params_normal_callback_005
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_124
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_125
-     * @tc.name      : play_without_params_normal_callback_006
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_125
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_126
-     * @tc.name      : play_without_params_normal_callback_007
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_126
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_127
-     * @tc.name      : play_without_params_normal_callback_008
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_127
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_128
-     * @tc.name      : play_without_params_normal_callback_009
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_128
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_129
-     * @tc.name      : play_without_params_normal_callback_010
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_129
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_130
-     * @tc.name      : play_without_params_normal_callback_011
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_130
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_131
-     * @tc.name      : play_without_params_normal_callback_012
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_131
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_132
-     * @tc.name      : play_without_params_normal_callback_013
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_132
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_133
-     * @tc.name      : play_without_params_normal_callback_014
-     * @tc.desc      : Test normal scene of play soundPool without PlayParameters callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   play_without_params_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_133
+     * @tc.desc   Test normal scene of play soundPool without PlayParameters callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('play_without_params_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await playSoundPoolWithoutParamsCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_134
-     * @tc.name      : stopSoundPool_normal_callback_001
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_134
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_135
-     * @tc.name      : stopSoundPool_normal_callback_002
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_135
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_136
-     * @tc.name      : stopSoundPool_normal_callback_003
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_136
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_137
-     * @tc.name      : stopSoundPool_normal_callback_004
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_137
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_138
-     * @tc.name      : stopSoundPool_normal_callback_005
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_138
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_139
-     * @tc.name      : stopSoundPool_normal_callback_006
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_139
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_140
-     * @tc.name      : stopSoundPool_normal_callback_007
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_140
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_141
-     * @tc.name      : stopSoundPool_normal_callback_008
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_141
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_142
-     * @tc.name      : stopSoundPool_normal_callback_009
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_142
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_143
-     * @tc.name      : stopSoundPool_normal_callback_010
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_143
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_144
-     * @tc.name      : stopSoundPool_normal_callback_011
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_144
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_145
-     * @tc.name      : stopSoundPool_normal_callback_012
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_145
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_146
-     * @tc.name      : stopSoundPool_normal_callback_013
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_146
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_147
-     * @tc.name      : stopSoundPool_normal_callback_014
-     * @tc.desc      : Test normal scene of stop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_147
+     * @tc.desc   Test normal scene of stop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_148
-     * @tc.name      : stopSoundPool_normal_promise_001
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_148
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_149
-     * @tc.name      : stopSoundPool_normal_promise_002
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_149
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_150
-     * @tc.name      : stopSoundPool_normal_promise_003
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_150
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_151
-     * @tc.name      : stopSoundPool_normal_promise_004
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_151
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_152
-     * @tc.name      : stopSoundPool_normal_promise_005
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_152
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_153
-     * @tc.name      : stopSoundPool_normal_promise_006
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_153
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_154
-     * @tc.name      : stopSoundPool_normal_promise_007
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_154
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_155
-     * @tc.name      : stopSoundPool_normal_promise_008
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_155
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_156
-     * @tc.name      : stopSoundPool_normal_promise_009
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_156
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_157
-     * @tc.name      : stopSoundPool_normal_promise_010
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_157
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_158
-     * @tc.name      : stopSoundPool_normal_promise_011
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_158
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_159
-     * @tc.name      : stopSoundPool_normal_promise_012
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_159
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_160
-     * @tc.name      : stopSoundPool_normal_promise_013
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_160
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_161
-     * @tc.name      : stopSoundPool_normal_promise_014
-     * @tc.desc      : Test normal scene of stop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   stopSoundPool_normal_promise_018
+     * @tc.number SOUND_POOL_FUNC_TEST_161
+     * @tc.desc   Test normal scene of stop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stopSoundPool_normal_promise_018', Level.LEVEL0, async (done: Function) => {
       await stopSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_162
-     * @tc.name      : setLoop_normal_callback_001
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_162
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_163
-     * @tc.name      : setLoop_normal_callback_002
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_163
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_164
-     * @tc.name      : setLoop_normal_callback_003
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_164
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_165
-     * @tc.name      : setLoop_normal_callback_004
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_165
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_166
-     * @tc.name      : setLoop_normal_callback_005
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_166
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_167
-     * @tc.name      : setLoop_normal_callback_006
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_167
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_168
-     * @tc.name      : setLoop_normal_callback_007
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_168
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_169
-     * @tc.name      : setLoop_normal_callback_008
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_169
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_170
-     * @tc.name      : setLoop_normal_callback_009
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_170
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_171
-     * @tc.name      : setLoop_normal_callback_010
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_171
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_172
-     * @tc.name      : setLoop_normal_callback_011
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_172
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_173
-     * @tc.name      : setLoop_normal_callback_012
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_173
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_174
-     * @tc.name      : setLoop_normal_callback_013
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_174
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_175
-     * @tc.name      : setLoop_normal_callback_014
-     * @tc.desc      : Test normal scene of setLoop soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_175
+     * @tc.desc   Test normal scene of setLoop soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_176
-     * @tc.name      : setLoop_normal_promise_001
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_176
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_177
-     * @tc.name      : setLoop_normal_promise_002
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_177
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_178
-     * @tc.name      : setLoop_normal_promise_003
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_178
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_179
-     * @tc.name      : setLoop_normal_promise_004
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_179
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_180
-     * @tc.name      : setLoop_normal_promise_005
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_180
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_181
-     * @tc.name      : setLoop_normal_promise_006
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_181
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_182
-     * @tc.name      : setLoop_normal_promise_007
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_182
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_183
-     * @tc.name      : setLoop_normal_promise_008
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_183
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_184
-     * @tc.name      : setLoop_normal_promise_009
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_184
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_185
-     * @tc.name      : setLoop_normal_promise_010
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_185
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_186
-     * @tc.name      : setLoop_normal_promise_011
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_186
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_187
-     * @tc.name      : setLoop_normal_promise_012
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_187
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_188
-     * @tc.name      : setLoop_normal_promise_013
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_188
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_189
-     * @tc.name      : setLoop_normal_promise_014
-     * @tc.desc      : Test normal scene of setLoop soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setLoop_normal_promise_018
+     * @tc.number SOUND_POOL_FUNC_TEST_189
+     * @tc.desc   Test normal scene of setLoop soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLoop_normal_promise_018', Level.LEVEL0, async (done: Function) => {
       await setLoopNormalPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_190
-     * @tc.name      : setPriority_normal_callback_001
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_190
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_191
-     * @tc.name      : setPriority_normal_callback_002
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_191
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_192
-     * @tc.name      : setPriority_normal_callback_003
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_192
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_193
-     * @tc.name      : setPriority_normal_callback_004
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_193
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_194
-     * @tc.name      : setPriority_normal_callback_005
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_194
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_195
-     * @tc.name      : setPriority_normal_callback_006
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_195
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_196
-     * @tc.name      : setPriority_normal_callback_007
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_196
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_197
-     * @tc.name      : setPriority_normal_callback_008
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_197
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_198
-     * @tc.name      : setPriority_normal_callback_009
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_198
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_199
-     * @tc.name      : setPriority_normal_callback_010
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_199
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_200
-     * @tc.name      : setPriority_normal_callback_011
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_200
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_201
-     * @tc.name      : setPriority_normal_callback_012
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_201
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_202
-     * @tc.name      : setPriority_normal_callback_013
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_202
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_203
-     * @tc.name      : setPriority_normal_callback_014
-     * @tc.desc      : Test normal scene of setPriority soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_203
+     * @tc.desc   Test normal scene of setPriority soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_204
-     * @tc.name      : setPriority_normal_promise_001
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_204
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_205
-     * @tc.name      : setPriority_normal_promise_002
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_205
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_206
-     * @tc.name      : setPriority_normal_promise_003
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_206
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_207
-     * @tc.name      : setPriority_normal_promise_004
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_207
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_208
-     * @tc.name      : setPriority_normal_promise_005
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_208
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_209
-     * @tc.name      : setPriority_normal_promise_006
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_209
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_210
-     * @tc.name      : setPriority_normal_promise_007
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_210
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_211
-     * @tc.name      : setPriority_normal_promise_008
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_211
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_212
-     * @tc.name      : setPriority_normal_promise_009
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_212
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_213
-     * @tc.name      : setPriority_normal_promise_010
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_213
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_214
-     * @tc.name      : setPriority_normal_promise_011
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_214
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_215
-     * @tc.name      : setPriority_normal_promise_012
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_215
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_216
-     * @tc.name      : setPriority_normal_promise_013
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_216
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_217
-     * @tc.name      : setPriority_normal_promise_014
-     * @tc.desc      : Test normal scene of setPriority soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPriority_normal_promise_014
+     * @tc.number SOUND_POOL_FUNC_TEST_217
+     * @tc.desc   Test normal scene of setPriority soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPriority_normal_promise_014', Level.LEVEL0, async (done: Function) => {
       await setPriorityNormalPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_218
-     * @tc.name      : setRate_normal_callback_001
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_218
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_219
-     * @tc.name      : setRate_normal_callback_002
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_219
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_220
-     * @tc.name      : setRate_normal_callback_003
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_220
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_221
-     * @tc.name      : setRate_normal_callback_004
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_221
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_222
-     * @tc.name      : setRate_normal_callback_005
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_222
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_223
-     * @tc.name      : setRate_normal_callback_006
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_223
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_224
-     * @tc.name      : setRate_normal_callback_007
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_224
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_225
-     * @tc.name      : setRate_normal_callback_008
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_225
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_226
-     * @tc.name      : setRate_normal_callback_009
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_226
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_227
-     * @tc.name      : setRate_normal_callback_010
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_227
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_228
-     * @tc.name      : setRate_normal_callback_011
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_228
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_229
-     * @tc.name      : setRate_normal_callback_012
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_229
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_230
-     * @tc.name      : setRate_normal_callback_013
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_230
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_231
-     * @tc.name      : setRate_normal_callback_014
-     * @tc.desc      : Test normal scene of setRate soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_231
+     * @tc.desc   Test normal scene of setRate soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await setRateNormalCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_232
-     * @tc.name      : setRate_normal_promise_001
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_232
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_233
-     * @tc.name      : setRate_normal_promise_002
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_233
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_234
-     * @tc.name      : setRate_normal_promise_003
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_234
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_235
-     * @tc.name      : setRate_normal_promise_004
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_235
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_236
-     * @tc.name      : setRate_normal_promise_005
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_236
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_237
-     * @tc.name      : setRate_normal_promise_006
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_237
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_238
-     * @tc.name      : setRate_normal_promise_007
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_238
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_239
-     * @tc.name      : setRate_normal_promise_008
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_239
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_240
-     * @tc.name      : setRate_normal_promise_009
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_240
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_241
-     * @tc.name      : setRate_normal_promise_010
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_241
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_242
-     * @tc.name      : setRate_normal_promise_011
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_242
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_243
-     * @tc.name      : setRate_normal_promise_012
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_243
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_244
-     * @tc.name      : setRate_normal_promise_013
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_244
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_245
-     * @tc.name      : setRate_normal_promise_014
-     * @tc.desc      : Test normal scene of setRate soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setRate_normal_promise_014
+     * @tc.number SOUND_POOL_FUNC_TEST_245
+     * @tc.desc   Test normal scene of setRate soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRate_normal_promise_014', Level.LEVEL0, async (done: Function) => {
       await setRateNormalPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_246
-     * @tc.name      : setVolume_normal_callback_001
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_246
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_247
-     * @tc.name      : setVolume_normal_callback_002
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_247
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_248
-     * @tc.name      : setVolume_normal_callback_003
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_248
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_249
-     * @tc.name      : setVolume_normal_callback_004
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_249
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_250
-     * @tc.name      : setVolume_normal_callback_005
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_250
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_251
-     * @tc.name      : setVolume_normal_callback_006
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_251
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_252
-     * @tc.name      : setVolume_normal_callback_007
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_252
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_253
-     * @tc.name      : setVolume_normal_callback_008
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_253
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_254
-     * @tc.name      : setVolume_normal_callback_009
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_254
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_255
-     * @tc.name      : setVolume_normal_callback_010
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_255
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_256
-     * @tc.name      : setVolume_normal_callback_011
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_256
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_257
-     * @tc.name      : setVolume_normal_callback_012
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_257
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_258
-     * @tc.name      : setVolume_normal_callback_013
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_258
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_259
-     * @tc.name      : setVolume_normal_callback_014
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_259
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_260
-     * @tc.name      : setVolume_normal_promise_001
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_260
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_261
-     * @tc.name      : setVolume_normal_promise_002
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_261
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_262
-     * @tc.name      : setVolume_normal_promise_003
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_262
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_263
-     * @tc.name      : setVolume_normal_promise_004
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_263
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_264
-     * @tc.name      : setVolume_normal_promise_005
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_264
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_265
-     * @tc.name      : setVolume_normal_promise_006
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_265
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_266
-     * @tc.name      : setVolume_normal_promise_007
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_266
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_267
-     * @tc.name      : setVolume_normal_promise_008
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_267
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_268
-     * @tc.name      : setVolume_normal_promise_009
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_268
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_269
-     * @tc.name      : setVolume_normal_promise_010
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_269
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_270
-     * @tc.name      : setVolume_normal_promise_011
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_270
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_271
-     * @tc.name      : setVolume_normal_promise_012
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_271
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_272
-     * @tc.name      : setVolume_normal_promise_013
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_272
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_273
-     * @tc.name      : setVolume_normal_promise_014
-     * @tc.desc      : Test normal scene of setVolume soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVolume_normal_promise_014
+     * @tc.number SOUND_POOL_FUNC_TEST_273
+     * @tc.desc   Test normal scene of setVolume soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_normal_promise_014', Level.LEVEL0, async (done: Function) => {
       await setVolumeNormalPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, 0.5, 0.5, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_274
-     * @tc.name      : unload_normal_callback_001
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_274
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_275
-     * @tc.name      : unload_normal_callback_002
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_275
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_276
-     * @tc.name      : unload_normal_callback_003
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_003
+     * @tc.number SOUND_POOL_FUNC_TEST_276
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_003', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_277
-     * @tc.name      : unload_normal_callback_004
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_004
+     * @tc.number SOUND_POOL_FUNC_TEST_277
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_004', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_278
-     * @tc.name      : unload_normal_callback_005
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_005
+     * @tc.number SOUND_POOL_FUNC_TEST_278
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_005', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_279
-     * @tc.name      : unload_normal_callback_006
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_006
+     * @tc.number SOUND_POOL_FUNC_TEST_279
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_006', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done)
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_280
-     * @tc.name      : unload_normal_callback_007
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_007
+     * @tc.number SOUND_POOL_FUNC_TEST_280
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_007', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_281
-     * @tc.name      : unload_normal_callback_008
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_008
+     * @tc.number SOUND_POOL_FUNC_TEST_281
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_008', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_282
-     * @tc.name      : unload_normal_callback_009
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_009
+     * @tc.number SOUND_POOL_FUNC_TEST_282
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_009', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_283
-     * @tc.name      : unload_normal_callback_010
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_010
+     * @tc.number SOUND_POOL_FUNC_TEST_283
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_010', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_284
-     * @tc.name      : unload_normal_callback_011
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_011
+     * @tc.number SOUND_POOL_FUNC_TEST_284
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_011', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_285
-     * @tc.name      : unload_normal_callback_012
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_012
+     * @tc.number SOUND_POOL_FUNC_TEST_285
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_012', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_286
-     * @tc.name      : unload_normal_callback_013
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_013
+     * @tc.number SOUND_POOL_FUNC_TEST_286
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_013', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_287
-     * @tc.name      : unload_normal_callback_014
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_callback_014
+     * @tc.number SOUND_POOL_FUNC_TEST_287
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_callback_014', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_288
-     * @tc.name      : unload_normal_promise_001
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_288
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_289
-     * @tc.name      : unload_normal_promise_002
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_289
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_290
-     * @tc.name      : unload_normal_promise_003
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_003
+     * @tc.number SOUND_POOL_FUNC_TEST_290
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_003', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_291
-     * @tc.name      : unload_normal_promise_004
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_004
+     * @tc.number SOUND_POOL_FUNC_TEST_291
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_004', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_292
-     * @tc.name      : unload_normal_promise_005
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_005
+     * @tc.number SOUND_POOL_FUNC_TEST_292
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_005', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_293
-     * @tc.name      : unload_normal_promise_006
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_006
+     * @tc.number SOUND_POOL_FUNC_TEST_293
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_006', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_294
-     * @tc.name      : unload_normal_promise_007
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_007
+     * @tc.number SOUND_POOL_FUNC_TEST_294
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_007', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_295
-     * @tc.name      : unload_normal_promise_008
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_008
+     * @tc.number SOUND_POOL_FUNC_TEST_295
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_008', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_296
-     * @tc.name      : unload_normal_promise_009
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_009
+     * @tc.number SOUND_POOL_FUNC_TEST_296
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_009', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_297
-     * @tc.name      : unload_normal_promise_010
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_010
+     * @tc.number SOUND_POOL_FUNC_TEST_297
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_010', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_298
-     * @tc.name      : unload_normal_promise_011
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_011
+     * @tc.number SOUND_POOL_FUNC_TEST_298
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_011', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_299
-     * @tc.name      : unload_normal_promise_012
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_012
+     * @tc.number SOUND_POOL_FUNC_TEST_299
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_012', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_300
-     * @tc.name      : unload_normal_promise_013
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_013
+     * @tc.number SOUND_POOL_FUNC_TEST_300
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_013', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_301
-     * @tc.name      : unload_normal_promise_014
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_normal_promise_014
+     * @tc.number SOUND_POOL_FUNC_TEST_301
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_normal_promise_014', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_302
-     * @tc.name      : unload_with_fd_normal_callback_001
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_with_fd_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_302
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_with_fd_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolWithFdCallback(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_303
-     * @tc.name      : unload_with_fd_normal_callback_002
-     * @tc.desc      : Test normal scene of unload soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_with_fd_normal_callback_002
+     * @tc.number SOUND_POOL_FUNC_TEST_303
+     * @tc.desc   Test normal scene of unload soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_with_fd_normal_callback_002', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolWithFdCallback(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 15, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_304
-     * @tc.name      : unload_with_fd_normal_promise_001
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_with_fd_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_304
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_with_fd_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolWithFdPromise(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_305
-     * @tc.name      : unload_with_fd_normal_promise_002
-     * @tc.desc      : Test normal scene of unload soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   unload_with_fd_normal_promise_002
+     * @tc.number SOUND_POOL_FUNC_TEST_305
+     * @tc.desc   Test normal scene of unload soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('unload_with_fd_normal_promise_002', Level.LEVEL0, async (done: Function) => {
       await unloadSoundPoolWithFdPromise(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 15, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_306
-     * @tc.name      : release_normal_callback_001
-     * @tc.desc      : Test normal scene of release soundPool callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_normal_callback_001
+     * @tc.number SOUND_POOL_FUNC_TEST_306
+     * @tc.desc   Test normal scene of release soundPool callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_normal_callback_001', Level.LEVEL0, async (done: Function) => {
       await releaseSoundPoolCallback(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_307
-     * @tc.name      : release_normal_promise_001
-     * @tc.desc      : Test normal scene of release soundPool promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_normal_promise_001
+     * @tc.number SOUND_POOL_FUNC_TEST_307
+     * @tc.desc   Test normal scene of release soundPool promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_normal_promise_001', Level.LEVEL0, async (done: Function) => {
       await releaseSoundPoolPromise(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_308
-     * @tc.name      : on_off_loadComplete_listen_normal_001
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_001
+     * @tc.number SOUND_POOL_FUNC_TEST_308
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_001', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_309
-     * @tc.name      : on_off_loadComplete_listen_normal_002
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_002
+     * @tc.number SOUND_POOL_FUNC_TEST_309
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_002', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_310
-     * @tc.name      : on_off_loadComplete_listen_normal_003
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_003
+     * @tc.number SOUND_POOL_FUNC_TEST_310
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_003', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_311
-     * @tc.name      : on_off_loadComplete_listen_normal_004
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_004
+     * @tc.number SOUND_POOL_FUNC_TEST_311
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_004', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_312
-     * @tc.name      : on_off_loadComplete_listen_normal_005
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_005
+     * @tc.number SOUND_POOL_FUNC_TEST_312
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_005', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_313
-     * @tc.name      : on_off_loadComplete_listen_normal_006
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_006
+     * @tc.number SOUND_POOL_FUNC_TEST_313
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_006', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_314
-     * @tc.name      : on_off_loadComplete_listen_normal_007
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_007
+     * @tc.number SOUND_POOL_FUNC_TEST_314
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_007', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_315
-     * @tc.name      : on_off_loadComplete_listen_normal_008
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_008
+     * @tc.number SOUND_POOL_FUNC_TEST_315
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_008', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_316
-     * @tc.name      : on_off_loadComplete_listen_normal_009
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_009
+     * @tc.number SOUND_POOL_FUNC_TEST_316
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_009', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_317
-     * @tc.name      : on_off_loadComplete_listen_normal_010
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_010
+     * @tc.number SOUND_POOL_FUNC_TEST_317
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_010', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_318
-     * @tc.name      : on_off_loadComplete_listen_normal_011
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_011
+     * @tc.number SOUND_POOL_FUNC_TEST_318
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_011', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_319
-     * @tc.name      : on_off_loadComplete_listen_normal_012
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_012
+     * @tc.number SOUND_POOL_FUNC_TEST_319
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_012', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_320
-     * @tc.name      : on_off_loadComplete_listen_normal_013
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_013
+     * @tc.number SOUND_POOL_FUNC_TEST_320
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_013', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_321
-     * @tc.name      : on_off_loadComplete_listen_normal_014
-     * @tc.desc      : Test normal scene of load soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_loadComplete_listen_normal_014
+     * @tc.number SOUND_POOL_FUNC_TEST_321
+     * @tc.desc   Test normal scene of load soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_loadComplete_listen_normal_014', Level.LEVEL0, async (done: Function) => {
       await loadCompleteListen(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_322
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_001
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_001
+     * @tc.number SOUND_POOL_FUNC_TEST_322
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_001', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_323
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_002
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_002
+     * @tc.number SOUND_POOL_FUNC_TEST_323
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_002', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_324
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_003
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_003
+     * @tc.number SOUND_POOL_FUNC_TEST_324
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_003', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_325
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_004
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_004
+     * @tc.number SOUND_POOL_FUNC_TEST_325
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_004', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_326
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_005
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_005
+     * @tc.number SOUND_POOL_FUNC_TEST_326
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_005', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_327
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_006
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_006
+     * @tc.number SOUND_POOL_FUNC_TEST_327
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_006', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_328
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_007
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_007
+     * @tc.number SOUND_POOL_FUNC_TEST_328
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_007', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_329
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_008
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_008
+     * @tc.number SOUND_POOL_FUNC_TEST_329
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_008', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_330
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_009
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_009
+     * @tc.number SOUND_POOL_FUNC_TEST_330
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_009', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_331
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_010
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_010
+     * @tc.number SOUND_POOL_FUNC_TEST_331
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_010', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_332
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_011
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_011
+     * @tc.number SOUND_POOL_FUNC_TEST_332
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_011', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_333
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_012
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_012
+     * @tc.number SOUND_POOL_FUNC_TEST_333
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_012', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_334
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_013
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_013
+     * @tc.number SOUND_POOL_FUNC_TEST_334
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_013', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_335
-     * @tc.name      : on_off_playFinishedWithStreamId_listen_normal_014
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinishedWithStreamId_listen_normal_014
+     * @tc.number SOUND_POOL_FUNC_TEST_335
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinishedWithStreamId_listen_normal_014', Level.LEVEL0, async (done: Function) => {
       await playFinishedWithStreamIdListen(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_336
-     * @tc.name      : on_off_playFinished_listen_normal_001
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_001
+     * @tc.number SOUND_POOL_FUNC_TEST_336
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_001', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_337
-     * @tc.name      : on_off_playFinished_listen_normal_002
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_002
+     * @tc.number SOUND_POOL_FUNC_TEST_337
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_002', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_MUSIC, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_338
-     * @tc.name      : on_off_playFinished_listen_normal_003
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_003
+     * @tc.number SOUND_POOL_FUNC_TEST_338
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_003', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_339
-     * @tc.name      : on_off_playFinished_listen_normal_004
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_004
+     * @tc.number SOUND_POOL_FUNC_TEST_339
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_004', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_340
-     * @tc.name      : on_off_playFinished_listen_normal_005
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_005
+     * @tc.number SOUND_POOL_FUNC_TEST_340
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_005', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_ALARM, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_341
-     * @tc.name      : on_off_playFinished_listen_normal_006
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_006
+     * @tc.number SOUND_POOL_FUNC_TEST_341
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_006', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_342
-     * @tc.name      : on_off_playFinished_listen_normal_007
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_007
+     * @tc.number SOUND_POOL_FUNC_TEST_342
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_007', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_RINGTONE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_343
-     * @tc.name      : on_off_playFinished_listen_normal_008
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_008
+     * @tc.number SOUND_POOL_FUNC_TEST_343
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_008', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_NOTIFICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_344
-     * @tc.name      : on_off_playFinished_listen_normal_009
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_009
+     * @tc.number SOUND_POOL_FUNC_TEST_344
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_009', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_345
-     * @tc.name      : on_off_playFinished_listen_normal_010
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_010
+     * @tc.number SOUND_POOL_FUNC_TEST_345
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_010', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_MOVIE, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_346
-     * @tc.name      : on_off_playFinished_listen_normal_011
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_011
+     * @tc.number SOUND_POOL_FUNC_TEST_346
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_011', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_GAME, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_347
-     * @tc.name      : on_off_playFinished_listen_normal_012
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_012
+     * @tc.number SOUND_POOL_FUNC_TEST_347
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_012', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_348
-     * @tc.name      : on_off_playFinished_listen_normal_013
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_013
+     * @tc.number SOUND_POOL_FUNC_TEST_348
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_013', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_NAVIGATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_349
-     * @tc.name      : on_off_playFinished_listen_normal_014
-     * @tc.desc      : Test normal scene of play soundPool listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_playFinished_listen_normal_014
+     * @tc.number SOUND_POOL_FUNC_TEST_349
+     * @tc.desc   Test normal scene of play soundPool listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_playFinished_listen_normal_014', Level.LEVEL0, async (done: Function) => {
       await playFinishedListen(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
     })
 
     /**
-     * @tc.number    : SOUND_POOL_FUNC_TEST_350 //TODO 不确定如何触发回调
-     * @tc.name      : on_off_error_listen_normal_001
-     * @tc.desc      : Test normal scene of soundPool error listen.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_error_listen_normal_001
+     * @tc.number SOUND_POOL_FUNC_TEST_350 //TODO 不确定如何触发回调
+     * @tc.desc   Test normal scene of soundPool error listen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_error_listen_normal_001', Level.LEVEL0, async (done: Function) => {
       let uri: string = 'invalid path';

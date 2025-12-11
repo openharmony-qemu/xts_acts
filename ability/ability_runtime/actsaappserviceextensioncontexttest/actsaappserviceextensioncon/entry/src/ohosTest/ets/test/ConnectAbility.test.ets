@@ -32,9 +32,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_1000
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_1000
-     * @tc.desc: UIAbilityContext connectAppServiceExtensionAbility 16000005.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_1000
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_1000
+     * @tc.desc   UIAbilityContext connectAppServiceExtensionAbility 16000005.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_1000', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_1000`;
@@ -67,9 +70,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_1100
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_1100
-     * @tc.desc: UIAbilityContext connectAppServiceExtensionAbility 16000004.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_1100
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_1100
+     * @tc.desc   UIAbilityContext connectAppServiceExtensionAbility 16000004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_1100', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_1100`;
@@ -113,10 +119,13 @@ export default function abilityTest() {
       }
     })
 
-     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_1200
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_1200
-     * @tc.desc: UIAbilityContext connectAppServiceExtensionAbility 16000002.
+    /**
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_1200
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_1200
+     * @tc.desc   UIAbilityContext connectAppServiceExtensionAbility 16000002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_1200', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_1200`;
@@ -151,9 +160,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_1300
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_1300
-     * @tc.desc: UIAbilityContext connectAppServiceExtensionAbility 16000050.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_1300
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_1300
+     * @tc.desc   UIAbilityContext connectAppServiceExtensionAbility 16000050.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_1300', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_1300`;

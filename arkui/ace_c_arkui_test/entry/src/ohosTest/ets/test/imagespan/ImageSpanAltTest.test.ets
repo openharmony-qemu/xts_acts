@@ -26,65 +26,65 @@ export default function imageSpanAltTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0100
-     * @tc.name       : testImageSpanAlt001
-     * @tc.desc       : testing alt for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSpanAlt001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0100
+     * @tc.desc   testing alt for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanAlt001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanAlt001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0200
-     * @tc.name       : testImageSpanAlt002
-     * @tc.desc       : testing alt for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSpanAlt002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0200
+     * @tc.desc   testing alt for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanAlt002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanAlt002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0300
-     * @tc.name       : testImageSpanAlt003
-     * @tc.desc       : testing alt for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSpanAlt003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0300
+     * @tc.desc   testing alt for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanAlt003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanAlt003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0400
-     * @tc.name       : testImageSpanAlt004
-     * @tc.desc       : testing alt for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSpanAlt004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0400
+     * @tc.desc   testing alt for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanAlt004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanAlt004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0500
-     * @tc.name       : testImageSpanAlt005
-     * @tc.desc       : testing alt for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSpanAlt005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SPAN_ALT_0500
+     * @tc.desc   testing alt for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanAlt005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanAlt005()).assertEqual(0)

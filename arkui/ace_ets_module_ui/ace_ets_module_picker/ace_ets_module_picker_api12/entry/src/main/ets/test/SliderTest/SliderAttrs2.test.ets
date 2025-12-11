@@ -47,12 +47,14 @@ export default function SliderAttrs2() {
     });
 
 
-    /*
-    * @tc.number      SliderAttrs2_001
-    * @tc.name        SliderAttrs2_001
-    * @tc.desc        Test SliderInteraction.SLIDE_AND_CLICK_UP
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   SliderAttrs2_001
+     * @tc.number SliderAttrs2_001
+     * @tc.desc   Test SliderInteraction.SLIDE_AND_CLICK_UP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SliderAttrs2_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAttrs2_001] START');
       await Utils.sleep(1000);

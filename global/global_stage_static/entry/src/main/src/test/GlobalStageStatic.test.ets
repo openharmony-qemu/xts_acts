@@ -61,7 +61,6 @@ export default function globalStageTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0100
      * @tc.number getMediaContent_stage_test_static_0100
      * @tc.desc   errcode 9001001
@@ -87,7 +86,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0200
      * @tc.number getMediaContent_stage_test_static_0200
      * @tc.desc   errcode 9001002
@@ -113,7 +111,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0300
      * @tc.number getMediaContent_stage_test_static_0300
      * @tc.desc   errcode 9001002
@@ -139,7 +136,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0400
      * @tc.number getMediaContent_stage_test_static_0400
      * @tc.desc   errcode 9001001
@@ -160,7 +156,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileContentSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETRAWFILECONTENTSYNC_STAGE_static_0100
      * @tc.desc   getRawFileContentSync
@@ -177,7 +172,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByNameSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETMEDIABYNAMESYNC_STAGE_static_0100
      * @tc.desc   getMediaByNameSync
@@ -193,7 +187,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getConfigurationSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETCONFIGURATIONSYNC_STAGE_static_0100
      * @tc.desc   getConfigurationSync
@@ -209,7 +202,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByNameSync_stagetest_static_0200
      * @tc.number SUB_GLOBAL_GETMEDIABYNAMESYNC_STAGE_static_0200
      * @tc.desc   error code 9001003 by name
@@ -228,7 +220,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDeviceCapabilitySync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETDEVICECAPABILITYSYNC_STAGE_static_0100
      * @tc.desc   getDeviceCapabilitySync
@@ -244,7 +235,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_GetLocales_static_0010
      * @tc.number SUB_GLOBAL_GetLocales_static_0010
      * @tc.desc   getLocales
@@ -260,7 +250,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GOLBAL_REMSGR_isRawDir_static_0010
      * @tc.number SUB_GOLBAL_REMSGR_isRawDir_static_0010
      * @tc.desc   isRawDir
@@ -275,7 +264,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GOLBAL_REMSGR_getOverrideConfiguration_static_0010
      * @tc.number SUB_GOLBAL_REMSGR_getOverrideConfiguration_static_0010
      * @tc.desc   getOverrideConfiguration
@@ -291,7 +279,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0010
      * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0010
      * @tc.desc   getOverrideResourceManager
@@ -317,7 +304,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0010
      * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0010
      * @tc.desc   updateOverrideConfiguration
@@ -346,7 +332,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0010
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0100
      * @tc.desc   %2$d(The second parameter is an integer)
@@ -363,7 +348,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0020
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0200
      * @tc.desc   %2$d(The second parameter is an integer in scientific notation)
@@ -380,7 +364,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0030
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0300
      * @tc.desc   %2$d(The second parameter is a decimal)
@@ -397,7 +380,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0040
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0400
      * @tc.desc   %2$d(The second parameter is a decimal number in scientific notation)
@@ -414,7 +396,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0050
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0500
      * @tc.desc   %3$s(The third parameter is a Chinese string)
@@ -431,7 +412,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0060
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0600
      * @tc.desc   %3$s(The third parameter is an English string)
@@ -448,7 +428,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0070
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0700
      * @tc.desc   %4$f(The fourth parameter is an integer)
@@ -465,7 +444,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0080
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0800
      * @tc.desc   %4$f(The fourth parameter is an integer in scientific notation)
@@ -482,7 +460,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0090
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_0900
      * @tc.desc   %4$f(The fourth parameter is a decimal)
@@ -499,7 +476,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0100
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1000
      * @tc.desc   %4$f(The fourth parameter is a decimal number in scientific notation)
@@ -516,7 +492,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0110
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1100
      * @tc.desc   %%d
@@ -533,7 +508,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0120
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1200
      * @tc.desc   %%%s
@@ -550,7 +524,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0130
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1300
      * @tc.desc   %%%%f
@@ -567,7 +540,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0140
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1400
      * @tc.desc   %2$d %3$s %4$f(The second parameter is integer, the third is Chinese, the fourth is decimal)
@@ -585,7 +557,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0150
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1500
      * @tc.desc   %2$d %3$s %4$f(The second parameter is integer in scientific notation,
@@ -603,7 +574,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0160
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1600
      * @tc.desc   %2$d %3$s %4$f %%d(The parameter is null)
@@ -620,7 +590,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0170
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1700
      * @tc.desc   %d %1$d(The parameter is null)
@@ -637,7 +606,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0180
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1800
      * @tc.desc   %2$d %3$s %4$f(There are more parameters than placeholder indexes)
@@ -655,7 +623,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0190
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_1900
      * @tc.desc   %d %1$d(Inconsistent placeholder styles)
@@ -672,7 +639,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0200
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_2000
      * @tc.desc   %%%d %1$d(Inconsistent placeholder styles)
@@ -689,7 +655,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0210
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_2100
      * @tc.desc   %d %d %s %s %f %f(Arguments and placeholder match and equal in number)
@@ -706,7 +671,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0220
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_2200
      * @tc.desc   %d %d %s %s %f %f(The parameters is more than required)
@@ -725,7 +689,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0230
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_2300
      * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
@@ -745,7 +708,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0260
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_2600
      * @tc.desc   The wrong parameter type
@@ -765,7 +727,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringSync_static_0290
      * @tc.number SUB_GLOBAL_FormatStringIndex_static_2900
      * @tc.desc   Parameters less than required
@@ -785,7 +746,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_GetSymbol_static_0010
      * @tc.number SUB_GLOBAL_getSymbol_static_0010
      * @tc.desc   getSymbol resource not found by resid
@@ -801,7 +761,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0020
      * @tc.number SUB_GLOBAL_getSymbol_static_0020
      * @tc.desc   getSymbol resource by reference
@@ -816,7 +775,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0040
      * @tc.number SUB_GLOBAL_getSymbol_static_0040
      * @tc.desc   getSymbol resource resId invalid
@@ -838,7 +796,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0050
      * @tc.number SUB_GLOBAL_getSymbol_static_0050
      * @tc.desc   getSymbol resource resId invalid
@@ -858,7 +815,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0060
      * @tc.number SUB_GLOBAL_getSymbol_static_0060
      * @tc.desc   getSymbol resource resource re-ref too much by resId
@@ -878,7 +834,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_GetSymbol_static_0130
      * @tc.number SUB_GLOBAL_getSymbol_static_0130
      * @tc.desc   getSymbolByName normal name
@@ -894,7 +849,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0140
      * @tc.number SUB_GLOBAL_getSymbol_static_0140
      * @tc.desc   getSymbolByName reference resource
@@ -909,7 +863,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0160
      * @tc.number SUB_GLOBAL_getSymbol_static_0160
      * @tc.desc   getSymbolByName resName invalid
@@ -929,7 +882,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0180
      * @tc.number SUB_GLOBAL_getSymbol_static_0180
      * @tc.desc   getSymbolByName resource re-ref too much
@@ -950,7 +902,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0190
      * @tc.number SUB_GLOBAL_getSymbol_static_0190
      * @tc.desc   getSymbol normal resource by resId in Chinese
@@ -965,7 +916,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getSymbol_static_0210
      * @tc.number SUB_GLOBAL_getSymbol_static_0210
      * @tc.desc   getSymbolByName normal name ZH
@@ -980,7 +930,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFdSync_static_0020
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0020
      * @tc.desc   getRawFdSync with subdirectory non-empty file
@@ -998,7 +947,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFdSync_static_0030
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0030
      * @tc.desc   getRawFdSync with subdirectory empty file
@@ -1016,7 +964,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFdSync_static_0050
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0050
      * @tc.desc   getRawFdSync with error path
@@ -1036,7 +983,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFileContentSync_static_0170
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0170
      * @tc.desc   getRawFileContentSync with subdirectory empty file
@@ -1051,7 +997,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFileContentSync_static_0160
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0160
      * @tc.desc   getRawFileContentSync with subdirectory non-empty file
@@ -1066,7 +1011,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFileContentSync_static_0190
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0190
      * @tc.desc   getRawFileContentSync with error path
@@ -1088,7 +1032,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFileListSync_static_0120
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0120
      * @tc.desc   getRawFileListSync with subdirectory
@@ -1103,7 +1046,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getRawFileListSync_static_0140
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0140
      * @tc.desc   getRawFileListSync with error path
@@ -1123,7 +1065,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_closeRawFdSync_static_0100
      * @tc.number SUB_GLOBAL_I18N_RawFileSync_static_0100
      * @tc.desc   closeRawFdSync with error path
@@ -1144,7 +1085,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1000
      * @tc.number getStringArrayValue_stage_test_static_1000
      * @tc.desc   errcode 9001001 in promise
@@ -1167,7 +1107,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1011
      * @tc.number getStringArrayValue_stage_test_static_1011
      * @tc.desc   errcode 9001002 in promise
@@ -1189,7 +1128,6 @@ export default function globalStageTest() {
       })
     })
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1012
      * @tc.number getStringArrayValue_stage_test_static_1012
      * @tc.desc   errcode 9001006
@@ -1212,7 +1150,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1013
      * @tc.number getStringArrayValue_stage_test_static_1013
      * @tc.desc   errcode 9001001
@@ -1238,7 +1175,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1014
      * @tc.number getStringArrayValue_stage_test_static_1014
      * @tc.desc   errcode 9001002
@@ -1264,7 +1200,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1100
      * @tc.number getStringArrayValue_stage_test_static_1100
      * @tc.desc   errcode 9001001 in callback mode by resId
@@ -1281,7 +1216,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1200
      * @tc.number getStringArrayValue_stage_test_static_1200
      * @tc.desc   errcode 9001002 in callback mode by resId
@@ -1298,7 +1232,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1300
      * @tc.number getStringArrayValue_stage_test_static_1300
      * @tc.desc   errcode 9001006 in callback mode by resId
@@ -1315,7 +1248,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1500
      * @tc.number getStringArrayValue_stage_test_static_1500
      * @tc.desc   errcode 9001002 in promise mode by resId
@@ -1335,7 +1267,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1600
      * @tc.number getStringArrayValue_stage_test_static_1600
      * @tc.desc   errcode 9001006 in promise mode by resId
@@ -1354,7 +1285,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0500
      * @tc.number getMediaContent_stage_test_static_0500
      * @tc.desc   errcode 9001001
@@ -1380,7 +1310,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0600
      * @tc.number getMediaContent_stage_test_static_0600
      * @tc.desc   errcode 9001002
@@ -1401,7 +1330,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0800
      * @tc.number getMediaContent_stage_test_static_0800
      * @tc.desc   errcode 9001001
@@ -1423,7 +1351,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_0900
      * @tc.number getMediaContent_stage_test_static_0900
      * @tc.desc   errcode 9001002
@@ -1449,7 +1376,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_1200
      * @tc.number getMediaContent_stage_test_static_1200
      * @tc.desc   errcode 9001001
@@ -1472,7 +1398,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValue_stage_test_static_1400
      * @tc.number getStringArrayValue_stage_test_static_1400
      * @tc.desc   errcode 9001001 in promise mode by resId
@@ -1492,7 +1417,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_1700
      * @tc.number getMediaContent_stage_test_static_1700
      * @tc.desc   errcode 9001001 in callback mode by resId
@@ -1509,7 +1433,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_1800
      * @tc.number getMediaContent_stage_test_static_1800
      * @tc.desc   errcode 9001002 in callback mode by resId
@@ -1526,7 +1449,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_1900
      * @tc.number getMediaContent_stage_test_static_1900
      * @tc.desc   errcode 9001001 in callback mode with density by resId
@@ -1543,7 +1465,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_2000
      * @tc.number getMediaContent_stage_test_static_2000
      * @tc.desc   errcode 9001002 in callback mode with density by resId
@@ -1560,7 +1481,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_2100
      * @tc.number getMediaContent_stage_test_static_2100
      * @tc.desc   errcode 9001001 in promise mode by resId
@@ -1580,7 +1500,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_2200
      * @tc.number getMediaContent_stage_test_static_2200
      * @tc.desc   errcode 9001002 in promise mode by resId
@@ -1599,7 +1518,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_2300
      * @tc.number getMediaContent_stage_test_static_2300
      * @tc.desc   errcode 9001001 in promise mode with density by resId
@@ -1618,7 +1536,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContent_stage_test_static_2400
      * @tc.number getMediaContent_stage_test_static_2400
      * @tc.desc   errcode 9001002 in promise mode with density by resId
@@ -1637,7 +1554,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_1100
      * @tc.number getMediaContentBase64_stage_test_static_1100
      * @tc.desc   errcode 9001001
@@ -1660,7 +1576,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_1200
      * @tc.number getMediaContentBase64_stage_test_static_1200
      * @tc.desc   errcode 9001002
@@ -1683,7 +1598,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_1300
      * @tc.number getMediaContentBase64_stage_test_static_1300
      * @tc.desc   errcode 9001001
@@ -1709,7 +1623,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_1400
      * @tc.number getMediaContentBase64_stage_test_static_1400
      * @tc.desc   errcode 9001002
@@ -1735,7 +1648,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_1700
      * @tc.number getMediaContentBase64_stage_test_static_1700
      * @tc.desc   errcode 9001001 in callback mode by resId
@@ -1752,7 +1664,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_1800
      * @tc.number getMediaContentBase64_stage_test_static_1800
      * @tc.desc   errcode 9001002 in callback mode by resId
@@ -1769,7 +1680,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_1900
      * @tc.number getMediaContentBase64_stage_test_static_1900
      * @tc.desc   errcode 9001001 in callback mode with density by resId
@@ -1787,7 +1697,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_2000
      * @tc.number getMediaContentBase64_stage_test_static_2000
      * @tc.desc   errcode 9001002 in callback mode with density by resId
@@ -1804,7 +1713,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_2100
      * @tc.number getMediaContentBase64_stage_test_static_2100
      * @tc.desc   errcode 9001001 in promise mode by resId
@@ -1823,7 +1731,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_2200
      * @tc.number getMediaContentBase64_stage_test_static_2200
      * @tc.desc   errcode 9001002 in promise mode by resId
@@ -1842,7 +1749,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_2300
      * @tc.number getMediaContentBase64_stage_test_static_2300
      * @tc.desc   errcode 9001001 in promise mode by resId with density
@@ -1861,7 +1767,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64_stage_test_static_2400
      * @tc.number getMediaContentBase64_stage_test_static_2400
      * @tc.desc   errcode 9001002 in promise mode by resId with density
@@ -1880,7 +1785,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByName_stage_test_static_0100
      * @tc.number getStringByName_stage_test_static_0100
      * @tc.desc   errcode 9001003 in callback mode
@@ -1897,7 +1801,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByName_stage_test_static_0100
      * @tc.number getStringArrayByName_stage_test_static_0100
      * @tc.desc   errcode 9001003 in callback mode
@@ -1914,7 +1817,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_static_0300
      * @tc.number getMediaByName_test_static_0300
      * @tc.desc   errcode 9001003 in callback mode
@@ -1932,7 +1834,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByName_stage_test_static_0200
      * @tc.number getStringByName_stage_test_static_0200
      * @tc.desc   errcode 9001006 in callback mode
@@ -1950,7 +1851,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByName_stage_test_static_0300
      * @tc.number getStringByName_stage_test_static_0300
      * @tc.desc   errcode 9001003 in promise mode
@@ -1968,7 +1868,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByName_stage_test_static_0400
      * @tc.number getStringByName_stage_test_static_0400
      * @tc.desc   errcode 9001006 in promise mode
@@ -1986,7 +1885,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_static_0400
      * @tc.number getMediaBase64ByName_test_static_0400
      * @tc.desc   errcode 9001003 in callback mode
@@ -2003,7 +1901,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_0100
      * @tc.number getStringSync_test_static_0100
      * @tc.desc   errcode 9001002
@@ -2021,7 +1918,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_0200
      * @tc.number getStringSync_test_static_0200
      * @tc.desc   errcode 9001006
@@ -2039,7 +1935,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_0300
      * @tc.number getStringSync_test_static_0300
      * @tc.desc   errcode 9001002
@@ -2057,7 +1952,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_0400
      * @tc.number getStringSync_test_static_0400
      * @tc.desc   errcode 9001006
@@ -2075,7 +1969,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_0500
      * @tc.number getStringSync_test_static_0500
      * @tc.desc   errcode 9001007
@@ -2093,7 +1986,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_0600
      * @tc.number getStringSync_test_static_0600
      * @tc.desc   errcode 9001001
@@ -2111,7 +2003,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_0700
      * @tc.number getStringSync_test_static_0700
      * @tc.desc   errcode 9001001
@@ -2129,7 +2020,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByNameSync_test_static_0100
      * @tc.number getStringByNameSync_test_static_0100
      * @tc.desc   errcode 9001006
@@ -2147,7 +2037,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByNameSync_test_static_0300
      * @tc.number getStringByNameSync_test_static_0300
      * @tc.desc   errcode 9001003
@@ -2166,7 +2055,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByNameSync_test_static_0400
      * @tc.number getStringByNameSync_test_static_0400
      * @tc.desc   errcode 9001006
@@ -2185,7 +2073,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getBoolean_test_static_0100
      * @tc.number getBoolean_test_static_0100
      * @tc.desc   errcode 9001006
@@ -2204,7 +2091,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getBoolean_test_static_0200
      * @tc.number getBoolean_test_static_0200
      * @tc.desc   errcode 9001001
@@ -2223,7 +2109,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getBoolean_test_static_0500
      * @tc.number getBoolean_test_static_0500
      * @tc.desc   errcode 9001002
@@ -2242,7 +2127,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getBooleanByName_test_static_0100
      * @tc.number getBooleanByName_test_static_0100
      * @tc.desc   errcode 9001003
@@ -2261,7 +2145,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getBooleanByName_test_static_0200
      * @tc.number getBooleanByName_test_static_0200
      * @tc.desc   errcode 9001006
@@ -2280,7 +2163,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getInt_test_static_0100
      * @tc.number getInt_test_static_0100
      * @tc.desc   errcode 9001001
@@ -2298,7 +2180,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDouble_test_static_0100
      * @tc.number getDouble_test_static_0100
      * @tc.desc   errcode 9001001
@@ -2316,7 +2197,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getInt_test_static_0200
      * @tc.number getInt_test_static_0200
      * @tc.desc   errcode 9001002
@@ -2334,7 +2214,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDouble_test_static_0200
      * @tc.number getDouble_test_static_0200
      * @tc.desc   errcode 9001002
@@ -2352,7 +2231,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getInt_test_static_0300
      * @tc.number getInt_test_static_0300
      * @tc.desc   errcode 9001006
@@ -2370,7 +2248,6 @@ export default function globalStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDouble_test_static_0300
      * @tc.number getDouble_test_static_0300
      * @tc.desc   errcode 9001006
@@ -2388,7 +2265,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getIntByName_test_static_0100
      * @tc.number getIntByName_test_static_0100
      * @tc.desc   errcode 9001003
@@ -2407,7 +2283,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDoubleByName_test_static_0100
      * @tc.number getDoubleByName_test_static_0100
      * @tc.desc   errcode 9001003
@@ -2426,7 +2301,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getIntByName_test_static_0200
      * @tc.number getIntByName_test_static_0200
      * @tc.desc   errcode 9001006
@@ -2445,7 +2319,6 @@ export default function globalStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDoubleByName_test_static_0200
      * @tc.number getDoubleByName_test_static_0200
      * @tc.desc   errcode 9001006
@@ -2464,7 +2337,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileContent_test_static_0100
      * @tc.number getRawFileContent_test_static_0100
      * @tc.desc   errcode 9001005 in callback mode
@@ -2481,7 +2353,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileContent_test_static_0200
      * @tc.number getRawFileContent_test_static_0200
      * @tc.desc   errcode 9001005 in promise mode
@@ -2500,7 +2371,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_stage_test_static_0200
      * @tc.number getDrawableDescriptor_stage_test_static_0200
      * @tc.desc   errcode 9001001
@@ -2518,7 +2388,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_stage_test_static_0300
      * @tc.number getDrawableDescriptor_stage_test_static_0300
      * @tc.desc   errcode 9001002
@@ -2536,7 +2405,6 @@ export default function globalStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_stage_test_static_0400
      * @tc.number getDrawableDescriptor_stage_test_static_0400
      * @tc.desc   errcode 9001001 debsity?
@@ -2554,7 +2422,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_stage_test_static_0500
      * @tc.number getDrawableDescriptor_stage_test_static_0500
      * @tc.desc   errcode 9001002 density
@@ -2573,7 +2440,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_stage_test_static_0600
      * @tc.number getDrawableDescriptor_stage_test_static_0600
      * @tc.desc   errcode 9001001 density? type?
@@ -2591,7 +2457,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptor_stage_test_static_0700
      * @tc.number getDrawableDescriptor_stage_test_static_0700
      * @tc.desc   errcode 9001002 density? type?
@@ -2609,7 +2474,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptorByName_test_static_0100
      * @tc.number getDrawableDescriptorByName_test_static_0100
      * @tc.desc   errcode 9001003 debsity? type?
@@ -2628,7 +2492,6 @@ export default function globalStageTest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getDrawableDescriptorByName_test_static_0200
      * @tc.number getDrawableDescriptorByName_test_static_0200
      * @tc.desc   errcode 9001003 debsity?
@@ -2646,7 +2509,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFdSync_test_static_0100
      * @tc.number getRawFdSync_test_static_0100
      * @tc.desc   errcode 9001005
@@ -2665,7 +2527,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileListSync_test_static_0100
      * @tc.number getRawFileListSync_test_static_0100
      * @tc.desc   errcode 9001005
@@ -2684,7 +2545,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileContentSync_test_static_0100
      * @tc.number getRawFileContentSync_test_static_0100
      * @tc.desc   errcode 9001005
@@ -2702,7 +2562,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentSync_test_static_0100
      * @tc.number getMediaContentSync_test_static_0100
      * @tc.desc   errcode 9001001
@@ -2721,7 +2580,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentSync_test_static_0200
      * @tc.number getMediaContentSync_test_static_0200
      * @tc.desc   errcode 9001002
@@ -2739,7 +2597,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentSync_test_static_0500
      * @tc.number getMediaContentSync_test_static_0500
      * @tc.desc   getMediaContentSync with res id density
@@ -2754,7 +2611,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64Sync_test_static_0100
      * @tc.number getMediaContentBase64Sync_test_static_0100
      * @tc.desc   getMediaContentBase64Sync with res id density
@@ -2769,7 +2625,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64Sync_test_static_0300
      * @tc.number getMediaContentBase64Sync_test_static_0300
      * @tc.desc   error code 9001001 with id
@@ -2788,7 +2643,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64Sync_test_static_0500
      * @tc.number getMediaContentBase64Sync_test_static_0500
      * @tc.desc   error code 9001002 with id
@@ -2806,7 +2660,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValueSync_test_static_0100
      * @tc.number getStringArrayValueSync_test_static_0100
      * @tc.desc   error code 9001001 with id
@@ -2826,7 +2679,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValueSync_test_static_0300
      * @tc.number getStringArrayValueSync_test_static_0300
      * @tc.desc   error code 9001002 with id
@@ -2844,7 +2696,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValueSync_test_static_0500
      * @tc.number getStringArrayValueSync_test_static_0500
      * @tc.desc   error code 9001006 with id
@@ -2862,7 +2713,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByNameSync_test_static_0100
      * @tc.number getMediaByNameSync_test_static_0100
      * @tc.desc   with density by name
@@ -2877,7 +2727,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByNameSync_test_static_0200
      * @tc.number getMediaByNameSync_test_static_0200
      * @tc.desc   error code 9001003 by name
@@ -2896,7 +2745,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByNameSync_test_static_0100
      * @tc.number getMediaBase64ByNameSync_test_static_0100
      * @tc.desc   with density by name
@@ -2911,7 +2759,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByNameSync_test_static_0200
      * @tc.number getMediaBase64ByNameSync_test_static_0200
      * @tc.desc   error code 9001003 by name
@@ -2930,7 +2777,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByNameSync_test_static_0100
      * @tc.number getStringArrayByNameSync_test_static_0100
      * @tc.desc   error code 9001003 by name
@@ -2949,7 +2795,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByNameSync_test_static_0200
      * @tc.number getStringArrayByNameSync_test_static_0200
      * @tc.desc   error code 9001006 by name
@@ -2967,7 +2812,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_GetLocales_static_0020
      * @tc.number SUB_GLOBAL_GetLocales_static_0020
      * @tc.desc   getLocales
@@ -2982,7 +2826,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringSync_test_static_1400
      * @tc.number getStringSync_test_static_1400
      * @tc.desc   errcode 9001007 with array
@@ -3000,7 +2843,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   isRawDir_test_static_0100
      * @tc.number isRawDir_test_static_0100
      * @tc.desc   errcode 9001005
@@ -3020,7 +2862,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_static_0500
      * @tc.number getMediaBase64ByName_test_static_0500
      * @tc.desc   errcode 9001003 in promise mode
@@ -3038,7 +2879,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_static_0600
      * @tc.number getMediaBase64ByName_test_static_0600
      * @tc.desc   errcode 9001003 in promise mode
@@ -3056,7 +2896,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_static_0400
      * @tc.number getMediaByName_test_static_0400
      * @tc.desc   errcode 9001003 in callback mode
@@ -3073,7 +2912,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_static_0500
      * @tc.number getMediaByName_test_static_0500
      * @tc.desc   errcode 9001003 in promise mode
@@ -3091,7 +2929,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaByName_test_static_0600
      * @tc.number getMediaByName_test_static_0600
      * @tc.desc   errcode 9001003 in promise mode
@@ -3109,7 +2946,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByName_test_static_0300
      * @tc.number getMediaBase64ByName_test_static_0300
      * @tc.desc   errcode 9001003 in callback mode
@@ -3126,7 +2962,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByName_stage_test_static_0400
      * @tc.number getStringArrayByName_stage_test_static_0400
      * @tc.desc   errcode 9001006 in promise mode
@@ -3144,7 +2979,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByName_stage_test_static_0200
      * @tc.number getStringArrayByName_stage_test_static_0200
      * @tc.desc   errcode 9001006 in callback mode
@@ -3161,7 +2995,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByName_stage_test_static_0300
      * @tc.number getStringArrayByName_stage_test_static_0300
      * @tc.desc   errcode 9001003 in promise mode
@@ -3179,7 +3012,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaBase64ByNameSync_stagetest_static_0100
      * @tc.number getMediaBase64ByNameSync_stagetest_static_0100
      * @tc.desc   getMediaBase64ByNameSync getMediaBase64ByNameSync with resource name
@@ -3196,7 +3028,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByNameSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETSTRINGBYNAME_STAGE_static_0100
      * @tc.desc   getStringByNameSync with resource name
@@ -3212,7 +3043,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringByNameSync_stagetest_static_0200
      * @tc.number SUB_GLOBAL_GETSTRINGBYNAME_STAGE_static_0200
      * @tc.desc   getStringByNameSync with resource name and format value
@@ -3228,7 +3058,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFdSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETRAWFDSYNC_STAGE_static_0100
      * @tc.desc   getRawFdSync with path
@@ -3246,7 +3075,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getRawFileListSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETRAWFILELISTSYNC_STAGE_static_0100
      * @tc.desc   getRawFileListSync with path
@@ -3264,7 +3092,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETMEDIACONTENTSYNC_STAGE_static_0100
      * @tc.desc   getMediaContentSync with res id
@@ -3280,7 +3107,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getMediaContentBase64Sync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETMEDIACONTENTBASE64SYNC_STAGE_static_0100
      * @tc.desc   getMediaContentBase64Sync with res id
@@ -3296,7 +3122,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayValueSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETSTRINGARRAYVALUESYNC_STAGE_static_0100
      * @tc.desc   getStringArrayValueSync with res id
@@ -3313,7 +3138,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   getStringArrayByNameSync_stagetest_static_0100
      * @tc.number SUB_GLOBAL_GETSTRINGARRAYBYNAMESYNC_STAGE_static_0100
      * @tc.desc   getStringArrayByNameSync with resource name
@@ -3329,7 +3153,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringByNameSync_static_0250
      * @tc.number SUB_GLOBAL_FormatStringIndex_2500
      * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required), resourceManager_test_getStringByNameSync_static_0250
@@ -3349,7 +3172,6 @@ export default function globalStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getStringByNameSync_static_0310
      * @tc.number SUB_GLOBAL_FormatStringIndex_3100
      * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
@@ -3368,7 +3190,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceManager_test_getDrawable_static_0900
      * @tc.number SUB_GLOBAL_I18N_getDrawable_static_0900
      * @tc.desc   getDrawableDescriptorByName with not exist pic name
@@ -3388,7 +3209,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   closeRawFdSync_test_static_0100
      * @tc.number closeRawFdSync_test_static_0100
      * @tc.desc   errcode 9001005
@@ -3406,7 +3226,6 @@ export default function globalStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   resourceProperty_test_static_0100
      * @tc.number resourceProperty_test_static_0100
      * @tc.desc   bundleName,moduleName,moduleName,id,params,type

@@ -62,7 +62,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOn0210
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_2300
      * @tc.desc   put PutNumber promise interface test
@@ -87,7 +86,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetPreferencesHelper003
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2400
      * @tc.desc   getPreferences interface test
@@ -110,7 +108,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetPreferencesSyncinterface002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2500
      * @tc.desc   getPreferencesSync interface test
@@ -133,7 +130,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2600
      * @tc.desc   removePreferencesFromCache interface test
@@ -156,7 +152,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0200
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2700
      * @tc.desc   removePreferencesFromCacheSync interface test
@@ -179,7 +174,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testDeletePreferencesHelper003
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2800
      * @tc.desc   deletePreferences interface test
@@ -202,7 +196,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_2900
      * @tc.desc   get string promise interface test
@@ -224,7 +217,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3000
      * @tc.desc   get string promise interface test
@@ -246,7 +238,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3100
      * @tc.desc   get string promise interface test
@@ -268,7 +259,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3200
      * @tc.desc   get string promise interface test
@@ -291,7 +281,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3300
      * @tc.desc   get string promise interface test
@@ -313,7 +302,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3400
      * @tc.desc   get string promise interface test
@@ -335,7 +323,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3500
      * @tc.desc   get string promise interface test
@@ -357,7 +344,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3600
      * @tc.desc   get string promise interface test
@@ -379,7 +365,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOff0210
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_3700
      * @tc.desc   put PutNumber promise interface test
@@ -404,7 +389,6 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOn0400
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_3800
      * @tc.desc   put PutNumber promise interface test
@@ -434,7 +418,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOnErr0100
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_3900
      * @tc.desc   put PutNumber promise interface test
@@ -462,7 +445,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOnErr0200
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4000
      * @tc.desc   put PutNumber promise interface test
@@ -491,7 +473,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOnerr0300
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4100
      * @tc.desc   put PutNumber promise interface test
@@ -519,7 +500,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOffErr0100
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4300
      * @tc.desc   put PutNumber promise interface test
@@ -552,7 +532,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOffErr0200
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4400
      * @tc.desc   put PutNumber promise interface test
@@ -586,7 +565,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesOffErr0300
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4500
      * @tc.desc   put PutNumber promise interface test
@@ -620,7 +598,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:54
        * @tc.name   testSendablePreferencesOnErr0400
        * @tc.number testSendablePreferencesOnErr0400
        * @tc.desc   testSendablePreferencesOnErr0400
@@ -647,7 +624,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:54
        * @tc.name   testSendablePreferencesgetpreferenceErr0100
        * @tc.number testSendablePreferencesgetpreferenceErr0100
        * @tc.desc   testSendablePreferencesgetpreferenceErr0100
@@ -677,7 +653,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:54
        * @tc.name   testSendablePreferencesgetpreferencesyncErr0100
        * @tc.number testSendablePreferencesgetpreferencesyncErr0100
        * @tc.desc   testSendablePreferencesgetpreferencesyncErr0100
@@ -706,7 +681,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:54
        * @tc.name   testSendablePreferencesdeletePreferencesErr0100
        * @tc.number testSendablePreferencesdeletePreferencesErr0100
        * @tc.desc   testSendablePreferencesdeletePreferencesErr0100
@@ -735,7 +709,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:54
        * @tc.name   testSendablePreferencesremovePreferencesFromCacheErr0100
        * @tc.number testSendablePreferencesremovePreferencesFromCacheErr0100
        * @tc.desc   testSendablePreferencesremovePreferencesFromCacheErr0100
@@ -764,7 +737,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:54
        * @tc.name   testSendablePreferencesremovePreferencesFromCacheSyncErr0100
        * @tc.number testSendablePreferencesremovePreferencesFromCacheSyncErr0100
        * @tc.desc   testSendablePreferencesremovePreferencesFromCacheSyncErr0100
@@ -792,7 +764,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesPutNumber0300
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_5200
      * @tc.desc   put PutNumber promise interface test
@@ -815,7 +786,6 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesPutNumber0200
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_5300
      * @tc.desc   put PutNumber promise interface test
@@ -841,7 +811,6 @@ export default function sendablePreferencesPromiseTest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesHasPromiseFalseTest0100
      * @tc.number testSendablePreferencesHasPromiseFalseTest0100
      * @tc.desc   testSendablePreferencesHasPromiseFalseTest0100
@@ -865,7 +834,6 @@ export default function sendablePreferencesPromiseTest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testSendablePreferencesHasSyncPromiseFalseTest0100
      * @tc.number testSendablePreferencesHasSyncPromiseFalseTest0100
      * @tc.desc   testSendablePreferencesHasSyncPromiseFalseTest0100

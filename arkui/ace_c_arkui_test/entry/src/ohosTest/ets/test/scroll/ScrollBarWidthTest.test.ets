@@ -26,78 +26,78 @@ export default function scrollBarWidthTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0100
-     * @tc.name       : testScrollBarWidth001
-     * @tc.desc       : testing BarWidth for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBarWidth001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0100
+     * @tc.desc   testing BarWidth for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBarWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBarWidth001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0200
-     * @tc.name       : testScrollBarWidth002
-     * @tc.desc       : testing BarWidth for Scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBarWidth002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0200
+     * @tc.desc   testing BarWidth for Scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBarWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBarWidth002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0300
-     * @tc.name       : testScrollBarWidth003
-     * @tc.desc       : testing BarWidth for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBarWidth003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0300
+     * @tc.desc   testing BarWidth for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBarWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBarWidth003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0400
-     * @tc.name       : testScrollBarWidth004
-     * @tc.desc       : testing BarWidth for Scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBarWidth004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0400
+     * @tc.desc   testing BarWidth for Scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBarWidth004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBarWidth004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0500
-     * @tc.name       : testScrollBarWidth005
-     * @tc.desc       : testing BarWidth for Scroll with NULL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBarWidth005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0500
+     * @tc.desc   testing BarWidth for Scroll with NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBarWidth005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBarWidth005()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0600
-     * @tc.name       : testScrollBarWidth006
-     * @tc.desc       : testing BarWidth for Scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBarWidth006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_BARWIDTH_0600
+     * @tc.desc   testing BarWidth for Scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBarWidth006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollBarWidth006()).assertEqual(0)

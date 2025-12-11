@@ -49,12 +49,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1025
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_2500
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1025
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -88,12 +88,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1026
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_2600
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1026
-     * @tc.desc test worker-onmessage error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test worker-onmessage error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -132,12 +132,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1027
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_2700
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1027
-     * @tc.desc test task-二级-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-二级-error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -168,12 +168,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1028
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_2800
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1028
-     * @tc.desc test task-二级-error-then
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-二级-error-then
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -204,12 +204,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1029
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_2900
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1029
-     * @tc.desc test task-二级-error-catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-二级-error-catch
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -240,12 +240,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest2() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1030
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_3000
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1030
-     * @tc.desc test task-二级-error-catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-二级-error-catch
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {

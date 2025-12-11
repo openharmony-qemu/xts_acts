@@ -46,7 +46,6 @@ export default function inputMethodJSUnit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethoh_test_001
      * @tc.number inputmethoh_test_001
      * @tc.desc   listInputMethod().interfaces.Callback.
@@ -66,7 +65,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethoh_test_002
      * @tc.number inputmethoh_test_002
      * @tc.desc   listInputMethod().interfaces.Promise.
@@ -92,7 +90,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethoh_test_003
      * @tc.number inputmethoh_test_003
      * @tc.desc   displayOptionalInputMethod().interfaces.Callback
@@ -123,7 +120,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethoh_test_004
      * @tc.number inputmethoh_test_004
      * @tc.desc   displayOptionalInputMethod().interfaces.Promise
@@ -148,7 +144,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethoh_test_005
      * @tc.number inputmethoh_test_005
      * @tc.desc   Stop input().interfaces.Callback
@@ -180,7 +175,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethoh_test_006
      * @tc.number inputmethoh_test_006
      * @tc.desc   Stop input().interfaces.Promise
@@ -205,7 +199,6 @@ export default function inputMethodJSUnit() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethod_test_MAX_TYPE_NUM_001
      * @tc.number inputmethod_test_MAX_TYPE_NUM_001
      * @tc.desc   Keyboard max number
@@ -223,7 +216,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethod_test_getCurrentInputMethod_001
      * @tc.number inputmethod_test_getCurrentInputMethod_001
      * @tc.desc   Get current input method
@@ -243,7 +235,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethod_test_getInputMethods_001
      * @tc.number inputmethod_test_getInputMethods_001
      * @tc.desc   List input methods,getInputMethods().interfaces. Callback.
@@ -275,7 +266,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethod_test_getInputMethods_002
      * @tc.number inputmethod_test_getInputMethods_002
      * @tc.desc   List input methods,getInputMethods().interfaces. Callback.
@@ -304,7 +294,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethod_test_getInputMethods_003
      * @tc.number inputmethod_test_getInputMethods_003
      * @tc.desc   List input methods,getInputMethods().interfaces.Promise
@@ -332,7 +321,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputmethod_test_getInputMethods_004
      * @tc.number inputmethod_test_getInputMethods_004
      * @tc.desc   List input methods,().interfaces.Promise
@@ -358,7 +346,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IMF_Enable_0100
      * @tc.number SUB_InputMethod_IMF_Enable_0100
      * @tc.desc   List input methods sync.
@@ -393,7 +380,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IMF_Enable_0200
      * @tc.number SUB_InputMethod_IMF_Enable_0200
      * @tc.desc   List input methods sync.
@@ -418,7 +404,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IMF_Enable_0300
      * @tc.number SUB_InputMethod_IMF_Enable_0300
      * @tc.desc   List input methods sync.
@@ -443,7 +428,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IMF_Enable_0400
      * @tc.number SUB_InputMethod_IMF_Enable_0400
      * @tc.desc   List all input methods.
@@ -488,7 +472,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IMF_Enable_0500
      * @tc.number SUB_InputMethod_IMF_Enable_0500
      * @tc.desc   List all input methods.
@@ -528,7 +511,6 @@ export default function inputMethodJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_InputMethod_IMF_Enable_0600
      * @tc.number SUB_InputMethod_IMF_Enable_0600
      * @tc.desc   List all input methods.

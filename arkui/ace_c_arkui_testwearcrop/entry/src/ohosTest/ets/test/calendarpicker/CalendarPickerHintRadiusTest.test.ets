@@ -26,91 +26,91 @@ export default function calendarPickerHintRadiusTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0100
-     * @tc.name: testCalendarPickerHintRadius001
-     * @tc.desc: testing HintRadius for calendarPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerHintRadius001
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0100
+     * @tc.desc   testing HintRadius for calendarPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerHintRadius001', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerHintRadius001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0200
-     * @tc.name: testCalendarPickerHintRadius002
-     * @tc.desc: testing HintRadius for calendarPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testCalendarPickerHintRadius002
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0200
+     * @tc.desc   testing HintRadius for calendarPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerHintRadius002', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerHintRadius002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0300
-     * @tc.name: testCalendarPickerHintRadius003
-     * @tc.desc: testing HintRadius for calendarPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerHintRadius003
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0300
+     * @tc.desc   testing HintRadius for calendarPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerHintRadius003', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerHintRadius003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0400
-     * @tc.name: testCalendarPickerHintRadius004
-     * @tc.desc: testing HintRadius for calendarPicker with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerHintRadius004
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0400
+     * @tc.desc   testing HintRadius for calendarPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerHintRadius004', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerHintRadius004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0500
-     * @tc.name: testCalendarPickerHintRadius005
-     * @tc.desc: testing HintRadius for calendarPicker with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerHintRadius005
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0500
+     * @tc.desc   testing HintRadius for calendarPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerHintRadius005', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerHintRadius005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0600
-     * @tc.name: testCalendarPickerHintRadius006
-     * @tc.desc: testing HintRadius for calendarPicker with NULL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerHintRadius006
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0600
+     * @tc.desc   testing HintRadius for calendarPicker with NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerHintRadius006', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerHintRadius006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0700
-     * @tc.name: testCalendarPickerHintRadius007
-     * @tc.desc: testing HintRadius for calendarPicker with default value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCalendarPickerHintRadius007
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_HINT_RADIUS_0700
+     * @tc.desc   testing HintRadius for calendarPicker with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCalendarPickerHintRadius007', Level.LEVEL1, async  (done: Function) => {
       expect(nativeFunc.testCalendarPickerHintRadius007()).assertEqual(0)

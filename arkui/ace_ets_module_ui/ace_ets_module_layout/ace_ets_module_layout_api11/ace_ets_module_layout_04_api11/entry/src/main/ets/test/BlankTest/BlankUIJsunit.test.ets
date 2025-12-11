@@ -43,10 +43,13 @@ export default function blankUIJsunit() {
     });
 
     /**
-     * @tc.number     SUB_ARKUI_BLANK_JSAPI_001
-     * @tc.name       Test blankJsunit_0100
-     * @tc.desc       Test blank attribute
-    */
+     * @tc.name   blankJsunit_0100
+     * @tc.number SUB_ARKUI_BLANK_JSAPI_001
+     * @tc.desc   Test blank attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blankJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0100 START');
       await CommonFunc.sleep(1000);
@@ -59,11 +62,14 @@ export default function blankUIJsunit() {
       done();
     });
 
-    /**
-     * @tc.number     SUB_ARKUI_BLANK_JSAPI_002
-     * @tc.name       Test blankJsunit_0100
-     * @tc.desc       Test blank attribute
-     */
+   /**
+    * @tc.name   blankJsunit_0200
+    * @tc.number SUB_ARKUI_BLANK_JSAPI_002
+    * @tc.desc   Test blank attribute
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('blankJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0200 START');
       await CommonFunc.sleep(1000);
@@ -78,6 +84,14 @@ export default function blankUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   blankJsunit_0300
+     * @tc.number blankJsunit_0300
+     * @tc.desc   blankJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blankJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0300 START');
       await CommonFunc.sleep(1000);
@@ -93,6 +107,14 @@ export default function blankUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   blankJsunit_0400
+     * @tc.number blankJsunit_0400
+     * @tc.desc   blankJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blankJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0400 START');
       await CommonFunc.sleep(1000);
@@ -108,6 +130,14 @@ export default function blankUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   blankJsunit_0500
+     * @tc.number blankJsunit_0500
+     * @tc.desc   blankJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blankJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0500 START');
       await CommonFunc.sleep(1000);
@@ -125,6 +155,14 @@ export default function blankUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   blankJsunit_0600
+     * @tc.number blankJsunit_0600
+     * @tc.desc   blankJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blankJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0600 START');
       await CommonFunc.sleep(1000);
@@ -142,6 +180,14 @@ export default function blankUIJsunit() {
       done();
     });
 
+   /**
+    * @tc.name   blankJsunit_0700
+    * @tc.number blankJsunit_0700
+    * @tc.desc   blankJsunit_0700
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('blankJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0700 START');
       await CommonFunc.sleep(1000);
@@ -155,6 +201,14 @@ export default function blankUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   blankJsunit_0800
+     * @tc.number blankJsunit_0800
+     * @tc.desc   blankJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blankJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       console.info('blankJsunitUITest_0700 START');
       await CommonFunc.sleep(1000);

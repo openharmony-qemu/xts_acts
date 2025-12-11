@@ -62,14 +62,14 @@ export default function webController() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_DOMSTORAGEACCESS_0100
-    * @tc.name       : testDomStorageAccess001
-    * @tc.desc       : test domStorageAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testDomStorageAccess001
+     * @tc.number SUB_WEB_DOMSTORAGEACCESS_0100
+     * @tc.desc   test domStorageAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDomStorageAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testDomStorageAccess001", 132000)
       Utils.registerBaseEvent("testDomStorageAccess001", "\"sorry\"", 132010, done,
@@ -79,14 +79,14 @@ export default function webController() {
       await Utils.waitAndClickComponent(driver, 'WebControllerButton');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DOMSTORAGEACCESS_0200
-    * @tc.name       : testDomStorageAccess002
-    * @tc.desc       : test domStorageAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDomStorageAccess002
+     * @tc.number SUB_WEB_DOMSTORAGEACCESS_0200
+     * @tc.desc   test domStorageAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDomStorageAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDomStorageAccess002", 132000)
       Utils.registerBaseEvent("testDomStorageAccess002", "\"domapi\"", 132020, done,

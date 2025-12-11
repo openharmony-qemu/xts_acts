@@ -46,9 +46,12 @@ export default function Grid_RowCol_Gap() {
       console.info("Grid_RowCol_Gap after each called")
     });
     /**
+     * @tc.name   testGridColGap
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0600
-     * @tc.name testGridColGap
-     * @tc.desc Add columnGap,Grid is divided into 4 equal parts, 4 components
+     * @tc.desc   Add columnGap,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridColGap',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridColGap] START');
@@ -98,9 +101,12 @@ export default function Grid_RowCol_Gap() {
       done();
     });
     /**
+     * @tc.name   testGridRowGap
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0700
-     * @tc.name testGridRowGap
-     * @tc.desc Add rowGap,Grid is divided into 4 equal parts, 4 components
+     * @tc.desc   Add rowGap,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowGap',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowGap] START');
@@ -153,9 +159,12 @@ export default function Grid_RowCol_Gap() {
       done();
     });
     /**
+     * @tc.name   testGridRowColGap
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0800
-     * @tc.name testGridRowColGap
-     * @tc.desc Add columnGap and rowGap,Grid is divided into 4 equal parts, 4 components
+     * @tc.desc   Add columnGap and rowGap,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGap',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGap] START');

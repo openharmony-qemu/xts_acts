@@ -72,9 +72,12 @@ export default function textinputSec() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0100
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0100
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Set the ShowOutline property of the Textinput component to true
+     * @tc.desc   Set the ShowOutline property of the Textinput component to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0100', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolTrue", "");
@@ -93,9 +96,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0200
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0200
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Set the ShowOutline property of the Textinput component to false
+     * @tc.desc   Set the ShowOutline property of the Textinput component to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0200', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolFalse", "");
@@ -114,9 +120,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0300
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0300
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Set the ShowOutline property of the Textinput component to null
+     * @tc.desc   Set the ShowOutline property of the Textinput component to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0300', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrNull", "");
@@ -136,9 +145,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0400
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0400
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Set the ShowOutline property of the Textinput component to undefined
+     * @tc.desc   Set the ShowOutline property of the Textinput component to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0400', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrUndefined", "");
@@ -157,9 +169,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0500
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0500
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Set the ShowOutline property of the Textinput component to ""
+     * @tc.desc   Set the ShowOutline property of the Textinput component to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0500', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrStr", "");
@@ -178,9 +193,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0600
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0600
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Continuously set the showOutline property of the Textinput component and all are valid values
+     * @tc.desc   Continuously set the showOutline property of the Textinput component and all are valid values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0600', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolFalse", "");
@@ -200,10 +218,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0700
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0700
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Continuously set the showOutline property of the Textinput component, with parameters
-     *               first normal and then abnormal
+     * @tc.desc   Continuously set the showOutline property of the Textinput component, with parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0700', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolTrue", "");
@@ -223,10 +243,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0800
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0800
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Continuously set the showOutline property of the Textinput component,
-     *               with parameters that are abnormal first and then normal
+     * @tc.desc   Continuously set the showOutline property of the Textinput component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0800', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrStr", "");
@@ -246,9 +268,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowUnderline_0900
      * @tc.number ArkUX_Stage_TextInput_ShowUnderline_0900
-     * @tc.name Configure whether Textinput text input displays underscores
-     * @tc.desc Set the ShowOutline property of the Textinput component to 1
+     * @tc.desc   Set the ShowOutline property of the Textinput component to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowUnderline_0900', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrNum", "1");
@@ -268,9 +293,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0100
      * @tc.number ArkUX_Stage_TextInput_ShowError_0100
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to string type 'string'
+     * @tc.desc   Set the TextInput component ShowError property parameter to string type 'string'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0100', Level.LEVEL1, async (done: Function) => {
       await forKey("TextStr", "string");
@@ -293,9 +321,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0200
      * @tc.number ArkUX_Stage_TextInput_ShowError_0200
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to undefined
+     * @tc.desc   Set the TextInput component ShowError property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0200', Level.LEVEL1, async (done: Function) => {
       await forKey("TextErr", "undefined");
@@ -318,9 +349,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0300
      * @tc.number ArkUX_Stage_TextInput_ShowError_0300
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to number type 10
+     * @tc.desc   Set the TextInput component ShowError property parameter to number type 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0300', Level.LEVEL1, async (done: Function) => {
       await forKey("TextNum", "10");
@@ -343,10 +377,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0400
      * @tc.number ArkUX_Stage_TextInput_ShowError_0400
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to the resource reference
-     *               type $r("app. string. TextInput_ShowError_test")
+     * @tc.desc   Set the TextInput component ShowError property parameter to the resource reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -368,9 +404,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0500
      * @tc.number ArkUX_Stage_TextInput_ShowError_0500
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to ''
+     * @tc.desc   Set the TextInput component ShowError property parameter to ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0500', Level.LEVEL1, async (done: Function) => {
       await forKey("TextStr", "");
@@ -393,9 +432,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0600
      * @tc.number ArkUX_Stage_TextInput_ShowError_0600
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to null
+     * @tc.desc   Set the TextInput component ShowError property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0600', Level.LEVEL1, async (done: Function) => {
       await forKey("TextErr", "null");
@@ -418,9 +460,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0700
      * @tc.number ArkUX_Stage_TextInput_ShowError_0700
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to -1
+     * @tc.desc   Set the TextInput component ShowError property parameter to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0700', Level.LEVEL1, async (done: Function) => {
       await forKey("TextNum", "-1");
@@ -443,10 +488,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0800
      * @tc.number ArkUX_Stage_TextInput_ShowError_0800
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to "string",
-     *               and then set the parameter to "showerror" again
+     * @tc.desc   Set the TextInput component ShowError property parameter to "string",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0800', Level.LEVEL1, async (done: Function) => {
       await forKey("TextStr", "string");
@@ -470,10 +517,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_0900
      * @tc.number ArkUX_Stage_TextInput_ShowError_0900
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to 'string' and
-     *               set the parameter to null again
+     * @tc.desc   Set the TextInput component ShowError property parameter to 'string' and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_0900', Level.LEVEL1, async (done: Function) => {
       await forKey("TextStr", "string");
@@ -497,10 +546,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_ShowError_1000
      * @tc.number ArkUX_Stage_TextInput_ShowError_1000
-     * @tc.name Textinput component error state style display
-     * @tc.desc Set the TextInput component ShowError property parameter to 'string' and
-     *               set the parameter to null again
+     * @tc.desc   Set the TextInput component ShowError property parameter to 'string' and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_ShowError_1000', Level.LEVEL1, async (done: Function) => {
       await forKey("TextErr", "null");
@@ -524,10 +575,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0100
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0100
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Set password type, image source verification, TextInput component, PasswordIcon property
-     *               parameter, and separately set onIconSrc to obtain results
+     * @tc.desc   Set password type, image source verification, TextInput component, PasswordIcon property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0100', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -550,10 +603,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0200
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0200
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Set password type, image source verification, TextInput component, PasswordIcon property
-     *               parameter, and separately set offIconSrc to obtain results
+     * @tc.desc   Set password type, image source verification, TextInput component, PasswordIcon property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0200', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -576,10 +631,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0300
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0300
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify the obtained results of setting the PasswordIcon property parameter of the TextInput
-     *               component ({onIconSrc: $r ('app. media. ohos_correct '), offIconSrc: $r ('app. media. ohos_close')})
+     * @tc.desc   Verify the obtained results of setting the PasswordIcon property parameter of the TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0300', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -603,9 +660,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0400
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0400
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Validate the result of setting the PasswordIcon property parameter to null
+     * @tc.desc   Validate the result of setting the PasswordIcon property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0400', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -629,9 +689,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0500
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0500
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Validate the result of setting the PasswordIcon property parameter to undefined
+     * @tc.desc   Validate the result of setting the PasswordIcon property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0500', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -655,9 +718,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0600
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0600
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Validate the result of setting the PasswordIcon property parameter to ""
+     * @tc.desc   Validate the result of setting the PasswordIcon property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0600', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -681,9 +747,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0700
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0700
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Validate the result of setting the PasswordIcon property parameter to 123
+     * @tc.desc   Validate the result of setting the PasswordIcon property parameter to 123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0700', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -707,10 +776,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0800
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0800
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify and set the TextInput component PasswordIcon property parameter onIconSrc as normal
-     *               value, and offIconSrc as outlier
+     * @tc.desc   Verify and set the TextInput component PasswordIcon property parameter onIconSrc as normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0800', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -734,10 +805,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_0900
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_0900
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify and set the TextInput component PasswordIcon property parameter onIconSrc as
-     *               outlier and offIconSrc as normal value
+     * @tc.desc   Verify and set the TextInput component PasswordIcon property parameter onIconSrc as
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_0900', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -760,10 +833,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1000
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1000
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify the obtained results of continuously setting the PasswordIcon property parameter of
-     *               the TextInput component to normal values
+     * @tc.desc   Verify the obtained results of continuously setting the PasswordIcon property parameter of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1000', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -791,10 +866,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1100
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1100
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify the result of obtaining outlier after continuously setting the PasswordIcon property
-     *               parameter of TextInput component to normal value
+     * @tc.desc   Verify the result of obtaining outlier after continuously setting the PasswordIcon property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1100', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -821,10 +898,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1200
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1200
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify that the parameter of the PasswordIcon property of the TextInput component is
-     *               set to outlier and then to the normal value
+     * @tc.desc   Verify that the parameter of the PasswordIcon property of the TextInput component is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1200', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -851,11 +930,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1300
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1300
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify that the parameter onIconSrc of the PasswordIcon property of the TextInput component is set
-     *               to the normal value continuously, and that the onIconSrc is set to the outlier, then the
-     *               onIconSrc is set to the outlier, and the offIconSrc is set to the normal value
+     * @tc.desc   Verify that the parameter onIconSrc of the PasswordIcon property of the TextInput component is set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1300', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -882,11 +962,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1400
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1400
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify that the parameter of the PasswordIcon property of the TextInput component is set to
-     *               the normal value continuously, and then the result is obtained when only one parameter is passed
-     *               and it is an outlier
+     * @tc.desc   Verify that the parameter of the PasswordIcon property of the TextInput component is set to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1400', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -913,9 +994,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1500
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1500
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Verify the result obtained by adding new properties to the TextInput component without setting it
+     * @tc.desc   Verify the result obtained by adding new properties to the TextInput component without setting it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -938,10 +1022,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1600
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1600
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Set password type, image source verification, TextInput component, PasswordIcon property
-     *               parameter, and separately set offIconSrc to obtain results
+     * @tc.desc   Set password type, image source verification, TextInput component, PasswordIcon property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1600', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -964,10 +1050,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_PasswordIcon_1700
      * @tc.number ArkUX_Stage_TextInput_PasswordIcon_1700
-     * @tc.name Set Password Type Image Source
-     * @tc.desc Set password type, image source verification, TextInput component, PasswordIcon property
-     *               parameter, and separately set offIconSrc to obtain results
+     * @tc.desc   Set password type, image source verification, TextInput component, PasswordIcon property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_PasswordIcon_1700', Level.LEVEL1, async (done: Function) => {
       let passwordIcon: ESObject = {
@@ -990,9 +1078,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0100
      * @tc.number ArkUX_Stage_TextInput_barState_0100
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to BarState.OFF
+     * @tc.desc   Set the BarState property parameter of the TextInput component to BarState.OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0100', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1010,9 +1101,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0200
      * @tc.number ArkUX_Stage_TextInput_barState_0200
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to BarState.AUTO
+     * @tc.desc   Set the BarState property parameter of the TextInput component to BarState.AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0200', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1030,9 +1124,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0300
      * @tc.number ArkUX_Stage_TextInput_barState_0300
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to BarState.ON
+     * @tc.desc   Set the BarState property parameter of the TextInput component to BarState.ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0300', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1050,10 +1147,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0400
      * @tc.number ArkUX_Stage_TextInput_barState_0400
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to BarState.OFF,
-     *               and then set the parameter to BarState.AUTO again
+     * @tc.desc   Set the BarState property parameter of the TextInput component to BarState.OFF,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0400', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1071,9 +1170,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0500
      * @tc.number ArkUX_Stage_TextInput_barState_0500
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to 0
+     * @tc.desc   Set the BarState property parameter of the TextInput component to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0500', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1091,9 +1193,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0600
      * @tc.number ArkUX_Stage_TextInput_barState_0600
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to 10
+     * @tc.desc   Set the BarState property parameter of the TextInput component to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0600', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1111,9 +1216,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0700
      * @tc.number ArkUX_Stage_TextInput_barState_0700
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to "sfasf"
+     * @tc.desc   Set the BarState property parameter of the TextInput component to "sfasf"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0700', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1131,9 +1239,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0800
      * @tc.number ArkUX_Stage_TextInput_barState_0800
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to ""
+     * @tc.desc   Set the BarState property parameter of the TextInput component to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0800', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1151,9 +1262,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_0900
      * @tc.number ArkUX_Stage_TextInput_barState_0900
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to null
+     * @tc.desc   Set the BarState property parameter of the TextInput component to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_0900', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1171,9 +1285,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_1000
      * @tc.number ArkUX_Stage_TextInput_barState_1000
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter of the TextInput component to undefined
+     * @tc.desc   Set the BarState property parameter of the TextInput component to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_1000', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1191,10 +1308,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_1100
      * @tc.number ArkUX_Stage_TextInput_barState_1100
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the barState property parameter of the TextInput component to Outlier undefined,
-     *               and set the parameter BarState.OFF again
+     * @tc.desc   Set the barState property parameter of the TextInput component to Outlier undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_1100', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1212,10 +1331,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_1200
      * @tc.number ArkUX_Stage_TextInput_barState_1200
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the barState property parameter of the TextInput component to BarState.OFF,
-     *               and set the parameter again to Outlier undefined
+     * @tc.desc   Set the barState property parameter of the TextInput component to BarState.OFF,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_1200', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1233,9 +1354,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_1300
      * @tc.number ArkUX_Stage_TextInput_barState_1300
-     * @tc.name Set TextInput text status
-     * @tc.desc Do not set the TextInput component barState property
+     * @tc.desc   Do not set the TextInput component barState property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_1300', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1253,10 +1377,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_barState_1400
      * @tc.number ArkUX_Stage_TextInput_barState_1400
-     * @tc.name Set TextInput text status
-     * @tc.desc Set the BarState property parameter to BarState.ON
-     *               when the TextInput component is not in inline mode
+     * @tc.desc   Set the BarState property parameter to BarState.ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_barState_1400', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1274,9 +1400,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0100
      * @tc.number ArkUX_Stage_TextInput_maxLines_0100
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to 10
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0100', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1294,9 +1423,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0200
      * @tc.number ArkUX_Stage_TextInput_maxLines_0200
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to 0
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0200', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1314,9 +1446,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0300
      * @tc.number ArkUX_Stage_TextInput_maxLines_0300
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to "123"
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to "123"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0300', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1334,9 +1469,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0400
      * @tc.number ArkUX_Stage_TextInput_maxLines_0400
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to -5
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to -5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0400', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1354,9 +1492,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0500
      * @tc.number ArkUX_Stage_TextInput_maxLines_0500
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to ""
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0500', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1374,9 +1515,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0600
      * @tc.number ArkUX_Stage_TextInput_maxLines_0600
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to null
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0600', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1394,9 +1538,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0700
      * @tc.number ArkUX_Stage_TextInput_maxLines_0700
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to undefined
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0700', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1414,10 +1561,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0800
      * @tc.number ArkUX_Stage_TextInput_maxLines_0800
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the MaxLines property parameter of the TextInput component to 1,
-     *               and then set the parameter to 10 again
+     * @tc.desc   Set the MaxLines property parameter of the TextInput component to 1,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0800', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1435,10 +1584,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_0900
      * @tc.number ArkUX_Stage_TextInput_maxLines_0900
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the maxLines attribute parameter of TextInput component to 10,
-     *               and set the parameter to Outlier again
+     * @tc.desc   Set the maxLines attribute parameter of TextInput component to 10,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_0900', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1456,10 +1607,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_1000
      * @tc.number ArkUX_Stage_TextInput_maxLines_1000
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the maxLines property parameter of TextInput component to Outlier
-     *               undefined, and set the parameter to 10 again
+     * @tc.desc   Set the maxLines property parameter of TextInput component to Outlier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_1000', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1477,9 +1630,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_1100
      * @tc.number ArkUX_Stage_TextInput_maxLines_1100
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Do not set the TextInput component maxLines property
+     * @tc.desc   Do not set the TextInput component maxLines property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_1100', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {
@@ -1497,9 +1653,12 @@ export default function textinputSec() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextInput_maxLines_1200
      * @tc.number ArkUX_Stage_TextInput_maxLines_1200
-     * @tc.name Set the maximum number of lines in TextInput text
-     * @tc.desc Set the TextInput component maxLines property in non inline mode
+     * @tc.desc   Set the TextInput component maxLines property in non inline mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_maxLines_1200', Level.LEVEL1, (done: Function) => {
       setTimeout(() => {

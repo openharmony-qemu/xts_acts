@@ -85,12 +85,12 @@ export default function ImageReceiverGetReceivingSurfaceIdTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_001
-     * @tc.name      : ImageReceiver_getReceivingSurfaceId_promise_001
-     * @tc.desc      : ImageReceiver_getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageReceiver_getReceivingSurfaceId_promise_001
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_001
+     * @tc.desc   ImageReceiver_getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageReceiver_getReceivingSurfaceId_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageReceiver_getReceivingSurfaceId_promise_001';
@@ -102,12 +102,12 @@ export default function ImageReceiverGetReceivingSurfaceIdTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_002
-     * @tc.name      : ImageReceiver_getReceivingSurfaceId_promise_002
-     * @tc.desc      : ImageReceiver_getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageReceiver_getReceivingSurfaceId_promise_002
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_002
+     * @tc.desc   ImageReceiver_getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageReceiver_getReceivingSurfaceId_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageReceiver_getReceivingSurfaceId_promise_002';
@@ -119,12 +119,12 @@ export default function ImageReceiverGetReceivingSurfaceIdTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_003
-     * @tc.name      : ImageReceiver_getReceivingSurfaceId_callback_001
-     * @tc.desc      : ImageReceiver_getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageReceiver_getReceivingSurfaceId_callback_001
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_003
+     * @tc.desc   ImageReceiver_getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageReceiver_getReceivingSurfaceId_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageReceiver_getReceivingSurfaceId_callback_001';
@@ -136,12 +136,12 @@ export default function ImageReceiverGetReceivingSurfaceIdTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_004
-     * @tc.name      : ImageReceiver_getReceivingSurfaceId_callback_002
-     * @tc.desc      : ImageReceiver_getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageReceiver_getReceivingSurfaceId_callback_002
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_004
+     * @tc.desc   ImageReceiver_getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageReceiver_getReceivingSurfaceId_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageReceiver_getReceivingSurfaceId_callback_002';

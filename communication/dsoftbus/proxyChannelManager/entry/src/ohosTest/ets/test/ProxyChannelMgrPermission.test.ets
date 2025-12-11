@@ -117,7 +117,6 @@ export default function noPermissionProxyMgr() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000
      * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000
      * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr结构错误

@@ -26,39 +26,39 @@ export default function textAreaCaretColorTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_CARETCOLOR_0100
-     * @tc.name: testTextAreaCaretColor001
-     * @tc.desc: testing caretColor for textArea with red value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaCaretColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_CARETCOLOR_0100
+     * @tc.desc   testing caretColor for textArea with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaCaretColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaCaretColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_CARETCOLOR_0200
-     * @tc.name: testTextAreaCaretColor002
-     * @tc.desc: testing caretColor for textArea with black value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaCaretColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_CARETCOLOR_0200
+     * @tc.desc   testing caretColor for textArea with black value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaCaretColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaCaretColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_CARETCOLOR_0300
-     * @tc.name: testTextAreaCaretColor003
-     * @tc.desc: testing caretColor for textArea with white value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaCaretColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_CARETCOLOR_0300
+     * @tc.desc   testing caretColor for textArea with white value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaCaretColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaCaretColor003()).assertEqual(0)

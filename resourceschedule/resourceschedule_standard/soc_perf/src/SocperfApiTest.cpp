@@ -112,17 +112,6 @@ bool LoadSceneResource(xmlNode* child, const std::string& configFile)
     return true;
 }
  
-bool TraversalBoostResource(xmlNode* grandson, const std::string& configFile)
-{
-    char* level = reinterpret_cast<char*>(xmlGetProp(grandson, reinterpret_cast<const xmlChar*>("thermalLvl")));
-    if (!level) {
-        xmlFree(level);
-        return false;
-    }
-    xmlFree(level);
-    return true;
-}
- 
 bool LoadCmdInfo(const xmlNode* child, const std::string& configFile)
 {
     char* id = reinterpret_cast<char*>(xmlGetProp(child, reinterpret_cast<const xmlChar*>("id")));
@@ -132,34 +121,33 @@ bool LoadCmdInfo(const xmlNode* child, const std::string& configFile)
         xmlFree(name);
         return false;
     }
-        
-    xmlNode* grandson = child->children;
+
     xmlFree(id);
     xmlFree(name);
- 
-    if (!TraversalBoostResource(grandson, configFile)) {
-        return false;
-    }
+
     return true;
 }
 
 /**
+ * @tc.name   Check
  * @tc.number CheckConfigResource001
- * @tc.name: CheckConfigResource001
- * @tc.desc: check socperf config
- * @tc.level:Level 1
- * @tc.type FUNC
- * @tc.size:MediumTest
+ * @tc.desc   check socperf config
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SocperfTestSuite, Check, Function | MediumTest | Level1)
 {
     std::string content;
+    std::string path = "/vendor/etc/soc_perf/socperf_resource_config.xml";
     OHOS::LoadStringFromFile("/vendor/etc/soc_perf/socperf_resource_config.xml", content);
-    xmlDoc* file = xmlReadFile(content.c_str(), nullptr, XML_PARSE_NOERROR | XML_PARSE_NOWARNING);
+    xmlDoc* file = xmlReadFile(path.c_str(), nullptr, XML_PARSE_NOERROR | XML_PARSE_NOWARNING);
+    EXPECT_NE(file, nullptr);
     if (!file) {
         return;
     }
     xmlNode* rootNode = xmlDocGetRootElement(file);
+    EXPECT_NE(rootNode, nullptr);
     if (!rootNode) {
         xmlFreeDoc(file);
         return;
@@ -179,22 +167,25 @@ HWTEST_F(SocperfTestSuite, Check, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   ConfigBoost
  * @tc.number CheckConfigBoost_001
- * @tc.name: CheckConfigResource001
- * @tc.desc: check socperf config
- * @tc.level:Level 3
- * @tc.type FUNC
- * @tc.size:MediumTest
+ * @tc.desc   check socperf config
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SocperfTestSuite, ConfigBoost, Function | MediumTest | Level1)
 {
+    std::string path = "/vendor/etc/soc_perf/socperf_boost_config_ext.xml";
     std::string content;
     OHOS::LoadStringFromFile("/vendor/etc/soc_perf/socperf_boost_config_ext.xml", content);
-    xmlDoc* file = xmlReadFile(content.c_str(), nullptr, XML_PARSE_NOERROR | XML_PARSE_NOWARNING);
+    xmlDoc* file = xmlReadFile(path.c_str(), nullptr, XML_PARSE_NOERROR | XML_PARSE_NOWARNING);
+    EXPECT_NE(file, nullptr);
     if (!file) {
         return;
     }
     xmlNode* rootNode = xmlDocGetRootElement(file);
+    EXPECT_NE(rootNode, nullptr);
     if (!rootNode) {
         xmlFreeDoc(file);
         return;

@@ -37,12 +37,12 @@ export default function SimNoCardPublic() {
   describe('SimNoCardPublic', () => {
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetISOCountryCodeForSim_0600
-     * @tc.name   : testTelephonySimGetISOCountryCodeForSim0600
-     * @tc.desc   : SIMCard required Obtain the ISO country code for the specified SIM card slot. Using callback for asynchronous callback
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetISOCountryCodeForSim0600
+     * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSim_0600
+     * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot. Using callback for asynchronous callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonySimGetISOCountryCodeForSim0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetISOCountryCodeForSim0600';
@@ -74,12 +74,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetISOCountryCodeForSim_1300
-     * @tc.name   : testTelephonySimGetISOCountryCodeForSim1300
-     * @tc.desc   : SIMCard required Obtain the ISO country code for the specified SIM card slot. Using promise for asynchronous callback
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetISOCountryCodeForSim1300
+     * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSim_1300
+     * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot. Using promise for asynchronous callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonySimGetISOCountryCodeForSim1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetISOCountryCodeForSim1300';
@@ -113,12 +113,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimOperatorNumeric_0500
-     * @tc.name   : testTelephonySimGetSimOperatorNumeric0500
-     * @tc.desc   : SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonySimGetSimOperatorNumeric0500
+     * @tc.number SUB_Telephony_Sim_GetSimOperatorNumeric_0500
+     * @tc.desc   SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetSimOperatorNumeric0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimOperatorNumeric0500';
@@ -150,12 +150,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimOperatorNumeric_1300
-     * @tc.name   : testTelephonySimGetSimOperatorNumeric1300
-     * @tc.desc   : Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot. Use promise for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   testTelephonySimGetSimOperatorNumeric1300
+     * @tc.number SUB_Telephony_Sim_GetSimOperatorNumeric_1300
+     * @tc.desc   Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot. Use promise for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonySimGetSimOperatorNumeric1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimOperatorNumeric1300';
@@ -192,12 +192,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_0300
-     * @tc.name   : testTelephonySimGetSimSpn0300
-     * @tc.desc   : Obtains the SPN of the SIM card in the specified slot. This API uses a callback to return the result
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimSpn0300
+     * @tc.number SUB_Telephony_Sim_GetSimSpn_0300
+     * @tc.desc   Obtains the SPN of the SIM card in the specified slot. This API uses a callback to return the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonySimGetSimSpn0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimSpn0300';
@@ -230,12 +230,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimSpn_1100
-     * @tc.name   : testTelephonySimGetSimSpn1100
-     * @tc.desc   : Obtains the SPN of the SIM card in the specified slot. This API uses a promise to return the result
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetSimSpn1100
+     * @tc.number SUB_Telephony_Sim_GetSimSpn_1100
+     * @tc.desc   Obtains the SPN of the SIM card in the specified slot. This API uses a promise to return the result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonySimGetSimSpn1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimSpn1100';
@@ -272,12 +272,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetSimAccountInfo_0600
-     * @tc.name   : testTelephonySimGetSimAccountInfo0600
-     * @tc.desc   : SIMCard required Get SIM card account information. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonySimGetSimAccountInfo0600
+     * @tc.number SUB_Telephony_Sim_GetSimAccountInfo_0600
+     * @tc.desc   SIMCard required Get SIM card account information. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetSimAccountInfo0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimAccountInfo0600';
@@ -307,12 +307,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetActiveSimAccountInfoList_0300
-     * @tc.name   : testTelephonySimGetActiveSimAccountInfoList0300
-     * @tc.desc   : SIMCard required Get a list of activated SIM card account information. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetActiveSimAccountInfoList0300
+     * @tc.number SUB_Telephony_Sim_GetActiveSimAccountInfoList_0300
+     * @tc.desc   SIMCard required Get a list of activated SIM card account information. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonySimGetActiveSimAccountInfoList0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetActiveSimAccountInfoList0300';
@@ -342,12 +342,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetActiveSimAccountInfoList_0700
-     * @tc.name   : testTelephonySimGetActiveSimAccountInfoList0700
-     * @tc.desc   : SIMCard required Get a list of activated SIM card account information. Use promise for asynchronous callback..
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testTelephonySimGetActiveSimAccountInfoList0700
+     * @tc.number SUB_Telephony_Sim_GetActiveSimAccountInfoList_0700
+     * @tc.desc   SIMCard required Get a list of activated SIM card account information. Use promise for asynchronous callback..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testTelephonySimGetActiveSimAccountInfoList0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetActiveSimAccountInfoList0700';
@@ -383,12 +383,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetCardType_0700
-     * @tc.name   : testTelephonySimGetCardType0700
-     * @tc.desc   : SIMCard required Get SIM card account information. Use callback for asynchronous callback.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonySimGetCardType0700
+     * @tc.number SUB_Telephony_Sim_GetCardType_0700
+     * @tc.desc   SIMCard required Get SIM card account information. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonySimGetCardType0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetCardType0700';
@@ -418,13 +418,12 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_Sim_GetCardType_0800
-     * @tc.name   : testTelephonySimGetCardType0800
-     * @tc.desc   : SIMCard required Get a list of activated SIM card account information. Use promise for asynchronous callback..
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
-     *
+     * @tc.name   testTelephonySimGetCardType0800
+     * @tc.number SUB_Telephony_Sim_GetCardType_0800
+     * @tc.desc   SIMCard required Get a list of activated SIM card account information. Use promise for asynchronous callback..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonySimGetCardType0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetCardType0800';

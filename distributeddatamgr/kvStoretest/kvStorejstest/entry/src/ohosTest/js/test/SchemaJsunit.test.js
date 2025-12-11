@@ -154,7 +154,6 @@ describe('schemaTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testToJsonString001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2100
      * @tc.desc   Test Js Api Schema.ToJsonString() testcase 001
@@ -190,7 +189,6 @@ describe('schemaTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testToJsonString002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2200
      * @tc.desc   Test Js Api Schema.ToJsonString() testcase 002
@@ -230,7 +228,6 @@ describe('schemaTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testToJsonString003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2300
      * @tc.desc   Test Js Api Schema.ToJsonString() testcase 003
@@ -279,7 +276,6 @@ describe('schemaTest', function() {
     })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testToJsonString004
          * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2000
          * @tc.desc   Test Js Api Schema.ToJsonString() testcase 004
@@ -326,7 +322,6 @@ describe('schemaTest', function() {
 
 
      /**
-      * @generated.time 2025-11-09 20:49:49
       * @tc.name   testroot001
       * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1800
       * @tc.desc   Test Js Api Schema.root testcase 001
@@ -349,7 +344,6 @@ describe('schemaTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:49
       * @tc.name   testindexes001
       * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1500
       * @tc.desc   Test Js Api Schema.indexes testcase 001
@@ -371,7 +365,6 @@ describe('schemaTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:49
       * @tc.name   testmode001
       * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1700
       * @tc.desc   Test Js Api Schema.mode testcase 001
@@ -394,7 +387,6 @@ describe('schemaTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:49
       * @tc.name   testmode002
       * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1600
       * @tc.desc   Test Js Api Schema.mode testcase 002
@@ -417,7 +409,6 @@ describe('schemaTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:49
       * @tc.name   testskip001
       * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1900
       * @tc.desc   Test Js Api Schema.skip testcase 001

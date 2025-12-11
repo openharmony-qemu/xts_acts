@@ -46,12 +46,12 @@ export default function clipContent() {
     });
 
     /**
-     * @tc.number    clipContent_001
-     * @tc.name      clipContent_0100
-     * @tc.desc      Clip to content rect inside margin & padding.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   clipContent_0100
+     * @tc.number clipContent_001
+     * @tc.desc   Clip to content rect inside margin & padding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('clipContent_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[clipContent_0100] START');
@@ -66,12 +66,12 @@ export default function clipContent() {
     });
 
     /**
-     * @tc.number    clipContent_002
-     * @tc.name      clipContent_0200
-     * @tc.desc      Clip to scrollable's outer rect, including padding but inside margin.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   clipContent_0200
+     * @tc.number clipContent_002
+     * @tc.desc   Clip to scrollable's outer rect, including padding but inside margin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('clipContent_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[clipContent_0200] START');
@@ -90,12 +90,12 @@ export default function clipContent() {
     });
 
     /**
-     * @tc.number    clipContent_003
-     * @tc.name      clipContent_0300
-     * @tc.desc      Clip to the safeArea of scrollable container.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   clipContent_0300
+     * @tc.number clipContent_003
+     * @tc.desc   Clip to the safeArea of scrollable container.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('clipContent_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[clipContent_0300] START');

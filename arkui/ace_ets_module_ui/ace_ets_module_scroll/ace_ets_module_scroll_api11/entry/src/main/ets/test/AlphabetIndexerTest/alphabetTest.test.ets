@@ -41,12 +41,12 @@ export default function alphabetTest() {
       done();
     });
     /**
+     * @tc.name   alphabetTest_0100
      * @tc.number blendMode
-     * @tc.name alphabetTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('alphabetTest_0100 START');

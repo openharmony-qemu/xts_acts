@@ -43,9 +43,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2100
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2100
-     * @tc.desc    This commonEvent means the device state
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2100
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2100
+     * @tc.desc   This commonEvent means the device state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2100 START`)
@@ -58,9 +61,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2200
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2200
-     * @tc.desc    This commonEvent means the device battery state
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2200
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2200
+     * @tc.desc   This commonEvent means the device battery state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2200 START`)
@@ -73,9 +79,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2300
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2300
-     * @tc.desc    This commonEvent means the screen,the thermal state level
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2300
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2300
+     * @tc.desc   This commonEvent means the screen,the thermal state level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2300 START`)
@@ -89,9 +98,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2400
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2400
-     * @tc.desc    This commonEvent means the time changed , the dialog to dismiss
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2400
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2400
+     * @tc.desc   This commonEvent means the time changed , the dialog to dismiss
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2400 START`)
@@ -106,9 +118,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2500
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2500
-     * @tc.desc    This commonEvent means when a new version application package
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2500
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2500
+     * @tc.desc   This commonEvent means when a new version application package
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2500',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2500 START`)
@@ -126,9 +141,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2600
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2600
-     * @tc.desc    This commonEvent of package
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2600
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2600
+     * @tc.desc   This commonEvent of package
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2600',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2600 START`)
@@ -145,9 +163,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2700
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2700
-     * @tc.desc    Sent by system package verifier
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2700
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2700
+     * @tc.desc   Sent by system package verifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2700',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2700 START`)
@@ -161,9 +182,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2800
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2800
-     * @tc.desc    Send by the smart function when the system in mode
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2800
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2800
+     * @tc.desc   Send by the smart function when the system in mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2800',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2800 START`)
@@ -178,9 +202,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_2900
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_2900
-     * @tc.desc    Remind previous user of that the service
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_2900
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_2900
+     * @tc.desc   Remind previous user of that the service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_2900',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_2900 START`)
@@ -197,9 +224,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_3000
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_3000
-     * @tc.desc    WIFI state
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_3000
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_3000
+     * @tc.desc   WIFI state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_3000',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3000 START`)
@@ -222,9 +252,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_3400
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_3400
-     * @tc.desc    Bluetooth.a2dp,Nfc
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_3400
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_3400
+     * @tc.desc   Bluetooth.a2dp,Nfc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_3400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3400 START`)
@@ -236,9 +269,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_3500
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_3500
-     * @tc.desc    charging battery,device's ,User,ability,Gps
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_3500
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_3500
+     * @tc.desc   charging battery,device's ,User,ability,Gps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_3500',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3500 START`)
@@ -257,9 +293,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_3600
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_3600
-     * @tc.desc    ivi
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_3600
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_3600
+     * @tc.desc   ivi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_3600',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3600 START`)
@@ -279,9 +318,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_3700
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_3700
-     * @tc.desc    USB
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_3700
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_3700
+     * @tc.desc   USB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_3700',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3700 START`)
@@ -294,9 +336,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_3800
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_3800
-     * @tc.desc    protected common event
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_3800
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_3800
+     * @tc.desc   protected common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_3800',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3800 START`)
@@ -313,9 +358,12 @@ export default function ActsCommonEventSupportTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_Support_Static_3900
-     * @tc.name    Sub_Notification_Ces_Publish_Support_Static_3900
-     * @tc.desc    protected common event
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_3900
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_3900
+     * @tc.desc   protected common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_Support_Static_3900',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
       hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_3900 START`)

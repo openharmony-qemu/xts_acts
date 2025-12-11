@@ -43,13 +43,13 @@ export default function OntouchTestDoneTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_OntouchTestDone_0100
-     * @tc.name       : OntouchTestDoneTest001
-     * @tc.desc       : onTouchTestDone prevent gesture tap , response click and longpress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   OntouchTestDoneTest001
+     * @tc.number SUB_ARKUI_CAPI_OntouchTestDone_0100
+     * @tc.desc   onTouchTestDone prevent gesture tap , response click and longpress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OntouchTestDoneTest001', Level.LEVEL0, async (done: Function) => {
       let PAGE_TAG = 'OntouchTestDoneTest';

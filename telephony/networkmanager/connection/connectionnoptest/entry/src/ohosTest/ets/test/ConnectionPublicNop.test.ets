@@ -65,13 +65,13 @@ export default function ConnectionPublicNopTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0100
-     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop0100
-     * @tc.desc:Using the setAppNet (callback) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0100
+     * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0100
+     * @tc.desc   Using the setAppNet (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrConnectionReportNetConnectedNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('--------testNetworkMgrConnectionReportNetConnectedNop0100----before----');
@@ -114,13 +114,13 @@ export default function ConnectionPublicNopTest() {
       console.info('--------testNetworkMgrConnectionReportNetConnectedNop0100----after----');
     })
 
-    /*
-     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0200
-     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop0200
-     * @tc.desc:Using the setAppNet (then) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0200
+     * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0200
+     * @tc.desc   Using the setAppNet (then) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrConnectionReportNetConnectedNop0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('--------testNetworkMgrConnectionReportNetConnectedNop0200----before----');
@@ -163,13 +163,13 @@ export default function ConnectionPublicNopTest() {
       console.info('--------testNetworkMgrConnectionReportNetConnectedNop0200----after----');
     })
 
-    /*
-     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0300
-     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop0300
-     * @tc.desc:Using the addCustomDnsRule (callback) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0300
+     * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0300
+     * @tc.desc   Using the addCustomDnsRule (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrConnectionReportNetConnectedNop0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName:string = 'testNetworkMgrConnectionReportNetConnectedNop0300';
@@ -195,13 +195,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0400
-     * @tc.name:testNetworkMgrConnectionReportNetConnectedNop0400
-     * @tc.desc:Using the addCustomDnsRule (then) method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0400
+     * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0400
+     * @tc.desc   Using the addCustomDnsRule (then) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrConnectionReportNetConnectedNop0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName:string = 'testNetworkMgrConnectionReportNetConnectedNop0400';
@@ -229,14 +229,14 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-    * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0500
-    * @tc.name:testNetworkMgrConnectionReportNetConnectedNop0500
-    * @tc.desc:Using the removeCustomDnsRule (callback) method without permission
-    * @tc.level:Level 2
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0500
+     * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0500
+     * @tc.desc   Using the removeCustomDnsRule (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetworkMgrConnectionReportNetConnectedNop0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName:string = 'testNetworkMgrConnectionReportNetConnectedNop0500';
       console.info(`${caseName}---Start`);
@@ -263,13 +263,13 @@ export default function ConnectionPublicNopTest() {
         }
     })
 
-    /*
-     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0600
-     * @tc.name: testNetworkMgrConnectionReportNetConnectedNop0600
-     * @tc.desc:Using the removeCustomDnsRule (then) method without permission
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0600
+     * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0600
+     * @tc.desc   Using the removeCustomDnsRule (then) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetworkMgrConnectionReportNetConnectedNop0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName:string = 'testNetworkMgrConnectionReportNetConnectedNop0600';
@@ -297,13 +297,13 @@ export default function ConnectionPublicNopTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_testNetworkMgrConnectionReportNetConnectedNop0700
-     * @tc.name:testNetworkMgrConnectionReportNetConnectedNop0700
-     * @tc.desc:Using the removeCustomDnsRule (then) method without permission
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionReportNetConnectedNop0700
+     * @tc.number SUB_testNetworkMgrConnectionReportNetConnectedNop0700
+     * @tc.desc   Using the removeCustomDnsRule (then) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testNetworkMgrConnectionReportNetConnectedNop0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName:string = 'testNetworkMgrConnectionReportNetConnectedNop0700';
@@ -330,12 +330,12 @@ export default function ConnectionPublicNopTest() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Connection_getAddressesByNameNop_0100
-     * @tc.name   : testTelephonyConnectionGetAddressesByNameNop0100
-     * @tc.desc   : AddressesByName Permission denied
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyConnectionGetAddressesByNameNop0100
+     * @tc.number SUB_Telephony_Connection_getAddressesByNameNop_0100
+     * @tc.desc   AddressesByName Permission denied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyConnectionGetAddressesByNameNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyConnectionGetAddressesByNameNop0100';
@@ -363,12 +363,12 @@ export default function ConnectionPublicNopTest() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Connection_getAddressesByNameNop_0200
-     * @tc.name   : testTelephonyConnectionGetAddressesByNameNop0200
-     * @tc.desc   : AddressesByName Permission denied
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyConnectionGetAddressesByNameNop0200
+     * @tc.number SUB_Telephony_Connection_getAddressesByNameNop_0200
+     * @tc.desc   AddressesByName Permission denied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyConnectionGetAddressesByNameNop0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyConnectionGetAddressesByNameNop0200';
@@ -391,12 +391,12 @@ export default function ConnectionPublicNopTest() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Connection_SetPacNop_0100
-     * @tc.name   : testTelephonyConnectionSetPacNop0100
-     * @tc.desc   : set PacUrl No Permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyConnectionSetPacNop0100
+     * @tc.number SUB_Telephony_Connection_SetPacNop_0100
+     * @tc.desc   set PacUrl No Permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyConnectionSetPacNop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyConnectionSetPacNop0100';
@@ -415,12 +415,12 @@ export default function ConnectionPublicNopTest() {
     })
 
     /**
-     * @tc.number : SUB_Network_Connection_setPacFileUrlNoP_0100
-     * @tc.name   : testConnectionSetPacFileUrlNoP0100
-     * @tc.desc   : Calling setPacFileURL without SET-PAC_URL permission returns error code 201.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetPacFileUrlNoP0100
+     * @tc.number SUB_Network_Connection_setPacFileUrlNoP_0100
+     * @tc.desc   Calling setPacFileURL without SET-PAC_URL permission returns error code 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetPacFileUrlNoP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetPacFileUrlNoP0100';

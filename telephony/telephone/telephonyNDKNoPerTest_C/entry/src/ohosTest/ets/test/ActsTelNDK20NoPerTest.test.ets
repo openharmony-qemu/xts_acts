@@ -22,12 +22,12 @@ const OS_ACCOUNT_ERR_OK = 0;
 export default function ActsTelephonyNdk20Test() {
   describe('ActsTelephonyNdk20Test', () => {
     /**
+     * @tc.name   testOHTelephonyGetNetworkState2
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OH_Telephony_GetNetworkState2
-     * @tc.name testOHTelephonyGetNetworkState2
-     * @tc.desc test no Permission
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test no Permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHTelephonyGetNetworkState2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -44,12 +44,12 @@ export default function ActsTelephonyNdk20Test() {
         }
       })
     /**
+     * @tc.name   testOHTelephonyGetNetworkStateForSlot1
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OH_Telephony_GetNetworkStateForSlot1
-     * @tc.name testOHTelephonyGetNetworkStateForSlot1
-     * @tc.desc test no Permission
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test no Permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHTelephonyGetNetworkStateForSlot1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -66,12 +66,12 @@ export default function ActsTelephonyNdk20Test() {
         }
       })
     /**
+     * @tc.name   testTelRadio0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_TelRadio0100
-     * @tc.name testTelRadio0100
-     * @tc.desc test no Permission
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test no Permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelRadio0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

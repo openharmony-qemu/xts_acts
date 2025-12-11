@@ -41,12 +41,12 @@ export default function Component3DTest() {
       done();
     });
     /**
-     * @tc.number    Component3D
-     * @tc.name      Component3DTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3DTest_0100
+     * @tc.number Component3D
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3DTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3DTest_0100 START');
@@ -59,12 +59,12 @@ export default function Component3DTest() {
       done();
     });
     /**
-     * @tc.number    Component3D
-     * @tc.name      Component3DTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3DTest_0200
+     * @tc.number Component3D
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3DTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3DTest_0200 START');
@@ -76,12 +76,12 @@ export default function Component3DTest() {
       done();
     });
     /**
-     * @tc.number    Component3D
-     * @tc.name      Component3DTest_0300
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3DTest_0300
+     * @tc.number Component3D
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3DTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3DTest_0300 START');
@@ -93,12 +93,12 @@ export default function Component3DTest() {
       done();
     });
     /**
-     * @tc.number    Component3D
-     * @tc.name      Component3DTest_0400
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3DTest_0400
+     * @tc.number Component3D
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3DTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3DTest_0400 START');
@@ -110,12 +110,12 @@ export default function Component3DTest() {
       done();
     });
     /**
-     * @tc.number    Component3D
-     * @tc.name      Component3DTest_0500
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3DTest_0500
+     * @tc.number Component3D
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3DTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3DTest_0500 START');
@@ -127,12 +127,12 @@ export default function Component3DTest() {
       done();
     });
     /**
-     * @tc.number    Component3D
-     * @tc.name      Component3DTest_0600
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3DTest_0600
+     * @tc.number Component3D
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3DTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3DTest_0600 START');
@@ -144,12 +144,12 @@ export default function Component3DTest() {
       done();
     });
     /**
-     * @tc.number    Component3D
-     * @tc.name      Component3DTest_0700
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Component3DTest_0700
+     * @tc.number Component3D
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Component3DTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('Component3DTest_0700 START');

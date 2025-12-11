@@ -26,208 +26,208 @@ export default function commonAttrsTranslateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0100
-     * @tc.name       : testCommonAttrsTranslate001
-     * @tc.desc       : testing translate for commonAttrs with inalid value -30,0,0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0100
+     * @tc.desc   testing translate for commonAttrs with inalid value -30,0,0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0200
-     * @tc.name       : testCommonAttrsTranslate002
-     * @tc.desc       : testing translate for commonAttrs with inalid value 30,-30,30
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0200
+     * @tc.desc   testing translate for commonAttrs with inalid value 30,-30,30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0300
-     * @tc.name       : testCommonAttrsTranslate003
-     * @tc.desc       : testing translate for commonAttrs with inalid value 30,-30,-30
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0300
+     * @tc.desc   testing translate for commonAttrs with inalid value 30,-30,-30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0400
-     * @tc.name       : testCommonAttrsTranslate004
-     * @tc.desc       : testing translate for commonAttrs with valid value 30,30,30
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0400
+     * @tc.desc   testing translate for commonAttrs with valid value 30,30,30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0500
-     * @tc.name       : testCommonAttrsTranslate005
-     * @tc.desc       : testing translate for commonAttrs with inalid value 30,30,-30
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0500
+     * @tc.desc   testing translate for commonAttrs with inalid value 30,30,-30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0600
-     * @tc.name       : testCommonAttrsTranslate006
-     * @tc.desc       : testing translate for commonAttrs with inalid value -30,-30,30
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0600
+     * @tc.desc   testing translate for commonAttrs with inalid value -30,-30,30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0700
-     * @tc.name       : testCommonAttrsTranslate007
-     * @tc.desc       : testing translate for commonAttrs with invalid value -30,-30,-30
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0700
+     * @tc.desc   testing translate for commonAttrs with invalid value -30,-30,-30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0800
-     * @tc.name       : testCommonAttrsTranslate008
-     * @tc.desc       : testing translate for commonAttrs with valid value 0,0,0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate008
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0800
+     * @tc.desc   testing translate for commonAttrs with valid value 0,0,0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0900
-     * @tc.name       : testCommonAttrsTranslate009
-     * @tc.desc       : testing translate for commonAttrs with valid value 30,0,0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate009
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_0900
+     * @tc.desc   testing translate for commonAttrs with valid value 30,0,0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1000
-     * @tc.name       : testCommonAttrsTranslate010
-     * @tc.desc       : testing translate for commonAttrs with invalid value -30,0,0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate010
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1000
+     * @tc.desc   testing translate for commonAttrs with invalid value -30,0,0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1100
-     * @tc.name       : testCommonAttrsTranslate011
-     * @tc.desc       : testing translate for commonAttrs with valid value 0,30,0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate011
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1100
+     * @tc.desc   testing translate for commonAttrs with valid value 0,30,0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1200
-     * @tc.name       : testCommonAttrsTranslate012
-     * @tc.desc       : testing translate for commonAttrs with invalid value 0,-30,0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate012
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1200
+     * @tc.desc   testing translate for commonAttrs with invalid value 0,-30,0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate012()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1300
-     * @tc.name       : testCommonAttrsTranslate013
-     * @tc.desc       : testing translate for commonAttrs with valid value ,,
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate013
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1300
+     * @tc.desc   testing translate for commonAttrs with valid value ,,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate013()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1400
-     * @tc.name       : testCommonAttrsTranslate014
-     * @tc.desc       : testing translate for commonAttrs with valid value 60,60,60
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate014
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1400
+     * @tc.desc   testing translate for commonAttrs with valid value 60,60,60
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate014', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate014()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1500
-     * @tc.name       : testCommonAttrsTranslate015
-     * @tc.desc       : testing translate for commonAttrs with invalid value 400,400,400
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate015
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1500
+     * @tc.desc   testing translate for commonAttrs with invalid value 400,400,400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate015', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate015()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1600
-     * @tc.name       : testCommonAttrsTranslate016
-     * @tc.desc       : testing resetAttribut translate for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTranslate016
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSLATE_1600
+     * @tc.desc   testing resetAttribut translate for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTranslate016', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTranslate016()).assertEqual(0)

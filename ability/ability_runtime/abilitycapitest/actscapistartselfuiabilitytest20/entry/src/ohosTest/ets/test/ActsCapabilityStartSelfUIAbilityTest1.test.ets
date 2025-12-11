@@ -21,12 +21,12 @@ const ABILITY_ERR_OK = 0;
 export default function ActsCapabilityStartSelfUIAbilityTest1() {
   describe('ActsCapabilityStartSelfUIAbilityTest1', () => {
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0100
-     * @tc.desc    : Testing CreateNativeChildProcess returns a correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0100
+     * @tc.desc   Testing CreateNativeChildProcess returns a correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -49,12 +49,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0200
-     * @tc.desc    : Testing CreateNativeChildProcess returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0200
+     * @tc.desc   Testing CreateNativeChildProcess returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -73,12 +73,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0300
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0300
-     * @tc.desc    : Testing CreateNativeChildProcess returns 16010007.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0300
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0300
+     * @tc.desc   Testing CreateNativeChildProcess returns 16010007.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcess_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -101,12 +101,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0100
-     * @tc.desc    : Testing CreateNativeChildProcessWithConfigs returns a correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0100
+     * @tc.desc   Testing CreateNativeChildProcessWithConfigs returns a correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -129,12 +129,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0200
-     * @tc.desc    : Testing CreateNativeChildProcessWithConfigs returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0200
+     * @tc.desc   Testing CreateNativeChildProcessWithConfigs returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_CreateNativeChildProcessWithConfigs_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -153,12 +153,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0100
-     * @tc.desc    : Testing StartNativeChildProcess returns a correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0100
+     * @tc.desc   Testing StartNativeChildProcess returns a correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -181,12 +181,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0200
-     * @tc.desc    : Testing StartNativeChildProcess returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0200
+     * @tc.desc   Testing StartNativeChildProcess returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcess_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -205,12 +205,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0100
-     * @tc.desc    : Testing StartNativeChildProcessWithConfigs returns a correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0100
+     * @tc.desc   Testing StartNativeChildProcessWithConfigs returns a correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -233,12 +233,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0200
-     * @tc.desc    : Testing StartNativeChildProcessWithConfigs returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0200
+     * @tc.desc   Testing StartNativeChildProcessWithConfigs returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -257,12 +257,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0300
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0300
-     * @tc.desc    : Testing StartNativeChildProcessWithConfigs returns 16010003.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0300
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0300
+     * @tc.desc   Testing StartNativeChildProcessWithConfigs returns 16010003.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_StartNativeChildProcessWithConfigs_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -285,12 +285,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0100
-     * @tc.desc    : Test StartSelfUIAbility and return 16000079.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0100
+     * @tc.desc   Test StartSelfUIAbility and return 16000079.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -321,12 +321,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0200
-     * @tc.desc    : Test StartSelfUIAbility and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0200
+     * @tc.desc   Test StartSelfUIAbility and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -351,12 +351,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0300
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0300
-     * @tc.desc    : Test StartSelfUIAbility and return 16000077.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0300
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0300
+     * @tc.desc   Test StartSelfUIAbility and return 16000077.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbility_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -388,12 +388,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
 
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 16000079.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 16000079.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -424,12 +424,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -454,12 +454,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 16000077.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 16000077.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -490,12 +490,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 16000001.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 16000001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -520,12 +520,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 16000018.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 16000018.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -550,12 +550,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 16000050.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 16000050.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -580,12 +580,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 16000076.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 16000076.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -616,12 +616,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 16000067.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 16000067.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -646,12 +646,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0100
-     * @tc.desc    : Test ApplicationContextGetCacheDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0100
+     * @tc.desc   Test ApplicationContextGetCacheDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -670,12 +670,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0200
-     * @tc.desc    : Testing ApplicationContextGetCacheDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0200
+     * @tc.desc   Testing ApplicationContextGetCacheDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCacheDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -694,12 +694,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0100
-     * @tc.desc    : Test ApplicationContextGetAreaMode and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0100
+     * @tc.desc   Test ApplicationContextGetAreaMode and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -718,12 +718,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0200
-     * @tc.desc    : Testing ApplicationContextGetAreaMode returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0200
+     * @tc.desc   Testing ApplicationContextGetAreaMode returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetAreaMode_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -742,12 +742,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0100
-     * @tc.desc    : Test ApplicationContextGetBundleName and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0100
+     * @tc.desc   Test ApplicationContextGetBundleName and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -766,12 +766,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0200
-     * @tc.desc    : Testing ApplicationContextGetBundleName returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0200
+     * @tc.desc   Testing ApplicationContextGetBundleName returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleName_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -790,12 +790,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0100
-     * @tc.desc    : Test ApplicationContextGetTempDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0100
+     * @tc.desc   Test ApplicationContextGetTempDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -814,12 +814,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0200
-     * @tc.desc    : Testing ApplicationContextGetTempDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0200
+     * @tc.desc   Testing ApplicationContextGetTempDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetTempDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -838,12 +838,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0100
-     * @tc.desc    : Test ApplicationContextGetFilesDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0100
+     * @tc.desc   Test ApplicationContextGetFilesDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -862,12 +862,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0200
-     * @tc.desc    : Testing ApplicationContextGetFilesDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0200
+     * @tc.desc   Testing ApplicationContextGetFilesDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetFilesDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -886,12 +886,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0100
-     * @tc.desc    : Test ApplicationContextGetDatabaseDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0100
+     * @tc.desc   Test ApplicationContextGetDatabaseDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -910,12 +910,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0200
-     * @tc.desc    : Testing ApplicationContextGetDatabaseDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0200
+     * @tc.desc   Testing ApplicationContextGetDatabaseDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDatabaseDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -934,12 +934,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0100
-     * @tc.desc    : Test ApplicationContextGetPreferencesDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0100
+     * @tc.desc   Test ApplicationContextGetPreferencesDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -958,12 +958,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0200
-     * @tc.desc    : Testing ApplicationContextGetPreferencesDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0200
+     * @tc.desc   Testing ApplicationContextGetPreferencesDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetPreferencesDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -982,12 +982,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0100
-     * @tc.desc    : Test ApplicationContextGetBundleCodeDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0100
+     * @tc.desc   Test ApplicationContextGetBundleCodeDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1006,12 +1006,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0200
-     * @tc.desc    : Testing ApplicationContextGetBundleCodeDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0200
+     * @tc.desc   Testing ApplicationContextGetBundleCodeDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetBundleCodeDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1030,12 +1030,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0100
-     * @tc.desc    : Test ApplicationContextGetDistributedFilesDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0100
+     * @tc.desc   Test ApplicationContextGetDistributedFilesDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1054,12 +1054,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0200
-     * @tc.desc    : Testing ApplicationContextGetDistributedFilesDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0200
+     * @tc.desc   Testing ApplicationContextGetDistributedFilesDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetDistributedFilesDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1078,12 +1078,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0100
-     * @tc.desc    : Test ApplicationContextGetCloudFileDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0100
+     * @tc.desc   Test ApplicationContextGetCloudFileDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1102,12 +1102,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0200
-     * @tc.desc    : Testing ApplicationContextGetCloudFileDir returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0200
+     * @tc.desc   Testing ApplicationContextGetCloudFileDir returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetCloudFileDir_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1126,12 +1126,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetResourceDir_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetResourceDir_0100
-     * @tc.desc    : Test ApplicationContextGetResourceDir and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetResourceDir_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetResourceDir_0100
+     * @tc.desc   Test ApplicationContextGetResourceDir and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetResourceDir_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1150,12 +1150,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorInvalidParam_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorInvalidParam_0100
-     * @tc.desc    : Test NcpErrorInvalidParam Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorInvalidParam_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorInvalidParam_0100
+     * @tc.desc   Test NcpErrorInvalidParam Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorInvalidParam_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1174,12 +1174,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorServiceError_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorServiceError_0100
-     * @tc.desc    : Test NcpErrorServiceError Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorServiceError_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorServiceError_0100
+     * @tc.desc   Test NcpErrorServiceError Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorServiceError_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1202,12 +1202,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorLibLoadingFailed_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorLibLoadingFailed_0100
-     * @tc.desc    : Test NcpErrorLibLoadingFailed Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorLibLoadingFailed_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorLibLoadingFailed_0100
+     * @tc.desc   Test NcpErrorLibLoadingFailed Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_NcpErrorLibLoadingFailed_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1230,12 +1230,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrCallBackNotExist_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_NcpErrCallBackNotExist_0100
-     * @tc.desc    : Test NcpErrCallBackNotExist Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_NcpErrCallBackNotExist_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_NcpErrCallBackNotExist_0100
+     * @tc.desc   Test NcpErrCallBackNotExist Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_NcpErrCallBackNotExist_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1254,12 +1254,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeNoError_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeNoError_0100
-     * @tc.desc    : Test AbilityBaseErrorCodeNoError Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeNoError_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeNoError_0100
+     * @tc.desc   Test AbilityBaseErrorCodeNoError Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeNoError_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1278,12 +1278,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeParamInvalid_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeParamInvalid_0100
-     * @tc.desc    : Test AbilityBaseErrorCodeParamInvalid Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeParamInvalid_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeParamInvalid_0100
+     * @tc.desc   Test AbilityBaseErrorCodeParamInvalid Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityBase_AbilityBaseErrorCodeParamInvalid_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1307,12 +1307,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeNoSuchAbility_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeNoSuchAbility_0100
-     * @tc.desc    : Test AbilityRuntimeErrorCodeNoSuchAbility Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeNoSuchAbility_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeNoSuchAbility_0100
+     * @tc.desc   Test AbilityRuntimeErrorCodeNoSuchAbility Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeNoSuchAbility_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1336,12 +1336,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeCrossApp_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeCrossApp_0100
-     * @tc.desc    : Test AbilityRuntimeErrorCodeCrossApp Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeCrossApp_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeCrossApp_0100
+     * @tc.desc   Test AbilityRuntimeErrorCodeCrossApp Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeCrossApp_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1365,12 +1365,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInternal_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInternal_0100
-     * @tc.desc    : Test AbilityRuntimeErrorCodeInternal Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInternal_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInternal_0100
+     * @tc.desc   Test AbilityRuntimeErrorCodeInternal Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInternal_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1394,12 +1394,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorVisibilitySettingDisabled_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorVisibilitySettingDisabled_0100
-     * @tc.desc    : Test AbilityRuntimeErrorVisibilitySettingDisabled Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorVisibilitySettingDisabled_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorVisibilitySettingDisabled_0100
+     * @tc.desc   Test AbilityRuntimeErrorVisibilitySettingDisabled Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorVisibilitySettingDisabled_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1423,12 +1423,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInvalidAppInstanceKey_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInvalidAppInstanceKey_0100
-     * @tc.desc    : Test AbilityRuntimeErrorCodeInvalidAppInstanceKey Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInvalidAppInstanceKey_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInvalidAppInstanceKey_0100
+     * @tc.desc   Test AbilityRuntimeErrorCodeInvalidAppInstanceKey Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeInvalidAppInstanceKey_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1458,12 +1458,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeUpperLimitReached_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeUpperLimitReached_0100
-     * @tc.desc    : Test AbilityRuntimeErrorCodeUpperLimitReached Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeUpperLimitReached_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeUpperLimitReached_0100
+     * @tc.desc   Test AbilityRuntimeErrorCodeUpperLimitReached Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeUpperLimitReached_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1493,12 +1493,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorAppInstanceKeyNotSupport_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorAppInstanceKeyNotSupport_0100
-     * @tc.desc    : Test AbilityRuntimeErrorAppInstanceKeyNotSupport Error Code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorAppInstanceKeyNotSupport_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorAppInstanceKeyNotSupport_0100
+     * @tc.desc   Test AbilityRuntimeErrorAppInstanceKeyNotSupport Error Code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorAppInstanceKeyNotSupport_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1528,12 +1528,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100
-     * @tc.desc    : Test ApplicationContextGetVersionCode and return the correct code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100
+     * @tc.desc   Test ApplicationContextGetVersionCode and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1552,12 +1552,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200
-     * @tc.desc    : Testing ApplicationContextGetVersionCode returns an invalid parameter error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200
+     * @tc.desc   Testing ApplicationContextGetVersionCode returns an invalid parameter error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_ApplicationContextGetVersionCode_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

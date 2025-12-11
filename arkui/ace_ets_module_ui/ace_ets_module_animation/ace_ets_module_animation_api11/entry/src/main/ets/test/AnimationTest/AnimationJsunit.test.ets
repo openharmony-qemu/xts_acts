@@ -44,10 +44,13 @@ export default function AnimationJsunit() {
       await CommonFunc.sleep(1000);
       console.info("overlay after each called");
     });
-     /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_01
-     * @tc.name : AnimationJsunit_0100
-     * @tc.desc : Does the component size change after playback
+    /**
+     * @tc.name   AnimationJsunit_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_AR000IGJGH_01
+     * @tc.desc   Does the component size change after playback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AnimationJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimationJsunit_0100] START');
@@ -73,12 +76,15 @@ export default function AnimationJsunit() {
       console.info('[AnimationJsunit_0100] END');
       done();
     });
-	 /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_02
-     * @tc.name : AnimationJsunit_0200
-     * @tc.desc : Does the component size reach the set value after animation cancellation
-     */
 	 
+  /**
+   * @tc.name   AnimationJsunit_0200
+   * @tc.number AnimationJsunit_0200
+   * @tc.desc   AnimationJsunit_0200
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 	 it('AnimationJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimationJsunit_0200] START');
       let driver = await Driver.create()
@@ -104,12 +110,15 @@ export default function AnimationJsunit() {
       done();
     });
 	
-	/**
-     * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_03
-     * @tc.name : AnimationJsunit_0300
-     * @tc.desc : Is there no change in component size after animation pause
-     */
 	
+ /**
+  * @tc.name   AnimationJsunit_0300
+  * @tc.number AnimationJsunit_0300
+  * @tc.desc   AnimationJsunit_0300
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('AnimationJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimationJsunit_0300] START');
       let driver = await Driver.create()
@@ -139,12 +148,15 @@ export default function AnimationJsunit() {
       done();
     });
 	
-	 /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_04
-     * @tc.name : AnimationJsunit_0400
-     * @tc.desc : Is the component size at the set value after the animation ends
-     */
 	
+ /**
+  * @tc.name   AnimationJsunit_0400
+  * @tc.number AnimationJsunit_0400
+  * @tc.desc   AnimationJsunit_0400
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('AnimationJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimationJsunit_0400] START');
       let driver2 = await Driver.create()
@@ -170,12 +182,15 @@ export default function AnimationJsunit() {
       done();
     });
 	
-	 /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_05
-     * @tc.name : AnimationJsunit_0500
-     * @tc.desc : Does the animation setting parameters take effect
-     */
 	
+ /**
+  * @tc.name   AnimationJsunit_0500
+  * @tc.number AnimationJsunit_0500
+  * @tc.desc   AnimationJsunit_0500
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('AnimationJsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimationJsunit_0500] START');
       let driver = await Driver.create()
@@ -204,12 +219,15 @@ export default function AnimationJsunit() {
       done();
     });
 	
-	 /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_06
-     * @tc.name : AnimationJsunit_0600
-     * @tc.desc : Print callback after animation cancellation
-     */
 	
+ /**
+  * @tc.name   AnimationJsunit_0600
+  * @tc.number AnimationJsunit_0600
+  * @tc.desc   AnimationJsunit_0600
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('AnimationJsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimationJsunit_0600] START');
       let driver = await Driver.create()
@@ -235,12 +253,15 @@ export default function AnimationJsunit() {
       done();
     });
 	
-	 /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_07
-     * @tc.name : AnimationJsunit_0700
-     * @tc.desc : Whether to print the callback after the animation ends
-     */
 	
+ /**
+  * @tc.name   AnimationJsunit_0700
+  * @tc.number AnimationJsunit_0700
+  * @tc.desc   AnimationJsunit_0700
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('AnimationJsunit_0700', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimationJsunit_0700] START');
       let driver = await Driver.create()

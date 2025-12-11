@@ -49,10 +49,12 @@ export default function SystemTransition() {
 
 
     /**
-     * @tc.number    SystemTransition_0100
-     * @tc.name      SystemTransition_0100
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.TITLE and NavigationSystemTransitionType.CONTENT
-     * @tc.level     Level 2
+     * @tc.name   SystemTransition_0100
+     * @tc.number SystemTransition_0100
+     * @tc.desc   Test systemTransition and NavigationSystemTransitionType.TITLE and NavigationSystemTransitionType.CONTENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SystemTransition_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0100 START');

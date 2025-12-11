@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file expect in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,17 +13,16 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
-import UTD from '@ohos.data.uniformTypeDescriptor'
+import UTD from '@ohos.data.uniformTypeDescriptor';
 import { BusinessError } from '@ohos.base';
 
 const REFERENCE_URL =
   "https://gitee.com/openharmony/docs/blob/master/en/application-dev/reference/apis/js-apis-data-uniformTypeDescriptor.md#uniformdatatype";
-
+let tag = 'ttt:';
 
 export default function UDMFApiDescriptorTest() {
   describe('UDMFApiDescriptorTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0100
      * @tc.desc   Verify the properties of the text type
@@ -52,7 +51,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0125
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0125
      * @tc.desc   Verify the properties of the entity type
@@ -81,7 +79,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0125 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0150
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0150
      * @tc.desc   Verify the properties of the object type
@@ -110,7 +107,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0150 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0175
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0175
      * @tc.desc   Verify the properties of the composite-object type
@@ -140,7 +136,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0175 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0200
      * @tc.desc   Verify the properties of the plain text data type
@@ -169,7 +164,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0300
      * @tc.desc   Verify the properties of the html data type
@@ -198,7 +192,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0400
      * @tc.desc   Verify the properties of the hyperlink data type
@@ -227,7 +220,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0500
      * @tc.desc   Verify the properties of the xml data type
@@ -256,7 +248,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0600
      * @tc.desc   Verify the properties of the Source code data type
@@ -285,7 +276,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0700
      * @tc.desc   Verify the properties of the Script data type
@@ -314,7 +304,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0800
      * @tc.desc   Verify the properties of the Shell script data type
@@ -343,7 +332,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0900
      * @tc.desc   Verify the properties of the C-shell script data type
@@ -372,7 +360,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1000
      * @tc.desc   Verify the properties of the Perl script data type
@@ -401,7 +388,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1100
      * @tc.desc   Verify the properties of the PHP script data type
@@ -430,7 +416,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1200
      * @tc.desc   Verify the properties of the Python script data type.
@@ -459,7 +444,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1300
      * @tc.desc   Verify the properties of the Ruby script data type.
@@ -488,7 +472,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1400
      * @tc.desc   Verify the properties of the TypeScript data type
@@ -517,7 +500,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1500
      * @tc.desc   Verify the properties of the JavaScript data type
@@ -545,7 +527,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1600
      * @tc.desc   Verify the properties of the JavaScript data type
@@ -574,7 +555,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1700
      * @tc.desc   Verify the properties of the C source code data type
@@ -603,7 +583,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1800
      * @tc.desc   Verify the properties of the C++ header data type
@@ -632,7 +611,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1900
      * @tc.desc   Verify the properties of the C++ source code data type
@@ -661,7 +639,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2000
      * @tc.desc   Verify the properties of the C++ source code data type
@@ -690,7 +667,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2100
      * @tc.desc   Verify the properties of the Ebook data type
@@ -719,7 +695,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2200
      * @tc.desc   Verify the properties of the EPUB ebook file format data type
@@ -748,7 +723,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2300
      * @tc.desc   Verify the properties of the AZW ebook file format data type
@@ -777,7 +751,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2400
      * @tc.desc   Verify the properties of the AZW3 ebook file format data type
@@ -806,7 +779,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2500
      * @tc.desc   Verify the properties of the KFX ebook file format data type
@@ -835,7 +807,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2600
      * @tc.desc   Verify the properties of the MOBI ebook file format data type
@@ -864,7 +835,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2700
      * @tc.desc   Verify the properties of the Media data type
@@ -893,7 +863,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2800
      * @tc.desc   Verify the properties of the Image data type
@@ -922,7 +891,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2900
      * @tc.desc   Verify the properties of the JPEG image format data type
@@ -951,7 +919,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3000
      * @tc.desc   Verify the properties of the png image format data type
@@ -980,7 +947,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3100
      * @tc.desc   Verify the properties of the Raw image format data type
@@ -1009,7 +975,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3200
      * @tc.desc   Verify the properties of the TIFF image format data type
@@ -1038,7 +1003,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3300
      * @tc.desc   Verify the properties of the Windows bitmap image data type
@@ -1067,7 +1031,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3400
      * @tc.desc   Verify the properties of the Windows icon data type
@@ -1096,7 +1059,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3500
      * @tc.desc   Verify the properties of the Adobe Photoshop document data type
@@ -1126,7 +1088,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3600
      * @tc.desc   Verify the properties of the Adobe Illustrator document data type
@@ -1155,7 +1116,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3700
      * @tc.desc   Verify the properties of the Microsoft Word data type.
@@ -1184,7 +1144,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3800
      * @tc.desc   Verify the properties of the Microsoft Excel data type
@@ -1213,7 +1172,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3900
      * @tc.desc   Verify the properties of the Microsoft PowerPoint presentation data type
@@ -1242,7 +1200,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_3900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4000
      * @tc.desc   Verify the properties of the PDF data type
@@ -1271,7 +1228,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4100
      * @tc.desc   Verify the properties of the PostScript data type
@@ -1300,7 +1256,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4200
      * @tc.desc   Verify the properties of the Encapsulated PostScript data type
@@ -1329,7 +1284,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4300
      * @tc.desc   Verify the properties of the Video data type
@@ -1358,7 +1312,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4400
      * @tc.desc   Verify the properties of the AVI video format data type
@@ -1387,7 +1340,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4500
      * @tc.desc   Verify the properties of the MPEG video format data type
@@ -1416,7 +1368,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4600
      * @tc.desc   Verify the properties of the MPEG4 video format data type
@@ -1445,7 +1396,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4700
      * @tc.desc   Verify the properties of the 3GPP video format data type.
@@ -1474,7 +1424,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4800
      * @tc.desc   Verify the properties of the 3GPP video format data type.
@@ -1503,7 +1452,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4900
      * @tc.desc   Verify the properties of the Windows WM video format data type
@@ -1532,7 +1480,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_4900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5000
      * @tc.desc   Verify the properties of the Windows WMV video format data type
@@ -1561,7 +1508,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5100
      * @tc.desc   Verify the properties of the Windows WMP video format data type
@@ -1590,7 +1536,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5200
      * @tc.desc   Verify the properties of the Audio data type
@@ -1619,7 +1564,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5300
      * @tc.desc   Verify the properties of the AAC audio format data type
@@ -1648,7 +1592,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5400
      * @tc.desc   Verify the properties of the AIFF audio format data type
@@ -1677,7 +1620,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5500
      * @tc.desc   Verify the properties of the ALAC audio format data type
@@ -1706,7 +1648,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5600
      * @tc.desc   Verify the properties of the FLAC audio format data type
@@ -1735,7 +1676,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5700
      * @tc.desc   Verify the properties of the MP3 audio format data type
@@ -1764,7 +1704,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5800
      * @tc.desc   Verify the properties of the OGG audio format data type
@@ -1793,7 +1732,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5900
      * @tc.desc   Verify the properties of the PCM audio format data type
@@ -1822,7 +1760,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_5900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6000
      * @tc.desc   Verify the properties of the Windows WMA audio format data type
@@ -1851,7 +1788,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6100
      * @tc.desc   Verify the properties of the Waveform audio format data type created by Microsoft
@@ -1880,7 +1816,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6200
      * @tc.desc   Verify the properties of the Windows WMX audio format data type
@@ -1909,7 +1844,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6300
      * @tc.desc   Verify the properties of the Windows WVX audio format data type
@@ -1938,7 +1872,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6400
      * @tc.desc   Verify the properties of the Windows WAX audio format data type
@@ -1967,7 +1900,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6500
      * @tc.desc   Verify the properties of the File data type
@@ -1996,7 +1928,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6600
      * @tc.desc   Verify the properties of the Directory data type
@@ -2025,7 +1956,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6700
      * @tc.desc   Verify the properties of the Folder data type
@@ -2054,7 +1984,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6800
      * @tc.desc   Verify the properties of the Symlink data type
@@ -2083,7 +2012,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6900
      * @tc.desc   Verify the properties of the Symlink data type
@@ -2112,7 +2040,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_6900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7000
      * @tc.desc   Verify the properties of the Bzip2 archive file data type
@@ -2141,7 +2068,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7100
      * @tc.desc   Verify the properties of the Disk image archive file data type
@@ -2170,7 +2096,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7200
      * @tc.desc   Verify the properties of the Tar archive data type
@@ -2199,7 +2124,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7300
      * @tc.desc   Verify the properties of the Zip archive data type
@@ -2228,7 +2152,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7400
      * @tc.desc   Verify the properties of the Java archive data type
@@ -2257,7 +2180,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7500
      * @tc.desc   Verify the properties of the GNU archive data type
@@ -2286,7 +2208,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7600
      * @tc.desc   Verify the properties of the Gzip archive data type
@@ -2315,7 +2236,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7700
      * @tc.desc   Verify the properties of the Gzip tar archive data type
@@ -2344,7 +2264,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7800
      * @tc.desc   Verify the properties of the Calendar data type
@@ -2373,7 +2292,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7900
      * @tc.desc   Verify the properties of the Contact data type
@@ -2402,7 +2320,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_7900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8000
      * @tc.desc   Verify the properties of the Database data type
@@ -2431,7 +2348,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8100
      * @tc.desc   Verify the properties of the Message data type
@@ -2460,7 +2376,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8200
      * @tc.desc   Verify the properties of the vcard format data type
@@ -2489,7 +2404,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8300
      * @tc.desc   Verify the properties of the navigation data type
@@ -2518,7 +2432,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8400
      * @tc.desc   Verify the properties of the Location data type
@@ -2547,7 +2460,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8500
      * @tc.desc   Verify the properties of the openharmony.form  data type
@@ -2576,7 +2488,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8600
      * @tc.desc   Verify the properties of the openharmony.app-item  data type
@@ -2605,7 +2516,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8700
      * @tc.desc   Verify the properties of the openharmony.pixel-map data type
@@ -2634,7 +2544,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8800
      * @tc.desc   Verify the properties of the openharmony.atomic-service data type
@@ -2663,7 +2572,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8825
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8825
      * @tc.desc   Verify the properties of the openharmony.package data type
@@ -2693,7 +2601,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8825 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8850
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8850
      * @tc.desc   Verify the properties of the openharmony.hap data type
@@ -2722,7 +2629,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8850 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8900
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8900
      * @tc.desc   Illegal parameters null
@@ -2743,7 +2649,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_8900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9000
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9000
      * @tc.desc   Illegal parameters undefined
@@ -2764,7 +2669,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9100
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9100
      * @tc.desc   Illegal parameters general.hello
@@ -2788,7 +2692,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9200
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9200
      * @tc.desc   Illegal parameters ""
@@ -2809,7 +2712,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9300
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9300
      * @tc.desc   Equals the same parameter types
@@ -2831,7 +2733,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9300 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9400
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9400
      * @tc.desc   Equals the different parameter types
@@ -2853,7 +2754,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("vSUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9500
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9500
      * @tc.desc   Equals the different parameter types -- Illegal params null
@@ -2875,7 +2775,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9600
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9600
      * @tc.desc   Equals the different parameter types -- Illegal params undefined
@@ -2897,7 +2796,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9610
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9610
      * @tc.desc   parameters to belongsTo -- The relationship between the object of the parameter and the parent of the parameter
@@ -2919,7 +2817,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9610 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9615
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9615
      * @tc.desc   parameters to belongsTo -- The relationship between the object of the parameter and the next level of the parameter
@@ -2941,7 +2838,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9615 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9620
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9620
      * @tc.desc   parameters to belongsTo -- The relationship between the object of the parameter and the two levels above the parameter
@@ -2963,7 +2859,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9620 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9625
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9625
      * @tc.desc   parameters to belongsTo -- ToThe relationship between the object of the parameter and the two levels below the parameter
@@ -2985,7 +2880,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9625 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9630
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9630
      * @tc.desc   parameter to belongsTo()-- The relationship between the object of the parameter and the parameter
@@ -3007,7 +2901,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9630 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9635
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9635
      * @tc.desc   parameter to belongsTo()-- The relationship between the object of the parameter and the parameter at the same level
@@ -3029,7 +2922,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9635 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9640
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9640
      * @tc.desc   parameter to belongsTo()-- The relationship between the object of the parameter and the parameter at the same level
@@ -3051,7 +2943,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9640 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9645
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9645
      * @tc.desc   Invalid parameter to belongsTo() -- The relationship between the object of the parameter and "".
@@ -3073,7 +2964,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9645 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9650
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9650
      * @tc.desc   Invalid parameter to belongsTo() --The relationship between the object of the parameter and null
@@ -3095,7 +2985,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9650 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9655
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9655
      * @tc.desc   Invalid parameter to belongsTo() --The relationship between the object of the parameter and undefined
@@ -3117,7 +3006,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9655 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9660
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9660
      * @tc.desc   Invalid parameter to belongsTo() --The relationship between the object of the parameter and "general.hello"
@@ -3139,7 +3027,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9660 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9665
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9665
      * @tc.desc   parameter to isLowerLevelType() --The low-level relationship between the object of a parameter and the previous level of the parameter
@@ -3161,7 +3048,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9665 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9670
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9670
      * @tc.desc   parameter to isLowerLevelType() --The low-level relationship between the object of a parameter and the next level of the parameter
@@ -3183,7 +3069,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9670 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9675
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9675
      * @tc.desc   parameter to isLowerLevelType()  --The low-level relationship between the object of a parameter and the two levels above the parameter
@@ -3205,7 +3090,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9675 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9680
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9680
      * @tc.desc   parameter to isLowerLevelType() --The low-level relationship between the object of a parameter and the lower two levels of the parameter
@@ -3227,7 +3111,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9680 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9685
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9685
      * @tc.desc   parameter to isLowerLevelType()--A low-level relationship between an object of a parameter and the same parameter
@@ -3249,7 +3132,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9685 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9690
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9690
      * @tc.desc   parameter to isLowerLevelType()--The low-level relationship between the object of a parameter and the parameter at the same level
@@ -3271,7 +3153,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9690 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9695
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9695
      * @tc.desc   parameter to isLowerLevelType()--The low-level relationship between the object of a parameter and the parameter at the same level
@@ -3293,7 +3174,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9695 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9700
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9700
      * @tc.desc   Invalid parameter to isLowerLevelType()--The low-level relationship of the object of the parameter to "".
@@ -3315,7 +3195,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9705
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9705
      * @tc.desc   Invalid parameter to isLowerLevelType()--The low-level relationship of the object of the parameter to "general.hello".
@@ -3337,7 +3216,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9705 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9710
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9710
      * @tc.desc   Invalid parameter to isLowerLevelType()--The low-level relationship of the object of the parameter to null.
@@ -3359,7 +3237,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9710 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9715
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9715
      * @tc.desc   Invalid parameter to isLowerLevelType()--The low-level relationship of the object of the parameter to undefined.
@@ -3381,7 +3258,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9715 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9720
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9720
      * @tc.desc   parameter to isHigherLevelType()--The high-level relationship between the object of a parameter and the level above the parameter
@@ -3403,7 +3279,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9720 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9725
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9725
      * @tc.desc   parameter to isHigherLevelType() --The high-level relationship between the object of a parameter and the level below the parameter
@@ -3425,7 +3300,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9725 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9730
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9730
      * @tc.desc   parameter to isHigherLevelType() --The object of a parameter has a high-level relationship with two levels above the parameter
@@ -3447,7 +3321,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9730 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9735
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9735
      * @tc.desc   parameter to isHigherLevelType() --The object of a parameter has a high-level relationship with the two levels below the parameter
@@ -3469,7 +3342,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9735 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9740
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9740
      * @tc.desc   parameter to isHigherLevelType() --The high-level relationship between the object of the parameter and the parameter
@@ -3491,7 +3363,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9740 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9745
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9745
      * @tc.desc   parameter to isHigherLevelType() --The object of a parameter is a high-level relationship with the parameter at the same level
@@ -3513,7 +3384,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9745 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9750
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9750
      * @tc.desc   parameter to isHigherLevelType() --The object of a parameter is a high-level relationship with the parameter at the same level
@@ -3535,7 +3405,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9750 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9755
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9755
      * @tc.desc   Invalid parameter to isHigherLevelType() --The high-level relationship between the object of the parameter and "".
@@ -3557,7 +3426,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9755 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9760
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9760
      * @tc.desc   Invalid parameter to isHigherLevelType() --The high-level relationship between the object of the parameter and "general.hello".
@@ -3579,7 +3447,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9760 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9765
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9765
      * @tc.desc   Invalid parameter to isHigherLevelType() --The high-level relationship between the object of the parameter and null.
@@ -3601,7 +3468,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9765 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9770
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9770
      * @tc.desc   Invalid parameter to isHigherLevelType() --The high-level relationship between the object of the parameter and undefined.
@@ -3623,7 +3489,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9760 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775
      * @tc.desc   parameter to getUniformDataTypeByFilenameExtension()  --parameter is ".xls"
@@ -3644,7 +3509,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9775 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9780
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9780
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameter is null
@@ -3665,7 +3529,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9780 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9785
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9785
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameter is ".hello"
@@ -3694,7 +3557,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9785 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9790
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9790
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameter is ""
@@ -3715,7 +3577,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9790 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9795
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9795
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameter is undefined
@@ -3736,7 +3597,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9795 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9800
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9800
      * @tc.desc   parameter to getUniformDataTypeByFilenameExtension()  --parameters are ".doc" and UTD.UniformDataType.WORD_DOC
@@ -3757,7 +3617,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9805
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9805
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameters are ".doc" and invalid parameter UTD.UniformDataType.PPT
@@ -3786,7 +3645,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9805 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9815
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9815
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameters are ".doc" and invalid parameter null
@@ -3807,7 +3665,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9815 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9820
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9820
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameters are ".doc" and invalid parameter undefined
@@ -3828,7 +3685,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9820 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9825
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9825
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameters are invalid parameter ".hello" and UTD.UniformDataType.ICO
@@ -3857,7 +3713,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9825 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9830
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9830
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameters are invalid parameter ".hello" and ""
@@ -3878,7 +3733,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9830 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9835
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9835
      * @tc.desc   parameter to getUniformDataTypeByMIMEType() --"image/tiff"
@@ -3899,7 +3753,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9835 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9840
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9840
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter is "hello"
@@ -3928,7 +3781,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9840 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9845
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9845
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter is ""
@@ -3949,7 +3801,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9845 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9850
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9850
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter is null
@@ -3970,7 +3821,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9850 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9855
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9855
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter is undefined
@@ -3991,7 +3841,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9855 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9860
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9860
      * @tc.desc   parameter to getUniformDataTypeByMIMEType()  --parameter are "image/tiff" and "general.type-script"
@@ -4012,7 +3861,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9860 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9865
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9865
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter are "image/tiff"and invalid parameter "general.type-script"
@@ -4041,7 +3889,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9865 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9870
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9870
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter are "image/tiff"and invalid parameter null
@@ -4062,7 +3909,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9870 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9875
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9875
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter are "image/tiff"and invalid parameter undefined
@@ -4083,7 +3929,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9875 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9880
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9880
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter are invalid parameter "hello" and  UTD.UniformDataType.WINDOWS_MEDIA_WMV
@@ -4112,7 +3957,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9880 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9885
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9885
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter are "image/tiff"and invalid parameter "general.hello"
@@ -4133,7 +3977,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9885 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9890
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9890
      * @tc.desc   Invalid  parameter to getUniformDataTypeByMIMEType() --parameter are "image/tiff"and invalid parameter ""
@@ -4154,7 +3997,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9890 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9810
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9810
      * @tc.desc   Invalid parameter to getUniformDataTypeByFilenameExtension()  --parameters are ".wav" and invalid parameter "general.hello"
@@ -4176,7 +4018,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0210
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0210
      * @tc.desc   Verify the properties of the com.real.smil data type
@@ -4206,7 +4047,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0220
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0220
      * @tc.desc   Verify the properties of the markdown data type
@@ -4236,7 +4076,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0240
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0240
      * @tc.desc   Verify the properties of the com.j2.jfx-fax data type
@@ -4266,7 +4105,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0250
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0250
      * @tc.desc   Verify the properties of the xbitmap-image data type
@@ -4296,7 +4134,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0260
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0260
      * @tc.desc   Verify the properties of the com.sgi.sgi-image data type
@@ -4326,7 +4163,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0270
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0270
      * @tc.desc   Verify the properties of the com.kodak.flashpix.image data type
@@ -4356,7 +4192,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0280
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0280
      * @tc.desc   Verify the properties of the com.real.realmedia data type
@@ -4386,7 +4221,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0290
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0290
      * @tc.desc   Verify the properties of the au-audio data type
@@ -4416,7 +4250,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0310
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0310
      * @tc.desc   Verify the properties of the com.digidesign.sd2-audio data type
@@ -4447,7 +4280,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0320
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0320
      * @tc.desc   Verify the properties of the raw-image data type
@@ -4477,7 +4309,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0330
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0330
      * @tc.desc   Verify the properties of the fax data type
@@ -4507,7 +4338,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0340
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0340
      * @tc.desc   Verify the properties of the com.js.efx-fax data type
@@ -4537,7 +4367,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0360
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0360
      * @tc.desc   Verify the properties of the com.truevision.tga-image data type
@@ -4567,7 +4396,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0370
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0370
      * @tc.desc   Verify the properties of the com.ilm.openexr-image data type
@@ -4597,7 +4425,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0380
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0380
      * @tc.desc   Verify the properties of the aifc-audio data type
@@ -4627,7 +4454,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0390
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0390
      * @tc.desc   Verify the properties of the com.real.realaudio data type
@@ -4657,7 +4483,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0410
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0410
      * @tc.desc   Verify the properties of the org.openxmlformats.openxml data type
@@ -4687,7 +4512,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0420
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0420
      * @tc.desc   Verify the properties of the org.openxmlformats.wordprocessingml.document data type
@@ -4718,7 +4542,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0430
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0430
      * @tc.desc   Verify the properties of the org.openxmlformats.spreadsheetml.sheet data type
@@ -4749,7 +4572,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0440
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0440
      * @tc.desc   Verify the properties of the org.openxmlformats.presentationml.presentation data type
@@ -4781,7 +4603,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0450
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0450
      * @tc.desc   Verify the properties of the org.oasis.opendocument data type
@@ -4811,7 +4632,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0460
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0460
      * @tc.desc   Verify the properties of the org.oasis.opendocument.text data type
@@ -4841,7 +4661,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0470
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0470
      * @tc.desc   Verify the properties of the org.oasis.opendocument.spreadsheet data type
@@ -4872,7 +4691,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0480
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0480
      * @tc.desc   Verify the properties of the org.oasis.opendocument.presentation data type
@@ -4902,7 +4720,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0490
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0490
      * @tc.desc   Verify the properties of the org.oasis.opendocument.graphics data type
@@ -4932,7 +4749,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0510
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0510
      * @tc.desc   Verify the properties of the org.oasis.opendocument.formula data type
@@ -4963,7 +4779,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0520
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0520
      * @tc.desc   Verify the properties of the com.allume.stuffit-archive data type
@@ -4994,7 +4809,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0530
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0530
      * @tc.desc   Verify the properties of the vcs data type
@@ -5024,7 +4838,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0540
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0540
      * @tc.desc   Verify the properties of the ics data type
@@ -5054,7 +4867,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0550
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0550
      * @tc.desc   Verify the properties of the executable data type
@@ -5084,7 +4896,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0560
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0560
      * @tc.desc   Verify the properties of the com.microsoft.portable-executable data type
@@ -5114,7 +4925,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0570
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0570
      * @tc.desc   Verify the properties of the com.sun.java-class data type
@@ -5144,7 +4954,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0580
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0580
      * @tc.desc   Verify the properties of the font data type
@@ -5174,7 +4983,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0590
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0590
      * @tc.desc   Verify the properties of the truetype-font data type
@@ -5204,7 +5012,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0610
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0610
      * @tc.desc   Verify the properties of the truetype-collection-font data type
@@ -5234,7 +5041,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0620
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0620
      * @tc.desc   Verify the properties of the opentype-font data type
@@ -5264,7 +5070,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0630
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0630
      * @tc.desc   Verify the properties of the com.adobe.postscript-font data type
@@ -5294,7 +5099,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0640
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0640
      * @tc.desc   Verify the properties of the com.adobe.postscript-pfb-font data type
@@ -5324,7 +5128,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0650
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0650
      * @tc.desc   Verify the properties of the com.adobe.postscript-pfa-font data type
@@ -5354,7 +5157,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0660
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0660
      * @tc.desc   Verify the properties of the openharmony.form data type
@@ -5385,7 +5187,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0670
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0670
      * @tc.desc   Verify the properties of the openharmony.app-item data type
@@ -5415,7 +5216,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0680
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0680
      * @tc.desc   Verify the properties of the openharmony.pixel-map data type
@@ -5445,7 +5245,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0690
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0690
      * @tc.desc   Verify the properties of the openharmony.atomic-service data type
@@ -5476,7 +5275,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0710
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0710
      * @tc.desc   Verify the properties of the openharmony.package data type
@@ -5508,7 +5306,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0720
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0720
      * @tc.desc   Verify the properties of the openharmony.hap data type
@@ -5538,7 +5335,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0730
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0730
      * @tc.desc   Verify the properties of the openharmony.hdoc data type
@@ -5567,7 +5363,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0730 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0740
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0740
      * @tc.desc   Verify the properties of the openharmony.styled-string data type
@@ -5597,7 +5392,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0750
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0750
      * @tc.desc   Verify the properties of the openharmony.hinote data type
@@ -5628,7 +5422,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0760
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0760
      * @tc.desc   Verify the properties of the openharmony.want data type
@@ -5659,7 +5452,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0770
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0770
      * @tc.desc   Verify the properties of the com.sun.java-class data type
@@ -5689,7 +5481,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0790
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0790
      * @tc.desc   getUniformDataTypeByMIMEType --Fuzzy queries parameter --image/*
@@ -5711,7 +5502,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0810
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0810
      * @tc.desc   getUniformDataTypeByMIMEType --Fuzzy queries parameter --video/*
@@ -5733,7 +5523,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0820
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0820
      * @tc.desc   getUniformDataTypeByMIMEType --Fuzzy queries parameter --audio/*
@@ -5755,7 +5544,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0850
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0850
      * @tc.desc   parameter to getUniformDataTypeByFilenameExtension()  --parameter is ".mytext" "general.plain-text"
@@ -5785,7 +5573,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0860
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0860
      * @tc.desc   parameter to getUniformDataTypeByFilenameExtension()  --parameter is ".mytext"
@@ -5815,7 +5602,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0870
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0870
      * @tc.desc   parameter to getUniformDataTypeByFilenameExtension()  --parameter is ".mytext","general.cumtomType"
@@ -5839,7 +5625,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0880
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0880
      * @tc.desc   Dynamic type acquisition
@@ -5869,7 +5654,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0890
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0890
      * @tc.desc   Dynamic type acquisition
@@ -5899,7 +5683,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0910
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0910
      * @tc.desc   parameter to getUniformDataTypeByMIMEType()  --parameter is ".mytext","general.cumtomType"
@@ -5923,7 +5706,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0920
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0920
      * @tc.desc   Dynamic type acquisition parameter to isLowerLevelType()
@@ -5947,7 +5729,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0930
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0930
      * @tc.desc   Dynamic type acquisition parameter to isLowerLevelType()
@@ -5971,7 +5752,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0940
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0940
      * @tc.desc   Dynamic type acquisition parameter to isLowerLevelType()
@@ -5996,7 +5776,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0950
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0950
      * @tc.desc   Dynamic type acquisition parameter to isHigherLevelType()
@@ -6022,7 +5801,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0960
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0960
      * @tc.desc   Dynamic type acquisition parameter to isHigherLevelType()
@@ -6047,7 +5825,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0970
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0970
      * @tc.desc   Dynamic type acquisition parameter to belongsTo()
@@ -6072,7 +5849,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0980
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0980
      * @tc.desc   Dynamic type acquisition parameter to belongsTo()
@@ -6097,7 +5873,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0990
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0990
      * @tc.desc   Dynamic type acquisition parameter to belongsTo()
@@ -6122,7 +5897,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1010
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1010
      * @tc.desc   Dynamic vs. Illegal Types  parameter to belongsTo()
@@ -6147,7 +5921,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1020
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1020
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isHigherLevelType()
@@ -6171,7 +5944,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1030
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1030
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isLowerLevelType()
@@ -6196,7 +5968,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1040
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1040
      * @tc.desc   Dynamic vs. Illegal Types  parameter to belongsTo()
@@ -6221,7 +5992,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1050
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1050
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isHigherLevelType()
@@ -6245,7 +6015,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1060
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1060
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isLowerLevelType()
@@ -6270,7 +6039,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1070
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1070
      * @tc.desc   Dynamic vs. Illegal Types  parameter to belongsTo()
@@ -6295,7 +6063,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1080
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1080
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isHigherLevelType()
@@ -6319,7 +6086,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1090
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1090
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isLowerLevelType()
@@ -6344,7 +6110,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1110
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1110
      * @tc.desc   Dynamic vs. Illegal Types  parameter to belongsTo()
@@ -6369,7 +6134,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1120
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1120
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isHigherLevelType()
@@ -6393,7 +6157,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1130
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1130
      * @tc.desc   Dynamic vs. Illegal Types  parameter to isLowerLevelType()
@@ -6418,7 +6181,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0830
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0830
      * @tc.desc   getUniformDataTypeByMIMEType --Fuzzy queries parameter --text/*
@@ -6443,7 +6205,6 @@ export default function UDMFApiDescriptorTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2410
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2410
      * @tc.desc   Verify the properties of the xhtml file format data type
@@ -6472,7 +6233,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2410 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2420
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2420
      * @tc.desc   Verify the properties of the rss file format data type
@@ -6502,7 +6262,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2430
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2430
      * @tc.desc   Verify the properties of the css file format data type
@@ -6532,7 +6291,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2440
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2440
      * @tc.desc   Verify the properties of the tex file format data type
@@ -6561,7 +6319,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2440 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2450
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2450
      * @tc.desc   Verify the properties of the asc-text file format data type
@@ -6590,7 +6347,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2450 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2460
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2450
      * @tc.desc   Verify the properties of the rich-text file format data type
@@ -6619,7 +6375,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2460 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2470
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2470
      * @tc.desc   Verify the properties of the delimited-values-text file format data type
@@ -6648,7 +6403,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2470 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2480
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2480
      * @tc.desc   Verify the properties of the comma-separated-values-tex file format data type
@@ -6678,7 +6432,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2490
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2490
      * @tc.desc   Verify the properties of the tab-separated-values-text file format data type
@@ -6708,7 +6461,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2510
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2510
      * @tc.desc   Verify the properties of the gif file format data type
@@ -6737,7 +6489,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2510 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2520
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2520
      * @tc.desc   Verify the properties of the com.microsoft.word.dot file format data type
@@ -6766,7 +6517,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2510 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2530
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2530
      * @tc.desc   Verify the properties of the com.microsoft.powerpoint.pps file format data type
@@ -6795,7 +6545,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2530 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2540
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2540
      * @tc.desc   Verify the properties of the com.microsoft.powerpoint.pot file format data type
@@ -6825,7 +6574,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2550
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2550
      * @tc.desc   Verify the properties of the com.microsoft.excel.xlt file format data type
@@ -6855,7 +6603,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2560
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2560
      * @tc.desc   Verify the properties of the com.microsoft.visio.vsd file format data type
@@ -6885,7 +6632,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2570
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2570
      * @tc.desc   Verify the properties of the ts file format data type
@@ -6914,7 +6660,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2570 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2580
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2580
      * @tc.desc   Verify the properties of the mpegurl-video file format data type
@@ -6943,7 +6688,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2580 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2590
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2590
      * @tc.desc   Verify the properties of the org.matroska.mkv file format data type
@@ -6972,7 +6716,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2580 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2610
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2610
      * @tc.desc   Verify the properties of the com.adobe.flash file format data type
@@ -7002,7 +6745,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2620
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2620
      * @tc.desc   Verify the properties of the general.mpegurl-audio file format data type
@@ -7031,7 +6773,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2610 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2630
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2630
      * @tc.desc   Verify the properties of the general.mpeg-4-audio file format data type
@@ -7060,7 +6801,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2630 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2650
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2650
      * @tc.desc   Verify the properties of the mp2 file format data type
@@ -7089,7 +6829,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2650 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2640
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2640
      * @tc.desc   Verify the properties of the mpeg-audio file format data type
@@ -7118,7 +6857,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2640 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2660
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2660
      * @tc.desc   Verify the properties of the ulaw-audio file format data type
@@ -7147,7 +6885,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2660 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2670
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2670
      * @tc.desc   Verify the properties of the org.matroska.mka file format data type
@@ -7176,7 +6913,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2670 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2680
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2680
      * @tc.desc   Verify the properties of the opg file format data type
@@ -7205,7 +6941,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2690 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2690
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2690
      * @tc.desc   Verify the properties of the taz-archive file format data type
@@ -7234,7 +6969,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2690 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2710
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2710
      * @tc.desc   Verify the properties of the web-archive file format data type
@@ -7263,7 +6997,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2710 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2720
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2720
      * @tc.desc   Verify the properties of the iso file format data type
@@ -7292,7 +7025,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2720 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2730
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2730
      * @tc.desc   Verify the properties of the org.openxmlformats.drawingml.visio file format data type
@@ -7322,7 +7054,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2730 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2740
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2740
      * @tc.desc   Verify the properties of the org.openxmlformats.drawingml.template file format data type
@@ -7354,7 +7085,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2730 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2750
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2750
      * @tc.desc   Verify the properties of the org.openxmlformats.wordprocessingml.template file format data type
@@ -7387,7 +7117,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2750 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2760
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2760
      * @tc.desc   Verify the properties of the org.openxmlformats.presentationml.template file format data type
@@ -7420,7 +7149,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2760 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2770
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2770
      * @tc.desc   Verify the properties of the org.openxmlformats.presentationml.slideshow file format data type
@@ -7453,7 +7181,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2770 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2780
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2780
      * @tc.desc   Verify the properties of the org.openxmlformats.spreadsheetml.template file format data type
@@ -7486,7 +7213,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2780 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2790
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2790
      * @tc.desc   Verify the properties of the com.rarlab.rar-archive file format data type
@@ -7515,7 +7241,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2780 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2810
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2810
      * @tc.desc   Verify the properties of the org.7-zip.7-zip-archive file format data type
@@ -7544,7 +7269,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2810 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2820
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2820
      * @tc.desc   Verify the properties of the general.ofd file format data type
@@ -7573,7 +7297,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2820 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2830
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2830
      * @tc.desc   Verify the properties of the general.cad file format data type
@@ -7602,7 +7325,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2830 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2840
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2840
      * @tc.desc   Verify the properties of the general.octet-stream file format data type
@@ -7632,7 +7354,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1140
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1140
      * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
@@ -7654,7 +7375,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1150
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1150
      * @tc.desc   Invalid parameter to getUniformDataTypesByFilenameExtension()  --parameter is null
@@ -7676,7 +7396,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1160
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1160
      * @tc.desc   Invalid parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".hello"
@@ -7705,7 +7424,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1160 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1170
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1170
      * @tc.desc   Invalid parameter to getUniformDataTypesByFilenameExtension()  --parameter is ""
@@ -7726,7 +7444,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1170 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1180
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1180
      * @tc.desc   Invalid parameter to getUniformDataTypesByFilenameExtension()  --parameter is undefined
@@ -7748,7 +7465,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1190
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1190
      * @tc.desc   parameter to getUniformDataTypesByMIMEType() --"image/tiff"
@@ -7769,7 +7485,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1190 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1210
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1210
      * @tc.desc   Invalid  parameter to getUniformDataTypesByMIMEType() --parameter is "hello"
@@ -7798,7 +7513,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1210 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1220
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1220
      * @tc.desc   Invalid  parameter to getUniformDataTypesByMIMEType() --parameter is ""
@@ -7819,7 +7533,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1220 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1230
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1230
      * @tc.desc   Invalid  parameter to getUniformDataTypesByMIMEType() --parameter is null
@@ -7840,7 +7553,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1230 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1240
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1240
      * @tc.desc   Invalid  parameter to getUniformDataTypesByMIMEType() --parameter is undefined
@@ -7861,7 +7573,6 @@ export default function UDMFApiDescriptorTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1240 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1250
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1250
      * @tc.desc   parameter to getUniformDataTypesByMIMEType()  --parameter are "image/tiff" and "general.type-script"
@@ -7883,7 +7594,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1260
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1260
      * @tc.desc   parameter to getTypeDescriptor()  --parameter are "igeneral.content-form"
@@ -7900,7 +7610,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1270
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1270
      * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
@@ -7919,6 +7628,955 @@ export default function UDMFApiDescriptorTest() {
         expect().assertFail();
       }
       console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1270 end");
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest128
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1280
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest128 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.pages');
+        expect(typeId).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest128 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest129
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1290
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest129 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.pages', 'general.composite-object');
+        expect(typeId).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest129 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest130
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1305
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest130 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.pages', 'com.apple.iwork');
+        expect(typeId).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest130 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest131
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1310
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest131 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.numbers');
+        expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest131 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest132
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1320
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest132 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.numbers', 'general.composite-object');
+        expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest132 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest133
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1330
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest133 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.numbers', 'com.apple.iwork');
+        expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest133 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest134
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1340
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest134 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.key');
+        expect(typeId).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest134 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest135
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1350
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest135 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.key', 'general.composite-object');
+        expect(typeId).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest135 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest136
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1360
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest136 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.key', 'com.apple.iwork');
+        expect(typeId).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest136 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest137
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1370
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest137 start');
+      try {
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork.pages.pages');
+        if (typeObj) {
+          let typeId = typeObj.typeId;
+          let belongingToTypes = typeObj.belongingToTypes;
+          let description = typeObj.description;
+          let filenameExtensions = typeObj.filenameExtensions;
+          let mimeTypes = typeObj.mimeTypes;
+          expect(typeId).assertEqual('com.apple.iwork.pages.pages');
+          console.log(tag + `typeId: ${typeId}`);
+          expect(belongingToTypes[0]).assertEqual('general.composite-object');
+          expect(belongingToTypes[1]).assertEqual('com.apple.iwork');
+          console.log(tag + `belongingToTypes: ${belongingToTypes}`);
+          expect(description).assertEqual('Apple iWork Pages Document File');
+          console.log(tag + `description: ${description}`);
+          expect(filenameExtensions[0]).assertEqual('.pages');
+          console.log(tag + `filenameExtensions: ${filenameExtensions}`);
+          expect(mimeTypes[0]).assertEqual('application/vnd.apple.pages');
+          console.log(tag + `mimeTypes: ${mimeTypes}`);
+        } else {
+          console.log(tag + 'type com.apple.iwork.pages.pages does not exist');
+          expect().assertFail();
+        }
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest137 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest138
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1380
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest138 start');
+      try {
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork.numbers.numbers');
+        if (typeObj) {
+          let typeId = typeObj.typeId;
+          let belongingToTypes = typeObj.belongingToTypes;
+          let description = typeObj.description;
+          let filenameExtensions = typeObj.filenameExtensions;
+          let mimeTypes = typeObj.mimeTypes;
+          expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
+          console.log(tag + `typeId: ${typeId}`);
+          expect(belongingToTypes[0]).assertEqual('general.composite-object');
+          expect(belongingToTypes[1]).assertEqual('com.apple.iwork');
+          console.log(tag + `belongingToTypes: ${belongingToTypes}`);
+          expect(description).assertEqual('Apple iWork Numbers Spread Sheet File');
+          console.log(tag + `description: ${description}`);
+          expect(filenameExtensions[0]).assertEqual('.numbers');
+          console.log(tag + `filenameExtensions: ${filenameExtensions}`);
+          expect(mimeTypes[0]).assertEqual('application/vnd.apple.numbers');
+          console.log(tag + `mimeTypes: ${mimeTypes}`);
+        } else {
+          console.log(tag + 'type com.apple.iwork.pages.pages does not exist');
+          expect().assertFail();
+        }
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest138 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest139
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1390
+     * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest139 start');
+      try {
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork.keynote.key');
+        if (typeObj) {
+          let typeId = typeObj.typeId;
+          let belongingToTypes = typeObj.belongingToTypes;
+          let description = typeObj.description;
+          let filenameExtensions = typeObj.filenameExtensions;
+          let mimeTypes = typeObj.mimeTypes;
+          expect(typeId).assertEqual('com.apple.iwork.keynote.key');
+          console.log(tag + `typeId: ${typeId}`);
+          expect(belongingToTypes[0]).assertEqual('general.composite-object');
+          expect(belongingToTypes[1]).assertEqual('com.apple.iwork');
+          console.log(tag + `belongingToTypes: ${belongingToTypes}`);
+          expect(description).assertEqual('Apple iWork Keynote Presentation File');
+          console.log(tag + `description: ${description}`);
+          expect(filenameExtensions[0]).assertEqual('.key');
+          console.log(tag + `filenameExtensions: ${filenameExtensions}`);
+          expect(mimeTypes[0]).assertEqual('application/vnd.apple.keynote');
+          console.log(tag + `mimeTypes: ${mimeTypes}`);
+        } else {
+          console.log(tag + 'type com.apple.iwork.pages.pages does not exist');
+          expect().assertFail();
+        }
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest139 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest140
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1405
+     * @tc.desc   getUniformDataTypeByMIMEType Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest140 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages');
+        expect(typeId).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest140 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest141
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1410
+     * @tc.desc   getUniformDataTypeByMIMEType with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest141 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages', 'general.composite-object');
+        expect(typeId).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest141 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest142
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1420
+     * @tc.desc   getUniformDataTypeByMIMEType with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest142 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages', 'com.apple.iwork');
+        expect(typeId).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest142 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest143
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1430
+     * @tc.desc   getUniformDataTypeByMIMEType Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest143 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.numbers');
+        expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest143 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest144
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1440
+     * @tc.desc   getUniformDataTypeByMIMEType with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest144 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.numbers', 'general.composite-object');
+        expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest144 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest145
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1450
+     * @tc.desc   getUniformDataTypeByMIMEType with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest145 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.numbers', 'com.apple.iwork');
+        expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest145 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest146
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1460
+     * @tc.desc   getUniformDataTypeByMIMEType Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest146 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.keynote');
+        expect(typeId).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest146 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest147
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1470
+     * @tc.desc   getUniformDataTypeByMIMEType with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest147 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.keynote', 'general.composite-object');
+        expect(typeId).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest147 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest148
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1480
+     * @tc.desc   getUniformDataTypeByMIMEType with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest148 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.keynote', 'com.apple.iwork');
+        expect(typeId).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest148 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest149
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1490
+     * @tc.desc   getUniformDataTypesByFilenameExtension Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest149 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest149 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest150
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1505
+     * @tc.desc   getUniformDataTypesByFilenameExtension with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest150 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', 'general.composite-object');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest150 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest151
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1510
+     * @tc.desc   getUniformDataTypesByFilenameExtension with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest151 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', 'com.apple.iwork');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest151 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest152
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1520
+     * @tc.desc   getUniformDataTypesByFilenameExtension Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest152 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest152 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest153
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1530
+     * @tc.desc   getUniformDataTypesByFilenameExtension with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest153 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers', 'general.composite-object');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest153 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest154
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1540
+     * @tc.desc   getUniformDataTypesByFilenameExtension with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest154 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers', 'com.apple.iwork');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest154 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest155
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1550
+     * @tc.desc   getUniformDataTypesByFilenameExtension Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest155 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest155 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest156
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1560
+     * @tc.desc   getUniformDataTypesByFilenameExtension with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest156 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key', 'general.composite-object');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest156 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest157
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1570
+     * @tc.desc   getUniformDataTypesByFilenameExtension with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest157 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key', 'com.apple.iwork');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest157 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest158
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1580
+     * @tc.desc   getUniformDataTypesByMIMEType Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest158 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest158 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest159
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1590
+     * @tc.desc   getUniformDataTypesByMIMEType with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest159 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'general.composite-object');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest159 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest160
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1605
+     * @tc.desc   getUniformDataTypesByMIMEType with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest160 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'com.apple.iwork');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest160 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest161
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1610
+     * @tc.desc   getUniformDataTypesByMIMEType Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest161 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest161 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest162
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1620
+     * @tc.desc   getUniformDataTypesByMIMEType with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest162 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'general.composite-object');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest162 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest163
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1630
+     * @tc.desc   getUniformDataTypesByMIMEType with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest163 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'com.apple.iwork');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest163 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest164
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1640
+     * @tc.desc   getUniformDataTypesByMIMEType Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest164 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest164 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest165
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1650
+     * @tc.desc   getUniformDataTypesByMIMEType with belongingToTypes general.composite-object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest165 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'general.composite-object');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest165 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest166
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1660
+     * @tc.desc   getUniformDataTypesByMIMEType with belongingToTypes com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest166 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'com.apple.iwork');
+        expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
+        console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest166 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest167
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1670
+     * @tc.desc   getTypeDescriptor com.apple.iwork
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest167 start');
+      try {
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork');
+        if (typeObj) {
+          let typeId = typeObj.typeId;
+          let belongingToTypes = typeObj.belongingToTypes;
+          let description = typeObj.description;
+          expect(typeId).assertEqual('com.apple.iwork');
+          console.log(tag + `typeId: ${typeId}`);
+          expect(belongingToTypes[0]).assertEqual('general.archive');
+          console.log(tag + `belongingToTypes: ${belongingToTypes}`);
+          expect(description).assertEqual('Apple iWork');
+          console.log(tag + `description: ${description}`);
+        } else {
+          console.log(tag + 'type com.apple.iwork.pages.pages does not exist');
+          expect().assertFail();
+        }
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest167 end');
     });
   })
 }

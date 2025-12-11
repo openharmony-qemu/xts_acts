@@ -37,10 +37,13 @@ export default function GridBackToTopTest() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_Grid_BackToTop_0100
-     * @tc.name   :test grid back to top
-     * @tc.desc   :test whether backToTop events are effective
+    /**
+     * @tc.name   GridScrollTest1_0100
+     * @tc.number ArkUI_Grid_BackToTop_0100
+     * @tc.desc   test whether backToTop events are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridScrollTest1_0100', Level.LEVEL1, async () => {
       console.info('GridScrollTest_0100 START');

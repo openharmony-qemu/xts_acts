@@ -39,7 +39,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0010
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
@@ -70,7 +69,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0020
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
@@ -100,7 +98,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0030
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
@@ -135,7 +132,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0040
      * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
@@ -166,7 +162,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0050
      * @tc.desc   createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
@@ -201,7 +196,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0060
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -224,7 +218,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0070
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -247,7 +240,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0080
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -270,7 +262,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_0900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0090
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -293,7 +284,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0100
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -316,7 +306,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0110
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -339,7 +328,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0120
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -364,7 +352,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0130
      * @tc.desc   isSupported(type: RunningLockType): boolean;
@@ -387,7 +374,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0140
      * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
@@ -418,7 +404,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0150
      * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
@@ -453,7 +438,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0160
      * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
@@ -484,7 +468,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0170
      * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
@@ -519,7 +502,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0180
      * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
@@ -550,7 +532,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_1900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0190
      * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
@@ -585,7 +566,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0200
      * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
@@ -616,7 +596,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0210
      * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
@@ -651,7 +630,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0220
      * @tc.desc   hold lock, is holding
@@ -685,7 +663,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0230
      * @tc.desc   hold(timeout: number): void
@@ -722,7 +699,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0240
      * @tc.desc   hold(timeout: number): void
@@ -756,7 +732,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0250
      * @tc.desc   hold(timeout: number): void
@@ -796,7 +771,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0260
      * @tc.desc   hold(timeout: number): void
@@ -836,7 +810,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0270
      * @tc.desc   hold(timeout: number): void
@@ -872,7 +845,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0280
      * @tc.desc   hold(timeout: number): void
@@ -912,7 +884,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_2900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0290
      * @tc.desc   Create lock input invalid value
@@ -940,7 +911,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0300
      * @tc.desc   Create lock input invalid value
@@ -980,7 +950,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0310
      * @tc.desc   The lock type is BACKGROUND
@@ -1003,7 +972,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0320
      * @tc.desc   The lock type is BACKGROUND
@@ -1026,7 +994,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0330
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1050,7 +1017,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0340
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1074,7 +1040,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0350
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1098,7 +1063,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0360
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1123,7 +1087,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0370
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1148,7 +1111,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3800
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0380
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1173,7 +1135,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_3900
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0390
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1197,7 +1158,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4000
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0400
      * @tc.desc   Checks whether the specified RunningLockType is supported (deprecated since 9)
@@ -1221,7 +1181,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4100
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0410
      * @tc.desc   Checks whether the specified RunningLockType is supported.
@@ -1244,7 +1203,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4200
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0420
      * @tc.desc   Checks whether the specified RunningLockType is supported.
@@ -1267,7 +1225,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4300
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0430
      * @tc.desc   Checks whether the specified RunningLockType is supported.
@@ -1290,7 +1247,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4400
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0440
      * @tc.desc   Checks whether the specified RunningLockType is supported.
@@ -1313,7 +1269,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4500
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0450
      * @tc.desc   Checks whether the specified RunningLockType is supported.
@@ -1336,7 +1291,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4600
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0460
      * @tc.desc   Checks whether the specified RunningLockType is supported.
@@ -1359,7 +1313,6 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockTest_4700
      * @tc.number SUB_PowerSystem_RunningLock_JSTest_0470
      * @tc.desc   Checks whether the specified RunningLockType is supported.

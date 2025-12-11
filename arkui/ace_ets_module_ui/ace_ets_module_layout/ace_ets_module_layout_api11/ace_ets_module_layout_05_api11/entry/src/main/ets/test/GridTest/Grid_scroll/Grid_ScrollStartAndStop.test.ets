@@ -54,9 +54,12 @@ export default function Grid_ScrollStartandStop() {
     });
 
     /**
+     * @tc.name   Grid_ScrollStartandStop_0100
      * @tc.number SUB_ACE_Grid_ScrollStartandStop_0100
-     * @tc.name testGrid
-     * @tc.desc Scroller with animation, sliding triggers onScrollStart and onScrollStop
+     * @tc.desc   Scroller with animation, sliding triggers onScrollStart and onScrollStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollStartandStop_0100',  Level.LEVEL0, async (done: Function) => {
 
@@ -81,9 +84,12 @@ export default function Grid_ScrollStartandStop() {
     });
 
     /**
+     * @tc.name   Grid_ScrollStartandStop_0200
      * @tc.number SUB_ACE_Grid_ScrollStartandStop_0200
-     * @tc.name testGrid
-     * @tc.desc Scroller without animation, sliding triggers onScrollStart and onScrollStop
+     * @tc.desc   Scroller without animation, sliding triggers onScrollStart and onScrollStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollStartandStop_0200',  Level.LEVEL0, async (done: Function) => {
 

@@ -58,12 +58,12 @@ export default function ProvideConsume0050TestJsunit() {
       console.info("ProvideConsume0050TestJsunit after each called");
     });
     /**
-     * @tc.number    ProvideConsume0050Test_001
-     * @tc.name      ProvideConsume0050Test_001
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ProvideConsume0050Test_001
+     * @tc.number ProvideConsume0050Test_001
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ProvideConsume0050Test_001', Level.LEVEL0, async () => {
       await CommonFunc.sleep(1000);

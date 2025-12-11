@@ -39,15 +39,15 @@ namespace OHOS {
     {
     }
 
-    /*
-     * @tc.number: TestVulkanFastlinkedLibraryTestCase004
-     * @tc.name  : TestVulkanFastlinkedLibraryTestCase004
-     * @tc.desc  : test vulkan xts
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
-     */
 
+    /**
+     * @tc.name   TestVulkanFastlinkedLibraryTestCase004
+     * @tc.number TestVulkanFastlinkedLibraryTestCase004
+     * @tc.desc   TestVulkanFastlinkedLibraryTestCase004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanFastlinkedLibrary4Test, TestVulkanFastlinkedLibraryTestCase004, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanFastlinkedLibrary4Test------\n");

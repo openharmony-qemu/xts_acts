@@ -25,15 +25,15 @@ export default function swiperAdapterTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SWIPER_NODE_ADAPTER_0100
-     * @tc.name: testSwiperAdapter001
-     * @tc.desc: testing adapter for swiper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
 
+    /**
+     * @tc.name   testSwiperAdapter001
+     * @tc.number testSwiperAdapter001
+     * @tc.desc   testSwiperAdapter001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperAdapter001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'SwiperAdapterTest';
       await Utils.pushPage(`swiper/${PAGE_TAG}`);

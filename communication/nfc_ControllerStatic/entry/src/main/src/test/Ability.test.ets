@@ -24,7 +24,6 @@ export default function abilityTest() {
     describe("abilityTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Ability_Ability_Static_0100
          * @tc.number SUB_Ability_Ability_Static_0100
          * @tc.desc   Check start ability by bundl

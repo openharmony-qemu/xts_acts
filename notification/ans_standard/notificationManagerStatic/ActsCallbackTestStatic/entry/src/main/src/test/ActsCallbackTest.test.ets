@@ -49,9 +49,12 @@ export default function ActsCallbackTest() {
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.desc       requestEnableNotification allowed button is clicked
+     * @tc.name   Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.number Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.desc   requestEnableNotification allowed button is clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,

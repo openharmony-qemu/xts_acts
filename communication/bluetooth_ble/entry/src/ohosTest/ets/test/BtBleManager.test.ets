@@ -409,7 +409,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0100
            * @tc.desc   Test StartAdvertising api10.
@@ -481,7 +480,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_0200
            * @tc.desc   Test StartAdvertising api10.
@@ -502,7 +500,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0100
            * @tc.desc   Test api10.
@@ -526,7 +523,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECT_0100
            * @tc.desc   Test api10.
@@ -550,7 +546,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0200
            * @tc.desc   Test api10.
@@ -577,7 +572,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0300
            * @tc.desc   Test on and off api10
@@ -602,7 +596,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_0400
            * @tc.desc   Test on and off api10
@@ -627,7 +620,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0100
            * @tc.desc   Test getRssiValue api10 by promise.
@@ -664,7 +656,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_0200
            * @tc.desc   Test testGetDeviceName api10 by callback.
@@ -696,7 +687,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0100
            * @tc.desc   Test GetDeviceName api10 by promise.
@@ -728,7 +718,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0200
            * @tc.desc   Test testGetDeviceName api10 by callback.
@@ -760,7 +749,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0100
            * @tc.desc   Test GetServices api10 by promise.
@@ -791,7 +779,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETSERVICE_0200
            * @tc.desc   Test GetServices api10 by callback.
@@ -823,7 +810,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0100
            * @tc.desc   Test SetBLEMtuSize api10.
@@ -848,7 +834,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0200
            * @tc.desc   Test SetBLEMtuSize api10.
@@ -869,7 +854,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
            * @tc.desc   Test ReadDescriptorValue api10 by promise.
@@ -919,7 +903,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2000
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2000
            * @tc.desc   Test ReadDescriptorValue api10 by callback.
@@ -959,7 +942,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2100
            * @tc.desc   Test On and off api10.
@@ -985,7 +967,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2200
            * @tc.desc   Test On and off api10.
@@ -1012,7 +993,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1300
            * @tc.desc   Test ReadDescriptorValue api10 by promise.
@@ -1047,7 +1027,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1400
            * @tc.desc   Test ReadDescriptorValue api10 by callback.
@@ -1082,7 +1061,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1500
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1500
            * @tc.desc   Test On and Off api10.
@@ -1107,7 +1085,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1600
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1600
            * @tc.desc   Test On and Off api10.
@@ -1132,7 +1109,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1800
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1800
            * @tc.desc   Test Client WriteCharacteristicValue api10.
@@ -1179,7 +1155,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1900
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_1900
            * @tc.desc   Test Client WriteCharacteristicValue api10.
@@ -1224,7 +1199,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2000
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2000
            * @tc.desc   Test on and off api10.
@@ -1250,7 +1224,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2100
            * @tc.desc   Test on and off api10.
@@ -1276,7 +1249,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1000
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1000
            * @tc.desc   Test Client WriteDescriptorValue promsie api10.
@@ -1316,7 +1288,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1100
            * @tc.desc   Test Client WriteDescriptorValue callback api10.
@@ -1358,7 +1329,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1200
            * @tc.desc   Test on and off api10.
@@ -1384,7 +1354,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1300
            * @tc.desc   Test on and off api10.
@@ -1410,7 +1379,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1400
            * @tc.desc   Test On and off api10.
@@ -1436,7 +1404,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1500
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1500
            * @tc.desc   Test On and off api10.
@@ -1462,7 +1429,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0100
            * @tc.desc   Test setCharacteristicChangeNotification api10
@@ -1506,7 +1472,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0200
            * @tc.desc   Test setCharacteristicChangeNotification api10
@@ -1545,7 +1510,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0300
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0300
            * @tc.desc   Test setCharacteristicChangeIndication api10
@@ -1588,7 +1552,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0400
            * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_BLECHARACTERISTIC_0400
            * @tc.desc   Test setCharacteristicChangeIndication api10
@@ -1628,7 +1591,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0100
            * @tc.desc   test GattClientDevice on blemtuchange api10.
@@ -1658,7 +1620,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0200
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_0200
            * @tc.desc   test GattClientDevice off blemtuchange api10
@@ -1687,7 +1648,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_CREATECLIENT_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_CREATECLIENT_0100
            * @tc.desc   testCreateGattClientDevice
@@ -1711,7 +1671,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATTCLIENT_CLOSE_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATTCLIENT_CLOSE_0100
            * @tc.desc   test gattClient close
@@ -1736,7 +1695,6 @@ function wrDescriptorVal() {
           })
 
           /**
-           * @generated.time 2025-11-09 20:49:45
            * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLECONSTANT_GATTDISCONNECTREASON_0100
            * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLECONSTANT_GATTDISCONNECTREASON_0100
            * @tc.desc   Test BLE Constant Api20 GattDisconnectReason

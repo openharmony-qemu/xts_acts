@@ -19,11 +19,14 @@ import resourceManager from '@ohos.resourceManager';
 
 export default function actsFaContextTest() {
     describe('ActsFaContextTest', () => {
-        /*
-        * @tc.number    : ACTS_FAContext_0100
-        * @tc.name      : get resource by $r
-        * @tc.desc      : get resource by $r
-        */
+        /**
+         * @tc.name   ACTS_FAContext_0100
+         * @tc.number ACTS_FAContext_0100
+         * @tc.desc   get resource by $r
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_FAContext_0100', Level.LEVEL0, async (done: Function) => {
             await resourceManager.getResourceManager().then(rm => {
                 return rm.getString($r("app.string.fa").id)

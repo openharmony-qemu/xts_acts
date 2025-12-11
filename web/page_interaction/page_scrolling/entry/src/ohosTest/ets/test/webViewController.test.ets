@@ -60,14 +60,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONSCROLL_0100
-    * @tc.name       : testOnScroll001
-    * @tc.desc       : test onScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnScroll001
+     * @tc.number SUB_WEB_ONSCROLL_0100
+     * @tc.desc   test onScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnScroll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testOnScroll001';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -78,14 +78,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONSCROLL_0200
-    * @tc.name       : testOnScroll002
-    * @tc.desc       : test onScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnScroll002
+     * @tc.number SUB_WEB_ONSCROLL_0200
+     * @tc.desc   test onScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnScroll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testOnScroll002';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -96,14 +96,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONSCROLL_0300
-    * @tc.name       : testOnScroll003
-    * @tc.desc       : test onScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnScroll003
+     * @tc.number SUB_WEB_ONSCROLL_0300
+     * @tc.desc   test onScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnScroll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testOnScroll003';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -113,14 +113,14 @@ export default function webViewController() {
       await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0100
-    * @tc.name       : testOnOverScroll001
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnOverScroll001
+     * @tc.number SUB_WEB_ONOVERSCROLL_0100
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnOverScroll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testOnOverScroll001';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -131,14 +131,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0200
-    * @tc.name       : testOnOverScroll002
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnOverScroll002
+     * @tc.number SUB_WEB_ONOVERSCROLL_0200
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnOverScroll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testOnOverScroll002';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -149,14 +149,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0300
-    * @tc.name       : testOnOverScroll003
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnOverScroll003
+     * @tc.number SUB_WEB_ONOVERSCROLL_0300
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnOverScroll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testOnOverScroll003';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -167,14 +167,14 @@ export default function webViewController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONOVERSCROLL_0400
-    * @tc.name       : testOnOverScroll004
-    * @tc.desc       : test onOverScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnOverScroll004
+     * @tc.number SUB_WEB_ONOVERSCROLL_0400
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnOverScroll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testOnOverScroll004';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)

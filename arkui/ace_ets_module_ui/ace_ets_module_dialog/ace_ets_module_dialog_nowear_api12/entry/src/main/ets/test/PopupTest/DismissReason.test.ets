@@ -43,12 +43,12 @@ export default function DismissReasonTest() {
     });
 
     /**
-     * @tc.number    DismissReasonTest_0010
-     * @tc.name      DismissReasonTest_0010
-     * @tc.desc      popup: DismissReason: CLOSE_BUTTON
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DismissReasonTest_0010
+     * @tc.number DismissReasonTest_0010
+     * @tc.desc   popup: DismissReason: CLOSE_BUTTON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DismissReasonTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('DismissReasonTest_0010 START');

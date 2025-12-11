@@ -42,15 +42,15 @@ export default function imageAddApi3() {
       console.info("imageAddApi3 after each called");
     });
 
-    /**
-     * @tc.number     : SUB_ACE_UI_COMPONENT_IMAGE_001
-     * @tc.desc       : objectFit test of image
-     * @tc.name       : imageAddApi3_001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   imageAddApi3_001
+     * @tc.number imageAddApi3_001
+     * @tc.desc   imageAddApi3_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi3_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi3_001] START');
 
@@ -67,15 +67,15 @@ export default function imageAddApi3() {
 
     });
 
-    /**
-     * @tc.number     : SUB_ACE_UI_COMPONENT_IMAGE_002
-     * @tc.desc       : objectFit test of image
-     * @tc.name       : imageAddApi3_002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   imageAddApi3_002
+     * @tc.number imageAddApi3_002
+     * @tc.desc   imageAddApi3_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi3_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi3_002] START');
 
@@ -92,15 +92,15 @@ export default function imageAddApi3() {
 
     });
 
-    /**
-     * @tc.number     : SUB_ACE_UI_COMPONENT_IMAGE_003
-     * @tc.desc       : objectFit test of image
-     * @tc.name       : imageAddApi3_003
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   imageAddApi3_003
+     * @tc.number imageAddApi3_003
+     * @tc.desc   imageAddApi3_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi3_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi3_003] START');
 
@@ -117,15 +117,15 @@ export default function imageAddApi3() {
 
     });
 
-    /**
-     * @tc.number     : SUB_ACE_UI_COMPONENT_IMAGE_004
-     * @tc.desc       : objectFit test of image
-     * @tc.name       : imageAddApi3_004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   imageAddApi3_004
+     * @tc.number imageAddApi3_004
+     * @tc.desc   imageAddApi3_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi3_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi3_003] START');
 

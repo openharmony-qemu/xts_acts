@@ -57,13 +57,13 @@ export default function webConfigCookieCharacter() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_CHARACTER_0100
-     * @tc.name       : testConfigCookieCharacter001
-     * @tc.desc       : test configCookie \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieCharacter001
+     * @tc.number SUB_WEB_CONFIGCOOKIE_CHARACTER_0100
+     * @tc.desc   test configCookie \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieCharacter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieCharacter001', 133450);
@@ -72,13 +72,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_CHARACTER_0200
-     * @tc.name       : testConfigCookieCharacter002
-     * @tc.desc       : test configCookie \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieCharacter002
+     * @tc.number SUB_WEB_CONFIGCOOKIE_CHARACTER_0200
+     * @tc.desc   test configCookie \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieCharacter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieCharacter002', 133450);
@@ -87,13 +87,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_CHARACTER_0300
-     * @tc.name       : testConfigCookieCharacter003
-     * @tc.desc       : test configCookie \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieCharacter003
+     * @tc.number SUB_WEB_CONFIGCOOKIE_CHARACTER_0300
+     * @tc.desc   test configCookie \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieCharacter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieCharacter003', 133450);
@@ -102,13 +102,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_CHARACTER_0400
-     * @tc.name       : testConfigCookieCharacter004
-     * @tc.desc       : test configCookie \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieCharacter004
+     * @tc.number SUB_WEB_CONFIGCOOKIE_CHARACTER_0400
+     * @tc.desc   test configCookie \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieCharacter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieCharacter004', 133450);
@@ -117,13 +117,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0100
-     * @tc.name       : testConfigCookieIncludeHttpOnlyCharacter001
-     * @tc.desc       : test configCookie includeHttpOnly \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieIncludeHttpOnlyCharacter001
+     * @tc.number SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0100
+     * @tc.desc   test configCookie includeHttpOnly \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieIncludeHttpOnlyCharacter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieIncludeHttpOnlyCharacter001', 133450);
@@ -132,13 +132,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0200
-     * @tc.name       : testConfigCookieIncludeHttpOnlyCharacter002
-     * @tc.desc       : test configCookie includeHttpOnly \t
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieIncludeHttpOnlyCharacter002
+     * @tc.number SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0200
+     * @tc.desc   test configCookie includeHttpOnly \t
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieIncludeHttpOnlyCharacter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieIncludeHttpOnlyCharacter002', 133450);
@@ -147,13 +147,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0300
-     * @tc.name       : testConfigCookieIncludeHttpOnlyCharacter003
-     * @tc.desc       : test configCookie includeHttpOnly \r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieIncludeHttpOnlyCharacter003
+     * @tc.number SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0300
+     * @tc.desc   test configCookie includeHttpOnly \r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieIncludeHttpOnlyCharacter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieIncludeHttpOnlyCharacter003', 133450);
@@ -162,13 +162,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0400
-     * @tc.name       : testConfigCookieIncludeHttpOnlyCharacter004
-     * @tc.desc       : test configCookie includeHttpOnly \0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieIncludeHttpOnlyCharacter004
+     * @tc.number SUB_WEB_CONFIGCOOKIE_INCLUDEHTTPONLY_CHARACTER_0400
+     * @tc.desc   test configCookie includeHttpOnly \0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieIncludeHttpOnlyCharacter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieIncludeHttpOnlyCharacter004', 133450);
@@ -177,13 +177,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_CALLBACK_CHARACTER_0100
-     * @tc.name       : testConfigCookieCallbackCharacter001
-     * @tc.desc       : test configCookie callback \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieCallbackCharacter001
+     * @tc.number SUB_WEB_CONFIGCOOKIE_CALLBACK_CHARACTER_0100
+     * @tc.desc   test configCookie callback \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieCallbackCharacter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieCallbackCharacter001', 133450);
@@ -192,13 +192,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCOGNITO_CHARACTER_0100
-     * @tc.name       : testConfigCookieIncognitoCharacter001
-     * @tc.desc       : test configCookie incognito \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieIncognitoCharacter001
+     * @tc.number SUB_WEB_CONFIGCOOKIE_INCOGNITO_CHARACTER_0100
+     * @tc.desc   test configCookie incognito \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieIncognitoCharacter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieIncognitoCharacter001', 133450);
@@ -207,13 +207,13 @@ export default function webConfigCookieCharacter() {
       });
       sendEventByKey('webConfigCookieCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CONFIGCOOKIE_INCOGNITO_INCLUDEHTTPONLY_CHARACTER_0100
-     * @tc.name       : testConfigCookieIncognitoIncludeHttpOnlyCharacter001
-     * @tc.desc       : test configCookie incognito includeHttpOnly \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testConfigCookieIncognitoIncludeHttpOnlyCharacter001
+     * @tc.number SUB_WEB_CONFIGCOOKIE_INCOGNITO_INCLUDEHTTPONLY_CHARACTER_0100
+     * @tc.desc   test configCookie incognito includeHttpOnly \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConfigCookieIncognitoIncludeHttpOnlyCharacter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitConfigCookieIncognitoIncludeHttpOnlyCharacter001', 133450);

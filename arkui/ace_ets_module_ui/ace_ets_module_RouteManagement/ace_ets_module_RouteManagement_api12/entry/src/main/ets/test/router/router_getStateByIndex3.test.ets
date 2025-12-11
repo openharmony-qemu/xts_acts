@@ -59,12 +59,12 @@ export default function router_getStateByIndex3() {
     });
 
     /**
+     * @tc.name   router_getStateByIndex3_0100
      * @tc.number SUB_ACE_UI_ABILITY_ROUTER_0030
-     * @tc.name testGetStateByIndex
-     * @tc.desc Retrieve the status information of the corresponding page through index values.
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Retrieve the status information of the corresponding page through index values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('router_getStateByIndex3_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[router_getStateByIndex3_0100] START');

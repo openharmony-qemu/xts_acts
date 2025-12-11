@@ -49,12 +49,12 @@ export default function subHeaderButton() {
     })
 
     /**
+     * @tc.name   subHeaderButton_0100
      * @tc.number subHeaderButton
-     * @tc.name   subHeaderButton
      * @tc.desc   Test subHeaderButton
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('subHeaderButton_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderButton_0100] START');

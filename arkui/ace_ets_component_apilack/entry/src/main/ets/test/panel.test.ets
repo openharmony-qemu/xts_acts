@@ -45,10 +45,13 @@ export default function panelBackgroundMaskJsunit() {
       console.info("panelBackgroundMask after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testpanelBackgroundMask0001
-     * @tc.desic         acepanelBackgroundMaskEtsTest0001
+    /**
+     * @tc.name   testpanelBackgroundMask0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testpanelBackgroundMask0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpanelBackgroundMask0001', Level.LEVEL0, async () => {
       console.info('panelBackgroundMask testpanelBackgroundMask0001 START');
@@ -63,10 +66,13 @@ export default function panelBackgroundMaskJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testpanelOnHeightChange0002
-     * @tc.desic         acepanelBackgroundMaskEtsTest0002
+    /**
+     * @tc.name   testpanelOnHeightChange0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testpanelOnHeightChange0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpanelOnHeightChange0002', Level.LEVEL0, async () => {
       console.info('panelBackgroundMask testpanelOnHeightChange0002 START');

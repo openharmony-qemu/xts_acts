@@ -54,12 +54,12 @@ export default function Stack1() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0100
-     * @tc.name      : testStackPush0001
-     * @tc.desc      : Testing Stack push by number.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStackPush0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0100
+     * @tc.desc   Testing Stack push by number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPush0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -89,12 +89,12 @@ export default function Stack1() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0200
-     * @tc.name      : testStackpop0002
-     * @tc.desc      : Testing Stack push by number.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStackpop0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0200
+     * @tc.desc   Testing Stack push by number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackpop0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -124,12 +124,12 @@ export default function Stack1() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0300
-     * @tc.name      : testStackPeek0003
-     * @tc.desc      :  Testing Stack pop by without.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStackPeek0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0300
+     * @tc.desc   Testing Stack pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPeek0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -159,12 +159,12 @@ export default function Stack1() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_0400
-     * @tc.name      : testStackLocate0004
-     * @tc.desc      : Testing Stack locate by without.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStackLocate0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_0400
+     * @tc.desc   Testing Stack locate by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLocate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -194,12 +194,12 @@ export default function Stack1() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_0500
-     * @tc.name      : testStackForEach0005
-     * @tc.desc      : Testing Stack forEach by array.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStackForEach0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_0500
+     * @tc.desc   Testing Stack forEach by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -228,12 +228,12 @@ export default function Stack1() {
       })
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_STACK_ISEMPTY_0600
-     * @tc.name      : testStackIsEmpty0006
-     * @tc.desc      : Testing isEmpty forEach by without.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStackIsEmpty0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_ISEMPTY_0600
+     * @tc.desc   Testing isEmpty forEach by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackIsEmpty0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -262,12 +262,12 @@ export default function Stack1() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0700
-     * @tc.name      : testStackLength0007
-     * @tc.desc      : Testing isEmpty push by without.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStackLength0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0700
+     * @tc.desc   Testing isEmpty push by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLength0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

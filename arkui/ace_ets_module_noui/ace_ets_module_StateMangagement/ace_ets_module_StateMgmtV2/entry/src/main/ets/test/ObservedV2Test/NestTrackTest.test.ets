@@ -42,12 +42,12 @@ export default function NestTrackTest() {
       done();
     });
     /**
-     * @tc.number    NestTrack
-     * @tc.name      NestTrackTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   NestTrackTest_0100
+     * @tc.number NestTrack
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NestTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('NestTrackTest_0100 START');

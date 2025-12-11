@@ -63,12 +63,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_1200
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_1200
-     * @tc.desc: test adler32Combine(adler1,adler2,123)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_1200
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_1200
+     * @tc.desc   test adler32Combine(adler1,adler2,123)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Zlib_Checksum_Check_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -87,12 +87,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_1300
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_1300
-     * @tc.desc: test adler32Combine(-1,adler2,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_1300
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_1300
+     * @tc.desc   test adler32Combine(-1,adler2,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Zlib_Checksum_Check_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -111,12 +111,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_1400
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_1400
-     * @tc.desc: test adler32Combine(9223372036854775808,adler2,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_1400
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_1400
+     * @tc.desc   test adler32Combine(9223372036854775808,adler2,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Zlib_Checksum_Check_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -135,12 +135,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_1500
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_1500
-     * @tc.desc: test adler32Combine(adler1,-1,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_1500
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_1500
+     * @tc.desc   test adler32Combine(adler1,-1,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Zlib_Checksum_Check_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -159,12 +159,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_1600
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_1600
-     * @tc.desc: test adler32Combine(adler1,9223372036854775808,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_1600
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_1600
+     * @tc.desc   test adler32Combine(adler1,9223372036854775808,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -183,12 +183,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_1700
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_1700
-     * @tc.desc: test adler32Combine(adler1,adler2,-1)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_1700
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_1700
+     * @tc.desc   test adler32Combine(adler1,adler2,-1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -207,12 +207,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_1800
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_1800
-     * @tc.desc: test adler32Combine(adler1,adler2,9223372036854775808)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_1800
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_1800
+     * @tc.desc   test adler32Combine(adler1,adler2,9223372036854775808)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -231,12 +231,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_2000
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_2000
-     * @tc.desc: test adler32Combine(undefined,adler2,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_2000
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_2000
+     * @tc.desc   test adler32Combine(undefined,adler2,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -254,12 +254,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_2100
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_2100
-     * @tc.desc: test adler32Combine(adler1,null,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_2100
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_2100
+     * @tc.desc   test adler32Combine(adler1,null,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -276,12 +276,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_2200
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_2200
-     * @tc.desc: test adler32Combine(adler1,undefined,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_2200
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_2200
+     * @tc.desc   test adler32Combine(adler1,undefined,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -299,12 +299,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_2300
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_2300
-     * @tc.desc: test adler32Combine(adler1,adler2,null)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_2300
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_2300
+     * @tc.desc   test adler32Combine(adler1,adler2,null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -321,12 +321,12 @@ export default function bmsZlibChecksumAdler32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_2400
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_2400
-     * @tc.desc: test adler32Combine(adler1,adler2,undefined)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_2400
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_2400
+     * @tc.desc   test adler32Combine(adler1,adler2,undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {

@@ -59,12 +59,12 @@ export default function MediaAssetChangeRequestConstructorTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_CONSTRUCTOR_001
-     * @tc.name      : MediaAssetChangeRequest_constructor_promise_001
-     * @tc.desc      : constructor
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_constructor_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_CONSTRUCTOR_001
+     * @tc.desc   constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_constructor_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_constructor_promise_001';

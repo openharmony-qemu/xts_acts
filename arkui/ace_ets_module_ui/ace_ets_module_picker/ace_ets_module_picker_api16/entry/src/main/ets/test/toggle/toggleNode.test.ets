@@ -48,12 +48,12 @@ export default function toggleNodeTest() {
     })
    
     /**
-     * @tc.number    toggleNode0100
-     * @tc.name      toggleNode0100
-     * @tc.desc      frameNode: createNodetoggleToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   toggleNode0100
+     * @tc.number toggleNode0100
+     * @tc.desc   frameNode: createNodetoggleToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('toggleNode0100', Level.LEVEL1, async (done: Function) => {
 

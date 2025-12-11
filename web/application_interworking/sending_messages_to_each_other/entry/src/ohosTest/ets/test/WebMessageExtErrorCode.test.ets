@@ -65,14 +65,14 @@ export default function webMessageExtErrorCode() {
       })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETSTRING_ERROR_CODE_0100
-    * @tc.name       : testWebMessageExtSetStringErrorCode001
-    * @tc.desc       : test WebMessageExtSetString error code 17100014
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetStringErrorCode001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETSTRING_ERROR_CODE_0100
+     * @tc.desc   test WebMessageExtSetString error code 17100014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetStringErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetStringErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetStringErrorCode001", "17100014", 170300, done);
@@ -80,70 +80,70 @@ export default function webMessageExtErrorCode() {
 
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETNUMBER_ERROR_CODE_0100
-    * @tc.name       : testWebMessageExtSetNumberErrorCode001
-    * @tc.desc       : test WebMessageExtSetNumber error code 17100014
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetNumberErrorCode001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETNUMBER_ERROR_CODE_0100
+     * @tc.desc   test WebMessageExtSetNumber error code 17100014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetNumberErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetNumberErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetNumberErrorCode001", "17100014", 170310, done);
       sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETBOOLEAN_ERROR_CODE_0100
-    * @tc.name       : testWebMessageExtSetBooleanErrorCode001
-    * @tc.desc       : test WebMessageExtSetBoolean error code 17100014
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetBooleanErrorCode001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETBOOLEAN_ERROR_CODE_0100
+     * @tc.desc   test WebMessageExtSetBoolean error code 17100014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetBooleanErrorCode001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetBooleanErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetBooleanErrorCode001", "17100014", 170320, done);
       sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETARRAYBUFFER_ERROR_CODE_0100
-    * @tc.name       : testWebMessageExtSetArrayBufferErrorCode001
-    * @tc.desc       : test WebMessageExtSetArrayBuffer error code 17100014
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetArrayBufferErrorCode001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETARRAYBUFFER_ERROR_CODE_0100
+     * @tc.desc   test WebMessageExtSetArrayBuffer error code 17100014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetArrayBufferErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetArrayBufferErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetArrayBufferErrorCode001", "17100014", 170330, done);
       sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETARRAY_ERROR_CODE_0100
-    * @tc.name       : testWebMessageExtSetArrayErrorCode001
-    * @tc.desc       : test WebMessageExtSetArray error code 17100014
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetArrayErrorCode001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETARRAY_ERROR_CODE_0100
+     * @tc.desc   test WebMessageExtSetArray error code 17100014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetArrayErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetArrayErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetArrayErrorCode001", "17100014", 170340, done);
       sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETERROR_ERROR_CODE_0100
-    * @tc.name       : testWebMessageExtSetErrorErrorCode001
-    * @tc.desc       : test WebMessageExtSetError error code 17100014
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetErrorErrorCode001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETERROR_ERROR_CODE_0100
+     * @tc.desc   test WebMessageExtSetError error code 17100014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetErrorErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetErrorErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetError002", "17100014", 170350, done);

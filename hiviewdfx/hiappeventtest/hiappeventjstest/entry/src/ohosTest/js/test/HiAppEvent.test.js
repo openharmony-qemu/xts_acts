@@ -57,9 +57,12 @@ export default function HiAppEventApiTest() {
 describe('HiAppEventApiTest', function () {
 
     /**
+     * @tc.name   testHiAppEventApi01
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0100
-     * @tc.name testHiAppEventApi01
-     * @tc.desc HiAppEvent write interface test.
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiAppEventApi01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiAppEventApi01 start')
@@ -82,9 +85,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi02
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0200
-     * @tc.name testHiAppEventApi02
-     * @tc.desc 验证write(API7)接口，使用Promise异步回调可打点32以内各类型参数的事件，可调用成功，无返回错误码.
+     * @tc.desc   验证write(API7)接口，使用Promise异步回调可打点32以内各类型参数的事件，可调用成功，无返回错误码.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiAppEventApi02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiAppEventApi02 start')
@@ -104,9 +110,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi03
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0300
-     * @tc.name testHiAppEventApi03
-     * @tc.desc HiAppEvent write EventType of STATISTIC.
+     * @tc.desc   HiAppEvent write EventType of STATISTIC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi03 start')
@@ -130,9 +139,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi04
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0400
-     * @tc.name testHiAppEventApi04
-     * @tc.desc HiAppEvent write EventType of SECURITY.
+     * @tc.desc   HiAppEvent write EventType of SECURITY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi04 start')
@@ -156,9 +168,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi05
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0500
-     * @tc.name testHiAppEventApi05
-     * @tc.desc HiAppEvent write EventType of BEHAVIOR.
+     * @tc.desc   HiAppEvent write EventType of BEHAVIOR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi05 start')
@@ -183,9 +198,12 @@ describe('HiAppEventApiTest', function () {
 
 
     /**
+     * @tc.name   testHiAppEventApi06
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0600
-     * @tc.name testHiAppEventApi06
-     * @tc.desc HiAppEvent write datatype of int.
+     * @tc.desc   HiAppEvent write datatype of int.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi06 start')
@@ -206,9 +224,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi07
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0700
-     * @tc.name testHiAppEventApi07
-     * @tc.desc HiAppEvent write datatype of int array.
+     * @tc.desc   HiAppEvent write datatype of int array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi07 start')
@@ -229,9 +250,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi08
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0800
-     * @tc.name testHiAppEventApi08
-     * @tc.desc HiAppEvent write datatype of float.
+     * @tc.desc   HiAppEvent write datatype of float.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi08 start')
@@ -252,9 +276,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi09
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_0900
-     * @tc.name testHiAppEventApi09
-     * @tc.desc HiAppEvent write datatype of float array.
+     * @tc.desc   HiAppEvent write datatype of float array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi09 start')
@@ -275,9 +302,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi10
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1000
-     * @tc.name testHiAppEventApi10
-     * @tc.desc HiAppEvent write datatype of string.
+     * @tc.desc   HiAppEvent write datatype of string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi10 start')
@@ -298,9 +328,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi11
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1100
-     * @tc.name testHiAppEventApi11
-     * @tc.desc HiAppEvent write datatype of string array.
+     * @tc.desc   HiAppEvent write datatype of string array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi11 start')
@@ -321,9 +354,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi12
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1200
-     * @tc.name testHiAppEventApi12
-     * @tc.desc HiAppEvent write datatype of bool with true.
+     * @tc.desc   HiAppEvent write datatype of bool with true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi12 start')
@@ -344,9 +380,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi13
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1300
-     * @tc.name testHiAppEventApi13
-     * @tc.desc HiAppEvent write datatype of bool with false.
+     * @tc.desc   HiAppEvent write datatype of bool with false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi13 start')
@@ -367,9 +406,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi14
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1400
-     * @tc.name testHiAppEventApi14
-     * @tc.desc HiAppEvent write datatype of bool array.
+     * @tc.desc   HiAppEvent write datatype of bool array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi14 start')
@@ -390,9 +432,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi15
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1500
-     * @tc.name testHiAppEventApi15
-     * @tc.desc HiAppEvent write datatype of char.
+     * @tc.desc   HiAppEvent write datatype of char.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi15 start')
@@ -413,9 +458,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi16
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1600
-     * @tc.name testHiAppEventApi16
-     * @tc.desc HiAppEvent write datatype of long.
+     * @tc.desc   HiAppEvent write datatype of long.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi16 start')
@@ -436,9 +484,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi17
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1700
-     * @tc.name testHiAppEventApi17
-     * @tc.desc HiAppEvent write datatype of double.
+     * @tc.desc   HiAppEvent write datatype of double.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi17 start')
@@ -459,9 +510,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi18
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1800
-     * @tc.name testHiAppEventApi18
-     * @tc.desc HiAppEvent write datatype of long.
+     * @tc.desc   HiAppEvent write datatype of long.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi18 start')
@@ -482,9 +536,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi19
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_1900
-     * @tc.name testHiAppEventApi19
-     * @tc.desc HiAppEvent write eventtype of none exists.
+     * @tc.desc   HiAppEvent write eventtype of none exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi19 start')
@@ -505,9 +562,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi20
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2000
-     * @tc.name testHiAppEventApi20
-     * @tc.desc HiAppEvent write empty eventname .
+     * @tc.desc   HiAppEvent write empty eventname .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi20 start')
@@ -528,9 +588,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi21
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2100
-     * @tc.name testHiAppEventApi21
-     * @tc.desc HiAppEvent write long eventname .
+     * @tc.desc   HiAppEvent write long eventname .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi21 start')
@@ -556,11 +619,14 @@ describe('HiAppEventApiTest', function () {
         console.info('testHiAppEventApi21 end')
     })
 
-    /**
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2200
-     * @tc.name testHiAppEventApi22
-     * @tc.desc HiAppEvent configure interface with disable option set true.
-     */
+     /**
+      * @tc.name   testHiAppEventApi22
+      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2200
+      * @tc.desc   HiAppEvent configure interface with disable option set true.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testHiAppEventApi22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventApi22 start')
         let configret =false;
@@ -571,9 +637,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi23
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2300
-     * @tc.name testHiAppEventApi23
-     * @tc.desc HiAppEvent configure interface with disable option set false.
+     * @tc.desc   HiAppEvent configure interface with disable option set false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventApi23 start')
@@ -584,9 +653,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi24
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2400
-     * @tc.name testHiAppEventApi24
-     * @tc.desc HiAppEvent configure interface with maxStorage option set 100M.
+     * @tc.desc   HiAppEvent configure interface with maxStorage option set 100M.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventApi24 start')
@@ -598,9 +670,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi25
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2500
-     * @tc.name testHiAppEventApi25
-     * @tc.desc Error code 401 is returned when the value param item value is invalid.
+     * @tc.desc   Error code 401 is returned when the value param item value is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventApi25 start')
@@ -614,9 +689,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi26
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2600
-     * @tc.name testHiAppEventApi26
-     * @tc.desc Error code 401 is returned when the value param item value is invalid.
+     * @tc.desc   Error code 401 is returned when the value param item value is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventApi26 start')
@@ -630,9 +708,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi27
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2700
-     * @tc.name testHiAppEventApi27
-     * @tc.desc Error code 401 is returned when the value param item value is invalid.
+     * @tc.desc   Error code 401 is returned when the value param item value is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventApi27 start')
@@ -646,9 +727,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi28
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2800
-     * @tc.name testHiAppEventApi28
-     * @tc.desc Error code 11103001 is returned when the maxStorage param item value is invalid.
+     * @tc.desc   Error code 11103001 is returned when the maxStorage param item value is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventApi28 start')
@@ -662,9 +746,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi29
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_2900
-     * @tc.name testHiAppEventApi29
-     * @tc.desc HiAppEvent with predefined event and param.
+     * @tc.desc   HiAppEvent with predefined event and param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
     console.info('testHiAppEventApi29 start')
@@ -766,9 +853,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi30
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3000
-     * @tc.name testHiAppEventApi30
-     * @tc.desc HiAppEvent write by Promise.
+     * @tc.desc   HiAppEvent write by Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi30 start')
@@ -794,9 +884,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi31
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3100
-     * @tc.name testHiAppEventApi31
-     * @tc.desc HiAppEvent write by  callback.
+     * @tc.desc   HiAppEvent write by  callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi31 start')
@@ -824,9 +917,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi32
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3200
-     * @tc.name testHiAppEventApi32
-     * @tc.desc 验证Write(API9)接口传入参数为特殊number，中文字符，可调用成功，无返回错误码.
+     * @tc.desc   验证Write(API9)接口传入参数为特殊number，中文字符，可调用成功，无返回错误码.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi32 start')
@@ -851,9 +947,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi33
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3300
-     * @tc.name testHiAppEventApi33
-     * @tc.desc 验证Write(API9)接口成功，传入参数名称可以符合规格.
+     * @tc.desc   验证Write(API9)接口成功，传入参数名称可以符合规格.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi33 start')
@@ -878,9 +977,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi34
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3400
-     * @tc.name testHiAppEventApi34
-     * @tc.desc 验证Write(API9)接口成功，传入事件名称大写字母、小写字母、数字、_为中间字符，大写字母为开头和结尾.
+     * @tc.desc   验证Write(API9)接口成功，传入事件名称大写字母、小写字母、数字、_为中间字符，大写字母为开头和结尾.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi34 start')
@@ -905,9 +1007,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi35
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3500
-     * @tc.name testHiAppEventApi35
-     * @tc.desc 验证Write(API9)接口成功，传入事件名称大写字母、小写字母、数字、_为中间字符，小写字母为开头和结尾.
+     * @tc.desc   验证Write(API9)接口成功，传入事件名称大写字母、小写字母、数字、_为中间字符，小写字母为开头和结尾.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi35 start')
@@ -932,9 +1037,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi36
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3600
-     * @tc.name testHiAppEventApi36
-     * @tc.desc 验证Write(API9)接口成功，传入事件名称大写字母、小写字母、数字、_为中间字符，$开头,以数字结尾，长度48字符.
+     * @tc.desc   验证Write(API9)接口成功，传入事件名称大写字母、小写字母、数字、_为中间字符，$开头,以数字结尾，长度48字符.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiAppEventApi36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testHiAppEventApi36 start')
@@ -959,9 +1067,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi37
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3700
-     * @tc.name testHiAppEventApi37
-     * @tc.desc HiAppEvent configure interface with disable option set false.
+     * @tc.desc   HiAppEvent configure interface with disable option set false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi37 start')
@@ -982,10 +1093,12 @@ describe('HiAppEventApiTest', function () {
     })
 
     /**
+     * @tc.name   testHiAppEventApi38
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3800
-     * @tc.name: testHiAppEventApi38
-     * @tc.desc: Test the SetEventConfig interface.
-     * @tc.type: FUNC
+     * @tc.desc   Test the SetEventConfig interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventApi38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventApi38 start');
@@ -1009,10 +1122,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi39
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3900
-     * @tc.name: testHiAppEventApi39
-     * @tc.desc: Test the SetEventConfig interface with invalid name.
-     * @tc.type: FUNC
+     * @tc.desc   Test the SetEventConfig interface with invalid name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventApi39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventApi39 start');
@@ -1031,10 +1146,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi40
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4000
-     * @tc.name: testHiAppEventApi40
-     * @tc.desc: Test the SetEventConfig interface with invalid config type.
-     * @tc.type: FUNC
+     * @tc.desc   Test the SetEventConfig interface with invalid config type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventApi40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventApi40 start');
@@ -1047,10 +1164,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi41
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4100
-     * @tc.name: testHiAppEventApi41
-     * @tc.desc: Test the SetEventConfig interface when the config is empty.
-     * @tc.type: FUNC
+     * @tc.desc   Test the SetEventConfig interface when the config is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventApi41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventApi41 start');
@@ -1067,10 +1186,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi42
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4200
-     * @tc.name: testHiAppEventApi42
-     * @tc.desc: Error code 401 is returned when the config log_type is invalid.
-     * @tc.type: FUNC
+     * @tc.desc   Error code 401 is returned when the config log_type is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventApi42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventApi42 start');
@@ -1095,10 +1216,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi43
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4300
-     * @tc.name: testHiAppEventApi43
-     * @tc.desc: Error code 401 is returned when the config log_type=1, but item number is not 5.
-     * @tc.type: FUNC
+     * @tc.desc   Error code 401 is returned when the config log_type=1, but item number is not 5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventApi43 start');
@@ -1113,11 +1236,13 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi44
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4400
-     * @tc.name: testHiAppEventApi44
-     * @tc.desc: Error code 401 is returned when the value param item value is invalid.
-     * @tc.type: FUNC
-    */
+     * @tc.desc   Error code 401 is returned when the value param item value is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHiAppEventApi44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventApi44 start');
         let configInfo1 = {
@@ -1165,9 +1290,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi45
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4500
-     * @tc.name testHiAppEventApi45
-     * @tc.desc HiAppEvent with predefined event and param.
+     * @tc.desc   HiAppEvent with predefined event and param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi45 start');
@@ -1194,9 +1322,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi46
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4600
-     * @tc.name testHiAppEventApi46
-     * @tc.desc HiAppEvent write by Promise, errorcode is 11100001
+     * @tc.desc   HiAppEvent write by Promise, errorcode is 11100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi46 start')
@@ -1223,9 +1354,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi47
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4700
-     * @tc.name testHiAppEventApi47
-     * @tc.desc HiAppEvent write by Promise, errorcode is 11101001
+     * @tc.desc   HiAppEvent write by Promise, errorcode is 11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi47 start')
@@ -1250,9 +1384,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi48
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4800
-     * @tc.name testHiAppEventApi48
-     * @tc.desc HiAppEvent write by Promise, errorcode is 11101002
+     * @tc.desc   HiAppEvent write by Promise, errorcode is 11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi48 start')
@@ -1277,9 +1414,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi49
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_4900
-     * @tc.name testHiAppEventApi49
-     * @tc.desc HiAppEvent write by Promise, errorcode is 11101003
+     * @tc.desc   HiAppEvent write by Promise, errorcode is 11101003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi49 start')
@@ -1309,9 +1449,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi50
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_5000
-     * @tc.name testHiAppEventApi50
-     * @tc.desc HiAppEvent write by Promise, errorcode is 11101004
+     * @tc.desc   HiAppEvent write by Promise, errorcode is 11101004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi50 start')
@@ -1336,9 +1479,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi51
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_5100
-     * @tc.name testHiAppEventApi51
-     * @tc.desc HiAppEvent write by Promise, errorcode is 11101005
+     * @tc.desc   HiAppEvent write by Promise, errorcode is 11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi51 start')
@@ -1368,9 +1514,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi52
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_5200
-     * @tc.name testHiAppEventApi52
-     * @tc.desc HiAppEvent write by Promise, errorcode is 11101006
+     * @tc.desc   HiAppEvent write by Promise, errorcode is 11101006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi52 start')
@@ -1400,9 +1549,12 @@ describe('HiAppEventApiTest', function () {
     });
 
     /**
+     * @tc.name   testHiAppEventApi53
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_53200
-     * @tc.name testHiAppEventApi53
-     * @tc.desc HiAppEvent configure,return false
+     * @tc.desc   HiAppEvent configure,return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventApi53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventApi53 start')

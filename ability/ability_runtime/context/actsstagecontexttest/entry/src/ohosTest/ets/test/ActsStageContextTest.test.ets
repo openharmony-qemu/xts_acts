@@ -48,11 +48,14 @@ export default function actsStageContextTest() {
       count3 = 0;
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0100
-    * @tc.name      : get resource by $r
-    * @tc.desc      : get resource by $r
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0100
+     * @tc.number ACTS_StageContext_0100
+     * @tc.desc   get resource by $r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ACTS_StageContext_0100 str: " + JSON.stringify(context))
       await context.createModuleContext("entry_test").resourceManager.getString($r("app.string.TestAbility_label").id).then(str => {
@@ -66,11 +69,14 @@ export default function actsStageContextTest() {
       })
     })
 
-    /*
-   * @tc.number    : ACTS_StageContext_0200
-   * @tc.name      : get resource by labelId in applicationInfo
-   * @tc.desc      : get resource by labelId in applicationInfo
-   */
+    /**
+     * @tc.name   ACTS_StageContext_0200
+     * @tc.number ACTS_StageContext_0200
+     * @tc.desc   get resource by labelId in applicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0200', Level.LEVEL0, async (done: Function) => {
       await bundleManager.getApplicationInfo("com.example.stage_app", 0).then(appInfo => {
         return context.resourceManager.getString(Number(appInfo.labelId))
@@ -85,11 +91,14 @@ export default function actsStageContextTest() {
       })
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0300
-    * @tc.name      : get resource by labelId in abilityInfo
-    * @tc.desc      : get resource by labelId in abilityInfo
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0300
+     * @tc.number ACTS_StageContext_0300
+     * @tc.desc   get resource by labelId in abilityInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0300', Level.LEVEL0, async (done: Function) => {
       await bundle.getAbilityInfo("com.example.stage_app", "MainAbility").then(abilityInfo => {
         context.resourceManager.getString(Number(abilityInfo.labelId)).then(str => {
@@ -104,11 +113,14 @@ export default function actsStageContextTest() {
       })
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0400
-    * @tc.name      : get resource by labelId in applicationInfo from applicationContext
-    * @tc.desc      : get resource by labelId in applicationInfo from applicationContext
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0400
+     * @tc.number ACTS_StageContext_0400
+     * @tc.desc   get resource by labelId in applicationInfo from applicationContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0400', Level.LEVEL0, async (done: Function) => {
       await bundleManager.getApplicationInfo("com.example.stage_app", 0).then(appInfo => {
         context.getApplicationContext().resourceManager.getString(Number(appInfo.labelId)).then(str => {
@@ -123,11 +135,14 @@ export default function actsStageContextTest() {
       })
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0500
-    * @tc.name      : get resource by labelId in abilityInfo from applicationContext
-    * @tc.desc      : get resource by labelId in abilityInfo from applicationContext
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0500
+     * @tc.number ACTS_StageContext_0500
+     * @tc.desc   get resource by labelId in abilityInfo from applicationContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0500', Level.LEVEL0, async (done: Function) => {
       await bundle.getAbilityInfo("com.example.stage_app", "MainAbility").then(abilityInfo => {
         context.getApplicationContext().resourceManager.getString(Number(abilityInfo.labelId)).then(str => {
@@ -142,11 +157,14 @@ export default function actsStageContextTest() {
       })
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0600
-    * @tc.name      : get resource by Resource in applicationInfo
-    * @tc.desc      : get resource by Resource in applicationInfo
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0600
+     * @tc.number ACTS_StageContext_0600
+     * @tc.desc   get resource by Resource in applicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0600', Level.LEVEL0, async (done: Function) => {
       await bundleManager.getApplicationInfo("com.example.stage_app", 0).then(appInfo => {
         context.resourceManager.getStringValue(appInfo.labelResource).then(str => {
@@ -161,11 +179,14 @@ export default function actsStageContextTest() {
       })
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0700
-    * @tc.name      : get resource by Resource in applicationInfo
-    * @tc.desc      : get resource by Resource in applicationInfo
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0700
+     * @tc.number ACTS_StageContext_0700
+     * @tc.desc   get resource by Resource in applicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0700', Level.LEVEL0, async (done: Function) => {
       await bundleManager.getApplicationInfo("com.example.stage_app", 0).then(appInfo => {
         context.getApplicationContext().resourceManager.getStringValue(appInfo.labelResource).then(str => {
@@ -180,11 +201,14 @@ export default function actsStageContextTest() {
       })
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0800
-    * @tc.name      : test EventHub
-    * @tc.desc      : test basic on/off/emit
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0800
+     * @tc.number ACTS_StageContext_0800
+     * @tc.desc   test basic on/off/emit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0800', Level.LEVEL0, async (done: Function) => {
       const eventHub = context.eventHub;
       eventHub.on("event1", callback1);
@@ -196,11 +220,14 @@ export default function actsStageContextTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_0900
-    * @tc.name      : test EventHub
-    * @tc.desc      : test multiple callbacks
-    */
+    /**
+     * @tc.name   ACTS_StageContext_0900
+     * @tc.number ACTS_StageContext_0900
+     * @tc.desc   test multiple callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_0900', Level.LEVEL0, async (done: Function) => {
       const eventHub = context.eventHub;
       eventHub.on("event1", callback1);
@@ -223,11 +250,14 @@ export default function actsStageContextTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_1000
-    * @tc.name      : test EventHub
-    * @tc.desc      : test different events
-    */
+    /**
+     * @tc.name   ACTS_StageContext_1000
+     * @tc.number ACTS_StageContext_1000
+     * @tc.desc   test different events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_1000', Level.LEVEL0, async (done: Function) => {
       const eventHub = context.eventHub;
       eventHub.on("event1", callback1);
@@ -251,11 +281,14 @@ export default function actsStageContextTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_1100
-    * @tc.name      : test EventHub
-    * @tc.desc      : test repeat on/off
-    */
+    /**
+     * @tc.name   ACTS_StageContext_1100
+     * @tc.number ACTS_StageContext_1100
+     * @tc.desc   test repeat on/off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_1100', Level.LEVEL0, async (done: Function) => {
       const eventHub = context.eventHub;
       eventHub.on("event1", callback1);
@@ -271,11 +304,14 @@ export default function actsStageContextTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_1200
-    * @tc.name      : test EventHub
-    * @tc.desc      : test call off() in callback
-    */
+    /**
+     * @tc.name   ACTS_StageContext_1200
+     * @tc.number ACTS_StageContext_1200
+     * @tc.desc   test call off() in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_1200', Level.LEVEL0, async (done: Function) => {
       const eventHub = context.eventHub;
       let count = 0;
@@ -297,11 +333,14 @@ export default function actsStageContextTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_1300
-    * @tc.name      : test EventHub
-    * @tc.desc      : test call off() in callback
-    */
+    /**
+     * @tc.name   ACTS_StageContext_1300
+     * @tc.number ACTS_StageContext_1300
+     * @tc.desc   test call off() in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_1300', Level.LEVEL0, async (done: Function) => {
       const eventHub = context.eventHub;
       let count = 0;
@@ -323,11 +362,14 @@ export default function actsStageContextTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_1400
-    * @tc.name      : test EventHub
-    * @tc.desc      : test call on/off in callback
-    */
+    /**
+     * @tc.name   ACTS_StageContext_1400
+     * @tc.number ACTS_StageContext_1400
+     * @tc.desc   test call on/off in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StageContext_1400', Level.LEVEL0, async (done: Function) => {
       const eventHub = context.eventHub;
       let count = 0;
@@ -352,11 +394,14 @@ export default function actsStageContextTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ACTS_StageContext_1500
-    * @tc.name      : test CreateModuleContext
-    * @tc.desc      : test CreateModuleContext
-    */
+    /**
+     * @tc.name   ACTS_StageContext_1500
+     * @tc.number ACTS_StageContext_1500
+     * @tc.desc   test CreateModuleContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("ACTS_StageContext_1500", Level.LEVEL0, async (done:Function) => {
       console.info("ACTS_StageContext_1500 begin");
 
@@ -379,11 +424,14 @@ export default function actsStageContextTest() {
       done();
     });
 
-    /*
-    * @tc.number    : ACTS_StageContext_1600
-    * @tc.name      : test CreateModuleContext
-    * @tc.desc      : test CreateModuleContext
-    */
+    /**
+     * @tc.name   ACTS_StageContext_1600
+     * @tc.number ACTS_StageContext_1600
+     * @tc.desc   test CreateModuleContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("ACTS_StageContext_1600", Level.LEVEL0, async (done:Function) => {
       console.info("ACTS_StageContext_1600 begin");
       moduleContext = null;

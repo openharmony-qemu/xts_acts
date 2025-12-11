@@ -25,12 +25,12 @@ export default function grpNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_SETGRENT_0100
-     * @tc.name       : testMuslGrpSetgrent001
-     * @tc.desc       : test setgrent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslGrpSetgrent001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_SETGRENT_0100
+     * @tc.desc   test setgrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpSetgrent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = grp.setgrent();
@@ -39,12 +39,12 @@ export default function grpNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_ENDGRENT_0100
-     * @tc.name       : testMuslGrpEndGRent001
-     * @tc.desc       : test endgrent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslGrpEndGRent001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_ENDGRENT_0100
+     * @tc.desc   test endgrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpEndGRent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(grp.endgrent()).assertEqual(0);
@@ -52,13 +52,12 @@ export default function grpNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_GETGRGID_0100
-     * @tc.name       : testMuslGrpGetgrgid001
-     * @tc.desc       : test getgrgid
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslGrpGetgrgid001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_GETGRGID_0100
+     * @tc.desc   test getgrgid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpGetgrgid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 1;
@@ -68,13 +67,12 @@ export default function grpNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_GETGRGIDR_0100
-     * @tc.name       : testMuslGrpGetgrgidR001
-     * @tc.desc       : test getgrgid_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslGrpGetgrgidR001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_GETGRGIDR_0100
+     * @tc.desc   test getgrgid_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpGetgrgidR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -84,13 +82,12 @@ export default function grpNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_GETGRNAM_0100
-     * @tc.name       : testMuslGrpGetgrnam001
-     * @tc.desc       : test getgrnam
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslGrpGetgrnam001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_GETGRNAM_0100
+     * @tc.desc   test getgrnam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpGetgrnam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 1;
@@ -99,12 +96,12 @@ export default function grpNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_GETGRNAMR_0100
-     * @tc.name       : testMuslGrpGetGrNamR001
-     * @tc.desc       : test getgrnam_r
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslGrpGetGrNamR001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_GETGRNAMR_0100
+     * @tc.desc   test getgrnam_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpGetGrNamR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = grp.getGrNamR();
@@ -113,12 +110,12 @@ export default function grpNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_GETGROUPLIST_0100
-     * @tc.name       : testMuslGrpGetGroupList001
-     * @tc.desc       : test getgrouplist
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslGrpGetGroupList001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_GETGROUPLIST_0100
+     * @tc.desc   test getgrouplist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpGetGroupList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = grp.getGroupList();
@@ -128,12 +125,12 @@ export default function grpNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_GRP_GETGRENT_0100
-     * @tc.name       : testMuslGrpGetgrent001
-     * @tc.desc       : test getgrent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslGrpGetgrent001
+     * @tc.number SUB_THIRDPARTY_MUSL_GRP_GETGRENT_0100
+     * @tc.desc   test getgrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGrpGetgrent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = 1;

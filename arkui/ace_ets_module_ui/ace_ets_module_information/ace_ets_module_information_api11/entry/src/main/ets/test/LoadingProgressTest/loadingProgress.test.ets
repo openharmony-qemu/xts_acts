@@ -54,10 +54,13 @@ export default function loadingProgressCircularJsunit() {
       console.info("loadingProgressCircular after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         testloadingProgressCircular0011
-     * @tc.desic         aceloadingProgressCircularEtsTest0011
+    /**
+     * @tc.name   testloadingProgressCircular0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   testloadingProgressCircular0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testloadingProgressCircular0011', Level.LEVEL0, async (done: Function) => {
       console.info('loadingProgressCircular testloadingProgressCircular0010 START');
@@ -74,10 +77,13 @@ export default function loadingProgressCircularJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testloadingProgressCircular0001
-     * @tc.desic         aceloadingProgressCircularEtsTest0011
+    /**
+     * @tc.name   testloadingProgressOrbital0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testloadingProgressOrbital0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testloadingProgressOrbital0001', Level.LEVEL0, async (done: Function) => {
       console.info('loadingProgressOrbital testloadingProgressCircular0001 START');

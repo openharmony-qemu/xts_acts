@@ -30,14 +30,12 @@ export default function fileIOFileLock() {
   describe('fileIO_fs_file_lock', (): void => {
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_000
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0000
-     * @tc.name fileIO_test_filelock_promise_static_000
-     * @tc.desc Test lock() interfaces. argument is : default.
-     * Open the file, file lock() and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test lock() interfaces. argument is : default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_filelock_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_000');
@@ -59,14 +57,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_001
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0100
-     * @tc.name fileIO_test_filelock_promise_static_001
-     * @tc.desc Test lock() interfaces. argument is : true.
-     * Open the file, file lock(true) and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lock() interfaces. argument is : true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_001');
@@ -88,14 +84,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_002
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0200
-     * @tc.name fileIO_test_filelock_promise_static_002
-     * @tc.desc Test lock() interfaces. argument is : false.
-     * Open the file, file lock(false) and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lock() interfaces. argument is : false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_002');
@@ -117,14 +111,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_003
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0300
-     * @tc.name fileIO_test_filelock_promise_static_003
-     * @tc.desc Test tryLock() interfaces. argument is : default.
-     * Open the file, file lock() ,tryLock() and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test tryLock() interfaces. argument is : default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_003');
@@ -147,14 +139,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_004
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0400
-     * @tc.name fileIO_test_filelock_promise_static_004
-     * @tc.desc Test tryLock() interfaces. argument is : true.
-     * Open the file, file lock() ,tryLock(true) and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test tryLock() interfaces. argument is : true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_004');
@@ -177,14 +167,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_005
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0500
-     * @tc.name fileIO_test_filelock_promise_static_005
-     * @tc.desc Test tryLock() interfaces. argument is : false.
-     * Open the file, file lock() ,tryLock(false) and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test tryLock() interfaces. argument is : false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_005');
@@ -207,13 +195,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_006
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0600
-     * @tc.name fileIO_test_filelock_promise_static_006
-     * @tc.desc Open the file, no file lock(), tryLock(), unlock(),
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Open the file, no file lock(), tryLock(), unlock(),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_006');
@@ -235,13 +222,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_007
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0700
-     * @tc.name fileIO_test_filelock_promise_static_007
-     * @tc.desc Open the file, no file lock(), no tryLock(), unlock(),
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Open the file, no file lock(), no tryLock(), unlock(),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_007');
@@ -262,14 +248,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_008
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0800
-     * @tc.name fileIO_test_filelock_promise_static_008
-     * @tc.desc Test lock() interfaces.
-     * Open the file, file.lock(), use default mode = false.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lock() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_008');
@@ -291,13 +275,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_promise_static_009
      * @tc.number FILE_TEST_FILELOCK_PROMISE_0900
-     * @tc.name fileIO_test_filelock_promise_static_009
-     * @tc.desc File.trylock(), use default mode = false.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   File.trylock(), use default mode = false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_promise_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_promise_static_009');
@@ -320,14 +303,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_callback_static_000
      * @tc.number FILE_TEST_FILELOCK_CALLBACK_0000
-     * @tc.name fileIO_test_filelock_callback_static_000
-     * @tc.desc Test lock() interfaces. argument is : default.
-     * Open the file, file lock() and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lock() interfaces. argument is : default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_callback_static_000');
@@ -350,14 +331,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_callback_static_001
      * @tc.number FILE_TEST_FILELOCK_CALLBACK_0100
-     * @tc.name fileIO_test_filelock_callback_static_001
-     * @tc.desc Test lock() interfaces. argument is : true.
-     * Open the file, file lock(true) and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lock() interfaces. argument is : true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_callback_static_001');
@@ -380,14 +359,12 @@ export default function fileIOFileLock() {
     });
 
     /**
+     * @tc.name   fileIO_test_filelock_callback_static_002
      * @tc.number FILE_TEST_FILELOCK_CALLBACK_0200
-     * @tc.name fileIO_test_filelock_callback_static_002
-     * @tc.desc Test lock() interfaces. argument is : false.
-     * Open the file, file lock(false) and unlock()
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lock() interfaces. argument is : false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_filelock_callback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_filelock_callback_static_002');

@@ -35,12 +35,12 @@ const ExpectTrue = (n: boolean) => {
 export default function HttpCreateHttpResponseCacheTest() {
   describe('HttpCreateHttpResponseCacheTest', () => {
     /**
-     * @tc.number : SUB_NetworkMgr_Http_CreateHttpResponseCache_0100
-     * @tc.name   : testNetworkMgrHttpCreateHttpResponseCache0100
-     * @tc.desc   : Create a default object to store the response of HTTP access requests.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0100
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0100
+     * @tc.desc   Create a default object to store the response of HTTP access requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpCreateHttpResponseCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0100';
@@ -58,12 +58,12 @@ export default function HttpCreateHttpResponseCacheTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_CreateHttpResponseCache_0200
-     * @tc.name   : testNetworkMgrHttpCreateHttpResponseCache0200
-     * @tc.desc   : Create a default object to store the response of HTTP access requests.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0200
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0200
+     * @tc.desc   Create a default object to store the response of HTTP access requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpCreateHttpResponseCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0200';
@@ -82,12 +82,12 @@ export default function HttpCreateHttpResponseCacheTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_CreateHttpResponseCache_0300
-     * @tc.name   : testNetworkMgrHttpCreateHttpResponseCache0300
-     * @tc.desc   : Create a default object to store the response of HTTP access requests.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0300
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0300
+     * @tc.desc   Create a default object to store the response of HTTP access requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpCreateHttpResponseCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0300';

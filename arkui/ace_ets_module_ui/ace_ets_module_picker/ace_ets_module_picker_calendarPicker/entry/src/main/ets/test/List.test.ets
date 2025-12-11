@@ -12,9 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import calendarPickerAttributeModifierTest from './calendarPickerTest/calendarPickerAttributeModifier.test'
+import calendarPickerStartEndTest from './calendarPickerTest/calendarPickerStartEndTest.test'
+import calendarPickerTextStyleAndEdgeAlignAndHintRadiusTest from './calendarPickerTest/calendarPickerTextStyleAndEdgeAlignAndHintRadius.test'
 import disableDateRangeAndMarkTodayTest from './calendarPickerTest/disableDateRangeAndMarkToday.test'
 
 export default function testsuite() {
+    calendarPickerAttributeModifierTest();
+    calendarPickerStartEndTest();
+    calendarPickerTextStyleAndEdgeAlignAndHintRadiusTest();
     disableDateRangeAndMarkTodayTest();
 }

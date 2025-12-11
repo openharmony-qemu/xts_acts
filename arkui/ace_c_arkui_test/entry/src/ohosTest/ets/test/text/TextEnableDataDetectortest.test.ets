@@ -26,52 +26,52 @@ export default function textEnableDataDetectortest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0100
-     * @tc.name       : testTextEnableDataDetector001
-     * @tc.desc       : testing enableDataDetector for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextEnableDataDetector001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0100
+     * @tc.desc   testing enableDataDetector for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEnableDataDetector001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextEnableDataDetector001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0200
-     * @tc.name       : testTextEnableDataDetector002
-     * @tc.desc       : testing enableDataDetector for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextEnableDataDetector002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0200
+     * @tc.desc   testing enableDataDetector for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEnableDataDetector002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextEnableDataDetector002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0300
-     * @tc.name       : testTextEnableDataDetector003
-     * @tc.desc       : testing enableDataDetector for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextEnableDataDetector003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0300
+     * @tc.desc   testing enableDataDetector for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEnableDataDetector003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextEnableDataDetector003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0400
-     * @tc.name       : testTextEnableDataDetector004
-     * @tc.desc       : testing enableDataDetector for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextEnableDataDetector004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ENABLE_DATA_DETECTOR_0400
+     * @tc.desc   testing enableDataDetector for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEnableDataDetector004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextEnableDataDetector004()).assertEqual(0)

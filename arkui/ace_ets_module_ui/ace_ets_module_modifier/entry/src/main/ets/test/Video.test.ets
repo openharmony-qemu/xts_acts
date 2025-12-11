@@ -40,12 +40,12 @@ export default function videoJsunit() {
     });
 
     /**
+     * @tc.name   videoTest_0001
      * @tc.number videoTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set muted values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set muted values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('videoTest_0001 START');
@@ -59,12 +59,12 @@ export default function videoJsunit() {
     });
 
     /**
+     * @tc.name   videoTest_0002
      * @tc.number videoTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set autoPlay values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set autoPlay values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('videoTest_0002 START');
@@ -78,12 +78,12 @@ export default function videoJsunit() {
     });
 
     /**
+     * @tc.name   videoTest_0003
      * @tc.number videoTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set controls values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set controls values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('videoTest_0003 START');
@@ -97,12 +97,12 @@ export default function videoJsunit() {
     });
 
     /**
+     * @tc.name   videoTest_0004
      * @tc.number videoTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set loop values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set loop values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('videoTest_0004 START');
@@ -116,12 +116,12 @@ export default function videoJsunit() {
     });
 
     /**
+     * @tc.name   videoTest_0005
      * @tc.number videoTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc Set objectFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set objectFit values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('videoTest_0005 START');
@@ -135,12 +135,12 @@ export default function videoJsunit() {
     });
 
     /**
+     * @tc.name   videoTest_0006
      * @tc.number videoTest_0006
-     * @tc.name Test the properties of components
-     * @tc.desc Change muted values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change muted values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('videoTest_0006 START');

@@ -134,12 +134,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       }
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0100', Level.LEVEL2,
       async (done: Function) => {
@@ -153,12 +153,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0200', Level.LEVEL2,
       async (done: Function) => {
@@ -171,12 +171,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0300', Level.LEVEL2,
       async (done: Function) => {
@@ -189,12 +189,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0400', Level.LEVEL2,
       async (done: Function) => {
@@ -206,12 +206,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0500', Level.LEVEL2,
       async (done: Function) => {
@@ -223,12 +223,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0600', Level.LEVEL2,
       async (done: Function) => {
@@ -240,12 +240,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0700', Level.LEVEL2,
       async (done: Function) => {
@@ -257,12 +257,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0800', Level.LEVEL2,
       async (done: Function) => {
@@ -275,12 +275,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_0900', Level.LEVEL2,
       async (done: Function) => {
@@ -292,12 +292,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1000', Level.LEVEL2,
       async (done: Function) => {
@@ -309,12 +309,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1100', Level.LEVEL2,
       async (done: Function) => {
@@ -326,12 +326,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1200', Level.LEVEL2,
       async (done: Function) => {
@@ -343,12 +343,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1300', Level.LEVEL2,
       async (done: Function) => {
@@ -361,12 +361,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1500', Level.LEVEL2,
       async (done: Function) => {
@@ -378,12 +378,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1600', Level.LEVEL2,
       async (done: Function) => {
@@ -395,12 +395,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1700', Level.LEVEL2,
       async (done: Function) => {
@@ -412,12 +412,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1800', Level.LEVEL2,
       async (done: Function) => {
@@ -429,12 +429,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_1900', Level.LEVEL2,
       async (done: Function) => {
@@ -447,12 +447,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2000', Level.LEVEL2,
       async (done: Function) => {
@@ -465,12 +465,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2100', Level.LEVEL2,
       async (done: Function) => {
@@ -482,12 +482,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2200', Level.LEVEL2,
       async (done: Function) => {
@@ -499,12 +499,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2300
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2300', Level.LEVEL2,
       async (done: Function) => {
@@ -516,12 +516,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2400
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2400', Level.LEVEL2,
       async (done: Function) => {
@@ -533,12 +533,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2500
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2500', Level.LEVEL2,
       async (done: Function) => {
@@ -550,12 +550,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2700
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2700', Level.LEVEL2,
       async (done: Function) => {
@@ -567,12 +567,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2800
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2800', Level.LEVEL2,
       async (done: Function) => {
@@ -584,12 +584,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2900
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_2900', Level.LEVEL2,
       async (done: Function) => {
@@ -601,12 +601,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3000
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3000
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3000', Level.LEVEL2,
       async (done: Function) => {
@@ -618,12 +618,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3100
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3100
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3100', Level.LEVEL2,
       async (done: Function) => {
@@ -636,12 +636,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3200
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3200
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3200', Level.LEVEL2,
       async (done: Function) => {
@@ -654,12 +654,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3300
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3300
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3300', Level.LEVEL2,
       async (done: Function) => {
@@ -671,12 +671,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3400
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3400
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3400', Level.LEVEL2,
       async (done: Function) => {
@@ -688,12 +688,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3500
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3500
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3500', Level.LEVEL2,
       async (done: Function) => {
@@ -705,12 +705,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3600
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3600
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3600', Level.LEVEL2,
       async (done: Function) => {
@@ -722,12 +722,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3700
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3700
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3700', Level.LEVEL2,
       async (done: Function) => {
@@ -740,12 +740,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3800
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3800
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3800', Level.LEVEL2,
       async (done: Function) => {
@@ -758,12 +758,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number  SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3900
-     * @tc.name    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3900
-     * @tc.desc    add resource by invalid fileUri
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_3900', Level.LEVEL2,
       async (done: Function) => {
@@ -775,12 +775,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4000', Level.LEVEL2,
       async (done: Function) => {
@@ -793,12 +793,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4100', Level.LEVEL2,
       async (done: Function) => {
@@ -811,12 +811,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4200', Level.LEVEL2,
       async (done: Function) => {
@@ -828,12 +828,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4300', Level.LEVEL2,
       async (done: Function) => {
@@ -845,12 +845,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4400', Level.LEVEL2,
       async (done: Function) => {
@@ -864,12 +864,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
 
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4500', Level.LEVEL2,
       async (done: Function) => {
@@ -881,12 +881,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4600', Level.LEVEL2,
       async (done: Function) => {
@@ -898,12 +898,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4700', Level.LEVEL2,
       async (done: Function) => {
@@ -915,12 +915,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4800', Level.LEVEL2,
       async (done: Function) => {
@@ -932,12 +932,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_4900', Level.LEVEL2,
       async (done: Function) => {
@@ -950,12 +950,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5000', Level.LEVEL2,
       async (done: Function) => {
@@ -968,12 +968,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5100', Level.LEVEL2,
       async (done: Function) => {
@@ -985,12 +985,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5200', Level.LEVEL2,
       async (done: Function) => {
@@ -1002,12 +1002,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5300', Level.LEVEL2,
       async (done: Function) => {
@@ -1019,12 +1019,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5400', Level.LEVEL2,
       async (done: Function) => {
@@ -1036,12 +1036,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5500', Level.LEVEL2,
       async (done: Function) => {
@@ -1054,12 +1054,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5700', Level.LEVEL2,
       async (done: Function) => {
@@ -1071,12 +1071,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5800', Level.LEVEL2,
       async (done: Function) => {
@@ -1088,12 +1088,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_5900', Level.LEVEL2,
       async (done: Function) => {
@@ -1105,12 +1105,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6000', Level.LEVEL2,
       async (done: Function) => {
@@ -1122,12 +1122,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6100', Level.LEVEL2,
       async (done: Function) => {
@@ -1140,12 +1140,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6300', Level.LEVEL2,
       async (done: Function) => {
@@ -1157,12 +1157,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6400', Level.LEVEL2,
       async (done: Function) => {
@@ -1174,12 +1174,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6500', Level.LEVEL2,
       async (done: Function) => {
@@ -1192,12 +1192,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6600', Level.LEVEL2,
       async (done: Function) => {
@@ -1209,12 +1209,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6700', Level.LEVEL2,
       async (done: Function) => {
@@ -1227,12 +1227,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6800', Level.LEVEL2,
       async (done: Function) => {
@@ -1244,12 +1244,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
           });
       });
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_6900', Level.LEVEL2,
       async (done: Function) => {
@@ -1261,12 +1261,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7000', Level.LEVEL2,
       async (done: Function) => {
@@ -1278,12 +1278,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7100', Level.LEVEL2,
       async (done: Function) => {
@@ -1296,12 +1296,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7200', Level.LEVEL2,
       async (done: Function) => {
@@ -1313,12 +1313,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7300', Level.LEVEL2,
       async (done: Function) => {
@@ -1331,12 +1331,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_CHANGE_REQUEST_RESOURCE_FILE_URI_7400', Level.LEVEL2,
       async (done: Function) => {
@@ -1349,12 +1349,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5300', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5300',
@@ -1366,12 +1366,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5400', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5400',
@@ -1383,12 +1383,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5500', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5500',
@@ -1400,12 +1400,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5600', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5600',
@@ -1417,12 +1417,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5700', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5700',
@@ -1434,12 +1434,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5800', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5800',
@@ -1452,12 +1452,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5900', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_5900',
@@ -1470,12 +1470,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6000', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6000',
@@ -1488,12 +1488,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6100', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6100',
@@ -1506,12 +1506,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6200', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6200',
@@ -1523,12 +1523,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6300', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6300',
@@ -1540,12 +1540,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6400', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6400',
@@ -1557,12 +1557,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6500', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6500',
@@ -1575,12 +1575,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6600', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6600',
@@ -1593,12 +1593,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6700', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriImageTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6700',
@@ -1611,12 +1611,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6800', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6800',
@@ -1628,12 +1628,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6900', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_6900',
@@ -1645,12 +1645,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7000', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7000',
@@ -1662,12 +1662,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7100', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7100',
@@ -1679,12 +1679,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7200', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7200',
@@ -1696,12 +1696,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7300
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7300
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7300
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7300', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7300',
@@ -1714,12 +1714,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7400
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7400
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7400
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7400', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7400',
@@ -1732,12 +1732,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7500
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7500
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7500
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7500
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7500', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7500',
@@ -1750,12 +1750,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7600
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7600
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7600
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7600
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7600', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7600',
@@ -1768,12 +1768,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7700
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7700
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7700
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7700
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7700', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7700',
@@ -1785,12 +1785,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7800
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7800
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7800
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7800
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7800', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7800',
@@ -1802,12 +1802,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7900
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7900
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7900
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7900
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7900', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_7900',
@@ -1819,12 +1819,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8000
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8000
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8000
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8000
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8000', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8000',
@@ -1837,12 +1837,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8100
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8100
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8100', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8100',
@@ -1855,12 +1855,12 @@ export default function AddResourceChangeRequestUrlSuppTest() {
     });
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8200
-     * @tc.desc     add resource by invalid fileUri
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 2
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8200
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8200
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8200', Level.LEVEL2, async (done: Function) => {
       await addResourceFileUriVideoTest(done, 'SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_FILE_URI_8200',

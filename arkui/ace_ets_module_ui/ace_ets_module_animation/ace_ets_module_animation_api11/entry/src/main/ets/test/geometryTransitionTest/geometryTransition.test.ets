@@ -53,14 +53,14 @@ export default function geometryTransition() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_GEOMETRYTRANSITION_FOLLOW_0010
-    * @tc.name  : geometryTransition_0100
-    * @tc.desc  : whether follow target for the component still in the hierarchy.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   geometryTransition_0100
+     * @tc.number SUB_ACE_GEOMETRYTRANSITION_FOLLOW_0010
+     * @tc.desc   whether follow target for the component still in the hierarchy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('geometryTransition_0100', Level.LEVEL0, async (done:Function) => {
       console.info('geometryTransition_0100 START');
       await CommonFunc.sleep(1000);

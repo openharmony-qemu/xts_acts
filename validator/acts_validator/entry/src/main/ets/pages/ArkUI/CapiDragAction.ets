@@ -50,42 +50,24 @@ struct CapiKeyEvent {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.CapiDragActionVue == false) {
-      Button({ stateEffect: this.CapiDragActionVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
+    Button({ stateEffect: this.CapiDragActionVue }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
+    }.margin({ bottom: '20vp' }).width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .onClick(() => {
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'true ', title: this.name,
+        }
       })
-    } else {
-      Button({ stateEffect: this.CapiDragActionVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .onClick(() => {
-        router.back({
-          url: 'pages/ArkUI/ArkUI_index',
-          params: {
-            result: 'true ', title: this.name,
-          }
-        })
-        promptAction.showToast({
-          message: '通过', duration: 1000
-        });
-      })
-    }
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
   }
 
   @Builder

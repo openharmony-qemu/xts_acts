@@ -61,14 +61,14 @@ export default function ActsWebJavaScriptOnDocumentStartTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_JAVASCRIPTONDOCUMENTSTART_API_0001
-    * @tc.name       : testWebJavaScriptOnDocumentStart001
-    * @tc.desc       : test javaScriptOnDocumentStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebJavaScriptOnDocumentStart001
+     * @tc.number SUB_ACE_WEB_JAVASCRIPTONDOCUMENTSTART_API_0001
+     * @tc.desc   test javaScriptOnDocumentStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebJavaScriptOnDocumentStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptOnDocumentStart001", 173070)
       Utils.registerEvent("testWebJavaScriptOnDocumentStart001", true, 173080, done);

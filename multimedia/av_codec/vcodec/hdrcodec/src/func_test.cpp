@@ -65,9 +65,12 @@ void HDRFuncNdkTest::TearDown()
 
 namespace {
 /**
- * @tc.number    : HDR_FUNC_0030
- * @tc.name      : decode PQ HDRVivid by display mode, and then set HEVC_PROFILE_MAIN10 to encode
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0010
+ * @tc.number HDR_FUNC_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0010, TestSize.Level1)
 {
@@ -83,9 +86,12 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0010, TestSize.Level1)
     }
 }
 /**
- * @tc.number    : HDR_FUNC_0020
- * @tc.name      : decode HLG HDRVivid by display mode, and then set HEVC_PROFILE_MAIN10 to encode
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0020
+ * @tc.number HDR_FUNC_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0020, TestSize.Level1)
 {
@@ -102,9 +108,12 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0020, TestSize.Level1)
 }
 
 /**
- * @tc.number    : HDR_FUNC_0030
- * @tc.name      : decode PQ HDRVivid by display mode, and then set HEVC_PROFILE_MAIN to encode
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0030
+ * @tc.number HDR_FUNC_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0030, TestSize.Level2)
 {
@@ -121,9 +130,12 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0030, TestSize.Level2)
 }
 
 /**
- * @tc.number    : HDR_FUNC_0040
- * @tc.name      : decode HLG HDRVivid by display mode, and then set HEVC_PROFILE_MAIN to encode
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0040
+ * @tc.number HDR_FUNC_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0040, TestSize.Level2)
 {
@@ -140,9 +152,12 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0040, TestSize.Level2)
 }
 
 /**
- * @tc.number    : HDR_FUNC_0050
- * @tc.name      : decode and encode HDRVivid repeat start-stop 5 times before EOS
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0050
+ * @tc.number HDR_FUNC_0050
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0050, TestSize.Level2)
 {
@@ -160,9 +175,12 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0050, TestSize.Level2)
 }
 
 /**
- * @tc.number    : HDR_FUNC_0060
- * @tc.name      : decode and encode HDRVivid repeat start-flush-stop 5 times before EOS
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0060
+ * @tc.number HDR_FUNC_0060
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0060, TestSize.Level2)
 {
@@ -180,9 +198,12 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0060, TestSize.Level2)
 }
 
 /**
- * @tc.number    : HDR_FUNC_0070
- * @tc.name      : decode and encode HDRVivid repeat start-flush-start 5 times before EOS
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0070
+ * @tc.number HDR_FUNC_0070
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0070, TestSize.Level2)
 {
@@ -200,9 +221,12 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0070, TestSize.Level2)
 }
 
 /**
- * @tc.number    : HDR_FUNC_0080
- * @tc.name      : decode and encode different resolution with same codec
- * @tc.desc      : function test
+ * @tc.name   HDR_FUNC_0080
+ * @tc.number HDR_FUNC_0080
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0080, TestSize.Level1)
 {

@@ -58,10 +58,13 @@ export default function webViewContJavaScriptError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2600
-     *tc.name testRegisterJavaScriptProxyInitErr
-     *tc.desc test interface of registerJavaScriptProxy with not been associated with specific Web Components
+    /**
+     * @tc.name   testRegisterJavaScriptProxyInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2600
+     * @tc.desc   test interface of registerJavaScriptProxy with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRegisterJavaScriptProxyInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRegisterJavaScriptProxyInitErr";
@@ -70,10 +73,13 @@ export default function webViewContJavaScriptError() {
       Utils.registerEvent("testRegisterJavaScriptProxyInitErr", "Init error. The WebviewController must be associated with a Web component", 111550, done);
       await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2700
-     *tc.name testRunJavaScriptCallbackInitErr
-     *tc.desc test interface of runJavaScript (callback) with not been associated with specific Web Components
+    /**
+     * @tc.name   testRunJavaScriptCallbackInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2700
+     * @tc.desc   test interface of runJavaScript (callback) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRunJavaScriptCallbackInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRunJavaScriptCallbackInitErr";
@@ -82,10 +88,13 @@ export default function webViewContJavaScriptError() {
       Utils.registerEvent("testRunJavaScriptCallbackInitErr", "Init error. The WebviewController must be associated with a Web component", 111570, done);
       await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2800
-     *tc.name testRunJavaScriptPromiseInitErr
-     *tc.desc test interface of runJavaScript (promise) with not been associated with specific Web Components
+    /**
+     * @tc.name   testRunJavaScriptPromiseInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2800
+     * @tc.desc   test interface of runJavaScript (promise) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRunJavaScriptPromiseInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRunJavaScriptPromiseInitErr";
@@ -94,10 +103,13 @@ export default function webViewContJavaScriptError() {
       Utils.registerEvent("testRunJavaScriptPromiseInitErr", "Init error. The WebviewController must be associated with a Web component", 111590, done);
       await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2900
-     *tc.name testRunJavaScriptExtCallbackInitErr
-     *tc.desc test interface of runJavaScriptExt (callback) with not been associated with specific Web Components
+    /**
+     * @tc.name   testRunJavaScriptExtCallbackInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2900
+     * @tc.desc   test interface of runJavaScriptExt (callback) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRunJavaScriptExtCallbackInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRunJavaScriptExtCallbackInitErr";
@@ -106,10 +118,13 @@ export default function webViewContJavaScriptError() {
       Utils.registerEvent("testRunJavaScriptExtCallbackInitErr", "Init error. The WebviewController must be associated with a Web component", 111610, done);
       await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3000
-     *tc.name testRunJavaScriptExtPromiseInitErr
-     *tc.desc test interface of runJavaScriptExt (promise) with not been associated with specific Web Components
+    /**
+     * @tc.name   testRunJavaScriptExtPromiseInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3000
+     * @tc.desc   test interface of runJavaScriptExt (promise) with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRunJavaScriptExtPromiseInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRunJavaScriptExtPromiseInitErr";
@@ -118,10 +133,13 @@ export default function webViewContJavaScriptError() {
       Utils.registerEvent("testRunJavaScriptExtPromiseInitErr", "Init error. The WebviewController must be associated with a Web component", 111630, done);
       await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3100
-     *tc.name testDeleteJavaScriptRegisterInitErr
-     *tc.desc test interface of deleteJavaScriptRegister with not been associated with specific Web Components
+    /**
+     * @tc.name   testDeleteJavaScriptRegisterInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3100
+     * @tc.desc   test interface of deleteJavaScriptRegister with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteJavaScriptRegisterInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteJavaScriptRegisterInitErr";
@@ -130,10 +148,13 @@ export default function webViewContJavaScriptError() {
       Utils.registerEvent("testDeleteJavaScriptRegisterInitErr", "Init error. The WebviewController must be associated with a Web component", 111650, done);
       await Utils.waitAndClickComponent(driver, "webViewContJavaScriptError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3200
-     *tc.name testDeleteJavaScriptRegisterNameErr
-     *tc.desc test interface of deleteJavaScriptRegister with not been registered name
+    /**
+     * @tc.name   testDeleteJavaScriptRegisterNameErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_3200
+     * @tc.desc   test interface of deleteJavaScriptRegister with not been registered name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteJavaScriptRegisterNameErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteJavaScriptRegisterNameErr";

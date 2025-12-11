@@ -81,9 +81,12 @@ void HwdecHdr2SdrNdkTest::TearDown()
 namespace {
 
 /**
- * @tc.number    : HEVC_HW_HDR2SDR_FUNC_002
- * @tc.name      : OH_MD_KEY_VIDEO_DECODER_OUTPUT_COLOR_SPACE设置为BT_709_LIMIT, pixel foramt RGBA
- * @tc.desc      : function test
+ * @tc.name   HEVC_HW_HDR2SDR_FUNC_002
+ * @tc.number HEVC_HW_HDR2SDR_FUNC_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecHdr2SdrNdkTest, HEVC_HW_HDR2SDR_FUNC_002, TestSize.Level2)
 {

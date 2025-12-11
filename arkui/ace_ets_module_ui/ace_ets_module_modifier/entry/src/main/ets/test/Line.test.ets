@@ -41,12 +41,12 @@ export default function lineNeJsunit() {
     });
 
     /**
+     * @tc.name   testLineNe00071
      * @tc.number testLineNe00071
-     * @tc.name Test the properties of components
-     * @tc.desc Set startPoint values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set startPoint values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNe00071', Level.LEVEL0, async (done: Function) => {
       console.info('lineNe testLineNe00071 START');
@@ -58,12 +58,12 @@ export default function lineNeJsunit() {
     });
 
     /**
+     * @tc.name   testLineNe00072
      * @tc.number testLineNe00072
-     * @tc.name Test the properties of components
-     * @tc.desc Set endPoint values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set endPoint values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNe00072', Level.LEVEL0, async (done: Function) => {
       console.info('lineNe testLineNe00072 START');
@@ -75,12 +75,12 @@ export default function lineNeJsunit() {
     });
 
     /**
+     * @tc.name   testLineNe00073
      * @tc.number testLineNe00073
-     * @tc.name Test the properties of components
-     * @tc.desc Change startPoint values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change startPoint values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNe00073', Level.LEVEL0, async (done: Function) => {
       console.info('testLineNe00073 START');

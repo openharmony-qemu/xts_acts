@@ -261,12 +261,12 @@ export default function getAlbumsTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_001
-     * @tc.name      : getAlbums_callback_user_ops_001
-     * @tc.desc      : callback, USER-USER_GENERIC, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_001
+     * @tc.desc   callback, USER-USER_GENERIC, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_001';
@@ -281,12 +281,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_002
-     * @tc.name      : getAlbums_callback_user_ops_002
-     * @tc.desc      : callback, USER-FAVORITE, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_002
+     * @tc.desc   callback, USER-FAVORITE, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_002';
@@ -301,12 +301,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_003
-     * @tc.name      : getAlbums_callback_user_ops_003
-     * @tc.desc      : callback, USER-VIDEO, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_003
+     * @tc.desc   callback, USER-VIDEO, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_003';
@@ -321,12 +321,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_004
-     * @tc.name      : getAlbums_callback_user_ops_004
-     * @tc.desc      : callback, USER-IMAGE, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_004
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_004
+     * @tc.desc   callback, USER-IMAGE, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_004';
@@ -341,12 +341,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_005
-     * @tc.name      : getAlbums_callback_user_ops_005
-     * @tc.desc      : callback, USER-ANY, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_005
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_005
+     * @tc.desc   callback, USER-ANY, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_005';
@@ -361,12 +361,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_006
-     * @tc.name      : getAlbums_callback_user_ops_006
-     * @tc.desc      : callback, USER-USER_GENERIC, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_006
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_006
+     * @tc.desc   callback, USER-USER_GENERIC, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_006';
@@ -381,12 +381,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_007
-     * @tc.name      : getAlbums_callback_user_ops_007
-     * @tc.desc      : callback, USER-USER_GENERIC, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_007
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_007
+     * @tc.desc   callback, USER-USER_GENERIC, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_007';
@@ -401,12 +401,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_008
-     * @tc.name      : getAlbums_callback_user_ops_abnormal_001
-     * @tc.desc      : callback, USER-USER_GENERIC, album->invalid name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_ops_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_008
+     * @tc.desc   callback, USER-USER_GENERIC, album->invalid name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_ops_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_abnormal_001';
@@ -418,12 +418,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_009
-     * @tc.name      : getAlbums_callback_user_ops_abnormal_002
-     * @tc.desc      : callback, USER-USER_GENERIC, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_user_ops_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_009
+     * @tc.desc   callback, USER-USER_GENERIC, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_user_ops_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_abnormal_002';
@@ -438,12 +438,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_010
-     * @tc.name      : getAlbums_callback_user_ops_abnormal_003
-     * @tc.desc      : callback, USER-USER_GENERIC, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_user_ops_abnormal_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_010
+     * @tc.desc   callback, USER-USER_GENERIC, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_user_ops_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_user_ops_abnormal_003';
@@ -458,31 +458,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_011     //TODO
-     * @tc.name      : getAlbums_callback_user_ops_abnormal_004
-     * @tc.desc      : callback, USER-USER_GENERIC, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    /*
-            it('getAlbums_callback_user_ops_abnormal_004', Level.LEVEL2, async (done: Function) => {
-              const testName = 'getAlbums_callback_user_ops_abnormal_004';
-              console.info(TAG, testName);
-              const type: photoAccessHelper.AlbumType = albumType.USER;
-              const subType: photoAccessHelper.AlbumSubtype = albumSubtype.USER_GENERIC;
-              const fetchOps: photoAccessHelper.FetchOptions | undefined = undefined;
-              await getAlbumsCallbackWithOptionsAbnormalTest(done, type, subType, fetchOps);
-            })
-    */
-
-    /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_012
-     * @tc.name      : getAlbums_callback_user_001
-     * @tc.desc      : callback, USER-USER_GENERIC, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_012
+     * @tc.desc   callback, USER-USER_GENERIC, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_001';
@@ -493,12 +474,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_013
-     * @tc.name      : getAlbums_callback_user_002
-     * @tc.desc      : callback, USER-FAVORITE, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_013
+     * @tc.desc   callback, USER-FAVORITE, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_002';
@@ -509,12 +490,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_014
-     * @tc.name      : getAlbums_callback_user_003
-     * @tc.desc      : callback, USER-VIDEO, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_014
+     * @tc.desc   callback, USER-VIDEO, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_003';
@@ -525,12 +506,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_015
-     * @tc.name      : getAlbums_callback_user_004
-     * @tc.desc      : callback, USER-IMAGE, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_004
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_015
+     * @tc.desc   callback, USER-IMAGE, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_004';
@@ -541,12 +522,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_016
-     * @tc.name      : getAlbums_callback_user_005
-     * @tc.desc      : callback, USER-ANY, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_user_005
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_016
+     * @tc.desc   callback, USER-ANY, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_user_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_user_005';
@@ -557,12 +538,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_017
-     * @tc.name      : getAlbums_callback_user_abnormal_001
-     * @tc.desc      : callback, USER-USER_GENERIC, no fetchOptions, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_user_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_017
+     * @tc.desc   callback, USER-USER_GENERIC, no fetchOptions, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_user_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_user_abnormal_001';
@@ -573,12 +554,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_018
-     * @tc.name      : getAlbums_callback_user_abnormal_002
-     * @tc.desc      : callback, USER-USER_GENERIC, no fetchOptions, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_user_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_018
+     * @tc.desc   callback, USER-USER_GENERIC, no fetchOptions, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_user_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_user_abnormal_002';
@@ -589,12 +570,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_019
-     * @tc.name      : getAlbums_callback_system_ops_001
-     * @tc.desc      : callback, SYSTEM-USER_GENERIC, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_ops_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_019
+     * @tc.desc   callback, SYSTEM-USER_GENERIC, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_ops_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_001';
@@ -609,12 +590,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_020
-     * @tc.name      : getAlbums_callback_system_ops_002
-     * @tc.desc      : callback, SYSTEM-FAVORITE, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_ops_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_020
+     * @tc.desc   callback, SYSTEM-FAVORITE, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_ops_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_002';
@@ -629,12 +610,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_021
-     * @tc.name      : getAlbums_callback_system_ops_003
-     * @tc.desc      : callback, SYSTEM-VIDEO, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_ops_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_021
+     * @tc.desc   callback, SYSTEM-VIDEO, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_ops_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_003';
@@ -649,12 +630,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_022
-     * @tc.name      : getAlbums_callback_system_ops_004
-     * @tc.desc      : callback, SYSTEM-IMAGE, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_ops_004
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_022
+     * @tc.desc   callback, SYSTEM-IMAGE, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_ops_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_004';
@@ -669,12 +650,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_023
-     * @tc.name      : getAlbums_callback_system_ops_005
-     * @tc.desc      : callback, SYSTEM-ANY, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_ops_005
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_023
+     * @tc.desc   callback, SYSTEM-ANY, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_ops_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_005';
@@ -689,12 +670,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_024
-     * @tc.name      : getAlbums_callback_system_ops_006
-     * @tc.desc      : callback, SYSTEM-USER_GENERIC, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_ops_006
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_024
+     * @tc.desc   callback, SYSTEM-USER_GENERIC, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_ops_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_006';
@@ -709,12 +690,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_025
-     * @tc.name      : getAlbums_callback_system_ops_abnormal_001
-     * @tc.desc      : callback, SYSTEM-USER_GENERIC, album->invalid name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_ops_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_025
+     * @tc.desc   callback, SYSTEM-USER_GENERIC, album->invalid name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_ops_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_abnormal_001';
@@ -726,12 +707,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_026
-     * @tc.name      : getAlbums_callback_system_ops_abnormal_002
-     * @tc.desc      : callback, SYSTEM-USER_GENERIC, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_system_ops_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_026
+     * @tc.desc   callback, SYSTEM-USER_GENERIC, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_system_ops_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_abnormal_002';
@@ -746,12 +727,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_027
-     * @tc.name      : getAlbums_callback_system_ops_abnormal_003
-     * @tc.desc      : callback, SYSTEM-USER_GENERIC, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_system_ops_abnormal_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_027
+     * @tc.desc   callback, SYSTEM-USER_GENERIC, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_system_ops_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_system_ops_abnormal_003';
@@ -766,31 +747,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_028    //TODO
-     * @tc.name      : getAlbums_callback_system_ops_abnormal_004
-     * @tc.desc      : callback, SYSTEM-USER_GENERIC, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    /*
-        it('getAlbums_callback_system_ops_abnormal_004', Level.LEVEL2, async (done: Function) => {
-          const testName = 'getAlbums_callback_system_ops_abnormal_004';
-          console.info(TAG, testName);
-          const type: photoAccessHelper.AlbumType = albumType.SYSTEM;
-          const subType: photoAccessHelper.AlbumSubtype = albumSubtype.USER_GENERIC;
-          const fetchOps: photoAccessHelper.FetchOptions | undefined = undefined;
-          await getAlbumsCallbackWithOptionsAbnormalTest(done, type, subType, fetchOps);
-        })
-    */
-
-    /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_029
-     * @tc.name      : getAlbums_callback_system_001
-     * @tc.desc      : callback, SYSTEM-USER_GENERIC, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_029
+     * @tc.desc   callback, SYSTEM-USER_GENERIC, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_001';
@@ -801,12 +763,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_030
-     * @tc.name      : getAlbums_callback_system_002
-     * @tc.desc      : callback, SYSTEM-FAVORITE, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_030
+     * @tc.desc   callback, SYSTEM-FAVORITE, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_002';
@@ -817,12 +779,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_031
-     * @tc.name      : getAlbums_callback_system_003
-     * @tc.desc      : callback, SYSTEM-VIDEO, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_031
+     * @tc.desc   callback, SYSTEM-VIDEO, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_003';
@@ -833,12 +795,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_032
-     * @tc.name      : getAlbums_callback_system_004
-     * @tc.desc      : callback, SYSTEM-IMAGE, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_004
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_032
+     * @tc.desc   callback, SYSTEM-IMAGE, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_004';
@@ -849,12 +811,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_033
-     * @tc.name      : getAlbums_callback_system_005
-     * @tc.desc      : callback, SYSTEM-ANY, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_callback_system_005
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_033
+     * @tc.desc   callback, SYSTEM-ANY, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_callback_system_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_callback_system_005';
@@ -865,12 +827,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_034
-     * @tc.name      : getAlbums_callback_system_abnormal_001
-     * @tc.desc      : callback, SYSTEM-ANY, no fetchOptions, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_system_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_034
+     * @tc.desc   callback, SYSTEM-ANY, no fetchOptions, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_system_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_system_abnormal_001';
@@ -881,12 +843,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_035
-     * @tc.name      : getAlbums_callback_system_abnormal_002
-     * @tc.desc      : callback, SYSTEM-ANY, no fetchOptions, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_callback_system_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_035
+     * @tc.desc   callback, SYSTEM-ANY, no fetchOptions, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_system_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_callback_system_abnormal_002';
@@ -897,12 +859,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_036
-     * @tc.name      : getAlbums_promise_user_ops_001
-     * @tc.desc      : callback, USER-ANY, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_user_ops_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_036
+     * @tc.desc   callback, USER-ANY, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_user_ops_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_user_ops_001';
@@ -917,12 +879,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_037
-     * @tc.name      : getAlbums_promise_user_ops_002
-     * @tc.desc      : callback, USER-ANY, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_user_ops_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_037
+     * @tc.desc   callback, USER-ANY, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_user_ops_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_user_ops_002';
@@ -937,12 +899,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_038
-     * @tc.name      : getAlbums_promise_user_ops_abnormal_001
-     * @tc.desc      : callback, USER-ANY, album->invalid name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_user_ops_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_038
+     * @tc.desc   callback, USER-ANY, album->invalid name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_user_ops_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_user_ops_abnormal_001';
@@ -954,12 +916,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_039
-     * @tc.name      : getAlbums_promise_user_ops_abnormal_002
-     * @tc.desc      : callback, USER-ANY, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_user_ops_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_039
+     * @tc.desc   callback, USER-ANY, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_user_ops_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_user_ops_abnormal_002';
@@ -974,12 +936,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_040
-     * @tc.name      : getAlbums_promise_user_ops_abnormal_003
-     * @tc.desc      : callback, USER-ANY, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_user_ops_abnormal_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_040
+     * @tc.desc   callback, USER-ANY, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_user_ops_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_user_ops_abnormal_003';
@@ -994,12 +956,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_042
-     * @tc.name      : getAlbums_promise_user_001
-     * @tc.desc      : callback, USER-ANY, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_user_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_042
+     * @tc.desc   callback, USER-ANY, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_user_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_user_001';
@@ -1010,12 +972,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_043
-     * @tc.name      : getAlbums_promise_user_abnormal_001
-     * @tc.desc      : callback, USER-ANY, no fetchOptions, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_user_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_043
+     * @tc.desc   callback, USER-ANY, no fetchOptions, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_user_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_user_abnormal_001';
@@ -1026,12 +988,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_044
-     * @tc.name      : getAlbums_promise_user_abnormal_002
-     * @tc.desc      : callback, USER-ANY, no fetchOptions, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_user_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_044
+     * @tc.desc   callback, USER-ANY, no fetchOptions, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_user_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_user_abnormal_002';
@@ -1042,12 +1004,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_045
-     * @tc.name      : getAlbums_promise_system_ops_001
-     * @tc.desc      : callback, SYSTEM-ANY, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_system_ops_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_045
+     * @tc.desc   callback, SYSTEM-ANY, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_system_ops_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_system_ops_001';
@@ -1062,12 +1024,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_046
-     * @tc.name      : getAlbums_promise_system_ops_002
-     * @tc.desc      : callback, SYSTEM-ANY, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_system_ops_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_046
+     * @tc.desc   callback, SYSTEM-ANY, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_system_ops_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_system_ops_002';
@@ -1082,12 +1044,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_047
-     * @tc.name      : getAlbums_promise_system_ops_abnormal_001
-     * @tc.desc      : callback, SYSTEM-ANY, album->invalid name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_system_ops_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_047
+     * @tc.desc   callback, SYSTEM-ANY, album->invalid name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_system_ops_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_system_ops_abnormal_001';
@@ -1099,12 +1061,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_048
-     * @tc.name      : getAlbums_promise_system_ops_abnormal_002
-     * @tc.desc      : callback, SYSTEM-ANY, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_system_ops_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_048
+     * @tc.desc   callback, SYSTEM-ANY, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_system_ops_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_system_ops_abnormal_002';
@@ -1119,12 +1081,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_049
-     * @tc.name      : getAlbums_promise_system_ops_abnormal_003
-     * @tc.desc      : callback, SYSTEM-ANY, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_system_ops_abnormal_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_049
+     * @tc.desc   callback, SYSTEM-ANY, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_system_ops_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_system_ops_abnormal_003';
@@ -1139,12 +1101,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_051
-     * @tc.name      : getAlbums_promise_system_001
-     * @tc.desc      : callback, SYSTEM-ANY, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_promise_system_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_051
+     * @tc.desc   callback, SYSTEM-ANY, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_promise_system_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_promise_system_001';
@@ -1155,12 +1117,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_052
-     * @tc.name      : getAlbums_promise_system_abnormal_001
-     * @tc.desc      : callback, SYSTEM-ANY, no fetchOptions, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_system_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_052
+     * @tc.desc   callback, SYSTEM-ANY, no fetchOptions, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_system_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_system_abnormal_001';
@@ -1171,12 +1133,12 @@ export default function getAlbumsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ALBUMS_053
-     * @tc.name      : getAlbums_promise_system_abnormal_002
-     * @tc.desc      : callback, SYSTEM-ANY, no fetchOptions, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_promise_system_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_053
+     * @tc.desc   callback, SYSTEM-ANY, no fetchOptions, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_promise_system_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_promise_system_abnormal_002';

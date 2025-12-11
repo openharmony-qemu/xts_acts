@@ -42,13 +42,13 @@ export default function buttonMaxFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMaxFontScaleTest_0100
-    * @tc.name      buttonMaxFontScaleTest_0100
-    * @tc.desc      set button maxFontScale:1,return value: 1.000000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMaxFontScaleTest_0100
+     * @tc.number buttonMaxFontScaleTest_0100
+     * @tc.desc   set button maxFontScale:1,return value: 1.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMaxFontScaleTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMaxFontScaleTest_0100 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -61,13 +61,13 @@ export default function buttonMaxFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMaxFontScaleTest_0200
-    * @tc.name      buttonMaxFontScaleTest_0200
-    * @tc.desc      set button maxFontScale:1.5,return value: 1.500000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMaxFontScaleTest_0200
+     * @tc.number buttonMaxFontScaleTest_0200
+     * @tc.desc   set button maxFontScale:1.5,return value: 1.500000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMaxFontScaleTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMaxFontScaleTest_0200 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -80,13 +80,13 @@ export default function buttonMaxFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMaxFontScaleTest_0300
-    * @tc.name      buttonMaxFontScaleTest_0300
-    * @tc.desc      set button maxFontScale:3.2,return value: 3.200000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMaxFontScaleTest_0300
+     * @tc.number buttonMaxFontScaleTest_0300
+     * @tc.desc   set button maxFontScale:3.2,return value: 3.200000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMaxFontScaleTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMaxFontScaleTest_0300 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -99,13 +99,13 @@ export default function buttonMaxFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMaxFontScaleTest_0400
-    * @tc.name      buttonMaxFontScaleTest_0400
-    * @tc.desc      set button maxFontScale:20,return value: 20.000000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMaxFontScaleTest_0400
+     * @tc.number buttonMaxFontScaleTest_0400
+     * @tc.desc   set button maxFontScale:20,return value: 20.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMaxFontScaleTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMaxFontScaleTest_0400 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -118,13 +118,13 @@ export default function buttonMaxFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMaxFontScaleTest_0500
-    * @tc.name      buttonMaxFontScaleTest_0500
-    * @tc.desc      set button maxFontScale:undefined,return value: 3.200000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMaxFontScaleTest_0500
+     * @tc.number buttonMaxFontScaleTest_0500
+     * @tc.desc   set button maxFontScale:undefined,return value: 3.200000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMaxFontScaleTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMaxFontScaleTest_0500 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -137,13 +137,13 @@ export default function buttonMaxFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMaxFontScaleTest_0600
-    * @tc.name      buttonMaxFontScaleTest_0600
-    * @tc.desc      set button maxFontScale:null,return value:3.200000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMaxFontScaleTest_0600
+     * @tc.number buttonMaxFontScaleTest_0600
+     * @tc.desc   set button maxFontScale:null,return value:3.200000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMaxFontScaleTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMaxFontScaleTest_0600 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -156,13 +156,13 @@ export default function buttonMaxFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMaxFontScaleTest_0700
-    * @tc.name      buttonMaxFontScaleTest_0700
-    * @tc.desc      set button maxFontScale:0,return value: 1.000000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMaxFontScaleTest_0700
+     * @tc.number buttonMaxFontScaleTest_0700
+     * @tc.desc   set button maxFontScale:0,return value: 1.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMaxFontScaleTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMaxFontScaleTest_0700 START');
       await CommonFunc.sleep(SLEEP_TIME);

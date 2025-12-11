@@ -47,12 +47,12 @@ export default function FrameNodeMethodErrorCodeTest() {
     });
 
     /**
-     * @tc.number    FrameNodeMethodErrorCodeTest_0100
-     * @tc.name      FrameNodeMethodErrorCodeTest_0100
-     * @tc.desc      frameNode: FrameNode Method ErrorCode Test
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   FrameNodeMethodErrorCodeTest_0100
+     * @tc.number FrameNodeMethodErrorCodeTest_0100
+     * @tc.desc   frameNode: FrameNode Method ErrorCode Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrameNodeMethodErrorCodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('FrameNodeMethodErrorCodeTest_0100 START');

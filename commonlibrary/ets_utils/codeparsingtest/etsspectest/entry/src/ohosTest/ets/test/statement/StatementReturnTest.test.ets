@@ -61,12 +61,12 @@ export default function builtinsStatementReturnTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   builtinsStatementReturnTest_0100
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0100
-     * @tc.name builtinsStatementReturnTest_0100
-     * @tc.desc test Inside the body of a function or method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Inside the body of a function or method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsStatementReturnTest_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -75,12 +75,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0200
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0200
-     * @tc.name builtinsStatementReturnTest_0200
-     * @tc.desc test return with computed expression
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test return with computed expression
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -89,12 +89,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0300
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0300
-     * @tc.name builtinsStatementReturnTest_0300
-     * @tc.desc test In-loop use
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test In-loop use
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -104,12 +104,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0400
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0400
-     * @tc.name builtinsStatementReturnTest_0400
-     * @tc.desc test nested loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -119,12 +119,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0500
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0500
-     * @tc.name builtinsStatementReturnTest_0500
-     * @tc.desc test Used in conditional statements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Used in conditional statements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -134,12 +134,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0600
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0600
-     * @tc.name builtinsStatementReturnTest_0600
-     * @tc.desc test sequenceRunner task with string error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test sequenceRunner task with string error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -149,12 +149,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0700
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0700
-     * @tc.name builtinsStatementReturnTest_0700
-     * @tc.desc test Inside the body of the constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Inside the body of the constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -163,12 +163,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0800
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0800
-     * @tc.name builtinsStatementReturnTest_0800
-     * @tc.desc test conditional presence return the outside doesn't exist either return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test conditional presence return the outside doesn't exist either return
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -177,12 +177,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_0900
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_0900
-     * @tc.name builtinsStatementReturnTest_0900
-     * @tc.desc test Inside the body of a function or method whose return type is void
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Inside the body of a function or method whose return type is void
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -191,12 +191,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_1000
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_1000
-     * @tc.name builtinsStatementReturnTest_1000
-     * @tc.desc test In-loop with void use
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test In-loop with void use
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -206,12 +206,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_1100
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_1100
-     * @tc.name builtinsStatementReturnTest_1100
-     * @tc.desc test nested loop with void
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test nested loop with void
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -221,12 +221,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_1200
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_1200
-     * @tc.name builtinsStatementReturnTest_1200
-     * @tc.desc test Used in conditional statements with void
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Used in conditional statements with void
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -237,12 +237,12 @@ export default function builtinsStatementReturnTest() {
         Done();
       })
     /**
+     * @tc.name   builtinsStatementReturnTest_1300
      * @tc.number SUB_BUILTINS_STATEMENT_RETURN_TEST_1300
-     * @tc.name builtinsStatementReturnTest_1300
-     * @tc.desc test Whether internal use affects external use
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Whether internal use affects external use
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementReturnTest_1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {

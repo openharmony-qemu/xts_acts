@@ -55,12 +55,12 @@ export default function RichEditorPreventDefault001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PREVENTDEFAULT_0002
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PREVENTDEFAULT_0002
-     * @tc.desc  : Set the onClick event with an image or text, do not call preventDefault, click on the image or text to test RichEditor PreventDefault
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PREVENTDEFAULT_0002
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PREVENTDEFAULT_0002
+     * @tc.desc   Set the onClick event with an image or text, do not call preventDefault, click on the image or text to test RichEditor PreventDefault
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PREVENTDEFAULT_0002',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PREVENTDEFAULT_0002 START');

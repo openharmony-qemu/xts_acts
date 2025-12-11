@@ -56,10 +56,13 @@ export default function webViewOnFirstContTwo() {
       done();
     })
 
-    /*
+    /**
+     * @tc.name   testOnfirstcontentfulpaintvisibilitynone
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0200
-     * @tc.name testOnfirstcontentfulpaintvisibilitynone
-     * @tc.desc onfirstcontentfulpaint with web visibility none
+     * @tc.desc   onfirstcontentfulpaint with web visibility none
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnfirstcontentfulpaintvisibilitynone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

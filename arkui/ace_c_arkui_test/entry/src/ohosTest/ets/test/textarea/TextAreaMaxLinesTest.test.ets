@@ -25,37 +25,37 @@ export default function textAreaMaxLinesTest() {
       await Utils.sleep(100);
       done();
     })
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_MAX_LINES_0002
-     * @tc.name: testTextAreaMaxLines002
-     * @tc.desc: testing text for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaMaxLines002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_MAX_LINES_0002
+     * @tc.desc   testing text for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaMaxLines002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaMaxLines002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_MAX_LINES_0003
-     * @tc.name: testTextAreaMaxLines003
-     * @tc.desc: testing text for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaMaxLines003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_MAX_LINES_0003
+     * @tc.desc   testing text for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaMaxLines003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaMaxLines003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_MAX_LINES_0004
-     * @tc.name: testTextAreaMaxLines004
-     * @tc.desc: testing text for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaMaxLines004
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_MAX_LINES_0004
+     * @tc.desc   testing text for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaMaxLines004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaMaxLines004()).assertEqual(0)

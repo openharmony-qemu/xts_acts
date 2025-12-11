@@ -61,14 +61,14 @@ export default function WebGestureTapAndLongPressJsunit() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBGESTURETAPANDLONGPRESS_0100
-    * @tc.name       : testWebGestureTapAndLongPress001
-    * @tc.desc       : testWebGestureTapAndLongPress001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebGestureTapAndLongPress001
+     * @tc.number SUB_WEB_WEBGESTURETAPANDLONGPRESS_0100
+     * @tc.desc   testWebGestureTapAndLongPress001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebGestureTapAndLongPress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "testWebGestureTapAndLongPress001";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
@@ -80,14 +80,14 @@ export default function WebGestureTapAndLongPressJsunit() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBGESTURETAPANDLONGPRESS_0200
-    * @tc.name       : testWebGestureTapAndLongPress002
-    * @tc.desc       : testWebGestureTapAndLongPress002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebGestureTapAndLongPress002
+     * @tc.number SUB_WEB_WEBGESTURETAPANDLONGPRESS_0200
+     * @tc.desc   testWebGestureTapAndLongPress002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebGestureTapAndLongPress002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebGestureTapAndLongPress002";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);

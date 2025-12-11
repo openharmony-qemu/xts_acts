@@ -46,12 +46,12 @@ export default function interceptSwiperTest() {
     });
 
     /**
-     * @tc.number    interceptSwiperTest_001
-     * @tc.name      interceptSwiperTest_0100
-     * @tc.desc      Intercept the behavior of sliding and flipping pages backwards.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   interceptSwiperTest_0100
+     * @tc.number interceptSwiperTest_001
+     * @tc.desc   Intercept the behavior of sliding and flipping pages backwards.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('interceptSwiperTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[interceptSwiperTest_0100] START');
@@ -74,12 +74,12 @@ export default function interceptSwiperTest() {
     });
 
     /**
-     * @tc.number    interceptSwiperTest_002
-     * @tc.name      interceptSwiperTest_0200
-     * @tc.desc      Do not intercept the behavior of sliding forward to flip pages.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   interceptSwiperTest_0200
+     * @tc.number interceptSwiperTest_002
+     * @tc.desc   Do not intercept the behavior of sliding forward to flip pages.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('interceptSwiperTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[interceptSwiperTest_0200] START');

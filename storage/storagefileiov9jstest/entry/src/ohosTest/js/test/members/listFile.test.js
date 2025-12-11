@@ -22,15 +22,13 @@ export default function fileIOListfile() {
   describe('fileIO_fs_listfile', function () {
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_000
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0000
-   * @tc.name fileIO_test_listfile_sync_000
-   * @tc.desc Test listFileSync()interfaces.
-   * Only path, do not filter file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-  */
+   * @tc.desc   Test listFileSync()interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_test_listfile_sync_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_000');
     let fpath1 = dpath + '/listfile_sync_000.txt';
@@ -52,14 +50,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_001
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0100
-   * @tc.name fileIO_test_listfile_sync_001
-   * @tc.desc Test listFileSync() interfaces.
-   * Do not have prop filter.Filter files by quantity only.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_001');
@@ -85,14 +81,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_002
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0200
-   * @tc.name fileIO_test_listfile_sync_002
-   * @tc.desc Test listFileSync() interfaces.
-   * Do not have prop listNum.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_002');
@@ -124,15 +118,13 @@ export default function fileIOListfile() {
   });
 
   /**
-  * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0300
-  * @tc.name fileIO_test_listfile_sync_003
-  * @tc.desc Test listFileSync() interfaces.
-  * Do not have prop suffix. Not filter files by suffix.
-  * @tc.size MEDIUM
-  * @tc.type Function
-  * @tc.level Level 3
-  * @tc.require
-  */
+   * @tc.name   fileIO_test_listfile_sync_003
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0300
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_test_listfile_sync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_003');
     let fpath1 = dpath + '/listfile_sync_003.txt';
@@ -163,14 +155,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_004
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0400
-   * @tc.name fileIO_test_listfile_sync_004
-   * @tc.desc Test listFileSync() interfaces.
-   * Scanfile.Retain six files in the three-level directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_004');
@@ -221,14 +211,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_005
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0500
-   * @tc.name fileIO_test_listfile_sync_005
-   * @tc.desc Test listFileSync() interfaces.
-   * Filter out files whose suffix is not '. txt' and does not meet other conditions.Two files are retained.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_005') ;
@@ -263,14 +251,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_006
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0600
-   * @tc.name fileIO_test_listfile_sync_006
-   * @tc.desc Test listFileSync() interfaces.
-   * Invalid file suffix name format.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_006');
@@ -303,14 +289,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_007
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0700
-   * @tc.name fileIO_test_listfile_sync_007
-   * @tc.desc Test listFileSync() interfaces.
-   * Filter out all files because the size of all files less than 12.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_007');
@@ -343,14 +327,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_008
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0800
-   * @tc.name fileIO_test_listfile_sync_008
-   * @tc.desc Test listFileSync() interfaces.
-   * listNum is 0.Traverse all files.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_008');
@@ -385,14 +367,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_009
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0900
-   * @tc.name fileIO_test_listfile_sync_009
-   * @tc.desc Test listFileSync() interfaces.
-   * Missing all arguments.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 
@@ -406,15 +386,13 @@ export default function fileIOListfile() {
   });
 
   /**
-  * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1000
-  * @tc.name fileIO_test_listfile_sync_010
-  * @tc.desc Test listFileSync() interfaces.
-  * Invalid option args.
-  * @tc.size MEDIUM
-  * @tc.type Function
-  * @tc.level Level 3
-  * @tc.require
-  */
+   * @tc.name   fileIO_test_listfile_sync_010
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1000
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_test_listfile_sync_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_010');
     let fpath1 = dpath + '/listfile_sync_009.txt';
@@ -436,15 +414,13 @@ export default function fileIOListfile() {
   });
 
   /**
-  * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1100
-  * @tc.name fileIO_test_listfile_sync_011
-  * @tc.desc Test listFileSync() interfaces.
-  * Undefined option arguments, use default options.
-  * @tc.size MEDIUM
-  * @tc.type Function
-  * @tc.level Level 3
-  * @tc.require
-  */
+   * @tc.name   fileIO_test_listfile_sync_011
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1100
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_listfile_sync_011', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_011');
     let ddpath = dpath + '/second_dir';
@@ -480,15 +456,13 @@ export default function fileIOListfile() {
   });
 
   /**
-  * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1200
-  * @tc.name fileIO_test_listfile_sync_012
-  * @tc.desc Test listFileSync() interfaces.
-  * Undefined option arguments, use default options.
-  * @tc.size MEDIUM
-  * @tc.type Function
-  * @tc.level Level 3
-  * @tc.require
-  */
+   * @tc.name   fileIO_test_listfile_sync_012
+   * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1200
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('fileIO_test_listfile_sync_012', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_012');
     let ddpath = dpath + '/second_dir';
@@ -516,14 +490,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_013
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1300
-   * @tc.name fileIO_test_listfile_sync_013
-   * @tc.desc Test listFileSync() interfaces.
-   * Do not have prop listNum.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_002');
@@ -557,14 +529,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_014
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1400
-   * @tc.name fileIO_test_listfile_sync_014
-   * @tc.desc Test listFileSync() interfaces.
-   * No such file or directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_014');
@@ -582,14 +552,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_015
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1500
-   * @tc.name fileIO_test_listfile_sync_015
-   * @tc.desc Test listFileSync() interfaces.
-   * Not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_015');
@@ -608,14 +576,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_sync_016
    * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1600
-   * @tc.name fileIO_test_listfile_sync_016
-   * @tc.desc Test listFileSync() interfaces.
-   * Not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFileSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_sync_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_sync_016');
@@ -635,14 +601,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_000
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0000
-   * @tc.name fileIO_test_listfile_async_000
-   * @tc.desc Test listFile() interface. Callback.
-   * Only path, do not filter file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_000') ;
@@ -670,14 +634,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_001
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0100
-   * @tc.name fileIO_test_listfile_async_001
-   * @tc.desc Test listFile() interface. Promise.
-   * Only path, do not filter file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_001');
@@ -701,15 +663,13 @@ export default function fileIOListfile() {
   });
 
   /**
-  * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0200
-  * @tc.name fileIO_test_listfile_async_002
-  * @tc.desc Test listFile() interfaces. Callback.
-  * Do not have prop filter.Filter files by quantity only.
-  * @tc.size MEDIUM
-  * @tc.type Function
-  * @tc.level Level 3
-  * @tc.require
-  */
+   * @tc.name   fileIO_test_listfile_async_002
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0200
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_test_listfile_async_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_002');
     let fpath1 = dpath + '/listfile_async_002.txt';
@@ -739,14 +699,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_003
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0300
-   * @tc.name fileIO_test_listfile_async_003
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Do not have prop filter.Filter files by quantity only.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_003');
@@ -773,14 +731,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_004
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0400
-   * @tc.name fileIO_test_listfile_async_004
-   * @tc.desc Test listFile() interface. Callback.
-   * Do not have prop listNum.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_004');
@@ -817,14 +773,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_005
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0500
-   * @tc.name fileIO_test_listfile_async_005
-   * @tc.desc Test listFile() interface. Promise.
-   * Do not have prop listNum.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_005');
@@ -857,14 +811,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_006
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0600
-   * @tc.name fileIO_test_listfile_async_006
-   * @tc.desc Test listFile() interface. Callback.
-   * Do not have prop suffix. Not filter files by suffix.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_006');
@@ -901,14 +853,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_007
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0700
-   * @tc.name fileIO_test_listfile_async_007
-   * @tc.desc Test listFile() interface. Promise.
-   * Do not have prop suffix. Not filter files by suffix.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_007');
@@ -941,14 +891,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_008
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0800
-   * @tc.name fileIO_test_listfile_async_008
-   * @tc.desc Test listFile() interfaces. Callback.
-   * Scanfile.Retain six files in the three-level directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_008');
@@ -1004,14 +952,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_009
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_0900
-   * @tc.name fileIO_test_listfile_async_009
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Scanfile.Retain six files in the three-level directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_009');
@@ -1063,14 +1009,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_010
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1000
-   * @tc.name fileIO_test_listfile_async_010
-   * @tc.desc Test listFile() interfaces. Callback.
-   * Filter out files whose suffix is not '. txt' and does not meet other conditions.Two files are retained.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_010');
@@ -1110,14 +1054,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_011
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1100
-   * @tc.name fileIO_test_listfile_async_011
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Filter out files whose suffix is not '. txt' and does not meet other conditions.Two files are retained.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_011');
@@ -1153,14 +1095,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_012
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1200
-   * @tc.name fileIO_test_listfile_async_012
-   * @tc.desc Test listFile() interfaces. Callback.
-   * Invalid file suffix name format.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_012');
@@ -1196,14 +1136,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_013
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1300
-   * @tc.name fileIO_test_listfile_async_013
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Invalid file suffix name format.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_013');
@@ -1239,14 +1177,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_014
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1400
-   * @tc.name fileIO_test_listfile_async_014
-   * @tc.desc Test listFile() interfaces. Callback.
-   * Filter out all files because the size of all files less than 12.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_014');
@@ -1284,14 +1220,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_015
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1500
-   * @tc.name fileIO_test_listfile_async_015
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Filter out all files because the size of all files less than 12.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_015');
@@ -1325,14 +1259,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_016
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1600
-   * @tc.name fileIO_test_listfile_async_016
-   * @tc.desc Test listFile() interfaces. Callback.
-   * listNum is 0.Traverse all files.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_016');
@@ -1372,14 +1304,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_017
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1700
-   * @tc.name fileIO_test_listfile_async_017
-   * @tc.desc Test listFile() interfaces. Promise.
-   * listNum is 0.Traverse all files.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_017');
@@ -1415,14 +1345,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_018
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1800
-   * @tc.name fileIO_test_listfile_async_018
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Missing all arguments.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 
@@ -1437,14 +1365,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_019
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1900
-   * @tc.name fileIO_test_listfile_async_019
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Invalid option args.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_019');
@@ -1468,14 +1394,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_020
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2000
-   * @tc.name fileIO_test_listfile_async_020
-   * @tc.desc Test listFile() interfaces. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_listfile_async_020', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_020');
@@ -1517,14 +1441,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_021
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2100
-   * @tc.name fileIO_test_listfile_async_021
-   * @tc.desc Test listFile() interfaces. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_listfile_async_021', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_021');
@@ -1558,14 +1480,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_022
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2200
-   * @tc.name fileIO_test_listfile_async_022
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_listfile_async_022', Level.LEVEL3, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_022');
@@ -1603,14 +1523,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_023
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2300
-   * @tc.name fileIO_test_listfile_async_023
-   * @tc.desc Test listFile() interfaces. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_listfile_async_023', Level.LEVEL3, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_023');
@@ -1640,14 +1558,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_024
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2400
-   * @tc.name fileIO_test_listfile_async_024
-   * @tc.desc Test listFile() interface. Callback.
-   * Do not have prop listNum.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_024');
@@ -1686,13 +1602,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_025
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2500
-   * @tc.name fileIO_test_listfile_async_025
-   * @tc.desc Test listFile() interface. Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_test_listfile_async_025');
@@ -1727,14 +1642,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_026
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2600
-   * @tc.name fileIO_test_listfile_async_026
-   * @tc.desc Test listFile() interface. Callback.
-   * No such file or directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_026');
@@ -1753,14 +1666,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_027
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2700
-   * @tc.name fileIO_test_listfile_async_027
-   * @tc.desc Test listFile() interface. Promise.
-   * No such file or directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_027');
@@ -1775,14 +1686,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_028
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2800
-   * @tc.name fileIO_test_listfile_async_028
-   * @tc.desc Test listFile() interface. Promise.
-   * Not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_028');
@@ -1798,14 +1707,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_029
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_2900
-   * @tc.name fileIO_test_listfile_async_029
-   * @tc.desc Test listFile() interface. Callback.
-   * Not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_029');
@@ -1825,14 +1732,12 @@ export default function fileIOListfile() {
   });
 
   /**
+   * @tc.name   fileIO_test_listfile_async_030
    * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3000
-   * @tc.name fileIO_test_listfile_async_030
-   * @tc.desc Test listFile() interface. Callback.
-   * Only path, do not filter file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test listFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_listfile_async_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_030') ;
@@ -1855,15 +1760,13 @@ export default function fileIOListfile() {
   });
 
   /**
-  * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3100
-  * @tc.name fileIO_test_listfile_async_031
-  * @tc.desc Test listFile() interfaces. Callback.
-  * Do not have prop filter.Filter files by quantity only.
-  * @tc.size MEDIUM
-  * @tc.type Function
-  * @tc.level Level 3
-  * @tc.require
-  */
+   * @tc.name   fileIO_test_listfile_async_031
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3100
+   * @tc.desc   Test listFile() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileIO_test_listfile_async_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_test_listfile_async_031');
     fileIO.mkdirSync(dpath);

@@ -82,12 +82,12 @@ export default function sendableOpacitySyncTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_001
-     * @tc.name      : opacitySync_sendable_promise_001
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_sendable_promise_001
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_001
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_sendable_promise_001';
@@ -98,12 +98,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_002
-     * @tc.name      : opacitySync_sendable_promise_002
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_sendable_promise_002
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_002
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_sendable_promise_002';
@@ -115,12 +115,12 @@ export default function sendableOpacitySyncTest() {
 
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_003
-     * @tc.name      : opacitySync_sendable_promise_003
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_sendable_promise_003
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_003
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_sendable_promise_003';
@@ -131,12 +131,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_04 //TODO 传入的rate超出区间范围(0,1]后 不报错
-     * @tc.name      : opacitySync_abnormal_sendable_promise_001
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_04 //TODO 传入的rate超出区间范围(0,1]后 不报错
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_abnormal_sendable_promise_001';
@@ -147,12 +147,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_005 //TODO 传入的rate超出区间范围(0,1]后 不报错
-     * @tc.name      : opacitySync_abnormal_sendable_promise_002
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_005 //TODO 传入的rate超出区间范围(0,1]后 不报错
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_abnormal_sendable_promise_002';
@@ -163,12 +163,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_006 //TODO 传入的rate超出区间范围(0,1]后 不报错
-     * @tc.name      : opacitySync_abnormal_sendable_promise_003
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_abnormal_sendable_promise_003
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_006 //TODO 传入的rate超出区间范围(0,1]后 不报错
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_abnormal_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_abnormal_sendable_promise_003';
@@ -179,12 +179,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_007 //TODO 传入的rate超出区间范围(0,1]后 不报错
-     * @tc.name      : opacitySync_abnormal_sendable_promise_004
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_abnormal_sendable_promise_004
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_007 //TODO 传入的rate超出区间范围(0,1]后 不报错
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_abnormal_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_abnormal_sendable_promise_004';
@@ -195,12 +195,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_008//TODO 传入的rate超出区间范围(0,1]后 不报错
-     * @tc.name      : opacitySync_abnormal_sendable_promise_005
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_abnormal_sendable_promise_005
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_008//TODO 传入的rate超出区间范围(0,1]后 不报错
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_abnormal_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_abnormal_sendable_promise_005';
@@ -211,12 +211,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_009 //TODO 传入的rate超出区间范围(0,1]后 不报错
-     * @tc.name      : opacitySync_abnormal_sendable_promise_006
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_abnormal_sendable_promise_006
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_009 //TODO 传入的rate超出区间范围(0,1]后 不报错
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_abnormal_sendable_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_abnormal_sendable_promise_006';
@@ -227,12 +227,12 @@ export default function sendableOpacitySyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_SYNC_010 //TODO 传入的rate超出区间范围(0,1]后 不报错
-     * @tc.name      : opacitySync_abnormal_sendable_promise_007
-     * @tc.desc      : opacitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacitySync_abnormal_sendable_promise_007
+     * @tc.number PIXEL_MAP_OPACITY_SYNC_010 //TODO 传入的rate超出区间范围(0,1]后 不报错
+     * @tc.desc   opacitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacitySync_abnormal_sendable_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacitySync_abnormal_sendable_promise_007';

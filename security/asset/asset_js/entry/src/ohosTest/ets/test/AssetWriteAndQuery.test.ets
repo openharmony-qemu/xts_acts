@@ -40,12 +40,12 @@ export default function AssetWriteAndQueryNewTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0100
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0100
-     * @tc.name 空数据库中，写入异常数据（过长，过短，空）
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(Number(await aw.assetAddEasy(aw.aliasNameList[0], aw.secTooLong)))
@@ -54,12 +54,12 @@ export default function AssetWriteAndQueryNewTest() {
         .assertEqual(asset.ErrorCode.INVALID_ARGUMENT);
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0200
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0200
-     * @tc.name 空数据库中，正常格式的短敏感数据写入
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(await aw.assetAddEasy(aw.aliasNameList[0], aw.secretList[0]))
@@ -86,12 +86,12 @@ export default function AssetWriteAndQueryNewTest() {
 
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0300
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0300
-     * @tc.name 正常数据库中，写入异常数据（过长，过短，空）
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await aw.addSome();
@@ -102,12 +102,12 @@ export default function AssetWriteAndQueryNewTest() {
 
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0400
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0400
-     * @tc.name 正常数据库中，正常格式的短敏感数据写入，精确查询，批量查询
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await aw.addSome();
@@ -140,12 +140,12 @@ export default function AssetWriteAndQueryNewTest() {
         .assertEqual(0);
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0500
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0500
-     * @tc.name 写入单个关键资产时，传入异常的别名参数——超长、空
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(Number(await aw.assetAddEasy(aw.aliasTooLong, aw.secretList[0])))
@@ -155,12 +155,12 @@ export default function AssetWriteAndQueryNewTest() {
 
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0600
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0600
-     * @tc.name 写入单个关键资产时，传入异常的标签参数——超长、空
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -176,12 +176,12 @@ export default function AssetWriteAndQueryNewTest() {
 
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0700
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0700
-     * @tc.name 写入单个关键资产时，每个label字段都传入参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -216,12 +216,12 @@ export default function AssetWriteAndQueryNewTest() {
       expect(ret0.critical4 == aw.labelList[0]).assertTrue();
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0800
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0800
-     * @tc.name 重复写入单个关键资产时，冲突覆盖参数分别传入报错、重写和不传
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await aw.assetAddEasy(aw.aliasNameList[0], aw.secretList[0]);
@@ -240,12 +240,12 @@ export default function AssetWriteAndQueryNewTest() {
         .assertEqual(0);
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_0900
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_0900
-     * @tc.name 查询不存在数据失败，包含精确查询，批量查询
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -258,12 +258,12 @@ export default function AssetWriteAndQueryNewTest() {
         .assertEqual(asset.ErrorCode.NOT_FOUND);
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_1200
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_1200
-     * @tc.name 传入不同的查询接口RETURN_LIMIT字段
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -283,12 +283,12 @@ export default function AssetWriteAndQueryNewTest() {
         .assertEqual(asset.ErrorCode.INVALID_ARGUMENT);
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_1300
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_1300
-     * @tc.name 查询接口的RETURN_OFFSET字段，指定的偏移量大于或者小于总条目数，或者0，或者不传
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -308,12 +308,12 @@ export default function AssetWriteAndQueryNewTest() {
         .assertEqual(3);
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_1400
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_1400
-     * @tc.name 批量查询时，传入RETURN_ORDER_BY指定排序字段
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -348,12 +348,12 @@ export default function AssetWriteAndQueryNewTest() {
     });
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_1800
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_1800
-     * @tc.name 批量查询超过500条数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testAlias1 = aw.aliasNameList[0];
@@ -368,12 +368,12 @@ export default function AssetWriteAndQueryNewTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_1600
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_1600
-     * @tc.name 写入接口传入异常数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -407,12 +407,12 @@ export default function AssetWriteAndQueryNewTest() {
         .assertEqual(asset.ErrorCode.INVALID_ARGUMENT);
     });
     /**
+     * @tc.name   Security_DataSecurity_Asset_WriteAndQuery_Func_1700
      * @tc.number Security_DataSecurity_Asset_WriteAndQuery_Func_1700
-     * @tc.name 查询接口传入异常数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_WriteAndQuery_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
