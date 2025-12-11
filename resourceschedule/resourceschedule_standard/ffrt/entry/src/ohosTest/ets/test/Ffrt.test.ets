@@ -1475,5 +1475,33 @@ export default function ffrtTest() {
       let flag = entry.queueApiTest016();
       expect(flag).assertEqual(0);
     })
+
+    /**	
+     * @tc.name   ffrt_alloc_function_0001	
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10400
+     * @tc.desc   Test ffrt_alloc_auto_managed_function_storage api	
+     * @tc.type   FUNCTION	
+     * @tc.size   MEDIUMTEST	
+     * @tc.level  LEVEL0	
+     */	
+    it('ffrt_alloc_function_0001', Level.LEVEL0, () => {	
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.	
+      let flag = entry.ffrt_alloc_function_0001();	
+      expect(flag).assertEqual(0);	
+    })
+
+    /**
+     * @tc.name   queueApiTest017
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10500
+     * @tc.desc   Test ffrt_queue_submit_h_f and ffrt_queue_attr_get_thread_mode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('queueApiTest017', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.queueApiTest017();
+      expect(flag).assertEqual(0);
+    })
   })
 }
