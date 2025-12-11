@@ -4316,7 +4316,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.log(caseName + 'begin');
       let subWindowClass: window.Window | undefined;
       let config: window.Configuration = {
-        name: "floatWindow",
+        name: "testGetWindowLimitsVPwithFloatWindow",
         windowType: window.WindowType.TYPE_FLOAT,
         ctx: context
       };
@@ -4333,6 +4333,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             expect(windowLimits.minWidth).assertEqual(1)
             expect(windowLimits.minHeight).assertEqual(1)
           }
+          await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed in showWindow. Cause code: ${err.code}, message: ${err.message}`);
@@ -4365,7 +4366,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.log(caseName + 'begin');
       let subWindowClass: window.Window | undefined;
       let config: window.Configuration = {
-        name: "dialogWindow",
+        name: "testGetWindowLimitsVPwithDialogWindow",
         windowType: window.WindowType.TYPE_DIALOG,
         ctx: context
       };
@@ -4381,6 +4382,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           expect(windowLimits.minWidth).assertLarger(1)
           expect(windowLimits.minHeight).assertLarger(1)
         }
+        await subWindowClass?.destroyWindow();
         done()
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
