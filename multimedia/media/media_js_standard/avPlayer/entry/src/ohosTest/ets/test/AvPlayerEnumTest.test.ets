@@ -77,6 +77,7 @@ export default function AvPlayerEnumTest() {
       expect(media.AVErrorCode.AVERR_SEEK_CONTINUOUS_UNSUPPORTED).assertEqual(5410002);
       expect(media.AVErrorCode.AVERR_SUPER_RESOLUTION_UNSUPPORTED).assertEqual(5410003);
       expect(media.AVErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED).assertEqual(5410004);
+      expect(media.AVErrorCode.AVERR_IO_CLEARTEXT_NOT_PERMITTED).assertEqual(5411012);
       done();
     });
     /**
