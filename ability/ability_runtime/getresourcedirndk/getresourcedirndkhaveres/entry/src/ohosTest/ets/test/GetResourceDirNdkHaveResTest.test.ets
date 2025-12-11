@@ -377,5 +377,25 @@ export default function getResourceDirNdkHaveResTest() {
       expect(resPath).assertEqual(jsResPath);
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700
+     * @tc.desc   Obtain the resource path of the Empty module (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700', Level.LEVEL3, (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1700';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let moduleName : string = '';
+      let res = testNapi.errorModuleNameEmpty(moduleName);
+      let resCode = res[0];
+      let resPath = res[1];
+      expect(resCode).assertEqual(0);
+      expect(resPath).assertEqual('/data/storage/el1/bundle/entry/resources/resfile');
+      done();
+    })
   })
 }

@@ -1881,3 +1881,167 @@ napi_value ApplicationContextGetVersionCodeParamInvalid(napi_env env, napi_callb
     }
     return nullptr;
 }
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    OH_AbilityBase_SetWantBoolParam(want, "ohos.extra.param.key.createAppInstance", true);
+    OH_AbilityBase_SetWantCharParam(want, "ohos.extra.param.key.appInstance", "app_instance_0");
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_APP_INSTANCE_KEY_NOT_SUPPORTED
+        || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
+}
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoError(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED || ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    return nullptr;
+}
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    OH_AbilityBase_SetWantBoolParam(want, "ohos.extra.param.key.createAppInstance", true);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_UPPER_LIMIT_REACHED || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
+}
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("ErrorEntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_SUCH_ABILITY || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    return nullptr;
+}
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilityrely");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_CROSS_APP || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    return nullptr;
+}
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeInternal(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    OH_AbilityBase_AddWantFd(want, "fd", -1);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_INTERNAL || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    return nullptr;
+}
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    OH_AbilityBase_SetWantCharParam(want, "ohos.extra.param.key.appInstance", "app_instance_0_Error");
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_INVALID_APP_INSTANCE_KEY || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
+}
+
+napi_value StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled(napi_env env, napi_callback_info info)
+{
+    int32_t pid = -1;
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_VISIBILITY_SETTING_DISABLED || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    return nullptr;
+}

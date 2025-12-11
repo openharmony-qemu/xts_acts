@@ -196,6 +196,41 @@ static napi_value ErrorModuleNameNull(napi_env env, napi_callback_info info)
     napi_create_int32(env, code, &result);
     return result;
 }
+
+static napi_value ErrorModuleNameEmpty(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value argv[1];
+    napi_value thisArg;
+    void* data;
+
+    napi_get_cb_info(env, info, &argc, argv, &thisArg, &data);
+
+    size_t moduleNameLength;
+    char moduleName[256] = {0};
+    napi_get_value_string_utf8(env, argv[0], moduleName, sizeof(moduleName) - 1, &moduleNameLength);
+
+    const int32_t bufferSize = 1024;
+    char buffer[bufferSize] = {0};
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode code = OH_AbilityRuntime_ApplicationContextGetResourceDir(moduleName,
+        buffer, bufferSize, &writeLength);
+
+    napi_value resultArray;
+    size_t resultArrayLength = 2;
+    napi_create_array_with_length(env, resultArrayLength, &resultArray);
+
+    napi_value retValue;
+    napi_create_int32(env, code, &retValue);
+    napi_set_element(env, resultArray, 0, retValue);
+
+    napi_value result;
+    napi_create_string_utf8(env, buffer, writeLength, &result);
+    napi_set_element(env, resultArray, 1, result);
+
+    return resultArray;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -207,6 +242,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "buffersize_larger", nullptr, BuffersizeLarger, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "buffersize_equals", nullptr, BuffersizeEquals, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "error_moduleName_null", nullptr, ErrorModuleNameNull, nullptr, nullptr, nullptr, napi_default, nullptr }
+        { "errorModuleNameEmpty", nullptr, ErrorModuleNameEmpty, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

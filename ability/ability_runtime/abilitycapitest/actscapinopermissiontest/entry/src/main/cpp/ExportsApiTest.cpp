@@ -24,7 +24,9 @@ napi_property_descriptor desc[] = {
     {"StartSelfUIAbilityWithStartOptionsPermissionDenied",
         nullptr, StartSelfUIAbilityWithStartOptionsPermissionDenied, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AbilityRuntimeErrorCodePermissionDeniedCode",
-        nullptr, AbilityRuntimeErrorCodePermissionDeniedCode, nullptr, nullptr, nullptr, napi_default, nullptr}
+        nullptr, AbilityRuntimeErrorCodePermissionDeniedCode, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"StartSelfUIAbilityWithPidPermissionDenied",
+        nullptr, StartSelfUIAbilityWithPidPermissionDenied, nullptr, nullptr, nullptr, napi_default, nullptr}
 };
 
 EXTERN_C_START

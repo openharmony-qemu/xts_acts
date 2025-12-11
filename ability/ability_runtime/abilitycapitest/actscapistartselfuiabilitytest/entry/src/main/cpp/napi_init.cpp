@@ -666,6 +666,16 @@ static napi_value NdkStartSelfUIAbilityWithPidResult_0200(napi_env env, napi_cal
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_LOG_INFO(LOG_APP, "NdkStartSelfUIAbilityWithPidResult_0200 errCode=%{public}d", errCode);
     OH_AbilityRuntime_DestroyStartOptions(&options);
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_START_TIMEOUT) {
+        napi_value napiRet;
+        napi_create_int32(env, versionCode, &napiRet);
+        return napiRet;
+    }
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_MAIN_THREAD_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, versionCode, &napiRet);
+        return napiRet;
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -694,6 +704,11 @@ static napi_value NdkApplicationContextGetVersionCode_0200(napi_env env, napi_ca
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetVersionCode(nullptr);
     OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0200 errCode=%{public}d", errCode);
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        napi_value napiRet;
+        napi_create_int32(env, versionCode, &napiRet);
+        return napiRet;
+    }
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_GET_APPLICATION_INFO_FAILED) {
         napi_value napiRet;
         napi_create_int32(env, versionCode, &napiRet);
         return napiRet;
@@ -1565,6 +1580,24 @@ static napi_value NdkSetIsolationUid_0100(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value NdkSetIsolationUid_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0200 begins");
+    Ability_ChildProcessConfigs *configs = OH_Ability_CreateChildProcessConfigs();
+    Ability_NativeChildProcess_ErrCode ret =
+        OH_Ability_ChildProcessConfigs_SetIsolationUid(configs, true);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0200 errCode=%{public}d", ret);
+    if(ret == NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0200 errCode=%{public}d", ret);
+    }
+    if(ret == NCP_ERR_INVALID_PID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0200 errCode=%{public}d", ret);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value StartNativeChildProcess_0100(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
@@ -1599,6 +1632,178 @@ static napi_value StartNativeChildProcess_0700(napi_env env, napi_callback_info 
       return result;
     }
 }
+
+static napi_value ContextGetLogPath_0700(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0700 begins");
+    char buffer[1024] = { 0 };
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, 1024, &writeLength);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0700 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_string_utf8(env, buffer, NAPI_AUTO_LENGTH, &result);
+    return result;
+
+}
+
+static napi_value ContextGetLogPath_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 begins");
+    char buffer[1024] = nullptr;
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, 1024, &writeLength);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value ContextGetLogPath_1600(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_1600 begins");
+    char buffer[1024] = { 0 };
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, 1024, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_1600 errCode=%{public}d", errCode);
+    if(errCode != NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_1600 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value ContextGetLogPath_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0200 begins");
+    char buffer[1024] = { 0 };
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, 0, &writeLength);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0200 errCode=%{public}d", errCode);
+    if(errCode != NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0200 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value ContextGetLogPath_1500(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_1500 begins");
+    char buffer[1024] = { 0 };
+    int32_t writeLength = 0;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, -1, &writeLength);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_1500 errCode=%{public}d", errCode);
+    if(errCode != NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_1500 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value ContextGetLogPath_0300(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0300 begins");
+    char buffer[1024] = { 0 };
+    int32_t writeLength = 5;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, 100, &writeLength);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0300 errCode=%{public}d", errCode);
+    if(errCode != NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0300 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_string_utf8(env, buffer, NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value ContextGetLogPath_0400(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0400 begins");
+    char buffer[1024] = { 0 };
+    int32_t writeLength = 200;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, 10, &writeLength);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0400 errCode=%{public}d", errCode);
+    if(errCode != NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0400 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkKillSelfChildProcess_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_0100 begins");
+    size_t argc = 1;
+    napi_value argv[1] = { NULL };
+    napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
+    int32_t pid_temp = -1;
+    napi_get_value_int32(env, argv[0], &pid_temp);
+    Ability_NativeChildProcess_ErrCode errCode = OH_Ability_KillChildProcess(pid_temp);
+    if(errCode == NCP_ERR_INVALID_PID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_0100 errCode=%{public}d", errCode);
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    if(errCode == NCP_ERR_SERVICE_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_0100 errCode=%{public}d", errCode);
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    if(errCode == NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_0100 errCode=%{public}d", errCode);
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+
+static napi_value NdkKillSelfChildProcess_2600(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_2600 begins");
+    int32_t pid_temp = -1;
+    Ability_NativeChildProcess_ErrCode errCode = OH_Ability_KillChildProcess(pid_temp);
+    if(errCode == NCP_ERR_INVALID_PID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_2600 errCode=%{public}d", errCode);
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    if(errCode == NCP_ERR_SERVICE_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_2600 errCode=%{public}d", errCode);
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    if(errCode == NCP_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_KillSelfChildProcess_2600 errCode=%{public}d", errCode);
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1709,6 +1914,16 @@ static napi_value Init(napi_env env, napi_value exports)
         { "ndkApplicationContextGetVersionCode_0100", nullptr, NdkApplicationContextGetVersionCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkApplicationContextGetVersionCode_0200", nullptr, NdkApplicationContextGetVersionCode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkSetIsolationUid_0100", nullptr, NdkSetIsolationUid_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkSetIsolationUid_0200", nullptr, NdkSetIsolationUid_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "contextGetLogPath_0700", nullptr, ContextGetLogPath_0700, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "contextGetLogPath_0100", nullptr, ContextGetLogPath_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "contextGetLogPath_0200", nullptr, ContextGetLogPath_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "contextGetLogPath_1500", nullptr, ContextGetLogPath_1500, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "contextGetLogPath_0300", nullptr, ContextGetLogPath_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "contextGetLogPath_0400", nullptr, ContextGetLogPath_0400, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "contextGetLogPath_1600", nullptr, ContextGetLogPath_1600, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkKillSelfChildProcess_0100", nullptr, NdkKillSelfChildProcess_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkKillSelfChildProcess_2600", nullptr, NdkKillSelfChildProcess_2600, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
