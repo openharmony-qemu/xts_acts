@@ -151,6 +151,7 @@ struct IndexPage {
     { title: 'WindowSizeLayoutBreakpointChange', uri: 'pages/ArkUI/WindowSizeLayoutBreakpointChange' },
     { title: 'AccessibilityActionOptionsScrollStep', uri: 'pages/ArkUI/AccessibilityActionOptionsScrollStep' },
     { title: 'CapiSourceType', uri: 'pages/ArkUI/CapiSourceType' },
+    { title: 'AccessiBilityStateDescription', uri: 'pages/ArkUI/AccessiBilityStateDescription' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
