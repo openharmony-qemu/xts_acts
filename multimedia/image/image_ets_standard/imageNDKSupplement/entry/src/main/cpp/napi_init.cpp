@@ -13,9 +13,17 @@
  * limitations under the License.
  */
 
+#include "ImagePackerCreateTest.h"
+#include "ImagePictureNativeTest.h"
+#include "ImagePixelMapTest.h"
+#include "MediaAssetManagerCancelRequestTest.h"
 #include "napi/native_api.h"
+#include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
+#include "ImagePackerCreateTest.h"
+
+
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -41,12 +49,25 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectSetOutputPictureSupp", OHImageEffectSetOutputPictureSupp),
     DESCRIPTOR("OHImageEffectReleaseSupp", OHImageEffectReleaseSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterByFilterSupp", OHImageEffectReplaceFilterByFilterSupp),
+    DESCRIPTOR("PixelMapGetIsEditableResult", PixelMapGetIsEditableResult),
+    DESCRIPTOR("ImagePackerCreateTest", ImagePackerCreateTest),
+    DESCRIPTOR("ImagePackerInitNativeTest", ImagePackerInitNativeTest),
+    DESCRIPTOR("ImagePackerPackToDataTest", ImagePackerPackToDataTest),
+    DESCRIPTOR("ImagePackerPackToFileTest", ImagePackerPackToFileTest),
+    DESCRIPTOR("CreatePixelMapTest", CreatePixelMapTest),
+    DESCRIPTOR("CreatePixelMapWithStrideTest", CreatePixelMapWithStrideTest),
+    DESCRIPTOR("CreateAlphaPixelMapTest", CreateAlphaPixelMapTest),
+    DESCRIPTOR("PictureNativeGetMetadataTest", PictureNativeGetMetadataTest),
+    DESCRIPTOR("PixelMapGetImageInfoTest", PixelMapGetImageInfoTest),
+    DESCRIPTOR("PixelMapAccessPixelsTest", PixelMapAccessPixelsTest),
+    DESCRIPTOR("PixelMapUnAccessPixelsTest", PixelMapUnAccessPixelsTest),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
-    size_t mergedLength =
-        sizeof(desc1) / sizeof(desc1[0]) ;
+    
+   size_t mergedLength =
+        sizeof(desc1) / sizeof(desc1[0]);
     napi_property_descriptor mergedArray[mergedLength];
     for (size_t i = 0; i < sizeof(desc1) / sizeof(desc1[0]); ++i) {
         mergedArray[i] = desc1[i];
