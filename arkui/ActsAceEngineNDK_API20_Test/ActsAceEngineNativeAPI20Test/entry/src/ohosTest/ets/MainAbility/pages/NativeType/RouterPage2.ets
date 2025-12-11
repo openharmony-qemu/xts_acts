@@ -8,11 +8,13 @@ struct RouterPage {
   @StorageLink('Node') node:NodeContent=this.nodeContent
   aboutToAppear(): void {
     native.GetRouterPageNodeState()
+    native.GetRouterStatAboutToAppear()
     promptAction.showToast({
       message:''+native.GetRouterPageNodeStateResult(0)
     })
   }
   aboutToDisappear(): void {
+    native.GetRouterStateAboutToDisApper()
     message:''+native.GetRouterPageNodeState()
     promptAction.showToast({
       message:''+native.GetRouterPageNodeStateResult(1)
