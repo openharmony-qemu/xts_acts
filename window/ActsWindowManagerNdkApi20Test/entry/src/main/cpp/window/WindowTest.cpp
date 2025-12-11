@@ -1030,13 +1030,16 @@ napi_value TestLockCursorwithOutofRange(napi_env env, napi_callback_info info)
     int32_t result1 = OH_WindowManager_LockCursor(0, false);
     int32_t result2 = OH_WindowManager_LockCursor(-1, false);
     int32_t result3 = OH_WindowManager_LockCursor(PARAM_100, false);
-    napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "TestLockCursorwithOutofRange: %{public}d", result1);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "TestLockCursorwithOutofRange: %{public}d", result2);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "TestLockCursorwithOutofRange: %{public}d", result3);
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
     int32_t values[PARAM_3] = {result1, result2, result3};
     for (int i = 0; i < PARAM_3; i++) {
         napi_value element;
@@ -1099,13 +1102,16 @@ napi_value TestUnLockCursorwithOutofRange(napi_env env, napi_callback_info info)
     int32_t result1 = OH_WindowManager_UnlockCursor(0);
     int32_t result2 = OH_WindowManager_UnlockCursor(-1);
     int32_t result3 = OH_WindowManager_UnlockCursor(PARAM_100);
-    napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "TestUnLockCursorwithOutofRange: %{public}d", result1);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "TestUnLockCursorwithOutofRange: %{public}d", result2);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "TestUnLockCursorwithOutofRange: %{public}d", result3);
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
     int32_t values[PARAM_3] = {result1, result2, result3};
     for (int i = 0; i < PARAM_3; i++) {
         napi_value element;

@@ -1560,7 +1560,8 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         await terminateAbility7(caseName);
         if (!isSupport) {
-          expect(err.code).assertEqual(801)
+          expect(err.code).assertEqual(801);
+          done();
         } else {
           expect().assertFail();
           done();

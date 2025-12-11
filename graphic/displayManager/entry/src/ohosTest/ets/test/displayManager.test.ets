@@ -3005,28 +3005,44 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: true
         }).then(async (displayId: number) => {
-          // 虚拟屏设置异源屏
           await display.makeUnique(displayId);
-          let options: StartOptions = {
-            displayId: displayId
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
           }
-          let windowStageStart = await startAbility(caseName, context, options);
-          let windowClass = windowStageStart.getMainWindowSync();
-          await windowClass.setWindowFocusable(true);
-          await terminateAbility(caseName);
-          done();
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-       
-        if (!isSupport) {
-          expect(e.code).assertEqual(801)
-          done();
-        } else {
- 	  await terminateAbility(caseName);
-          expect(false).assertTrue();
-          done();
-        }
+        await terminateAbility(caseName);
+        expect(false).assertTrue();
+        done();
       }
     });
 
@@ -3051,28 +3067,44 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: undefined
         }).then(async (displayId: number) => {
-          // 虚拟屏设置异源屏
           await display.makeUnique(displayId);
-          let options: StartOptions = {
-            displayId: displayId
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
           }
-          let windowStageStart = await startAbility(caseName, context, options);
-          let windowClass = windowStageStart.getMainWindowSync();
-          await windowClass.setWindowFocusable(true);
-          await terminateAbility(caseName);
-          done();
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-       
-        if (!isSupport) {
-          expect(e.code).assertEqual(801)
-          done();
-        } else {
-	  await terminateAbility(caseName);
-          expect(false).assertTrue();
-          done();
-        }
+        await terminateAbility(caseName);
+        expect(false).assertTrue();
+        done();
       }
     });
 
@@ -3096,28 +3128,44 @@ export default function displayTest() {
           density: 2,
           surfaceId: '',
         }).then(async (displayId: number) => {
-          // 虚拟屏设置异源屏
           await display.makeUnique(displayId);
-          let options: StartOptions = {
-            displayId: displayId
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
           }
-          let windowStageStart = await startAbility(caseName, context, options);
-          let windowClass = windowStageStart.getMainWindowSync();
-          await windowClass.setWindowFocusable(true);
-          await terminateAbility(caseName);
-          done();
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        
-        if (!isSupport) {
-          expect(e.code).assertEqual(801)
-          done();
-        } else {
- 	  await terminateAbility(caseName);
-          expect(false).assertTrue();
-          done();
-        }
+        await terminateAbility(caseName);
+        expect(false).assertTrue();
+        done();
       }
     });
 
@@ -3142,29 +3190,44 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: false
         }).then(async (displayId: number) => {
-          // 虚拟屏设置异源屏
           await display.makeUnique(displayId);
-          let options: StartOptions = {
-            displayId: displayId
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              await terminateAbility(caseName);
+              expect(err.code).assertEqual(1300002)
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            await terminateAbility(caseName);
+            expect(err.code).assertEqual(1300002)
+            done();
           }
-          let windowStageStart = await startAbility(caseName, context, options);
-          let windowClass = windowStageStart.getMainWindowSync();
-          await windowClass.setWindowFocusable(true);
-          await terminateAbility(caseName);
-          expect(false).assertTrue();
-          done();
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        
-        if (!isSupport) {
-          expect(e.code).assertEqual(801)
-          done();
-        } else {
-	  await terminateAbility(caseName);
-          expect(e.code).assertEqual(1300002)
-          done();
-        }
+        await terminateAbility(caseName);
+        expect(e.code).assertEqual(1300002)
+        done();
       }
     });
 

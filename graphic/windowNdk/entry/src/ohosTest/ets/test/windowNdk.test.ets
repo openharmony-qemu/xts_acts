@@ -1794,11 +1794,11 @@ export default function windowNdk() {
         let windowClass = windowStage.getMainWindowSync();
         subWindowClass = await windowStage.createSubWindow('testLockCursorandUnLockCursor');
         let windowProperties = subWindowClass.getWindowProperties();
-        console.info(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+        console.info(`${caseName} sub windowProperties: ${JSON.stringify(windowProperties)}`);
         let windowId = windowProperties.id;
-        console.info(`${caseName} windowId: ${windowId}`);
+        console.info(`${caseName} sub windowId: ${windowId}`);
         let Result: number = windowNdkTest.testLockCursorandUnLockCursor1(windowId);
-        console.info(`${caseName} Result: ${Result}`);
+        console.info(`${caseName} Result testLockCursorandUnLockCursor1: ${Result}`);
         expect(Result).assertEqual(0);
         let driver: Driver = Driver.create();
         let xPoint = windowProperties.windowRect.left/2;
@@ -1809,7 +1809,7 @@ export default function windowNdk() {
         console.info(`${caseName} isSubFocus: ${isSubFocus}`);
         expect(isSubFocus).assertEqual(true);
         let Result2: number = windowNdkTest.testLockCursorandUnLockCursor2(windowId);
-        console.info(`${caseName} Result: ${Result2}`);
+        console.info(`${caseName} Result testLockCursorandUnLockCursor2: ${Result2}`);
         expect(Result2).assertEqual(0);
         await driver.click(xPoint, yPoint);
         let isSubFocus2 = subWindowClass.getWindowProperties().focusable;
