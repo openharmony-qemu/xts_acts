@@ -1420,25 +1420,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
       console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         subWindowClass = await windowStage.createSubWindow(caseName);
-        let mode = subWindowClass.isInFreeWindowMode();
-        console.log(`${caseName} isInFreeWindowMode: ${mode}`);
-        if (mode) {
-          await subWindowClass.destroyWindow();
-          await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
-        } else {
-          await subWindowClass.destroyWindow();
-          done();
-        }
+        await subWindowClass.destroyWindow();
+        await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+        done();
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
-        await subWindowClass?.destroyWindow();
-        if (canIUseRes) {
-          expect(err.code).assertEqual(1300002)
-          done();
-        } else {
-          expect(err.code).assertEqual(801)
-          done();
-        }
+        expect(err.code).assertEqual(1300002)
+        done();
       }
     });
 
