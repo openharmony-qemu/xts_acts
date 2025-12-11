@@ -39,7 +39,7 @@ group("testfwk") {
     deps += [
       "uitestScene:ActsUiTestScene",
       "uitest_pc:ActsUiPCTest",
-      uitest_pc_static:ActsUiPCStaticTest,
+      "uitest_pc_static:ActsUiPCStaticTest",
   
     ]
   }
