@@ -917,7 +917,7 @@ struct ZIndexPage {
   }
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined>                        //��Ҫ�Ȼ�ȡ����������֮��  �ٷ��ʳ�Ա����
+      const data = eventData.data as Record<string, Object | null | undefined>
       if (data!['mZIndex'] != null) {
         console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend',data!['mZIndex']);
         this._zIndexButtonModifier.mZIndex = data!['mZIndex'] as int

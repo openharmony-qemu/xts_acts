@@ -73,13 +73,15 @@ export default function sliderJsunit() {
     });
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testGetSliderAttr010_static
      * @tc.name     testGetSliderAttr010_static
      * @tc.desc     testGetSliderAttr010_static
      * @tc.level    Level.LEVEL1
      */
-    it('testGetSliderAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testGetSliderAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetSliderAttr1 START');
       let strJson = inspector.getInspectorByKey('slider1');
       let obj = JSON.parseJsonElement(strJson);
@@ -98,13 +100,15 @@ export default function sliderJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testGetSliderAttr020_static
      * @tc.name     testGetSliderAttr020_static
      * @tc.desc     testGetSliderAttr020_static
      * @tc.level    Level.LEVEL1
      */
-    it('testGetSliderAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testGetSliderAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetSliderAttr2 START');
       let strJson = inspector.getInspectorByKey('slider2');
       let obj = JSON.parseJsonElement(strJson);

@@ -55,8 +55,6 @@ export default function checkBoxTest1() {
         console.info("get checkBox state pages:" + JSON.stringify(pages));
         if (!("CheckBox1" == pages.name)) {
           console.info("get checkBox pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -65,23 +63,19 @@ export default function checkBoxTest1() {
       }
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0100
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to 0x00ff00
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0100
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0100
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0100');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0100 component obj is: " + JSON.stringify(obj));
@@ -99,23 +93,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0200
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to '#fffd0000'
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0200
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0200
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0200');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0200 component obj is: " + JSON.stringify(obj));
@@ -133,23 +124,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0300
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to 'rgb(138,43,226)'
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0300
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0300
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0300');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0300');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0300 component obj is: " + JSON.stringify(obj));
@@ -167,23 +155,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0400
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to Color.Pink
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0400
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0400
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0400');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0400');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0400 component obj is: " + JSON.stringify(obj));
@@ -201,23 +186,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0500
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to $r("app.color.checkbox_Color")
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0500
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0500
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0500 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0500');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0500');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0500 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0500 component obj is: " + JSON.stringify(obj));
@@ -235,23 +217,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0600
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to an outlier ""
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0600
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0600
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0600 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0600');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0600');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0600 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0600 component obj is: " + JSON.stringify(obj));
@@ -269,23 +248,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0700
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to an outlier null
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0700
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0700
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0700 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0700');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0700');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0700 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0700 component obj is: " + JSON.stringify(obj));
@@ -303,23 +279,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0800
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to an outlier undefined
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0800
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0800
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0800 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0800');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0800');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0800 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0800 component obj is: " + JSON.stringify(obj));
@@ -337,24 +310,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_0900
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to Color.Pink
-     *          and again set the unselectedColor property parameter to "#FFFD0000".
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_0900
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_0900
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0900 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_0900');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_0900');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_0900 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_0900 component obj is: " + JSON.stringify(obj));
@@ -372,24 +341,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_1000
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to Color.Pink
-     *          and again set the unselectedColor property parameter to the outlier value of undefined
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_1000
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_1000
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_1000
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_1000 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_1000');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_1000');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_1000 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_1000 component obj is: " + JSON.stringify(obj));
@@ -407,23 +372,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_1100
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set unselectedColor property parameter to outlier 'bgr(138,43,226)'
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_1100
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_1100
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_1100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_1100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_1100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_1100');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_1100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_1100 component obj is: " + JSON.stringify(obj));
@@ -441,24 +403,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_unselectedColor_static_1200
-     *tc.name   Tests the unselectedColor property of the Checkbox component
-     *tc.desc   Set the unselectedColor property parameter to 0x00ff00
-     *          and the universal property backgroundColor property value to the outlier null
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_unselectedColor_static_1200
      * @tc.name     ArkUX_Stage_Checkbox_unselectedColor_static_1200
      * @tc.desc     ArkUX_Stage_Checkbox_unselectedColor_static_1200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_unselectedColor_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_unselectedColor_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_unselectedColor_static_1200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_static_1200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_unselectedColor_1200');
           console.info('ArkUX_Stage_Checkbox_unselectedColor_static_1200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_unselectedColor_static_1200 component obj is: " + JSON.stringify(obj));
@@ -476,23 +433,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0100
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to 0x00ff00
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0100
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0100
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0100');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0100 component obj is: " + JSON.stringify(obj));
@@ -514,23 +467,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0200
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to '#fffd0000'
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0200
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0200
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0200');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0200 component obj is: " + JSON.stringify(obj));
@@ -552,23 +502,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0300
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to 'rgb(138,43,226)'
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0300
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0300
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0300');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0300');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0300 component obj is: " + JSON.stringify(obj));
@@ -590,23 +537,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0400
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to Color.Pink
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0400
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0400
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0400');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0400');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0400 component obj is: " + JSON.stringify(obj));
@@ -628,23 +572,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0500
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to $r("app.color.checkbox_Color")
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0500
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0500
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0500 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0500');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0500');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0500 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0500 component obj is: " + JSON.stringify(obj));
@@ -666,23 +606,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0600
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to an outlier ""
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0600
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0600
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0600 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0600');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0600');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0600 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0600 component obj is: " + JSON.stringify(obj));
@@ -704,23 +640,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0700
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to an outlier null
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0700
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0700
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0700 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0700');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0700');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0700 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0700 component obj is: " + JSON.stringify(obj));
@@ -742,23 +674,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0800
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to an outlier undefined
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0800
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0800
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0800 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0800');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0800');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0800 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0800 component obj is: " + JSON.stringify(obj));
@@ -780,24 +709,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_0900
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to Color.Pink
-     *          and again set the checkMarkColor property parameter to "#FFFD0000".
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_0900
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_0900
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0900 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_0900');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_0900');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_0900 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_0900 component obj is: " + JSON.stringify(obj));
@@ -819,24 +743,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_1000
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to Color.Pink
-     *          and again set the checkMarkColor property parameter to the outlier 'bgr(138,43,226)'.
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_1000
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_1000
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_1000
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_1000 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_1000');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_1000');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_1000 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_1000 component obj is: " + JSON.stringify(obj));
@@ -858,23 +777,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_1100
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set checkMarkColor property parameter to outlier 'bgr(138,43,226)'
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_1100
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_1100
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_1100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_1100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_1100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_1100');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_1100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_1100 component obj is: " + JSON.stringify(obj));
@@ -896,24 +812,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkColor_static_1200
-     *tc.name   Tests the CheckMarkColor property of the Checkbox component
-     *tc.desc   Set the checkMarkColor property parameter to 0x00ff00
-     *          and the universal property backgroundColor property value to null outlier
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkColor_static_1200
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkColor_static_1200
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkColor_static_1200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkColor_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkColor_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_1200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_static_1200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkColor_1200');
           console.info('ArkUX_Stage_Checkbox_CheckMarkColor_static_1200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkColor_static_1200 component obj is: " + JSON.stringify(obj));
@@ -935,23 +847,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0100
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to 0
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0100
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0100
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0100');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0100 component obj is: " + JSON.stringify(obj));
@@ -973,23 +882,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0200
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to 1
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0200
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0200
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0200');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0200 component obj is: " + JSON.stringify(obj));
@@ -1011,23 +916,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0300
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property to string "60px".
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0300
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0300
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0300');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0300');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0300 component obj is: " + JSON.stringify(obj));
@@ -1049,23 +950,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0400
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to the percentage string "120%".
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0400
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0400
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0400');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0400');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0400 component obj is: " + JSON.stringify(obj));
@@ -1087,24 +984,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0500
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to
-     *          the resource reference type $r("app.string.Check_Mark_Size_test")
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0500
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0500
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0500 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0500');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0500');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0500 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0500 component obj is: " + JSON.stringify(obj));
@@ -1126,23 +1019,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0600
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to an outlier ""
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0600
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0600
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0600 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0600');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0600');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0600 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0600 component obj is: " + JSON.stringify(obj));
@@ -1154,7 +1043,7 @@ export default function checkBoxTest1() {
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0600 component markObj is: " + JSON.stringify(markObj));
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0600 component markObj.getString('size') is: " +
           JSON.stringify(markObj.getString('size')));
-          expect(markObj.getString('size')).assertEqual("0.00vp");
+          expect(markObj.getString('size')).assertEqual("-1.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0600 END ');
         } catch (err) {
           expect().assertFail();
@@ -1164,23 +1053,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0700
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to an outlier null
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0700
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0700
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0700 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0700');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0700');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0700 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0700 component obj is: " + JSON.stringify(obj));
@@ -1202,23 +1087,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0800
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to an outlier undefined
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0800
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0800
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0800 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0800');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0800');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0800 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0800 component obj is: " + JSON.stringify(obj));
@@ -1240,24 +1122,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_0900
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to 10
-     *          and again set the checkMarkSize property parameter to 40
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_0900
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_0900
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0900 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_0900');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_0900');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_0900 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_0900 component obj is: " + JSON.stringify(obj));
@@ -1279,24 +1156,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_1000
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to 10
-     *          and again set the checkMarkSize property parameter to the exception value undefined
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_1000
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_1000
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_1000
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1000 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_1000');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_1000');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1000 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_1000 component obj is: " + JSON.stringify(obj));
@@ -1318,23 +1191,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_1100
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to the outlier "asdf#$8".
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_1100
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_1100
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_1100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_1100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_1100');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_1100 component obj is: " + JSON.stringify(obj));
@@ -1346,7 +1215,7 @@ export default function checkBoxTest1() {
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_1100 component markObj is: " + JSON.stringify(markObj));
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_1100 component markObj.getString('size') is: " +
           JSON.stringify(markObj.getString('size')));
-          expect(markObj.getString('size')).assertEqual("0.00vp");
+          expect(markObj.getString('size')).assertEqual("-1.00px");
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1100 END ');
         } catch (err) {
           expect().assertFail();
@@ -1356,23 +1225,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_1200
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to 10lpx and the generic size property value to null
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_1200
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_1200
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_1200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_1200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_1200');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_1200 component obj is: " + JSON.stringify(obj));
@@ -1394,23 +1259,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkSize_static_1300
-     *tc.name   Tests the CheckMarkSize property of the Checkbox component
-     *tc.desc   Set the checkMarkSize property parameter to an outlier -10
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkSize_static_1300
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkSize_static_1300
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkSize_static_1300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkSize_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_static_1300');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkSize_1300');
           console.info('ArkUX_Stage_Checkbox_CheckMarkSize_static_1300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkSize_static_1300 component obj is: " + JSON.stringify(obj));
@@ -1432,23 +1293,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to 0
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0100');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0100 component obj is: " + JSON.stringify(obj));
@@ -1471,23 +1328,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to 1
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0200');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0200 component obj is: " + JSON.stringify(obj));
@@ -1509,23 +1362,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property to string "60px".
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0300');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0300 component obj is: " + JSON.stringify(obj));
@@ -1547,23 +1396,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property argument to the percentage string "120%".
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0400');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0400 component obj is: " + JSON.stringify(obj));
@@ -1585,24 +1430,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to
-     *          the resource reference type $r("app.string.Check_Mark_Size_test").
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0500');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0500 component obj is: " + JSON.stringify(obj));
@@ -1623,24 +1464,19 @@ export default function checkBoxTest1() {
         done();
       }, 500)
     });
-
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to an outlier ""
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0600');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600 component obj is: " + JSON.stringify(obj));
@@ -1652,7 +1488,7 @@ export default function checkBoxTest1() {
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600 component markObj is: " + JSON.stringify(markObj));
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600 component markObj.getString('strokeWidth') is: " +
           JSON.stringify(markObj.getString('strokeWidth')));
-          expect(markObj.getString('strokeWidth')).assertEqual("0.00vp");
+          expect(markObj.getString('strokeWidth')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0600 END ');
         } catch (err) {
           expect().assertFail();
@@ -1662,23 +1498,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to an outlier null
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0700');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0700 component obj is: " + JSON.stringify(obj));
@@ -1700,23 +1533,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to an outlier undefined
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0800');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0800 component obj is: " + JSON.stringify(obj));
@@ -1738,23 +1567,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to 10 and the checkMarkWidth property parameter to 5fp again
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_0900');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_0900 component obj is: " + JSON.stringify(obj));
@@ -1776,24 +1601,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to 10
-     *          and again set the checkMarkWidth property parameter to the exception value undefined
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_1000');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_1000 component obj is: " + JSON.stringify(obj));
@@ -1815,23 +1635,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to an exception value of "asdf#$8".
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_1100');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100 component obj is: " + JSON.stringify(obj));
@@ -1843,7 +1659,7 @@ export default function checkBoxTest1() {
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100 component markObj is: " + JSON.stringify(markObj));
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100 component markObj.getString('strokeWidth') is: " +
           JSON.stringify(markObj.getString('strokeWidth')));
-          expect(markObj.getString('strokeWidth')).assertEqual("0.00vp");
+          expect(markObj.getString('strokeWidth')).assertEqual("2.00vp");
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1100 END ');
         } catch (err) {
           expect().assertFail();
@@ -1853,23 +1669,20 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to "40lpx" and the common property width property value to null
-     */
 
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_1200');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_1200 component obj is: " + JSON.stringify(obj));
@@ -1891,23 +1704,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300
-     *tc.name   Tests the CheckMarkWidth property of the Checkbox component
-     *tc.desc   Set the checkMarkWidth property parameter to an exception value of -1.
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_1300');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_1300 component obj is: " + JSON.stringify(obj));
@@ -1929,25 +1738,19 @@ export default function checkBoxTest1() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400
-     *tc.name   Tests the CheckMarkWidth&checkMarkSize&checkMarkColor&unselectedColor property 
-                of the Checkbox component
-     *tc.desc   Simultaneous setting checkMarkWidth(40) checkMarkSize(40)
-     *          checkMarkColor(0x00ff00) unselectedColor(Color.Pink)
-     */
-
-    /*
+    
+    
+    /**
      * @tc.number   ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400
      * @tc.name     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400
      * @tc.desc     ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400');
+          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Checkbox_CheckMarkWidth_1400');
           console.info('ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Checkbox_CheckMarkWidth_static_1400 component obj is: " + JSON.stringify(obj));

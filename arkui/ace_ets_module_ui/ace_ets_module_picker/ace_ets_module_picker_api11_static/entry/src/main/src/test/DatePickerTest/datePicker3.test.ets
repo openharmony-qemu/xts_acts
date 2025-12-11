@@ -58,8 +58,6 @@ export default function datePickerLunarJsunit() {
         console.info("get datePicker state pages:" + JSON.stringify(pages));
         if (!("datePicker" == pages.name)) {
           console.info("get datePicker pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -75,13 +73,15 @@ export default function datePickerLunarJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testdatePickerLunar001_static
      * @tc.name     testdatePickerLunar001_static
      * @tc.desc     testdatePickerLunar001_static
      * @tc.level    Level.LEVEL1
      */
-    it('testdatePickerLunar001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testdatePickerLunar001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerLunar testdatePickerLunar001_static START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('DatePicker');

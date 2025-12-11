@@ -24,12 +24,12 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../../ets/MainAbility/common/Utils'
-import { Color, FontWeight, Length } from '@ohos.arkui.component';
+import { Color, FontWeight, Length,PickerTextStyle } from '@ohos.arkui.component';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -41,16 +41,6 @@ function sleep(time: int):Promise<int> {
   })
 }
 
-
-interface FontStyleCls {
-  size: Length,
-  weight: FontWeight | string | number
-}
-
-interface TextStyleCls {
-  color: Color | number | string,
-  font: FontStyleCls
-}
 
 export default function TimePicker1Test() {
   describe('TimePicker1Test', () => {
@@ -65,11 +55,12 @@ export default function TimePicker1Test() {
       }
 
       try {
-        const router = AppStorage.get<Router>("router") as Router
-        let pages:router.RouterState = router.getState();
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages = routerInstance.getState();
         console.info("[TimePicker] current page is: " + JSON.stringify(pages.name));
         if (!('TimePicker1' == pages.name)) {
-          router.pushUrl(options);
+          routerInstance.pushUrl(options);
         }
       } catch (err) {
         console.info("push TimePicker page page error " + JSON.stringify(err));
@@ -78,79 +69,36 @@ export default function TimePicker1Test() {
     });
 
     afterEach(async (): Promise<void> => {
-
-      console.info('[timepicker] after each called');
-      const router = AppStorage.get<Router>("router") as Router
-      router.clear();
-      await sleep(1)
-
-      console.info("timepicker afterEach start");
-
-      try {
-        let value1: TextStyleCls = {
-          color: Color.Black, font: {
-            size: 8, weight: FontWeight.Lighter
-          }
-        }
-
-        let value2: TextStyleCls = {
-          color: Color.Red, font: {
-            size: '10px', weight: FontWeight.Normal
-          }
-        }
-
-        let value3: TextStyleCls = {
-          color: Color.Blue, font: {
-            size: '20px', weight: FontWeight.Bold
-          }
-        }
-
-        let eventData: events_emitter.EventData = {
-          data: {
-            "disappearTextStyle": JSON.stringify(value1),
-            "textStyle": JSON.stringify(value2),
-            "selectedTextStyle": JSON.stringify(value3)
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 184,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[timepicker_afterEach] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[selectTest_afterEach] change component data error: " + (err as Error).message);
-      }
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
+      await sleep(2);
     })
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0100
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0100
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual('#FF000000');
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('8.00fp');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Lighter');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0200
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0200
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: Color.Black, font: {
           size: 8, weight: FontWeight.Bolder
         }
@@ -158,8 +106,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -173,23 +121,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.error("[ArkUI_Stage_timepicker_disappearTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual('#FF000000');
+      console.error("[ArkUI_Stage_timepicker_disappearTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('8.00fp');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bolder');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0300
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0300
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 0x808080, font: {
           size: 8, weight: 100
         }
@@ -197,8 +144,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -212,23 +159,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual('#FF808080');
+      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF808080');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('8.00fp');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('100');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0400
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0400
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: '#ff0000', font: {
           size: '1px', weight: '700'
         }
@@ -236,8 +182,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -251,23 +197,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual('#FFFF0000');
+      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FFFF0000');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('1.00px');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('700');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0500
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0500
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: Color.Green, font: {
           size: 30, weight: 450
         }
@@ -275,8 +220,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -290,23 +235,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual('#FF008000');
+      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF008000');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('30.00fp');
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0600
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0600
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: '#80808g', font: {
           size: -1, weight: 1000
         }
@@ -314,8 +258,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -333,23 +277,22 @@ export default function TimePicker1Test() {
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
       let objDefault = JSON.parseJsonElement(strJsonDefault);
 
-      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getElement('size'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0700
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0700
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'xxx', font: {
           size: 'xxx', weight: FontWeight.Bold
         }
@@ -357,8 +300,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -376,23 +319,22 @@ export default function TimePicker1Test() {
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
       let objDefault = JSON.parseJsonElement(strJsonDefault);
 
-      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getElement('size'));
+      console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size'));
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bold');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0800
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0800
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '20vp', weight: 900
         }
@@ -400,8 +342,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -415,22 +357,21 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual('#FF8A2BE2');
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('900');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_disappearTextStyle_static_0900
      * @tc.name     ArkUI_Stage_timepicker_disappearTextStyle_static_0900
      * @tc.desc     ArkUI_Stage_timepicker_disappearTextStyle_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_disappearTextStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_disappearTextStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '15lpx', weight: 90
         }
@@ -438,8 +379,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "disappearTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "disappearTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -453,40 +394,40 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('color')).assertEqual('#FF8A2BE2');
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
-      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
     });
 
 
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0100
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0100
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_timepicker_textStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_textStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual('#FFFF0000');
+      console.info("[ArkUI_Stage_timepicker_textStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('10.00px');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
       done();
     });
 
 
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0200
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0200
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: Color.Red, font: {
           size: '10px', weight: FontWeight.Bolder
         }
@@ -494,8 +435,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -509,23 +450,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.error("[ArkUI_Stage_timepicker_textStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual('#FFFF0000');
+      console.error("[ArkUI_Stage_timepicker_textStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('10.00px');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bolder');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0300
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0300
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 0xFF808080, font: {
           size: '10px', weight: 100
         }
@@ -533,8 +473,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -548,23 +488,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_textStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual('#FF808080');
+      console.info("[ArkUI_Stage_timepicker_textStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF808080');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('10.00px');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('100');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0400
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0400
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: '#00ff00', font: {
           size: '1px', weight: '700'
         }
@@ -572,8 +511,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -587,23 +526,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_textStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual('#FF00FF00');
+      console.info("[ArkUI_Stage_timepicker_textStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF00FF00');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('1.00px');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('700');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0500
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0500
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: Color.Green, font: {
           size: 30, weight: 450
         }
@@ -611,8 +549,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -626,23 +564,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_textStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual('#FF008000');
+      console.info("[ArkUI_Stage_timepicker_textStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF008000');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('30.00fp');
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0600
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0600
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: '#80808g', font: {
           size: -1, weight: 1000
         }
@@ -650,8 +587,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -669,23 +606,22 @@ export default function TimePicker1Test() {
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
       let objDefault = JSON.parseJsonElement(strJsonDefault);
 
-      console.info("[ArkUI_Stage_timepicker_textStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('font').getElement('size'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      console.info("[ArkUI_Stage_timepicker_textStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('font').getString('size'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0700
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0700
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'xxx', font: {
           size: 'xxx', weight: FontWeight.Lighter
         }
@@ -693,8 +629,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -712,23 +648,22 @@ export default function TimePicker1Test() {
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
       let objDefault = JSON.parseJsonElement(strJsonDefault);
 
-      console.info("[ArkUI_Stage_timepicker_textStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('font').getElement('size'));
+      console.info("[ArkUI_Stage_timepicker_textStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('font').getString('size'));
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Lighter');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0800
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0800
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '20vp', weight: 900
         }
@@ -736,8 +671,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -751,22 +686,21 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual('#FF8A2BE2');
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('20.00vp');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('900');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_textStyle_static_0900
      * @tc.name     ArkUI_Stage_timepicker_textStyle_static_0900
      * @tc.desc     ArkUI_Stage_timepicker_textStyle_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_textStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_textStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '15lpx', weight: 90
         }
@@ -774,8 +708,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "textStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "textStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -789,40 +723,38 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('color')).assertEqual('#FF8A2BE2');
+      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0100
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0100
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual('#FF0000FF');
+      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00px');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bold');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0200
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0200
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: Color.Blue, font: {
           size: '20px', weight: FontWeight.Bolder
         }
@@ -830,8 +762,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -845,23 +777,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.error("[ArkUI_Stage_timepicker_selectedTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual('#FF0000FF');
+      console.error("[ArkUI_Stage_timepicker_selectedTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00px');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bolder');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0300
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0300
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 0xFF808080, font: {
           size: '20px', weight: 100
         }
@@ -869,8 +800,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -884,23 +815,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual('#FF808080');
+      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF808080');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00px');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('100');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0400
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0400
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: '#00ff00', font: {
           size: '1px', weight: '700'
         }
@@ -908,8 +838,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -923,23 +853,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual('#FF00FF00');
+      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF00FF00');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('1.00px');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('700');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0500
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0500
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: Color.Green, font: {
           size: 30, weight: 450
         }
@@ -947,8 +876,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -962,23 +891,22 @@ export default function TimePicker1Test() {
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual('#FF008000');
+      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF008000');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('30.00fp');
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0600
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0600
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: '#80808g', font: {
           size: -1, weight: 1000
         }
@@ -986,8 +914,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -1005,23 +933,22 @@ export default function TimePicker1Test() {
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
       let objDefault = JSON.parseJsonElement(strJsonDefault);
 
-      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getElement('size'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0700
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0700
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'xxx', font: {
           size: 'xxx', weight: FontWeight.Lighter
         }
@@ -1029,8 +956,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -1048,23 +975,22 @@ export default function TimePicker1Test() {
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
       let objDefault = JSON.parseJsonElement(strJsonDefault);
 
-      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('color'));
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getElement('size'));
+      console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size'));
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Lighter');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0800
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0800
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '20vp', weight: 900
         }
@@ -1072,8 +998,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -1087,22 +1013,21 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual('#FF8A2BE2');
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('900');
       done();
     });
 
-
-
-    /*
+    
+    /**
      * @tc.number   ArkUI_Stage_timepicker_selectedTextStyle_static_0900
      * @tc.name     ArkUI_Stage_timepicker_selectedTextStyle_static_0900
      * @tc.desc     ArkUI_Stage_timepicker_selectedTextStyle_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_Stage_timepicker_selectedTextStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let value: TextStyleCls = {
+it('ArkUI_Stage_timepicker_selectedTextStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let value: PickerTextStyle = {
         color: 'rgb(138,43,226)', font: {
           size: '15lpx', weight: 90
         }
@@ -1110,8 +1035,8 @@ export default function TimePicker1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selectedTextStyle": JSON.stringify(value)
-          } as Record<String, RecordData>
+            "selectedTextStyle": value
+          } as Record<string, Object | null | undefined>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 184,
@@ -1125,9 +1050,9 @@ export default function TimePicker1Test() {
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('timePicker');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('color')).assertEqual('#FF8A2BE2');
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
-      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
       done();
     });
   })

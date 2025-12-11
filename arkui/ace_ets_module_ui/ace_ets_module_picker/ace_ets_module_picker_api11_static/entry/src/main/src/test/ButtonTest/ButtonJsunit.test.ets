@@ -76,7 +76,7 @@ export default function buttonJsunit() {
 
 
 
-    /*
+        /**
      * @tc.number   buttonGetInspectorByKey010_static
      * @tc.name     buttonGetInspectorByKey010_static
      * @tc.desc     buttonGetInspectorByKey010_static
@@ -88,7 +88,8 @@ export default function buttonJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("buttonGetInspectorByKey010 obj is: " + JSON.stringify(obj));
       console.info("buttonGetInspectorByKey010 obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$type')).assertEqual('Button');
+      console.info("buttonGetInspectorByKey010 obj type is: " + JSON.stringify(obj.getElement('$type')));
+      expect(obj.getElement('$type').asString()).assertEqual('Button');
       expect(obj.getElement('$attrs').getString('type')).assertEqual('ButtonType.Circle');
       expect(obj.getElement('$attrs').getString('stateEffect')).assertEqual('true');
       expect(obj.getElement('$attrs').getString('label')).assertEqual('1.value');
@@ -98,7 +99,7 @@ export default function buttonJsunit() {
     });
 
 
-    /*
+        /**
      * @tc.number   ButtonGetInspectorByKey020_static
      * @tc.name     ButtonGetInspectorByKey020_static
      * @tc.desc     ButtonGetInspectorByKey020_static
@@ -116,7 +117,7 @@ export default function buttonJsunit() {
 
 
 
-    /*
+        /**
      * @tc.number   ButtonGetInspectorByKey030_static
      * @tc.name     ButtonGetInspectorByKey030_static
      * @tc.desc     ButtonGetInspectorByKey030_static

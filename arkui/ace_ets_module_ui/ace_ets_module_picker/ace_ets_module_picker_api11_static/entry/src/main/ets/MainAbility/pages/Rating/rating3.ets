@@ -46,7 +46,7 @@ struct RatingExample {
     console.info("rating page stateChangCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("rating page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, Object | null | undefined>                       //需要先获取并声明类型之后  再访问成员属性
+      const data = eventData.data as Record<string, Object | null | undefined> 
       if (data!['rating'] != null) {
         this.rating = data!['rating'] as double;
       }

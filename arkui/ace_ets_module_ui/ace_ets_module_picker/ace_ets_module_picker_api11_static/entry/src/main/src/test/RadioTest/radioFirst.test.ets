@@ -58,8 +58,6 @@ export default function radioGroupJsunit() {
         console.info("get radio state pages:" + JSON.stringify(pages));
         if (!("radio" == pages.name)) {
           console.info("get radio pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -75,13 +73,15 @@ export default function radioGroupJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testradioGroup001_static
      * @tc.name     testradioGroup001_static
      * @tc.desc     testradioGroup001_static
      * @tc.level    Level.LEVEL1
      */
-    it('testradioGroup001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testradioGroup001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('radioGroup testradioGroup001 START');
       await Utils.sleep(2000);
       try {

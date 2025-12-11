@@ -70,25 +70,15 @@ export default function toggleJsunit() {
       await sleep(2);
     });
 
+    
+    
     /**
-     * run after testcase
-     */
-    afterEach(async (): Promise<void> => {
-      console.info('[toggleTest] after each called');
-      const toggle = AppStorage.get<Router>("toggle") as Router
-      toggle.clear();
-      await sleep(1)
-    });
-
-
-
-    /*
      * @tc.number   testToggle010_static
      * @tc.name     testToggle010_static
      * @tc.desc     testToggle010_static
      * @tc.level    Level.LEVEL1
      */
-    it('testToggle010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testToggle010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle010 START');
       let strJson = inspector.getInspectorByKey('toggle1');
       let obj = JSON.parseJsonElement(strJson);
@@ -96,21 +86,23 @@ export default function toggleJsunit() {
       expect(obj.getString('$type')).assertEqual('Toggle');
       expect(obj.getElement('$attrs').getString('type')).assertEqual('ToggleType.Switch');
       expect(obj.getElement('$attrs').getString('isOn')).assertEqual('false');
-      expect(obj.getElement('$attrs').getString('selectedColor')).assertEqual('#FFFF0000_static');
-      expect(obj.getElement('$attrs').getString('switchPointColor')).assertEqual('#FF808080_static');
+      expect(obj.getElement('$attrs').getString('selectedColor')).assertEqual('#FFFF0000');
+      expect(obj.getElement('$attrs').getString('switchPointColor')).assertEqual('#FF808080');
       console.info('testToggle010 End');
       done();
     });
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testToggle020_static
      * @tc.name     testToggle020_static
      * @tc.desc     testToggle020_static
      * @tc.level    Level.LEVEL1
      */
-    it('testToggle020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testToggle020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle020 START');
       let strJson = inspector.getInspectorByKey('toggle2');
       let obj = JSON.parseJsonElement(strJson);
@@ -124,13 +116,15 @@ export default function toggleJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testToggle030_static
      * @tc.name     testToggle030_static
      * @tc.desc     testToggle030_static
      * @tc.level    Level.LEVEL1
      */
-    it('testToggle030_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testToggle030_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle030 START');
       let strJson = inspector.getInspectorByKey('toggle3');
       let obj = JSON.parseJsonElement(strJson);
@@ -144,13 +138,15 @@ export default function toggleJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testToggle040_static
      * @tc.name     testToggle040_static
      * @tc.desc     testToggle040_static
      * @tc.level    Level.LEVEL1
      */
-    it('testToggle040_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testToggle040_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle040 START');
       let strJson = inspector.getInspectorByKey('toggle4');
       let obj = JSON.parseJsonElement(strJson);
@@ -164,13 +160,15 @@ export default function toggleJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testToggle050_static
      * @tc.name     testToggle050_static
      * @tc.desc     testToggle050_static
      * @tc.level    Level.LEVEL1
      */
-    it('testToggle050_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testToggle050_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle050 START');
       let strJson = inspector.getInspectorByKey('toggle5');
       let obj = JSON.parseJsonElement(strJson);
@@ -184,13 +182,15 @@ export default function toggleJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testToggle060_static
      * @tc.name     testToggle060_static
      * @tc.desc     testToggle060_static
      * @tc.level    Level.LEVEL1
      */
-    it('testToggle060_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testToggle060_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle060 START');
       let strJson = inspector.getInspectorByKey('toggle6');
       console.info('sendEventByKey result is ' + inspector.sendEventByKey('toggle6', 10, ''))

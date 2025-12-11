@@ -57,8 +57,6 @@ export default function stageTextPickerDialog() {
         console.info("get stageTextPickerDialog state pages:" + JSON.stringify(pages));
         if (!("stageTextPickerDialog" == pages.name)) {
           console.info("get stageTextPickerDialog pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -66,24 +64,18 @@ export default function stageTextPickerDialog() {
         console.error("push stageTextPickerDialog page error: " + err);
       }
     });
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
 
 
-    /*
+
+    
+    
+    /**
      * @tc.number   testTextPickerDialog001_static
      * @tc.name     testTextPickerDialog001_static
      * @tc.desc     testTextPickerDialog001_static
      * @tc.level    Level.LEVEL1
      */
-    it('testTextPickerDialog001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testTextPickerDialog001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testTextPickerDialog001_static START');
       setTimeout(() => {
         try {
@@ -117,13 +109,15 @@ export default function stageTextPickerDialog() {
     });
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testTextPickerDialog002_static
      * @tc.name     testTextPickerDialog002_static
      * @tc.desc     testTextPickerDialog002_static
      * @tc.level    Level.LEVEL1
      */
-    it('testTextPickerDialog002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testTextPickerDialog002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testTextPickerDialog002_static START');
       setTimeout(() => {
         try {
@@ -156,13 +150,15 @@ export default function stageTextPickerDialog() {
       }, 500)
     });
 
-    /*
+    
+    
+    /**
      * @tc.number   testTextPickerDialog003_static
      * @tc.name     testTextPickerDialog003_static
      * @tc.desc     testTextPickerDialog003_static
      * @tc.level    Level.LEVEL1
      */
-    it('testTextPickerDialog003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testTextPickerDialog003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testTextPickerDialog003_static START');
       setTimeout(() => {
         try {

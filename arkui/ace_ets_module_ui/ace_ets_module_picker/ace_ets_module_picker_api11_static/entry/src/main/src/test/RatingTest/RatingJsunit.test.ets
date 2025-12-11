@@ -76,13 +76,15 @@ export default function ratingJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testGetRatingAttr010_static
      * @tc.name     testGetRatingAttr010_static
      * @tc.desc     testGetRatingAttr010_static
      * @tc.level    Level.LEVEL1
      */
-    it('testGetRatingAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testGetRatingAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetRatingAttr1 START');
       let strJson = inspector.getInspectorByKey('rating1');
       let obj = JSON.parseJsonElement(strJson);
@@ -104,13 +106,15 @@ export default function ratingJsunit() {
 
 
 
-    /*
+    
+    
+    /**
      * @tc.number   testGetRatingAttr020_static
      * @tc.name     testGetRatingAttr020_static
      * @tc.desc     testGetRatingAttr020_static
      * @tc.level    Level.LEVEL1
      */
-    it('testGetRatingAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testGetRatingAttr020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetRatingAttr2 START');
       let strJson = inspector.getInspectorByKey('rating2');
       let obj = JSON.parseJsonElement(strJson);

@@ -19,9 +19,6 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerMultiTest {
-  aboutToAppear() {
-  }
-
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4']
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4']
   private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4']
@@ -81,6 +78,27 @@ struct TextPickerMultiTest {
         TextPicker({ range: this.cascade, value: ["辽宁省", "大连市", "中山区"], selected: [1, 1, 1] })
           .key('textpicker_6')
           .selectedIndex([0, 1, 2])
+          .width('300')
+          .onChange((value: string | string[], index: int | int[]):void => {
+            console.info('Picker item changed1, value: ' + JSON.stringify(value))
+          })
+        TextPicker({ range: this.cascade })
+          .key('textpicker_7')
+          .selectedIndex([0, 0, 0])
+          .width('300')
+          .onChange((value: string | string[], index: int | int[]):void => {
+            console.info('Picker item changed1, value: ' + JSON.stringify(value))
+          })
+        TextPicker({ range: this.cascade })
+          .key('textpicker_8')
+          .selectedIndex([0, 0, 0])
+          .width('300')
+          .onChange((value: string | string[], index: int | int[]):void => {
+            console.info('Picker item changed1, value: ' + JSON.stringify(value))
+          })
+        TextPicker({ range: this.cascade })
+          .key('textpicker_9')
+          .selectedIndex([0, 0, 0])
           .width('300')
           .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed1, value: ' + JSON.stringify(value))

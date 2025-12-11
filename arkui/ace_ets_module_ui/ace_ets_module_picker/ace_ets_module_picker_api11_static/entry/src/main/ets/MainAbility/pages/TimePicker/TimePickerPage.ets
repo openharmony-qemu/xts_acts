@@ -52,7 +52,7 @@ struct TimePickerPage {
         .onChange((value: TimePickerResult):void => {
           this.hour = value.hour
           this.minute = value.minute
-          this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+          this.selectedTime.setHours(value.hour, value.minute)
           console.info('select current date is: ' + JSON.stringify(value))
         })
       Text('hour:' + this.hour).fontSize(14).key('hour')
