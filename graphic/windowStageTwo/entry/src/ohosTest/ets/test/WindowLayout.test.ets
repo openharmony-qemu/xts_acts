@@ -4525,10 +4525,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           expect(windowLimits2.maxWidth).assertEqual(windowLimits.maxWidth as number - 10)
           expect(windowLimits2.maxHeight).assertEqual(windowLimits.maxHeight as number - 10)
         }
+        await terminateAbility5(caseName)
         done()
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
         await windowClass?.destroyWindow();
+        await terminateAbility5(caseName)
         if (err.code === 801) {
           done()
         } else {

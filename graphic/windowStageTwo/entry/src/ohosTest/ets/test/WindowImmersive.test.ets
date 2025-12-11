@@ -3896,23 +3896,15 @@ export default function windowImmersiveTest() {
             console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
             let avoidArea2 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM)
             console.info(caseName + ' avoidArea2: ' + JSON.stringify(avoidArea2));
-            // expect(avoidArea1.leftRect.left).assertEqual(avoidArea2.leftRect.left);
-            // expect(avoidArea1.leftRect.top).assertEqual(avoidArea2.leftRect.top);
             expect(avoidArea1.leftRect.width).assertEqual(0);
             expect(avoidArea1.leftRect.height).assertEqual(0);
 
-            // expect(avoidArea1.rightRect.left).assertEqual(avoidArea2.rightRect.left);
-            // expect(avoidArea1.rightRect.top).assertEqual(avoidArea2.rightRect.top);
             expect(avoidArea1.rightRect.width).assertEqual(0);
             expect(avoidArea1.rightRect.height).assertEqual(0);
 
-            // expect(avoidArea1.topRect.left).assertEqual(avoidArea2.topRect.left);
-            // expect(avoidArea1.topRect.top).assertEqual(avoidArea2.topRect.top);
-            expect(avoidArea1.topRect.width).assertEqual(0);
-            expect(avoidArea1.topRect.height).assertEqual(0);
+            expect(avoidArea1.topRect.width).assertLarger(0);
+            expect(avoidArea1.topRect.height).assertLarger(0);
 
-            // expect(avoidArea1.bottomRect.left).assertEqual(avoidArea2.bottomRect.left);
-            // expect(avoidArea1.bottomRect.top).assertEqual(avoidArea2.bottomRect.top);
             expect(avoidArea1.bottomRect.width).assertEqual(0);
             expect(avoidArea1.bottomRect.height).assertEqual(0);
           } catch (error) {
