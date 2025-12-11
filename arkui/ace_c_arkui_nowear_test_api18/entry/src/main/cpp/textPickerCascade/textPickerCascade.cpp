@@ -320,4 +320,48 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_f1(napi_env env, napi_ca
     ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_f2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = INT32_MAX;
+    char data[12] = "test data";
+    auto array = OH_ArkUI_TextCascadePickerRangeContentArray_Create(10);
+    auto child = OH_ArkUI_TextCascadePickerRangeContentArray_Create(1);
+
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetTextAtIndex(child, data, len);
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetChildAtIndex(array, child, len);
+    
+    int check = 1;
+    if ((((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children == nullptr ||
+       (((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children->text == nullptr) {
+        check = 0;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f2", "SetTextAtIndex ret nullptr");
+    }
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_f3(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f3", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = INT32_MAX - 1;
+    char data[12] = "test data";
+    auto array = OH_ArkUI_TextCascadePickerRangeContentArray_Create(10);
+    auto child = OH_ArkUI_TextCascadePickerRangeContentArray_Create(1);
+
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetTextAtIndex(child, data, len);
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetChildAtIndex(array, child, len);
+    
+    int check = 1;
+    if ((((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children == nullptr ||
+       (((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children->text == nullptr) {
+        check = 0;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f3", "SetTextAtIndex ret nullptr");
+    }
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

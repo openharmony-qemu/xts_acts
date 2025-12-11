@@ -40,6 +40,8 @@ public:
     static napi_value TextPickerCascadeTest_e2(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_f(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_f1(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_f2(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_f3(napi_env env, napi_callback_info info);
 };
 } // namespace ArkUICapiTest
 
