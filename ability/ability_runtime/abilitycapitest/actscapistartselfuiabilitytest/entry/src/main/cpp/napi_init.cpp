@@ -668,12 +668,12 @@ static napi_value NdkStartSelfUIAbilityWithPidResult_0200(napi_env env, napi_cal
     OH_AbilityRuntime_DestroyStartOptions(&options);
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_START_TIMEOUT) {
         napi_value napiRet;
-        napi_create_int32(env, versionCode, &napiRet);
+        napi_create_int32(env, errCode, &napiRet);
         return napiRet;
     }
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_MAIN_THREAD_NOT_SUPPORTED) {
         napi_value napiRet;
-        napi_create_int32(env, versionCode, &napiRet);
+        napi_create_int32(env, errCode, &napiRet);
         return napiRet;
     }
     napi_value result;
@@ -689,7 +689,7 @@ static napi_value NdkApplicationContextGetVersionCode_0100(napi_env env, napi_ca
     OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0100 errCode=%{public}d", errCode);
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value napiRet;
-        napi_create_int32(env, versionCode, &napiRet);
+        napi_create_int32(env, errCode, &napiRet);
         return napiRet;
     }
     napi_value result;
@@ -705,12 +705,12 @@ static napi_value NdkApplicationContextGetVersionCode_0200(napi_env env, napi_ca
     OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0200 errCode=%{public}d", errCode);
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value napiRet;
-        napi_create_int32(env, versionCode, &napiRet);
+        napi_create_int32(env, errCode, &napiRet);
         return napiRet;
     }
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_GET_APPLICATION_INFO_FAILED) {
         napi_value napiRet;
-        napi_create_int32(env, versionCode, &napiRet);
+        napi_create_int32(env, errCode, &napiRet);
         return napiRet;
     }
     napi_value result;
@@ -1649,9 +1649,8 @@ static napi_value ContextGetLogPath_0700(napi_env env, napi_callback_info info)
 static napi_value ContextGetLogPath_0100(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 begins");
-    char buffer[1024] = nullptr;
     int32_t writeLength = 0;
-    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(buffer, 1024, &writeLength);
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetLogFileDir(nullptr, 1024, &writeLength);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);
     if(errCode == ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST){
         OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ContextGetLogPath_0100 errCode=%{public}d", errCode);

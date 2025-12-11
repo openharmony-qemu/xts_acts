@@ -261,8 +261,6 @@ napi_property_descriptor desc[] = {
         nullptr, ApplicationContextGetVersionCodeParamInvalid, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"StartSelfUIAbilityWithPidWithStartOptionsNoError",
         nullptr, StartSelfUIAbilityWithPidWithStartOptionsNoError, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"StartSelfUIAbilityWithPidUpperLimitReached",
-        nullptr, StartSelfUIAbilityWithPidUpperLimitReached, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached",
         nullptr, StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility",
