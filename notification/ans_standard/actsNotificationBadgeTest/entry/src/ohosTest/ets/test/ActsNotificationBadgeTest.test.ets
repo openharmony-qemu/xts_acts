@@ -30,18 +30,20 @@ export default function ActsNotificationBadgeTest() {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
     beforeAll(async (done: Function) => {
-      let button = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));
-      log(`button is ${JSON.stringify(button)}`);
-      if (button !== null) {
-        await sleep(1000);
-        await button.click();
-        await sleep(1000);
-        done()
-      } else {
-        log('null button');
-        done()
-      }
-      notificationManager.requestEnableNotification(ctx).then(() => {
+      await sleep(1500);
+      let driver = Driver.create();
+      let button1 = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));
+      console.info(`button1 is ${JSON.stringify(button1)}`);
+        if (button1 !== null) {
+          await sleep(1000);
+          await button1.click();
+          await sleep(1000);
+          done()
+        } else {
+          console.info('null button1');
+          done()
+        }
+      await notificationManager.requestEnableNotification(ctx).then(() => {
         console.info(`${TAG} requestEnableNotification succeeded`);
         done()
       }).catch((err: Error) => {
@@ -49,8 +51,6 @@ export default function ActsNotificationBadgeTest() {
         expect(err).assertNull()
         done()
       });
-      await sleep(1500);
-      let driver = Driver.create();
       await sleep(1500)
       let button = await driver.findComponent(ON.text('允许'));
       console.info(`button is ${JSON.stringify(button)}`);
