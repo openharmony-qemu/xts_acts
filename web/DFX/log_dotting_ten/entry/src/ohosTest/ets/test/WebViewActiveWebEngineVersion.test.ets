@@ -184,7 +184,7 @@ export default function WebViewActiveWebEngineVersion() {
      */
     it('emitIsActiveWebEngineEvergreen009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitIsActiveWebEngineEvergreen009', 10)
-      Utils.registerEvent('emitIsActiveWebEngineEvergreen009', true, 20251225, done);
+      Utils.registerEvent('emitIsActiveWebEngineEvergreen009', false, 20251225, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 

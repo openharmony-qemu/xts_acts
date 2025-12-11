@@ -84,7 +84,7 @@ export default function webOnDataResubmitted() {
     it('testDataResubmissionHandlerResend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerResend", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testDataResubmissionHandlerResend001", 'httpbin.org/posthttpbin.org/post', 127020, () => { isReturn = true });
+      Utils.registerEvent("testDataResubmissionHandlerResend001", 'reqbin.com/req/yjok4snr/post-html-form-examplereqbin.com/req/yjok4snr/post-html-form-example', 127020, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerResend001");
       await Utils.waitForExist(() => isReturn, "testDataResubmissionHandlerResend001" + '_returnCheck', true, 1000);
       done();
@@ -101,7 +101,7 @@ export default function webOnDataResubmitted() {
     it('testDataResubmissionHandlerCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDataResubmissionHandlerCancel", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'httpbin.org/post', 127030, () => { isReturn = true });
+      Utils.registerEvent("testDataResubmissionHandlerCancel001", 'reqbin.com/req/yjok4snr/post-html-form-example', 127030, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestButton", "testDataResubmissionHandlerCancel001");
       await Utils.waitForExist(() => isReturn, "testDataResubmissionHandlerCancel001" + '_returnCheck', true, 1000);
       done();
