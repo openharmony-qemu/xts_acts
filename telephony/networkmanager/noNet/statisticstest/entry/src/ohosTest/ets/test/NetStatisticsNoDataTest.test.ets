@@ -493,7 +493,7 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0002
      * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0002
      * @tc.desc   get SelfTrafficStats(BEARER_WIFI)
@@ -529,7 +529,7 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
-    /* *
+    /**
      * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0003
      * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0003
      * @tc.desc   get SelfTrafficStats(BEARER_CELLULAR 2100001)
@@ -564,7 +564,7 @@ export default function   netStatisticsNoDataTest() {
         console.info(`${caseName} test end`);
       }
     });
-    /* *
+    /**
      * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0004
      * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0004
      * @tc.desc   get SelfTrafficStats(BEARER_WIFI 2100001)
