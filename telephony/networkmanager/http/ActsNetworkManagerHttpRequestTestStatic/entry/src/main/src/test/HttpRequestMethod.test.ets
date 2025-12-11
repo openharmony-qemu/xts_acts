@@ -7,6 +7,7 @@ import http from '@ohos.net.http';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'HttpTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let ADDR_TEST_DOMAIN_HTTPS_PUT: string = "https://httpbin.org/anything";
 let ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
 
 
@@ -1168,7 +1169,7 @@ export default function HttpRequestMethodTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.PUT,
                             usingProtocol: http.HttpProtocol.HTTP1_1
                         }, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
@@ -1215,7 +1216,7 @@ export default function HttpRequestMethodTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.PUT,
                             usingProtocol: http.HttpProtocol.HTTP1_1
                         }).then((data: http.HttpResponse) => {
@@ -1260,7 +1261,7 @@ export default function HttpRequestMethodTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.PUT,
                             usingProtocol: http.HttpProtocol.HTTP2
                         }, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
@@ -1307,7 +1308,7 @@ export default function HttpRequestMethodTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.PUT,
                             usingProtocol: http.HttpProtocol.HTTP2
                         }).then((data: http.HttpResponse) => {
@@ -1445,7 +1446,7 @@ export default function HttpRequestMethodTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.DELETE,
                             usingProtocol: http.HttpProtocol.HTTP1_1
                         }, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
@@ -1492,7 +1493,7 @@ export default function HttpRequestMethodTest() {
                         done();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.DELETE,
                             usingProtocol: http.HttpProtocol.HTTP1_1
                         }).then((data: http.HttpResponse) => {
@@ -1538,7 +1539,7 @@ export default function HttpRequestMethodTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.DELETE,
                             usingProtocol: http.HttpProtocol.HTTP2
                         }, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
@@ -1585,7 +1586,7 @@ export default function HttpRequestMethodTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  Network connected  ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS_PUT, {
                             method: http.RequestMethod.DELETE,
                             usingProtocol: http.HttpProtocol.HTTP2
                         }).then((data: http.HttpResponse) => {
