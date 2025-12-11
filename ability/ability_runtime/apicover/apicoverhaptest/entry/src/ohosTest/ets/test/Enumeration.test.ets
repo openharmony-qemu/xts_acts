@@ -700,13 +700,13 @@ export default function ApiCoverTest() {
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0100
      * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0100
-     * @tc.desc   Test AppPreloadType UNSPECFIED.
+     * @tc.desc   Test AppPreloadType UNSPECIFIED.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppPreloadType_0100', Level.LEVEL0, async (done: Function) => {
-      expect(0).assertEqual(application.AppPreloadType.UNSPECFIED);
+      expect(0).assertEqual(application.AppPreloadType.UNSPECIFIED);
       done();
     })
 

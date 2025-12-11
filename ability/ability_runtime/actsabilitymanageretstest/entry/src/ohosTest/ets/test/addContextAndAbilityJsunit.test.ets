@@ -149,28 +149,6 @@ export default function addContextAndAbilityJsunit() {
     })
 
     /**
-     * @tc.name   context_printDrawnCompleted_test_0200
-     * @tc.number context_printDrawnCompleted_test_0200
-     * @tc.desc   Check the return value of the interface (by callBack)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it(context_printDrawnCompleted_test_0200, Level.LEVEL0, async (done: Function) => {
-      let detailed: ESObject;
-      console.info('context_printDrawnCompleted_test_0200 callBack START');
-      let context = ability_featureAbility.getContext();
-      await context.printDrawnCompleted((err, data)=>{
-        console.info('context_printDrawnCompleted_test_0200 callBack data is:' + JSON.stringify(data));
-        detailed = data;
-        expect(detailed).assertEqual(null);
-        done();
-      })
-      console.log('------------------ context_printDrawnCompleted_test_0200' + ' end -------------------');
-    })
-
-
-    /**
      * @tc.name   TAG_TEST_0400
      * @tc.number context_printDrawnCompleted_test_0200
      * @tc.desc   Check the return value of the interface (by AsyncCallback)
@@ -183,17 +161,15 @@ export default function addContextAndAbilityJsunit() {
       console.info(TAG_TEST_0400 + 'callBack START');
       let startTime = await Utils.getNowTime();
       let context = ability_featureAbility.getContext();
-      await context.printDrawnCompleted().then((data) => {
+      context.printDrawnCompleted((err, data) => {
         let endTime = Utils.getNowTime();
         Utils.getDurationTime(TAG_TEST_0400, startTime, endTime);
         detailed = data;
         console.info(TAG_TEST_0400 + ' callBack succeeded. data is:' + JSON.stringify(data));
-      }).catch((error: BusinessError) =>
-      {
-        console.error(TAG_TEST_0400 + 'Operation failed. Cause: ' + JSON.stringify(error));
+        expect(detailed).assertEqual(null);
+        done();
       })
-      expect(detailed).assertEqual(null);
-      done();
+
       console.log('------------------ ' + TAG_TEST_0400 + ' end -------------------');
     })
 
