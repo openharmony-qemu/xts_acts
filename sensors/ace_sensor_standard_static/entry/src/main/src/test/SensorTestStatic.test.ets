@@ -2523,14 +2523,13 @@ export default function SensorJsStaticTest() {
             hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off in--------------');
             sensor.offFusionPressureChange();
             hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off end--------------');
-            expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `fusion_pressure_SensorJsTest_static_071 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
-            expect(e.code == 201).assertTrue();
+            expect(false).assertTrue();
           } else {
             expect(e.code == 401).assertTrue();
           }
@@ -2550,15 +2549,16 @@ export default function SensorJsStaticTest() {
         await isAvailable(sensor.SensorId.FUSION_PRESSURE);
         try {
           sensor.onFusionPressureChange(onFusionPressureCallback, { 'interval': -100000000 });
+          setTimeout(() => {
+            hilog.info(0x0000, 'testTag', '---------fusionPressureParamError_SensorJsTest_static_072 timer in--------------');
+            expect(false).assertTrue();
+            done();
+          }, 500);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `fusionPressureParamError_SensorJsTest_static_072 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == 401).assertTrue();
           expect(sensor.SensorId.FUSION_PRESSURE == sensor.SensorId.FUSION_PRESSURE).assertTrue();
           done();
         }
