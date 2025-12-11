@@ -1239,11 +1239,11 @@ napi_value TestLockCursorwithNotExistedWindowid(napi_env env, napi_callback_info
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
- 
-    if (argCnt != 1) {
+
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1263,10 +1263,10 @@ napi_value TestLockCursorwithDestroyedWindow(napi_env env, napi_callback_info in
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    if (argCnt != 1) {
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1286,10 +1286,10 @@ napi_value TestLockCursorwithUnfocusableWindow(napi_env env, napi_callback_info 
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    if (argCnt != 1) {
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1309,10 +1309,10 @@ napi_value TestLockCursorandUnLockCursor1(napi_env env, napi_callback_info info)
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    if (argCnt != 1) {
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1332,10 +1332,10 @@ napi_value TestLockCursorandUnLockCursor2(napi_env env, napi_callback_info info)
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    if (argCnt != 1) {
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1355,10 +1355,10 @@ napi_value TestUnLockCursorwithNotExistedWindowid(napi_env env, napi_callback_in
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    if (argCnt != 1) {
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1378,10 +1378,10 @@ napi_value TestUnLockCursorwithDestroyedWindow(napi_env env, napi_callback_info 
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    if (argCnt != 1) {
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
@@ -1401,10 +1401,10 @@ napi_value TestUnLockCursorwithUnfocusableWindow(napi_env env, napi_callback_inf
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    if (argCnt != 1) {
+    if (argc != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
