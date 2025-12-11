@@ -1,6 +1,7 @@
 {
   "src": [
     "testability/pages/web",
-	"testability/pages/certChainData"
+	"testability/pages/certChainData",
+    "testability/pages/clientAuthenticationHandler"
   ]
 }

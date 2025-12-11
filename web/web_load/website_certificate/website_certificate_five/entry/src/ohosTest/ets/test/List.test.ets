@@ -14,8 +14,10 @@
  */
 import webJsunit from './WebJsunit.test';
 import certChainData from './certChainData.test'
+import clientAuthenticationHandler from './ClientAuthenticationHandler.test'
 
 export default function testsuite() {
   webJsunit();
   certChainData();
+  clientAuthenticationHandler();
 }
