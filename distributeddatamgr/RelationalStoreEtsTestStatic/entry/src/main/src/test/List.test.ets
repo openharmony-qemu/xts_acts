@@ -30,6 +30,20 @@ import RelationStoreError17Test from "./RelationStoreError17Api.test";
 import RelationStoreError33Test from './RelationStoreError33Api.test';
 import RelationStoreError801Test from "./RelationStoreError801Api.test";
 import RelationStoreError1001Test from "./RelationStoreError1001Api.test";
+import RelationalStoreSyncApiTest from "./RelationalStoreSyncApiTest.test"; 
+import RelationalStoreCloudSync from "./RelationalStoreCloudSync.test";
+import RelationalStoreDistributedJsunit from "./RelationalStoreDistributedJsunit.test";
+import relationalStoreCloudSyncEts from "./relationalStoreCloudSyncEts.test";
+import VectorStore from "./VectorStore.test";
+
+import RelationStoreSqlExecTimeTest from "./RelationStoreSqlExecTimeTest.test";
+import RdbStoreAttachEtsunit from "./RdbStoreAttachEtsunit.test";
+
+import RelationalStorePredicatesJsunit from "./RelationalStorePredicatesJsunit.test";
+import RelationalStoreCloudCursor from "./RelationalStoreCloudCursor.test";
+import RelationalStoreResultSetSync from "./RelationalStoreResultSetSync.test";
+import relationalStoreInterfaceTest from  "./relationalstore.test";
+import RelationalStoreBackupRestoreWithFAContextJsunit from "./RelationalStoreBackupRestoreWithFAContextJsunit.test";
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -48,4 +62,19 @@ export default function testsuite() {
   RelationStoreError17Test();
   RelationStoreError801Test();
   RelationStoreError1001Test();
+
+  RelationalStoreSyncApiTest();  
+  RelationalStoreCloudSync();  
+  RelationalStoreDistributedJsunit();
+  relationalStoreCloudSyncEts(); 
+  
+  RelationalStoreResultSetSync(); 
+  
+  relationalStoreInterfaceTest(); 
+  RelationalStoreBackupRestoreWithFAContextJsunit();
+  RelationalStorePredicatesJsunit(); 
+  VectorStore(); 
+  RelationalStoreCloudCursor(); 
+  RdbStoreAttachEtsunit(); 
+  RelationStoreSqlExecTimeTest();
 }
