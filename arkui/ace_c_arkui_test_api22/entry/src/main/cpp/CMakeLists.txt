@@ -38,11 +38,16 @@ add_library(nativerender SHARED
     image/AnimationControllerTest.cpp
     component/GridComponentTest.cpp
     grid/GridFillPolicyTest.cpp
+    grid/GridEventTest.cpp
 )
 
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
     image/ImageDrawableErrorTest.cpp
+    grid/GridAttrsTest.cpp
+    component/ComponentTest.cpp
+    component/GridComponentTest.cpp
+    component/TextComponentTest.cpp
 )
 
 find_library(

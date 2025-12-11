@@ -15,6 +15,7 @@
 #include "common/common.h"
 #include "swiper/NodeSwiperItemFillpolocyTest.cpp"
 #include "image/ImageDrawableErrorTest.cpp"
+#include "grid/GridAttrsTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -36,6 +37,30 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr},
         {"testImageDrawable004", nullptr, TestImageDrawable004, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        {"testGridItemAlignment001", nullptr, TestGridItemAlignment001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridItemAlignment002", nullptr, TestGridItemAlignment002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridItemAlignment003", nullptr, TestGridItemAlignment003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridItemStyle001", nullptr, TestGridItemStyle001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridItemStyle002", nullptr, TestGridItemStyle002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridItemStyle003", nullptr, TestGridItemStyle003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridLayoutOptions001", nullptr, TestGridLayoutOptions001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridLayoutOptions002", nullptr, TestGridLayoutOptions002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridLayoutOptions003", nullptr, TestGridLayoutOptions003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridLayoutOptions004", nullptr, TestGridLayoutOptions004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TestRegisterGetRectByIndexCallback001", nullptr, TestRegisterGetRectByIndexCallback001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestRegisterGetIrregularSizeByIndexCallback001", nullptr, TestRegisterGetIrregularSizeByIndexCallback001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
