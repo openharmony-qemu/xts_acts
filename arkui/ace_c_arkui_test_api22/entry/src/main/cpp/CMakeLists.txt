@@ -43,6 +43,12 @@ add_library(nativerender SHARED
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
     image/ImageDrawableErrorTest.cpp
+    drag/DragReturnNullTest.cpp
+    drag/DragReturnNullTest.h
+    InteractiveFramework/NativeGestureBooleanTest.cpp
+    InteractiveFramework/UiInputEventBooleanTest.cpp
+    InteractiveFramework/LongPressGestureTest.cpp
+    InteractiveFramework/LongPressGestureTest.h
 )
 
 find_library(
