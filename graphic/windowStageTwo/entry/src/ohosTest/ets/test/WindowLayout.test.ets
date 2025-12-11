@@ -4520,10 +4520,10 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
 
         if (canIUseRes) {
-          expect(Math.abs(windowLimits2.minWidth-(windowLimits.minWidth as number + 10))).assertLessOrEqual(2);
-          expect(Math.abs(windowLimits2.minHeight-(windowLimits.minHeight as number + 10))).assertLessOrEqual(2);
-          expect(Math.abs(windowLimits2.maxWidth-(windowLimits.maxWidth as number - 10))).assertLessOrEqual(2);
-          expect(Math.abs(windowLimits2.maxHeight-(windowLimits.maxHeight as number - 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.minWidth as number -(windowLimits.minWidth as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.minHeight as number -(windowLimits.minHeight as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxWidth as number -(windowLimits.maxWidth as number - 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxHeight as number -(windowLimits.maxHeight as number - 10))).assertLessOrEqual(2);
         }
         await terminateAbility5(caseName)
         done()
