@@ -382,7 +382,7 @@ export default function ConnectionTest() {
         } as connection.HttpProxy);
         console.info(`setAppHttpProxy success`);
         let httpRequest = http.createHttp();
-        let options:http.httpRequestOptions = {
+        let options:http.HttpRequestOptions = {
           usingProxy:true,
         };
         httpRequest.request("http://www.baidu.com",options,(err:Error,data:http.HttpResponse) => {
