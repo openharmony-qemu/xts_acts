@@ -26,6 +26,7 @@ group("web") {
     "web_life_cycle:webLifeCycle",
     "web_load:WebLoad",
     "web_multi_media:WebMultimedia",
+    "web_multimedia:ActsWebMultiMediaTest",
     "web_net:ActsWebNetTest",
     "web_page_document_processing:webPageDocumentProcessing",
     "web_page_rendering:webPageRenderingTest",
