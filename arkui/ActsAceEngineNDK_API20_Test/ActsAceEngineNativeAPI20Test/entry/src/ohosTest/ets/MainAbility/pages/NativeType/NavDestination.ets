@@ -95,5 +95,6 @@ struct NativeType {
     .height('100%')
     .title({ main: 'C++用例测试', sub: 'NavDestinationState' })
     .navDestination(this.MyPageMap)
+    .mode(NavigationMode.Stack)
   }
 }
