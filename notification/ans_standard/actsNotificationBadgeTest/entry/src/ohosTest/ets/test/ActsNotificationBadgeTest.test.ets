@@ -30,6 +30,17 @@ export default function ActsNotificationBadgeTest() {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
     beforeAll(async (done: Function) => {
+      let button = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));
+      log(`button is ${JSON.stringify(button)}`);
+      if (button !== null) {
+        await sleep(1000);
+        await button.click();
+        await sleep(1000);
+        done()
+      } else {
+        log('null button');
+        done()
+      }
       notificationManager.requestEnableNotification(ctx).then(() => {
         console.info(`${TAG} requestEnableNotification succeeded`);
         done()
