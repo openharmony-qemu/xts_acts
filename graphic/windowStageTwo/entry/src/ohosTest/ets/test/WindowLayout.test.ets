@@ -4349,6 +4349,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         done();
       }
     })
+
+    /**
      * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0100
      * @tc.name       testGetWindowLimitsVPwithFloatWindow
      * @tc.desc       testGetWindowLimitsVPwithFloatWindow
