@@ -2997,43 +2997,33 @@ export default function displayTest() {
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
       try {
-        let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('createVirtualScreen1'));
-
-        let screenId = 0;
-        if (btn == undefined) {
-          console.log(caseName + 'device not support');
-        } else {
-          await btn.click();
-          await sleep(1000);
-
-          let hw = await driver.findComponent(ON.id('testResult'));
-          let testNum = await hw.getText();
-          console.log(caseName + 'testResult : ' + testNum);
-          expect(testNum == 'success').assertTrue();
-          if (!isSupport) {
-            expect(testNum == 'not support').assertTrue();
-            done();
-          } else {
-            let screenIdStr = await driver.findComponent(ON.id('screenId'));
-            console.log(caseName + 'screenIdStr : ' + screenIdStr);
-            screenId = Number(screenIdStr);
+        display.createVirtualScreen({
+          name: 'createVirtualScreen1',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+          supportsFocus: true
+        }).then(async (displayId: number) => {
+          // 虚拟屏设置异源屏
+          await display.makeUnique(displayId);
+          let options: StartOptions = {
+            displayId: displayId
           }
-        }
-        let options: StartOptions = {
-          displayId: screenId
-        }
-        let windowStageStart = await startAbility(caseName, context, options);
-        let windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setWindowFocusable(true);
-        await terminateAbility(caseName);
-        done();
+          let windowStageStart = await startAbility(caseName, context, options);
+          let windowClass = windowStageStart.getMainWindowSync();
+          await windowClass.setWindowFocusable(true);
+          await terminateAbility(caseName);
+          done();
+        })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
-          done()
+       
+        if (!isSupport) {
+          expect(e.code).assertEqual(801)
+          done();
         } else {
-          await terminateAbility(caseName);
+ 	  await terminateAbility(caseName);
           expect(false).assertTrue();
           done();
         }
@@ -3053,43 +3043,33 @@ export default function displayTest() {
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
       try {
-        let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('createVirtualScreen2'));
-
-        let screenId = 0;
-        if (btn == undefined) {
-          console.log(caseName + 'device not support');
-        } else {
-          await btn.click();
-          await sleep(1000);
-
-          let hw = await driver.findComponent(ON.id('testResult'));
-          let testNum = await hw.getText();
-          console.log(caseName + 'testResult : ' + testNum);
-          expect(testNum == 'success').assertTrue();
-          if (!isSupport) {
-            expect(testNum == 'not support').assertTrue();
-            done();
-          } else {
-            let screenIdStr = await driver.findComponent(ON.id('screenId'));
-            console.log(caseName + 'screenIdStr : ' + screenIdStr);
-            screenId = Number(screenIdStr);
+        display.createVirtualScreen({
+          name: 'createVirtualScreen2',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+          supportsFocus: undefined
+        }).then(async (displayId: number) => {
+          // 虚拟屏设置异源屏
+          await display.makeUnique(displayId);
+          let options: StartOptions = {
+            displayId: displayId
           }
-        }
-        let options: StartOptions = {
-          displayId: screenId
-        }
-        let windowStageStart = await startAbility(caseName, context, options);
-        let windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setWindowFocusable(true);
-        await terminateAbility(caseName);
-        done();
+          let windowStageStart = await startAbility(caseName, context, options);
+          let windowClass = windowStageStart.getMainWindowSync();
+          await windowClass.setWindowFocusable(true);
+          await terminateAbility(caseName);
+          done();
+        })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
-          done()
+       
+        if (!isSupport) {
+          expect(e.code).assertEqual(801)
+          done();
         } else {
-          await terminateAbility(caseName);
+	  await terminateAbility(caseName);
           expect(false).assertTrue();
           done();
         }
@@ -3109,43 +3089,32 @@ export default function displayTest() {
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
       try {
-        let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('createVirtualScreen3'));
-
-        let screenId = 0;
-        if (btn == undefined) {
-          console.log(caseName + 'device not support');
-        } else {
-          await btn.click();
-          await sleep(1000);
-
-          let hw = await driver.findComponent(ON.id('testResult'));
-          let testNum = await hw.getText();
-          console.log(caseName + 'testResult : ' + testNum);
-          expect(testNum == 'success').assertTrue();
-          if (!isSupport) {
-            expect(testNum == 'not support').assertTrue();
-            done();
-          } else {
-            let screenIdStr = await driver.findComponent(ON.id('screenId'));
-            console.log(caseName + 'screenIdStr : ' + screenIdStr);
-            screenId = Number(screenIdStr);
+        display.createVirtualScreen({
+          name: 'createVirtualScreen3',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+        }).then(async (displayId: number) => {
+          // 虚拟屏设置异源屏
+          await display.makeUnique(displayId);
+          let options: StartOptions = {
+            displayId: displayId
           }
-        }
-        let options: StartOptions = {
-          displayId: screenId
-        }
-        let windowStageStart = await startAbility(caseName, context, options);
-        let windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setWindowFocusable(true);
-        await terminateAbility(caseName);
-        done();
+          let windowStageStart = await startAbility(caseName, context, options);
+          let windowClass = windowStageStart.getMainWindowSync();
+          await windowClass.setWindowFocusable(true);
+          await terminateAbility(caseName);
+          done();
+        })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
-          done()
+        
+        if (!isSupport) {
+          expect(e.code).assertEqual(801)
+          done();
         } else {
-          await terminateAbility(caseName);
+ 	  await terminateAbility(caseName);
           expect(false).assertTrue();
           done();
         }
@@ -3165,45 +3134,35 @@ export default function displayTest() {
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
       try {
-        let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('createVirtualScreen4'));
-
-        let screenId = 0;
-        if (btn == undefined) {
-          console.log(caseName + 'device not support');
-        } else {
-          await btn.click();
-          await sleep(1000);
-
-          let hw = await driver.findComponent(ON.id('testResult'));
-          let testNum = await hw.getText();
-          console.log(caseName + 'testResult : ' + testNum);
-          expect(testNum == 'success').assertTrue();
-          if (!isSupport) {
-            expect(testNum == 'not support').assertTrue();
-            done();
-          } else {
-            let screenIdStr = await driver.findComponent(ON.id('screenId'));
-            console.log(caseName + 'screenIdStr : ' + screenIdStr);
-            screenId = Number(screenIdStr);
+        display.createVirtualScreen({
+          name: 'createVirtualScreen4',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+          supportsFocus: false
+        }).then(async (displayId: number) => {
+          // 虚拟屏设置异源屏
+          await display.makeUnique(displayId);
+          let options: StartOptions = {
+            displayId: displayId
           }
-        }
-        let options: StartOptions = {
-          displayId: screenId
-        }
-        let windowStageStart = await startAbility(caseName, context, options);
-        let windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setWindowFocusable(true);
-        await terminateAbility(caseName);
-        expect(false).assertTrue();
-        done();
+          let windowStageStart = await startAbility(caseName, context, options);
+          let windowClass = windowStageStart.getMainWindowSync();
+          await windowClass.setWindowFocusable(true);
+          await terminateAbility(caseName);
+          expect(false).assertTrue();
+          done();
+        })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
-          done()
+        
+        if (!isSupport) {
+          expect(e.code).assertEqual(801)
+          done();
         } else {
-          await terminateAbility(caseName);
-          expect(e.code).assertEqual(1300002);
+	  await terminateAbility(caseName);
+          expect(e.code).assertEqual(1300002)
           done();
         }
       }

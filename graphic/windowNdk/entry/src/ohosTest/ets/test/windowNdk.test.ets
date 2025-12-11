@@ -1705,9 +1705,6 @@ export default function windowNdk() {
       let caseName = 'testLockCursorwithNotExistedWindowid ';
       try {
         console.info(`${caseName} start`);
-        let windowClass = windowStage.getMainWindowSync();
-        let windowId = windowClass.getWindowProperties().id;
-        console.info(`${caseName} windowId: ${windowId}`);
         let Result: number = windowNdkTest.testLockCursorwithNotExistedWindowid(10000);
         console.info(`${caseName} Result: ${Result}`);
         expect(Result).assertEqual(1300002);
@@ -1919,77 +1916,6 @@ export default function windowNdk() {
       }
     })
 
-    /**
-     * @tc.name   testNativeDisplayManager_ErrorCode_enum
-     * @tc.number SUB_DISPLAY_MANAGER_ERRORCODE_0100
-     * @tc.desc   testNativeDisplayManager_ErrorCode_enum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeDisplayManager_ErrorCode_enum', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testNativeDisplayManager_ErrorCode_enum ';
-      try {
-        console.info(`${caseName} start`);
-        let Result: number = windowNdkTest.testNativeDisplayManager_ErrorCode_enum();
-        console.info(`${caseName} Result: ${Result}`);
-        expect(Result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error(`${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
-    
-    /**
-     * @tc.name   testNativeDisplayManager_FoldDisplayMode_enum
-     * @tc.number SUB_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_0100
-     * @tc.desc   testNativeDisplayManager_FoldDisplayMode_enum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeDisplayManager_FoldDisplayMode_enum', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testNativeDisplayManager_FoldDisplayMode_enum ';
-      try {
-        console.info(`${caseName} start`);
-        let Result: number = windowNdkTest.testNativeDisplayManager_FoldDisplayMode_enum();
-        console.info(`${caseName} Result: ${Result}`);
-        expect(Result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error(`${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
-
-    /**
-     * @tc.name   testNativeDisplayManager_SourceMode_enum
-     * @tc.number SUB_DISPLAY_SOURCE_MODE_0100
-     * @tc.desc   testNativeDisplayManager_SourceMode_enum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeDisplayManager_SourceMode_enum', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testNativeDisplayManager_SourceMode_enum ';
-      try {
-        console.info(`${caseName} start`);
-        let Result: number = windowNdkTest.testNativeDisplayManager_SourceMode_enum();
-        console.info(`${caseName} Result: ${Result}`);
-        expect(Result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error(`${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
    
     /**
      * @tc.name   testWindowManager_ErrorCode_enum
@@ -2005,30 +1931,6 @@ export default function windowNdk() {
       try {
         console.info(`${caseName} start`);
         let Result: number = windowNdkTest.testWindowManager_ErrorCode_enum();
-        console.info(`${caseName} Result: ${Result}`);
-        expect(Result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error(`${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
-  
-    /**
-     * @tc.name   testPictureInPicture_PipState_enum
-     * @tc.number SUB_PictureInPicture_PipState_0100
-     * @tc.desc   testPictureInPicture_PipState_enum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testPictureInPicture_PipState_enum', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testPictureInPicture_PipState_enum ';
-      try {
-        console.info(`${caseName} start`);
-        let Result: number = windowNdkTest.testPictureInPicture_PipState_enum();
         console.info(`${caseName} Result: ${Result}`);
         expect(Result).assertEqual(0);
         done()

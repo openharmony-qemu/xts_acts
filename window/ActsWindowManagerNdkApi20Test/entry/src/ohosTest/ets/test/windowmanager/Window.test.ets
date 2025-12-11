@@ -1047,7 +1047,7 @@ export default function WindowTest() {
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
+        expect().assertFail();
         done()
       }
     })
@@ -1078,7 +1078,7 @@ export default function WindowTest() {
         }
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
+        expect().assertFail();
         done()
       }
     })
@@ -1107,7 +1107,7 @@ export default function WindowTest() {
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
+        expect().assertFail();
         done()
       }
     })
@@ -1138,7 +1138,7 @@ export default function WindowTest() {
         }
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
-        expect(false).assertEqual(err);
+        expect().assertFail();
         done()
       }
     })

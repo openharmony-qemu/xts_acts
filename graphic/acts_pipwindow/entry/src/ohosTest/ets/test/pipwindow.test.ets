@@ -4524,7 +4524,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             templateType: pipWindow.PiPTemplateType.VIDEO_LIVE,
             contentWidth: 500,
             contentHeight: 500,
-            handleId: 1  // 这个id是个啥
+            handleId: 1
           };
           pipController = await pipWindow.create(config);
           expect(true).assertTrue();
@@ -4743,14 +4743,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           };
           try {
             let callbackIndex = 0;
+            let callbackRes: boolean | undefined
             const callback = async (res: boolean) => {
               console.log(`${tag} ${caseName} callback res: ${res}`)
-              callbackIndex++;
-              if (callbackIndex == 1) {
-                expect(res).assertEqual(true)
-              } else if (callbackIndex == 2) {
-                expect(res).assertEqual(false)
-              }
+              callbackIndex = callbackIndex + 1;
+              console.log(`${tag} ${caseName} callback callbackIndex: ${callbackIndex}`)
+              callbackRes = res;
             }
             let driver = Driver.create();
             pipWindow.create(config).then(async (data) => {
@@ -4759,6 +4757,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               expect(data != null).assertTrue();
               pipController.on('activeStatusChange', callback);
               await pipController.startPiP();
+              await sleep(2000);
+              console.log(`${tag} ${caseName} callbackIndex 1: ${callbackIndex}`)
+              console.log(`${tag} ${caseName} callbackRes 1: ${callbackRes}`)
+              expect(callbackIndex).assertEqual(0);
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
@@ -4768,10 +4770,22 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToX = pipWindowCenter.x + displayInfo.width;
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
-              while (callbackIndex != 2) {
-                await sleep(300);
-              }
+              await sleep(3000);
+              console.log(`${tag} ${caseName} callbackIndex 2: ${callbackIndex}`)
+              console.log(`${tag} ${caseName} callbackRes 2: ${callbackRes}`)
+              expect(callbackIndex).assertEqual(1);
+              expect(callbackRes).assertEqual(false);
+              await driver.click(displayInfo.width, pipWindowCenter.y);
+              await sleep(3000);
+              console.log(`${tag} ${caseName} callbackIndex 3: ${callbackIndex}`)
+              console.log(`${tag} ${caseName} callbackRes 3: ${callbackRes}`)
+              expect(callbackIndex).assertEqual(2);
+              expect(callbackRes).assertEqual(true);
               await pipController?.stopPiP();
+              await sleep(2000);
+              console.log(`${tag} ${caseName} callbackIndex 4: ${callbackIndex}`)
+              console.log(`${tag} ${caseName} callbackRes 4: ${callbackRes}`)
+              expect(callbackIndex).assertEqual(2);
               pipController?.off('activeStatusChange');
               done();
             }).catch((err:BusinessError) => {
@@ -4830,22 +4844,16 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             let callbackIndex1 = 0;
             let callbackIndex2 = 0;
             const callback = async (res: boolean) => {
-              console.log(`${tag} ${caseName} callback res: ${res}`)
-              callbackIndex1++;
-              if (callbackIndex1 == 1) {
-                expect(res).assertEqual(true)
-              } else if (callbackIndex1 == 2) {
-                expect(res).assertEqual(false)
-              }
+              console.log(` ${caseName} callback res: ${res}`)
+              callbackIndex1 = callbackIndex1+1;
+              console.log(` ${caseName} callback callbackIndex2: ${callbackIndex1}`)
+              expect(res).assertEqual(false)
             }
             const callback2 = async (res: boolean) => {
-              console.log(`${tag} ${caseName} callback2 res: ${res}`)
-              callbackIndex2++;
-              if (callbackIndex2 == 1) {
-                expect(res).assertEqual(true)
-              } else if (callbackIndex2 == 2) {
-                expect(res).assertEqual(false)
-              }
+              console.log(` ${caseName} callback2 res: ${res}`)
+              callbackIndex2 = callbackIndex2+1;
+              console.log(` ${caseName} callback2 callbackIndex2: ${callbackIndex2}`)
+              expect(res).assertEqual(false)
             }
             let driver = Driver.create();
             pipWindow.create(config).then(async (data) => {
@@ -4855,6 +4863,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               pipController.on('activeStatusChange', callback);
               pipController.on('activeStatusChange', callback2);
               await pipController.startPiP();
+              await sleep(1000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
@@ -4864,9 +4873,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToX = pipWindowCenter.x + displayInfo.width;
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
-              while (callbackIndex1 != 2 && callbackIndex2 != 2) {
-                await sleep(300);
-              }
+              await sleep(3000);
+              expect(callbackIndex1).assertEqual(1);
+              expect(callbackIndex2).assertEqual(1);
               await pipController?.stopPiP();
               pipController?.off('activeStatusChange');
               done();
@@ -4883,7 +4892,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               }
             });
           } catch (error) {
-            console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+            console.log(`${tag} ${caseName} Failed. Cause + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message)`);
             expect().assertFail();
             done();
           }
@@ -4920,18 +4929,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             navigationId: navId,
             templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
             contentWidth: contentWidth,
-            contentHeight: contentHeight,
+            contentHeight: contentHeight
           };
           try {
-            let callbackIndex = 0;
+            let callbackIndex1 = 0;
             const callback = async (res: boolean) => {
-              console.log(`${tag} ${caseName} callback res: ${res}`)
-              callbackIndex++;
-              if (callbackIndex == 1) {
-                expect(res).assertEqual(true)
-              } else if (callbackIndex == 2) {
-                expect(res).assertEqual(false)
-              }
+              console.log(`${caseName} callback res: ${res}`)
+              callbackIndex1 = callbackIndex1+1;
+              console.log(`${caseName} callback callbackIndex2: ${callbackIndex1}`)
+              expect(res).assertEqual(false)
             }
             let driver = Driver.create();
             pipWindow.create(config).then(async (data) => {
@@ -4939,7 +4945,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
               pipController.on('activeStatusChange', callback);
+              pipController?.off('activeStatusChange', callback);
               await pipController.startPiP();
+              await sleep(1000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
@@ -4949,14 +4957,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToX = pipWindowCenter.x + displayInfo.width;
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
-              while (callbackIndex != 2) {
-                await sleep(300);
-              }
-              pipController?.off('activeStatusChange', callback);
-
-              await pipController.startPiP();
-              await sleep(2000);
-              expect(callbackIndex).assertEqual(2);
+              await sleep(3000);
+              expect(callbackIndex1).assertEqual(0);
               await pipController?.stopPiP();
               done();
             }).catch((err:BusinessError) => {
@@ -5012,15 +5014,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             contentHeight: contentHeight
           };
           try {
-            let callbackIndex = 0;
+            let callbackIndex1 = 0;
             const callback = async (res: boolean) => {
-              console.log(`${tag} ${caseName} callback res: ${res}`)
-              callbackIndex++;
-              if (callbackIndex == 1) {
-                expect(res).assertEqual(true)
-              } else if (callbackIndex == 2) {
-                expect(res).assertEqual(false)
-              }
+              console.log(`${caseName} callback res: ${res}`)
+              callbackIndex1 = callbackIndex1+1;
+              console.log(`${caseName} callback callbackIndex2: ${callbackIndex1}`)
+              expect(res).assertEqual(false)
             }
             let driver = Driver.create();
             pipWindow.create(config).then(async (data) => {
@@ -5028,7 +5027,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
               pipController.on('activeStatusChange', callback);
+              pipController?.off('activeStatusChange');
               await pipController.startPiP();
+              await sleep(1000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               await sleep(1000)
               let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
@@ -5038,14 +5039,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToX = pipWindowCenter.x + displayInfo.width;
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
-              while (callbackIndex != 2) {
-                await sleep(300);
-              }
-              pipController?.off('activeStatusChange');
-
-              await pipController.startPiP();
-              await sleep(2000);
-              expect(callbackIndex).assertEqual(2);
+              await sleep(3000);
+              expect(callbackIndex1).assertEqual(0);
               await pipController?.stopPiP();
               done();
             }).catch((err:BusinessError) => {

@@ -1663,11 +1663,7 @@ static napi_value TestPipSetParentWindowIdwithNonExistedWindowId(napi_env env, n
     ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
     int32_t res = OH_PictureInPicture_SetParentWindowId(controllerId, mainWindowId);
     OH_PictureInPicture_DestroyPipConfig(&pipConfig);
-    if (ret != 0) {
-        napi_create_int32(env, FAIL, &result);
-    } else {
-        napi_create_int32(env, res, &result);
-    }
+    napi_create_int32(env, res, &result);
     return result;
 }
 
@@ -1690,12 +1686,26 @@ static napi_value TestPipSetParentWindowId(napi_env env, napi_callback_info info
     ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
     int32_t res = OH_PictureInPicture_SetParentWindowId(controllerId, subWindowId);
     OH_PictureInPicture_DestroyPipConfig(&pipConfig);
-    if (ret != 0) {
-        napi_create_int32(env, FAIL, &result);
-    } else {
-        napi_create_int32(env, res, &result);
-    }
+    napi_create_int32(env, res, &result);
     return result;
+}
+
+napi_value TestPictureInPicture_PipState_enum(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    napi_value retValue;
+    if (PictureInPicture_PipState::ABOUT_TO_START == 1 &&
+        PictureInPicture_PipState::STARTED == TWO &&
+        PictureInPicture_PipState::ABOUT_TO_STOP == THREE &&
+        PictureInPicture_PipState::STOPPED == FOUR &&
+        PictureInPicture_PipState::ABOUT_TO_RESTORE == FIVE) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, -1, &retValue);
+    }
+    return retValue;
 }
 
 static napi_value pipWindowInit(napi_env env, napi_value exports)
@@ -1751,6 +1761,8 @@ static napi_value pipWindowInit(napi_env env, napi_value exports)
 static napi_value pipWindowInit2(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
+        {"testPictureInPicture_PipState_enum", nullptr,
+            TestPictureInPicture_PipState_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
         { "testPipSetParentWindowIdwithNonExistedWindowId", nullptr, TestPipSetParentWindowIdwithNonExistedWindowId,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testPipSetParentWindowId", nullptr, TestPipSetParentWindowId,

@@ -1453,12 +1453,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
       let caseName: string = 'testMaximizeAcrossDisplaywithTrue';
       console.log(caseName + 'begin');
       let windowStageStart = await startAbility7(caseName, context);
-      let mainWindow = windowStageStart.getMainWindowSync();
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
-      let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
-      console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
       try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+        console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
         if (isInFreeWindowMode) {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
@@ -1517,12 +1517,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
       let caseName: string = 'testMaximizeAcrossDisplaywithFalse';
       console.log(caseName + 'begin');
       let windowStageStart = await startAbility7(caseName, context);
-      let mainWindow = windowStageStart.getMainWindowSync();
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
-      let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
-      console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
       try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+        console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
         if (isInFreeWindowMode) {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
@@ -1536,8 +1536,8 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
               if (isPCStatus != ''&& display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
                 expect(windowRect1.width).assertEqual(displayRectArr[i].physicalWidth)
                 expect(windowRect1.height * 2).assertEqual(displayRectArr[i].physicalHeight)
+                break;
               }
-              break;
             }
           }
           expect(windowRect1.width).assertEqual(displayRes1.width)
@@ -1553,12 +1553,18 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
 
           await terminateAbility7(caseName);
           done();
+        } else {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         await terminateAbility7(caseName);
-        expect().assertFail();
-        done();
+        if (!isSupport) {
+          expect(err.code).assertEqual(801)
+        } else {
+          expect().assertFail();
+          done();
+        }
       }
     });
 

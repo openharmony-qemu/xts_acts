@@ -40,18 +40,6 @@
         }                                                    \
     }while (0)                                               
 
-#define PARAM_0 0
-#define PARAM_1 1
-#define PARAM_2 2
-#define PARAM_3 3
-#define PARAM_4 4
-#define PARAM_5 5
-#define PARAM_6 6
-#define PARAM_7 7
-#define PARAM_8 8
-#define PARAM_9 9
-#define PARAM_202 202
-#define PARAM_1400002 1400002
 #define PARAM_1300011 1300011
 #define PARAM_1300012 1300012
 #define PARAM_1300015 1300015
@@ -1249,8 +1237,12 @@ napi_value TestLockCursorwithNotExistedWindowid(napi_env env, napi_callback_info
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+ 
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1269,8 +1261,11 @@ napi_value TestLockCursorwithDestroyedWindow(napi_env env, napi_callback_info in
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1289,8 +1284,11 @@ napi_value TestLockCursorwithUnfocusableWindow(napi_env env, napi_callback_info 
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1309,8 +1307,11 @@ napi_value TestLockCursorandUnLockCursor1(napi_env env, napi_callback_info info)
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1320,11 +1321,7 @@ napi_value TestLockCursorandUnLockCursor1(napi_env env, napi_callback_info info)
     int32_t result = OH_WindowManager_LockCursor(windowId, true);
     OH_LOG_INFO(LOG_APP, "TestLockCursorandUnLockCursor1 OH_WindowManager_LockCursor: %{public}d", result);
     napi_value retValue;
-    if (result == 0) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, -1, &retValue);
-    }
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -1333,8 +1330,11 @@ napi_value TestLockCursorandUnLockCursor2(napi_env env, napi_callback_info info)
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1344,11 +1344,7 @@ napi_value TestLockCursorandUnLockCursor2(napi_env env, napi_callback_info info)
     int32_t result = OH_WindowManager_UnlockCursor(windowId);
     OH_LOG_INFO(LOG_APP, "TestLockCursorandUnLockCursor2 OH_WindowManager_UnlockCursor: %{public}d", result);
     napi_value retValue;
-    if (result == 0) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, -1, &retValue);
-    }
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -1357,8 +1353,11 @@ napi_value TestUnLockCursorwithNotExistedWindowid(napi_env env, napi_callback_in
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1377,8 +1376,11 @@ napi_value TestUnLockCursorwithDestroyedWindow(napi_env env, napi_callback_info 
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1397,8 +1399,11 @@ napi_value TestUnLockCursorwithUnfocusableWindow(napi_env env, napi_callback_inf
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
     if (argCnt != 1) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
@@ -1412,57 +1417,6 @@ napi_value TestUnLockCursorwithUnfocusableWindow(napi_env env, napi_callback_inf
     return retValue;
 }
 
-napi_value TestNativeDisplayManager_ErrorCode_enum(napi_env env, napi_callback_info info)
-{
-    if ((env == nullptr) || (info == nullptr)) {
-        return nullptr;
-    }
-    napi_value retValue;
-    if (NativeDisplayManager_ErrorCode::DISPLAY_MANAGER_ERROR_NOT_SYSTEM_APP == PARAM_202 &&
-        NativeDisplayManager_ErrorCode::DISPLAY_MANAGER_ERROR_INVALID_CALL == PARAM_1400002) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, -1, &retValue);
-    }
-    return retValue;
-}
-
-napi_value TestNativeDisplayManager_FoldDisplayMode_enum(napi_env env, napi_callback_info info)
-{
-    if ((env == nullptr) || (info == nullptr)) {
-        return nullptr;
-    }
-    napi_value retValue;
-    if (NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN == PARAM_0 &&
-        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_FULL == PARAM_1 &&
-        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_MAIN == PARAM_2 &&
-        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_SUB == PARAM_3 &&
-        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_COORDINATION == PARAM_4) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, -1, &retValue);
-    }
-    return retValue;
-}
-
-napi_value TestNativeDisplayManager_SourceMode_enum(napi_env env, napi_callback_info info)
-{
-    if ((env == nullptr) || (info == nullptr)) {
-        return nullptr;
-    }
-    napi_value retValue;
-    if (NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_NONE == PARAM_0 &&
-        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_MAIN == PARAM_1 &&
-        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_MIRROR == PARAM_2 &&
-        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_EXTEND == PARAM_3 &&
-        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_ALONE == PARAM_4) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, -1, &retValue);
-    }
-    return retValue;
-}
-
 napi_value TestWindowManager_ErrorCode_enum(napi_env env, napi_callback_info info)
 {
     if ((env == nullptr) || (info == nullptr)) {
@@ -1472,24 +1426,6 @@ napi_value TestWindowManager_ErrorCode_enum(napi_env env, napi_callback_info inf
     if (WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_DESTROY_FAILED == PARAM_1300011 &&
         WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_STATE_ABNORMAL == PARAM_1300012 &&
         WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_REPEATED_OPERATION == PARAM_1300015) {
-        napi_create_int32(env, 0, &retValue);
-    } else {
-        napi_create_int32(env, -1, &retValue);
-    }
-    return retValue;
-}
-
-napi_value TestPictureInPicture_PipState_enum(napi_env env, napi_callback_info info)
-{
-    if ((env == nullptr) || (info == nullptr)) {
-        return nullptr;
-    }
-    napi_value retValue;
-    if (PictureInPicture_PipState::ABOUT_TO_START == PARAM_1 &&
-        PictureInPicture_PipState::STARTED == PARAM_2 &&
-        PictureInPicture_PipState::ABOUT_TO_STOP == PARAM_3 &&
-        PictureInPicture_PipState::STOPPED == PARAM_4 &&
-        PictureInPicture_PipState::ABOUT_TO_RESTORE == PARAM_5) {
         napi_create_int32(env, 0, &retValue);
     } else {
         napi_create_int32(env, -1, &retValue);
@@ -1578,16 +1514,8 @@ static napi_value windowCursorInit(napi_env env, napi_value exports)
 static napi_value windowEnumInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"testNativeDisplayManager_ErrorCode_enum", nullptr,
-            TestNativeDisplayManager_ErrorCode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNativeDisplayManager_FoldDisplayMode_enum", nullptr,
-            TestNativeDisplayManager_FoldDisplayMode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNativeDisplayManager_SourceMode_enum", nullptr,
-            TestNativeDisplayManager_SourceMode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testWindowManager_ErrorCode_enum", nullptr,
             TestWindowManager_ErrorCode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testPictureInPicture_PipState_enum", nullptr,
-            TestPictureInPicture_PipState_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

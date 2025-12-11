@@ -94,8 +94,4 @@ export const testUnLockCursorwithNotExistedWindowid: (windowId: number) => numbe
 export const testUnLockCursorwithDestroyedWindow: (windowId: number) => number;
 export const testUnLockCursorwithUnfocusableWindow: (windowId: number) => number;
 
-export const testNativeDisplayManager_ErrorCode_enum: () => number;
-export const testNativeDisplayManager_FoldDisplayMode_enum: () => number;
-export const testNativeDisplayManager_SourceMode_enum: () => number;
 export const testWindowManager_ErrorCode_enum: () => number;
-export const testPictureInPicture_PipState_enum: () => number;

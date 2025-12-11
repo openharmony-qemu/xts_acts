@@ -55,3 +55,4 @@ export const testSetPipInitialSurfaceRectwithInvalidWidth: (mainWindowId: number
 export const testUnsetPipInitialSurfaceRect: (mainWindowId: number) => number;
 export const testPipSetParentWindowIdwithNonExistedWindowId: (windowId: number) => number;
 export const testPipSetParentWindowId: (windowId: number) => number;
+export const testPictureInPicture_PipState_enum: () => number;

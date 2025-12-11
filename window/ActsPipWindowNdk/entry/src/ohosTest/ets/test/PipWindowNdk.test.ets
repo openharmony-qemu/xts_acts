@@ -1090,7 +1090,7 @@ export default function PipWindowNdkTest() {
       };
       try{
         pipController = await pipWindow.create(config);
-        if (pipController.isPiPSupported()) {
+        if (!pipController.isPiPSupported()) {
           done()
         } else {
           let result = testNapi.testPipSetParentWindowIdwithNonExistedWindowId(10000);
@@ -1174,6 +1174,30 @@ export default function PipWindowNdkTest() {
           expect().assertFail();
           done();
         }
+      }
+    })
+
+    /**
+     * @tc.name   testPictureInPicture_PipState_enum
+     * @tc.number SUB_PictureInPicture_PipState_0100
+     * @tc.desc   testPictureInPicture_PipState_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPictureInPicture_PipState_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testPictureInPicture_PipState_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testPictureInPicture_PipState_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
       }
     })
 

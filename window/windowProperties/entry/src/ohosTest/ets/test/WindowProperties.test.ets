@@ -7637,24 +7637,15 @@ export default function windowPropertiesTest() {
           done();
         } catch (exception) {
           console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-          if(!canIUseRes){
-            expect(exception.code).assertEqual(801)
-          }else {
-            expect(exception.code).assertEqual(1300002);
-          }
+          expect(exception.code).assertEqual(1300002);
         }
         try {
           subWindowClass.off('frameMetricsMeasured', callback)
           done();
         } catch (exception) {
           console.error(`${caseName} Error2. Cause code: ${exception.code}, message: ${exception.message}`);
-          if(!canIUseRes){
-            expect(exception.code).assertEqual(801)
-            done()
-          }else {
-            expect(exception.code).assertEqual(1300002);
-            done();
-          }
+          expect(exception.code).assertEqual(1300002);
+          done();
         }
       })
 
@@ -7747,6 +7738,7 @@ export default function windowPropertiesTest() {
           windowClass = await windowStage.createSubWindow('testOnFrameMetricsMeasuredCallbackwithSubWindow');
           await windowClass.setUIContent('testability/pages/First/index2');
           await windowClass.showWindow();
+          await sleep(1000)
           const callback1 = async (res: window.FrameMetrics) => {
             console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
             expect(res.firstDrawFrame).assertEqual(false);
@@ -7805,6 +7797,7 @@ export default function windowPropertiesTest() {
           windowClass = await window.createWindow(config);
           await windowClass.setUIContent('testability/pages/First/index2');
           await windowClass.showWindow();
+          await sleep(1000)
           const callback1 = async (res: window.FrameMetrics) => {
             console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
             expect(res.firstDrawFrame).assertEqual(false);
@@ -7923,7 +7916,8 @@ export default function windowPropertiesTest() {
           let callbackIndex = 0;
           const callback1 = async (res: window.FrameMetrics) => {
             console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
-            callbackIndex++;
+            callbackIndex = callbackIndex + 1;
+            console.log(`${caseName} callback1 callbackIndex: ${JSON.stringify(callbackIndex)}`);
             expect(res.firstDrawFrame).assertEqual(false);
             expect(res.vsyncTimestamp).assertLarger(0);
             expect(res.inputHandlingDuration).assertLarger(0);
@@ -7931,18 +7925,22 @@ export default function windowPropertiesTest() {
           windowClass.on('frameMetricsMeasured', callback1);
           windowClass.setBackgroundColor("#008000");
           await sleep(3000);
+          console.log(`${caseName}  callbackIndex 1: ${JSON.stringify(callbackIndex)}`);
           expect(callbackIndex).assertLarger(0)
           callbackIndex = 0;
           windowStage.setCustomDensity(4.0);
           await sleep(3000);
+          console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);
           expect(callbackIndex).assertLarger(0)
           callbackIndex = 0;
           windowClass?.off('frameMetricsMeasured');
           windowClass.setBackgroundColor("#FEFEFE");
           await sleep(1000);
+          console.log(`${caseName}  callbackIndex 3: ${JSON.stringify(callbackIndex)}`);
           expect(callbackIndex).assertEqual(0)
           windowStage.setCustomDensity(-1.0);
           await sleep(1000);
+          console.log(`${caseName}  callbackIndex 4: ${JSON.stringify(callbackIndex)}`);
           expect(callbackIndex).assertEqual(0)
           await windowClass?.destroyWindow()
           done();

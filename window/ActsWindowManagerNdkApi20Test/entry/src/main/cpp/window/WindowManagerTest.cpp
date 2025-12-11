@@ -258,7 +258,7 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[131] = {};
+    napi_property_descriptor desc[135] = {};
     InitPushWindow(desc);
     InitPushWindowPip1(desc);
     InitPushWindowPip2(desc);
