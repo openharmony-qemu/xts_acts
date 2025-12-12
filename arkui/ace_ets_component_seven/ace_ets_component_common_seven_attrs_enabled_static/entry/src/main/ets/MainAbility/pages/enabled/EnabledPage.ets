@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -792,17 +791,26 @@ struct EnabledPage {
 	@State _enabledWebModifier: WebModifier = new WebModifier()
 	@State _enabledWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _enabledXComponentModifier: XComponentModifier = new XComponentModifier()
-	@State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-	@State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-	@State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-	@State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-	@State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-	@State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-	@State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? ''
-  	@State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+	@State targetView: string = '';
+	@State componentKey: string = '';
+	@State parentWidth: double = 0;
+	@State parentHeight: double = 0;
+	@State columns: int =  0
+	@State gutter: int =  0
+	@State parentBackGroundColor: string =  ''
+	@State parentComponentKey: string = '';
 
 	onPageShow() {
 		console.info('enabled translate page show called ')
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+		this._enabledCheckboxModifier.mEnabled = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.enabled
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('enabled [registerDataChange] ' + JSON.stringify(value.enabled))
 			this._enabledAlphabetIndexerModifier.mEnabled = value.enabled
@@ -916,7 +924,9 @@ struct EnabledPage {
 			}
 			if (this.targetView == 'Checkbox') {
 				Checkbox()
-					
+					.width(50)
+					.height(50)
+					.key(this.componentKey)
 					.attributeModifier(this._enabledCheckboxModifier)
 			}
 			if (this.targetView == 'CheckboxGroup') {
