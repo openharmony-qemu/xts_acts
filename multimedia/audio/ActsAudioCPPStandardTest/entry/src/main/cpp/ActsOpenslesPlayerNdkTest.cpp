@@ -17,7 +17,7 @@
 #include <SLES/OpenSLES_OpenHarmony.h>
 #include <SLES/OpenSLES_Platform.h>
 #include <string>
-#include "FileUtilsTest.h"
+#include "include/FileUtilsTest.h"
 #include "hilog/log.h"
 
 #undef LOG_DOMAIN
