@@ -3354,5 +3354,242 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_SET_ABILITY_DISABLED_001
+     * @tc.desc   test setAbilityDisabled method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_SET_ABILITY_DISABLED_002
+     * @tc.desc   test setAbilityDisabled method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_SET_ABILITY_DISABLED_003
+     * @tc.desc   test setAbilityDisabled method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_SET_ABILITY_DISABLED_004
+     * @tc.desc   test setAbilityDisabled method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_SET_ABILITY_DISABLED_005
+     * @tc.desc   test setAbilityDisabled method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.setAbilityDisabled(null, applicationInstance, abilityName, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isAbilityDisabled_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_IS_ABILITY_DISABLED_001
+     * @tc.desc   test isAbilityDisabled method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_isAbilityDisabled_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.isAbilityDisabled(SELFWANT, applicationInstance, abilityName);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isAbilityDisabled_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_IS_ABILITY_DISABLED_002
+     * @tc.desc   test isAbilityDisabled method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_isAbilityDisabled_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.isAbilityDisabled(SELFWANT, applicationInstance, abilityName);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isAbilityDisabled_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_IS_ABILITY_DISABLED_003
+     * @tc.desc   test isAbilityDisabled method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_isAbilityDisabled_003", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        let isDisabled = applicationManager.isAbilityDisabled(SELFWANT, applicationInstance, abilityName);
+        expect(isDisabled).assertFalse();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isAbilityDisabled_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_IS_ABILITY_DISABLED_004
+     * @tc.desc   test isAbilityDisabled method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_isAbilityDisabled_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        let isDisabled = applicationManager.isAbilityDisabled(null, applicationInstance, abilityName);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
   })
 }

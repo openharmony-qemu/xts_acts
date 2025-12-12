@@ -725,5 +725,86 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETABILITYDISABLED_001
+     * @tc.desc   test setAbilityDisabled method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETABILITYDISABLED_002
+     * @tc.desc   test setAbilityDisabled method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isAbilityDisabled_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ISABILITYDISABLED_001
+     * @tc.desc   test isAbilityDisabled method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_isAbilityDisabled_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        let applicationInstance: common.ApplicationInstance = {
+          appIdentifier: 'com.example.helloworld',
+          appIndex: 0,
+          accountId: 100
+        };
+        let abilityName: string = "EntryAbility";
+        applicationManager.isAbilityDisabled(SELFWANT, applicationInstance, abilityName);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
   })
 }
