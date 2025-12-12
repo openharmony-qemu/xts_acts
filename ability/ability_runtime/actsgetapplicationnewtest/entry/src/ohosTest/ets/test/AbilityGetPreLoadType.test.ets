@@ -43,7 +43,7 @@ export default function abilityTest() {
       try {
         console.log(TAG, 'SUB_Ability_AbilityRuntime_GetAppPreloadType_0100 start');
         let preloadType = application.getAppPreloadType();
-        expect(preloadType).assertEqual(application.AppPreloadType.UNSPECFIED);
+        expect(preloadType).assertEqual(application.AppPreloadType.UNSPECIFIED);
         done();
       } catch (err) {
         console.log('SUB_Ability_AbilityRuntime_GetAppPreloadType_0100 error: ', JSON.stringify(err));
