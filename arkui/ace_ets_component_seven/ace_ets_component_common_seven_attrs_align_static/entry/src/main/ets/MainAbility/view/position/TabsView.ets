@@ -1,11 +1,10 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,7 +35,7 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 export struct TabsView {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
   @Link _position!: Position;
   private componentKey: string = '';
@@ -59,21 +58,21 @@ export struct TabsView {
 
   build() {
     Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#00CB87')
+      // }.tabBar(this.TabBuilder(0, 'green'))
+      //
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#007DFF')
+      // }.tabBar(this.TabBuilder(1, 'blue'))
+      //
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#FFBF00')
+      // }.tabBar(this.TabBuilder(2, 'yellow'))
+      //
+      // TabContent() {
+      //   Column().width('100%').height('100%').backgroundColor('#E67C92')
+      // }.tabBar(this.TabBuilder(3, 'pink'))
     }
     .vertical(false)
     .barMode(BarMode.Fixed)

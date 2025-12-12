@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +24,9 @@ export default function ListTest() {
   describe('ListTest', () => {
     beforeAll(() => {
       console.info("ListTest beforeEach start");
-
+      await UtilsTest.msSleep(4000)
       await startAbility("com.example.myapplication.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("search_caret beforeEach start");
@@ -56,15 +55,14 @@ export default function ListTest() {
       console.info("afterAll case");
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_Static_0100
-    * @tc.name  : testOnDigitalCrown
-    * @tc.desc  : The OnDigitalCrown method for testing the listitem component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
-    it('ArkUI_Stage_List_OnDigitalCrown_Static_0100',  Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /*
+     * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0100
+     * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0100
+     * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0100
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_List_OnDigitalCrown_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of the ListItem component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0100] START');
       // Verify the functions of onDigitalCrown
@@ -78,15 +76,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_Static_0200
-    * @tc.name  : testOnDigitalCrown.
-    * @tc.desc  : The OnDigitalCrown method for testing the listitem component with undefine scene.
-    * @tc.level : Level 2
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
-    it('ArkUI_Stage_List_OnDigitalCrown_Static_0200',  Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /*
+     * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0200
+     * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0200
+     * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0200
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_List_OnDigitalCrown_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of the ListItem component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0200] START');
       // Verify the functions of onDigitalCrown
@@ -100,15 +97,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_Static_0300
-    * @tc.name  : testOnDigitalCrown
-    * @tc.desc  : The OnDigitalCrown method for testing the button component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
-    it('ArkUI_Stage_List_OnDigitalCrown_Static_0300',  Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /*
+     * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0300
+     * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0300
+     * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_List_OnDigitalCrown_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of the button component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0300] START');
       // Verify the functions of onDigitalCrown
@@ -122,15 +118,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_Static_0400
-    * @tc.name  : testOnDigitalCrown
-    * @tc.desc  : The OnDigitalCrown method for testing the button component with undefine scene.
-    * @tc.level : Level 2
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
-    it('ArkUI_Stage_List_OnDigitalCrown_Static_0400',  Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /*
+     * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0400
+     * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0400
+     * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0400
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_List_OnDigitalCrown_Static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of the button component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0400] START');
       // Verify the functions of onDigitalCrown
@@ -144,15 +139,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_Static_0500
-    * @tc.name  : testOnDigitalCrown
-    * @tc.desc  : The OnDigitalCrown method for testing the text component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
-    it('ArkUI_Stage_List_OnDigitalCrown_Static_0500',  Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /*
+     * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0500
+     * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0500
+     * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0500
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_List_OnDigitalCrown_Static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of the text component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0500] START');
       // Verify the functions of onDigitalCrown
@@ -166,15 +160,14 @@ export default function ListTest() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUI_Stage_List_OnDigitalCrown_Static_0600
-    * @tc.name  : testOnDigitalCrown
-    * @tc.desc  : The OnDigitalCrown method for testing the text component with undefine scene.
-    * @tc.level : Level 2
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
-    it('ArkUI_Stage_List_OnDigitalCrown_Static_0600',  Level.LEVEL1, async (done: () => void): Promise<void> => {
+    
+    /*
+     * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0600
+     * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0600
+     * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0600
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_List_OnDigitalCrown_Static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of the text component
       console.info('[ArkUI_Stage_List_OnDigitalCrown_Static_0600] START');
 

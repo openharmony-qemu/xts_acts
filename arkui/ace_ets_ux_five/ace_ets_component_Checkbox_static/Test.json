@@ -2,10 +2,11 @@
     "description": "Configuration for hjunit demo Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "600000",
-        "shell-timeout": "600000",
+        "test-timeout": "10800000",
         "bundle-name": "com.example.Checkbox.static",
-        "module-name": "entry"
+        "module-name": "entry",
+        "shell-timeout": "10800000",
+        "testcase-timeout": 300000
     },
     "kits": [
         {
