@@ -22,6 +22,7 @@ import APIsetOnFocusTest from './frameNodeTest/APIsetOnFocusTest.test';
 import APIsetOnHoverTest from './frameNodeTest/APIsetOnHoverTest.test';
 import nodeList from './frameNodeTest/nodeList.test';
 import nodeListItemGroup from './frameNodeTest/nodeListItemGroup.test';
+import NodeAdapter001Test from './nodeAdapterTest/NodeAdapter001Test.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -34,4 +35,5 @@ export default function testsuite() {
   APIsetOnHoverTest()
   nodeList()
   nodeListItemGroup()
+  NodeAdapter001Test()
 }
