@@ -11,5 +11,5 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(audio_native_test SHARED NapiInitTest.cpp ActsAudioNdkTest.cpp ActsAudioNdkTest.h)
+add_library(audio_native_test SHARED NapiInitTest.cpp ActsAudioNdkTest.cpp include/ActsAudioNdkTest.h)
 target_link_libraries(audio_native_test PUBLIC libace_napi.z.so libace_ndk.z.so libohaudio.so libhilog_ndk.z.so)
