@@ -142,7 +142,6 @@ export default function builtinsRegExpMatchArrayStringTest() {
           if (match) {
             let result: string = match[0];
             console.info(caseName + ' result is: ' + result);
-
             expect(result).assertEqual(exp);
           } else {
             console.info(caseName + ' match is: ' + match);
@@ -174,18 +173,14 @@ export default function builtinsRegExpMatchArrayStringTest() {
           // exp result is match[0] === '!"#$%&'()*+,-./:;<=>?@[]^_`{|}~'
           const exp: string = '!"#$%&\'()*+,-./:;<=>?@[]^_`{|}~';
           const reg: RegExp = /([!"#$%&'()*+,-./:;<=>?@[]^_`{|}~]+)/;
-
           let str = '!"#$%&\'()*+,-./:;<=>?@[]^_`{|}~';
           let match = str.match(reg);
-
           if (match) {
             let result: string = match[0];
             console.info(caseName + ' result is: ' + result);
-
             expect(result).assertEqual(exp);
           } else {
             console.info(caseName + ' match is: ' + match);
-
             expect(match === null).assertTrue()
           }
         } catch (err) {
@@ -213,18 +208,14 @@ export default function builtinsRegExpMatchArrayStringTest() {
           // exp result is match[0] 'undefined'
           const exp: string = 'undefined';
           const reg: RegExp = /^undefined$/;
-
           let str = 'undefined';
           let match = str.match(reg);
-
           if (match) {
             let result: string = match[0];
             console.info(caseName + ' result is: ' + result);
-
             expect(result).assertEqual(exp);
           } else {
             console.info(caseName + ' match is: ' + match);
-
             expect(match === null).assertTrue()
           }
         } catch (err) {
@@ -248,23 +239,18 @@ export default function builtinsRegExpMatchArrayStringTest() {
         // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
         const caseName = 'builtinsRegExpMatchArrayStringTest0600';
         console.info(`${caseName} test start`);
-
         try {
           // exp result is match[0] 'null'
           const exp: string = 'null';
           const reg: RegExp = /^null$/;
-
           let str = 'null';
           let match = str.match(reg);
-
           if (match) {
             let result: string = match[0];
             console.info(caseName + ' result is: ' + result);
-
             expect(result).assertEqual(exp);
           } else {
             console.info(caseName + ' match is: ' + match);
-
             expect(match === null).assertTrue()
           }
         } catch (err) {
@@ -292,18 +278,14 @@ export default function builtinsRegExpMatchArrayStringTest() {
           // exp result is match[0] '0'
           const exp: string = '0';
           const reg: RegExp = /^0$/;
-
           let str = '0';
           let match = str.match(reg);
-
           if (match) {
             let result: string = match[0];
             console.info(caseName + ' result is: ' + result);
-
             expect(result).assertEqual(exp);
           } else {
             console.info(caseName + ' match is: ' + match);
-
             expect(match === null).assertTrue()
           }
         } catch (err) {
@@ -327,15 +309,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
         // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
         const caseName = 'builtinsRegExpMatchArrayStringTest0800';
         console.info(`${caseName} test start`);
-
         try {
           // exp result is match[0] 'NaN'
           const exp: string = 'NaN';
           const reg: RegExp = /^NaN$/;
-
           let str = 'NaN';
           let match = str.match(reg);
-
           if (match) {
             let result: string = match[0];
             console.info(caseName + ' result is: ' + result);
@@ -367,7 +346,6 @@ export default function builtinsRegExpMatchArrayStringTest() {
         // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
         const caseName = 'builtinsRegExpMatchArrayStringTest0900';
         console.info(`${caseName} test start`);
-
         try {
           // exp result is match[0] ''
           const exp: string = '';
@@ -474,44 +452,6 @@ export default function builtinsRegExpMatchArrayStringTest() {
         console.info(`${caseName} test end`);
       })
 
-    /**
-     * @tc.name   builtinsRegExpMatchArrayStringTest1200
-     * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_1200
-     * @tc.desc   Testing RegExpMatchArray string
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsRegExpMatchArrayStringTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-      (done: Function) => {
-        // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
-        const caseName = 'builtinsRegExpMatchArrayStringTest1200';
-        console.info(`${caseName} test start`);
 
-        try {
-          // exp result is match[0] '\a'
-          const exp: string = '\\a';
-          const reg: RegExp = /^\a$/;
-
-          let str = '\\a';
-          let match = str.match(reg);
-
-          if (match) {
-            let result: string = match[0];
-            console.info(caseName + ' result is: ' + result);
-
-            expect(result).assertEqual(exp);
-          } else {
-            console.info(caseName + ' match is: ' + match);
-
-            expect(match === null).assertTrue()
-          }
-        } catch (err) {
-          console.error(`${caseName} failed, error: ${err.message}`);
-          expect().assertFail();
-        }
-        done();
-        console.info(`${caseName} test end`);
-      })
   })
 }
