@@ -114,6 +114,9 @@ import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCre
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
+import ImageGetComponentSupp from './image/ImageGetComponentSupp.test';
+import ImageCreatorDequeueImageSuppTest from './image/ImageDequeueImage.test';
+import ImageCreatePixelMapFromParcelSupp from './image/ImageCreatePixelMapFromParcel.test';
 import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
 import getImagePropertiesTest from './image/ImageSourceGetImagePropertiesTest.test';
 import getPropertiesTest from './image/MetaDataGetPropertiesTest.test';
@@ -134,7 +137,6 @@ import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.tes
 import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
-
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
 import createUnpremultipliedPixelMapSyncTest from './image/createUnpremultipliedPixelMap.test';
@@ -234,6 +236,9 @@ export default function testsuite() {
   PictureGetMetadataFirstParameters();
   CreatePixelMapUsingAllocatorAndSync();
   ImageCreateIncrementalSourceSupp();
+  ImageGetComponentSupp();
+  ImageCreatorDequeueImageSuppTest();
+  ImageCreatePixelMapFromParcelSupp();
   modifyImagePropertyValueTest();
   sendableCreatePixelMapSyncTest();
   imagePackerPackToFileTest();
