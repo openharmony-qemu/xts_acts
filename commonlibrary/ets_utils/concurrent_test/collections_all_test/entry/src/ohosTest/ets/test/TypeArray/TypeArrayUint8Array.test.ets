@@ -5570,7 +5570,115 @@ export default function typeArrayUint8ArrayTest() {
       expect(dataView.getUint8(1)).assertEqual(25);
     })
 
-    
+    /**
+     * @tc.name   TypeArrayUint8ArrayBufferDv0238
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0238
+     * @tc.desc   Verify SharedArrayBuffer slice with Uint8Array-modified original buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint8ArrayBufferDv0238', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 35, 45]);
+
+      const slicedUint8: Uint8Array = uint8View.slice(2, 4);
+
+      uint8View[2] = 30;
+      uint8View[3] = 40;
+      expect(dataView.getUint8(2)).assertEqual(30);
+      expect(dataView.getUint8(3)).assertEqual(40);
+      expect(slicedUint8[0]).assertEqual(25);
+      expect(slicedUint8[1]).assertEqual(35);
+
+      slicedUint8[1] = 45;
+      expect(dataView.getUint8(3)).assertEqual(40);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ArrayBufferDv0239
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0239
+     * @tc.desc   Verify Uint8Array filter with DataView-modified original buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint8ArrayBufferDv0239', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30, 40, 50]);
+
+      const filteredUint8: Uint8Array = uint8View.filter(val => val > 25);
+
+      dataView.setUint8(2, 20);
+      dataView.setUint8(3, 35);
+      expect(uint8View[2]).assertEqual(20);
+      expect(uint8View[3]).assertEqual(35);
+      expect(filteredUint8[0]).assertEqual(30);
+      expect(filteredUint8[1]).assertEqual(40);
+      const newFilteredUint8: Uint8Array = uint8View.filter(val => val > 25);
+      expect(newFilteredUint8.length).assertEqual(2);
+      expect(newFilteredUint8[0]).assertEqual(35);
+      expect(newFilteredUint8[1]).assertEqual(50);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ArrayBufferDv0240
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0240
+     * @tc.desc   Verify SharedArrayBuffer filter with Uint8Array-modified original buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint8ArrayBufferDv0240', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const sharedBuffer: SharedArrayBuffer = new SharedArrayBuffer(5);
+      const uint8View: Uint8Array = new Uint8Array(sharedBuffer);
+      const dataView: DataView = new DataView(sharedBuffer);
+
+      uint8View.set([5, 15, 25, 35, 45]);
+
+      const filteredUint8: Uint8Array = uint8View.filter(val => val < 25);
+
+      uint8View[0] = 30;
+      uint8View[1] = 20;
+      expect(dataView.getUint8(0)).assertEqual(30);
+      expect(dataView.getUint8(1)).assertEqual(20);
+      expect(filteredUint8[0]).assertEqual(5);
+      expect(filteredUint8[1]).assertEqual(15);
+      const newFilteredUint8: Uint8Array = uint8View.filter(val => val <= 25);
+      expect(newFilteredUint8.length).assertEqual(2);
+      expect(newFilteredUint8[0]).assertEqual(20);
+      expect(newFilteredUint8[1]).assertEqual(25);
+    })
+
+    /**
+     * @tc.name   TypeArrayUint8ArrayBufferDv0241
+     * @tc.number SUB_BUILDINS_TYPEARRAY_UINT8ARRAY_BUFFER_DV_0241
+     * @tc.desc   Verify Uint8Array map with DataView-modified original buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('TypeArrayUint8ArrayBufferDv0241', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const buffer: ArrayBuffer = new ArrayBuffer(3);
+      const uint8View: Uint8Array = new Uint8Array(buffer);
+      const dataView: DataView = new DataView(buffer);
+
+      uint8View.set([10, 20, 30]);
+      const mappedUint8: Uint8Array = uint8View.map(val => val * 2);
+
+
+      dataView.setUint8(1, 25);
+      expect(uint8View[1]).assertEqual(25);
+      expect(mappedUint8[1]).assertEqual(40);
+      const newMappedUint8: Uint8Array = uint8View.map(val => val * 2);
+      expect(newMappedUint8[1]).assertEqual(50);
+    })
 
   })
 }
