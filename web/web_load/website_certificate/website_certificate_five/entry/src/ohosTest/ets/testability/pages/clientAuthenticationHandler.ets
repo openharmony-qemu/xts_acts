@@ -48,6 +48,7 @@ struct clientAuthenticationHandlerTest {
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
         this.isReceive = 1;
+        console.log('valueChangeCallBack==>' + this.str)
       }
     }
   }
@@ -60,38 +61,43 @@ struct clientAuthenticationHandlerTest {
           console.info('key==>' + this.str);
           this.isReceive = -1;
           this.credentialType = -1;
+          this.isError = -1;
           switch (this.str) {
             case 'emitClientAuthenticationHandlerConfirmType001': {
-              this.credentialType = 1;
-              let result = await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
-              console.log(this.str + ' result==>' + result);
-              this.controller.clearClientAuthenticationCache();
-              console.log(this.str + ' clearClientAuthenticationCache==>');
-              Utils.emitEvent(result, 25121101);
+              try {
+                this.credentialType = 1;
+                await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
+                console.log(this.str + ' result==>' + this.isError);
+                Utils.emitEvent(this.isError, 25121101);
+              } catch (error) {
+                console.log(this.str + 'errorInfo==>' + error.toString());
+              }
               break;
             }
             case 'emitClientAuthenticationHandlerConfirmType002': {
-              this.credentialType = 2;
-              let result = await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
-              console.log(this.str + ' result==>' + result);
-              this.controller.clearClientAuthenticationCache();
-              console.log(this.str + ' clearClientAuthenticationCache==>');
-              Utils.emitEvent(result, 25121102);
+              try {
+                this.credentialType = 2;
+                await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
+                console.log(this.str + ' result==>' + this.isError);
+                Utils.emitEvent(this.isError, 25121102);
+              } catch (error) {
+                console.log(this.str + 'errorInfo==>' + error.toString());
+              }
               break;
             }
             case 'emitClientAuthenticationHandlerConfirmType003': {
-              this.credentialType = 3;
-              let result = await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
-              console.log(this.str + ' result==>' + result);
-              this.controller.clearClientAuthenticationCache();
-              console.log(this.str + ' clearClientAuthenticationCache==>');
-              Utils.emitEvent(result, 25121103);
+              try {
+                this.credentialType = 3;
+                await Utils.waitForExist(()=>this.isError, this.str, 1, 1000);
+                console.log(this.str + ' result==>' + this.isError);
+                Utils.emitEvent(this.isError, 25121103);
+              } catch (error) {
+                console.log(this.str + 'errorInfo==>' + error.toString());
+              }
               break;
             }
             case 'emitClientAuthenticationHandlerConfirmType004': {
               this.credentialType = 4;
-              this.controller.clearClientAuthenticationCache();
-              console.log(this.str + ' clearClientAuthenticationCache==>');
               break;
             }
 
@@ -101,6 +107,9 @@ struct clientAuthenticationHandlerTest {
       }
       if (this.credentialType == 1) {
         Web({ src: URL_CLIENT, controller: this.controller })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url==>' + event.url);
+          })
           .onSslErrorEvent((event: SslErrorEvent) => {
             if (event) {
               console.log('onSslErrorEvent url: ' + event.url);
@@ -129,6 +138,9 @@ struct clientAuthenticationHandlerTest {
       }
       if (this.credentialType == 2) {
         Web({ src: URL_CLIENT, controller: this.controller })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url==>' + event.url);
+          })
           .onSslErrorEvent((event: SslErrorEvent) => {
             if (event) {
               console.log('onSslErrorEvent url: ' + event.url);
@@ -158,6 +170,9 @@ struct clientAuthenticationHandlerTest {
       }
       if (this.credentialType == 3) {
         Web({ src: URL_CLIENT, controller: this.controller })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url==>' + event.url);
+          })
           .onSslErrorEvent((event: SslErrorEvent) => {
             if (event) {
               console.log('onSslErrorEvent url: ' + event.url);
@@ -187,6 +202,10 @@ struct clientAuthenticationHandlerTest {
       }
       if (this.credentialType == 4) {
         Web({ src: URL_CLIENT, controller: this.controller })
+          .onPageEnd((event) => {
+            console.log('onPageEnd url==>' + event.url);
+            this.controller.clearClientAuthenticationCache();
+          })
           .onSslErrorEvent((event: SslErrorEvent) => {
             if (event) {
               console.log('onSslErrorEvent url: ' + event.url);
