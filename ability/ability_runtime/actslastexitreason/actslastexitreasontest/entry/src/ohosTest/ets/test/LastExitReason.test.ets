@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,8 +31,17 @@ export default function lastExitReasonTest() {
   let event3 = "Acts_OnCreate_LaunchParam_3_Event";
 
   describe('ActsLastExitReasonTest', () => {
-    beforeAll(() => {
-    });
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
     beforeEach(async () => {
       await abilityDelegator.executeShellCommand("aa force-stop com.acts.lastexitreasonrely1");
       await sleep(1500);

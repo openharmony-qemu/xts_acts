@@ -24,6 +24,7 @@ import { BusinessError, RecordData } from '@ohos.base';
 import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import { Driver, ON } from '@ohos.UiTest';
 interface Flag {
   flag: boolean
 }
@@ -153,6 +154,15 @@ export default function abilitystaticTest() {
     hilog.info(domain, testTag, '%{public}s', 'describe start');
 
     beforeAll(async (): Promise<void> => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, testTag, '%{public}s', 'beforeAll start');
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({

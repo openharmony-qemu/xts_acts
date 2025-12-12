@@ -24,6 +24,7 @@ import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import { Caller } from '@ohos.app.ability.UIAbility';
 import contextConstant from '@ohos.app.ability.contextConstant';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -32,7 +33,16 @@ let context:common.UIAbilityContext;
 export default function UIAbilityContextteststatic() {
   describe("AbilityUIAbilityContextTestStatic", (): void => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();
+      try {
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          if (allowed) {
+            await allowed.click();
+          }
+      } catch (err) {
+          console.error('findComponent failed: ' + JSON.stringify(err));
+      }      
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.actsbaseerrrocodemethodtest.static");

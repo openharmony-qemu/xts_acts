@@ -14,12 +14,13 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, it, expect, Level } from '@ohos/hypium'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import commonEventManager from '@ohos.commonEventManager';
+import { Driver, ON } from '@ohos.UiTest';
 
 const TAG: string = 'ActsAbilityDelegatorTest';
 const TEST_SUITE_NAME: string = 'ActsAbilityDelegatorStageTest';
@@ -48,6 +49,18 @@ function isEmpty(info: string): boolean {
 
 export default function AbilityDelegatorStageTest() {
   describe('ActsAbilityTest', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
     /**
      * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500
      * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500

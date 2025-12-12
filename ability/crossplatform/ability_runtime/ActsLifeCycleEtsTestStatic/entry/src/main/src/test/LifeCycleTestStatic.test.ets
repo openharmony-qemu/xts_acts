@@ -24,6 +24,7 @@ import Want from '@ohos.app.ability.Want';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Driver, ON } from '@ohos.UiTest';
 
 type OnAbilityFn = (ability: UIAbility) => void;
 type OnAbilityAndStageFn = (ability: UIAbility, windowStage: window.WindowStage) => void;
@@ -130,8 +131,17 @@ export default function lifecycleStaticTest() {
   describe("lifecycleStaticTest", () => {
     let applicationContext: common.ApplicationContext;
     let uiAbilityContext: common.UIAbilityContext;
-    beforeAll(() => {
+    beforeAll(async () => {
       hilog.info(domain, tag,'beforeAll start');
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.test.lifecycle_crossplatform_xts.static");
       await Utils.msSleep(2000);
