@@ -1290,8 +1290,948 @@ export default function ArrayConstructor1Test() {
       expect(r).assertDeepEquals([99, 99]);
     });
 
+    /**
+     * @tc.name   ArrayConstructor1Test079
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST7900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [/a/, /b/];
+      const r = arr.map(x => x).reverse();
+      expect(r[0]).assertDeepEquals(/b/);
+      expect(r[1]).assertDeepEquals(/a/);
+    });
 
+    /**
+     * @tc.name   ArrayConstructor1Test080
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8000
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3, 4];
+      const f = arr.filter(x => x % 2 === 0);
+      f[0] = 99;
+      const r = f.copyWithin(1, 0, 1);
+      expect(r).assertDeepEquals([99, 99]);
+    });
 
+    /**
+     * @tc.name   ArrayConstructor1Test081
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8100
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = ["ab"];
+      const r = arr.flatMap(x => x.split('')).sort();
+      expect(r).assertDeepEquals(['a', 'b']);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test082
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8200
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test082()).assertDeepEquals([10, 888, 888]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test083
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8300
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.filter(x => x > 10).reverse();
+      expect(r).assertDeepEquals([]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test084
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8400
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[1, 2, 3]];
+      const r = arr.flatMap(x => x).copyWithin(1.9, 0, 1);
+      expect(r).assertDeepEquals([1, 1, 3]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test086
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8600
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3, 4];
+      const r = arr.filter(x => true).fill(0, 1, -1);
+      expect(r).assertDeepEquals([1, 0, 0, 4]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test088
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8800
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3, 4];
+      const r = arr.map(x => x).copyWithin(2, 0, 1).copyWithin(3, 2, 3);
+      expect(r).assertDeepEquals([1, 2, 1, 1]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test089
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST8900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = new collections.Int32Array([NaN, Infinity, -Infinity, 0, -0]);
+      const r = collections.Int32Array.from(arr.filter(x => true).sort((a, b) => {
+        if (Number.isNaN(a) && Number.isNaN(b)) return 0;
+        if (Number.isNaN(a)) return 1;
+        if (Number.isNaN(b)) return -1;
+        return a - b;
+      }));
+      expect(r).assertDeepEquals(collections.Int32Array.from([-Infinity,0,0,Infinity,NaN]));
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test090
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9000
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[1], [2], [3]];
+      const flat = arr.flatMap(x => x);
+      const r = flat.fill(flat.length);
+      expect(r).assertDeepEquals([3, 3, 3]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test091
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9100
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2];
+      const mapped = arr.map(async x => x * 2);
+      const r = mapped.sort();
+      expect(r.length).assertEqual(2);
+      expect(r[0] instanceof Promise).assertTrue();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test093
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9300
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test093()).assertDeepEquals([true, [99, 99]]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test094
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9400
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let caught = false;
+      try {
+        new collections.Int32Array(-1);
+      } catch {
+        caught = true;
+      }
+      expect(caught).assertTrue();
+      try {
+        new collections.Array(-1);
+      } catch {
+        caught = true;
+      }
+      expect(caught).assertTrue();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test095
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9500
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const ta =new collections.Float32Array([3.1, 2.2]);
+      const arr = [1.0];
+      const combined = arr.concat(Array.from(ta));
+      const r = combined.filter(x => true).sort((a, b) => a - b);
+      expect(r).assertDeepEquals([1,2.200000047683716,3.0999999046325684]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test096
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9600
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test096()).assertDeepEquals([2,1]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test097
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9700
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test097()).assertDeepEquals([true, true, true]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test099
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[Number.MAX_VALUE], [Number.MIN_VALUE]];
+      const flat = arr.flatMap(x => x);
+      const r = flat.copyWithin(1, 0, 1);
+      expect(r[0]).assertEqual(Number.MAX_VALUE);
+      expect(r[1]).assertEqual(Number.MAX_VALUE);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test100
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10000
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2];
+      arr.map(x => x * 2).reverse();
+      expect(arr).assertDeepEquals([1, 2]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test101
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10100
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [0, -0, NaN, 1];
+      const r = arr.filter(x => true).sort();
+      expect(r.includes(NaN)).assertTrue();
+      expect(r.indexOf(NaN)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test103
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10300
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2];
+      const r = arr.map(x => x).copyWithin(0, Math.pow(2, 32));
+      expect(r).assertDeepEquals([1, 2]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test104
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10400
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3, 4];
+      let i = 0;
+      const r = arr.filter(x => {
+        if (i++ === 1) arr.length = 2;
+        return x > 0;
+      }).reverse();
+      expect(r).assertDeepEquals([2, 1]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test105
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10500
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const f1 = () => {};
+      const f2 = () => {};
+      const arr = [[f1], [f2]];
+      const r = arr.flatMap(x => x).sort();
+      expect(r.length).assertEqual(2);
+      expect(typeof r[0]).assertEqual('function');
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test106
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10600
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test106()).assertDeepEquals([42, 42]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test107
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10700
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3, 4];
+      const r = arr.filter(x => true).copyWithin(1, 2);
+      expect(r).assertDeepEquals([1, 3, 4, 4]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test108
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10800
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test108()).assertDeepEquals([20, 10]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test109
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST10900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = ["1e2", "2e1", "30"];
+      const r = arr.map(x => x).sort();
+      expect(r).assertDeepEquals(["1e2", "2e1", "30"]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test110
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11000
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1];
+      const r = arr.filter(x => true).fill(9, 0, 5);
+      expect(r).assertDeepEquals([9]);
+      expect(r.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test111
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11100
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[[1, 2]], [[3, 4]]];
+      const flat = arr.flatMap(x => x);
+      const r = flat.flatMap(inner => inner).copyWithin(2, 0, 2);
+      expect(r).assertDeepEquals([1, 2, 1, 2]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test112
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11200
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let caught = false;
+      try {
+        [1, 2n].map(x => x).reverse();
+      } catch {
+        caught = true;
+      }
+      expect(caught).assertFalse();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test113
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11300
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.filter(x => true).sort(() => 1);
+      expect(r.length).assertEqual(3);
+      expect(r[0] !== 1 || r[1] !== 2 || r[2] !== 3).assertFalse();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test114
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11400
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test114()).assertDeepEquals([true, true]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test115
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11500
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test115()).assertDeepEquals([20, 20]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test116
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11600
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buf = new collections.ArrayBuffer(8);
+      const ta1 = new collections.Int32Array(buf, 0, 2);
+      ta1.set([100, 200]);
+      const ta2 = new collections.Int32Array(buf, 4, 1);
+      const filtered = collections.Int32Array.from(ta1).filter(x => x > 150);
+      const r = filtered.reverse();
+      expect(r).assertDeepEquals(collections.Int32Array.from([200]));
+      expect(ta1[1]).assertEqual(200);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test117
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11700
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.flatMap(x => []).sort();
+      expect(r).assertDeepEquals([]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test118
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11800
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test118()).assertDeepEquals([true, true]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test119
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST11900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.filter(x => true).copyWithin(0, 1, undefined);
+      expect(r).assertDeepEquals([2, 3, 3]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test120
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12000
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = ["ab"];
+      const r = arr.flatMap(x => x + "0").reverse();
+      expect(r).assertDeepEquals(["ab0"]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test121
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12100
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test121()).assertDeepEquals([[1, 2, 3],[3, 1, 2]]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test122
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12200
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = ["😀", "🌍", "🚀"];
+      const r = arr.filter(x => x.length === 2).reverse();
+      expect(r).assertDeepEquals(["🚀", "🌍", "😀"]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test123
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12300
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let count = 0;
+      let caught = false;
+      try {
+        [1, 2, 3].flatMap(x => {
+          count++;
+          if (x === 2) throw new Error("boom");
+          return [x];
+        });
+      } catch {
+        caught = true;
+      }
+      expect(caught).assertTrue();
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test124
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12400
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr: number[] = [];
+      const r = arr.map(x => x).copyWithin(0, 0);
+      expect(r).assertDeepEquals([]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test126
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12600
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test126()).assertDeepEquals([ { "0": 10, "length": -5 } ]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test127
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12700
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [100];
+      const r = arr.map(x => x).fill(88);
+      expect(r).assertDeepEquals([88]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test128
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12800
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.filter(x => true).copyWithin(0, 10);
+      expect(r).assertDeepEquals([1, 2, 3]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test129
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST12900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test129()).assertDeepEquals([{ "val": 1 }, { "val": 1 }]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test131
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13100
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const taInt = new collections.Int32Array([NaN]);
+      const taFloat = new collections.Float32Array([NaN]);
+      const r1 = collections.Int32Array.from(taInt.filter(x => true)).fill(1);
+      const r2 = collections.Float32Array.from(taFloat.filter(x => true)).fill(1);
+      expect(r1).assertDeepEquals(collections.Int32Array.from([1]));
+      expect(Number.isNaN(r2[0])).assertFalse();
+      expect(taInt[0]).assertEqual(0);
+      expect(Number.isNaN(taFloat[0])).assertTrue();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test132
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13200
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[1]];
+      const flat = arr.flatMap(x => x);
+      const r = flat.copyWithin(1, 0, 1);
+      expect(r).assertDeepEquals([1]);
+      expect(r.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test133
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13300
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [Infinity, -Infinity, 0];
+      const r = arr.map(x => x).sort((a, b) => a - b);
+      expect(r).assertDeepEquals([-Infinity, 0, Infinity]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test134
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13400
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.filter(() => {}).reverse();
+      expect(r).assertDeepEquals([]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test135
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13500
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test135()).assertDeepEquals([true, true]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test136
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13600
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.map(x => x).fill(0).copyWithin(2, 0, 1);
+      expect(r).assertDeepEquals([0, 0, 0]);
+
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test137
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13700
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [null, undefined, 1];
+      const r = arr.filter(x => true).sort();
+      expect(r).assertDeepEquals([1, null, undefined]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test138
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13800
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test138()).assertDeepEquals([6, 5]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test139
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST13900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(Array1.ArrayConstructor1Test139()).assertFalse();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test141
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14100
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[42]];
+      const r = arr.flatMap(x => x).sort();
+      expect(r).assertDeepEquals([42]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test142
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14200
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const d1 = new Date('2020-01-01');
+      const d2 = new Date('2021-01-01');
+      const r: Date[] = [d2, d1];
+      expect(r[0].toISOString()).assertEqual("2021-01-01T00:00:00.000Z");
+      expect(r[1].toISOString()).assertEqual("2020-01-01T00:00:00.000Z");
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test143
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14300
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2];
+      const r = arr.filter(x => true).fill(99, Infinity);
+      expect(r).assertDeepEquals([1, 2]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test144
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14400
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2];
+      const flat = arr.flatMap(x => []);
+      const r = flat.copyWithin(0, 0);
+      expect(r).assertDeepEquals([]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test145
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14500
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = ["ä", "z", "a"];
+      let r: string[];
+      try {
+        const collator = new Intl.Collator('de', { sensitivity: 'base' });
+        r = arr.map(x => x).sort(collator.compare);
+      } catch {
+        r = arr.map(x => x).sort();
+      }
+      expect(r.length).assertEqual(3);
+      expect(r.includes("ä")).assertTrue();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test146
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14600
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, 2, 3];
+      const r = arr.filter(x => x === 2).reverse();
+      expect(r).assertDeepEquals([2]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test147
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14700
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[1], [2]];
+      const r = arr.flatMap(x => x).fill(Math.PI);
+      expect(Math.abs(r[0] - Math.PI) < 1e-10).assertTrue();
+      expect(Math.abs(r[1] - Math.PI) < 1e-10).assertTrue();
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test148
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14800
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [10, 20];
+      const r = arr.map(x => x).copyWithin(-Infinity, 1);
+      expect(r).assertDeepEquals([20, 20]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test149
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST14900
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [true, false, true];
+      const r = arr.filter(x => true).sort((a, b) => Number(a) - Number(b));
+      expect(r).assertDeepEquals([false, true, true]);
+    });
+
+    /**
+     * @tc.name   ArrayConstructor1Test150
+     * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST15000
+     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ArrayConstructor1Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[1, 2]];
+      const originalRef = [1, 2];
+      const r = arr.flatMap(x => x).reverse();
+      expect(r).assertDeepEquals([2, 1]);
+      expect(arr[0]).assertDeepEquals(originalRef);
+      expect(arr).assertDeepEquals([[1, 2]]);
+    });
 
   })
 }
