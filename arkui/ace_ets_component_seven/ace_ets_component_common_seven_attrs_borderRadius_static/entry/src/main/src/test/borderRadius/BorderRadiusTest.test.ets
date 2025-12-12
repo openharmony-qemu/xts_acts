@@ -1,6 +1,5 @@
-'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,19 +64,19 @@ export default function BorderRadiusTest() {
    */
   describe('borderRadiusTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.info('[' + data.caseTag + '] borderRadiusTest.');
       console.info('[' + data.caseTag + '] borderRadiusTest. data.testValue.setValue.borderRadius : ' + data.testValue.setValue.borderRadius);
-      console.info('[' + data.viewObj!.getElement('$attrs').getElement('borderRadius') + '] borderRadiusTest. viewObj.$attrs.borderRadius.');
+      console.info('[' + data.viewObj!.getElement('$attrs').getString('borderRadius') + '] borderRadiusTest. viewObj.$attrs.borderRadius.');
       console.info('[' + data.testValue.expectValue.borderRadius + '] borderRadiusTest. data.testValue.expectValue.borderRadius.');
-      expect(data.viewObj!.getElement('$attrs').getElement('borderRadius').getString('topLeft')).assertEqual(data.testValue.expectValue.borderRadius);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderRadius').getString('topRight')).assertEqual(data.testValue.expectValue.borderRadius);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderRadius').getString('bottomLeft')).assertEqual(data.testValue.expectValue.borderRadius);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderRadius').getString('bottomRight')).assertEqual(data.testValue.expectValue.borderRadius);
+      expect(data.viewObj!.getElement('$attrs').getString('borderRadius')).assertEqual(data.testValue.expectValue.borderRadius);
+      expect(data.viewObj!.getElement('$attrs').getString('borderRadius')).assertEqual(data.testValue.expectValue.borderRadius);
+      expect(data.viewObj!.getElement('$attrs').getString('borderRadius')).assertEqual(data.testValue.expectValue.borderRadius);
+      expect(data.viewObj!.getElement('$attrs').getString('borderRadius')).assertEqual(data.testValue.expectValue.borderRadius);
     });
   })
 }

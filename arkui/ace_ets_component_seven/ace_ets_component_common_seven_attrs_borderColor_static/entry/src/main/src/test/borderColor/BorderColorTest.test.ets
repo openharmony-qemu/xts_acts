@@ -1,6 +1,5 @@
-'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -64,19 +63,19 @@ export default function borderColorTest() {
    */
   describe('borderColorTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.info('[' + data.caseTag + '] borderColorTest.');
       console.info('[' + data.caseTag + '] borderColorTest. data.testValue.setValue.borderColor : ' + data.testValue.setValue.borderColor);
-      console.info('[' + data.viewObj!.getElement('$attrs').getElement('borderColor') + '] borderColorTest. viewObj.$attrs.borderColor.');
+      console.info('[' + data.viewObj!.getElement('$attrs').getString('borderColor') + '] borderColorTest. viewObj.$attrs.borderColor.');
       console.info('[' + data.testValue.expectValue.borderColor + '] borderColorTest. data.testValue.expectValue.borderColor.');
-      expect(data.viewObj!.getElement('$attrs').getElement('borderColor').getString('left')).assertEqual(data.testValue.expectValue.borderColor);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderColor').getString('right')).assertEqual(data.testValue.expectValue.borderColor);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderColor').getString('top')).assertEqual(data.testValue.expectValue.borderColor);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderColor').getString('bottom')).assertEqual(data.testValue.expectValue.borderColor);
+      expect(data.viewObj!.getElement('$attrs').getString('borderColor')).assertEqual(data.testValue.expectValue.borderColor);
+      expect(data.viewObj!.getElement('$attrs').getString('borderColor')).assertEqual(data.testValue.expectValue.borderColor);
+      expect(data.viewObj!.getElement('$attrs').getString('borderColor')).assertEqual(data.testValue.expectValue.borderColor);
+      expect(data.viewObj!.getElement('$attrs').getString('borderColor')).assertEqual(data.testValue.expectValue.borderColor);
     });
   })
 }
