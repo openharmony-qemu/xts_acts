@@ -314,6 +314,45 @@ export default function startNativeChildProcessWithConfigsTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KillChildProcess_0100
+     * @tc.number SUB_Ability_AbilityRuntime_KillChildProcess_0100
+     * @tc.desc   Call KillChildProcess to kill a child process, give a valid pid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_KillChildProcess_0100', Level.LEVEL0, async (done: Function) => {
+      let tag = `KillChildProcess_0100`;
+      console.log(`${tag} it begin`);
+      let path = "/data/storage/el2/base/haps/entry/files/test0.txt";
+      let pid = -1;
+      try {
+        pid = testNapi.StartNativeChildProcessWithConfigs("libentry.so:MainLoop");
+        console.log(`${tag} StartNativeChildProcess success, pid: ${pid}`);
+        if(pid == 801 || pid == 16010004){
+          done();
+          return;
+        }else{
+          expect(pid > 0).assertTrue();
+        }
+      } catch (err) {
+        console.error(`${tag} StartNativeChildProcess error, errorCode: ${err.code}`);
+        expect().assertFail();
+        done();
+      }
+
+      try {
+        let ret: Number = testNapi.KillChildProcessWithPid(pid);
+        console.log(`${tag} KillChildProcessWithValidPid , ret: ${ret}`);
+        expect(0).assertEqual(ret);
+        done();
+      } catch (err) {
+        console.error(`${tag} KillChildProcessWithValidPid error, errorCode: ${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }
 
