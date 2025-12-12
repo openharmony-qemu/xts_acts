@@ -137,6 +137,8 @@ import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliar
 
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
+import createUnpremultipliedPixelMapSyncTest from './image/createUnpremultipliedPixelMap.test';
+
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -258,4 +260,5 @@ export default function testsuite() {
   sendableWritePixelsTest();
   UpdateDataTest();
   SendableImageTest();
+  createUnpremultipliedPixelMapSyncTest();
 }
