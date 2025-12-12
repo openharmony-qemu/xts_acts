@@ -1618,48 +1618,60 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
       let windowStageStart = await startAbility3(caseName, context);
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
+      let display999:display.Display;
       try {
         let mainWindow = windowStageStart.getMainWindowSync();
         let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
         console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
-        if (isInFreeWindowMode) {
+        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          await sleep(1000);
+          let CurrentFoldCreaseRegion: display.FoldCreaseRegion = display.getCurrentFoldCreaseRegion();
+          console.info(caseName + `Succeeded in obtaining current fold crease region. Data: ${JSON.stringify(CurrentFoldCreaseRegion)}`);
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
           console.log(caseName + ' windowRect1: ' + JSON.stringify(windowRect1));
-          let displayRes1 = display.getDefaultDisplaySync();
-          console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
-          let displayRectArr = await display.getAllDisplayPhysicalResolution();
-          console.log(caseName + ' displayRectArr: ' + JSON.stringify(displayRectArr));
-          for (let i = 0; i < displayRectArr.length; i++) {
-            if (displayRectArr[i].foldDisplayMode = display.FoldDisplayMode.FOLD_DISPLAY_MODE_UNKNOWN) {
-              if (isPCStatus != ''&& display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+          display999 = display.getDisplayByIdSync(999);
+          let displays = await display.getAllDisplays();
+          console.log(caseName + ' displays: ' + JSON.stringify(displays))
+          for(let i = 0; i < displays.length; i++){
+            console.log(caseName + ' displays.id: ' + JSON.stringify(displays[i].id))
+            if(displays[i].id ==0){
+              let displayRes1 = displays[i];
+              console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
+              let displayRectArr = await display.getAllDisplayPhysicalResolution();
+              console.log(caseName + ' displayRectArr: ' + JSON.stringify(displayRectArr));
+              for (let i = 0; i < displayRectArr.length; i++) {
+                console.log(caseName + ' displayRectArr i: ' + JSON.stringify(displayRectArr[i]));
                 expect(windowRect1.width).assertEqual(displayRectArr[i].physicalWidth)
-                expect(windowRect1.height * 2).assertEqual(displayRectArr[i].physicalHeight)
+                let height = displayRectArr[i].physicalHeight-display999.height-CurrentFoldCreaseRegion.creaseRects[0].height;
+                console.log(caseName + ' height: ' + JSON.stringify(height));
+                expect(windowRect1.height).assertEqual(height)
                 break;
               }
+              expect(windowRect1.width).assertEqual(displayRes1.width)
+              expect(windowRect1.height).assertEqual(displayRes1.height)
+
+              await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
+              let windowRect2 = mainWindow.getWindowProperties().windowRect;
+              console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
+              let displayRes2 = display.getDefaultDisplaySync();
+              console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
+              expect(windowRect2.width).assertEqual(displayRes2.width)
+              expect(windowRect2.height).assertEqual(displayRes2.height)
+
+              await terminateAbility3(caseName);
+              done();
             }
           }
-          expect(windowRect1.width).assertEqual(displayRes1.width)
-          expect(windowRect1.height).assertEqual(displayRes1.height)
 
-          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
-          let windowRect2 = mainWindow.getWindowProperties().windowRect;
-          console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
-          let displayRes2 = display.getDefaultDisplaySync();
-          console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
-          expect(windowRect2.width).assertEqual(displayRes2.width)
-          expect(windowRect2.height).assertEqual(displayRes2.height)
-
-          await terminateAbility3(caseName);
-          done();
         } else {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
-          console.log(caseName + ' maximize success ');
+          console.log(caseName + ' maximize success  ');
           await terminateAbility3(caseName);
           done();
         }
       } catch (err) {
-        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err))
         await terminateAbility3(caseName);
         if (!isSupport) {
           expect(err.code).assertEqual(801);
