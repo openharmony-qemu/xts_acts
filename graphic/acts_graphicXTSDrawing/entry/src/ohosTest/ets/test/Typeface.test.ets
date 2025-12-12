@@ -705,15 +705,15 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.name   testTypeFaceIsBoldMultipleCalls
+     * @tc.name   testTypeFaceIsItalicMultipleCalls
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0801
-     * @tc.desc   Test for testTypeFaceIsBoldMultipleCalls.
+     * @tc.desc   Test for testTypeFaceIsItalicMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTypeFaceIsBoldMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testTypeFaceIsBoldMultipleCalls';
+    it('testTypeFaceIsItalicMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceIsItalicMultipleCalls';
       const font = new drawing.Font();
       let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
       let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
