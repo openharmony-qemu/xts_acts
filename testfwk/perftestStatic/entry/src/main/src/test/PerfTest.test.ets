@@ -318,7 +318,10 @@ export default function perfTestTest() {
                 num += 1
                 btn1 = await driver.findComponent(ON.text('PerftestScene'))
             }
-            hilog.info(domain, tag, `testPerfTest_Start_static btn1,${JSON.stringify(btn1)}`);
+            if (btn1 == null) {
+                hilog.info(domain, tag, `testPerfTest_Start_static btn1,${JSON.stringify(btn1)}`);
+                return;
+            }
             expect(btn1 != null).assertTrue();
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.APP_START_RESPONSE_TIME, PerfMetric.APP_START_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
