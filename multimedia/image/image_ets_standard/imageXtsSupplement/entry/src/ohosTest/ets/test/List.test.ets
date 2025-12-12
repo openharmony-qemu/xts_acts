@@ -79,6 +79,12 @@ import ImageSourceCreatePictureJpg from './image/ImageSourceCreatePictureJpg.tes
 import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.test';
 import createImageSourceTest from './image/ImageCreateImageSource.test';
 import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
+import sendableCreatePixelMapSyncTest from './sendableImage/SendAbleCreatePixelMapSync.test';
+import imagePackerPackToFileTest from './image/ImagePackToFile.test';
+import imagePackerPackToFileFromPixelmapSequenceTest from './image/ImagePackToFileFromPixelmapSequence.test';
+import PictureSetMetadataTest from './Picture/PictureSetMetadata.test';
+import sendableCreatePixelMapSyncAbnormalTest from './sendableImage/SendAbleCreatePixelMapSyncAbnormal.test';
+
 import imagePackerPackToDataFromPixelmapSequenceTest from './image/ImagePackerPackToDataFromPixelmapSequenceTest.test';
 import imagePackerPackToDataTest from './image/ImagePackerPackToDataTest.test';
 import PictureMarshallingTest from './image/ImagePictureMarshallingTest.test';
@@ -109,9 +115,28 @@ import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirPa
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
+import getImagePropertiesTest from './image/ImageSourceGetImagePropertiesTest.test';
+import getPropertiesTest from './image/MetaDataGetPropertiesTest.test';
+import setPropertiesTest from './image/MetaDataSetPropertiesTest.test';
+import PixelMapMarshallingTest from './sendableImage/SendableImagePixelMapMarshallingTest.test';
+import sendableReadPixelsSyncTest from './sendableImage/SendableImagePixelMapReadPixelsSyncTest.test';
+import sendableReadPixelsTest from './sendableImage/SendableImagePixelMapReadPixelsTest.test';
+import sendableReadPixelsToBufferSyncTest from './sendableImage/SendableImagePixelMapReadPixelsToBufferSyncTest.test';
+import sendablePixelMapReadPixelsToBufferTest from './sendableImage/SendableImagePixelMapReadPixelsToBufferTest.test';
+import sendablePixelMapWriteBufferToPixelsSyncTest
+  from './sendableImage/SendableImagePixelMapWriteBufferToPixelsSyncTest.test';
+import sendablePixelMapWriteBufferToPixelsTest from './sendableImage/SendableImagePixelMapWriteBufferToPixelsTest.test';
+import sendableWritePixelsSyncTest from './sendableImage/SendableImagePixelMapWritePixelsSyncTest.test';
+import sendableWritePixelsTest from './sendableImage/SendableImagePixelMapWritePixelsTest.test';
+import SendableImagecreateImageSourceTest from './sendableImage/SendableImageCreateImageSource.test';
+import ImageCreatePixelMapPicture from './image/ImageCreatePixelMapPicture.test';
+import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.test';
+import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 
+import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
+import SendableImageTest from './image/SendableImageTest.test';
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -208,6 +233,29 @@ export default function testsuite() {
   CreatePixelMapUsingAllocatorAndSync();
   ImageCreateIncrementalSourceSupp();
   modifyImagePropertyValueTest();
+  sendableCreatePixelMapSyncTest();
+  imagePackerPackToFileTest();
+  imagePackerPackToFileFromPixelmapSequenceTest();
+  PictureSetMetadataTest();
+  sendableCreatePixelMapSyncAbnormalTest();
+  SendableImagecreateImageSourceTest();
+  ImageCreatePixelMapPicture();
+  imagePackerPackingPictureTest();
+  ImagePackerPackingToFilePictureTest();
   ImagePictureSetAuxiliaryPictureTest();
   ImagePixelMapCropTest();
+  getImagePropertiesTest();
+  getPropertiesTest();
+  setPropertiesTest();
+  PixelMapMarshallingTest();
+  sendableReadPixelsSyncTest();
+  sendableReadPixelsTest();
+  sendableReadPixelsToBufferSyncTest();
+  sendablePixelMapReadPixelsToBufferTest();
+  sendablePixelMapWriteBufferToPixelsSyncTest();
+  sendablePixelMapWriteBufferToPixelsTest();
+  sendableWritePixelsSyncTest();
+  sendableWritePixelsTest();
+  UpdateDataTest();
+  SendableImageTest();
 }
