@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -792,17 +791,26 @@ struct HoverEffectPage {
 	@State _hoverEffectWebModifier: WebModifier = new WebModifier()
 	@State _hoverEffectWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _hoverEffectXComponentModifier: XComponentModifier = new XComponentModifier()
-	@State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-	@State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-	@State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-	@State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-	@State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-	@State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-	@State parentBackGroundColor: Color = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? Color.White;
-	@State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+	@State targetView: string = '';
+	@State componentKey: string = '';
+	@State parentWidth: double = 0;
+	@State parentHeight: double = 0;
+	@State columns: int =  0
+	@State gutter: int =  0
+	@State parentBackGroundColor: Color =  Color.White;
+	@State parentComponentKey: string = '';
 
 	onPageShow() {
 		console.info('hoverEffect translate page show called ')
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor;
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+		this._hoverEffectButtonModifier.mHoverEffect = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.hoverEffect
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('hoverEffect [registerDataChange] ' + JSON.stringify(value.hoverEffect))
 			this._hoverEffectAlphabetIndexerModifier.mHoverEffect = value.hoverEffect
@@ -905,7 +913,7 @@ struct HoverEffectPage {
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					
+					.key(this.componentKey)
 					.attributeModifier(this._hoverEffectButtonModifier)
 			}
 			if (this.targetView == 'Blank') {
