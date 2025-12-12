@@ -1070,7 +1070,7 @@ export default function api16CertFuncTestTwoUnit() {
         console.info(`SUB_Security_CertManager_Ukey_0400 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
-        if (err.code == 801) {
+        if (error.code == 801) {
           done();
         } else {
           console.error(`SUB_Security_CertManager_Ukey_0400 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
