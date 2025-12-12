@@ -358,7 +358,7 @@ describe('relationalStoreDistributedTest', (): void => {
         try {
             predicates = predicates.inAllDevices();
             console.info(TAG + "inAllDevices success");
-            expect(predicates).assertEqual(predicates);
+	    expect(predicates !== null).assertTrue();
         } catch (err: BusinessError) {
             console.info(TAG + "inAllDevices failed");
             expect(null).assertFail();

@@ -141,15 +141,15 @@ export default function relationalStoreCloudSyncEts() {
     })
 
     /**
-     * @tc.name   testGetColumnIndex0003
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0300
+     * @tc.name   SUB_DistributedData_RelationalStore_testGetColumnIndex0003
+     * @tc.number SUB_DistributedData_RelationalStore_testGetColumnIndex0003
      * @tc.desc   getColumnIndex errcode test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testGetColumnIndex0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0003 start *************');
+    it('SUB_DistributedData_RelationalStore_testGetColumnIndex0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testGetColumnIndex0003 start *************');
       let resultSet =await rdbStore.querySql("SELECT * FROM test")
       try {
         resultSet.getColumnIndex("dataX")
@@ -159,7 +159,7 @@ export default function relationalStoreCloudSyncEts() {
         expect(true).assertEqual(e.code==14800000)
       }
       done();
-      hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0003 end *************');
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testGetColumnIndex0003 end *************');
     })
     /**
      * @tc.name   testGetColumnIndex0004
@@ -184,21 +184,21 @@ export default function relationalStoreCloudSyncEts() {
     })
 
     /**
-     * @tc.name   testGetString0001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_0600
+     * @tc.name   SUB_DistributedData_RelationalStore_testGetString0001
+     * @tc.number SUB_DistributedData_RelationalStore_testGetString0001
      * @tc.desc   getString normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testGetString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* testGetString0001 start *************');
+    it('SUB_DistributedData_RelationalStore_testGetString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testGetString0001 start *************');
       let resultSet = await  rdbStore.querySql("SELECT * FROM test")
       expect(true).assertEqual(resultSet.goToFirstRow())
       const data1 = resultSet.getString(resultSet.getColumnIndex("data1"))
       expect("hello").assertEqual(data1)
       done();
-      hilog.info(domain, tag, '%{public}s', '************* testGetString0001 end *************');
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testGetString0001 end *************');
     })
     /**
      * @tc.name   testGetString0002
@@ -242,15 +242,15 @@ export default function relationalStoreCloudSyncEts() {
       hilog.info(domain, tag, '%{public}s', '************* errcode006 end *************');
     })
     /**
-     * @tc.name   errcode008
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1700
+     * @tc.name   SUB_DistributedData_RelationalStore_testgetRdbStore0008
+     * @tc.number SUB_DistributedData_RelationalStore_testgetRdbStore0008
      * @tc.desc   getRdbStore promise 14800017 test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('errcode008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* errcode008 start *************');
+    it('SUB_DistributedData_RelationalStore_testgetRdbStore0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testgetRdbStore0008 start *************');
       const STORE_CONFIGS1 :data_relationalStore.StoreConfig = {
         name: "rdbstore17.db",
         securityLevel: data_relationalStore.SecurityLevel.S1
@@ -268,7 +268,7 @@ export default function relationalStoreCloudSyncEts() {
         expect(true).assertEqual(err.code == 14800017)
       }
       done();
-      hilog.info(domain, tag, '%{public}s', '************* errcode008 end *************');
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testgetRdbStore0008 end *************');
     })
 
     /**
@@ -294,15 +294,15 @@ export default function relationalStoreCloudSyncEts() {
       hilog.info(domain, tag, '%{public}s', '************* errcode020 end *************');
     })
     /**
-     * @tc.name   errcode022
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2100
+     * @tc.name   SUB_DistributedData_RelationalStore_testexecuteerrcode022
+     * @tc.number SUB_DistributedData_RelationalStore_testexecuteerrcode022
      * @tc.desc   executeSql promise 14800021 test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('errcode022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* errcode022 start *************');
+    it('SUB_DistributedData_RelationalStore_testexecuteerrcode022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testexecuteerrcode022 start *************');
       try {
         await rdbStore2.execute("select * FROM employee", undefined);
         expect().assertFail();
@@ -312,7 +312,7 @@ export default function relationalStoreCloudSyncEts() {
         expect(err.code == 14800021).assertTrue();
         done();
       }
-      hilog.info(domain, tag, '%{public}s', '************* errcode022 end *************');
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testexecuteerrcode022 end *************');
     })
     /**
      * @tc.name   errcode028
@@ -338,15 +338,15 @@ export default function relationalStoreCloudSyncEts() {
       hilog.info(domain, tag, '%{public}s', '************* errcode028 end *************');
     })
     /**
-     * @tc.name   errcode031
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2300
+     * @tc.name   SUB_DistributedData_RelationalStore_testexecuteSql0031
+     * @tc.number SUB_DistributedData_RelationalStore_testexecuteSql0031
      * @tc.desc   executeSql promise 14800033 test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('errcode031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* errcode031 start *************');
+    it('SUB_DistributedData_RelationalStore_testexecuteSql0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testexecuteSql0031 start *************');
       await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
       try {
         await rdbStore2.execute("INSERT INTO testerrcode(id, data1, data2, data3,data4) VALUES (?,?,?,?,?)",  ['abc','hello',80 as long, 111188.1, new Uint8Array(0)])
@@ -358,7 +358,7 @@ export default function relationalStoreCloudSyncEts() {
       }
       await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
       done();
-      hilog.info(domain, tag, '%{public}s', '************* errcode031 end *************');
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testexecuteSql0031 end *************');
     })
 
     /**

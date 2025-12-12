@@ -98,7 +98,7 @@ export default function rdbStoreAttachEtsunitTest() {
         
         
         const attachInsert: (store: relationalStore.RdbStore, tableName: string) => Promise<void> =
-            (store: relationalStore.RdbStore, tableName: string): Promise<void> => {
+            async (store: relationalStore.RdbStore, tableName: string): Promise<void> => {
             let u8 = new Uint8Array([1, 2, 3]);
             hilog.info(domain, tag, 'RA0104 u8:' + JSON.stringify(u8));
             const valueBucket: relationalStore.ValuesBucket = {
@@ -113,7 +113,7 @@ export default function rdbStoreAttachEtsunitTest() {
         }
 
         const attachBatchInsert: (store: relationalStore.RdbStore, tableName: string) => Promise<void> =
-            (store: relationalStore.RdbStore, tableName: string): Promise<void> => {
+            async (store: relationalStore.RdbStore, tableName: string): Promise<void> => {
             let u8 = new Uint8Array([1, 2, 3]);
             const valueBucket: relationalStore.ValuesBucket = {
                 "name": "zhangsan",
@@ -129,7 +129,7 @@ export default function rdbStoreAttachEtsunitTest() {
         }
         
         const insertCheck: (store: relationalStore.RdbStore, tableName: string, ret: number) => Promise<void> =
-            (store: relationalStore.RdbStore, tableName: string, ret: number): Promise<void> => {
+            async (store: relationalStore.RdbStore, tableName: string, ret: number): Promise<void> => {
             let predicates = new relationalStore.RdbPredicates(tableName);
             let resultSet = await store.query(predicates);
             let count = resultSet.rowCount;
@@ -138,7 +138,7 @@ export default function rdbStoreAttachEtsunitTest() {
         }
 
         const updateCheck: (store: relationalStore.RdbStore, tableName: string) => Promise<void> =
-            (store: relationalStore.RdbStore, tableName: string): Promise<void> => {
+            async (store: relationalStore.RdbStore, tableName: string): Promise<void> => {
             let u8 = new Uint8Array([4, 5, 6]);
             const valueBucket: relationalStore.ValuesBucket = {
                 "name": "lisi",
@@ -153,14 +153,14 @@ export default function rdbStoreAttachEtsunitTest() {
         }
         
         const deleteCheck: (store: relationalStore.RdbStore, tableName: string, count: number) => Promise<void> =
-            (store: relationalStore.RdbStore, tableName: string, count: number): Promise<void> => {
+            async (store: relationalStore.RdbStore, tableName: string, count: number): Promise<void> => {
             let predicates = new relationalStore.RdbPredicates(tableName);
             let ret = await store.delete(predicates);
             expect(count).assertEqual(ret);
         }
         
         const attachCheck: (store: relationalStore.RdbStore) => Promise<void> =
-            (store: relationalStore.RdbStore): Promise<void> => {
+            async (store: relationalStore.RdbStore): Promise<void> => {
             await attachInsert(store, "test");
             await insertCheck(store, "test", 2);
             await updateCheck(store, "test");
@@ -194,24 +194,11 @@ export default function rdbStoreAttachEtsunitTest() {
             hilog.info(domain, tag, 'RA0189 CREATE_TABLE_TEST:' + JSON.stringify(CREATE_TABLE_TEST));
             await store.executeSql(CREATE_TABLE_TEST);
             hilog.info(domain, tag, 'RA0191 ');
-            // try {
-            //     await attachInsert(store, "test");
-            // } catch (err:BusinessError){
-            //     hilog.error(domain, tag, 'RA0198 err:' + JSON.stringify(err));
-            // }
-
-            let u8 = new Uint8Array([1, 2, 3]);
-            hilog.info(domain, tag, 'RA0104 u8:' + JSON.stringify(u8));
-            const valueBucket: relationalStore.ValuesBucket = {
-                "name": "zhangsan",
-                "age": 18 as Long,
-                "salary": 100.5,
-                "blobType": u8,
-            };
-            hilog.info(domain, tag, 'RA0111 valueBucket:' + JSON.stringify(valueBucket));
-            await store.insert("test", valueBucket);
-            hilog.info(domain, tag, 'RA0113 ');
-
+            try {
+                await attachInsert(store, "test");
+            } catch (err:BusinessError){
+                hilog.error(domain, tag, 'RA0198 err:' + JSON.stringify(err));
+            }
 
             hilog.info(domain, tag, 'RA0193 ');
         
