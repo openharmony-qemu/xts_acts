@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1154,7 +1153,7 @@ struct blurPage {
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.parentWidth = routerParamOptions.view.parentWidth
     this.parentHeight = routerParamOptions.view.parentHeight
-    this.columns = routerParamOptions.view.columns as int
+    this.columns = routerParamOptions.view.columns
     this.gutter = routerParamOptions.view.gutter
     this.parentComponentKey = routerParamOptions.view.parentComponentKey
     this._blurButttonMod.mBlur =  routerParamOptions.view.testValue.setValue.blur

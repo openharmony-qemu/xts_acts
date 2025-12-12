@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,9 +24,9 @@ export default function CheckboxTest() {
   describe('CheckboxTest', () => {
     beforeAll(() => {
       console.info("CheckboxTest beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.example.Checkbox.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
@@ -48,16 +47,15 @@ export default function CheckboxTest() {
       }
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0110
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    
 
-    it('ArkUX_CheckBox_Visual_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   ArkUX_CheckBox_Visual_static_0110
+     * @tc.name     ArkUX_CheckBox_Visual_static_0110
+     * @tc.desc     ArkUX_CheckBox_Visual_static_0110
+     * @tc.level    Level.LEVEL0
+     */
+it('ArkUX_CheckBox_Visual_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_CheckBox_Visual_static_0110 START');
       setTimeout(() => {
         try {
@@ -76,16 +74,15 @@ export default function CheckboxTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0120
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    
 
-    it('ArkUX_CheckBox_Visual_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   ArkUX_CheckBox_Visual_static_0120
+     * @tc.name     ArkUX_CheckBox_Visual_static_0120
+     * @tc.desc     ArkUX_CheckBox_Visual_static_0120
+     * @tc.level    Level.LEVEL0
+     */
+it('ArkUX_CheckBox_Visual_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_CheckBox_Visual_static_0120 START');
       setTimeout(() => {
         try {
@@ -104,16 +101,15 @@ export default function CheckboxTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0130
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+    
 
-    it('ArkUX_CheckBox_Visual_static_0130', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /*
+     * @tc.number   ArkUX_CheckBox_Visual_static_0130
+     * @tc.name     ArkUX_CheckBox_Visual_static_0130
+     * @tc.desc     ArkUX_CheckBox_Visual_static_0130
+     * @tc.level    Level.LEVEL0
+     */
+it('ArkUX_CheckBox_Visual_static_0130', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_CheckBox_Visual_static_0130 START');
       setTimeout(() => {
         try {

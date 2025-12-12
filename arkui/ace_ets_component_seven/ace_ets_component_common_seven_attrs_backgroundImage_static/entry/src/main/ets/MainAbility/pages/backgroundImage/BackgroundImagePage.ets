@@ -1,6 +1,5 @@
-'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -791,17 +790,26 @@ struct BackgroundImagePage {
 	@State _backgroundImageWebModifier: WebModifier = new WebModifier()
 	@State _backgroundImageWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _backgroundImageXComponentModifier: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-  @State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-	@State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? '#FFFF00'
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: double = 0
+  @State parentHeight: double = 0
+  @State columns: int = 0
+  @State gutter: int = 0
+	@State parentBackGroundColor: string = '#FFFF00'
+  @State parentComponentKey: string = '';
 
 	onPageShow() {
 		console.info('backgroundImage translate page show called ')
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
+		this._backgroundImageButtonModifier.mBackgroundImage = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.backgroundImage
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('backgroundImage [registerDataChange] ' + JSON.stringify(value.backgroundImage))
 			this._backgroundImageAlphabetIndexerModifier.mBackgroundImage = value.backgroundImage
@@ -904,7 +912,9 @@ struct BackgroundImagePage {
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					
+					.width(100)
+					.height(100)
+					.key(this.componentKey)
 					.attributeModifier(this._backgroundImageButtonModifier)
 			}
 			if (this.targetView == 'Blank') {

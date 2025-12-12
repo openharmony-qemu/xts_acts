@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +30,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('MainAbility/pages/index/Index', (err: BusinessError<void> | null): void => {
+      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {

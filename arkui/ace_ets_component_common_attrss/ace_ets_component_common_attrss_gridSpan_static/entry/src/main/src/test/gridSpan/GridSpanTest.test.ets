@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -99,8 +98,6 @@ export default function gridSpanTest() {
     'Rect',
     'Shape',
     'Line')
-
-  
   let parentWidth = 320;
   let parentHeight = 200;
   let gutter = 10;
@@ -125,9 +122,9 @@ export default function gridSpanTest() {
 
   describe('GridSpanTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
 CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.info('[' + data.caseTag + ']' + 'gridSpan is:' + data.viewObj?.getElement('$attrs').getString('span'));

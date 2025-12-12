@@ -1,6 +1,5 @@
-'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,9 +65,9 @@ export default function backgroundImageTest() {
    */
   describe('backgroundImageTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.error('[' + data.caseTag + '] backgroundImageTest.');

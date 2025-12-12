@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -723,6 +722,8 @@ function commonStyle(this: BlankAttribute, componentKey: string): this {
 
 function commonStyleButton(this: ButtonAttribute, componentKey: string, backdrop: number): this {
   console.log('commonStyleButton backdrop = ' + backdrop)
+  this.width(100)
+  this.height(100)
   this.backdropBlur(backdrop)
   this.key(componentKey)
   return this
@@ -1207,6 +1208,7 @@ struct BackdropBlurPage {
     console.info('backdropBlur translate page show called ')
     let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this._backdropBlurButton = routerParamOptions.view.testValue.setValue
+    this._backdropBlurButtonModifier.backdropBlur = routerParamOptions.view.testValue.setValue.backdropBlur
     console.info('backdropBlur = ' + this._backdropBlurButton.backdropBlur)
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey ?? ""
@@ -1228,7 +1230,7 @@ struct BackdropBlurPage {
       if (this.targetView == 'Button') {
         Button('button1')
           .commonStyleButton(this.componentKey, this._backdropBlurButton.backdropBlur)
-          // .attributeModifier(this._backdropBlurButtonModifier)
+          .attributeModifier(this._backdropBlurButtonModifier)
       }
       if (this.targetView == 'Blank') {
         Blank()
