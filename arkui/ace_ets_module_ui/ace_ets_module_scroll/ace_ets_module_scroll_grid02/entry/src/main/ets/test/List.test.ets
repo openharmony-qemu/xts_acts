@@ -37,6 +37,7 @@ import GridContentSize from './Grid/GridContentSize.test';
 import GridFillPolicy from './Grid/GridFillPolicy.test';
 import gridOffsetRes from './Grid/gridOffsetRes.test';
 import gridContentOffset from './Grid/gridContentOffset.test';
+import GridFillPolicyModifier from './Grid/GridFillPolicyModifier.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -63,4 +64,5 @@ export default function testsuite() {
   GridFillPolicy()
   gridOffsetRes()
   gridContentOffset()
+  GridFillPolicyModifier();
 }

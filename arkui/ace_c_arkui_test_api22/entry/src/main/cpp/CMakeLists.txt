@@ -38,6 +38,7 @@ add_library(nativerender SHARED
     image/AnimationControllerTest.cpp
     component/GridComponentTest.cpp
     grid/GridFillPolicyTest.cpp
+    grid/GridEventTest.cpp
 )
 
 add_library(nativefunc SHARED
@@ -49,6 +50,10 @@ add_library(nativefunc SHARED
     InteractiveFramework/UiInputEventBooleanTest.cpp
     InteractiveFramework/LongPressGestureTest.cpp
     InteractiveFramework/LongPressGestureTest.h
+    grid/GridAttrsTest.cpp
+    component/ComponentTest.cpp
+    component/GridComponentTest.cpp
+    component/TextComponentTest.cpp
 )
 
 find_library(

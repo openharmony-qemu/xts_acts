@@ -335,6 +335,10 @@ export const TextPickerCascadeTest_f: () => string[];
 
 export const TextPickerCascadeTest_f1: () => string[];
 
+export const TextPickerCascadeTest_f2: () => string[];
+
+export const TextPickerCascadeTest_f3: () => string[];
+
 export const CustomDialogTest_a: () => string[];
 
 export const CustomDialogTest_a1: () => string[];

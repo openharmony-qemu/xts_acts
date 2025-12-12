@@ -78,6 +78,7 @@ namespace ArkUICapiTest {
 #define PARAM_NEGATIVE_100 (-100)
 #define PARAM_64 64
 #define DEFAULT_MARGIN 10
+#define SIZE_3 3
 #define SIZE_4 4
 #define SIZE_5 5
 #define SIZE_10 10
@@ -90,6 +91,7 @@ namespace ArkUICapiTest {
 #define SIZE_80 80
 #define SIZE_90 90
 #define SIZE_100 100
+#define SIZE_110 110
 #define SIZE_180 180
 #define SIZE_150 150
 #define SIZE_200 200
@@ -97,6 +99,7 @@ namespace ArkUICapiTest {
 #define SIZE_300 300
 #define SIZE_350 350
 #define SIZE_400 400
+#define SIZE_450 450
 #define SIZE_500 500
 #define SIZE_600 600
 #define SIZE_10000 10000

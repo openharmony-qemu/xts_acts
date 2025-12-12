@@ -1404,6 +1404,69 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
       });
     });
 
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0100
+     * @tc.name       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testMaximizeAcrossDisplaywithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithDestoryedSubwindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        await subWindowClass.destroyWindow();
+        await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+        done();
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002)
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0200
+     * @tc.name       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testMaximizeAcrossDisplaywithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithSubwindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        let mode = subWindowClass.isInFreeWindowMode();
+        console.log(`${caseName} isInFreeWindowMode: ${mode}`);
+        if (mode) {
+          await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+        } else {
+          await subWindowClass.destroyWindow();
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300004)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
   })
 }
 

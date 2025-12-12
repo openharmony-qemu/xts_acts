@@ -2890,7 +2890,7 @@ export default function audioManagerApi9() {
         capturerInfo: capturerInfo
       };
       let checkCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_WAKEUP,
+        source: audio.SourceType.SOURCE_TYPE_MIC,
         capturerFlags: 0
       };
       try {
@@ -2898,7 +2898,7 @@ export default function audioManagerApi9() {
         console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
         await audioCap.start();
         const isAvailable = streamManager.isRecordingAvailable(checkCapturerInfo);
-        expect(isAvailable).assertFalse();
+        expect(isAvailable).assertTrue();
         await audioCap.stop();
         await audioCap.release();
       } catch (error) {

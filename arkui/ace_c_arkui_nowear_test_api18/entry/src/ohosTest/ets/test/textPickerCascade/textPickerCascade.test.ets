@@ -295,6 +295,34 @@ export default function TextPickerCascadeTest(){
       done()
     })
 
+    /**
+     * @tc.name   TextPickerCascadeTest_f2
+     * @tc.number TextPickerCascadeTest_f2
+     * @tc.desc   TextPickerCascadeTest_f2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_f2',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_f2()).assertEqual(0)
+      console.log('TextPickerCascadeTest_f2 will drag and check:: ')
+      await Utils.sleep(200)    
+      done()
+    })
 
+    /**
+     * @tc.name   TextPickerCascadeTest_f3
+     * @tc.number TextPickerCascadeTest_f3
+     * @tc.desc   TextPickerCascadeTest_f3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_f3',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_f3()).assertEqual(0)
+      console.log('TextPickerCascadeTest_f3 will drag and check:: ')
+      await Utils.sleep(200)     
+      done()
+    })
   })
 }

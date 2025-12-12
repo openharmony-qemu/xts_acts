@@ -19,8 +19,12 @@ import { getPermission, driveFn, LOG_TAG, fetchAllOption, createUserAlbum, genRa
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { asset } from '@kit.AssetStoreKit';
+import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 
 const TAG = LOG_TAG + 'AlbumAddRemoveAssetsSupp';
+let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+let sendablePhAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper =
+  sendablePhotoAccessHelper.getPhotoAccessHelper(globalContext);
 
 function albumValid(type:photoAccessHelper.AlbumType,subType:photoAccessHelper.AlbumSubtype): Boolean {
   if (type == photoAccessHelper.AlbumType.SYSTEM) {
@@ -190,6 +194,7 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      AppStorage.setOrCreate('testNumber', -1);
     });
 
     beforeEach(() => {
@@ -202,6 +207,7 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
 
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
+      AppStorage.delete('testNumber');
     });
 
 
@@ -1128,5 +1134,705 @@ export default function PhotoAccessHelperAlbumAssetsTest() {
       })
       done();
     })
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0100
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0100
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0100'
+      try {
+        await sendablePhAccessHelper.getAssets(null as ESObject);
+        console.info(TAG, testName, "getAssets successfully");
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' failed ', JSON.stringify(error), error.code, error);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0200
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0200
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0200'
+      try {
+        await sendablePhAccessHelper.getAssets(AppStorage.get('testString') as ESObject);
+        console.info(TAG, testName, "getAssets successfully");
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' failed ', JSON.stringify(error), error.code);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0300
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0300
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0300'
+      try {
+        await sendablePhAccessHelper.getAssets(AppStorage.get('testNumber') as ESObject);
+        console.info(TAG, testName, "getAssets successfully");
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' failed ', JSON.stringify(error), error.code);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0400
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0400
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_0400'
+      try {
+        await sendablePhAccessHelper.getAssets('' as ESObject);
+        console.info(TAG, testName, "getAssets successfully");
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' failed ', JSON.stringify(error), error.code);
+        expect(error != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100'
+      try {
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.Album> =
+          await sendablePhAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.USER,
+            sendablePhotoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: sendablePhotoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(null as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code, err);
+        expect(err != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200'
+      try {
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.Album> =
+          await sendablePhAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.USER,
+            sendablePhotoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: sendablePhotoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(undefined as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300'
+      try {
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.Album> =
+          await sendablePhAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.USER,
+            sendablePhotoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: sendablePhotoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets('' as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400'
+      try {
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.Album> =
+          await sendablePhAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM,
+            sendablePhotoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: sendablePhotoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(null as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500'
+      try {
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.Album> =
+          await sendablePhAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM,
+            sendablePhotoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: sendablePhotoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(undefined as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600'
+      try {
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.Album> =
+          await sendablePhAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM,
+            sendablePhotoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: sendablePhotoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets('' as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code, err);
+        expect(err != undefined).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0100
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0100
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0100'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        album.getAssets(null, (err, albumFetchResult) => {
+          if (albumFetchResult !== undefined) {
+            console.info('album getAssets successfully, getCount: ', albumFetchResult.getCount());
+            expect().assertFail();
+            done();
+          } else {
+            console.error(`album getAssets failed with error:`, JSON.stringify(err), err.code);
+            expect(err.code).assertEqual('14000011');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0200
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0200
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0200'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        album.getAssets(undefined, (err, albumFetchResult) => {
+          if (albumFetchResult !== undefined) {
+            console.info('album getAssets successfully, getCount: ', albumFetchResult.getCount());
+            expect().assertFail();
+            done();
+          } else {
+            console.error(`album getAssets failed with error:`, JSON.stringify(err), err.code);
+            expect(err.code).assertEqual('14000011');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0300
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0300
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0300'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        album.getAssets('' as ESObject, (err, albumFetchResult) => {
+          if (albumFetchResult !== undefined) {
+            console.info('album getAssets successfully, getCount: ', albumFetchResult.getCount());
+            expect().assertFail();
+            done();
+          } else {
+            console.error(`album getAssets failed with error:`, JSON.stringify(err), err.code);
+            expect(err.code).assertEqual('14000011');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0400
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0400
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0400'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        album.getAssets(null, (err, albumFetchResult) => {
+          if (albumFetchResult !== undefined) {
+            console.info('album getAssets successfully, getCount: ', albumFetchResult.getCount());
+            expect().assertFail();
+            done();
+          } else {
+            console.error(`album getAssets failed with error:`, JSON.stringify(err), err.code);
+            expect(err.code).assertEqual('14000011');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0500
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0500
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0500'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        album.getAssets(undefined, (err, albumFetchResult) => {
+          if (albumFetchResult !== undefined) {
+            console.info('album getAssets successfully, getCount: ', albumFetchResult.getCount());
+            expect().assertFail();
+            done();
+          } else {
+            console.error(`album getAssets failed with error:`, JSON.stringify(err), err.code);
+            expect(err.code).assertEqual('14000011');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0600
+     * @tc.name       SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0600
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_SENDABLE_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_CALLBACK_0600'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        album.getAssets('' as ESObject, (err, albumFetchResult) => {
+          if (albumFetchResult !== undefined) {
+            console.info('album getAssets successfully, getCount: ', albumFetchResult.getCount());
+            expect().assertFail();
+            done();
+          } else {
+            console.error(`album getAssets failed with error:`, JSON.stringify(err), err.code);
+            expect(err.code).assertEqual('14000011');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code, err);
+        expect(err.code).assertEqual('14000011');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100
+     * @tc.name       SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0100'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(null as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue()
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011')
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200
+     * @tc.name       SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0200'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(undefined as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue()
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011')
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300
+     * @tc.name       SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0300'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets('' as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue()
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011')
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400
+     * @tc.name       SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0400'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(null as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue()
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011')
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500
+     * @tc.name       SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0500'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets(undefined as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue()
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011')
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600
+     * @tc.name       SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600
+     * @tc.desc       get assets with invalid fetchColumns
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_ABS_ALBUM_GET_ASSETS_PROMISE_0600'
+      try {
+        let globalContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let helper = photoAccessHelper.getPhotoAccessHelper(globalContext);
+        const fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        console.info(TAG, testName, JSON.stringify(fetchOps));
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
+            fetchOps);
+        console.info(TAG, testName, JSON.stringify(albumList));
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        console.info(TAG, testName, JSON.stringify(album));
+        let res = await album.getAssets('' as ESObject);
+        console.info(TAG, testName, 'SUCCESS');
+        expect(res.getCount() > 0).assertTrue()
+        done();
+      } catch (err) {
+        console.error(TAG, testName, 'FAILED', JSON.stringify(err), err.code);
+        expect(err.code).assertEqual('14000011')
+        done();
+      }
+    });
   })
 }
