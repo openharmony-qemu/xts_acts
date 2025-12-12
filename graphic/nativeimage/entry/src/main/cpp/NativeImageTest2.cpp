@@ -1082,7 +1082,7 @@ napi_value OHNativeImageReleasedNormal1(napi_env env, napi_callback_info info)
     ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
     if (ret == NATIVE_ERROR_OK && isReleased == false) {
         napi_create_int32(env, SUCCESS, &result2);
-    }else {
+    } else {
         napi_create_int32(env, FAIL, &result2);
     }
     napi_set_element(env, result, ARR_NUMBER_1, result2);
@@ -1117,7 +1117,7 @@ napi_value OHNativeImageIsReleasedCalls(napi_env env, napi_callback_info info)
     ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
     ret = OH_NativeImage_UnsetOnFrameAvailableListener(nativeImage);
     ret = OH_NativeImage_ReleaseTextImage(nativeImage);
-    for (int i = 0; i < 100; ++i) {
+    for (int i = 0; i < NUMBER_100; ++i) {
         ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
         if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, FAIL, &result);
@@ -1145,7 +1145,7 @@ napi_value OHNativeImageReleasedCalls(napi_env env, napi_callback_info info)
     ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
     ret = OH_NativeImage_UnsetOnFrameAvailableListener(nativeImage);
     ret = OH_NativeImage_ReleaseTextImage(nativeImage);
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < NUMBER_100; i++) {
         ret = OH_NativeImage_Release(nativeImage);
         if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, FAIL, &result);
