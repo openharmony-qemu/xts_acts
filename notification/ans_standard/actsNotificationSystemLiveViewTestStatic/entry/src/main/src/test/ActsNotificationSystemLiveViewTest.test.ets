@@ -18,7 +18,7 @@ import notificationManager from '@ohos.notificationManager'
 import image from '@ohos.multimedia.image';
 import {BusinessError, RecordData} from '@ohos.base';
 import hilog from '@ohos.hilog';
-import WantAgent from '@ohos.app.ability.wantAgent';
+import WantAgent, { WantAgent as _WantAgent} from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -963,7 +963,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         }
 
         //wantAgent对象
-        let wantAgent: WantAgent = {};
+        let wantAgent: _WantAgent = {};
         //WantAgentInfo对象
         let wantAgentInfo: WantAgent.WantAgentInfo = {
           wants: [
@@ -984,7 +984,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         };
 
         try {
-          WantAgent.getWantAgent(wantAgentInfo).then((data:WantAgent) => {
+          WantAgent.getWantAgent(wantAgentInfo).then((data:_WantAgent) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
@@ -1086,7 +1086,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
 
         //wantAgent对象
-        let wantAgent: WantAgent = {};
+        let wantAgent: _WantAgent = {};
         let parameters1: Record<String, RecordData> = {
           "mykey0": 2222,
           "mykey1": [1, 2, 3],
@@ -1116,7 +1116,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           actionFlags: [WantAgent.WantAgentFlags.ONE_TIME_FLAG]
         };
         try {
-          WantAgent.getWantAgent(wantAgentInfo).then((data:WantAgent) => {
+          WantAgent.getWantAgent(wantAgentInfo).then((data:_WantAgent) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
