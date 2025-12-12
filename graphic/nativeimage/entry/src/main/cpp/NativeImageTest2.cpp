@@ -1072,7 +1072,7 @@ napi_value OHNativeImageReleasedNormal1(napi_env env, napi_callback_info info)
     ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
     if (ret == NATIVE_ERROR_OK && isReleased == false) {
         napi_create_int32(env, SUCCESS, &result1);
-    }else {
+    } else {
         napi_create_int32(env, FAIL, &result1);
         return result;
     }
