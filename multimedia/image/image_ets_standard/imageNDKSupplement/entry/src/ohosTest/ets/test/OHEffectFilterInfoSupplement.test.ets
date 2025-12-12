@@ -99,8 +99,8 @@ export default function ImageEffectInfoSupplementTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
-     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
-     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_005
+     * @tc.number  SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_001
+     * @tc.name    SUB_OH_EFFECT_FILTER_INFO_GET_FILTER_NAME_001
      * @tc.desc    OHEffectFilterInfoGetFilterName EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
