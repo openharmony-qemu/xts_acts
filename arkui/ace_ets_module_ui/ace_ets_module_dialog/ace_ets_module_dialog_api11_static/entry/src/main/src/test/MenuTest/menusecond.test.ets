@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,9 +69,9 @@ export default function menuSecondTest() {
   describe('ActsMenuSecondTest', () => {
     beforeAll(() => {
       console.info("ActsMenuSecondTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("ActsMenuSecondTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -102,13 +101,14 @@ export default function menuSecondTest() {
 
 
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_Enabled_static_0100
      * @tc.name     ArkUX_Stage_Menu_Enabled_static_0100
      * @tc.desc     ArkUX_Stage_Menu_Enabled_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('ArkUX_Stage_Menu_Enabled_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ArkUX_Stage_Menu_Enabled_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey("Menu"))
         // console.info('ArkUX_Stage_Menu_Enabled_static_0100 bindMenuEnabled :' +
@@ -121,13 +121,14 @@ it('ArkUX_Stage_Menu_Enabled_static_0100', Level.LEVEL2, async (done: () => void
 
 
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_Preview_static_0100
      * @tc.name     ArkUX_Stage_Menu_Preview_static_0100
      * @tc.desc     ArkUX_Stage_Menu_Preview_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('ArkUX_Stage_Menu_Preview_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ArkUX_Stage_Menu_Preview_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey("floatingMenuImage"))
         // console.info('ArkUX_Stage_Menu_Preview_static_0100 preview :' +
@@ -140,13 +141,14 @@ it('ArkUX_Stage_Menu_Preview_static_0100', Level.LEVEL2, async (done: () => void
 
 
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_Preview_static_0200
      * @tc.name     ArkUX_Stage_Menu_Preview_static_0200
      * @tc.desc     ArkUX_Stage_Menu_Preview_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('ArkUX_Stage_Menu_Preview_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ArkUX_Stage_Menu_Preview_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey("floatingMenuBuilder"))
         // console.info('ArkUX_Stage_Menu_Preview_static_0200 preview :' +

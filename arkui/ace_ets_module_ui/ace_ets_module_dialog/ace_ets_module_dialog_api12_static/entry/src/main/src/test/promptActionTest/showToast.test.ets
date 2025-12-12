@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,9 +34,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function showToastTest () {
   describe('showToastTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
       console.info("ShowToastTest beforeEach start");
@@ -60,7 +59,8 @@ export default function showToastTest () {
       }
     });
     
-    /*
+    
+/**
      * @tc.number   showToast_static_0100
      * @tc.name     showToast_static_0100
      * @tc.desc     showToast_static_0100
@@ -82,7 +82,8 @@ it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   showToast_static_0200
      * @tc.name     showToast_static_0200
      * @tc.desc     showToast_static_0200
@@ -105,7 +106,8 @@ it('showToast_static_0200', Level.LEVEL2, async (done: () => void): Promise<void
       done();
     });
      
-    /*
+    
+/**
      * @tc.number   showToast_static_0300
      * @tc.name     showToast_static_0300
      * @tc.desc     showToast_static_0300
@@ -128,7 +130,8 @@ it('showToast_static_0300', Level.LEVEL2, async (done: () => void): Promise<void
       done();
     });
      
-    /*
+    
+/**
      * @tc.number   showToast_static_0400
      * @tc.name     showToast_static_0400
      * @tc.desc     showToast_static_0400

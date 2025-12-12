@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,9 +31,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function subMenuExpandingModeTest() {
   describe('subMenuExpandingModeTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
       console.info("subMenuExpandingModeTest beforeEach start");
@@ -58,7 +57,8 @@ export default function subMenuExpandingModeTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   subMenuExpandingModeTest_static_0100
      * @tc.name     subMenuExpandingModeTest_static_0100
      * @tc.desc     subMenuExpandingModeTest_static_0100

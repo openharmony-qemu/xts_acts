@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,9 +59,9 @@ export default function menu() {
   describe('menu', () => {
     beforeAll(() => {
       console.info("menu beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("menu  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -97,13 +96,14 @@ export default function menu() {
 
 
     
-    /*
+    
+/**
      * @tc.number   menu_static_001
      * @tc.name     menu_static_001
      * @tc.desc     menu_static_001
      * @tc.level    Level.LEVEL2
      */
-it('menu_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('menu_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[menu_static_001] START');
 
       await CommonFunc.sleep(1000);

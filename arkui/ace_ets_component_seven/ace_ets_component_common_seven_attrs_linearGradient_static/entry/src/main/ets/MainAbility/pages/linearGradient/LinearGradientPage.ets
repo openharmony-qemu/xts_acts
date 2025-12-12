@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, AlignRuleOption,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, LinearGradientOptions, GradientDirection } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -1526,7 +1525,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct LinearGradientPage {
-	@StorageProp('_linearGradientButton') linearGradientButton: SetValue = {
+	@StoragePropRef('_linearGradientButton') linearGradientButton: SetValue = {
 		linearGradient: {colors: [['FFFFFFFF', 0.0]]}
 	}
 	@State _linearGradientAlphabetIndexerModifier: AlphabetIndexerModifier = new AlphabetIndexerModifier()

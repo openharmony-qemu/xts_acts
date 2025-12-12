@@ -1,11 +1,10 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+*     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -62,11 +61,13 @@ export default function ObscuredTest() {
    */
   describe('obscuredTest', () => {
     beforeAll(() => {
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      console.info('[' + data.caseTag + ']' + 'obscured is:', data.viewObj!.getElement('$attrs').getArray('obscured'));
-      expect(data.viewObj!.getElement('$attrs').getArray('obscured')[0])
+      console.info('[' + data.caseTag + ']' + 'obscured is:', JSON.stringifyJsonElement(data.viewObj!.getElement('$attrs').getArray('obscured')[0]));
+      expect(data.viewObj!.getElement('$attrs').getArray('obscured')[0].asString())
         .assertEqual(data.testValue.expectValue.obscured[0]);
     });
   })

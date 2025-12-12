@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,9 +60,9 @@ export default function menuEnabledJsunit() {
   describe('menuEnabledJsunit', () => {
     beforeAll(() => {
       console.info("menuEnabledJsunit beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("menuEnabledJsunit beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -94,14 +93,14 @@ export default function menuEnabledJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   menuEnabledJsunit_static_0100
      * @tc.name     menuEnabledJsunit_static_0100
      * @tc.desc     menuEnabledJsunit_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('menuEnabledJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+    it('menuEnabledJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('menuEnabledJsunit_static_0100 START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -117,14 +116,14 @@ it('menuEnabledJsunit_static_0100', Level.LEVEL2, async (done: () => void): Prom
 
 
     
-    /*
+    
+/**
      * @tc.number   menuEnabledJsunit_static_0200
      * @tc.name     menuEnabledJsunit_static_0200
      * @tc.desc     menuEnabledJsunit_static_0200
      * @tc.level    Level.LEVEL2
      */
-it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-
+    it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('menuEnabledJsunit_static_0200 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('cmEnd'));

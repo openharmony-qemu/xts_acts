@@ -1,11 +1,10 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+*     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,6 +17,8 @@ import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
 import {SetValue} from './Utils'
+import { RecordData } from '@ohos.base';
+
 export interface Message {
   value: SetValue
 }
@@ -37,7 +38,7 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, undefined|null|Object>
+      } as Record<String, RecordData>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
@@ -80,7 +81,7 @@ export class AttrsManager {
           if (message && message?.value) {
             this.callBack!(message!.value!)
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.error("fail :", e);
         }
       }

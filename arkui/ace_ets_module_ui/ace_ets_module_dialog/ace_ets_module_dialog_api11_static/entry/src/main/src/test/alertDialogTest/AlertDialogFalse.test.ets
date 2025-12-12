@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,9 +49,9 @@ export default function AlertDialogFalse() {
   describe('AlertDialogFalse', () => {
     beforeAll(() => {
       console.info("AlertDialogFalse beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("AlertDialogFalse  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -83,13 +82,14 @@ export default function AlertDialogFalse() {
 
 
     
-    /*
+    
+/**
      * @tc.number   AlertDialogFalse_static_0100
      * @tc.name     AlertDialogFalse_static_0100
      * @tc.desc     AlertDialogFalse_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('AlertDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('AlertDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AlertDialogFalse_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

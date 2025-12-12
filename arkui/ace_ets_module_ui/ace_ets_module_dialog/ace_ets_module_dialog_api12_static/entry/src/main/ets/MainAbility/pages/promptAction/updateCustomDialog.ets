@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -68,7 +67,7 @@ struct Index {
             setTimeout(() => {
               try {
                 this.updateCustomDialogMessage = 'updateCustomDialog success'
-                // promptAction.updateCustomDialog(contentNode, { alignment: DialogAlignment.CenterEnd });
+                promptAction.updateCustomDialog(contentNode, { alignment: DialogAlignment.CenterEnd });
               } catch (error) {
                 let message = (error as BusinessError).message;
                 let code = (error as BusinessError).code;

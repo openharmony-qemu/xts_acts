@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,9 +32,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function uiCloseCustomDialogTest() {
   describe('uiCloseCustomDialogTest', () => {
     beforeAll(() => {
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(async (): Promise<void> => {
       console.info("uiCloseCustomDialogTest beforeEach start");
@@ -59,7 +58,8 @@ export default function uiCloseCustomDialogTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   uiCloseCustomDialogTest_static_0100
      * @tc.name     uiCloseCustomDialogTest_static_0100
      * @tc.desc     uiCloseCustomDialogTest_static_0100

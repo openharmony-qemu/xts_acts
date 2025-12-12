@@ -1,11 +1,10 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,9 +33,9 @@ export default function UpdateCustomDialogTest() {
   describe('UpdateCustomDialogTest', () => {
     beforeAll(() => {
 
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     })
 
     beforeEach(async () => {
@@ -71,7 +70,8 @@ export default function UpdateCustomDialogTest() {
     });
 
     
-/*
+    
+/**
      * @tc.number   UpdateCustomDialogTest_static_001
      * @tc.name     UpdateCustomDialogTest_static_001
      * @tc.desc     UpdateCustomDialogTest_static_001

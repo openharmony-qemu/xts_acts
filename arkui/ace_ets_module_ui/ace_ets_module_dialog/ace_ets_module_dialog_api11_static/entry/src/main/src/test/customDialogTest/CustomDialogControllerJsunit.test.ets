@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,9 +49,9 @@ export default function customDialogControllerJsunit() {
   describe('customDialogControllerTest', () => {
     beforeAll(() => {
       console.info("customDialogControllerTest beforeAll start")
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
       console.info("customDialogControllerTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -86,13 +85,14 @@ export default function customDialogControllerJsunit() {
 
 
     
-    /*
+    
+/**
      * @tc.number   testCustomDialogControllers_static_100
      * @tc.name     testCustomDialogControllers_static_100
      * @tc.desc     testCustomDialogControllers_static_100
      * @tc.level    Level.LEVEL2
      */
-it('testCustomDialogControllers_static_100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testCustomDialogControllers_static_100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testCustomDialogControllers_static_100] START');
       let driver = Driver.create()
       let callback = (eventData: emitter.EventData) => {

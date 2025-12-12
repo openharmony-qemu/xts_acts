@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -168,11 +167,12 @@ struct PopupExample {
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     if (eventData != null) {
       console.info("customPopupOption page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as  ESObject)?.getProperty('enableArrow') != null) {
-        this.enableArrow = ((eventData.data) as  ESObject)!.getProperty('enableArrow').toBoolean() as boolean;
+      let data = eventData.data as Record<String,undefined|null|Object>;
+      if (data['enableArrow'] != null) {
+        this.enableArrow = data['enableArrow'] as boolean;
       }
-      if (((eventData.data) as  ESObject)?.getProperty('maskColor') != null) {
-        this.maskColor = ((eventData.data) as  ESObject)!.getProperty('maskColor').toStaticObject() as ResourceColor;
+      if (data['maskColor'] != null) {
+        this.maskColor = data['maskColor'] as ResourceColor;
       }
     }
   }

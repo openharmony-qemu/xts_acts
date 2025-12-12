@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,9 +35,9 @@ export default function ActionSheet3() {
   describe('ActionSheet3', () => {
     beforeAll(() => {
       console.info("ActionSheet3 beforeEach start");
-
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ActionSheet3 beforeEach start");
@@ -65,7 +64,8 @@ export default function ActionSheet3() {
       }
     });
     
-    /*
+    
+/**
      * @tc.number   ActionSheet3_static_0100
      * @tc.name     ActionSheet3_static_0100
      * @tc.desc     ActionSheet3_static_0100
@@ -98,7 +98,8 @@ it('ActionSheet3_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ActionSheet3_static_0200
      * @tc.name     ActionSheet3_static_0200
      * @tc.desc     ActionSheet3_static_0200
