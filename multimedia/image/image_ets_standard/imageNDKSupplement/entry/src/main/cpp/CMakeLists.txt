@@ -20,6 +20,8 @@ add_library(imageEffect SHARED
     utils/PixelmapHelperTest.cpp
     utils/GlUtilsTest.cpp
     ImageEffectSuppTest.cpp
+    AccessPixelsTest.cpp
+    OHImageErrorSuppTest.cpp)
     OHEffectFilterInfoSupplementTest.cpp)
     ImageEffectSuppTest.cpp
     InitNativePixelMapTest.cpp

@@ -20,6 +20,7 @@
 #include "napi/native_api.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
+#include "OHImageErrorSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
 #include "ImagePackerCreateTest.h"
 
@@ -34,6 +35,10 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectInsertFilterSupp", OHImageEffectInsertFilterSupp),
     DESCRIPTOR("OHImageEffectRemoveFilterSupp", OHImageEffectRemoveFilterSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterSupp", OHImageEffectReplaceFilterSupp),
+    DESCRIPTOR("OHImageAlphaTypeSupp", OHImageAlphaTypeSupp),
+    DESCRIPTOR("OHImageErrorCodeSupp", OHImageErrorCodeSupp),
+    DESCRIPTOR("OHImageScaleModeSupp", OHImageScaleModeSupp),
+    DESCRIPTOR("OHImageAuxiliaryPictureSupp", OHImageAuxiliaryPictureSupp),
     DESCRIPTOR("OHEffectFilterInfoSetFilterNameSupplementTest", OHEffectFilterInfoSetFilterNameSupplementTest),
     DESCRIPTOR("OHEffectFilterInfoGetFilterNameSupplementTest", OHEffectFilterInfoGetFilterNameSupplementTest),
     DESCRIPTOR("OHEffectFilterInfoSetSupportedBufferTypesSuppTest", OHEffectFilterInfoSetSupportedBufferTypesSuppTest),
