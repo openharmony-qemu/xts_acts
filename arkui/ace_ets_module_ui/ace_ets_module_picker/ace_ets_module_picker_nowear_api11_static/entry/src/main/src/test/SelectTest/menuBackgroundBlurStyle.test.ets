@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,9 +47,9 @@ export default function menuBackgroundBlurStyle() {
     beforeAll(() => {
       console.info("menuBackgroundBlurStyle beforeEach start");
 
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("menuBackgroundBlurStyle beforeEach start");
@@ -79,7 +78,8 @@ export default function menuBackgroundBlurStyle() {
 
     
     
-/*
+
+/**
      * @tc.number   menuBackgroundBlurStyle_static_0100
      * @tc.name     menuBackgroundBlurStyle_static_0100
      * @tc.desc     menuBackgroundBlurStyle_static_0100

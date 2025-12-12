@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -29,7 +28,7 @@ struct showActionSheetOrder {
         Button('100')
           .id('100')
           .height('8%')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
@@ -59,7 +58,7 @@ struct showActionSheetOrder {
         Button('undefined')
           .id('undefined')
           .height('8%')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
@@ -92,7 +91,7 @@ struct showActionSheetOrder {
         Button('100001')
           .id('100001')
           .height('8%')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
@@ -122,7 +121,7 @@ struct showActionSheetOrder {
         Button('-100001')
           .id('-100001')
           .height('8%')
-          .onClick((e: ClickEvent) => {
+          .onClick((e:ClickEvent) => {
             this.uiContext.showActionSheet({
               title: 'ActionSheet title',
               message: 'message',
@@ -153,7 +152,7 @@ struct showActionSheetOrder {
 
       Button('get showActionSheetOrder')
         .id('myOrder')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let showActionSheetOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (showActionSheetOrder !== undefined) {
             AppStorage.setOrCreate<number>('showActionSheetOrder', showActionSheetOrder.getOrder())

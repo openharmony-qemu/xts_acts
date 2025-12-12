@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,9 +30,9 @@ export default function waterFlowAniTrue() {
   describe('waterFlowAniTrue', () => {
     beforeAll(() => {
       console.info("waterFlowAniTrue beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -62,7 +61,8 @@ export default function waterFlowAniTrue() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   waterFlowAniTrue_static_0100
      * @tc.name     waterFlowAniTrue_static_0100
      * @tc.desc     waterFlowAniTrue_static_0100

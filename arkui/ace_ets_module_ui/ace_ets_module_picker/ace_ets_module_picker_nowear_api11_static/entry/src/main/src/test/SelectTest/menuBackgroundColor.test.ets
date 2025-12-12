@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +46,9 @@ export default function menuBackgroundColor() {
     beforeAll(() => {
       console.info("menuBackgroundColor beforeEach start");
 
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("menuBackgroundColor beforeEach start");
@@ -79,7 +78,8 @@ export default function menuBackgroundColor() {
 
     
     
-/*
+
+/**
      * @tc.number   menuBackgroundColor_static_0100
      * @tc.name     menuBackgroundColor_static_0100
      * @tc.desc     menuBackgroundColor_static_0100

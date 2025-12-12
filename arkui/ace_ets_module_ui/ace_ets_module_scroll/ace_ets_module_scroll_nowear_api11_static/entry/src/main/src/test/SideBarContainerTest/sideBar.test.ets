@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,9 +25,9 @@ export default function sideBarShowSideBarJsunit() {
   describe('sideBarShowSideBarTest', () => {
     beforeAll(async () => {
       console.info("sideBarShowSideBarTest beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
 
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -55,7 +54,8 @@ export default function sideBarShowSideBarJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testsideBarShowSideBar0001_static_01
      * @tc.name     testsideBarShowSideBar0001_static_01
      * @tc.desc     testsideBarShowSideBar0001_static_01
@@ -74,7 +74,8 @@ it('testsideBarShowSideBar0001_static_01', Level.LEVEL1, async () => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testsideBarShowSideBar0002_static_02
      * @tc.name     testsideBarShowSideBar0002_static_02
      * @tc.desc     testsideBarShowSideBar0002_static_02
@@ -93,7 +94,8 @@ it('testsideBarShowSideBar0002_static_02', Level.LEVEL1, async () => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testsideBarShowSideBar0003_static_03
      * @tc.name     testsideBarShowSideBar0003_static_03
      * @tc.desc     testsideBarShowSideBar0003_static_03

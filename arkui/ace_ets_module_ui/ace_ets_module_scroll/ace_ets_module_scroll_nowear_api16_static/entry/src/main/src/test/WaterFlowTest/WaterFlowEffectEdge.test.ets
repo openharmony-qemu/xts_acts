@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,9 +34,9 @@ export default function WaterFlowEffectEdge() {
   describe('WaterFlowEffectEdge', () => {
     beforeAll(() => {
       console.info("WaterFlowEffectEdge beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api16.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -62,7 +61,8 @@ export default function WaterFlowEffectEdge() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_WaterFlow_EffectEdge_static_0500
      * @tc.name     ArkUI_WaterFlow_EffectEdge_static_0500
      * @tc.desc     ArkUI_WaterFlow_EffectEdge_static_0500

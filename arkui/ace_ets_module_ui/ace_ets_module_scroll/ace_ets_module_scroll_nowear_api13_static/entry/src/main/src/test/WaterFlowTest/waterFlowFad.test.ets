@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,15 +32,15 @@ export default function waterFlowFad() {
 
     beforeAll(() => {
       console.info("waterFlowFad beforeEach start");
-
+      await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.scroll.nowear.api13.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
       console.info("waterFlowFad beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/WaterFlow/WaterFlow_attribute/waterFlowFad",
+        url: "MainAbility/pages/WaterFlow/waterFlowFad",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -64,7 +63,8 @@ export default function waterFlowFad() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   waterFlowFad_static_0100
      * @tc.name     waterFlowFad_static_0100
      * @tc.desc     waterFlowFad_static_0100

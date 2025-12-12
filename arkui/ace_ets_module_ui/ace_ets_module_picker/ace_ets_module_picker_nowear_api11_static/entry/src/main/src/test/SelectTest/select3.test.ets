@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -63,9 +62,10 @@ export default function selectOnSelectJsunit() {
       console.info("selectOnSelect after each called");
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   testselectOnSelect_static_0001
      * @tc.name     testselectOnSelect_static_0001
      * @tc.desc     testselectOnSelect_static_0001
@@ -84,9 +84,10 @@ it('testselectOnSelect_static_0001', Level.LEVEL1, async () => {
 
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   testselectOnSelect_static_0002
      * @tc.name     testselectOnSelect_static_0002
      * @tc.desc     testselectOnSelect_static_0002

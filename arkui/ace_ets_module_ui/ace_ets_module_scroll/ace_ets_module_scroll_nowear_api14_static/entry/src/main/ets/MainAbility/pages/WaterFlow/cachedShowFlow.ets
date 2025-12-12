@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -43,7 +42,7 @@ struct cachedCountShowFlowExample {
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   scroller: Scroller = new Scroller()
   @State clip1: boolean = false
-  @State show1: boolean | undefined = true
+  @State show1: boolean  = true
 
   onPageShow() {
     console.info('[WaterFlow] page show called');
@@ -60,10 +59,13 @@ struct cachedCountShowFlowExample {
       console.info("[stateChangClipShow] state change called: " + JSON.stringify(eventData));
       const data = eventData.data as Record<string, object|null|undefined>
       if (data['clip1'] != null) {
+        console.log('------' + data['clip1'])
         this.clip1 = data['clip1'] as boolean
       }
+      console.log('------show1 ' + data['show1'])
       if (data['show1'] != null) {
         this.show1 = data['show1'] as boolean
+        console.log('------show1 ' + data['show1'])
       }
     }
   }

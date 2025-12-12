@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +27,9 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Font, FontStyle,ResourceColor } from '@ohos.arkui.component';
-
+import { Font, FontStyle } from '@ohos.arkui.component';
+import { ResourceColor
+} from '@ohos.arkui.component';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -39,9 +39,9 @@ export default function selectJsunit() {
     beforeAll(() => {
       console.info("appInfoTest_five_2 beforeEach start");
 
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -69,7 +69,8 @@ export default function selectJsunit() {
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0100
      * @tc.name     selectTest_static_0100
      * @tc.desc     selectTest_static_0100
@@ -87,7 +88,8 @@ it('selectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0200
      * @tc.name     selectTest_static_0200
      * @tc.desc     selectTest_static_0200
@@ -120,8 +122,11 @@ it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<voi
       done();
     });
 
+
+
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0300
      * @tc.name     selectTest_static_0300
      * @tc.desc     selectTest_static_0300
@@ -146,7 +151,8 @@ it('selectTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0400
      * @tc.name     selectTest_static_0400
      * @tc.desc     selectTest_static_0400
@@ -165,7 +171,7 @@ it('selectTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "font": font as Font
-          } as Record<string, undefined | null | Object>
+          } as Record<string, undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -193,7 +199,8 @@ it('selectTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0500
      * @tc.name     selectTest_static_0500
      * @tc.desc     selectTest_static_0500
@@ -211,7 +218,8 @@ it('selectTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0600
      * @tc.name     selectTest_static_0600
      * @tc.desc     selectTest_static_0600
@@ -244,7 +252,8 @@ it('selectTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0700
      * @tc.name     selectTest_static_0700
      * @tc.desc     selectTest_static_0700
@@ -257,7 +266,7 @@ it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": "-10"
-          } as Record<string, undefined | null | Object>
+          } as Record<string, undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -277,7 +286,8 @@ it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0800
      * @tc.name     selectTest_static_0800
      * @tc.desc     selectTest_static_0800
@@ -290,7 +300,7 @@ it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": '1111111111'
-          } as Record<string, undefined | null | Object>
+          } as Record<string, undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -310,7 +320,8 @@ it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_0900
      * @tc.name     selectTest_static_0900
      * @tc.desc     selectTest_static_0900
@@ -323,7 +334,7 @@ it('selectTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": '1111111111aaa'
-          } as Record<string, undefined | null | Object>
+          } as Record<string, undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -343,7 +354,8 @@ it('selectTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<voi
     });
 
     
-    /*
+
+/**
      * @tc.number   selectTest_static_1000
      * @tc.name     selectTest_static_1000
      * @tc.desc     selectTest_static_1000
@@ -355,7 +367,7 @@ it('selectTest_static_1000', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": 121111
-          } as Record<string, undefined | null | Object>
+          } as Record<string, undefined|null|Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 191,

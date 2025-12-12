@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,9 +32,9 @@ export default function ScrollToIndexForWaterFlowJsunit02() {
 
     beforeAll(() => {
       console.info("ScrollToIndexForWaterFlowJsunit02 beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -64,7 +63,8 @@ export default function ScrollToIndexForWaterFlowJsunit02() {
     
     
     
-    /*
+    
+/**
      * @tc.number   ScrollToIndexForWaterFlow02_static_0100
      * @tc.name     ScrollToIndexForWaterFlow02_static_0100
      * @tc.desc     ScrollToIndexForWaterFlow02_static_0100
@@ -95,7 +95,8 @@ it('ScrollToIndexForWaterFlow02_static_0100', Level.LEVEL1, async (done: () => v
     });
 
     
-    /*
+    
+/**
      * @tc.number   ScrollToIndexForWaterFlow02_static_0200
      * @tc.name     ScrollToIndexForWaterFlow02_static_0200
      * @tc.desc     ScrollToIndexForWaterFlow02_static_0200

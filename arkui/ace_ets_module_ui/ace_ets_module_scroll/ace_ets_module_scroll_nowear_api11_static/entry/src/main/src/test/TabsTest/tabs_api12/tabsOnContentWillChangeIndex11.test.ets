@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,9 +31,9 @@ export default function tabsOnContentWillChangeIndex11JsunitTest() {
   describe('tabsOnContentWillChangeIndex11JsunitTest', () => {
     beforeAll(() => {
       console.info("tabsOnContentWillChangeIndex11JsunitTest beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,7 +60,8 @@ export default function tabsOnContentWillChangeIndex11JsunitTest() {
 
     
 
-    /*
+    
+/**
      * @tc.number   tabsOnContentWillChangeJsunitTest_static_0110
      * @tc.name     tabsOnContentWillChangeJsunitTest_static_0110
      * @tc.desc     tabsOnContentWillChangeJsunitTest_static_0110

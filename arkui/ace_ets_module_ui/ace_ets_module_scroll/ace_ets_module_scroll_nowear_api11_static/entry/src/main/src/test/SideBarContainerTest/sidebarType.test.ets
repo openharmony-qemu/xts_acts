@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,9 +24,9 @@ export default function sidebarTypeTest() {
   describe('sidebarTypeTest', () => {
     beforeAll(() => {
       console.info("sidebarTypeTest beforeEach start");
-
+      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -52,7 +51,8 @@ export default function sidebarTypeTest() {
       }
     });
 
-    /*
+    
+/**
      * @tc.number   ArkUX_SideBarContainer_static_1000
      * @tc.name     ArkUX_SideBarContainer_static_1000
      * @tc.desc     ArkUX_SideBarContainer_static_1000
@@ -77,7 +77,8 @@ it('ArkUX_SideBarContainer_static_1000', Level.LEVEL1, async (done: () => void):
       }, 500)
     });
 
-    /*
+    
+/**
      * @tc.number   ArkUX_SideBarContainer_static_1100
      * @tc.name     ArkUX_SideBarContainer_static_1100
      * @tc.desc     ArkUX_SideBarContainer_static_1100
@@ -103,7 +104,8 @@ it('ArkUX_SideBarContainer_static_1100', Level.LEVEL1, async (done: () => void):
       }, 500)
     });
 
-    /*
+    
+/**
      * @tc.number   ArkUX_SideBarContainer_static_1200
      * @tc.name     ArkUX_SideBarContainer_static_1200
      * @tc.desc     ArkUX_SideBarContainer_static_1200
@@ -128,7 +130,8 @@ it('ArkUX_SideBarContainer_static_1200', Level.LEVEL1, async (done: () => void):
       }, 500)
     });
 
-    /*
+    
+/**
      * @tc.number   ArkUX_SideBarContainer_static_1300
      * @tc.name     ArkUX_SideBarContainer_static_1300
      * @tc.desc     ArkUX_SideBarContainer_static_1300
@@ -153,7 +156,8 @@ it('ArkUX_SideBarContainer_static_1300', Level.LEVEL1, async (done: () => void):
       }, 500)
     });
 
-    /*
+    
+/**
      * @tc.number   ArkUX_SideBarContainer_static_1400
      * @tc.name     ArkUX_SideBarContainer_static_1400
      * @tc.desc     ArkUX_SideBarContainer_static_1400

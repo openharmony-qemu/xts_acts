@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,9 +36,9 @@ export default function selectmenuTest() {
     beforeAll(() => {
       console.info("ActsSelectMenuTest beforeEach start");
 
-
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -65,9 +64,10 @@ export default function selectmenuTest() {
       // done()
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
@@ -77,13 +77,13 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL1, async (done:
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0100 start");
       // setTimeout(() => {
       //   try {
-      let strJson = inspector.getInspectorByKey('selectTest1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0100]:" +
-      JSON.stringify(obj.getElement('$attrs').getElement('menuAlign')));
-      expect(obj.getElement('$attrs').getElement('menuAlign').getString("alignType"))
-        .assertEqual("MenuAlignType.Start");
-      done();
+          let strJson = inspector.getInspectorByKey('selectTest1');
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0100]:" +
+          JSON.stringify(obj.getElement('$attrs').getElement('menuAlign')));
+          expect(obj.getElement('$attrs').getElement('menuAlign').getString("alignType"))
+            .assertEqual("MenuAlignType.Start");
+          done();
       //   } catch (err) {
       //     expect().assertFail();
       //     console.info('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100 ERR ' + JSON.stringify(err));
@@ -92,9 +92,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL1, async (done:
       // }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
@@ -119,9 +120,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
@@ -146,9 +148,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
@@ -177,9 +180,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
@@ -208,9 +212,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
@@ -239,9 +244,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
@@ -270,9 +276,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
@@ -301,9 +308,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
@@ -332,9 +340,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1000
@@ -363,9 +372,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1000', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1100
@@ -394,9 +404,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1100', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1200
@@ -425,9 +436,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1200', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1300
@@ -456,9 +468,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1300', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1400
@@ -487,9 +500,10 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_1400', Level.LEVEL1, async (done:
       }, 500)
     });
 
-
     
-    /*
+    
+
+/**
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_1500
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_1500
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_1500

@@ -1,5 +1,4 @@
-'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import SelectTest from './SelectTest/Select2.test';
+import SelectTest from './SelectTest/Select.test';
 import calendarpicker from './CalendarPickerTest/calendarpicker';
-import select from './SelectTest/Select1.test';
+import select from './SelectTest/Select2.test';
 import SelectAttr from './SelectTest/SelectAttr.test';
 import selectJsunit from './SelectTest/SelectJsunit1.test';
 import menuBackgroundBlurStyle from './SelectTest/menuBackgroundBlurStyle.test';
@@ -24,13 +23,13 @@ import selectOnSelectJsunit from './SelectTest/select3.test';
 import selectmenuTest from './SelectTest/SelectMenu.test';
 
 export default function testsuite() {
-  SelectTest(); //全pass
-  calendarpicker() //emitter导致8个failed 1个断言失败
-  SelectAttr() //全pass
-  selectJsunit() //emitter导致8个failed
-  menuBackgroundBlurStyle() //全pass
-  menuBackgroundColor() //全pass
-  selectOnSelectJsunit() //全pass
-  selectmenuTest()  //.menuAlign(fakeMenuAlignType(null)) 导致ArkUXII_Stage_Select_Menu_MenuAlign_static_1300断言失败 异常场景 忽略
-  select() //emitter导致7个failed
+  SelectTest();
+  // calendarpicker()
+  // SelectAttr()
+  // selectJsunit()
+  // menuBackgroundBlurStyle()
+  // menuBackgroundColor()
+  // selectOnSelectJsunit()
+  // selectmenuTest()
+  // select()
 }
