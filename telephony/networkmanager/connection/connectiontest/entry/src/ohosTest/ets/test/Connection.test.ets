@@ -385,7 +385,7 @@ export default function ConnectionTest() {
         let options:http.HttpRequestOptions = {
           usingProxy:true,
         };
-        httpRequest.request("http://www.baidu.com",options,(err:Error,data:http.HttpResponse) => {
+        httpRequest.request("http://www.baidu.com",options,(err:BusinessError,data:http.HttpResponse) => {
           if(!err) {
             console.info(`Result: ${data.result}`);
             console.info(`code: ${data.responseCode}`);
@@ -396,7 +396,7 @@ export default function ConnectionTest() {
             done();
           } else {
             console.error(`error: ${JSON.stringify(err)}`);
-            ExpectFail();
+            ExpectTrue(err.code == 2300005);
             console.info(`${caseName}---End`);
             done();
           }
