@@ -1906,6 +1906,7 @@ static void StartSelfUIAbilityWithPidWithStartOptionsNoErrorThread()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
+    errCodeReturn = ABILITY_RUNTIME_ERROR_CODE_NO_ERROR;
     element.abilityName = const_cast<char *>("EntryAbility");
     element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
     element.moduleName = const_cast<char *>("entry");

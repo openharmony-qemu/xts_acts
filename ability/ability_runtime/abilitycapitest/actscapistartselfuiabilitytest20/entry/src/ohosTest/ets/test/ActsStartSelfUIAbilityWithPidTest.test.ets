@@ -22,6 +22,37 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
   describe('ActsStartSelfUIAbilityWithPidTest', () => {
     
     /**
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
+     * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return the correct code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsNoError();
+          if(result == 801){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+      
+    /**
      * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100
      * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return 16000079.
@@ -48,36 +79,6 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
             return;
           }
           expect(16000079).assertEqual(result);
-          console.info(`====>${LOG_NAME} result: ` + result);
-          done();
-        } catch (err) {
-          console.error(`====>${LOG_NAME} catch err: ` + err);
-          expect(false).assertEqual(ABILITY_ERR_OK);
-          done();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
-     * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return the correct code.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200`;
-        try {
-          console.info(`====>${LOG_NAME} start====`);
-          let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsNoError();
-          if(result == 801){
-            console.info(`====>${LOG_NAME} result: ` + result);
-            expect(801).assertEqual(result);
-            done();
-            return;
-          }
-          expect(0).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done();
         } catch (err) {
