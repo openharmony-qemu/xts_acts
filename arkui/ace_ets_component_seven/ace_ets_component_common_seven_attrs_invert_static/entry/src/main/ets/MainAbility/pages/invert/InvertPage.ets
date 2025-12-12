@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +25,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
-  ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
+  ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,applyStyles,CommonMethod,
   EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
@@ -39,7 +38,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, GridRowOptions,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef,AppStorage } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -569,7 +568,6 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   }
 }
 function commonStyleAlphabetIndexer(this: AlphabetIndexerAttribute, componentKey: string, invert: number): this {
-  console.log('---------invert = ' + invert)
   this.invert(invert)
   this.height('100%')
   this.key(componentKey)
@@ -1066,9 +1064,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Component
 struct invertPage {
   @State _invert: number = 0
-  @StorageProp('_invertAlphabetIndexer') invertAlphabetIndexer: SetValue = {
-    invert: 0
-  }
+  @StoragePropRef('_invertAlphabetIndexer') invertAlphabetIndexerInvert: number = 0
   @State _invertAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _invertBadgeMod: BadgeModifier = new BadgeModifier()
   @State _invertBlankMod: BlankModifier = new BlankModifier()
@@ -1155,9 +1151,8 @@ struct invertPage {
   onPageShow() {
     console.info('22222 invert page show called ')
     let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-    this.invertAlphabetIndexer = routerParamOptions.view.testValue.setValue
-    this._invertAlphabetIndexerMod.mInvert = routerParamOptions.view.testValue.setValue.invert
-    this._invertAlphabetIndexerMod.mInvert = routerParamOptions.view.testValue.setValue.invert
+    AppStorage.setOrCreate<number>('_invertAlphabetIndexer',routerParamOptions.view.testValue.setValue.invert)
+    console.log(this.invertAlphabetIndexerInvert,'abc112233')
     const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
       .getElement("view")
     this.targetView = viewElement.getString("targetView")
@@ -1169,7 +1164,7 @@ struct invertPage {
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.invert))
-
+      this._invertAlphabetIndexerMod.mInvert = value.invert
       this._invertBadgeMod.mInvert = value.invert
       this._invertBlankMod.mInvert = value.invert
       this._invertButttonMod.mInvert = value.invert
@@ -1248,6 +1243,12 @@ struct invertPage {
     })
   }
 
+  commonStyleAlp1(instance: CommonMethod) {
+    instance.invert(this.invertAlphabetIndexerInvert)
+    instance.height('100%')
+    instance.key(this.componentKey)
+  }
+
   build() {
     GridRow({ columns: this.columns, gutter: this.gutter} as GridRowOptions) {
       Row() {
@@ -1257,7 +1258,8 @@ struct invertPage {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._invertTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-          .commonStyleAlphabetIndexer(this.componentKey, this.invertAlphabetIndexer.invert).attributeModifier(this._invertAlphabetIndexerMod)
+            .attributeModifier(this._invertAlphabetIndexerMod)
+            .applyStyles(this.commonStyleAlp1)
         } else if (this.targetView == 'Blank') {
           Blank().backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._invertBlankMod)
         } else if (this.targetView == 'Checkbox') {

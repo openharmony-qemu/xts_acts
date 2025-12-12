@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +18,7 @@ import Utils, { BasePageConfig, PageConfig, TestValue, SetValue } from '../../..
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
@@ -51,7 +51,7 @@ export default class CommonTest {
           }
 
           //Create case name.
-          let caseTag = pageConfig.testName + targetView+'_static_' + testValue.describe;
+          let caseTag = pageConfig.testName + targetView + testValue.describe;
 
           //If there is a specified container view.
           let containerView = '';
@@ -60,12 +60,7 @@ export default class CommonTest {
             caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
           }
 
-          /**
-           * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
-           * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
-           * @tc.desc Test whether the state of different components
-           *            after modifying their properties meets expectations
-           */
+
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
             //Push page.
@@ -94,13 +89,14 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              await Utils.sleep(1000);
+              // console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              // AppStorage.setOrCreate<SetValue>('_backdropBlur', data.testValue.setValue);
+              // await Utils.sleep(1000);
 
               //Check test result
-
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              console.info('[' + caseTag + '] ================== strJson: ' + strJson);
               data.viewObj = JSON.parseJsonElement(strJson);
-              console.log('strJson : ',strJson)
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
             } catch (err: Error) {
