@@ -689,7 +689,7 @@ static napi_value NdkApplicationContextGetVersionCode_0100(napi_env env, napi_ca
     OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0100 errCode=%{public}d", errCode);
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value napiRet;
-        napi_create_int32(env, errCode, &napiRet);
+        napi_create_int32(env, versionCode, &napiRet);
         return napiRet;
     }
     napi_value result;
@@ -705,7 +705,7 @@ static napi_value NdkApplicationContextGetVersionCode_0200(napi_env env, napi_ca
     OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0200 errCode=%{public}d", errCode);
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         napi_value napiRet;
-        napi_create_int32(env, errCode, &napiRet);
+        napi_create_int32(env, versionCode, &napiRet);
         return napiRet;
     }
     if (errCode == ABILITY_RUNTIME_ERROR_CODE_GET_APPLICATION_INFO_FAILED) {

@@ -18,8 +18,8 @@ import AbilityKitTest from 'libentry.so'
 
 const ABILITY_ERR_OK = 0;
 
-export default function ActsCapiNoPermissionTest() {
-  describe('ActsCapiNoPermissionTest', () => {
+export default function ActsStartNoPermissionTest() {
+  describe('ActsStartNoPermissionTest', () => {
 
     /**
      * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100

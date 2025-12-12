@@ -20,4 +20,3 @@ export const error_buffersize_less: (moduleName:string) => string;
 export const error_moduleName_null: () => string;
 export const buffersize_larger: (moduleName:string) => string;
 export const buffersize_equals: (moduleName:string) => string;
-export const errorModuleNameEmpty: (moduleName:string) => string;

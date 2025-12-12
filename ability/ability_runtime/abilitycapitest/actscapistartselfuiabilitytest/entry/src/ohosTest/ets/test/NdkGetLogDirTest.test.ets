@@ -15,7 +15,7 @@
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { fileIo as fs } from '@kit.CoreFileKit'
+import fs from '@ohos.file.fs'
 import testNapi from 'libentry.so';
 
 export default function NdkGetLogDirTest() {
@@ -75,22 +75,22 @@ export default function NdkGetLogDirTest() {
       let ret : string = testNapi.contextGetLogPath_0300();
       hilog.info(0x0000, tag, '%{public}s', ` ${tag} execute result:` + ret);
       expect(ret).assertEqual('/data/storage/el2/log');
-      let filePath = ret + 'test.txt';
-      fs.open(filePath, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY).then((file: fs.file)=>{
+      let filePath = ret + '/test.txt';
+      fs.open(filePath, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY).then((file: fs.File)=>{
         hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs open success`);
         try{
-          expect(fs.accessAsync(filePath)).assertTrue();
-          fs.unLink(filePath).then(()=>{
-            try{ expect(fs.accessAsync(filePath)).assertFalse(); }catch{}
+          expect(fs.accessSync(filePath)).assertTrue();
+          fs.unlink(filePath).then(()=>{
+            try{ expect(fs.accessSync(filePath)).assertFalse(); }catch{}
             done();
           }).catch(()=>{
-            hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs open fail`);
+            hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs unlink fail`);
             expect().assertFail();
             done();
           })
         }catch{}
       }).catch(()=>{
-        hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs open fail`);
+        hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs catch open fail`);
         expect().assertFail();
         done();
       })
@@ -127,22 +127,22 @@ export default function NdkGetLogDirTest() {
       let ret : string = testNapi.contextGetLogPath_0700();
       hilog.info(0x0000, tag, '%{public}s', ` ${tag} execute result:` + ret);
       expect(ret).assertEqual('/data/storage/el2/log');
-      let filePath = ret + 'test1.txt';
-      fs.open(filePath, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY).then((file: fs.file)=>{
+      let filePath = ret + '/test1.txt';
+      fs.open(filePath, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY).then((file: fs.File)=>{
         hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs open success`);
         try{
-          expect(fs.accessAsync(filePath)).assertTrue();
-          fs.unLink(filePath).then(()=>{
-            try{ expect(fs.accessAsync(filePath)).assertFalse(); }catch{}
+          expect(fs.accessSync(filePath)).assertTrue();
+          fs.unlink(filePath).then(()=>{
+            try{ expect(fs.accessSync(filePath)).assertFalse(); }catch{}
             done();
           }).catch(()=>{
-            hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs open fail`);
+            hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs unlink fail`);
             expect().assertFail();
             done();
           })
         }catch{}
       }).catch(()=>{
-        hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs open fail`);
+        hilog.info(0x0000, tag, '%{public}s', ` ${tag} fs catch open fail`);
         expect().assertFail();
         done();
       })

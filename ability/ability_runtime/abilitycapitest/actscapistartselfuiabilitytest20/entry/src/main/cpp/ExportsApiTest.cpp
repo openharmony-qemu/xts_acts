@@ -273,6 +273,8 @@ napi_property_descriptor desc[] = {
         StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled", nullptr,
         StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport", nullptr,
+        StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

@@ -18,8 +18,8 @@ import AbilityKitTest from 'libentry.so'
 
 const ABILITY_ERR_OK = 0;
 
-export default function ActsCapabilityStartSelfUIAbilityTest1() {
-  describe('ActsCapabilityStartSelfUIAbilityTest1', () => {
+export default function ActsStartSelfUIAbilityWithPidTest() {
+  describe('ActsStartSelfUIAbilityWithPidTest', () => {
     
     /**
      * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100
@@ -29,9 +29,9 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0100`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport();
@@ -58,16 +58,16 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return the correct code.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0200`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsNoError();
@@ -88,16 +88,16 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0300
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0300
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return 16000077.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0300`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0300`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached();
@@ -124,16 +124,16 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0400
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0400
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return 16000001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0400`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0400`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility();
@@ -154,16 +154,16 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0500
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0500
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return 16000018.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0500`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0500`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp();
@@ -184,16 +184,16 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0600
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0600
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return 16000050.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0600`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0600`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsCodeInternal();
@@ -214,16 +214,16 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0700
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0700
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return 16000076.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0700`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0700`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey();
@@ -250,16 +250,16 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
       })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800
-     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0800
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0800
      * @tc.desc   Test OH_AbilityRuntime_StartSelfUIAbilityWithPidResult and return 16000067.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800',
+    it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_0800`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0800`;
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result : number = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled();
