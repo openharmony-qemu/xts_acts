@@ -2830,72 +2830,72 @@ export default function TextPicker() {
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       const operationItems: photoAccessHelper.OperationItem[] = [
         {
-          operationType: photoAccessHelper.OperationType.BEGIN_WRAP,
+          operationType: photoAccessHelper.operationType.BEGIN_WRAP,
           field: undefined,
           value: undefined
         },
         {
-          operationType: photoAccessHelper.OperationType.EQUAL_TO,
+          operationType: photoAccessHelper.operationType.EQUAL_TO,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [1]
         },
         {
-          operationType: photoAccessHelper.OperationType.AND,
+          operationType: photoAccessHelper.operationType.AND,
           field: undefined,
           value: undefined
         },
         {
-          operationType: photoAccessHelper.OperationType.EQUAL_TO,
+          operationType: photoAccessHelper.operationType.EQUAL_TO,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.OR,
+          operationType: photoAccessHelper.operationType.OR,
           field: undefined,
           value: undefined
         },
         {
-          operationType: photoAccessHelper.OperationType.GREATER_THAN,
+          operationType: photoAccessHelper.operationType.GREATER_THAN,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.LESS_THAN,
+          operationType: photoAccessHelper.operationType.LESS_THAN,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.GREATER_THAN_OR_EQUAL_TO,
+          operationType: photoAccessHelper.operationType.GREATER_THAN_OR_EQUAL_TO,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.LESS_THAN_OR_EQUAL_TO,
+          operationType: photoAccessHelper.operationType.LESS_THAN_OR_EQUAL_TO,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.IN,
+          operationType: photoAccessHelper.operationType.IN,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.NOT_IN,
+          operationType: photoAccessHelper.operationType.NOT_IN,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.BETWEEN,
+          operationType: photoAccessHelper.operationType.BETWEEN,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.NOT_BETWEEN,
+          operationType: photoAccessHelper.operationType.NOT_BETWEEN,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.END_WRAP,
+          operationType: photoAccessHelper.operationType.END_WRAP,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
