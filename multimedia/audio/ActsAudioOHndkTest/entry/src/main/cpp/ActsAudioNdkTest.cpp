@@ -16,7 +16,7 @@
 #include <mutex>
 #include <chrono>
 #include <thread>
-#include "include/ActsAudioNdkTest.h"
+#include "ActsAudioNdkTest.h"
 #include "hilog/log.h"
 
 using namespace std::chrono;
