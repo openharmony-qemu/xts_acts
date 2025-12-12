@@ -133,14 +133,14 @@ export default function builtinsArrayFlatMapTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayFlatMapTest1008
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1008
+     * @tc.name   builtinsArrayFlatMapTest10008
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10008
      * @tc.desc   Verify nested empty arrays handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatMapTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatMapTest10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[], [1], [2]];
       expect(JSON.stringify(arr.flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
     });
@@ -159,14 +159,14 @@ export default function builtinsArrayFlatMapTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayFlatMapTest1010
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1010
+     * @tc.name   builtinsArrayFlatMapTest10100
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10100
      * @tc.desc   Verify thisArg parameter binding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatMapTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatMapTest10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
       const context: Multiply = {
         value: 2
@@ -176,14 +176,14 @@ export default function builtinsArrayFlatMapTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayFlatMapTest1011
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1011
+     * @tc.name   builtinsArrayFlatMapTest10011
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10011
      * @tc.desc   Verify undefined return handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatMapTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatMapTest10011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3, 4, 5];
       const result = arr.flatMap(() => {
       });
@@ -191,14 +191,14 @@ export default function builtinsArrayFlatMapTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayFlatMapTest1012
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1012
+     * @tc.name   builtinsArrayFlatMapTest10012
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10012
      * @tc.desc   Verify null/undefined element handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatMapTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatMapTest10012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [null, [undefined, 3]];
       const result = arr.flatMap(x => [x, Number(x) * 2]);
       expect(JSON.stringify(result)).assertEqual(JSON.stringify([null, 0, [undefined, 3], NaN]));

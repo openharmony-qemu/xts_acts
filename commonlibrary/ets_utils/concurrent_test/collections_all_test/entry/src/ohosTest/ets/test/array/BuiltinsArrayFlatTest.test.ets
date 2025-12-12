@@ -108,27 +108,27 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayFlatTest1006
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1006
+     * @tc.name   builtinsArrayFlatTest10006
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10006
      * @tc.desc   Verify handling of sparse arrays (empty slots)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest10006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, , 3];
       expect(JSON.stringify(arr.flat())).assertEqual(JSON.stringify([1, 3]));
     });
 
     /**
-     * @tc.name   builtinsArrayFlatTest1007
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1007
+     * @tc.name   builtinsArrayFlatTest10007
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10007
      * @tc.desc   Verify flattening nested sparse arrays
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest10007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [, 3], 4];
       expect(JSON.stringify(arr.flat(1))).assertEqual(JSON.stringify([1, 3, 4]));
     });
