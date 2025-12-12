@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,7 +49,7 @@ export default function BorderTest() {
   let testValues:TestValue[]= [{
     describe: 'SetBorder',
     setValue: {
-      border: ({
+      border: {
         width: { left: 7, right: 8, top: 14, bottom: 16 },
         color: { left: '#FFE3BBBB', right: '#FFE3BBBF', top: '#FFE3BBBA', bottom: '#FFE3BBBC' },
         radius: { topLeft: 17, topRight: 21, bottomLeft: 70, bottomRight: 20 },
@@ -60,10 +59,10 @@ export default function BorderTest() {
           top: BorderStyle.Dashed,
           bottom: BorderStyle.Dotted
         }
-      })
+      }
     },
     expectValue: {
-      border: ({
+      border: {
         width: { left: '7.00vp', right: '8.00vp', top: '14.00vp', bottom: '16.00vp' },
         color: { left: '#FFE3BBBB', right: '#FFE3BBBF', top: '#FFE3BBBA', bottom: '#FFE3BBBC' },
         radius: { topLeft: '17.00vp', topRight: '21.00vp', bottomLeft: '70.00vp', bottomRight: '20.00vp' },
@@ -73,7 +72,7 @@ export default function BorderTest() {
           top: 'BorderStyle.Dashed',
           bottom: 'BorderStyle.Dotted'
         }
-      })
+      }
     }
   }]
 
@@ -82,9 +81,9 @@ export default function BorderTest() {
    */
   describe('borderTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
@@ -104,7 +103,7 @@ export default function BorderTest() {
       expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('radius').getString('topRight')).assertEqual(data.testValue.expectValue.border!.radius.topRight);
       expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('radius').getString('bottomLeft')).assertEqual(data.testValue.expectValue.border!.radius.bottomLeft);
       expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('radius').getString('bottomRight')).assertEqual(data.testValue.expectValue.border!.radius.bottomRight);
-      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('style.').getString('right')).assertEqual(data.testValue.expectValue.border!.style.right);
+      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('style').getString('right')).assertEqual(data.testValue.expectValue.border!.style.right);
       expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('style').getString('top')).assertEqual(data.testValue.expectValue.border!.style.top);
       expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('style').getString('left')).assertEqual(data.testValue.expectValue.border!.style.left);
       expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getString('border')).getElement('style').getString('bottom')).assertEqual(data.testValue.expectValue.border!.style.bottom);

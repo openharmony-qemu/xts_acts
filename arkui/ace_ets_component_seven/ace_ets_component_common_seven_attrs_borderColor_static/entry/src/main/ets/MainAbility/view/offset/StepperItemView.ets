@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,8 +52,8 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: number = 0
-  @State currentIndex: int = 0
+  @State prevIndex: Int = 0
+  @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @Link _offset!: Position;
@@ -109,7 +108,7 @@ export struct StepperItemView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: int, index: int) => {
+    .onChange((prevIndex: Int, index: Int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

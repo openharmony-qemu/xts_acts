@@ -1,6 +1,5 @@
-'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,14 +64,16 @@ export default function borderWidthTest() {
    */
   describe('borderWidthTest', () => {
     beforeAll(() => {
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      console.info('[' + data.caseTag + ']' + 'borderWidth is:' + data.viewObj!.getElement('$attrs').getElement('borderWidth'));
-      expect(data.viewObj!.getElement('$attrs').getElement('borderWidth').getString('left')).assertEqual(data.testValue.expectValue.borderWidth);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderWidth').getString('top')).assertEqual(data.testValue.expectValue.borderWidth);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderWidth').getString('bottom')).assertEqual(data.testValue.expectValue.borderWidth);
-      expect(data.viewObj!.getElement('$attrs').getElement('borderWidth').getString('right')).assertEqual(data.testValue.expectValue.borderWidth);
+      console.info('[' + data.caseTag + ']' + 'borderWidth is:' + data.viewObj!.getElement('$attrs').getString('borderWidth'));
+      expect(data.viewObj!.getElement('$attrs').getString('borderWidth')).assertEqual(data.testValue.expectValue.borderWidth);
+      expect(data.viewObj!.getElement('$attrs').getString('borderWidth')).assertEqual(data.testValue.expectValue.borderWidth);
+      expect(data.viewObj!.getElement('$attrs').getString('borderWidth')).assertEqual(data.testValue.expectValue.borderWidth);
+      expect(data.viewObj!.getElement('$attrs').getString('borderWidth')).assertEqual(data.testValue.expectValue.borderWidth);
     });
   })
 }

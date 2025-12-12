@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +39,7 @@ export struct WaterFlowView {
   @State minSize: number = 50
   @State maxSize: number = 100
   @State fontSize: number = 24
-  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
+  @State colors: Int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as Int[]
   scroller: Scroller = new Scroller()
   private itemWidthArray: number[] = [] as number[]
   private itemHeightArray: number[] = [] as number[]
@@ -76,7 +75,7 @@ export struct WaterFlowView {
 
   build() {
     WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: int) => {
+      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: Int) => {
         FlowItem() {
           Column() {
             Text('N' + item).fontSize(12).height('16')

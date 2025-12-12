@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +35,7 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 export struct TabsView {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: int = 0
+  @State currentIndex: Int = 0
   private controller: TabsController = new TabsController()
   @Link _position!: Position;
   private componentKey: string = '';
@@ -80,7 +79,7 @@ export struct TabsView {
     .barWidth(360)
     .barHeight(56)
     .animationDuration(400)
-    .onChange((index: int): void => {
+    .onChange((index: Int): void => {
       this.currentIndex = index
     })
     .width(360)
