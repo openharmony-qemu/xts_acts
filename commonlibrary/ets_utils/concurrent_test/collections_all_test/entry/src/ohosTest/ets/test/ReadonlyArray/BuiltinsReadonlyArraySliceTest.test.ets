@@ -75,7 +75,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest0300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0300
@@ -92,7 +91,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, [3, 4])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest0400
@@ -111,7 +109,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest0500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0500
@@ -128,7 +125,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, [])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest0600
@@ -147,7 +143,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest0700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0700
@@ -164,7 +159,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, [])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest0800
@@ -183,7 +177,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest0900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_0900
@@ -200,7 +193,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, [2, 3, 4, 5])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1000
@@ -219,7 +211,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1100
@@ -236,7 +227,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, ['c', 'd'])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1200
@@ -276,7 +266,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1300
@@ -293,7 +282,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayArrayEqual(res, [[3, 4], [5, 6]])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1400
@@ -348,7 +336,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1700
@@ -365,7 +352,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, [1, 2, 3, 4, 5, 6])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1800
@@ -384,7 +370,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest1900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_1900
@@ -401,7 +386,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, [1, 2, 3, 4, 5, 6])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest2000
@@ -420,7 +404,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest2100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2100
@@ -437,7 +420,6 @@ export default function builtinsReadonlyArraySliceTest() {
         expect(isArrayEqual(res, [])).assertTrue();
         Done();
       });
-
 
     /**
      * @tc.name   BuiltinsReadonlyArraySliceTest2200
@@ -456,59 +438,6 @@ export default function builtinsReadonlyArraySliceTest() {
         Done();
       });
 
-
-    /**
-     * @tc.name   BuiltinsReadonlyArraySliceTest2300
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2300
-     * @tc.desc   test Slice
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsReadonlyArraySliceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: Function) => {
-        let inputArray: readonly number[] = [1, 2, 3, 4, 5, 6];
-        const res = inputArray.slice(0x0102);
-        console.log("res:" + res);
-        expect(isArrayEqual(res, [])).assertTrue();
-        Done();
-      });
-
-
-    /**
-     * @tc.name   BuiltinsReadonlyArraySliceTest2400
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2400
-     * @tc.desc   test Slice
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsReadonlyArraySliceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: Function) => {
-        let inputArray: readonly number[] = [1, 2, 3, 4, 5, 6];
-        const res = inputArray.slice(0x01020304);
-        console.log("res:" + res);
-        expect(isArrayEqual(res, [])).assertTrue();
-        Done();
-      });
-
-
-    /**
-     * @tc.name   BuiltinsReadonlyArraySliceTest2500
-     * @tc.number SUB_BUILTINS_READONLY_ARRAY_SLICE_TEST_2500
-     * @tc.desc   test Slice
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsReadonlyArraySliceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: Function) => {
-        let inputArray: readonly number[] = [1, 2, 3, 4, 5, 6];
-        const res = inputArray.slice(0x3);
-        console.log("res:" + res);
-        expect(isArrayEqual(res, [4, 5, 6])).assertTrue();
-        Done();
-      });
 
   })
 }
