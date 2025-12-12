@@ -24,6 +24,8 @@
 #include "FixedArray.h"
 #include "Promise.h"
 #include "WeakGlobalReferences.h"
+#include "ClassOperations.h"
+#include "ClassOperationsFindMethod.h"
 
 namespace {
     std::array methods = {
