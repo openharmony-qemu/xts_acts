@@ -57,6 +57,39 @@ async function terminateAbility7(caseName: string) {
   await sleep(1000)
 }
 
+async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest3') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 export default function windowMaximizeTest() {
   describe('windowMaximize_test', () => {
     let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
@@ -1515,7 +1548,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     it('testMaximizeAcrossDisplaywithTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMaximizeAcrossDisplaywithTrue';
       console.log(caseName + 'begin');
-      let windowStageStart = await startAbility7(caseName, context);
+      let windowStageStart = await startAbility3(caseName, context);
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
       try {
@@ -1551,14 +1584,17 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
           expect(windowRect3.width).assertEqual(displayRes3.width)
           expect(windowRect3.height).assertEqual(displayRes3.height)
 
-          await terminateAbility7(caseName);
+          await terminateAbility3(caseName);
           done();
         } else {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          console.log(caseName + ' maximize success ');
+          await terminateAbility3(caseName);
+          done();
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        await terminateAbility7(caseName);
+        await terminateAbility3(caseName);
         if (!isSupport) {
           expect(err.code).assertEqual(801)
         } else {
@@ -1579,7 +1615,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     it('testMaximizeAcrossDisplaywithFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testMaximizeAcrossDisplaywithFalse';
       console.log(caseName + 'begin');
-      let windowStageStart = await startAbility7(caseName, context);
+      let windowStageStart = await startAbility3(caseName, context);
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
       try {
@@ -1614,14 +1650,17 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
           expect(windowRect2.width).assertEqual(displayRes2.width)
           expect(windowRect2.height).assertEqual(displayRes2.height)
 
-          await terminateAbility7(caseName);
+          await terminateAbility3(caseName);
           done();
         } else {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          console.log(caseName + ' maximize success ');
+          await terminateAbility3(caseName);
+          done();
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        await terminateAbility7(caseName);
+        await terminateAbility3(caseName);
         if (!isSupport) {
           expect(err.code).assertEqual(801);
           done();

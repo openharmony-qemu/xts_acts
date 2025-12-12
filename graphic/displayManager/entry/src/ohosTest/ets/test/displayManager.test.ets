@@ -3017,7 +3017,7 @@ export default function displayTest() {
             await terminateAbility(caseName);
             done();
           }).catch(async (err: BusinessError) => {
-            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
             if (!isSupport) {
               expect(err.code).assertEqual(801)
               done();
@@ -3028,7 +3028,7 @@ export default function displayTest() {
             }
           })
         }).catch(async (err: BusinessError) => {
-          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport) {
             expect(err.code).assertEqual(801)
             done();
@@ -3079,7 +3079,7 @@ export default function displayTest() {
             await terminateAbility(caseName);
             done();
           }).catch(async (err: BusinessError) => {
-            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
             if (!isSupport) {
               expect(err.code).assertEqual(801)
               done();
@@ -3090,7 +3090,7 @@ export default function displayTest() {
             }
           })
         }).catch(async (err: BusinessError) => {
-          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport) {
             expect(err.code).assertEqual(801)
             done();
@@ -3140,7 +3140,7 @@ export default function displayTest() {
             await terminateAbility(caseName);
             done();
           }).catch(async (err: BusinessError) => {
-            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
             if (!isSupport) {
               expect(err.code).assertEqual(801)
               done();
@@ -3151,7 +3151,7 @@ export default function displayTest() {
             }
           })
         }).catch(async (err: BusinessError) => {
-          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport) {
             expect(err.code).assertEqual(801)
             done();
@@ -3202,30 +3202,28 @@ export default function displayTest() {
             await terminateAbility(caseName);
             done();
           }).catch(async (err: BusinessError) => {
-            console.log(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            display.destroyVirtualScreen(displayId);
             if (!isSupport) {
               expect(err.code).assertEqual(801)
               done();
             } else {
-              await terminateAbility(caseName);
               expect(err.code).assertEqual(1300002)
               done();
             }
           })
         }).catch(async (err: BusinessError) => {
-          console.log(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
           if (!isSupport) {
             expect(err.code).assertEqual(801)
             done();
           } else {
-            await terminateAbility(caseName);
             expect(err.code).assertEqual(1300002)
             done();
           }
         })
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        await terminateAbility(caseName);
         expect(e.code).assertEqual(1300002)
         done();
       }

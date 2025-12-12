@@ -4474,12 +4474,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         done()
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
-        if (!canIUseRes) {
-          expect(err.code).assertEqual(801);
-        } else {
-          expect(err.code).assertEqual(1300002);
-          done();
-        }
+        expect(err.code).assertEqual(1300002);
+        done();
       }
     });
 

@@ -3797,10 +3797,10 @@ export default function windowImmersiveTest() {
             expect(avoidArea3.bottomRect.height).assertEqual(avoidArea4.bottomRect.height);
           } catch (error) {
             console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
-            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
+              await terminateAbility3(caseName);
               expect().assertFail();
             }
             done()
@@ -3851,11 +3851,11 @@ export default function windowImmersiveTest() {
             done()
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
-            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
               done()
             } else {
+              await terminateAbility3(caseName);
               expect().assertFail();
               done()
             }
@@ -4037,13 +4037,8 @@ export default function windowImmersiveTest() {
         done();
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (canIUseRes) {
-          expect(err.code).assertEqual(1300002)
-          done();
-        } else {
-          expect(err.code).assertEqual(801)
-          done();
-        }
+        expect(err.code).assertEqual(1300002)
+        done();
       }
     });
 

@@ -7785,6 +7785,7 @@ export default function windowPropertiesTest() {
        */
       it('testOnFrameMetricsMeasuredCallbackwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName = 'testOnFrameMetricsMeasuredCallbackwithDialogWindow';
+        let driver: Driver = await Driver.create();
         let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
         console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
         let windowClass: window.Window | undefined;
@@ -7810,7 +7811,6 @@ export default function windowPropertiesTest() {
           windowClass.on('frameMetricsMeasured', callback1);
           let windowProperties = windowClass.getWindowProperties();
           console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-          let driver: Driver = await Driver.create();
           let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
           console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
           let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
@@ -7843,6 +7843,7 @@ export default function windowPropertiesTest() {
        */
       it('testOnFrameMetricsMeasuredCallbackwithUECSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName = 'testOnFrameMetricsMeasuredCallbackwithUECSubWindow';
+        let driver = Driver.create();
         let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
         console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
         let windowClass: window.Window | undefined;
@@ -7850,7 +7851,7 @@ export default function windowPropertiesTest() {
           windowClass = await windowStage.createSubWindow('testOnFrameMetricsMeasuredCallbackwithUECSubWindow');
           await windowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentPage');
           await sleep(2000);
-          let driver = Driver.create();
+
           let btn = await driver.findComponent(ON.id('Button'));
           console.log(caseName + ' btn1 : ' + btn);
           if (btn == undefined) {
