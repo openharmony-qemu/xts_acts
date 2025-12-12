@@ -49,9 +49,7 @@ export default function RichEditorBreak001() {
   describe('RichEditorBreak001', () => {
     beforeAll(() => {
       console.info("RichEditorBreak001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router

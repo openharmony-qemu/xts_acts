@@ -49,9 +49,7 @@ export default function RichEditorStabillity004() {
   describe('RichEditorStabillity004', () => {
     beforeAll(() => {
       console.info("RichEditorStabillity004 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router

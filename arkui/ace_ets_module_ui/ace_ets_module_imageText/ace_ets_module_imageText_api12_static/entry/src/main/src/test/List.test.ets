@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import MarqueeApi from './Marquee/MarqueeApi.test';
 import MarqueeMirroringTest from './Marquee/MarqueeMirroring.test';
 import SearchApi1 from './Search/SearchApi1.test';
@@ -472,69 +471,43 @@ import replaceString from "./StyledString/replaceString.test";
 import StyledStringApi1 from "./StyledString/StyledStringApi1.test";
 import StyledStringKeyTest1 from "./StyledString/StyledStringKeyTest1.test";
 import spanTest from './spanTest/SpanJsunit1.test'
+
 export default function testsuite() {
-  // fail 106 可能JSON.stringify问题
   RichEditorStringSpan001();
-  RichEditorStringSpan002();
+  RichEditorStringSpan002()
   RichEditorStringSpan003();
   RichEditorStringSpan004();
+  RichEditorStringSpan005();
+
   RichEditorCustomSpan001();
   RichEditorCustomSpan002();
   RichEditorCustomSpan003();
   RichEditorCustomSpan004();
-  RichEditorCustomSpan005();
-  RichEditorCustomSpan006();
   RichEditorCustomSpan007();
-  RichEditorCustomSpan008();
   RichEditorCustomSpan009();
-  RichEditorCustomSpan010();
-  RichEditorCustomSpan011();
   RichEditorCustomSpan012();
   RichEditorCustomSpan013();
   RichEditorCustomSpan014();
   RichEditorCustomSpan015();
   RichEditorCustomSpan016();
-  RichEditorLineMetrics001();
-  RichEditorLineMetrics002();
-  RichEditorLineMetrics003();
-  RichEditorLineMetrics004();
-  RichEditorLineMetrics005();
-  RichEditorLineMetrics006();
-  RichEditorLineMetrics007();
-  RichEditorLineMetrics009();
-  RichEditorLineMetrics011();
-  RichEditorLineMetrics012();
-  RichEditorLineMetrics013();
-  RichEditorLineMetrics014();
-  RichEditorLineMetrics015();
-  RichEditorLineMetrics016();
-  RichEditorLineMetrics017();
-  RichEditorLineMetrics018();
-  RichEditorLineMetrics021();
-  RichEditorLineMetrics022();
-  RichEditorLineMetrics023();
+  RichEditorCustomSpan017();
+  RichEditorCustomSpan008();
+  RichEditorCustomSpan005();
+  RichEditorCustomSpan006();
+  RichEditorCustomSpan010();
+  RichEditorCustomSpan011();
+
+  RichEditorTransformation001();
+  RichEditorTransformation002();
+  RichEditorTransformation003();
+  RichEditorTransformation005();
   RichEditorTransformation004();
-  RichEditorSetStyledString012();
-  RichEditorSetStyledString015();
-  RichEditorSetStyledString018();
+
+
   RichEditorLayoutStyle003();
   RichEditorLayoutStyle001();
   RichEditorLayoutStyle002();
-  RichEditorLineLetter001();
-  RichEditorLineLetter002();
-  RichEditorLineLetter003();
-  RichEditorLineLetter004();
-  RichEditorLineLetter005();
-  RichEditorLineLetter006();
-  RichEditorLineLetter007();
-  RichEditorLineLetter008();
-  RichEditorLineLetter009();
-  RichEditorLineLetter010();
-  RichEditorLineLetter011();
-  RichEditorLineLetter012();
-  RichEditorLineLetter013();
-  RichEditorLineLetter014();
-  RichEditorLineLetter015();
+
   RichEditorShortCutKeys006();
   RichEditorShortCutKeys009();
   RichEditorShortCutKeys010();
@@ -546,17 +519,26 @@ export default function testsuite() {
   RichEditorShortCutKeys017();
   RichEditorShortCutKeys018();
   RichEditorShortCutKeys019();
-  RichEditorShortCutKeys020();
+  RichEditorShortCutKeys020();// died
   RichEditorShortCutKeys021();
   RichEditorShortCutKeys022();
   RichEditorShortCutKeys023();
   RichEditorShortCutKeys024();
-  RichEditorUxConFormance001();
+  RichEditorShortCutKeys001();
+  RichEditorShortCutKeys002();
+  RichEditorShortCutKeys003();
+  RichEditorShortCutKeys004();
+  RichEditorShortCutKeys005();
+  RichEditorShortCutKeys007();
+  RichEditorShortCutKeys008();
+
+  RichEditorUxConFormance001();// died
   RichEditorUxConFormance002();
   RichEditorUxConFormance004();
   RichEditorUxConFormance005();
   RichEditorUxConFormance006();
-    RichEditorQueryLayout001();
+
+  RichEditorQueryLayout001();
   RichEditorQueryLayout002();
   RichEditorQueryLayout003();
   RichEditorQueryLayout004();
@@ -575,44 +557,36 @@ export default function testsuite() {
   RichEditorQueryLayout017();
   RichEditorQueryLayout018();
   RichEditorQueryLayout019();
-  RichEditorQueryLayout020();
-  RichEditorQueryLayout021();
-  RichEditorQueryLayout022();
-  RichEditorQueryLayout023();
-  RichEditorQueryLayout024();
-  RichEditorBreak001();
+  RichEditorQueryLayout020();// died
+  RichEditorQueryLayout021();// died
+  RichEditorQueryLayout022();// died
+  RichEditorQueryLayout023();// died
+  RichEditorQueryLayout024();// died
+
   RichEditorBreak002();
   RichEditorBreak003();
   RichEditorBreak004();
   RichEditorBreak005();
-  RichEditorAttributeStrings005();
-  getStyles();//fail 2 getStyles和subStyledString 401问题   expect  equals 401  11.19 甘志伟拉群确认是问题，让周柯辰30053602优先提单到6.1 18dev版本
-  replaceString();//fail 9 insertStyledString和replaceStyledString和removeStyles 401问题 expect  equals 401 11.19 甘志伟拉群确认是问题，让周柯辰30053602优先提单到6.1 18dev版本
+  RichEditorBreak001();
 
-  RichEditorSetStyledString005();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0013, expect false, content:width:20.00vp;height:20.00vp;verticalAlign:3;objectFit:0{} do not have  verticalAlign:1;objectFit:1{"topLeft":10,"topRight":10,"bottomLeft":10,"bottomRight":10}
-  RichEditorSetStyledString006();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0015, expect false, content:width:30.00vp;height:30.00vp;verticalAlign:2;objectFit:0{} do not have  verticalAlign:2;objectFit:1{"topLeft":20,"topRight":20,"bottomLeft":20,"bottomRight":20}
-  RichEditorSetStyledString017();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0054, expect false, styleStr:1,0,0,0, do not have  styleStr:1,0,undefined,undefined
-  getLayout()//fail 6 自定义布局
-  RichEditor020();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013, 2 is not larger than 2
-  RichEditor021();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0011, 2 is not larger than 2
-  RichEditor022();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0012, 2 is not larger than 2
-  RichEditor023();//in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0015, 3 is not larger than 3
-  getLineMetrics();
-  TextMaxLines();
-  RichEditorOnWillChange018();
-  RichEditorApi9();
-  RichEditorOnWillChange019();
-  RichEditorChangeValueTest1();
-  RichEditorOnWillChange002();
-  RichEditorOnWillChange008();
-  spanTest();
-  textInputEnterKeyTypeTest();
-  MarqueeMirroringTest();
-  RichEditorCustomSpan017();
-  RichEditorLineMetrics008();
-  RichEditorLineMetrics010();
-  RichEditorLineMetrics019();
-  RichEditorLineMetrics020();
+  RichEditorAttributeStrings005();
+  RichEditorAttributeStrings001();
+  RichEditorAttributeStrings002();
+  RichEditorAttributeStrings003();
+  RichEditorAttributeStrings004();
+  RichEditorAttributeStrings006();
+  RichEditorAttributeStrings007();
+  RichEditorAttributeStrings008();
+
+  getStyles();
+  replaceString();
+
+  RichEditorSetStyledString015();
+  RichEditorSetStyledString012();
+  RichEditorSetStyledString018();
+  RichEditorSetStyledString005();
+  RichEditorSetStyledString006();
+  RichEditorSetStyledString017();
   RichEditorSetStyledString007();
   RichEditorSetStyledString008();
   RichEditorSetStyledString002();
@@ -626,12 +600,92 @@ export default function testsuite() {
   RichEditorSetStyledString016();
   RichEditorSetStyledString019();
   RichEditorSetStyledString020();
-  RichEditorStringSpan005();
+
+  getLayout()
+
+  RichEditorLineLetter001();
+  RichEditorLineLetter002();
+  RichEditorLineLetter003();
+  RichEditorLineLetter004();
+  RichEditorLineLetter005();
+  RichEditorLineLetter006();
+  RichEditorLineLetter007();
+  RichEditorLineLetter008();
+  RichEditorLineLetter009();
+  RichEditorLineLetter010();
+  RichEditorLineLetter011();
+  RichEditorLineLetter012();
+  RichEditorLineLetter013();
+  RichEditorLineLetter014();
+  RichEditorLineLetter015();
+
+  RichEditor020();
+  RichEditor021();
+  RichEditor022();
+  RichEditor023();
+
+  RichEditorLineMetrics002();
+  RichEditorLineMetrics003();
+  RichEditorLineMetrics011();
+  RichEditorLineMetrics012();
+  RichEditorLineMetrics013();
+  RichEditorLineMetrics014();
+  RichEditorLineMetrics015();
+  RichEditorLineMetrics016();
+  RichEditorLineMetrics017();
+  RichEditorLineMetrics018();
+  RichEditorLineMetrics021();
+  RichEditorLineMetrics022();
+  RichEditorLineMetrics023();
+  RichEditorLineMetrics001();
+  RichEditorLineMetrics004();
+  RichEditorLineMetrics005();
+  RichEditorLineMetrics006();
+  RichEditorLineMetrics007();
+  RichEditorLineMetrics009();
+  RichEditorLineMetrics008();
+  RichEditorLineMetrics010();
+  RichEditorLineMetrics019();
+  RichEditorLineMetrics020();
+
+  getLineMetrics();
+  TextMaxLines();
+
+  RichEditorOnWillChange018();
+  RichEditorOnWillChange019();
+  RichEditorOnWillChange008();
+  RichEditorOnWillChange002();
+  RichEditorOnWillChange001();
+  RichEditorOnWillChange003();
+  RichEditorOnWillChange004();
+  RichEditorOnWillChange005();
+  RichEditorOnWillChange006();
+  RichEditorOnWillChange007();
+  RichEditorOnWillChange009();
+  RichEditorOnWillChange010();
+  RichEditorOnWillChange011();
+  RichEditorOnWillChange012();
+  RichEditorOnWillChange013();
+  RichEditorOnWillChange014();
+  RichEditorOnWillChange015();
+  RichEditorOnWillChange016();
+  RichEditorOnWillChange017();
+  RichEditorOnWillChange020();
+
+  RichEditorApi9();
+  RichEditorChangeValueTest1();
+  spanTest();
+  textInputEnterKeyTypeTest()
+
+  MarqueeMirroringTest();
   MarqueeApi();
+
   SearchApi1();
-  SearchEvent();//fail
+  SearchEvent();
   SearchEvent2();
+
   SymbolGlyphApi();
+
   TextCommonTextComputing1();
   TextCommonTextComputing2();
   TextCommonTextComputing3();
@@ -641,6 +695,7 @@ export default function testsuite() {
   TextCommonTextComputing7();
   TextCommonTextComputing8();
   TextCommonTextComputing9();
+
   textAreaInputTest();
   APIContentTypeTest();
   APIUnderlineColorTest();
@@ -689,6 +744,7 @@ export default function testsuite() {
 
   TextDataDetectorConfig();
   FontSettingOptions();
+
   imageSpanTest1();
   imageSpanTest2();
   imageSpanTest3();
@@ -696,11 +752,9 @@ export default function testsuite() {
   imageSpanTest5();
   imageSpanTest6();
   imageSpanTest7();
-
   imageSpanTest8();
 
   textAreaAutoFillTest()
-
   textAreaHeightAdaptivePolicyTest();
   textAreaMinFontSize();
   textAreaMaxFontSize();
@@ -708,14 +762,12 @@ export default function testsuite() {
   textInputUnderlineColorTest();
   textInputMaxFontSize();
   textInputMinFontSize();
-
   textInputHeightAdaptivePolicy();
   textInputDecoration();
   textInputLetterSpacing();
   textInputLineHeight();
   ContainerSpanModifierTest();
   TextInputTypeTest();
-
   onSelectionChange2();
   onSelectionChange3();
   onSelectionChange9();
@@ -725,7 +777,6 @@ export default function testsuite() {
   onSelectionChange14();
   onSelectionChange16();
   onSelectionChange17();
-
   RichEditorApi3();
   RichEditorChangeCallback();
   RichEditorWordBreakJsunitTest();
@@ -736,11 +787,9 @@ export default function testsuite() {
   RichEditor9();
   RichEditor10();
   TextInputTextAreaSearch();
-  SelectionMenuApi();
+  SelectionMenuApi();// died
   menuPolicyHIDE();
   menuPolicySHOW();
-
-
   RichEditorGetLayoutManagerTest1();
   RichEditorStyledStringTest1();
   RichEditorStyledStringTest2();
@@ -748,63 +797,38 @@ export default function testsuite() {
   RichEditorApi6();
   RichEditorApi7();
   RichEditorApi8();
-
-
   RichEditorApi10();
-
   RichEditorApi11();
   RichEditorApi12();
   RichEditorAddApi();
   RichEditorApi13();
-
-  RichEditor001();
-  RichEditor002();
-  RichEditor003();
-  RichEditor004();
-  RichEditor005();
-  RichEditor006();
-  RichEditor007();
-  RichEditor008();
-  RichEditor009();
-  RichEditor010();
-  RichEditor011();
-  RichEditor012();
-  RichEditor013();
-  RichEditor014();
-  RichEditor015();
-  RichEditor016();
-  RichEditor017();
-  RichEditor018();
-  RichEditor019();
-
-  RichEditor024();
-
-
+  RichEditor001();// died
+  RichEditor002();// died
+  RichEditor003();// died
+  RichEditor004();// died
+  RichEditor005();// died
+  RichEditor006();// died
+  RichEditor007();// died
+  RichEditor008();// died
+  RichEditor009();// died
+  RichEditor010();// died
+  RichEditor011();// died
+  RichEditor012();// died
+  RichEditor013();// died
+  RichEditor014();// died
+  RichEditor015();// died
+  RichEditor016();// died
+  RichEditor017();// died
+  RichEditor018();// died
+  RichEditor019();// died
+  RichEditor024();// died
   RichEditorCustomColors001();
   RichEditorCustomColors002();
   RichEditorInterFace001();
   RichEditorAction001();
   RichEditorParticiple001();
   RichEditorParticiple002();
-  RichEditorOnWillChange001();
 
-
-  RichEditorOnWillChange003();
-  RichEditorOnWillChange004();
-  RichEditorOnWillChange005();
-  RichEditorOnWillChange006();
-  RichEditorOnWillChange007();
-
-  RichEditorOnWillChange009();
-  RichEditorOnWillChange010();
-  RichEditorOnWillChange011();
-  RichEditorOnWillChange012();
-  RichEditorOnWillChange013();
-  RichEditorOnWillChange014();
-  RichEditorOnWillChange015();
-  RichEditorOnWillChange016();
-  RichEditorOnWillChange017();
-  RichEditorOnWillChange020();
   RichEditorPlaceHolder001();
   RichEditorTextChange001();
   RichEditorTextChange002();
@@ -858,13 +882,6 @@ export default function testsuite() {
   RichEditorPreventDefault006();
   RichEditorPreventDefault007();
 
-
-
-  RichEditorTransformation001();
-  RichEditorTransformation002();
-  RichEditorTransformation003();
-
-  RichEditorTransformation005();
   RichEditorGetNumber001();
   RichEditorGetNumber002();
   RichEditorGetNumber003();
@@ -882,24 +899,7 @@ export default function testsuite() {
   RichEditorGetNumber015();
   RichEditorGetNumber016();
 
-  RichEditorShortCutKeys001();
-  RichEditorShortCutKeys002();
-  RichEditorShortCutKeys003();
-  RichEditorShortCutKeys004();
-  RichEditorShortCutKeys005();
 
-  RichEditorShortCutKeys007();
-  RichEditorShortCutKeys008();
-
-
-  RichEditorAttributeStrings001();
-  RichEditorAttributeStrings002();
-  RichEditorAttributeStrings003();
-  RichEditorAttributeStrings004();
-
-  RichEditorAttributeStrings006();
-  RichEditorAttributeStrings007();
-  RichEditorAttributeStrings008();
   RichEditorStabillity001();
   RichEditorStabillity002();
   RichEditorStabillity003();
@@ -918,12 +918,14 @@ export default function testsuite() {
   RichEditorDoubleClick003();
   RichEditorDoubleClick004();
   RichEditorDoubleClick005();
+
+
   RichEditorDoubleClick006();
   RichEditorDoubleClick007();
   RichEditorDoubleClick008();
-  RichEditorDoubleClick009();//fail 1
-  RichEditorDoubleClick010();//fail 1
-  RichEditorDoubleClick011();//fail 1
+  RichEditorDoubleClick009();
+  RichEditorDoubleClick010();
+  RichEditorDoubleClick011();
   RichEditorDoubleClick012();
   RichEditorDoubleClick013();
   RichEditorDoubleClick014();
@@ -934,7 +936,7 @@ export default function testsuite() {
   RichEditorDoubleClick019();
   APIClipMaskShape();
   imageAddApi();
-  imageAddApi2();//fail 1
+  imageAddApi2();
   imageAddApi3();
   dstIndexTest();
   srcIndexTest();

@@ -36,17 +36,18 @@ import {
   DynamicRangeMode
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { CircleShape,RectShape } from '@ohos.arkui.shape';
 @Entry
 @Component
 struct APIClipMaskShape {
   build() {
     Column({ space: 15 } as ColumnOptions) {
       Image($r('app.media.icon')).key('APITextBackgroundStyleSpan').key('APIClipMaskShape_Image1')
-        // .clipShape(new CircleShape({ width: '100px', height: '100px' }))
+        .clipShape(new CircleShape({ width: '100px', height: '100px' }))
         .width('500px').height('280px')
 
       Image($r('app.media.icon')).key('APITextBackgroundStyleSpan').key('APIClipMaskShape_Image2')
-        // .maskShape(new RectShape().width('200px').height('200px').fill(Color.Red))
+        .maskShape(new RectShape().width('200px').height('200px').fill(Color.Red))
         .width('300px').height('300px')
 
     }

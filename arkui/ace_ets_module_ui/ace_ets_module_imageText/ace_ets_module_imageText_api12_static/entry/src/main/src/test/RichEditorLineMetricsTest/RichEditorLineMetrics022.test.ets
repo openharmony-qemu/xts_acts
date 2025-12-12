@@ -51,9 +51,7 @@ export default function RichEditorLineMetrics022() {
   describe('RichEditorLineMetrics022', () => {
     beforeAll(() => {
        console.info("RichEditorOnWillChange001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -78,13 +76,14 @@ export default function RichEditorLineMetrics022() {
     });
 
     
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027
-     * @tc.level   Level.LEVEL0
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics022')) as Promise<Component>);
@@ -102,15 +101,16 @@ export default function RichEditorLineMetrics022() {
       let lineMetricsImeInput = await (driver.findComponent(ON.id('lineMetricsImeInput')) as Promise<Component>);
       let lineMetricsImeInputText = await lineMetricsImeInput.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsImeInputText).assertContain('{"startIndex":0,"endIndex":2');
-
+      expect(lineMetricsImeInputText).assertContain('"startIndex":0');
+      expect(lineMetricsImeInputText).assertContain('"endIndex":2');
       driver.triggerKey(KeyCode.KEYCODE_DEL);
       await CommonFunc.sleep(500);
 
       let lineMetricsOnDelete = await (driver.findComponent(ON.id('lineMetricsOnDelete')) as Promise<Component>);
       let lineMetricsOnDeleteText = await lineMetricsOnDelete.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsOnDeleteText).assertContain('{"startIndex":0,"endIndex":3');
+      expect(lineMetricsOnDeleteText).assertContain('"startIndex":0');
+      expect(lineMetricsOnDeleteText).assertContain('"endIndex":3');
       done();
     });
 

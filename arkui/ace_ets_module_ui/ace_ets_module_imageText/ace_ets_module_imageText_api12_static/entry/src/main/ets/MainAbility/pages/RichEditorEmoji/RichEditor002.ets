@@ -88,7 +88,7 @@ build() {
           })
           .aboutToDelete((value: RichEditorDeleteValue): boolean => {
             value.richEditorDeleteSpans!.forEach(item => {
-              if (typeof (item as RichEditorImageSpanResult).imageStyle != 'undefined') {
+              if ( (item as RichEditorImageSpanResult).imageStyle) {
                 console.log('image:' + (item as RichEditorImageSpanResult).valueResourceStr)
               } else {
                 console.log('text:' + (item as RichEditorTextSpanResult).value)

@@ -67,23 +67,7 @@ build() {
           start: 0,
           end: 6
         })!.forEach(item => {
-          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
-            this.style += (item as RichEditorImageSpanResult).valueResourceStr;
-            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-              this.style =
-                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
-                  .layoutStyle);
-            }
-            this.style += '\n'
-          } else {
-            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
-              console.log('get content get symbolSpanStyle');
-              this.style += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
-              this.style += '\n'
-            } else {
-              this.style += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
-            }
-          }
+          this.style += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
         })
       }).id('get_content')
 

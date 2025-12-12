@@ -89,7 +89,7 @@ build() {
               start: -1, end: -1,
               style: {
                 textAlign: TextAlign.Center,
-                wordBreak: WordBreak.HYPHENATION
+                wordBreak: WordBreak.BREAK_WORD
               }
             })
           })

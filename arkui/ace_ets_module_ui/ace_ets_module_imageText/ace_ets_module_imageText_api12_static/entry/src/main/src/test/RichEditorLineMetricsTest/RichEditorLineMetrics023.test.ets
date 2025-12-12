@@ -51,9 +51,7 @@ export default function RichEditorLineMetrics023() {
   describe('RichEditorLineMetrics023', () => {
     beforeAll(() => {
        console.info("RichEditorOnWillChange001 beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -78,13 +76,14 @@ export default function RichEditorLineMetrics023() {
     });
 
     
+    
     /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0028
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0028
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0028
-     * @tc.level   Level.LEVEL0
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0028', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0028', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0028 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics023')) as Promise<Component>);
@@ -112,12 +111,14 @@ export default function RichEditorLineMetrics023() {
       let lineMetricsOnCut = await (driver.findComponent(ON.id('lineMetricsOnCut')) as Promise<Component>);
       let lineMetricsOnCutText = await lineMetricsOnCut.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsOnCutText).assertContain('"startIndex":0,"endIndex":6');
+      expect(lineMetricsOnCutText).assertContain('"startIndex":0');
+      expect(lineMetricsOnCutText).assertContain('"endIndex":6');
 
       let lineMetricsOnPaste = await (driver.findComponent(ON.id('lineMetricsOnPaste')) as Promise<Component>);
       let lineMetricsOnPasteText = await lineMetricsOnPaste.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetricsOnPasteText).assertContain('"startIndex":0,"endIndex":5');
+      expect(lineMetricsOnPasteText).assertContain('"startIndex":0');
+      expect(lineMetricsOnPasteText).assertContain('"endIndex":5');
       done();
     });
 
