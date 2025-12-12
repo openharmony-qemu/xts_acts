@@ -3762,13 +3762,11 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.bottomRect.height).assertEqual(avoidArea2.bottomRect.height);
           } catch (error) {
             console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
-            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
             }
-            done()
           }
 
           try {
@@ -3800,10 +3798,8 @@ export default function windowImmersiveTest() {
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
-              await terminateAbility3(caseName);
               expect().assertFail();
             }
-            done()
           }
 
           try {
@@ -3811,9 +3807,7 @@ export default function windowImmersiveTest() {
             console.info(caseName + ' avoidArea5: ' + JSON.stringify(avoidArea5));
             let avoidArea6 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD)
             console.info(caseName + ' avoidArea6: ' + JSON.stringify(avoidArea6));
-            await terminateAbility3(caseName);
             expect().assertFail();
-            done()
           } catch (error) {
             console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
             if (!canIUseRes) {
@@ -3851,11 +3845,11 @@ export default function windowImmersiveTest() {
             done()
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
+            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
               done()
             } else {
-              await terminateAbility3(caseName);
               expect().assertFail();
               done()
             }
@@ -3909,13 +3903,11 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.bottomRect.height).assertEqual(0);
           } catch (error) {
             console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
-            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
             }
-            done()
           }
 
           try {
@@ -3944,13 +3936,11 @@ export default function windowImmersiveTest() {
             expect(avoidArea3.bottomRect.height).assertEqual(avoidArea4.bottomRect.height);
           } catch (error) {
             console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
-            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
             }
-            done()
           }
 
           try {
@@ -3958,9 +3948,7 @@ export default function windowImmersiveTest() {
             console.info(caseName + ' avoidArea5: ' + JSON.stringify(avoidArea5));
             let avoidArea6 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD)
             console.info(caseName + ' avoidArea6: ' + JSON.stringify(avoidArea6));
-            await terminateAbility3(caseName);
             expect().assertFail();
-            done()
           } catch (error) {
             console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
             if (!canIUseRes) {
@@ -4041,7 +4029,6 @@ export default function windowImmersiveTest() {
         done();
       }
     });
-
 
 
     /**
