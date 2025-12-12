@@ -48,11 +48,11 @@ export default function TitleOptionsToolOptions() {
     });
 
 
-    /**	
-     * @tc.name   TitleOptionsToolOptions_0100	
-     * @tc.number TitleOptionsToolOptions_0100	
-     * @tc.desc   Test NavigationTitleOptions and NavigationToolbarOptions	
-     * @tc.type   FUNCTION	
+    /**
+     * @tc.name   TitleOptionsToolOptions_0100
+     * @tc.number TitleOptionsToolOptions_0100
+     * @tc.desc   Test NavigationTitleOptions and NavigationToolbarOptions
+     * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
@@ -84,11 +84,11 @@ export default function TitleOptionsToolOptions() {
       done();
     });
 
-    /**	
-     * @tc.name   TitleOptionsToolOptions_0200	
-     * @tc.number TitleOptionsToolOptions_0200	
-     * @tc.desc   Test NavDestinationTitleOptions and NavDestinationToolbarOptions	
-     * @tc.type   FUNCTION	
+    /**
+     * @tc.name   TitleOptionsToolOptions_0200
+     * @tc.number TitleOptionsToolOptions_0200
+     * @tc.desc   Test NavDestinationTitleOptions and NavDestinationToolbarOptions
+     * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
