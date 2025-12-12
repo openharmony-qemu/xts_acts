@@ -19,7 +19,7 @@ import CommonFunc from "../../MainAbility/common/Common";
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 export default function TextInputCompressLeadingPunctuationModifier() {
-  describe('TextAreaComprTextInputCompressLeadingPunctuationModifieressLeadingPunctuationModifier', () => {
+  describe('TextInputCompressLeadingPunctuationModifier', () => {
     beforeEach(async (done: Function) => {
       console.info("TextInputCompressLeadingPunctuationModifier beforeEach start");
       let options: router.RouterOptions = {
